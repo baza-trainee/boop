@@ -25,6 +25,21 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+body > .lock {
+  overflow: hidden;
+  touch-action: none;
+  overscroll-behavior: none;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.wrapper > main {
+  flex: 1 1 auto;
+}
 
 @layer utilities {
   .text-balance {
