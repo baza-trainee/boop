@@ -25,7 +25,7 @@ export default async function RootLayout({
       <html lang={locale}>
         <body className={inter.className}>
           <NextIntlClientProvider messages={messages}>
-            {children}
+            <div className="wrapper">{children}</div>
           </NextIntlClientProvider>
         </body>
       </html>
