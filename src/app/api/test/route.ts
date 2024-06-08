@@ -1,14 +1,11 @@
 import { NextResponse } from 'next/server';
-
+import './swagger-comments';
 export async function GET() {
   try {
     const message = 'Test route works!!!🎈🎈🎈';
     return NextResponse.json(message, { status: 200 });
   } catch (error) {
     console.log('[GET TEST]', error);
-    return NextResponse.json(
-      { message: 'Cannot fetch' },
-      { status: 500 }
-    );
+    return NextResponse.json({ message: 'Cannot fetch' }, { status: 500 });
   }
 }
