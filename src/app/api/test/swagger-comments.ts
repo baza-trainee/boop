@@ -1,5 +1,4 @@
 //schema//
-
 /**
  * @swagger
  * components:
@@ -18,8 +17,6 @@
  *         text: Test text
  *     TestRequest:
  *       type: object
- *       required:
- *         - imageUrl
  *       properties:
  *         title:
  *           type: string
@@ -33,7 +30,6 @@
  */
 
 //get route//
-
 /**
  * @swagger
  * /api/test:
@@ -63,7 +59,6 @@
  */
 
 //post route//
-
 /**
  * @swagger
  * /api/test:

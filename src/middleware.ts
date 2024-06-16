@@ -21,6 +21,6 @@ export const config = {
   matcher: [
     '/',
     '/(ua|en)/:path*',
-    '/((?!api|_next|_vercel|image|public|images|icons|meta|favicon.ico|.*\\..*).*)',
+    '/((?!api|_next|_vercel|public|images|icons|favicon.ico|.*\\..*).*)',
   ],
 };
