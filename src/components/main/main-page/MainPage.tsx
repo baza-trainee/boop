@@ -1,22 +1,19 @@
 'use client';
 
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import SectionTitle from '../shared/SectionTitle';
 
 const MainPage = () => {
-  const t = useTranslations();
-
   return (
-    <div className="relative flex min-h-[100vh] w-full items-center justify-center bg-black">
-      <h1 className="absolute bottom-20 left-[50%] -translate-x-[50%] text-5xl font-bold uppercase text-red-800">
-        {t('hello')}
-      </h1>
+    <div className="relative flex min-h-[100vh] w-full items-center justify-center bg-bgWhite">
       <Image
-        src={`/images/pennywise.jpg`}
-        alt="pennywise"
-        width={800}
-        height={500}
+        src="/images/hero-bg-image.svg"
+        alt=""
+        width={750}
+        height={600}
+        className="-z-1 absolute -top-[100px] right-0"
       />
+      <SectionTitle title="Example Title" />
     </div>
   );
 };
