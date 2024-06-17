@@ -3,30 +3,38 @@
  * @swagger
  * components:
  *   schemas:
- *     TestResponse:
+ *     PhotoResponse:
  *       type: object
  *       properties:
- *         title:
+ *         location:
  *           type: string
- *           description: Test title.
- *         text:
+ *           description: Location on site.
+ *         imageUrl:
  *           type: string
- *           description: Test text.
+ *           description: url of the photo
+ *         imageId:
+ *           type: string
+ *           description: id of the photo
  *       example:
- *         title: Test title
- *         text: Test text
- *     TestRequest:
+ *         location: Gallery
+ *         imageUrl: https://example.com
+ *         imageId: JJSHCOSDHC8437UFIJJ
+ *     PhotoRequest:
  *       type: object
  *       properties:
- *         title:
+ *         location:
  *           type: string
- *           description: Test title.
- *         text:
+ *           description: Location on site.
+ *         imageUrl:
  *           type: string
- *           description: Test text.
+ *           description: url of the photo
+ *         imageId:
+ *           type: string
+ *           description: id of the photo
  *       example:
- *         title: Test title
- *         text: Test text
+ *         location: Gallery
+ *         imageUrl: https://example.com
+ *         imageId: JJSHCOSDHC8437UFIJJ
  */
 
 //get route//

@@ -1,9 +1,11 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import counterSlice from './slices/counterSlice';
+import modalSlice from './slices/modalSlice';
 import { pokemonApi } from './api/pokemonApi';
 
 const rootReducer = combineReducers({
   counter: counterSlice,
+  modals: modalSlice,
   [pokemonApi.reducerPath]: pokemonApi.reducer,
 });
 
