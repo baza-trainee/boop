@@ -13,6 +13,10 @@ const config: Config = {
         groppled: 'var(--font-groppled)',
         redhat: 'var(--font-redhat)',
       },
+      backgroundImage: {
+        'footer-bg': "url('/images/footer-bg-image.svg')",
+        'footer': "url('/images/footer.svg')",
+      },
       colors: {
         bgWhite: 'var(--bgWhite)',
         bgViolet: 'var(--bgWhite)',
