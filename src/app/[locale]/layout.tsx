@@ -1,11 +1,35 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import localFont from 'next/font/local';
+import { Raleway, Red_Hat_Display } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
-import './globals.css';
 import StoreProvider from '@/components/providers/StoreProvider';
+import Header from '@/components/main/main-page/header/Header';
+import Footer from '@/components/main/main-page/footer/Footer';
+import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const raleway = Raleway({
+  weight: '400',
+  subsets: ['latin', 'cyrillic'],
+  variable: '--font-raleway',
+});
+
+const redhat = Red_Hat_Display({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-redhat',
+});
+
+const groppled = localFont({
+  src: [
+    {
+      path: '../../../public/fonts/groppled.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-groppled',
+});
 
 export const metadata: Metadata = {
   title: 'Boop 🤡',
@@ -23,9 +47,15 @@ export default async function RootLayout({
   return (
     <StoreProvider>
       <html lang={locale}>
-        <body className={inter.className}>
+        <body
+          className={`${raleway.variable} ${groppled.variable} ${redhat.variable}`}
+        >
           <NextIntlClientProvider messages={messages}>
-            <div className="wrapper">{children}</div>
+            <div className="wrapper font-raleway">
+              <Header />
+              {children}
+              <Footer />
+            </div>
           </NextIntlClientProvider>
         </body>
       </html>
