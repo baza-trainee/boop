@@ -4,8 +4,8 @@ import { Raleway, Red_Hat_Display } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import StoreProvider from '@/components/providers/StoreProvider';
-import Header from '@/components/main/main-page/header/Header';
-import Footer from '@/components/main/main-page/footer/Footer';
+import Header from '@/components/main/header/Header';
+import Footer from '@/components/main/footer/Footer';
 import './globals.css';
 
 const raleway = Raleway({
