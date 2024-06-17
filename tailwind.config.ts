@@ -15,7 +15,7 @@ const config: Config = {
       },
       colors: {
         bgWhite: 'var(--bgWhite)',
-        bgViolet: 'var(--bgWhite)',
+        bgViolet: 'var(--bgViolet)',
         beige: 'var(--beige)',
         violet: 'var(--violet)',
         textViolet: 'var(--textViolet)',
@@ -34,6 +34,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar')],
 };
 export default config;
