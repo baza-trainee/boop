@@ -3,31 +3,31 @@ import React from 'react';
 const valuesCards = [
   {
     text: 'Інклюзивність',
-    icon: '/icons/sprite.svg#title-line',
+    icon: '/icons/sprite.svg#red-hat',
     hoverText:
       'ми цінуємо кожного, незалежно від обставин, і робимо все, щоб кожен відчував себе важливим і потрібним',
   },
   {
     text: 'Проактивність',
-    icon: '/icons/sprite.svg#title-line',
+    icon: '/icons/sprite.svg#red-cap',
     hoverText:
       'ми діємо на випередження, завжди шукаючи нові способи принести радість і полегшення',
   },
   {
     text: 'Повага',
-    icon: '/icons/sprite.svg#title-line',
+    icon: '/icons/sprite.svg#yellow-triangulars',
     hoverText:
       'ми ставимося до всіх з глибокою повагою, цінуючи унікальність кожного',
   },
   {
     text: 'Щирість',
-    icon: '/icons/sprite.svg#title-line',
+    icon: '/icons/sprite.svg#bow-ties',
     hoverText:
       'наші дії і слова завжди йдуть від серця, створюючи атмосферу довіри',
   },
   {
     text: 'Емпатія',
-    icon: '/icons/sprite.svg#title-line',
+    icon: '/icons/sprite.svg#blue-hat',
     hoverText:
       'ми розуміємо і відчуваємо те, що відчуваєте ви, підтримуючи у найважчі моменти',
   },
@@ -44,12 +44,12 @@ const ValueCard = ({ text, icon, hoverText, index }: ValueCardProps) => {
   return (
     <div className="group relative flex w-[251px] cursor-pointer flex-col gap-2">
       <div
-        className={`flex gap-4 pb-2 ${index === 2 || index === 3 ? `flex-row-reverse justify-end` : ``}`}
+        className={`flex items-end gap-4 pb-2 ${index === 2 || index === 3 ? `flex-row-reverse justify-end` : ``}`}
       >
         <p className="title-gradient p-0 font-groppled text-xl font-bold leading-none">
           {text}
         </p>
-        <svg className="h-[5px] w-[25px]">
+        <svg className="h-[64px] w-[89px]">
           <use href={icon}></use>
         </svg>
       </div>
