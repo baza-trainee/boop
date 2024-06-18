@@ -1,3 +1,5 @@
+'use client';
+// import { usePathname } from 'next/navigation';
 import React from 'react';
 import Image from 'next/image';
 import Logo from '../shared/Logo/Logo';
@@ -59,6 +61,20 @@ const Footer = () => {
       </div>
     </div>
   );
+// =======
+// 'use client';
+// import { usePathname } from 'next/navigation';
+
+// const Footer = () => {
+//   const pathname = usePathname();
+//   const isAdminPage =
+//     pathname.split('/').includes('admin') ||
+//     pathname.split('/').includes('login');
+
+//   if (isAdminPage) return null;
+
+//   return <div>Footer</div>;
+// >>>>>>> main
 };
 
 export default Footer;
