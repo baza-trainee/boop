@@ -1,17 +1,23 @@
 import Image from 'next/image';
 import axios from '@/utils/axios';
+
+import { useEffect, useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { TPhotoScheme, photoValidation } from './scheme';
 import { useAppDispatch } from '@/store/hook';
 import { closeModal } from '@/store/slices/modalSlice';
+import { useAddPhotoMutation } from '@/store/api/photoApi';
+import { replaceExtensionWithWebp } from '@/helpers/convertToWebp';
+
 import FileInput from '../../ui/FileInput';
 import SelectInput from '../../ui/SelectInput';
-import { useEffect, useState } from 'react';
 
 const AddPhotoForm = () => {
   const dispatch = useAppDispatch();
   const [imagePreview, setImagePreview] = useState('');
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [addPhoto] = useAddPhotoMutation();
   const {
     handleSubmit,
     control,
@@ -36,15 +42,25 @@ const AddPhotoForm = () => {
   ) => {
     if (!isValid) return;
     try {
+      setIsProcessing(true);
       const formData = new FormData();
       formData.append('file', values.image[0]);
-      formData.append('location', values.location);
-      const res = await axios.post('/photo', formData);
-      if (res.status === 200) {
+      const res = await axios.post('/cloudinary', formData);
+      const newPhoto = {
+        location: values.location,
+        imageUrl: replaceExtensionWithWebp(res.data.fileUrl),
+        imageId: res.data.fileId,
+      };
+      const response = await addPhoto(newPhoto);
+      if (response) {
         alert('success');
+        dispatch(closeModal());
       }
     } catch (error) {
+      alert(error);
       console.log(error);
+    } finally {
+      setIsProcessing(false);
     }
   };
 
@@ -53,7 +69,7 @@ const AddPhotoForm = () => {
       <form
         onSubmit={handleSubmit(onSubmit)}
         autoComplete="off"
-        className="flex w-[90%] flex-col gap-[30px]"
+        className="flex w-[85%] flex-col"
       >
         <div className="flex gap-[60px]">
           <div className="flex w-1/2 flex-col items-center justify-center gap-[24px]">
@@ -80,12 +96,15 @@ const AddPhotoForm = () => {
               <span className="absolute -top-8 left-0 text-sm">
                 Додати фото?
               </span>
-              <button className="w-[123px] rounded-3xl bg-red px-4 py-2 text-white disabled:bg-gray-500">
-                Додати
+              <button
+                disabled={!isValid}
+                className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white disabled:bg-gray-500"
+              >
+                {isProcessing ? 'Обробка запиту...' : 'Додати'}
               </button>
               <button
                 onClick={() => dispatch(closeModal())}
-                className="w-[149px] rounded-3xl  border border-yellow px-4 py-2 text-violet"
+                className="w-[149px] rounded-3xl border border-yellow px-4 py-2 text-violet"
               >
                 Скасувати
               </button>
