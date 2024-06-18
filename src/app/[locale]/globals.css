@@ -12,7 +12,7 @@
   --yellow: #ffab0b;
 }
 
-body > .lock {
+body.lock {
   overflow: hidden;
   touch-action: none;
   overscroll-behavior: none;
@@ -30,6 +30,13 @@ body > .lock {
 }
 
 @layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
   .text-balance {
     text-wrap: balance;
   }
