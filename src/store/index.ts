@@ -1,18 +1,18 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import counterSlice from './slices/counterSlice';
 import modalSlice from './slices/modalSlice';
-import { pokemonApi } from './api/pokemonApi';
+import { photoApi } from './api/photoApi';
 
 const rootReducer = combineReducers({
   counter: counterSlice,
   modals: modalSlice,
-  [pokemonApi.reducerPath]: pokemonApi.reducer,
+  [photoApi.reducerPath]: photoApi.reducer,
 });
 
 export const rootStore = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(pokemonApi.middleware),
+    getDefaultMiddleware().concat(photoApi.middleware),
 });
 
 export const makeStore = () => {
