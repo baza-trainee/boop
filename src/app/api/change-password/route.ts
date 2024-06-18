@@ -1,5 +1,6 @@
 import bcrypt from 'bcrypt';
 import { getSession } from 'next-auth/react';
+import './swagger-comments';
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
 
