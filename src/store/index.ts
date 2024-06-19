@@ -1,4 +1,5 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import { setupListeners } from '@reduxjs/toolkit/query'
 import modalSlice from './slices/modalSlice';
 import alertSlice from './slices/alertSlice';
 import { photoApi } from './api/photoApi';
@@ -22,3 +23,5 @@ export const makeStore = () => {
 export type AppStore = ReturnType<typeof makeStore>;
 export type RootState = ReturnType<AppStore['getState']>;
 export type AppDispatch = AppStore['dispatch'];
+
+setupListeners(rootStore.dispatch)
