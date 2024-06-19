@@ -1,21 +1,10 @@
 import bcrypt from 'bcrypt';
-import { getSession } from 'next-auth/react';
 import './swagger-comments';
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
 
 export async function POST(req: Request) {
   const body = await req.json();
-
-  // const mockRequest = {
-  //   headers: req.headers,
-  //   cookies: req.headers.get('cookie') ?? '',
-  // };
-
-  // const session = await getSession({ req: mockRequest as any });
-  // if (!session || !session.user || !session.user.email) {
-  //   return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
-  // }
 
   const { currentPassword, newPassword, email } = body;
 
@@ -28,7 +17,6 @@ export async function POST(req: Request) {
 
   const user = await prisma.user.findUnique({
     where: { email },
-    // where: { email: session.user.email },
   });
 
   if (!user || !user.password) {
@@ -43,7 +31,7 @@ export async function POST(req: Request) {
   if (!isCorrectPassword) {
     return NextResponse.json(
       { message: 'Current password is incorrect' },
-      { status: 400 }
+      { status: 401 }
     );
   }
 
