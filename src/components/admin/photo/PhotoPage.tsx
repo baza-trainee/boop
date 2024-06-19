@@ -1,16 +1,19 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
+import axios from '@/utils/axios';
 import { IPhoto } from '@/types/photo';
 import { useAppDispatch, useAppSelector } from '@/store/hook';
 import { openModal } from '@/store/slices/modalSlice';
-import { useGetAllPhotoQuery } from '@/store/api/photoApi';
+import { photoApi } from '@/store/api/photoApi';
+import { customRTKError } from '@/helpers/customRTKError';
 import PageTitle from '../shared/PageTitle';
 import ActionButtons from '../shared/ActionButtons';
 import FormModal from '../shared/FormModal';
 import AddPhotoForm from './form/AddPhotoForm';
+import EditPhotoForm from './form/EditPhotoForm';
 import Loader from '@/components/shared/loader/Loader';
-import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 
 const PhotoPage = () => {
   const dispatch = useAppDispatch();
@@ -19,22 +22,28 @@ const PhotoPage = () => {
     isError,
     isLoading,
     error,
-  } = useGetAllPhotoQuery('photos');
+  } = photoApi.useGetAllPhotoQuery('photos');
+  const [deletePhoto] = photoApi.useDeletePhotoMutation();
   const isModalOpen = useAppSelector((state) => state.modals.isModalOpen);
   const modalType = useAppSelector((state) => state.modals.type);
+  const [currentId, setCurrentId] = useState('');
 
   if (isError) {
-    const errorMessage = (error as FetchBaseQueryError).status
-      ? `${(error as FetchBaseQueryError).status} ${(error as FetchBaseQueryError).data}`
-      : 'An unknown error occurred';
-    alert(errorMessage);
+    customRTKError(error);
   }
 
-  const handleEdit = () => {
-    console.log('edit');
+  const handleEdit = (id: string) => {
+    setCurrentId(id);
+    dispatch(openModal({ type: 'edit-photo' }));
   };
-  const handleDelete = () => {
-    console.log('delete');
+
+  const handleDelete = async (id: string, imageId: string) => {
+    if (confirm('Ви дійсно бажаєте видалити це фото?')) {
+      //TODO: Custom Confirm
+      await deletePhoto(id);
+      await axios.delete(`/cloudinary/${encodeURIComponent(imageId)}`);
+      alert('success'); //TODO Custom Alert
+    }
   };
 
   return (
@@ -55,8 +64,10 @@ const PhotoPage = () => {
             >
               <ActionButtons
                 isEditable={true}
-                editAction={handleEdit}
-                deleteAction={handleDelete}
+                editAction={() => handleEdit(item.id.toString())}
+                deleteAction={() =>
+                  handleDelete(item.id.toString(), item.imageId)
+                }
               />
               <Image
                 src={item.imageUrl}
@@ -72,6 +83,11 @@ const PhotoPage = () => {
       {isModalOpen && modalType === 'add-photo' ? (
         <FormModal>
           <AddPhotoForm />
+        </FormModal>
+      ) : null}
+      {isModalOpen && modalType === 'edit-photo' ? (
+        <FormModal>
+          <EditPhotoForm id={currentId} />
         </FormModal>
       ) : null}
     </section>

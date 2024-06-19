@@ -10,6 +10,7 @@ import {
 interface ISelectFieldProps {
   title: string;
   values: string[];
+  value?: string;
   errors?: string;
   placeholder?: string;
   isRequired?: boolean;
@@ -40,6 +41,8 @@ const SelectInput = <T extends FieldValues>({
       field.onChange(e.target.value);
     }
   };
+
+  console.log(value);
 
   return (
     <div className="flex max-h-[85px] w-full max-w-[442px] grow flex-col gap-[5px]">
