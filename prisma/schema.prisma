@@ -15,8 +15,10 @@ model User {
   updatedAt  DateTime  @updatedAt
 }
  
-model Test{
-  id       Int    @id @default(autoincrement())
-  title    String
-  text     String
+model Photo {
+  id          Int    @id @default(autoincrement())
+  location    String
+  imageUrl    String
+  imageId     String
+  createdAt  DateTime  @default(now())
  }

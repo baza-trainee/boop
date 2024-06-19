@@ -5,6 +5,7 @@ export async function DELETE(
   req: Request,
   { params }: { params: { id: string } }
 ) {
+  console.log(params.id);
   try {
     await cloudinary.uploader.destroy(params.id);
     return NextResponse.json(

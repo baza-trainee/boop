@@ -13,10 +13,14 @@ const config: Config = {
         groppled: 'var(--font-groppled)',
         redhat: 'var(--font-redhat)',
       },
+      backgroundImage: {
+        'footer-bg': "url('/images/footer-bg-image.svg')",
+        'footer': "url('/images/footer.svg')",
+      },
       colors: {
         bgWhite: 'var(--bgWhite)',
-        bgViolet: 'var(--bgWhite)',
         bgYellow: 'var(--bgYellow)',
+        bgViolet: 'var(--bgViolet)',
         beige: 'var(--beige)',
         violet: 'var(--violet)',
         textViolet: 'var(--textViolet)',
@@ -35,6 +39,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar')],
 };
 export default config;
