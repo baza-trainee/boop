@@ -1,3 +1,7 @@
 {
-  "hello": "hello"
+  "hello": "hello",
+  "Vision": {
+    "subtitle": "Vision",
+    "text": "We strive to ensure that every children's hospital in Ukraine becomes a place of joy and smiles for children who find themselves in difficult and crisis situations."
+  }
 }

@@ -49,7 +49,7 @@ const ValueCard = ({ text, icon, hoverText, index }: ValueCardProps) => {
         <p className="title-gradient p-0 font-groppled text-xl font-bold leading-none">
           {text}
         </p>
-        <svg className="h-[64px] w-[89px]">
+        <svg className="h-[64px] w-[74px]">
           <use href={icon}></use>
         </svg>
       </div>
@@ -65,7 +65,7 @@ const ValueCard = ({ text, icon, hoverText, index }: ValueCardProps) => {
 
 const Values = () => {
   return (
-    <section className=" bg-bgYellow  w-full    px-[120px]   pb-[96px] pt-[55px] ">
+    <section className=" w-full  bg-bgYellow    px-[120px]   pb-[96px] pt-[55px] ">
       <ul className="flex flex-wrap items-center justify-center gap-x-[271px]  gap-y-12">
         {valuesCards.map((el, index) => {
           return (
