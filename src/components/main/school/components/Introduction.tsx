@@ -3,18 +3,23 @@ import SectionTitle from '../../shared/SectionTitle';
 
 const Introduction = () => {
   return (
-    <div className="bg-bgWhite">
+    <div className="mb-[120px]">
       <SectionTitle title="Школа Клоунів" />
       <p
-        className="font-raleway font-normal text-textViolet
+        className="mb-4 font-raleway font-normal text-textViolet
       3xl:text-xl 3xl:leading-normal"
       >
         Школа лікарняної клоунади - це спільний проєкт БУП - <br />
         бюро усмішок і підтримки і «Таблеточок»
       </p>
-      <div className="bg-amber-300 3xl:h-[440px] 3xl:w-[564px]"></div>
-      <div className="bg-emerald-400 3xl:h-[324px] 3xl:w-[502px]"></div>
-      <div className="bg-indigo-400 3xl:h-[400px] 3xl:w-[306px]"></div>
+      <div className="relative flex min-h-[630px] gap-6">
+        <div className="bg- h-[564px] w-[440px] translate-y-[12%] bg-yellow bg-[url('/icons/school/right-photo.png')] bg-[length:440px_564px] bg-no-repeat"></div>
+        <div className="h-[324px] w-[502px] bg-gray-300 bg-[url('/icons/school/midle-photo.jpg')] bg-[length:502px_324px] bg-no-repeat"></div>
+        <div className="h-[400px] w-[306px] translate-y-[-19%] bg-gray-300 bg-[url('/icons/school/left-photo.jpg')] bg-[length:306px_400px] bg-no-repeat"></div>
+        <svg className="absolute bottom-1/4 left-1/2 h-[62px] w-[69px] rotate-[14.68deg]">
+          <use href="/icons/school/yellow_bow_tie.svg#yellow_bow_tie"></use>
+        </svg>
+      </div>
     </div>
   );
 };
