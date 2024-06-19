@@ -3,7 +3,29 @@
   "Vision": {
     "subtitle": "Vision",
     "text": "We strive to ensure that every children's hospital in Ukraine becomes a place of joy and smiles for children who find themselves in difficult and crisis situations."
-},
+  },
+  "Values": {
+    "inclusivity": {
+      "text": "Inclusivity",
+      "hoverText": " we value everyone, regardless of their circumstances, and do our best to make everyone feel important and needed"
+    },
+    "proactivity": {
+      "text": "Proactivity",
+      "hoverText": "we take action in advance, always looking for new ways to bring joy and relief"
+    },
+    "respect": {
+      "text": "Respect",
+      "hoverText": "we treat everyone with deep respect, valuing the uniqueness of each individual"
+    },
+    "sincerity": {
+      "text": "Sincerity",
+      "hoverText": "our actions and words always come from the heart, creating an atmosphere of trust"
+    },
+    "empathy": {
+      "text": "Empathy",
+      "hoverText": "we understand and feel what you feel, providing support in the most difficult moments"
+    }
+  },
   "Error": {
     "title": "Uh-oh, you seem to be lost!",
     "text": "Unfortunately, the page you're looking for doesn't exist.",
