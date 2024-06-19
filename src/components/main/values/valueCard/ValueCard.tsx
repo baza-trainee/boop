@@ -1,19 +1,17 @@
 type ValueCardProps = {
-  text: string;
-  icon: string;
-  hoverText: string;
+  card: {
+    text: string;
+    icon: string;
+    hoverText: string;
+    height: string;
+    width: string;
+  };
   index: number;
-  height: string;
-  width: string;
 };
 
 const ValueCard = ({
-  text,
-  icon,
-  hoverText,
+  card: { text, icon, hoverText, height, width },
   index,
-  height,
-  width,
 }: ValueCardProps) => {
   return (
     <div className="group relative flex w-[251px] cursor-pointer flex-col gap-2">

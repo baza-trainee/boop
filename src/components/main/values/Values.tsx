@@ -18,12 +18,13 @@ const Values = () => {
             return (
               <li key={index}>
                 <ValueCard
-                  text={el.text}
-                  icon={el.icon}
-                  hoverText={el.hoverText}
+                  // text={el.text}
+                  // icon={el.icon}
+                  // hoverText={el.hoverText}
+                  // width={el.width}
+                  // height={el.height}
+                  card={el}
                   index={index}
-                  width={el.width}
-                  height={el.height}
                 />
               </li>
             );
