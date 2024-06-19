@@ -8,6 +8,7 @@ const ACCEPTED_IMAGE_TYPES = [
   'image/jpg',
   'image/png',
   'image/webp',
+  'for-url',
 ];
 
 export const photoValidation = z.object({
@@ -19,11 +20,11 @@ export const photoValidation = z.object({
       return true;
     })
     .refine(
-      (value) => value?.[0]?.size <= MAX_FILE_SIZE,
+      (value) => value && value?.[0]?.size <= MAX_FILE_SIZE,
       `Максимальний розмір зображення ${formatBytes(MAX_FILE_SIZE)}`
     )
     .refine(
-      (value) => ACCEPTED_IMAGE_TYPES.includes(value?.[0]?.type),
+      (value) => value && ACCEPTED_IMAGE_TYPES.includes(value?.[0]?.type),
       'Оберіть фото в форматі .jpg, .jpeg, .png або .webp.'
     ),
   location: z.string().min(1, 'Оберіть місце розташування фото'),

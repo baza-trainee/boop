@@ -8,13 +8,7 @@ export const photoApi = createApi({
   endpoints: (build) => ({
     getAllPhoto: build.query<IPhoto[], string>({
       query: () => `photo`,
-      providesTags: (result) =>
-        result
-          ? [
-              ...result.map(({ id }) => ({ type: 'Photo' as const, id })),
-              { type: 'Photo', id: 'LIST' },
-            ]
-          : [{ type: 'Photo', id: 'LIST' }],
+      providesTags: ['Photo'],
     }),
 
     getPhotoById: build.query<IPhoto, string>({
@@ -27,7 +21,16 @@ export const photoApi = createApi({
         method: 'POST',
         body,
       }),
-      invalidatesTags: [{ type: 'Photo', id: 'LIST' }],
+      invalidatesTags: ['Photo'],
+    }),
+
+    editPhoto: build.mutation({
+      query: ({ id, ...data }) => ({
+        url: `photo/${id}`,
+        method: 'PATCH',
+        body: data,
+      }),
+      invalidatesTags: ['Photo'],
     }),
 
     deletePhoto: build.mutation({
@@ -35,7 +38,7 @@ export const photoApi = createApi({
         url: `photo/${id}`,
         method: 'DELETE',
       }),
-      invalidatesTags: [{ type: 'Photo', id: 'LIST' }],
+      invalidatesTags: ['Photo'],
     }),
   }),
 });
@@ -44,5 +47,6 @@ export const {
   useGetAllPhotoQuery,
   useGetPhotoByIdQuery,
   useAddPhotoMutation,
+  useEditPhotoMutation,
   useDeletePhotoMutation,
 } = photoApi;
