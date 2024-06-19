@@ -7,6 +7,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { TPhotoScheme, photoValidation } from './scheme';
 import { useAppDispatch } from '@/store/hook';
 import { closeModal } from '@/store/slices/modalSlice';
+import { openAlert } from '@/store/slices/alertSlice';
 import { photoApi } from '@/store/api/photoApi';
 import { replaceExtensionWithWebp } from '@/helpers/convertToWebp';
 
@@ -53,11 +54,17 @@ const AddPhotoForm = () => {
       };
       const response = await addPhoto(newPhoto);
       if (response) {
-        alert('success');
+        dispatch(
+          openAlert({
+            data: {
+              state: 'success',
+              message: 'Фото успішно додано!',
+            },
+          })
+        );
         dispatch(closeModal());
       }
     } catch (error) {
-      alert(error);
       console.log(error);
     } finally {
       setIsProcessing(false);

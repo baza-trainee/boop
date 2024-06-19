@@ -7,6 +7,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { TPhotoScheme, photoValidation } from './scheme';
 import { useAppDispatch } from '@/store/hook';
 import { closeModal } from '@/store/slices/modalSlice';
+import { openAlert } from '@/store/slices/alertSlice';
 import { photoApi } from '@/store/api/photoApi';
 import { replaceExtensionWithWebp } from '@/helpers/convertToWebp';
 import FileInput from '../../ui/FileInput';
@@ -71,7 +72,14 @@ const EditPhotoForm = ({ id }: { id: string }) => {
         };
         const response = await editPhoto({ id, newPhoto });
         if (response) {
-          alert('success'); //TODO Custom Alert
+          dispatch(
+            openAlert({
+              data: {
+                state: 'success',
+                message: 'Фото успішно відредаговано!',
+              },
+            })
+          );
           dispatch(closeModal());
         }
       } else {
@@ -82,7 +90,14 @@ const EditPhotoForm = ({ id }: { id: string }) => {
         };
         const response = await editPhoto({ id, newPhoto });
         if (response) {
-          alert('success'); //TODO Custom Alert
+          dispatch(
+            openAlert({
+              data: {
+                state: 'success',
+                message: 'Фото успішно відредаговано!',
+              },
+            })
+          );
           dispatch(closeModal());
         }
       }

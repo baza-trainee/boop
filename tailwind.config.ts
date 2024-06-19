@@ -19,6 +19,7 @@ const config: Config = {
       },
       colors: {
         bgWhite: 'var(--bgWhite)',
+        bgYellow: 'var(--bgYellow)',
         bgViolet: 'var(--bgViolet)',
         beige: 'var(--beige)',
         violet: 'var(--violet)',
