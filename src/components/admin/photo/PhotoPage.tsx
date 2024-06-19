@@ -4,8 +4,9 @@ import { useState } from 'react';
 import Image from 'next/image';
 import axios from '@/utils/axios';
 import { IPhoto } from '@/types/photo';
-import { useAppDispatch, useAppSelector } from '@/store/hook';
+import { useAppDispatch } from '@/store/hook';
 import { openModal } from '@/store/slices/modalSlice';
+import { openAlert } from '@/store/slices/alertSlice';
 import { photoApi } from '@/store/api/photoApi';
 import { customRTKError } from '@/helpers/customRTKError';
 import PageTitle from '../shared/PageTitle';
@@ -21,29 +22,51 @@ const PhotoPage = () => {
     data: photos,
     isError,
     isLoading,
+    isFetching,
     error,
   } = photoApi.useGetAllPhotoQuery('photos');
   const [deletePhoto] = photoApi.useDeletePhotoMutation();
-  const isModalOpen = useAppSelector((state) => state.modals.isModalOpen);
-  const modalType = useAppSelector((state) => state.modals.type);
   const [currentId, setCurrentId] = useState('');
 
   if (isError) {
-    customRTKError(error);
+    dispatch(
+      openAlert({
+        data: {
+          state: 'error',
+          message: customRTKError(error),
+        },
+      })
+    );
   }
+
+  if (isLoading || isFetching) return <Loader />;
 
   const handleEdit = (id: string) => {
     setCurrentId(id);
     dispatch(openModal({ type: 'edit-photo' }));
   };
 
-  const handleDelete = async (id: string, imageId: string) => {
-    if (confirm('Ви дійсно бажаєте видалити це фото?')) {
-      //TODO: Custom Confirm
-      await deletePhoto(id);
-      await axios.delete(`/cloudinary/${encodeURIComponent(imageId)}`);
-      alert('success'); //TODO Custom Alert
-    }
+  const handleDelete = (id: string, imageId: string) => {
+    dispatch(
+      openAlert({
+        data: {
+          state: 'confirm',
+          message: 'Ви дійсно бажаєте видалити це фото?',
+          func: async () => {
+            await axios.delete(`/cloudinary/${encodeURIComponent(imageId)}`);
+            await deletePhoto(id);
+            dispatch(
+              openAlert({
+                data: {
+                  state: 'success',
+                  message: 'Фото успішно видалено?',
+                },
+              })
+            );
+          },
+        },
+      })
+    );
   };
 
   return (
@@ -79,17 +102,12 @@ const PhotoPage = () => {
             </div>
           ))}
       </div>
-      {isLoading && <Loader />}
-      {isModalOpen && modalType === 'add-photo' ? (
-        <FormModal>
-          <AddPhotoForm />
-        </FormModal>
-      ) : null}
-      {isModalOpen && modalType === 'edit-photo' ? (
-        <FormModal>
-          <EditPhotoForm id={currentId} />
-        </FormModal>
-      ) : null}
+      <FormModal type="add-photo">
+        <AddPhotoForm />
+      </FormModal>
+      <FormModal type="edit-photo">
+        <EditPhotoForm id={currentId} />
+      </FormModal>
     </section>
   );
 };
