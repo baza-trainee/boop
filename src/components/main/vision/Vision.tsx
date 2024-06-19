@@ -10,8 +10,6 @@ const Vision = () => {
         {t('subtitle')}
       </h3>
       <h2 className="title-gradient font-groppled text-5xl font-bold leading-[124%]">
-        {/* Ми прагнемо, аби в кожній дитячій лікарні України було місце для радості
-        і посмішок дітей, які опинилися в складних та кризових ситуаціях. */}
         {t('text')}
       </h2>
     </section>

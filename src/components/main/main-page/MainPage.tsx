@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import SectionTitle from '../shared/SectionTitle';
 import Vision from '../vision/Vision';
-// import Values from '../values/Values';
+import Values from '../values/Values';
 
 const MainPage = () => {
   return (
@@ -17,7 +17,7 @@ const MainPage = () => {
       />
       <SectionTitle title="Example Title" />
       <Vision />
-      {/* <Values /> */}
+      <Values />
     </div>
   );
 };
