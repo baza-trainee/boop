@@ -20,24 +20,11 @@ const PhotoPage = () => {
   const dispatch = useAppDispatch();
   const {
     data: photos,
-    isError,
     isLoading,
     isFetching,
-    error,
   } = photoApi.useGetAllPhotoQuery('photos');
   const [deletePhoto] = photoApi.useDeletePhotoMutation();
   const [currentId, setCurrentId] = useState('');
-
-  if (isError) {
-    dispatch(
-      openAlert({
-        data: {
-          state: 'error',
-          message: customRTKError(error),
-        },
-      })
-    );
-  }
 
   if (isLoading || isFetching) return <Loader />;
 
