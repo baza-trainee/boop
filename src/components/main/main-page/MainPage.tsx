@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import SectionTitle from '../shared/SectionTitle';
+import Vision from '../vision/Vision';;
 import Counter from './counter/Counter';
 
 const MainPage = () => {
@@ -18,6 +19,7 @@ const MainPage = () => {
         <SectionTitle title="Example Title" />
       </div>
       <Counter />
+       <Vision />
     </>
   );
 };
