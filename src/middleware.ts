@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 const nextIntlMiddleware = createMiddleware({
   // A list of all locales that are supported
-  locales: ['ua', 'en'],
+  locales: ['ua', 'en', 'it'],
 
   // Used when no locale matches
   defaultLocale: 'ua',
@@ -20,7 +20,7 @@ export const config = {
   // Match only internationalized pathnames but exclude API routes
   matcher: [
     '/',
-    '/(ua|en)/:path*',
+    '/(ua|en|it)/:path*',
     '/((?!api|_next|_vercel|public|images|icons|favicon.ico|.*\\..*).*)',
   ],
 };

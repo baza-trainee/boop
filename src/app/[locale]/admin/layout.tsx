@@ -1,4 +1,5 @@
-import Sidebar from '@/components/admin/Sidebar';
+import Sidebar from '@/components/admin/sidebar/Sidebar';
+import { AlertWindow } from '@/components/shared/AlertWindow';
 
 export default async function AdminLayout({
   children,
@@ -8,7 +9,10 @@ export default async function AdminLayout({
   return (
     <div className="flex min-h-[100vh] w-full">
       <Sidebar />
-      <div className="flex-1">{children}</div>
+      <div className="flex-1">
+        {children}
+        <AlertWindow />
+      </div>
     </div>
   );
 }

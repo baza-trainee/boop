@@ -9,7 +9,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'assets.pokemon.com',
+        hostname: 'res.cloudinary.com',
       },
     ],
   },
