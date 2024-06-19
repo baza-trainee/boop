@@ -2,8 +2,15 @@ import { createPortal } from 'react-dom';
 import { useAppSelector } from '@/store/hook';
 import { useBodyScrollLock } from '@/hooks/useBodyScrollLock';
 
-const FormModal = ({ children }: { children: React.ReactNode }) => {
+const FormModal = ({
+  children,
+  type,
+}: {
+  children: React.ReactNode;
+  type: string;
+}) => {
   const isModalOpen = useAppSelector((state) => state.modals.isModalOpen);
+  const modalType = useAppSelector((state) => state.modals.type);
 
   useBodyScrollLock(isModalOpen);
 
@@ -15,7 +22,13 @@ const FormModal = ({ children }: { children: React.ReactNode }) => {
     </div>
   );
 
-  return <>{isModalOpen && createPortal(<ModalLayout />, document.body)}</>;
+  return (
+    <>
+      {isModalOpen &&
+        type === modalType &&
+        createPortal(<ModalLayout />, document.body)}
+    </>
+  );
 };
 
 export default FormModal;
