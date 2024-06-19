@@ -1,7 +1,9 @@
 import React from 'react';
 import SectionTitle from '../../shared/SectionTitle';
+import { useTranslations } from 'next-intl';
 
 const Introduction = () => {
+  const t = useTranslations('School');
   return (
     <div className="mb-[120px]">
       <SectionTitle title="Школа Клоунів" />
@@ -9,8 +11,9 @@ const Introduction = () => {
         className="mb-4 font-raleway font-normal text-textViolet
       3xl:text-xl 3xl:leading-normal"
       >
-        Школа лікарняної клоунади - це спільний проєкт БУП - <br />
-        бюро усмішок і підтримки і «Таблеточок»
+        {t('main_text_primary')}
+        <br />
+        {t('main_text_secondary')}
       </p>
       <div className="relative flex min-h-[630px] gap-6">
         <div className="bg- h-[564px] w-[440px] translate-y-[12%] bg-yellow bg-[url('/icons/school/right-photo.png')] bg-[length:440px_564px] bg-no-repeat"></div>
