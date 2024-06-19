@@ -1,0 +1,8 @@
+{
+  "hello": "ciao!",
+  "Error": {
+    "title": "Ops, sembra che ti sia perso!",
+    "text": "Purtroppo, la pagina che stai cercando non esiste.",
+    "btn": "HomePage"
+  }
+}
