@@ -1,10 +1,10 @@
 import React from 'react';
 import SectionTitle from '../shared/SectionTitle';
 import ValueCard from './valueCard/ValueCard';
-import valuesCardsInfo from './valuesCardsInfo';
+import getValuesCardsInfo from './valuesCardsInfo';
 
 const Values = () => {
-  const valuesCards = valuesCardsInfo();
+  const valuesCards = getValuesCardsInfo();
 
   return (
     <section className="mt-[120px] flex w-full flex-col    gap-8">
@@ -17,15 +17,7 @@ const Values = () => {
           {valuesCards.map((el, index) => {
             return (
               <li key={index}>
-                <ValueCard
-                  // text={el.text}
-                  // icon={el.icon}
-                  // hoverText={el.hoverText}
-                  // width={el.width}
-                  // height={el.height}
-                  card={el}
-                  index={index}
-                />
+                <ValueCard card={el} index={index} />
               </li>
             );
           })}
