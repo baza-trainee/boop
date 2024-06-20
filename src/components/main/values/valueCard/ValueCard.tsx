@@ -14,9 +14,11 @@ const ValueCard = ({
   index,
 }: ValueCardProps) => {
   return (
-    <div className="group relative flex w-[251px] cursor-pointer flex-col gap-2">
+    <div
+      className={`group relative flex h-[64px]  cursor-pointer flex-col justify-end gap-2 ${index % 2 ? `top-[100px]` : ``}`}
+    >
       <div
-        className={`flex items-end gap-4 pb-2 ${index === 2 || index === 3 ? `flex-row-reverse justify-end` : ``}`}
+        className={`flex items-end gap-4 pb-2 ${index === 1 || index === 4 ? `flex-row-reverse justify-end` : index === 3 ? `justify-center` : ``}`}
       >
         <p className="title-gradient p-0 pb-2 font-groppled text-xl font-bold leading-none">
           {text}

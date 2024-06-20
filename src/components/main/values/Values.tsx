@@ -12,8 +12,8 @@ const Values = () => {
         <SectionTitle title="Наші цінності" />
       </div>
 
-      <div className="flex w-full items-center  justify-center bg-bgYellow pb-[96px] pt-[55px]">
-        <ul className="flex w-[1536px] flex-wrap items-center justify-center gap-x-[271px]  gap-y-12 px-[120px]">
+      <div className="flex  w-full items-center  justify-center bg-bgYellow pb-[96px] pt-[55px]">
+        <ul className="flex h-[160px] w-[1536px]  items-start justify-between  px-[120px]">
           {valuesCards.map((el, index) => {
             return (
               <li key={index}>
