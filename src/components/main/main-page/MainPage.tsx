@@ -2,8 +2,9 @@
 
 import Image from 'next/image';
 import SectionTitle from '../shared/SectionTitle';
-import Vision from '../vision/Vision';;
+import Vision from '../vision/Vision';
 import Counter from './counter/Counter';
+import PressAboutUs from './press-about-us/PressAboutUs';
 
 const MainPage = () => {
   return (
@@ -19,7 +20,8 @@ const MainPage = () => {
         <SectionTitle title="Example Title" />
       </div>
       <Counter />
-       <Vision />
+      <PressAboutUs />
+      <Vision />
     </>
   );
 };
