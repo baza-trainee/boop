@@ -1,10 +1,10 @@
 import React from 'react';
 import SectionTitle from '../shared/SectionTitle';
 import ValueCard from './valueCard/ValueCard';
-import getValuesCardsInfo from './valuesCardsInfo';
+import GetValuesCardsInfo from './ValuesCardsInfo';
 
 const Values = () => {
-  const valuesCards = getValuesCardsInfo();
+  const valuesCards = GetValuesCardsInfo();
 
   return (
     <section className="mt-[120px] flex w-full flex-col    gap-8">

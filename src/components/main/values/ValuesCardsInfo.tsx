@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 
-const getValuesCardsInfo = () => {
+const GetValuesCardsInfo = () => {
   const t = useTranslations('Values');
   return [
     {
@@ -41,4 +41,4 @@ const getValuesCardsInfo = () => {
   ];
 };
 
-export default getValuesCardsInfo;
+export default GetValuesCardsInfo;
