@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import SectionTitle from '../shared/SectionTitle';
 import Vision from '../vision/Vision';
+import Values from '../values/Values';
 import Counter from './counter/Counter';
 import PressAboutUs from './press-about-us/PressAboutUs';
 
@@ -17,11 +17,12 @@ const MainPage = () => {
           height={600}
           className="-z-1 absolute -top-[100px] right-0"
         />
-        <SectionTitle title="Example Title" />
       </div>
+      <Vision />
+      <Values />
       <Counter />
       <PressAboutUs />
-      <Vision />
+
     </>
   );
 };
