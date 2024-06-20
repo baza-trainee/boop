@@ -71,7 +71,7 @@ const EditPhotoForm = ({ id }: { id: string }) => {
           imageId: res.data.fileId,
         };
         const response = await editPhoto({ id, newPhoto });
-        if (response) {
+        if (response && response.data) {
           dispatch(
             openAlert({
               data: {
@@ -81,6 +81,8 @@ const EditPhotoForm = ({ id }: { id: string }) => {
             })
           );
           dispatch(closeModal());
+        } else if (response.error) {
+          alert(response.error);
         }
       } else {
         const newPhoto = {
