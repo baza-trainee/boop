@@ -8,7 +8,6 @@ import { useAppDispatch } from '@/store/hook';
 import { openModal } from '@/store/slices/modalSlice';
 import { openAlert } from '@/store/slices/alertSlice';
 import { photoApi } from '@/store/api/photoApi';
-import { customRTKError } from '@/helpers/customRTKError';
 import PageTitle from '../shared/PageTitle';
 import ActionButtons from '../shared/ActionButtons';
 import FormModal from '../shared/FormModal';

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { sidebarLinks } from './sidebarLinks';
+import { signOut } from 'next-auth/react';
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -34,6 +35,10 @@ const Sidebar = () => {
           </Link>
         ))}
       </ul>
+      <button onClick={() => signOut({ callbackUrl: '/admin' })}>
+        Sign Out
+      </button>
+      <Link href={'/admin/login'}>LogIn</Link>
       {/* TODO: logout button */}
     </aside>
   );
