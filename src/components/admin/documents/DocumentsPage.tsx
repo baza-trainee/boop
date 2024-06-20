@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { useAppDispatch } from '@/store/hook';
 import { openModal } from '@/store/slices/modalSlice';
 import { documentsApi } from '@/store/api/documentsApi';
-import { translateDocs } from '@/helpers/translateDocs';
 import PageTitle from '../shared/PageTitle';
 import Loader from '@/components/shared/loader/Loader';
 import ActionButtons from '../shared/ActionButtons';
@@ -36,9 +35,7 @@ const DocumentsPage = () => {
         {documents &&
           documents.map((doc) => (
             <div key={doc.id} className="flex h-[249px] w-[280px] flex-col">
-              <h5 className="my-2 font-bold text-violet">
-                {translateDocs(doc.title)}
-              </h5>
+              <h5 className="my-2 font-bold text-violet">{doc.title}</h5>
               <div
                 className="border-[rgb(188, 183, 222)] relative flex h-[207px] w-full flex-col
                items-center justify-center border"

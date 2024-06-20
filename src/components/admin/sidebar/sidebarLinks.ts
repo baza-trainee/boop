@@ -18,12 +18,6 @@ export const sidebarLinks = [
     link: 'press',
   },
   {
-    name: 'Блог',
-    href: '/admin/blog',
-    icon: 'blog',
-    link: 'blog',
-  },
-  {
     name: 'Фото',
     href: '/admin/photo',
     icon: 'photo',

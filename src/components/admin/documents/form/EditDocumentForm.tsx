@@ -70,22 +70,24 @@ const EditDocumentForm = ({ id }: { id: string }) => {
           dispatch(closeModal());
         }
       } else {
-        const newPhoto = {
+        const newDocument = {
           title: values.title,
           documentUrl: document?.documentUrl,
           documentId: document?.documentId,
         };
-        const response = await editDocument({ id, newPhoto });
-        if (response) {
+        const response = await editDocument({ id, newDocument });
+        if (response && response.data) {
           dispatch(
             openAlert({
               data: {
                 state: 'success',
-                message: 'Фото успішно відредаговано!',
+                message: 'Документ успішно відредаговано!',
               },
             })
           );
           dispatch(closeModal());
+        } else if (response.error) {
+          alert(response.error);
         }
       }
     } catch (error) {
