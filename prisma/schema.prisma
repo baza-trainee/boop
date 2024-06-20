@@ -8,17 +8,29 @@ datasource db {
 }
 
 model User {
-  id         String    @id @default(cuid())
-  email      String    @unique
-  password   String?
-  createdAt  DateTime  @default(now())
-  updatedAt  DateTime  @updatedAt
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
- 
+
 model Photo {
-  id          Int    @id @default(autoincrement())
-  location    String
-  imageUrl    String
-  imageId     String
-  createdAt  DateTime  @default(now())
- }
+  id        Int      @id @default(autoincrement())
+  location  String
+  imageUrl  String
+  imageId   String
+  createdAt DateTime @default(now())
+}
+
+model Blog {
+  id      Int      @id @default(autoincrement())
+  photo   String
+  date    DateTime @default(now())
+  titleUA String   @db.VarChar(70)
+  titleEN String   @db.VarChar(70)
+  titleIT String   @db.VarChar(70)
+  textUA  String
+  textEN  String
+  textIT  String
+}
