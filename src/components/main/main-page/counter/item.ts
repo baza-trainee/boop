@@ -2,26 +2,26 @@ export const counterItems = [
   {
     id: 1,
     number: 5,
-    text: 'роки нашого досвіду',
+    text: 'counter_1.text',
   },
   {
     id: 2,
     number: 18,
-    text: 'лікарняних клоунів',
+    text: 'counter_2.text',
   },
   {
     id: 3,
     number: 20,
-    text: 'виходів на місяць',
+    text: 'counter_3.text',
   },
   {
     id: 4,
     number: 6,
-    text: 'лікарні, де ми працюємо',
+    text: 'counter_4.text',
   },
   {
     id: 5,
     number: 300,
-    text: 'дітей на місяць',
+    text: 'counter_5.text',
   },
 ];
