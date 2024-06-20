@@ -22,11 +22,13 @@ const Sidebar = () => {
         {sidebarLinks.map((link, index) => (
           <Link key={index} href={link.href} className="w-full">
             <li
-              className={`border-box flex w-full items-center gap-[24px] rounded-3xl py-2 pl-[32px] pr-[16px]
-                ${isLinkActive(link.link) && 'border-2 border-violet pl-[30px]'}`}
+              className={`border-box flex w-full items-center gap-[24px] rounded-3xl border-2 border-transparent py-2 pl-[32px] pr-[16px] hover:border-violet
+                ${isLinkActive(link.link) && 'border-violet'} ${index === sidebarLinks.length - 3 && 'mb-[60px]'}`}
             >
               <svg className="h-[30px] w-[30px]">
-                <use href={`/icons/sprite.svg#${link.icon}`}></use>
+                <use
+                  href={`/icons/admin/sidebar/sprite.svg#${link.icon}`}
+                ></use>
               </svg>
               <span className="whitespace-nowrap text-[16px] font-bold">
                 {link.name}
