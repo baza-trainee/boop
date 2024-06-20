@@ -5,3 +5,5 @@ export interface IPhoto {
   imageId: string;
   createdAt: Date;
 }
+
+export type PhotoFormData = Omit<IPhoto, 'id' | 'createdAt'>;

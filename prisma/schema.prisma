@@ -34,3 +34,11 @@ model Blog {
   textEN  String
   textIT  String
 }
+
+model Document {
+  id      Int      @id @default(autoincrement())
+  title  String
+  documentUrl  String
+  documentId   String
+  createdAt DateTime @default(now())
+}
