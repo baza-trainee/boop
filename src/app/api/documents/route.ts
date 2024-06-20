@@ -1,16 +1,21 @@
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
 import { prismaConnect } from '@/utils/prismaConnect';
-import { PhotoFormData } from '@/types/photo';
-import './swagger-comments';
+import { DocumentFormData } from '@/types/documents';
 
 export async function GET() {
   try {
     await prismaConnect();
-    const response = await prisma.photo.findMany();
+    const response = await prisma.document.findMany({
+      orderBy: [
+        {
+          createdAt: 'desc',
+        },
+      ],
+    });
     return NextResponse.json(response, { status: 200 });
   } catch (error) {
-    console.log('[GET PHOTOS]', error);
+    console.log('[GET DOCUMENTS]', error);
     return new NextResponse('Internal Server Error', { status: 500 });
   }
 }
@@ -18,17 +23,17 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     await prismaConnect();
-    const data: PhotoFormData = await request.json();
-    const response = await prisma.photo.create({
+    const data: DocumentFormData = await request.json();
+    const response = await prisma.document.create({
       data: {
-        location: data.location,
-        imageUrl: data.imageUrl,
-        imageId: data.imageId,
+        title: data.title,
+        documentUrl: data.documentUrl,
+        documentId: data.documentId,
       },
     });
     return NextResponse.json(response, { status: 200 });
   } catch (error) {
-    console.log('ADD PHOTO', error);
+    console.log('[ADD DOCUMENT]', error);
     return new NextResponse('Internal Server Error', { status: 500 });
   }
 }

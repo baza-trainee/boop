@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import Image from 'next/image';
 import axios from '@/utils/axios';
 import { useEffect, useState } from 'react';
@@ -61,6 +60,7 @@ const EditPhotoForm = ({ id }: { id: string }) => {
         //need to delete old and upload new photo
         const formData = new FormData();
         formData.append('file', values.image[0]);
+        formData.append('folderName', 'photos');
         await axios.delete(
           `/cloudinary/${encodeURIComponent(photo?.imageId as string)}`
         );
@@ -102,7 +102,7 @@ const EditPhotoForm = ({ id }: { id: string }) => {
         }
       }
     } catch (error) {
-      alert(error); //TODO Custom Alert
+      alert(error);
       console.log(error);
     } finally {
       setIsProcessing(false);
