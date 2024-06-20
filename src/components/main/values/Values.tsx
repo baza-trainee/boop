@@ -2,18 +2,20 @@ import React from 'react';
 import SectionTitle from '../shared/SectionTitle';
 import ValueCard from './valueCard/ValueCard';
 import GetValuesCardsInfo from './ValuesCardsInfo';
+import { useTranslations } from 'next-intl';
 
 const Values = () => {
+  const t = useTranslations('Values');
   const valuesCards = GetValuesCardsInfo();
 
   return (
     <section className="mt-[120px] flex w-full flex-col    gap-8">
-      <div className="m-auto w-[1536px] px-[120px]">
-        <SectionTitle title="Наші цінності" />
+      <div className="container">
+        <SectionTitle title={t('title')} />
       </div>
 
       <div className="flex  w-full items-center  justify-center bg-bgYellow pb-[96px] pt-[55px]">
-        <ul className="flex h-[160px] w-[1536px]  items-start justify-between  px-[120px]">
+        <ul className="container flex h-[160px]  items-start justify-between  px-[120px]">
           {valuesCards.map((el, index) => {
             return (
               <li key={index}>
