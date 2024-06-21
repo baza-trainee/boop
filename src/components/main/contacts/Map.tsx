@@ -22,8 +22,16 @@ const Map = ({ initialAddress, onAddressChange }: MapProps) => {
     }
   }, [initialAddress]);
 
-  const onLoad = useCallback(function callback(map: google.maps.Map) { // Added type annotation here
-    mapRef.current = map;
+  const isGoogleMap = (map: any): map is google.maps.Map => {
+    return map && typeof map.getCenter === 'function';
+  };
+
+  const onLoad = useCallback(function callback(map: any) {
+    if (isGoogleMap(map)) {
+      mapRef.current = map;
+    } else {
+      console.error('The map parameter is not of type google.maps.Map');
+    }
   }, []);
 
   const onUnmount = useCallback(function callback() {
@@ -34,7 +42,7 @@ const Map = ({ initialAddress, onAddressChange }: MapProps) => {
     if (typeof google === 'undefined') return;
     const geocoder = new google.maps.Geocoder();
     geocoder.geocode({ address }, (results, status) => {
-      if (status === 'OK' && results[0]) {
+      if (status === 'OK' && results && results[0]) {
         const location = results[0].geometry.location;
         setLocation({ lat: location.lat(), lng: location.lng() });
       } else {
@@ -55,7 +63,7 @@ const Map = ({ initialAddress, onAddressChange }: MapProps) => {
     if (typeof google === 'undefined') return;
     const geocoder = new google.maps.Geocoder();
     geocoder.geocode({ location: latLng }, (results, status) => {
-      if (status === 'OK' && results[0]) {
+      if (status === 'OK' && results && results[0]) {
         onAddressChange(results[0].formatted_address);
       } else {
         console.error('Reverse geocode was not successful for the following reason: ' + status);
