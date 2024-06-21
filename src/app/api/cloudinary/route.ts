@@ -6,25 +6,10 @@ type UploadResponse =
   | { success: true; result?: UploadApiResponse }
   | { success: false; error: UploadApiErrorResponse };
 
-// function fixCyrillicEncoding(str: string) {
-//   // Create a buffer from the string with wrong encoding
-//   const bytes = new Uint8Array([...str].map((c) => c.charCodeAt(0)))
-//   // Decode using TextDecoder assuming the input was incorrectly encoded as ISO-8859-1
-//   const decodedStr = new TextDecoder('utf-8').decode(bytes)
-//   return decodedStr
-// }
-
-// function fixCyrillicEncoding(str: string) {
-//   // Create a buffer from the string with wrong encoding
-//   const bytes = new Uint8Array(Array.prototype.map.call(str, (c: string) => c.charCodeAt(0)))
-//   // Decode using TextDecoder assuming the input was incorrectly encoded as ISO-8859-1
-//   const decodedStr = new TextDecoder('utf-8').decode(bytes)
-//   return decodedStr
-// }
-
 const uploadToCloudinary = (
   fileUri: string,
-  fileName: string
+  fileName: string,
+  folderName: string
 ): Promise<UploadResponse> => {
   return new Promise((resolve, reject) => {
     cloudinary.uploader
@@ -34,7 +19,7 @@ const uploadToCloudinary = (
         filename_override: fileName,
         unique_filename: false,
         use_filename: true,
-        folder: 'boop', // any sub-folder name in your cloud
+        folder: `boop/${folderName}`,
       })
       .then((result) => {
         resolve({ success: true, result });
@@ -48,8 +33,8 @@ const uploadToCloudinary = (
 export async function POST(req: NextRequest) {
   try {
     const formData = await req.formData();
-
     const file = formData.get('file') as File;
+    const folderName = formData.get('folderName');
 
     const fileBuffer = await file.arrayBuffer();
 
@@ -59,7 +44,11 @@ export async function POST(req: NextRequest) {
 
     const fileUri = 'data:' + mimeType + ';' + encoding + ',' + base64Data;
 
-    const res = await uploadToCloudinary(fileUri, file.name);
+    const res = await uploadToCloudinary(
+      fileUri,
+      file.name,
+      folderName as string
+    );
 
     if (res.success && res.result) {
       if (res.success && res.result) {
@@ -74,14 +63,3 @@ export async function POST(req: NextRequest) {
     console.log(error);
   }
 }
-
-// export async function DELETE(req: Request) {
-//   try {
-//     const data = await req.json()
-//     console.log(data)
-//     // await cloudinary.uploader.destroy(data.imageId)
-//     return { success: true }
-//   } catch (error) {
-//     console.log(error)
-//   }
-// }

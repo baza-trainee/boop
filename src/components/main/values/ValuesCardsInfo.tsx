@@ -11,20 +11,6 @@ const GetValuesCardsInfo = () => {
       hoverText: `${t('inclusivity.hoverText')}`,
     },
     {
-      text: `${t('proactivity.text')}`,
-      icon: '/icons/sprite.svg#red-cap',
-      height: '48px',
-      width: '72px',
-      hoverText: `${t('proactivity.hoverText')}`,
-    },
-    {
-      text: `${t('respect.text')}`,
-      icon: '/icons/sprite.svg#yellow-triangulars',
-      width: '64px',
-      height: '50px',
-      hoverText: `${t('respect.hoverText')}`,
-    },
-    {
       text: `${t('sincerity.text')}`,
       icon: '/icons/sprite.svg#bow-ties',
       width: '89px',
@@ -32,11 +18,25 @@ const GetValuesCardsInfo = () => {
       hoverText: `${t('sincerity.hoverText')}`,
     },
     {
+      text: `${t('proactivity.text')}`,
+      icon: '/icons/sprite.svg#red-cap',
+      height: '48px',
+      width: '72px',
+      hoverText: `${t('proactivity.hoverText')}`,
+    },
+    {
       text: `${t('empathy.text')}`,
       icon: '/icons/sprite.svg#blue-hat',
       width: '45px',
       height: '64px',
       hoverText: `${t('empathy.hoverText')}`,
+    },
+    {
+      text: `${t('respect.text')}`,
+      icon: '/icons/sprite.svg#yellow-triangulars',
+      width: '64px',
+      height: '50px',
+      hoverText: `${t('respect.hoverText')}`,
     },
   ];
 };

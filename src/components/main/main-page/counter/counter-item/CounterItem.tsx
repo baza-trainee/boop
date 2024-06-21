@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import CountUp from 'react-countup';
 
@@ -14,67 +15,145 @@ const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
         <div className="relative">
           {variant === '1' && (
             <>
-              <svg className="h-[180px] w-[187px]">
-                <use href="/icons/sprite.svg#counter-circle-yellow"></use>
-              </svg>
-              <svg className="absolute bottom-[2px] left-[2px] h-[182px] w-[191px]">
-                <use href="/icons/sprite.svg#counter-border-violet"></use>
-              </svg>
-              <svg className="absolute -top-[23px] right-[42px] h-[62px] w-[56px]">
-                <use href="/icons/sprite.svg#bow-violet"></use>
-              </svg>
+              <div className="h-[180px] w-[187px]">
+                <Image
+                  src="/icons/counter/yellow-circle.svg"
+                  fill
+                  sizes="100%"
+                  alt="yellow circle"
+                />
+              </div>
+              <div className="absolute bottom-[2px] left-[2px] h-[182px] w-[191px]">
+                <Image
+                  src="/icons/counter/purple-border.svg"
+                  fill
+                  sizes="100%"
+                  alt="purple border"
+                />
+              </div>
+              <div className="absolute -top-[23px] right-[42px] h-[62px] w-[56px]">
+                <Image
+                  src="/icons/counter/purple-bow.svg"
+                  fill
+                  sizes="100%"
+                  alt="purple bow"
+                />
+              </div>
             </>
           )}
           {variant === '2' && (
             <>
-              <svg className="h-[179px] w-[180px]">
-                <use href="/icons/sprite.svg#counter-circle-red"></use>
-              </svg>
-              <svg className="absolute bottom-[4px] left-[5px] h-[181px] w-[182px]">
-                <use href="/icons/sprite.svg#counter-border-yellow"></use>
-              </svg>
-              <svg className="absolute -top-[39px] left-[4px] h-[74px] w-[60px]">
-                <use href="/icons/sprite.svg#party-hat-violet"></use>
-              </svg>
+              <div className="h-[179px] w-[180px]">
+                <Image
+                  src="/icons/counter/red-circle.svg"
+                  fill
+                  sizes="100%"
+                  alt="red circle"
+                />
+              </div>
+              <div className="absolute bottom-[4px] left-[5px] h-[181px] w-[182px]">
+                <Image
+                  src="/icons/counter/yellow-border.svg"
+                  fill
+                  sizes="100%"
+                  alt="yellow border"
+                />
+              </div>
+              <div className="absolute -top-[39px] left-[4px] h-[74px] w-[60px]">
+                <Image
+                  src="/icons/counter/purple-party-hat.svg"
+                  fill
+                  sizes="100%"
+                  alt="purple party hat"
+                />
+              </div>
             </>
           )}
           {variant === '3' && (
             <>
-              <svg className="h-[173px] w-[180px]">
-                <use href="/icons/sprite.svg#counter-circle-violet"></use>
-              </svg>
-              <svg className="absolute bottom-[4px] right-[4px] h-[175px] w-[182px]">
-                <use href="/icons/sprite.svg#counter-border-red"></use>
-              </svg>
-              <svg className="absolute -top-[36px] right-[11px] h-[78px] w-[95px]">
-                <use href="/icons/sprite.svg#cap"></use>
-              </svg>
+              <div className="h-[173px] w-[180px]">
+                <Image
+                  src="/icons/counter/purple-circle.svg"
+                  fill
+                  sizes="100%"
+                  alt="purple circle"
+                />
+              </div>
+              <div className="absolute bottom-[4px] right-[4px] h-[175px] w-[182px]">
+                <Image
+                  src="/icons/counter/red-border.svg"
+                  fill
+                  sizes="100%"
+                  alt="red border"
+                />
+              </div>
+              <div className="absolute -top-[36px] right-[11px] h-[78px] w-[95px]">
+                <Image
+                  src="/icons/counter/cap.svg"
+                  fill
+                  sizes="100%"
+                  alt="cap"
+                />
+              </div>
             </>
           )}
           {variant === '4' && (
             <>
-              <svg className="h-[179px] w-[180px]">
-                <use href="/icons/sprite.svg#counter-circle-red"></use>
-              </svg>
-              <svg className="absolute bottom-[4px] left-[5px] h-[181px] w-[182px]">
-                <use href="/icons/sprite.svg#counter-border-yellow"></use>
-              </svg>
-              <svg className="absolute -top-[39px] right-[20px] h-[74px] w-[61px]">
-                <use href="/icons/sprite.svg#party-hat-yellow"></use>
-              </svg>
+              <div className="h-[179px] w-[180px]">
+                <Image
+                  src="/icons/counter/red-circle.svg"
+                  fill
+                  sizes="100%"
+                  alt="red circle"
+                />
+              </div>
+              <div className="absolute bottom-[4px] left-[5px] h-[181px] w-[182px]">
+                <Image
+                  src="/icons/counter/yellow-border.svg"
+                  fill
+                  sizes="100%"
+                  alt="yellow border"
+                />
+              </div>
+              <div className="absolute -top-[39px] right-[20px] h-[74px] w-[61px]">
+                <Image
+                  src="/icons/counter/yellow-party-hat.svg"
+                  fill
+                  sizes="100%"
+                  alt="yellow party hat"
+                />
+              </div>
             </>
           )}
           {variant === '5' && (
             <>
-              <svg className="h-[180px] w-[187px]">
-                <use href="/icons/sprite.svg#counter-circle-yellow"></use>
-              </svg>
-              <svg className="absolute bottom-[2px] left-[2px] h-[182px] w-[191px]">
-                <use href="/icons/sprite.svg#counter-border-violet"></use>
-              </svg>
               <svg className="absolute -top-[13px] right-[29px] h-[44px] w-[56px]">
                 <use href="/icons/sprite.svg#bow-red"></use>
               </svg>
+              <div className="h-[180px] w-[187px]">
+                <Image
+                  src="/icons/counter/yellow-circle.svg"
+                  fill
+                  sizes="100%"
+                  alt="yellow circle"
+                />
+              </div>
+              <div className="absolute bottom-[2px] left-[2px] h-[182px] w-[191px]">
+                <Image
+                  src="/icons/counter/purple-border.svg"
+                  fill
+                  sizes="100%"
+                  alt="purple border"
+                />
+              </div>
+              <div className="absolute -top-[13px] right-[29px] h-[44px] w-[56px]">
+                <Image
+                  src="/icons/counter/red-bow.svg"
+                  fill
+                  sizes="100%"
+                  alt="purple bow"
+                />
+              </div>
             </>
           )}
         </div>
