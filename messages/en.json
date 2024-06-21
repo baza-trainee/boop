@@ -71,5 +71,8 @@
 		"title": "Uh-oh, you seem to be lost!",
 		"text": "Unfortunately, the page you're looking for doesn't exist.",
 		"btn": "Home"
-	}
+	},
+  "Contacts": {
+    "title": "Our сontacts"
+  }
 }

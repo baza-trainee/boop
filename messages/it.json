@@ -4,5 +4,8 @@
     "title": "Ops, sembra che ti sia perso!",
     "text": "Purtroppo, la pagina che stai cercando non esiste.",
     "btn": "HomePage"
+  },
+  "Contacts": {
+    "title": "I nostri contatti"
   }
 }
