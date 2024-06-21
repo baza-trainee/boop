@@ -12,6 +12,43 @@
   --textViolet: #2f245e;
   --red: #e93405;
   --yellow: #ffab0b;
+  --blueOverlayGradient: linear-gradient(
+    330deg,
+    rgba(80, 67, 159, 0.45) -42.77%,
+    rgba(166, 215, 230, 0.75) -37.54%,
+    rgba(47, 36, 94, 0.75) 73.17%
+  );
+  --redOverlayGradient: linear-gradient(
+    330deg,
+    rgba(233, 52, 5, 0.45) -43.69%,
+    rgba(233, 52, 5, 0.75) -32.92%,
+    rgba(47, 36, 94, 0.75) 100.61%
+  );
+  --yellowOverlayGradient: linear-gradient(
+    330deg,
+    rgba(255, 171, 11, 0.45) -43.69%,
+    rgba(255, 171, 11, 0.75) -32.92%,
+    rgba(47, 36, 94, 0.75) 100.61%
+  );
+  --blueCardGradient: linear-gradient(
+    330deg,
+    rgba(80, 67, 159, 0.45) -43.69%,
+    rgba(80, 67, 159, 0.75) -32.92%,
+    rgba(80, 67, 159, 0.6) 100.61%
+  );
+
+  --redCardGradient: linear-gradient(
+    330deg,
+    rgba(233, 52, 5, 0.45) -43.69%,
+    rgba(233, 52, 5, 0.75) -32.92%,
+    rgba(233, 52, 5, 0.6) 100.61%
+  );
+  --yellowCardGradient: linear-gradient(
+    330deg,
+    rgba(255, 171, 11, 0.45) -43.69%,
+    rgba(255, 171, 11, 0.75) -32.92%,
+    rgba(255, 171, 11, 0.6) 100.61%
+  );
 }
 
 body.lock {
