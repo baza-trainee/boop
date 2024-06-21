@@ -22,7 +22,7 @@ const Map = ({ initialAddress, onAddressChange }: MapProps) => {
     }
   }, [initialAddress]);
 
-  const onLoad = useCallback(function callback(map) {
+  const onLoad = useCallback(function callback(map: google.maps.Map) { // Added type annotation here
     mapRef.current = map;
   }, []);
 

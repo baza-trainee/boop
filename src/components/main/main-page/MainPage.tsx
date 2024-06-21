@@ -5,7 +5,6 @@ import Vision from '../vision/Vision';
 import Values from '../values/Values';
 import Counter from './counter/Counter';
 import PressAboutUs from './press-about-us/PressAboutUs';
-import ContactsPage from '../contacts/ContactsPage';
 
 const MainPage = () => {
   return (
@@ -23,8 +22,6 @@ const MainPage = () => {
       <Values />
       <Counter />
       <PressAboutUs />
-      <ContactsPage />
-
     </>
   );
 };
