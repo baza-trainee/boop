@@ -27,6 +27,21 @@
       "hoverText": "we understand and feel what you feel, providing support in the most difficult moments"
     }
   },
+  "Mission": {
+    "title": "Our Mission",
+    "first": {
+      "text": "Hospital Clowning:\n An Emotional Support Program for Children in Hospitals",
+      "hoverText": "Boosting children's mood and morale. Facilitating adaptation to hospital conditions. Сompanying children for procedures or surgeries. Collaborating with parents and doctors"
+    },
+    "second": {
+      "text": "Organizing\n social and rehabilitation events",
+      "hoverText": "Weekly Events. Bubble Shows. Winners' Games. Beauty Days. Art Therapy. Sound Therapy. Themed Concerts"
+    },
+    "third": {
+      "text": "Developing\n the volunteer community",
+      "hoverText": "Training hospital clowns.  Conducting team building for the team with the support of the international community of hospital clowns.  We work with the emotional state of volunteers.  We promote and develop hospital clowning in Ukraine"
+    }
+  },
   "Goals": {
     "title": "Our Goals",
     "first": {

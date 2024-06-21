@@ -15,14 +15,14 @@ const GetMissionCardsInfo = () => {
       text: `${t('second.text')}`,
       cardGradient: `var(--redCardGradient)`,
       overlayGradient: `var(--redOverlayGradient)`,
-      hoverText: `${t('first.hoverText')}`,
+      hoverText: `${t('second.hoverText')}`,
     },
     {
       image: '/images/missionSection/a_girl_plays_with_a_toy_bear.png',
       text: `${t('third.text')}`,
       cardGradient: `var(--yellowCardGradient)`,
       overlayGradient: `var(--yellowOverlayGradient)`,
-      hoverText: `${t('first.hoverText')}`,
+      hoverText: `${t('third.hoverText')}`,
     },
   ];
 };

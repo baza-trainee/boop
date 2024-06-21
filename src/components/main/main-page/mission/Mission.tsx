@@ -6,7 +6,7 @@ import SectionTitle from '../../shared/SectionTitle';
 import GetMissionCardsInfo from './MissionCardsInfo';
 
 const Mission = () => {
-  const t = useTranslations('Goals');
+  const t = useTranslations('Mission');
   const missionCards = GetMissionCardsInfo();
 
   return (
