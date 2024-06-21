@@ -24,6 +24,8 @@ const config: Config = {
         beige: 'var(--beige)',
         violet: 'var(--violet)',
         lightViolet: 'var(--lightViolet)',
+        lightVioletSecond: 'var(--lightVioletSecond)',
+        mainViolet: 'var(--mainViolet)',
         textViolet: 'var(--textViolet)',
         red: 'var(--red)',
         yellow: 'var(--yellow)',

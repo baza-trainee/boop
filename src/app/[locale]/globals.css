@@ -8,8 +8,9 @@
   --bgYellow: #f5e9cc;
   --beige: #fff6c5;
   --violet: #6b5ad1;
+  --mainViolet: #50439f;
   --lightViolet: #958ac4;
-  --lightViolet2: #cac4e2;
+  --lightVioletSecond: #cac4e2;
   --textViolet: #2f245e;
   --red: #e93405;
   --yellow: #ffab0b;
@@ -54,5 +55,8 @@ body.lock {
   }
   .founders-gradient {
     @apply bg-gradient-to-r from-[rgb(114,99,177)] to-[rgb(47,36,94)] bg-clip-text text-transparent;
+  }
+  .text-gradient {
+    @apply bg-gradient-to-r from-[rgb(47,36,94)] to-[rgb(80,67,159)] bg-clip-text text-transparent;
   }
 }
