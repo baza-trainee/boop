@@ -26,6 +26,25 @@
 			"hoverText": "we understand and feel what you feel, providing support in the most difficult moments"
 		}
 	},
+    "Goals": {
+    "title": "Our Goals",
+    "first": {
+      "cardNumber": "1",
+      "text": "To establish an Ukrainian Association of Hospital Clowns with colleagues from cities across Ukraine"
+    },
+    "second": {
+      "cardNumber": "2",
+      "text": "To launch new teams in children's hospitals in Kyiv and other cities"
+    },
+    "third": {
+      "cardNumber": "3",
+      "text": "To create a national program of emotional support in children's hospitals"
+    },
+    "fourth": {
+      "cardNumber": "4",
+      "text": "To expand international cooperation"
+    }
+  },
 	"Counter_section": {
 		"title": "Achievements in numbers",
 		"counter_1": {

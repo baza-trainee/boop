@@ -9,6 +9,7 @@
   --beige: #fff6c5;
   --violet: #6b5ad1;
   --lightViolet: #958ac4;
+  --lightViolet2: #cac4e2;
   --textViolet: #2f245e;
   --red: #e93405;
   --yellow: #ffab0b;
@@ -46,7 +47,7 @@ body.lock {
 
 @layer components {
   .container {
-    @apply mx-auto w-full max-w-[2920px] px-[20px] md:px-[40px] lg:px-[64px] 2xl:px-[80px] 4xl:px-[120px];
+    @apply mx-auto w-full max-w-[2920px] px-[20px] md:px-[40px] lg:px-[64px] 2xl:px-[80px] 3xl:px-[120px];
   }
   .title-gradient {
     @apply bg-gradient-to-r from-[rgb(114,99,177)] to-[rgb(47,36,94)] bg-clip-text text-transparent;
