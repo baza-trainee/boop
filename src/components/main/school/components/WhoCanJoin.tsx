@@ -1,11 +1,13 @@
 import React from 'react';
 import SectionTitle from '../../shared/SectionTitle';
 import data from '../assets/data.json';
+import { useTranslations } from 'next-intl';
 
 const WhoCanJoin = () => {
+  const t = useTranslations('School');
   return (
     <>
-      <SectionTitle title="Хто може стати лікарняним клоуном?" />
+      <SectionTitle title={t('join_title')} />
       <div className="relative flex justify-start gap-[141px]">
         <ul
           role="list"
