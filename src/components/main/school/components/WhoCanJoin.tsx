@@ -1,10 +1,12 @@
 import React from 'react';
 import SectionTitle from '../../shared/SectionTitle';
-import data from '../assets/data.json';
 import { useTranslations } from 'next-intl';
+import GetTextBlockJoin from '../assets/GetTextBlockJoin';
 
 const WhoCanJoin = () => {
   const t = useTranslations('School');
+  const textBlock = GetTextBlockJoin();
+
   return (
     <>
       <SectionTitle title={t('join_title')} />
@@ -13,20 +15,15 @@ const WhoCanJoin = () => {
           role="list"
           className="leading-norma mt-12 max-w-[487px] pl-8 font-raleway text-xl font-normal"
         >
-          {data.paragraphs.map((paragraph, pIndex) => (
+          {textBlock.map((block, index) => (
             <li
-              key={pIndex}
+              key={index}
               className="relative mb-8 before:absolute before:left-[-24px] before:top-1/2 before:h-4 before:w-4
           before:-translate-y-1/2  before:rounded-full last:mb-0 before:odd:bg-violet before:even:bg-red"
             >
-              {paragraph.text.map((segment, sIndex) => (
-                <span
-                  key={sIndex}
-                  className={`${segment.highlight ? 'text-yellow' : 'text-textViolet'} `}
-                >
-                  {segment.content}
-                </span>
-              ))}
+              <p key={index} className="mb-4 text-textViolet last:mb-0">
+                {block.paragraph}
+              </p>
             </li>
           ))}
         </ul>
