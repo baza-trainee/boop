@@ -9,7 +9,7 @@ const Payment = () => {
       <div className="container">
         <div className="flex justify-between gap-5">
           <div className="max-w-[526px] text-center">
-            <SectionTitle title={'Допомогати просто'} />
+            <SectionTitle className="mb-4" title={'Допомогати просто'} />
             <p className="text-gradient text-left text-xl font-semibold leading-[1.32]">
               Ваша підтримка може змінити життя маленьких пацієнтів на краще.
               Кожен донат, незалежно від розміру, дозволяє нам продовжувати
