@@ -18,8 +18,8 @@ const ContactsPage = () => {
   return (
     <>
       <section
-        className="bg-bgWhite bg-[right_top_35px] bg-no-repeat pb-[120px] pt-[100px]"
-        style={{ backgroundImage: "url('/icons/school/wave.svg')" }}
+        className="bg-bgWhite bg-[right_top_0px] bg-no-repeat pb-[310px] pt-[100px]"
+        style={{ backgroundImage: "url('/images/wave-secondary.svg')" }}
       >
         <div className="container m-auto max-w-[1536px] items-center">
           <div className="flex flex-col md:flex-row justify-between">
