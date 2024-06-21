@@ -8,7 +8,7 @@ const CarouselButton = ({ className, ...props }: CarouselButtonProps) => {
   return (
     <button
       className={clsx(
-        'transi flex h-8 w-8 items-center justify-center transition-all duration-200 ease-linear disabled:opacity-30',
+        'flex h-8 w-8 items-center justify-center transition-all duration-200 ease-linear disabled:opacity-30',
         className
       )}
       {...props}

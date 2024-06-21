@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';
+import { useTranslations } from 'next-intl';
 
 interface PressAboutUsSlideProps {
   imgSrc: string;
@@ -19,9 +20,11 @@ const PressAboutUsSlide = ({
   link,
   date,
 }: PressAboutUsSlideProps) => {
+  const t = useTranslations('Press_about_us');
+
   return (
-    <div className="">
-      <div className="flex justify-between gap-5">
+    <div className="pl-[110px]">
+      <div className="mb-6 flex justify-between gap-5">
         <div className="max-w-[538px]">
           <div className="mb-8 flex items-center gap-[20px]">
             <svg className="h-[1rem] w-[5rem]">
@@ -35,11 +38,13 @@ const PressAboutUsSlide = ({
             <p className="text-xl leading-[1.5] text-textViolet">{textPart1}</p>
             <p className="text-xl leading-[1.5] text-textViolet">{textPart2}</p>
           </div>
-          <span className="float-right">{date}</span>
+          <span className="text-lightViolet float-right font-medium leading-[1.32]">
+            {date}
+          </span>
         </div>
-        <div className="relative w-[434px]">
+        <div className="relative w-[418px] ">
           <Image
-            className="object-contain"
+            className="bg-red object-contain"
             src={imgSrc}
             fill
             sizes="100%"
@@ -47,8 +52,11 @@ const PressAboutUsSlide = ({
           />
         </div>
       </div>
-      <Link href={link} className="">
-        Читати більше
+      <Link
+        href={link}
+        className="inline-block rounded-[32px] border-2 border-solid border-yellow px-6 py-4 text-xl font-medium text-textViolet transition-all duration-200 ease-linear hover:bg-yellow"
+      >
+        {t('link_text')}
       </Link>
     </div>
   );

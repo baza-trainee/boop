@@ -15,7 +15,7 @@ const config: Config = {
       },
       backgroundImage: {
         'footer-bg': "url('/images/footer-bg-image.svg')",
-        'footer': "url('/images/footer.svg')",
+        footer: "url('/images/footer.svg')",
       },
       colors: {
         bgWhite: 'var(--bgWhite)',
@@ -23,6 +23,7 @@ const config: Config = {
         bgViolet: 'var(--bgViolet)',
         beige: 'var(--beige)',
         violet: 'var(--violet)',
+        lightViolet: 'var(--lightViolet)',
         textViolet: 'var(--textViolet)',
         red: 'var(--red)',
         yellow: 'var(--yellow)',

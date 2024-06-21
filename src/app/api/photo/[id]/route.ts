@@ -2,6 +2,7 @@ import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
 import { prismaConnect } from '@/utils/prismaConnect';
 import { PhotoFormData } from '@/types/photo';
+import '../swagger-comments';
 
 export async function PATCH(
   request: Request,

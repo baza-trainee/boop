@@ -36,9 +36,24 @@ model Blog {
 }
 
 model Document {
-  id      Int      @id @default(autoincrement())
-  title  String
-  documentUrl  String
-  documentId   String
-  createdAt DateTime @default(now())
+  id          Int      @id @default(autoincrement())
+  title       String
+  documentUrl String
+  documentId  String
+  createdAt   DateTime @default(now())
+}
+
+model News {
+  id         Int      @id @default(autoincrement())
+  sourceLink String
+  createdAt  DateTime @default(now())
+  imageId    String
+  imageUrl   String
+  location   String
+  textEN     String
+  textIT     String
+  textUA     String
+  titleEN    String
+  titleIT    String
+  titleUA    String
 }

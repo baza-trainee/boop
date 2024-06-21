@@ -77,6 +77,7 @@ const EditDocumentForm = ({ id }: { id: string }) => {
         };
         const response = await editDocument({ id, newDocument });
         if (response && response.data) {
+          dispatch(closeModal());
           dispatch(
             openAlert({
               data: {
@@ -85,7 +86,6 @@ const EditDocumentForm = ({ id }: { id: string }) => {
               },
             })
           );
-          dispatch(closeModal());
         } else if (response.error) {
           alert(response.error);
         }
