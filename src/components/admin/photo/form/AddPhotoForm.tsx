@@ -55,6 +55,7 @@ const AddPhotoForm = () => {
       };
       const response = await addPhoto(newPhoto);
       if (response && response.data) {
+        dispatch(closeModal());
         dispatch(
           openAlert({
             data: {
@@ -63,7 +64,6 @@ const AddPhotoForm = () => {
             },
           })
         );
-        dispatch(closeModal());
       } else if (response.error) {
         alert(response.error);
       }
