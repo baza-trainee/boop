@@ -16,10 +16,10 @@ const uploadToCloudinary = (
       .upload(fileUri, {
         invalidate: true,
         resource_type: 'auto',
-        filename_override: fileName,
-        unique_filename: false,
         use_filename: true,
+        unique_filename: false,
         folder: `boop/${folderName}`,
+        filename_override: fileName,
       })
       .then((result) => {
         resolve({ success: true, result });

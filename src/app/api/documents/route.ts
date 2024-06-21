@@ -2,6 +2,7 @@ import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
 import { prismaConnect } from '@/utils/prismaConnect';
 import { DocumentFormData } from '@/types/documents';
+import './swagger-comments';
 
 export async function GET() {
   try {

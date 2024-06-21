@@ -72,6 +72,7 @@ const EditPhotoForm = ({ id }: { id: string }) => {
         };
         const response = await editPhoto({ id, newPhoto });
         if (response && response.data) {
+          dispatch(closeModal());
           dispatch(
             openAlert({
               data: {
@@ -80,7 +81,6 @@ const EditPhotoForm = ({ id }: { id: string }) => {
               },
             })
           );
-          dispatch(closeModal());
         } else if (response.error) {
           alert(response.error);
         }
