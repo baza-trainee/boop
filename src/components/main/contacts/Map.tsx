@@ -22,19 +22,11 @@ const Map = ({ initialAddress, onAddressChange }: MapProps) => {
     }
   }, [initialAddress]);
 
-  const isGoogleMap = (map: any): map is google.maps.Map => {
-    return map && typeof map.getCenter === 'function';
-  };
-
-  const onLoad = useCallback(function callback(map: any) {
-    if (isGoogleMap(map)) {
-      mapRef.current = map;
-    } else {
-      console.error('The map parameter is not of type google.maps.Map');
-    }
+  const onLoad = useCallback((map: google.maps.Map) => {
+    mapRef.current = map;
   }, []);
 
-  const onUnmount = useCallback(function callback() {
+  const onUnmount = useCallback(() => {
     mapRef.current = null;
   }, []);
 
