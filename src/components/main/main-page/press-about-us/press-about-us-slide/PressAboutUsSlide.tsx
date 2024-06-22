@@ -6,8 +6,7 @@ import { useTranslations } from 'next-intl';
 interface PressAboutUsSlideProps {
   imgSrc: string;
   title: string;
-  textPart1: string;
-  textPart2: string;
+  text: string;
   link: string;
   date: string;
 }
@@ -15,12 +14,20 @@ interface PressAboutUsSlideProps {
 const PressAboutUsSlide = ({
   imgSrc,
   title,
-  textPart1,
-  textPart2,
+  text,
   link,
   date,
 }: PressAboutUsSlideProps) => {
   const t = useTranslations('Press_about_us');
+
+  const sentences = text
+    .split('.')
+    .filter((sentence) => sentence.trim().length > 0);
+
+  const half = Math.floor(sentences.length / 2);
+
+  const firstParagraph = sentences.slice(0, half).join('. ') + '.';
+  const secondParagraph = sentences.slice(half).join('. ') + '.';
 
   return (
     <div className="pl-[110px]">
@@ -35,10 +42,14 @@ const PressAboutUsSlide = ({
             </h3>
           </div>
           <div className="mb-4 [&>p:first-child]:mb-3">
-            <p className="text-xl leading-[1.5] text-textViolet">{textPart1}</p>
-            <p className="text-xl leading-[1.5] text-textViolet">{textPart2}</p>
+            <p className="text-xl leading-[1.5] text-textViolet">
+              {firstParagraph}
+            </p>
+            <p className="text-xl leading-[1.5] text-textViolet">
+              {secondParagraph}
+            </p>
           </div>
-          <span className="text-lightViolet float-right font-medium leading-[1.32]">
+          <span className="float-right font-medium leading-[1.32] text-lightViolet">
             {date}
           </span>
         </div>
