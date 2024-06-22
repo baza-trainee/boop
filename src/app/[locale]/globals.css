@@ -93,3 +93,8 @@ body.lock {
     @apply bg-gradient-to-r from-[rgb(114,99,177)] to-[rgb(47,36,94)] bg-clip-text text-transparent;
   }
 }
+
+.sideText {
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+}

@@ -1,5 +1,5 @@
 export interface IDocument {
-  id: number;
+  id: string;
   title: string;
   documentUrl: string;
   documentId: string;
