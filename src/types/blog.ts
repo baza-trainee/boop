@@ -1,20 +1,15 @@
-export type BlogPostData = {
-  photo: string;
-  titleUA: string;
-  titleEN: string;
-  titleIT: string;
-  textUA: string;
-  textEN: string;
-  textIT: string;
-};
-
-export type BlogUpdateData = {
+export interface IBlog {
   id: number;
-  photo?: string;
-  titleUA?: string;
-  titleEN?: string;
-  titleIT?: string;
-  textUA?: string;
-  textEN?: string;
-  textIT?: string;
-};
+  imageUrl: string;
+  imageId: string;
+  createdAt: Date;
+  location: string;
+  titleUA: string;
+  textUA: string;
+  titleEN: string;
+  textEN: string;
+  titleIT: string;
+  textIT: string;
+}
+
+export type BlogFormData = Omit<IBlog, 'id' | 'createdAt'>;

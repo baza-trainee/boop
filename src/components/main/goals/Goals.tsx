@@ -6,7 +6,6 @@ import { useTranslations, useLocale } from 'next-intl';
 const Goals = () => {
   const t = useTranslations('Goals');
   const locale = useLocale();
-  console.log('locale', locale);
 
   return (
     <section className="mt-[120px] w-full  bg-bgViolet pb-[104px]  pt-[60px]">
