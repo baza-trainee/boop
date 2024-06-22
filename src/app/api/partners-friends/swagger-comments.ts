@@ -10,7 +10,7 @@
  *         - section
  *       properties:
  *         id:
- *           type: integer
+ *           type: string
  *           description: The auto-generated id of the partner or friend.
  *         logoUrl:
  *           type: string
@@ -25,6 +25,22 @@
  *           type: string
  *           format: date-time
  *           description: The date and time when the partner or friend was created.
+ *     PartnersFriendsFormData:
+ *       type: object
+ *       required:
+ *         - logoUrl
+ *         - link
+ *         - section
+ *       properties:
+ *         logoUrl:
+ *           type: string
+ *           description: The URL of the partner or friend's logo.
+ *         link:
+ *           type: string
+ *           description: The URL link to the partner or friend's website.
+ *         section:
+ *           type: string
+ *           description: The section where the partner or friend belongs (either 'friends' or 'partners').
  */
 
 /**
@@ -83,7 +99,7 @@
  *       - in: path
  *         name: id
  *         schema:
- *           type: integer
+ *           type: string
  *         required: true
  *         description: The id of the partner or friend to update
  *     requestBody:
@@ -117,7 +133,7 @@
  *       - in: path
  *         name: id
  *         schema:
- *           type: integer
+ *           type: string
  *         required: true
  *         description: The id of the partner or friend to delete
  *     responses:
