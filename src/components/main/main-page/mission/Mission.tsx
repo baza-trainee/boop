@@ -10,7 +10,7 @@ const Mission = () => {
   const missionCards = GetMissionCardsInfo();
 
   return (
-    <section className="mt-[120px] w-full  bg-inherit pb-[104px]  pt-[60px]">
+    <section className="mb-[120px] w-full  bg-inherit pb-[104px]  pt-[60px]">
       <div className="container flex flex-col gap-8">
         <SectionTitle title={t('title')} />
         <ul className="flex w-full items-center justify-between">
