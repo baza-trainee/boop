@@ -1,6 +1,8 @@
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
 import { prismaConnect } from '@/utils/prismaConnect';
+import { PhotoFormData } from '@/types/photo';
+import '../swagger-comments';
 
 export async function PATCH(
   request: Request,
@@ -8,7 +10,7 @@ export async function PATCH(
 ) {
   try {
     await prismaConnect();
-    const data = await request.json();
+    const data: { newPhoto: PhotoFormData } = await request.json();
     const updatedPhoto = await prisma.photo.update({
       where: {
         id: Number(params.id),
@@ -39,7 +41,7 @@ export async function DELETE(
     });
     return NextResponse.json(response, { status: 200 });
   } catch (error) {
-    console.log('DELETE  PHOTO', error);
+    console.log('[DELETE PHOTO]', error);
     return new NextResponse('Internal Server Error', { status: 500 });
   }
 }

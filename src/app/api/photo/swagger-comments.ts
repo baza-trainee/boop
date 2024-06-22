@@ -6,6 +6,8 @@
  *     PhotoResponse:
  *       type: object
  *       properties:
+ *         id:
+ *           type: integer
  *         location:
  *           type: string
  *           description: Location on site.
@@ -40,20 +42,19 @@
 //get route//
 /**
  * @swagger
- * /api/test:
+ * /api/photo:
  *   get:
- *     summary: Test Route
- *     tags: [Test]
- *     description: Returns the hello world message to indicate that the test route works.
+ *     summary: Get All Photo
+ *     tags: [Photo]
  *     responses:
  *       200:
- *         description: Successful response with a hello world message.
+ *         description: Success.
  *         content:
  *           application/json:
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/TestResponse'
+ *                 $ref: '#/components/schemas/PhotoResponse'
  *       500:
  *         description: Internal Server Error
  *         content:
@@ -69,23 +70,83 @@
 //post route//
 /**
  * @swagger
- * /api/test:
+ * /api/photo:
  *   post:
- *     summary: Create a new post
- *     tags: [Test]
+ *     summary: Add new Photo
+ *     tags: [Photo]
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/TestRequest'
+ *             $ref: '#/components/schemas/PhotoRequest'
  *     responses:
  *       201:
- *         description: Partner created successfully
+ *         description: Photo added successfully
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/TestResponse'
+ *               $ref: '#/components/schemas/PhotoResponse'
+ *       400:
+ *         description: Invalid request body
+ *       401:
+ *         description: Unauthorized
+ *       500:
+ *         description: Internal Server Error
+ */
+
+//patch route//
+/**
+ * @swagger
+ * /api/photo/{id}:
+ *   patch:
+ *     summary: Edit Photo
+ *     tags: [Photo]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: ID of the photo
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/PhotoRequest'
+ *     responses:
+ *       201:
+ *         description: Photo updated successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/PhotoResponse'
+ *       400:
+ *         description: Invalid request body
+ *       401:
+ *         description: Unauthorized
+ *       500:
+ *         description: Internal Server Error
+ */
+
+//delete route//
+/**
+ * @swagger
+ * /api/photo/{id}:
+ *   delete:
+ *     summary: Delete Photo
+ *     tags: [Photo]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: ID of the photo
+ *         schema:
+ *           type: string
+ *     responses:
+ *       201:
+ *         description: Photo deleted successfully
  *       400:
  *         description: Invalid request body
  *       401:

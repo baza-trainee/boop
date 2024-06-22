@@ -5,7 +5,6 @@
     "text": "We strive to ensure that every children's hospital in Ukraine becomes a place of joy and smiles for children who find themselves in difficult and crisis situations."
   },
   "Values": {
-    "title": "Our Values",
     "inclusivity": {
       "text": "Inclusivity",
       "hoverText": " we value everyone, regardless of their circumstances, and do our best to make everyone feel important and needed"
@@ -61,9 +60,57 @@
       "text": "To expand international cooperation"
     }
   },
+  "Counter_section": {
+    "title": "Achievements in numbers",
+    "counter_1": {
+      "text": "years of experience"
+    },
+    "counter_2": {
+      "text": "hospital clowns"
+    },
+    "counter_3": {
+      "text": "performances per month"
+    },
+    "counter_4": {
+      "text": "hospitals where we work"
+    },
+    "counter_5": {
+      "text": "children per month"
+    }
+  },
+  "Press_about_us": {
+    "title": "Press about us",
+    "link_text": "Read more"
+  },
   "Error": {
     "title": "Uh-oh, you seem to be lost!",
     "text": "Unfortunately, the page you're looking for doesn't exist.",
     "btn": "Home"
+  },
+  "Contacts": {
+    "title": "Our сontacts"
+  },
+
+  "School": {
+    "main_title": "Clown School",
+    "join_title": "Who Can Become a Hospital Clown?",
+    "training_title": "How the Training Works",
+    "main_text_primary": "The Hospital Clowning School is a joint project of the BUP -",
+    "main_text_secondary": "Bureau of Smiles and Support and 'Tabletochki'",
+    "join": {
+      "paragraph_1": "A person who understands what empathy is. Ready to accept and be aware of the emotions of those who need support. And provide this support according to the emotional needs of children and parents.",
+      "paragraph_2": "Someone who is not afraid to be funny. To genuinely laugh at themselves and at this whimsical life. To laugh and love it above all.",
+      "paragraph_3": "A person with charisma, who is ready to work on developing it.",
+      "paragraph_4": "A person who is ready to learn, develop, and seek themselves, their comedic character. A person who is ready to create a celebration of life amid disaster."
+    },
+    "training": {
+      "title": "Do you think there are more fun lessons than at the Hospital Clowning School?",
+      "text": "We think not. Because here students play, dress in funny costumes, and dance. It's fascinating to watch how this clowning magic works when a group of adults, strangers to each other, transform into children and allow themselves to be what they feel like - light, genuine, silly, funny, anything!",
+      "paragraph_1": "Volunteers undergo a two-day training in the basics of hospital clowning - in the course, students learn to express themselves, let out their inner child, not be afraid to be funny, and play with each other.",
+      "paragraph_2": "Everyone can awaken the clown within themselves - a unique, interesting, funny character who not only explores the world around them but is also ready to dive into the unknown. This is the foundation with which they can work and visit the wards to see children.",
+      "paragraph_3": "After the training, volunteers go to practice in the hospital, accompanied by experienced hospital clowns.",
+      "paragraph_4": "Over the next three months, they meet for classes once a week and delve deeper into the mechanisms of hospital clowning.",
+      "paragraph_5": "In parallel, regular visits to hospital wards occur under constant trainer supervision and psychological support."
+    }
   }
 }

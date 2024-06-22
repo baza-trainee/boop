@@ -72,7 +72,7 @@ const PhotoPage = () => {
               className="relative flex h-[447px] w-[306px] flex-col items-center justify-center"
             >
               <ActionButtons
-                isEditable={true}
+                action="all"
                 editAction={() => handleEdit(item.id.toString())}
                 deleteAction={() =>
                   handleDelete(item.id.toString(), item.imageId)

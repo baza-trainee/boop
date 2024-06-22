@@ -1,0 +1,690 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Boop API Example",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/blog": {
+      "get": {
+        "summary": "Get all blog posts",
+        "tags": [
+          "Blog"
+        ],
+        "responses": {
+          "200": {
+            "description": "The list of blog posts",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BlogPost"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Some server error"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new blog post",
+        "tags": [
+          "Blog"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BlogPost"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The created blog post",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlogPost"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Some server error"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update a blog post",
+        "tags": [
+          "Blog"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "photo": {
+                    "type": "string"
+                  },
+                  "titleUA": {
+                    "type": "string"
+                  },
+                  "titleEN": {
+                    "type": "string"
+                  },
+                  "titleIT": {
+                    "type": "string"
+                  },
+                  "textUA": {
+                    "type": "string"
+                  },
+                  "textEN": {
+                    "type": "string"
+                  },
+                  "textIT": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The updated blog post",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "blogPost": {
+                      "$ref": "#/components/schemas/Blog"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unable to update blog post",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a blog post",
+        "tags": [
+          "Blog"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "Numeric ID of the blog post to delete"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The deleted blog post",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "blogPost": {
+                      "$ref": "#/components/schemas/Blog"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Blog post not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unable to delete blog post",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/change-password": {
+      "post": {
+        "summary": "Change the user's password",
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "currentPassword": {
+                    "type": "string",
+                    "description": "The user's current password"
+                  },
+                  "newPassword": {
+                    "type": "string",
+                    "description": "The new password for the user"
+                  },
+                  "email": {
+                    "type": "string",
+                    "description": "The user's email"
+                  }
+                },
+                "required": [
+                  "currentPassword",
+                  "newPassword",
+                  "email"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Password updated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Password updated successfully"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Current and new password are required"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Current password is incorrect",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Current password is incorrect"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "User not found"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/news": {
+      "get": {
+        "summary": "Get all news articles.",
+        "tags": [
+          "News"
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of news articles.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/News"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new news article.",
+        "tags": [
+          "News"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/News"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully created news article.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/News"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        }
+      }
+    },
+    "/news/{id}": {
+      "patch": {
+        "summary": "Update a news article by ID",
+        "tags": [
+          "News"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID of the news article to update"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewsFormData"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "News article successfully updated"
+          },
+          "400": {
+            "description": "Invalid request or missing ID"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a news article by ID",
+        "tags": [
+          "News"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "ID of the news article to delete"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "News article successfully deleted"
+          },
+          "400": {
+            "description": "Invalid request or missing ID"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/api/photo": {
+      "get": {
+        "summary": "Get All Photo",
+        "tags": [
+          "Photo"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PhotoResponse"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Cannot fetch"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Add new Photo",
+        "tags": [
+          "Photo"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PhotoRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Photo added successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PhotoResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request body"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/photo/{id}": {
+      "patch": {
+        "summary": "Edit Photo",
+        "tags": [
+          "Photo"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "ID of the photo",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PhotoRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Photo updated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PhotoResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request body"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete Photo",
+        "tags": [
+          "Photo"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "ID of the photo",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Photo deleted successfully"
+          },
+          "400": {
+            "description": "Invalid request body"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BlogPost": {
+        "type": "object",
+        "required": [
+          "photo",
+          "titleUA",
+          "titleEN",
+          "titleIT",
+          "textUA",
+          "textEN",
+          "textIT"
+        ],
+        "properties": {
+          "photo": {
+            "type": "string",
+            "description": "The URL of the photo"
+          },
+          "titleUA": {
+            "type": "string",
+            "description": "The title in Ukrainian"
+          },
+          "titleEN": {
+            "type": "string",
+            "description": "The title in English"
+          },
+          "titleIT": {
+            "type": "string",
+            "description": "The title in Italian"
+          },
+          "textUA": {
+            "type": "string",
+            "description": "The text in Ukrainian"
+          },
+          "textEN": {
+            "type": "string",
+            "description": "The text in English"
+          },
+          "textIT": {
+            "type": "string",
+            "description": "The text in Italian"
+          }
+        },
+        "example": {
+          "photo": "https://example.com/photo.jpg",
+          "titleUA": "Назва на українській",
+          "titleEN": "Title in English",
+          "titleIT": "Titolo in italiano",
+          "textUA": "Текст на українській мові",
+          "textEN": "Text in English",
+          "textIT": "Testo in italiano"
+        }
+      },
+      "News": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "location": {
+            "type": "string"
+          },
+          "imageUrl": {
+            "type": "string"
+          },
+          "imageId": {
+            "type": "string"
+          },
+          "sourceLink": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "titleUA": {
+            "type": "string"
+          },
+          "textUA": {
+            "type": "string"
+          },
+          "titleEN": {
+            "type": "string"
+          },
+          "textEN": {
+            "type": "string"
+          },
+          "titleIT": {
+            "type": "string"
+          },
+          "textIT": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "tags": []
+}

@@ -46,6 +46,7 @@ const AddPhotoForm = () => {
       setIsProcessing(true);
       const formData = new FormData();
       formData.append('file', values.image[0]);
+      formData.append('folderName', 'photos');
       const res = await axios.post('/cloudinary', formData);
       const newPhoto = {
         location: values.location,
@@ -53,7 +54,8 @@ const AddPhotoForm = () => {
         imageId: res.data.fileId,
       };
       const response = await addPhoto(newPhoto);
-      if (response) {
+      if (response && response.data) {
+        dispatch(closeModal());
         dispatch(
           openAlert({
             data: {
@@ -62,9 +64,11 @@ const AddPhotoForm = () => {
             },
           })
         );
-        dispatch(closeModal());
+      } else if (response.error) {
+        alert(response.error);
       }
     } catch (error) {
+      alert(error);
       console.log(error);
     } finally {
       setIsProcessing(false);

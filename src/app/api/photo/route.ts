@@ -1,6 +1,7 @@
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
 import { prismaConnect } from '@/utils/prismaConnect';
+import { PhotoFormData } from '@/types/photo';
 import './swagger-comments';
 
 export async function GET() {
@@ -17,7 +18,7 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     await prismaConnect();
-    const data = await request.json();
+    const data: PhotoFormData = await request.json();
     const response = await prisma.photo.create({
       data: {
         location: data.location,
@@ -27,7 +28,7 @@ export async function POST(request: Request) {
     });
     return NextResponse.json(response, { status: 200 });
   } catch (error) {
-    console.log('POST PHOTO', error);
+    console.log('ADD PHOTO', error);
     return new NextResponse('Internal Server Error', { status: 500 });
   }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import Introduction from './components/Introduction';
 import WhoCanJoin from './components/WhoCanJoin';
+import Training from './components/Training';
 
 const SchoolPage = () => {
   return (
@@ -14,6 +15,7 @@ const SchoolPage = () => {
           <WhoCanJoin />
         </div>
       </section>
+      <Training />
     </>
   );
 };
