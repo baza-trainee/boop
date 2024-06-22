@@ -74,7 +74,7 @@ model CounterItem {
   number  Int
   text    String
   variant String
-  order     Int      @default(autoincrement())
+  order   Int    @default(autoincrement())
 }
 
 model PartnersFriends {
