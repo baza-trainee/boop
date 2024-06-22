@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useAppDispatch, useAppSelector } from '@/store/hook';
 import { closeAlert } from '@/store/slices/alertSlice';
+import { useState } from 'react';
 
 const options = {
   error: { buttons: false },
@@ -17,6 +18,7 @@ export type TAlertInfoState = {
 };
 
 export const AlertWindow: React.FC = () => {
+  const [isProcessing, setIsProcessing] = useState(false);
   const dispatch = useAppDispatch();
   const alertInfo = useAppSelector((state) => state.alerts.alertInfo);
 
@@ -25,11 +27,15 @@ export const AlertWindow: React.FC = () => {
   const { state, message, func } = alertInfo;
   const { buttons } = options[state];
 
-  const confirmHandler = (isAccepted: boolean) => {
+  const confirmHandler = async (isAccepted: boolean) => {
     if (isAccepted && func) {
-      func();
+      setIsProcessing(true);
+      await func();
+      setIsProcessing(false);
+      dispatch(closeAlert());
+    } else {
+      dispatch(closeAlert());
     }
-    dispatch(closeAlert());
   };
 
   return (
@@ -66,7 +72,7 @@ export const AlertWindow: React.FC = () => {
               className="flex min-w-[123px] items-center justify-center whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white disabled:bg-gray-500"
               onClick={() => confirmHandler(true)}
             >
-              Видалити
+              {isProcessing ? 'Обробка запиту...' : 'Видалити'}
             </button>
             <button
               className="w-[149px] rounded-3xl border border-yellow px-4 py-2 text-violet"

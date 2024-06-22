@@ -1,8 +1,8 @@
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
 import { prismaConnect } from '@/utils/prismaConnect';
-import { PhotoFormData } from '@/types/photo';
-import '../swagger-comments';
+import { TeamFormData } from '@/types/team';
+// import '../swagger-comments';
 
 export async function PATCH(
   request: Request,
@@ -10,20 +10,22 @@ export async function PATCH(
 ) {
   try {
     await prismaConnect();
-    const data: { newPhoto: PhotoFormData } = await request.json();
-    const updatedPhoto = await prisma.photo.update({
+    const data: { newMember: TeamFormData } = await request.json();
+    const updatedPhoto = await prisma.team.update({
       where: {
         id: params.id,
       },
       data: {
-        location: data.newPhoto.location,
-        imageUrl: data.newPhoto.imageUrl,
-        imageId: data.newPhoto.imageId,
+        nameUa: data.newMember.nameUa,
+        nameEn: data.newMember.nameEn,
+        nameIt: data.newMember.nameIt,
+        imageUrl: data.newMember.imageUrl,
+        imageId: data.newMember.imageId,
       },
     });
     return NextResponse.json(updatedPhoto, { status: 200 });
   } catch (error) {
-    console.log('[UPDATE PHOTO]', error);
+    console.log('[UPDATE TEAM MEMBER]', error);
     return new NextResponse('Internal Server Error', { status: 500 });
   }
 }
@@ -34,14 +36,14 @@ export async function DELETE(
 ) {
   try {
     await prismaConnect();
-    const response = await prisma.photo.delete({
+    const response = await prisma.team.delete({
       where: {
         id: params.id,
       },
     });
     return NextResponse.json(response, { status: 200 });
   } catch (error) {
-    console.log('[DELETE PHOTO]', error);
+    console.log('[DELETE TEAM MEMBER]', error);
     return new NextResponse('Internal Server Error', { status: 500 });
   }
 }

@@ -1,5 +1,5 @@
 import Sidebar from '@/components/admin/sidebar/Sidebar';
-import { AlertWindow } from '@/components/shared/AlertWindow';
+import { AlertWindow } from '@/components/admin/shared/AlertWindow';
 
 export default async function AdminLayout({
   children,

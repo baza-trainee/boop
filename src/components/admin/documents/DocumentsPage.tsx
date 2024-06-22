@@ -48,7 +48,7 @@ const DocumentsPage = () => {
                 />
                 <ActionButtons
                   action="edit"
-                  editAction={() => handleEdit(doc.id.toString())}
+                  editAction={() => handleEdit(doc.id)}
                 />
               </div>
             </div>

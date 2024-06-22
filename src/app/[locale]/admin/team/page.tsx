@@ -1,7 +1,7 @@
-import React from 'react';
+import TeamPage from '@/components/admin/team/TeamPage';
 
-const TeamPage = () => {
-  return <div>page</div>;
+const Team = () => {
+  return <TeamPage />;
 };
 
-export default TeamPage;
+export default Team;

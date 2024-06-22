@@ -17,7 +17,7 @@ const EditDocumentForm = ({ id }: { id: string }) => {
   const [editDocument] = documentsApi.useEditDocumentsMutation();
   const { data: documents } = documentsApi.useGetAllDocumentsQuery('documents');
 
-  const document = documents?.find((document) => document.id === Number(id));
+  const document = documents?.find((document) => document.id === id);
 
   const {
     handleSubmit,
