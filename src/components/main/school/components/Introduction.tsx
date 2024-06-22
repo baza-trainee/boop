@@ -6,7 +6,7 @@ const Introduction = () => {
   const t = useTranslations('School');
   return (
     <div className="mb-[120px]">
-      <SectionTitle title="Школа Клоунів" />
+      <SectionTitle title={t('main_title')} />
       <p
         className="mb-4 font-raleway font-normal text-textViolet
       3xl:text-xl 3xl:leading-normal"
