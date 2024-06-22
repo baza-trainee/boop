@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import axios from '@/utils/axios';
-
 import { useEffect, useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -64,11 +63,8 @@ const AddPhotoForm = () => {
             },
           })
         );
-      } else if (response.error) {
-        alert(response.error);
       }
     } catch (error) {
-      alert(error);
       console.log(error);
     } finally {
       setIsProcessing(false);
@@ -101,7 +97,7 @@ const AddPhotoForm = () => {
               placeholder={'Оберіть файл'}
               title="Оберіть файл:"
               isRequired={true}
-              accept="image"
+              accept="image/*"
             />
             <div className="relative mt-[60px] flex w-full justify-between">
               <span className="absolute -top-8 left-0 text-sm">

@@ -1,3 +1,4 @@
+import { modifyTitle } from '@/helpers/modifyTitle';
 import { ForwardedRef, InputHTMLAttributes, forwardRef } from 'react';
 
 interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -26,7 +27,7 @@ const TextInput = forwardRef(function TextInput(
     >
       {!!title && (
         <label htmlFor={title} className="text-sm font-medium">
-          {title}
+          {modifyTitle(title)}
           {isRequired && <span className="text-red">*</span>}
         </label>
       )}

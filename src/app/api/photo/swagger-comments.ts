@@ -7,7 +7,7 @@
  *       type: object
  *       properties:
  *         id:
- *           type: integer
+ *           type: string
  *         location:
  *           type: string
  *           description: Location on site.
@@ -16,7 +16,7 @@
  *           description: url of the photo
  *         imageId:
  *           type: string
- *           description: id of the photo
+ *           description: id of the photo on Cloudinary
  *       example:
  *         location: Gallery
  *         imageUrl: https://example.com

@@ -15,12 +15,29 @@ model User {
   updatedAt DateTime @updatedAt
 }
 
+model Document {
+  id          String      @id @default(uuid())
+  title       String
+  documentUrl String
+  documentId  String
+  createdAt   DateTime @default(now())
+}
+
 model Photo {
-  id        String   @id
+  id        String     @id @default(uuid())
   location  String
   imageUrl  String
   imageId   String
   createdAt DateTime @default(now())
+}
+
+model Team {
+  id        String     @id @default(uuid())
+  nameUa    String
+  nameEn    String
+  nameIt    String
+  imageUrl  String
+  imageId   String
 }
 
 model Blog {
@@ -37,14 +54,6 @@ model Blog {
   location  String
 }
 
-model Document {
-  id          String   @id
-  title       String
-  documentUrl String
-  documentId  String
-  createdAt   DateTime @default(now())
-}
-
 model News {
   id         Int      @id @default(autoincrement())
   sourceLink String
@@ -58,15 +67,6 @@ model News {
   titleEN    String
   titleIT    String
   titleUA    String
-}
-
-model Team {
-  id       String @id
-  nameUa   String
-  nameEn   String
-  nameIt   String
-  imageUrl String
-  imageId  String
 }
 
 model CounterItem {

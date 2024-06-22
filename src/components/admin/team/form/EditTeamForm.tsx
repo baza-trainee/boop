@@ -2,48 +2,51 @@ import Image from 'next/image';
 import axios from '@/utils/axios';
 import { useEffect, useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { SubmitHandler, useForm } from 'react-hook-form';
-import { TPhotoScheme, photoValidation } from './scheme';
+import { Controller, SubmitHandler, useForm } from 'react-hook-form';
+import { TTeamScheme, teamValidation } from './scheme';
 import { useAppDispatch } from '@/store/hook';
 import { closeModal } from '@/store/slices/modalSlice';
 import { openAlert } from '@/store/slices/alertSlice';
-import { photoApi } from '@/store/api/photoApi';
+import { teamApi } from '@/store/api/teamApi';
 import { replaceExtensionWithWebp } from '@/helpers/convertToWebp';
 import FileInput from '../../ui/FileInput';
-import SelectInput from '../../ui/SelectInput';
+import TextInput from '../../ui/TextInput';
 
-const EditPhotoForm = ({ id }: { id: string }) => {
+const EditTeamForm = ({ id }: { id: string }) => {
   const dispatch = useAppDispatch();
   const [imagePreview, setImagePreview] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
 
-  const [editPhoto] = photoApi.useEditPhotoMutation();
-  const { data: photos } = photoApi.useGetAllPhotoQuery('photos');
+  const [editTeamMember] = teamApi.useEditTeamMemberMutation();
+  const { data: team } = teamApi.useGetAllTeamQuery('team');
 
-  const photo = photos?.find((image) => image.id === id);
+  const teamMember = team?.find((member) => member.id === id);
 
   const {
     handleSubmit,
     control,
     watch,
     setValue,
-    formState: { errors },
-  } = useForm<TPhotoScheme>({
-    resolver: zodResolver(photoValidation),
+    formState: { errors, isValid },
+  } = useForm<TTeamScheme>({
+    resolver: zodResolver(teamValidation),
     mode: 'onChange',
-    defaultValues: { image: [], location: '' },
+    defaultValues: { image: [], nameUa: '', nameEn: '', nameIt: '' },
   });
 
   useEffect(() => {
-    if (photo) {
-      setValue('location', photo?.location);
-      setValue('image', [new File([], photo?.imageUrl, { type: 'for-url' })]);
-      setImagePreview(photo.imageUrl);
+    if (teamMember) {
+      setValue('nameUa', teamMember.nameUa);
+      setValue('nameEn', teamMember.nameEn);
+      setValue('nameIt', teamMember.nameIt);
+      setValue('image', [
+        new File([], teamMember?.imageUrl, { type: 'for-url' }),
+      ]);
+      setImagePreview(teamMember.imageUrl);
     }
-  }, [photo]);
+  }, [teamMember]);
 
   const imageFile = watch('image');
-  const curLocation = watch('location');
 
   useEffect(() => {
     if (!imageFile[0]?.size) return;
@@ -51,33 +54,33 @@ const EditPhotoForm = ({ id }: { id: string }) => {
     setImagePreview(imageUrl);
   }, [imageFile]);
 
-  const onSubmit: SubmitHandler<TPhotoScheme> = async (
-    values: TPhotoScheme
-  ) => {
+  const onSubmit: SubmitHandler<TTeamScheme> = async (values: TTeamScheme) => {
     try {
       setIsProcessing(true);
       if (values.image[0]?.size > 0) {
         //need to delete old and upload new photo
         const formData = new FormData();
         formData.append('file', values.image[0]);
-        formData.append('folderName', 'photos');
+        formData.append('folderName', 'team');
         await axios.delete(
-          `/cloudinary/${encodeURIComponent(photo?.imageId as string)}`
+          `/cloudinary/${encodeURIComponent(teamMember?.imageId as string)}`
         );
         const res = await axios.post('/cloudinary', formData);
-        const newPhoto = {
-          location: values.location,
+        const newMember = {
+          nameUa: values.nameUa,
+          nameEn: values.nameEn,
+          nameIt: values.nameIt,
           imageUrl: replaceExtensionWithWebp(res.data.fileUrl),
           imageId: res.data.fileId,
         };
-        const response = await editPhoto({ id, newPhoto });
+        const response = await editTeamMember({ id, newMember });
         if (response && response.data) {
           dispatch(closeModal());
           dispatch(
             openAlert({
               data: {
                 state: 'success',
-                message: 'Фото успішно відредаговано!',
+                message: 'Учасника успішно відредаговано!',
               },
             })
           );
@@ -85,18 +88,20 @@ const EditPhotoForm = ({ id }: { id: string }) => {
           alert(response.error);
         }
       } else {
-        const newPhoto = {
-          location: values.location,
-          imageUrl: photo?.imageUrl,
-          imageId: photo?.imageId,
+        const newMember = {
+          nameUa: values.nameUa,
+          nameEn: values.nameEn,
+          nameIt: values.nameIt,
+          imageUrl: teamMember?.imageUrl,
+          imageId: teamMember?.imageId,
         };
-        const response = await editPhoto({ id, newPhoto });
-        if (response) {
+        const response = await editTeamMember({ id, newMember });
+        if (response && response.data) {
           dispatch(
             openAlert({
               data: {
                 state: 'success',
-                message: 'Фото успішно відредаговано!',
+                message: 'Зміни в записі успішно збережено!',
               },
             })
           );
@@ -104,7 +109,6 @@ const EditPhotoForm = ({ id }: { id: string }) => {
         }
       }
     } catch (error) {
-      alert(error);
       console.log(error);
     } finally {
       setIsProcessing(false);
@@ -120,18 +124,10 @@ const EditPhotoForm = ({ id }: { id: string }) => {
       >
         <div className="flex gap-[60px]">
           <div className="flex w-1/2 flex-col items-center justify-center gap-[24px]">
-            <h1 className="mb-[60px] text-3xl font-[500] text-violet">
-              Редагування фото
+            <h1 className="text-3xl font-[500] text-violet">
+              Редагування учасника команди
             </h1>
-            <SelectInput
-              name="location"
-              control={control}
-              title="Оберіть розділ сайту:"
-              values={['Галерея', 'Про нас']}
-              placeholder="Оберіть розділ для фото"
-              isRequired={true}
-              value={curLocation}
-            />
+
             <FileInput
               name="image"
               control={control}
@@ -140,15 +136,54 @@ const EditPhotoForm = ({ id }: { id: string }) => {
               isRequired={true}
               accept="image/*"
             />
+            <Controller
+              name="nameUa"
+              control={control}
+              render={({ field }) => (
+                <TextInput
+                  {...field}
+                  errorText={errors.nameUa?.message}
+                  placeholder="Напишіть псевдонім"
+                  title="Вкажіть псевдонім українською:"
+                  isRequired={true}
+                />
+              )}
+            />
+            <Controller
+              name="nameEn"
+              control={control}
+              render={({ field }) => (
+                <TextInput
+                  {...field}
+                  errorText={errors.nameEn?.message}
+                  placeholder="Напишіть псевдонім"
+                  title="Вкажіть псевдонім англійською:"
+                  isRequired={true}
+                />
+              )}
+            />
+            <Controller
+              name="nameIt"
+              control={control}
+              render={({ field }) => (
+                <TextInput
+                  {...field}
+                  errorText={errors.nameIt?.message}
+                  placeholder="Напишіть псевдонім"
+                  title="Вкажіть псевдонім італійською:"
+                  isRequired={true}
+                />
+              )}
+            />
             <div className="relative mt-[60px] flex w-full justify-between">
               <span className="absolute -top-8 left-0 text-sm">
-                Оновити фото?
+                Змінити запис учасника?
               </span>
               <button
-                disabled={!!Object.keys(errors).length}
+                disabled={!isValid}
                 className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white disabled:bg-gray-500"
               >
-                {isProcessing ? 'Обробка запиту...' : 'Оновити'}
+                {isProcessing ? 'Обробка запиту...' : 'Змінити'}
               </button>
               <button
                 onClick={() => dispatch(closeModal())}
@@ -175,4 +210,4 @@ const EditPhotoForm = ({ id }: { id: string }) => {
   );
 };
 
-export default EditPhotoForm;
+export default EditTeamForm;

@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { TAlertInfoState } from '@/components/shared/AlertWindow';
+import { TAlertInfoState } from '@/components/admin/shared/AlertWindow';
 
 export type TAlertInfo = null | TAlertInfoState;
 
