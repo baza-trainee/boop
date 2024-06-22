@@ -41,17 +41,17 @@ model Team {
 }
 
 model Blog {
-  id      Int      @id @default(autoincrement())
-  imageId    String
-  imageUrl   String
-  location   String
-  createdAt  DateTime @default(now())
-  titleUA String   @db.VarChar(70)
-  titleEN String   @db.VarChar(70)
-  titleIT String   @db.VarChar(70)
-  textUA  String
-  textEN  String
-  textIT  String
+  id        Int      @id @default(autoincrement())
+  titleUA   String   @db.VarChar(70)
+  titleEN   String   @db.VarChar(70)
+  titleIT   String   @db.VarChar(70)
+  textUA    String
+  textEN    String
+  textIT    String
+  createdAt DateTime @default(now())
+  imageId   String
+  imageUrl  String
+  location  String
 }
 
 model News {
@@ -67,4 +67,20 @@ model News {
   titleEN    String
   titleIT    String
   titleUA    String
+}
+
+model CounterItem {
+  id      Int    @id @default(autoincrement())
+  number  Int
+  text    String
+  variant String
+  order   Int    @default(autoincrement())
+}
+
+model PartnersFriends {
+  id        Int      @id @default(autoincrement())
+  logoUrl   String
+  link      String
+  section   String
+  createdAt DateTime @default(now())
 }
