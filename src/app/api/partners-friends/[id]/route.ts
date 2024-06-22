@@ -14,7 +14,7 @@ export async function PATCH(
   try {
     await prismaConnect();
 
-    const id = Number(params.id);
+    const id = params.id;
     if (!id) {
       return NextResponse.json(
         { message: 'Params id is required' },
@@ -31,7 +31,7 @@ export async function PATCH(
 
     const record = await prisma.partnersFriends.findUnique({
       where: {
-        id: id,
+        id,
       },
     });
 
@@ -66,7 +66,7 @@ export async function PATCH(
 
     const response = await prisma.partnersFriends.update({
       where: {
-        id: id,
+        id,
       },
       data: updateData,
     });
@@ -86,14 +86,14 @@ export async function DELETE(
 ) {
   try {
     await prismaConnect();
-    const id = Number(params.id);
+    const id = params.id;
     if (!id) {
       return NextResponse.json({ message: 'ID is required' }, { status: 400 });
     }
 
     const record = await prisma.partnersFriends.findUnique({
       where: {
-        id: id,
+        id,
       },
     });
 

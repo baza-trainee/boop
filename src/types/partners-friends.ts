@@ -1,5 +1,5 @@
 export interface PartnersFriends {
-  id: number;
+  id: string;
   logoUrl: string;
   link: string;
   section: string;
