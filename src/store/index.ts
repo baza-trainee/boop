@@ -6,6 +6,7 @@ import { photoApi } from './api/photoApi';
 import { teamApi } from './api/teamApi';
 import { documentsApi } from './api/documentsApi';
 import { contactsApi } from './api/contactsApi';
+import { counterApi } from './api/counterApi';
 
 const rootReducer = combineReducers({
   modals: modalSlice,
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   [teamApi.reducerPath]: teamApi.reducer,
   [documentsApi.reducerPath]: documentsApi.reducer,
   [contactsApi.reducerPath]: contactsApi.reducer,
+  [counterApi.reducerPath]: counterApi.reducer,
 });
 
 export const rootStore = configureStore({
@@ -24,7 +26,8 @@ export const rootStore = configureStore({
       documentsApi.middleware,
       contactsApi.middleware,
       documentsApi.middleware,
-      teamApi.middleware
+      teamApi.middleware,
+      counterApi.middleware
     ),
 });
 

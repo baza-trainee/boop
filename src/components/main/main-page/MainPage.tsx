@@ -7,7 +7,6 @@ import Goals from '../goals/Goals';
 import Counter from './counter/Counter';
 import PressAboutUs from './press-about-us/PressAboutUs';
 import Mission from './mission/Mission';
-import Payment from './payment/Payment';
 
 const MainPage = () => {
   return (

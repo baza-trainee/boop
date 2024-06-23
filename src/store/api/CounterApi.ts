@@ -1,3 +1,4 @@
+import { CounterData } from '@/types/counter';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const counterApi = createApi({
@@ -5,11 +6,11 @@ export const counterApi = createApi({
   tagTypes: ['Counter'],
   baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_URL }),
   endpoints: (build) => ({
-    getNumbers: build.query<string, string>({
+    getAllNumbers: build.query<CounterData, void>({
       query: () => `counter`,
       providesTags: ['Counter'],
     }),
   }),
 });
 
-export const { useGetNumbersQuery } = counterApi;
+export const { useGetAllNumbersQuery } = counterApi;

@@ -1,57 +1,71 @@
 'use client';
-import clsx from 'clsx';
 import { useState } from 'react';
-import FormRadioButton from './form-radio-button/FormRadioButton';
 
-const CURRENCY = [
-  {
-    text: '₴',
-    id: 'uah',
-  },
-  {
-    text: '$',
-    id: 'usd',
-  },
-  {
-    text: '€',
-    id: 'eur',
-  },
-];
-const TYPE_OF_DONATE = [
-  {
-    id: 'every-month',
-    text: 'Щомісячна підписка',
-  },
-  {
-    id: 'only-once',
-    text: 'Одноразовий внесок',
-  },
-];
-
+//КОМПОНЕНТ НА ПАУЗЕ ДО УТОЧНЕНИЯ РЕКВЕЗИТОВ И БАНКА, ВОЗМОЖНЫ ИЗМЕНЕНИЯ В ДИЗАЙНЕ
 const PaymentForm = () => {
   const [selectedCurrency, setSelectedCurrency] = useState<string>('uah');
   const [selectedTypeOfDonate, setSelectedTypeOfDonate] =
     useState<string>('every-month');
 
+  const CURRENCY = [
+    {
+      text: '₴',
+      value: 'uah',
+    },
+    {
+      text: '$',
+      value: 'usd',
+    },
+    {
+      text: '€',
+      value: 'eur',
+    },
+  ];
+  const TYPE_OF_DONATE = [
+    {
+      value: 'every-month',
+      text: 'Щомісячна підписка',
+    },
+    {
+      value: 'only-once',
+      text: 'Одноразовий внесок',
+    },
+  ];
+  // const DONATE_SUM = [
+  //   {
+  //     value: selectedCurrency === 'uah' ? 10 : 1,
+  //     id: 'smallDonate',
+  //     checked: true,
+  //   },
+  //   {
+  //     value: selectedCurrency === 'uah' ? 50 : 5,
+  //     id: 'mediumDonate',
+  //     checked: false,
+  //   },
+  //   {
+  //     value: selectedCurrency === 'uah' ? 100 : 10,
+  //     id: 'hugeDonate',
+  //     checked: false,
+  //   },
+  // ];
+
   return (
     <form action="" className="flex flex-col items-end gap-8">
       <div className="flex gap-2">
-        {CURRENCY?.map((item) => (
-          <div className="relative" key={item.id}>
+        {CURRENCY.map((item) => (
+          <div className="relative" key={item.value}>
             <input
-              checked={selectedCurrency === item.id}
-              value={item.id}
+              checked={selectedCurrency === item.value}
+              value={item.value}
               type="radio"
               name="currency-type"
-              id={item.id}
+              id={item.value}
               className="peer absolute left-0 top-0 h-0 w-0 opacity-0"
-              onChange={() => setSelectedCurrency(item.id)}
+              onChange={(e) => setSelectedCurrency(e.target.value)}
             />
             <label
-              htmlFor={item.id}
-              className={clsx(
-                'peer-checked/:bg-mainViolet bg-lightVioletSecond flex h-12 w-12 cursor-pointer items-center justify-center rounded-full text-xl font-bold leading-[1] text-textViolet transition-all duration-300 ease-linear peer-checked/:text-white'
-              )}
+              htmlFor={item.value}
+              className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-lightVioletSecond text-xl font-bold leading-[1] text-textViolet transition-all duration-300 ease-linear peer-checked/:bg-mainViolet peer-checked/:text-white"
             >
               {item.text}
             </label>
@@ -63,22 +77,20 @@ const PaymentForm = () => {
           {TYPE_OF_DONATE.map((item) => (
             <div
               className="flex-shrink-1 relative flex-grow-0 basis-1/2"
-              key={item.id}
+              key={item.value}
             >
               <input
-                checked={selectedTypeOfDonate === item.id}
-                value={item.text}
+                checked={selectedTypeOfDonate === item.value}
+                value={item.value}
                 type="radio"
                 name="donate-type"
-                id={item.id}
+                id={item.value}
                 className="peer absolute left-0 top-0 h-0 w-0 opacity-0"
-                onChange={() => setSelectedTypeOfDonate(item.id)}
+                onChange={(e) => setSelectedTypeOfDonate(e.target.value)}
               />
               <label
-                htmlFor={item.id}
-                className={clsx(
-                  'inline-block w-full cursor-pointer border-2 border-solid border-yellow py-[22px] text-center text-xl font-bold leading-[1] text-textViolet transition-all duration-300 ease-linear peer-checked/:bg-yellow peer-checked/:text-white'
-                )}
+                htmlFor={item.value}
+                className="inline-block w-full cursor-pointer border-2 border-solid border-yellow py-[22px] text-center text-xl font-bold leading-[1] text-textViolet transition-all duration-300 ease-linear peer-checked/:bg-yellow peer-checked/:text-white"
               >
                 {item.text}
               </label>
@@ -86,18 +98,33 @@ const PaymentForm = () => {
           ))}
         </div>
         <div className="flex">
-          <FormRadioButton className="flex-shrink-1 flex-grow-0 basis-1/5">
-            50 ₴
-          </FormRadioButton>
-          <FormRadioButton className="flex-shrink-1 flex-grow-0 basis-1/5">
-            100 ₴
-          </FormRadioButton>
-          <FormRadioButton className="flex-shrink-1 flex-grow-0 basis-1/5">
-            200 ₴
-          </FormRadioButton>
-          <FormRadioButton className="flex-shrink-1 flex-grow-0 basis-2/5">
+          {/* {DONATE_SUM.map((item) => {
+            return (
+              <div
+                className="flex-shrink-1 relative flex-grow-0 basis-1/5"
+                key={item.value}
+              >
+                <input
+                  checked={item.checked}
+                  value={item.value}
+                  type="radio"
+                  name="donate-sum"
+                  id={item.id}
+                  className="peer absolute left-0 top-0 h-0 w-0 opacity-0"
+                  onChange={() => setDonateSum(item.value)}
+                />
+                <label
+                  htmlFor={item.id}
+                  className="inline-block w-full cursor-pointer border-2 border-solid border-yellow py-[22px] text-center text-xl font-bold leading-[1] text-textViolet transition-all duration-300 ease-linear peer-checked/:bg-yellow peer-checked/:text-white"
+                >
+                  {`${item.value} ${selectedCurrency}`}
+                </label>
+              </div>
+            );
+          })} */}
+          {/* <FormRadioButton className="flex-shrink-1 flex-grow-0 basis-2/5">
             Введіть свою суму
-          </FormRadioButton>
+          </FormRadioButton> */}
         </div>
       </div>
     </form>
