@@ -24,7 +24,7 @@ const Payment = () => {
               />
             </div>
           </div>
-          <PaymentForm />
+          {/* <PaymentForm /> */}
         </div>
       </div>
     </section>

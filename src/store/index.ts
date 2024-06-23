@@ -2,6 +2,7 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import modalSlice from './slices/modalSlice';
 import alertSlice from './slices/alertSlice';
+import paymentFormSlice from './slices/paymentFormSlice';
 import { photoApi } from './api/photoApi';
 import { teamApi } from './api/teamApi';
 import { documentsApi } from './api/documentsApi';
@@ -11,6 +12,7 @@ import { counterApi } from './api/counterApi';
 const rootReducer = combineReducers({
   modals: modalSlice,
   alerts: alertSlice,
+  payment: paymentFormSlice,
   [photoApi.reducerPath]: photoApi.reducer,
   [teamApi.reducerPath]: teamApi.reducer,
   [documentsApi.reducerPath]: documentsApi.reducer,
