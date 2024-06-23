@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 
-//КОМПОНЕНТ НА ПАУЗЕ ДО УТОЧНЕНИЯ РЕКВЕЗИТОВ И БАНКА, ВОЗМОЖНЫ ИЗМЕНЕНИЯ В ДИЗАЙНЕ
+//КОМПОНЕНТ НА ПАУЗЕ ДО УТОЧНЕНИЯ РЕКВИЗИТОВ И БАНКА, ВОЗМОЖНЫ ИЗМЕНЕНИЯ В ДИЗАЙНЕ
 const PaymentForm = () => {
   const [selectedCurrency, setSelectedCurrency] = useState<string>('uah');
   const [selectedTypeOfDonate, setSelectedTypeOfDonate] =
