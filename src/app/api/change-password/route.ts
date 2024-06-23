@@ -6,9 +6,9 @@ import { NextResponse } from 'next/server';
 export async function POST(req: Request) {
   const body = await req.json();
 
-  const { currentPassword, newPassword, email } = body;
+  const { newPassword, email } = body;
 
-  if (!currentPassword || !newPassword) {
+  if (!newPassword) {
     return NextResponse.json(
       { message: 'Current and new password are required' },
       { status: 400 }
@@ -21,18 +21,6 @@ export async function POST(req: Request) {
 
   if (!user || !user.password) {
     return NextResponse.json({ message: 'User not found' }, { status: 404 });
-  }
-
-  const isCorrectPassword = await bcrypt.compare(
-    currentPassword,
-    user.password
-  );
-
-  if (!isCorrectPassword) {
-    return NextResponse.json(
-      { message: 'Current password is incorrect' },
-      { status: 401 }
-    );
   }
 
   const hashedNewPassword = await bcrypt.hash(newPassword, 10);
