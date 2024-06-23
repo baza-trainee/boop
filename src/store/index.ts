@@ -5,6 +5,7 @@ import alertSlice from './slices/alertSlice';
 import { photoApi } from './api/photoApi';
 import { teamApi } from './api/teamApi';
 import { documentsApi } from './api/documentsApi';
+import { contactsApi } from './api/contactsApi';
 
 const rootReducer = combineReducers({
   modals: modalSlice,
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   [photoApi.reducerPath]: photoApi.reducer,
   [teamApi.reducerPath]: teamApi.reducer,
   [documentsApi.reducerPath]: documentsApi.reducer,
+  [contactsApi.reducerPath]: contactsApi.reducer,
 });
 
 export const rootStore = configureStore({
@@ -19,6 +21,8 @@ export const rootStore = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
       photoApi.middleware,
+      documentsApi.middleware,
+      contactsApi.middleware,
       documentsApi.middleware,
       teamApi.middleware
     ),

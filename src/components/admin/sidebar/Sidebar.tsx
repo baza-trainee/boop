@@ -18,12 +18,12 @@ const Sidebar = () => {
       <Link href="/" className="mb-[32px]">
         <Image src="/images/logo.png" alt="logo" width={100} height={50} />
       </Link>
-      <ul className="flex w-full flex-col items-center gap-[10px]">
+      <ul className="flex w-full flex-col items-center">
         {sidebarLinks.map((link, index) => (
           <Link key={index} href={link.href} className="w-full">
             <li
               className={`border-box flex w-full items-center gap-[24px] rounded-3xl border-2 border-transparent py-2 pl-[32px] pr-[16px] hover:border-violet
-                ${isLinkActive(link.link) && 'border-violet'} ${index === sidebarLinks.length - 3 && 'mb-[60px]'}`}
+                ${isLinkActive(link.link) && 'border-violet'} ${index === sidebarLinks.length - 3 ? 'mb-[60px]' : 'mb-[10px]'}`}
             >
               <svg className="h-[30px] w-[30px]">
                 <use
@@ -37,11 +37,18 @@ const Sidebar = () => {
           </Link>
         ))}
       </ul>
-      <button onClick={() => signOut({ callbackUrl: '/admin' })}>
-        Sign Out
+      <button
+        className="flex w-full items-center justify-center gap-4 rounded-3xl border-2 border-[#e6d57a] px-[20px] py-[12px]"
+        onClick={() => signOut({ callbackUrl: '/' })}
+      >
+        <Image
+          src={`/icons/admin/sidebar/logout.svg`}
+          alt="logout"
+          width={25}
+          height={25}
+        />
+        <span className="font-[800]">Вийти</span>
       </button>
-      <Link href={'/admin/login'}>LogIn</Link>
-      {/* TODO: logout button */}
     </aside>
   );
 };
