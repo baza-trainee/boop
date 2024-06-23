@@ -1,10 +1,12 @@
+import Image from 'next/image';
+
 type ValueCardProps = {
   card: {
     text: string;
     icon: string;
     hoverText: string;
-    height: string;
-    width: string;
+    height: number;
+    width: number;
   };
   index: number;
 };
@@ -23,13 +25,12 @@ const ValueCard = ({
         <p className="title-gradient p-0 pb-2 font-groppled text-xl font-bold leading-none">
           {text}
         </p>
-        <svg style={{ height: height, width: width }}>
-          <use href={icon}></use>
-        </svg>
+
+        <Image src={icon} alt="" width={width} height={height} />
       </div>
 
-      <div className="absolute top-[100%] w-[248px] rounded-2xl border-0 border-inherit bg-bgWhite p-4 opacity-0 shadow-[0_2px_6px_2px_rgba(47,36,94,0.15)] transition-opacity duration-[600ms] ease-in-out before:absolute before:-inset-0 before:block before:rotate-[-1deg] before:rounded-2xl before:border-[1px] before:border-yellow group-hover:opacity-100">
-        <p className="text-left font-raleway text-[14px] leading-[116%] text-textViolet">
+      <div className="absolute top-[100%] w-[248px] rounded-2xl border-0 border-inherit bg-bgWhite p-4 opacity-0 shadow-[0_2px_6px_2px_rgba(47,36,94,0.15)] transition-opacity duration-[600ms] ease-in-out before:absolute before:inset-0 before:left-0 before:block before:h-[calc(100%-1px)]    before:origin-top-right before:rotate-[-1deg] before:rounded-2xl before:border-[1px] before:border-yellow before:content-[''] group-hover:opacity-100">
+        <p className="text-left font-raleway text-[14px] font-normal leading-[116%] text-textViolet">
           {hoverText}
         </p>
       </div>

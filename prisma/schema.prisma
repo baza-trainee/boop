@@ -15,34 +15,55 @@ model User {
   updatedAt DateTime @updatedAt
 }
 
+model Document {
+  id          String   @id @default(uuid())
+  title       String
+  documentUrl String
+  documentId  String
+  createdAt   DateTime @default(now())
+}
+
 model Photo {
-  id        Int      @id @default(autoincrement())
+  id        String   @id @default(uuid())
   location  String
   imageUrl  String
   imageId   String
   createdAt DateTime @default(now())
 }
 
-model Blog {
-  id      Int      @id @default(autoincrement())
-  imageId    String
-  imageUrl   String
-  location   String
-  createdAt  DateTime @default(now())
-  titleUA String   @db.VarChar(70)
-  titleEN String   @db.VarChar(70)
-  titleIT String   @db.VarChar(70)
-  textUA  String
-  textEN  String
-  textIT  String
+model Team {
+  id       String @id @default(uuid())
+  nameUa   String
+  nameEn   String
+  nameIt   String
+  imageUrl String
+  imageId  String
 }
 
-model Document {
-  id          Int      @id @default(autoincrement())
-  title       String
-  documentUrl String
-  documentId  String
-  createdAt   DateTime @default(now())
+model Contacts {
+  id         String   @id @default(uuid())
+  phone      String
+  email      String
+  facebook   String
+  instagram  String
+  addressUa  String
+  addressEn  String
+  latitude   String
+  longitude  String
+}
+
+model Blog {
+  id        Int      @id @default(autoincrement())
+  titleUA   String   @db.VarChar(70)
+  titleEN   String   @db.VarChar(70)
+  titleIT   String   @db.VarChar(70)
+  textUA    String
+  textEN    String
+  textIT    String
+  createdAt DateTime @default(now())
+  imageId   String
+  imageUrl  String
+  location  String
 }
 
 model News {
@@ -58,4 +79,20 @@ model News {
   titleEN    String
   titleIT    String
   titleUA    String
+}
+
+model CounterItem {
+  id      Int    @id @default(autoincrement())
+  number  Int
+  text    String
+  variant String
+  order   Int    @default(autoincrement())
+}
+
+model PartnersFriends {
+  id        String   @id @default(uuid())
+  logoUrl   String
+  link      String
+  section   String
+  createdAt DateTime @default(now())
 }

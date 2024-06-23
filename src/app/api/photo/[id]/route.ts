@@ -13,7 +13,7 @@ export async function PATCH(
     const data: { newPhoto: PhotoFormData } = await request.json();
     const updatedPhoto = await prisma.photo.update({
       where: {
-        id: Number(params.id),
+        id: params.id,
       },
       data: {
         location: data.newPhoto.location,
@@ -36,7 +36,7 @@ export async function DELETE(
     await prismaConnect();
     const response = await prisma.photo.delete({
       where: {
-        id: Number(params.id),
+        id: params.id,
       },
     });
     return NextResponse.json(response, { status: 200 });

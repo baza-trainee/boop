@@ -45,7 +45,7 @@ const PhotoPage = () => {
               openAlert({
                 data: {
                   state: 'success',
-                  message: 'Фото успішно видалено?',
+                  message: 'Фото успішно видалено!',
                 },
               })
             );
@@ -69,21 +69,19 @@ const PhotoPage = () => {
           photos.map((item: IPhoto) => (
             <div
               key={item.id}
-              className="relative flex h-[447px] w-[306px] flex-col items-center justify-center"
+              className="relative flex h-[447px] w-[306px] flex-col items-center justify-center overflow-hidden"
             >
               <ActionButtons
                 action="all"
-                editAction={() => handleEdit(item.id.toString())}
-                deleteAction={() =>
-                  handleDelete(item.id.toString(), item.imageId)
-                }
+                editAction={() => handleEdit(item.id)}
+                deleteAction={() => handleDelete(item.id, item.imageId)}
               />
               <Image
                 src={item.imageUrl}
-                alt="add"
-                width={200}
-                height={300}
-                className="w-full object-cover"
+                alt={`${item.location} photo`}
+                width={306}
+                height={447}
+                className="h-[447px] w-[306px] object-cover"
               />
             </div>
           ))}

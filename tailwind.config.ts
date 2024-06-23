@@ -16,12 +16,6 @@ const config: Config = {
       backgroundImage: {
         'footer-bg': "url('/images/footer-bg-image.svg')",
         footer: "url('/images/footer.svg')",
-        blueOverlayGradient: 'var(--blueOverlayGradient)',
-        redOverlayGradient: 'var(--redOverlayGradient)',
-        yellowOverlayGradient: 'var(--yellowOverlayGradient)',
-        blueCardGradient: 'var(--blueCardGradient)',
-        redCardGradient: 'var(--redCardGradient)',
-        yellowCardGradient: 'var(--yellowCardGradient)',
       },
       backdropBlur: {
         custom: '5px',
@@ -43,6 +37,7 @@ const config: Config = {
         xs: '320px',
         sm: '430px',
         md: '768px',
+        ml: '1024px',
         lg: '1280px',
         xl: '1368px',
         '2xl': '1440px',

@@ -16,7 +16,7 @@ const FormModal = ({
 
   const ModalLayout = () => (
     <div className="fixed left-0 top-0 flex h-screen w-full items-center justify-center bg-[rgba(0,0,0,0.8)]">
-      <div className="modal w-[920px] bg-bgWhite p-[60px] text-black">
+      <div className="no-scrollbar max-h-screen w-[920px] overflow-y-auto bg-bgWhite p-[60px] text-black">
         {children}
       </div>
     </div>

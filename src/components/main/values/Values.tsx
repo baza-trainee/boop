@@ -9,7 +9,7 @@ const Values = () => {
   const valuesCards = GetValuesCardsInfo();
 
   return (
-    <section className="mt-[120px] flex w-full flex-col    gap-8">
+    <section className="mb-[120px] flex w-full flex-col gap-8">
       <div className="container">
         <SectionTitle title={t('title')} />
       </div>

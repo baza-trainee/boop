@@ -13,7 +13,7 @@ export async function PATCH(
     const data: { newDocument: DocumentFormData } = await request.json();
     const updatedDocument = await prisma.document.update({
       where: {
-        id: Number(params.id),
+        id: params.id,
       },
       data: {
         title: data.newDocument.title,

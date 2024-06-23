@@ -21,13 +21,14 @@ const MainPage = () => {
           className="-z-1 absolute -top-[100px] right-0"
         />
       </div>
-      <Vision />
-      <Values />
-      <Mission />
-      <Goals />
-      <Counter />
-      <PressAboutUs />
-      <Payment />
+      <div className="bg-bgWhite">
+        <Vision />
+        <Values />
+        <Mission />
+        <Goals />
+        <Counter />
+        <PressAboutUs />
+      </div>
     </>
   );
 };
