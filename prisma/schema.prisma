@@ -78,7 +78,7 @@ model CounterItem {
 }
 
 model PartnersFriends {
-  id        String   @id
+  id        String   @id @default(uuid())
   logoUrl   String
   link      String
   section   String
