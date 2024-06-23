@@ -40,6 +40,18 @@ model Team {
   imageId  String
 }
 
+model Contacts {
+  id         String   @id @default(uuid())
+  phone      String
+  email      String
+  facebook   String
+  instagram  String
+  addressUa  String
+  addressEn  String
+  latitude   String
+  longitude  String
+}
+
 model Blog {
   id        Int      @id @default(autoincrement())
   titleUA   String   @db.VarChar(70)

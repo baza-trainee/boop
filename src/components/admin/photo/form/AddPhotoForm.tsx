@@ -9,6 +9,7 @@ import { closeModal } from '@/store/slices/modalSlice';
 import { openAlert } from '@/store/slices/alertSlice';
 import { photoApi } from '@/store/api/photoApi';
 import { replaceExtensionWithWebp } from '@/helpers/convertToWebp';
+import { PHOTO_LOCATION_VALUES } from '@/constants';
 
 import FileInput from '../../ui/FileInput';
 import SelectInput from '../../ui/SelectInput';
@@ -87,7 +88,7 @@ const AddPhotoForm = () => {
               name="location"
               control={control}
               title="Оберіть розділ сайту:"
-              values={['Галерея', 'Про нас']}
+              values={PHOTO_LOCATION_VALUES}
               placeholder="Оберіть розділ для фото"
               isRequired={true}
             />
