@@ -16,7 +16,7 @@ model User {
 }
 
 model Document {
-  id          String      @id @default(uuid())
+  id          String   @id @default(uuid())
   title       String
   documentUrl String
   documentId  String
@@ -24,7 +24,7 @@ model Document {
 }
 
 model Photo {
-  id        String     @id @default(uuid())
+  id        String   @id @default(uuid())
   location  String
   imageUrl  String
   imageId   String
@@ -32,12 +32,12 @@ model Photo {
 }
 
 model Team {
-  id        String     @id @default(uuid())
-  nameUa    String
-  nameEn    String
-  nameIt    String
-  imageUrl  String
-  imageId   String
+  id       String @id @default(uuid())
+  nameUa   String
+  nameEn   String
+  nameIt   String
+  imageUrl String
+  imageId  String
 }
 
 model Blog {
@@ -78,9 +78,21 @@ model CounterItem {
 }
 
 model PartnersFriends {
-  id        Int      @id @default(autoincrement())
+  id        String   @id
   logoUrl   String
   link      String
   section   String
   createdAt DateTime @default(now())
+}
+
+model Contacts {
+  id        String @id
+  phone     String
+  email     String
+  facebook  String
+  instagram String
+  addressUa String
+  addressEn String
+  latitude  String
+  longitude String
 }
