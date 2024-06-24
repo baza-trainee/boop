@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { CONTACT_INFO } from '../../../constants/config';
+import { CONTACT_INFO } from '../../../constants';
 
 interface ContactInfoProps {
   showIcons?: boolean;

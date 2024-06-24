@@ -5,7 +5,7 @@ import SectionTitle from '../shared/SectionTitle';
 import ContactInfo from '../shared/ContactInfo';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { MAP_URL } from '../../../constants/config';
+import { MAP_URL } from '../../../constants';
 
 const ContactsPage = () => {
   const t = useTranslations('Contacts');
