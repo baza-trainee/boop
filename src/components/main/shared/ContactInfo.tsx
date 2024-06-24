@@ -11,8 +11,8 @@ interface ContactInfoProps {
   instagramText?: string;
   facebookUrl?: string;
   facebookText?: string;
-  showIcons?: boolean; // Prop to control icon visibility
-  showAddress?: boolean; // Optional flags to control visibility
+  showIcons?: boolean;
+  showAddress?: boolean;
   showEmail?: boolean;
   showPhone?: boolean;
   showInstagram?: boolean;
