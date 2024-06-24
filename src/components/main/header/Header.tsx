@@ -13,25 +13,25 @@ const Header = () => {
   return (
     <div className="container flex h-[100px] w-full items-center justify-between bg-beige text-violet">
       <div className="w-1/5">
-        <Image src="/images/logo.svg" alt="logo" width={86} height={50} />
+        <a href="/" title="Бюро усмішок і підтримки"><Image src="/images/logo.svg" alt="Бюро усмішок і підтримки" width={86} height={50} /></a>
       </div>
-      <nav className="flex w-3/5 justify-end overflow-y-auto whitespace-nowrap pr-11 font-groppled text-xl font-bold leading-5">
+      <nav className="flex w-3/5 justify-end overflow-y-auto whitespace-nowrap pr-11 font-groppled text-xl font-bold leading-5 relative z-10">
         <ul className="flex items-center">
           <li className="pl-4 pr-5">
-            <a href="#">Головна</a>
+            <a href="/" title="Головна">Головна</a>
           </li>
           <li className="pl-4 pr-5">
-            <a href="#">Про нас</a>
+            <a href="/about" title="Про нас">Про нас</a>
           </li>
           <li className="pl-4 pr-5">
-            <a href="#">Школа Клоунів</a>
+            <a href="/school" title="Школа Клоунів">Школа Клоунів</a>
           </li>
           <li className="pl-4 pr-5">
-            <a href="#">Контакти</a>
+            <a href="/contacts" title="Контакти">Контакти</a>
           </li>
         </ul>
       </nav>
-      <div className="-ml-5 flex w-1/5 items-center justify-end pl-8 font-raleway ">
+      <div className="-ml-5 flex w-1/5 items-center justify-end pl-8 font-raleway relative z-10">
         <button className="flex items-center pr-2 font-semibold">
           UA
           <Image
@@ -42,7 +42,7 @@ const Header = () => {
             height={50}
           />
         </button>
-        <button className="-mr-11 ml-1 whitespace-nowrap rounded-full bg-red px-4 py-3 text-xl font-bold leading-5 text-white">
+        <button className="-mr-11 ml-1 whitespace-nowrap rounded-full bg-red px-4 py-3 text-xl font-bold leading-5 text-white relative z-10">
           Підтримати проєкт
         </button>
       </div>

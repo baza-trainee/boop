@@ -9,7 +9,7 @@ type SectionTitleProps = {
 const SectionTitle = ({ title, className }: SectionTitleProps) => {
   return (
     <div className={clsx('flex items-center gap-[20px]', className)}>
-      <h2 className="title-gradient font-groppled text-3xl font-bold">
+      <h2 className="title-gradient font-groppled max-ml:text-2xl text-3xl font-bold">
         {title}
       </h2>
       <svg className="h-[1rem] w-[5rem]">
