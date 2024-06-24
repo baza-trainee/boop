@@ -76,12 +76,14 @@ const AddTeamForm = () => {
       <form
         onSubmit={handleSubmit(onSubmit)}
         autoComplete="off"
-        className="flex w-[712px] flex-col"
+        className="flex w-[708px] flex-col"
       >
         <div className="mb-[60px] flex gap-[40px]">
           <div className="flex w-1/2 flex-col items-center justify-center gap-[24px]">
-            <h1 className="text-3xl font-[500] text-violet">
-              Додавання учасника команди
+            <h1 className="w-full text-left text-3xl font-[500] text-violet">
+              Додавання
+              <br /> учасника
+              <br /> команди
             </h1>
 
             <FileInput
@@ -137,16 +139,16 @@ const AddTeamForm = () => {
               src={
                 imagePreview ? imagePreview : '/images/image-placeholder.png'
               }
-              width={306}
-              height={412}
+              width={384}
+              height={497}
               alt="specialist"
-              className="h-[412px] w-[306px] object-cover object-center"
+              className="h-[497px] w-[384px] object-cover object-center"
             />
           </div>
         </div>
-        <div className="relative mx-auto flex w-[50%] justify-between">
+        <div className="relative mx-auto flex w-[296px] justify-between">
           <span className="absolute -top-8 left-0 text-sm">
-            Додати в команду?
+            Додати учасника в Команду?
           </span>
           <button
             disabled={!isValid}

@@ -13,7 +13,6 @@ const SocialLinks: React.FC<SocialLinksProps> = () => {
       {socialLinks.map(({ url, name, icon }, index) => (
         <MainLink url={url} key={index}>
           <Image src={icon} alt={name} width={24} height={24} />
-          {name}
         </MainLink>
       ))}
     </div>

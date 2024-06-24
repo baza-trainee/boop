@@ -120,12 +120,13 @@ const EditTeamForm = ({ id }: { id: string }) => {
       <form
         onSubmit={handleSubmit(onSubmit)}
         autoComplete="off"
-        className="flex w-[85%] flex-col"
+        className="flex w-[708px] flex-col"
       >
-        <div className="flex gap-[60px]">
+        <div className="mb-[60px] flex gap-[40px]">
           <div className="flex w-1/2 flex-col items-center justify-center gap-[24px]">
-            <h1 className="text-3xl font-[500] text-violet">
-              Редагування учасника команди
+            <h1 className="mb-[40px] w-full text-left text-3xl font-[500] text-violet">
+              Редагування <br /> учасника
+              <br /> команди
             </h1>
 
             <FileInput
@@ -175,35 +176,35 @@ const EditTeamForm = ({ id }: { id: string }) => {
                 />
               )}
             />
-            <div className="relative mt-[60px] flex w-full justify-between">
-              <span className="absolute -top-8 left-0 text-sm">
-                Змінити запис учасника?
-              </span>
-              <button
-                disabled={!isValid}
-                className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white disabled:bg-gray-500"
-              >
-                {isProcessing ? 'Обробка запиту...' : 'Змінити'}
-              </button>
-              <button
-                onClick={() => dispatch(closeModal())}
-                className="w-[149px] rounded-3xl border border-yellow px-4 py-2 text-violet"
-              >
-                Скасувати
-              </button>
-            </div>
           </div>
           <div className="flex w-1/2 items-center justify-center">
             <Image
               src={
                 imagePreview ? imagePreview : '/images/image-placeholder.png'
               }
-              width={306}
-              height={412}
+              width={384}
+              height={497}
               alt="specialist"
-              className="h-[412px] w-[306px] object-cover object-center"
+              className="h-[497px] w-[384px] object-cover object-center"
             />
           </div>
+        </div>
+        <div className="relative mx-auto flex w-[296px] justify-between">
+          <span className="absolute -top-8 left-0 text-sm">
+            Змінити запис учасника?
+          </span>
+          <button
+            disabled={!isValid}
+            className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white hover:shadow-xl disabled:bg-gray-500"
+          >
+            {isProcessing ? 'Обробка запиту...' : 'Додати'}
+          </button>
+          <button
+            onClick={() => dispatch(closeModal())}
+            className="w-[149px] rounded-3xl border border-yellow px-4 py-2 text-violet"
+          >
+            Скасувати
+          </button>
         </div>
       </form>
     </div>

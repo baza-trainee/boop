@@ -28,7 +28,7 @@ export async function POST(request: Request) {
     });
     return NextResponse.json(response, { status: 200 });
   } catch (error) {
-    console.log('ADD PHOTO', error);
+    console.log('[ADD PHOTO]', error);
     return new NextResponse('Internal Server Error', { status: 500 });
   }
 }
