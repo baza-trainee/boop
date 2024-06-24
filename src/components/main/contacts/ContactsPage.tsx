@@ -5,9 +5,7 @@ import SectionTitle from '../shared/SectionTitle';
 import ContactInfo from '../shared/ContactInfo';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-
-const encodedAddress = encodeURIComponent("01135, м. Київ, вул. В.Чорновола, 28/1");
-const mapUrl = `https://www.google.com/maps?q=${encodedAddress}&output=embed&z=17`;
+import { MAP_URL } from '../../../constants/config';
 
 const ContactsPage = () => {
   const t = useTranslations('Contacts');
@@ -21,21 +19,20 @@ const ContactsPage = () => {
           <div className="flex flex-col md:flex-row justify-between">
             <div className="md:w-[45%] ml:w-[35%] md:flex flex-col space-y-4 justify-center relative mb-4">
               <SectionTitle title={t('title')} />
-              <ContactInfo
-                showIcons={true}
-              />
+              <ContactInfo showIcons={true} />
               <Image
                 src="/images/blue-clown.svg"
                 alt="Clown"
                 width={251}
                 height={185}
                 className="absolute right-0 ml:-bottom-[120px] max-ml:hidden"
+                style={{ width: 'auto', height: 'auto' }}
               />
             </div>
             <div className="md:w-[55%] ml:w-[65%] mt-4 md:mt-0">
               <div className="relative pb-[56.25%] h-0">
                 <iframe
-                  src={mapUrl}
+                  src={MAP_URL}
                   style={{
                     position: 'absolute',
                     top: 0,

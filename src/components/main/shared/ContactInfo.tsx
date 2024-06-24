@@ -2,15 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { CONTACT_INFO } from '../../../constants/config';
 
 interface ContactInfoProps {
-  address?: string;
-  email?: string;
-  phone?: string;
-  instagramUrl?: string;
-  instagramText?: string;
-  facebookUrl?: string;
-  facebookText?: string;
   showIcons?: boolean;
   showAddress?: boolean;
   showEmail?: boolean;
@@ -20,13 +14,6 @@ interface ContactInfoProps {
 }
 
 const ContactInfo: React.FC<ContactInfoProps> = ({
-  address = "01135, м. Київ, вул. В.Чорновола, 28/1",
-  email = "bulkina.ola@gmail.com",
-  phone = "+380 67 596 1600",
-  instagramUrl = "https://instagram.com/boop.ukraine",
-  instagramText = "boop.ukraine",
-  facebookUrl = "https://facebook.com/Boop.ukraine/",
-  facebookText = "facebook.com/Boop.ukraine",
   showIcons = true,
   showAddress = true,
   showEmail = true,
@@ -34,6 +21,8 @@ const ContactInfo: React.FC<ContactInfoProps> = ({
   showInstagram = true,
   showFacebook = true,
 }) => {
+  const { address, email, phone, instagramUrl, instagramText, facebookUrl, facebookText } = CONTACT_INFO;
+
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
