@@ -39,7 +39,7 @@ const Sidebar = () => {
       </ul>
       <button
         className="flex w-full items-center justify-center gap-4 rounded-3xl border-2 border-[#e6d57a] px-[20px] py-[12px]"
-        onClick={() => signOut({ callbackUrl: '/' })}
+        onClick={() => signOut({ callbackUrl: '/admin' })}
       >
         <Image
           src={`/icons/admin/sidebar/logout.svg`}
