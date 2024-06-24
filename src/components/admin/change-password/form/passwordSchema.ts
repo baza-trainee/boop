@@ -11,13 +11,10 @@ export const passwordSchema = z
       .max(30, errorNewPassword)
       .regex(/[A-Z]/, errorNewPassword)
       .regex(/[a-z]/, errorNewPassword)
-      .regex(/.*[0-9].*/, errorNewPassword)
+      .regex(/[0-9]/, errorNewPassword)
+      .regex(/[-._!"`'#%&,:;<>=@{}~$()*+/?[\]^|]+/, errorNewPassword)
       .regex(
-        /[-._!"`'#%&,:;<>=@{}~\$\(\)\*\+\/\\\?\[\]\^\|]+/,
-        errorNewPassword
-      )
-      .regex(
-        /^[a-zA-Z0-9._!"`'#%&,:;<>=@{}~$()*+/?[\]^|\\-]+$/,
+        /^[a-zA-Z0-9._!"`'#%&,:;<>=@{}~$()*+/?[\]^|-]+$/,
         errorNewPassword
       ),
     confirmNewPassword: z.string(),
