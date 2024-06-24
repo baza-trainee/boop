@@ -47,13 +47,11 @@ const Footer = () => {
           </div>
           <div className="color-violet h-full w-full gap-3 font-raleway">
             <div className="w-full pb-3">
-              <h1>{t('street')}</h1>
-              <h1>{t('country')}</h1>
+              <h3>{t('street')}</h3>
+              <h3>{t('country')}</h3>
             </div>
-            <div>
-              <h1>bulkina.ola@gmail.com</h1>
-              <h1>+380 67 596 1600</h1>
-            </div>
+            <p><a href="mailto:bulkina.ola@gmail.com">bulkina.ola@gmail.com</a></p>
+            <p>+380 67 596 1600</p>
           </div>
           <HelpLinks />
         </div>
