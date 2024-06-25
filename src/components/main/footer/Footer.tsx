@@ -6,6 +6,7 @@ import Logo from '../shared/Logo/Logo';
 import FooterLinks from '../shared/FooterLinks/FooterLinks';
 import SocialLinks from '../shared/SocialLinks/SocialLinks';
 import HelpLinks from '../shared/HelpLinks/HelpLinks';
+import ContactInfo from '../shared/ContactInfo';
 import AssociationLinks from '../shared/AssociationLinks/AssociationLinks';
 import { useTranslations } from 'next-intl';
 
@@ -28,6 +29,7 @@ const Footer = () => {
           width={154}
           height={136}
           className="absolute right-60"
+          style={{ width: 'auto', height: 'auto' }}
         />
         <div
           className="h-full w-full bg-cover"
@@ -47,11 +49,12 @@ const Footer = () => {
           </div>
           <div className="color-violet h-full w-full gap-3 font-raleway">
             <div className="w-full pb-3">
-              <h3>{t('street')}</h3>
-              <h3>{t('country')}</h3>
+              <ContactInfo
+                showIcons={false}
+                showInstagram={false}
+                showFacebook={false}
+              />
             </div>
-            <p><a href="mailto:bulkina.ola@gmail.com">bulkina.ola@gmail.com</a></p>
-            <p>+380 67 596 1600</p>
           </div>
           <HelpLinks />
         </div>

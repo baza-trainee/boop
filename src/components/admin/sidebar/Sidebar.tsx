@@ -16,7 +16,7 @@ const Sidebar = () => {
   return (
     <aside className="flex w-[306px] flex-col items-center bg-beige p-[24px] text-violet">
       <Link href="/" className="mb-[32px]">
-        <Image src="/images/logo.png" alt="logo" width={100} height={50} />
+        <Image src="/images/logo.svg" alt="logo" width={100} height={58} />
       </Link>
       <ul className="flex w-full flex-col items-center">
         {sidebarLinks.map((link, index) => (
