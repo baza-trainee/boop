@@ -71,7 +71,7 @@ const ContactInfo: React.FC<ContactInfoProps> = ({
         </div>
       )}
       {showPhone && (
-        <div className="flex items-center mb-2">
+        <div className="flex items-center mb-2 font-redhat">
           {showIcons && (
             <span className="material-icons">
               <Image
