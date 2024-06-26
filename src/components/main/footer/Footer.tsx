@@ -2,12 +2,12 @@
 import { usePathname } from 'next/navigation';
 import React from 'react';
 import Image from 'next/image';
-import Logo from '../shared/Logo/Logo';
-import FooterLinks from '../shared/FooterLinks/FooterLinks';
-import SocialLinks from '../shared/SocialLinks/SocialLinks';
-import HelpLinks from '../shared/HelpLinks/HelpLinks';
+import Logo from './Logo/Logo';
+import FooterLinks from './FooterLinks/FooterLinks';
+import SocialLinks from './SocialLinks/SocialLinks';
+import HelpLinks from './HelpLinks/HelpLinks';
 import ContactInfo from '../shared/ContactInfo';
-import AssociationLinks from '../shared/AssociationLinks/AssociationLinks';
+import AssociationLinks from './AssociationLinks/AssociationLinks';
 import { useTranslations } from 'next-intl';
 
 const Footer = () => {
@@ -22,7 +22,7 @@ const Footer = () => {
 
   return (
     <div className="relative">
-      <div className="relative z-0 h-[585px] w-full bg-bgWhite">
+      <div className="relative z-0 h-full w-full bg-bgWhite">
         <Image
           src="/images/clown.svg"
           alt="clown"
