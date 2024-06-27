@@ -1,18 +1,18 @@
 import React from "react";
-import { helpLinks } from '../FooterLinks/constants';
+import { navigationLinks } from "./links";
 import MainLink from "../MainLink/MainLink";
 import { useTranslations } from "next-intl";
 
-type HelpLinksProps = {
+type FooterLinksProps = {
   className?: string;
 };
 
-const HelpLinks: React.FC<HelpLinksProps> = () => {
+const FooterLinks: React.FC<FooterLinksProps> = () => {
   const t = useTranslations("Footer");
 
   return (
-    <div className="flex flex-col gap-3 underline">
-      {helpLinks.map(({ url, name }, index) => (
+    <div className="flex flex-col gap-5">
+      {navigationLinks.map(({ url, name }, index) => (
         <MainLink url={url} key={index}>
           {t(name)}
         </MainLink>
@@ -21,7 +21,7 @@ const HelpLinks: React.FC<HelpLinksProps> = () => {
   );
 };
 
-export default HelpLinks;
+export default FooterLinks;
 
 
 

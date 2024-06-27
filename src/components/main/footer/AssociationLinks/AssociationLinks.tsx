@@ -1,5 +1,5 @@
 import React from "react";
-import { associationLinks } from '../FooterLinks/constants';
+import { associationLinks } from "../FooterLinks/links";
 import MainLink from "../MainLink/MainLink";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
