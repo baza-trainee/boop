@@ -29,7 +29,7 @@ export default function AdminLayout({
   return (
     <div className="flex min-h-[100vh] w-full">
       <Sidebar />
-      <div className="flex-1">
+      <div className="flex-1 bg-[#F3F4EE]">
         {children}
         <AlertWindow />
       </div>

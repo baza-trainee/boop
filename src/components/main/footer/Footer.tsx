@@ -2,11 +2,12 @@
 import { usePathname } from 'next/navigation';
 import React from 'react';
 import Image from 'next/image';
-import Logo from '../shared/Logo/Logo';
-import FooterLinks from '../shared/FooterLinks/FooterLinks';
-import SocialLinks from '../shared/SocialLinks/SocialLinks';
-import HelpLinks from '../shared/HelpLinks/HelpLinks';
-import AssociationLinks from '../shared/AssociationLinks/AssociationLinks';
+import Logo from './Logo/Logo';
+import FooterLinks from './FooterLinks/FooterLinks';
+import SocialLinks from './SocialLinks/SocialLinks';
+import HelpLinks from './HelpLinks/HelpLinks';
+import ContactInfo from '../shared/ContactInfo';
+import AssociationLinks from './AssociationLinks/AssociationLinks';
 import { useTranslations } from 'next-intl';
 
 const Footer = () => {
@@ -21,13 +22,14 @@ const Footer = () => {
 
   return (
     <div className="relative">
-      <div className="relative z-0 h-[585px] w-full bg-bgWhite">
+      <div className="relative z-0 h-full w-full bg-bgWhite">
         <Image
           src="/images/clown.svg"
           alt="clown"
           width={154}
           height={136}
           className="absolute right-60"
+          style={{ width: 'auto', height: 'auto' }}
         />
         <div
           className="h-full w-full bg-cover"
@@ -47,11 +49,12 @@ const Footer = () => {
           </div>
           <div className="color-violet h-full w-full gap-3 font-raleway">
             <div className="w-full pb-3">
-              <h3>{t('street')}</h3>
-              <h3>{t('country')}</h3>
+              <ContactInfo
+                showIcons={false}
+                showInstagram={false}
+                showFacebook={false}
+              />
             </div>
-            <p><a href="mailto:bulkina.ola@gmail.com">bulkina.ola@gmail.com</a></p>
-            <p>+380 67 596 1600</p>
           </div>
           <HelpLinks />
         </div>

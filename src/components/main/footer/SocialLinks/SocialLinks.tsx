@@ -1,5 +1,5 @@
 import React from "react";
-import { socialLinks } from "../FooterLinks/constants";
+import { socialLinks } from "../FooterLinks/links";
 import MainLink from "../MainLink/MainLink";
 import Image from "next/image";
 
