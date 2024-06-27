@@ -13,7 +13,7 @@ import Hero from './hero/Hero';
 const MainPage = () => {
   return (
     <>
-      <div className="relative flex min-h-[100vh] w-full flex-col  items-center bg-bgWhite">
+      {/* <div className="relative flex min-h-[100vh] w-full items-center justify-center bg-bgWhite">
         <Image
           src="/images/hero-bg-image.svg"
           alt=""
@@ -21,10 +21,9 @@ const MainPage = () => {
           height={600}
           className="-z-1 absolute -top-[100px] right-0"
         />
-        <Hero />
-        <div className="mb-[120px] bg-pink-300"> hello there</div>
-      </div>
+      </div> */}
       <div className="bg-bgWhite">
+        <Hero />
         <Vision />
         <Values />
         <Mission />
