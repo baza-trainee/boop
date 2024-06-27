@@ -7,7 +7,7 @@ const Hero = () => {
   //   const t = useTranslations('Hero');
 
   return (
-    <section className="container  mx-auto  flex items-center justify-center bg-inherit pb-[100px] pt-[43px]">
+    <section className="container mx-auto  flex  h-[990px] items-center justify-center bg-inherit pb-[100px] pt-[43px]">
       <Image
         src="/images/hero-bg-image.svg"
         alt=""
@@ -15,7 +15,7 @@ const Hero = () => {
         height={5000}
         className="absolute right-0 top-0 z-[2] "
       />
-      <div className="relative h-[733px] w-[878px] items-center justify-center ">
+      <div className="absolute right-[329px] top-[142px] h-[733px] w-[878px] items-center justify-center ">
         <Image
           src="/images/heroSection/orange_circle.png"
           alt=""
@@ -37,7 +37,7 @@ const Hero = () => {
           height={213}
           className="absolute  right-0 top-0 z-10"
         />
-        <div className="flex flex-col items-center gap-5 pt-[172px]">
+        <div className="flex flex-col items-center gap-6 pt-[172px]">
           <Image
             src="/images/heroSection/hero_logo.png"
             alt=""
@@ -45,7 +45,7 @@ const Hero = () => {
             height={227}
             className="relative z-10"
           />
-          <h2 className="z-10 w-[275px] text-center font-groppled text-xl font-bold leading-[132%] text-bgWhite">
+          <h2 className="z-10 w-[275px] text-center font-groppled text-xl font-semibold leading-[132%] text-bgWhite">
             Робимо так, щоб дитинство тривало незалежно від обставин
           </h2>
         </div>
