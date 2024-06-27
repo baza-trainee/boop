@@ -1,5 +1,5 @@
 import React from "react";
-import { navigationLinks } from "./constants";
+import { navigationLinks } from "./links";
 import MainLink from "../MainLink/MainLink";
 import { useTranslations } from "next-intl";
 

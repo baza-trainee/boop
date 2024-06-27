@@ -1,5 +1,5 @@
 import React from "react";
-import { helpLinks } from '../FooterLinks/constants';
+import { helpLinks } from "../FooterLinks/links";
 import MainLink from "../MainLink/MainLink";
 import { useTranslations } from "next-intl";
 
