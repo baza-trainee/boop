@@ -1,10 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
 
-// import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 const Hero = () => {
-  //   const t = useTranslations('Hero');
+  const t = useTranslations('Hero');
+  const locale = useLocale();
 
   return (
     <section className="container mx-auto  flex  h-[990px] items-center justify-center bg-inherit pb-[100px] pt-[43px]">
@@ -37,7 +38,9 @@ const Hero = () => {
           height={213}
           className="absolute  right-0 top-0 z-10"
         />
-        <div className="flex flex-col items-center gap-6 pt-[172px]">
+        <div
+          className={`flex flex-col items-center ${locale === 'en' ? 'gap-3' : 'gap-6'} pt-[172px]`}
+        >
           <Image
             src="/images/heroSection/hero_logo.png"
             alt=""
@@ -46,7 +49,7 @@ const Hero = () => {
             className="relative z-10"
           />
           <h2 className="z-10 w-[275px] text-center font-groppled text-xl font-semibold leading-[132%] text-bgWhite">
-            Робимо так, щоб дитинство тривало незалежно від обставин
+            {t('title')}
           </h2>
         </div>
       </div>
