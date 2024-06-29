@@ -13,25 +13,40 @@ const Header = () => {
   return (
     <div className="container flex h-[100px] w-full items-center justify-between bg-beige text-violet">
       <div className="w-1/5">
-        <a href="/" title="Бюро усмішок і підтримки"><Image src="/images/logo.svg" alt="Бюро усмішок і підтримки" width={86} height={50} /></a>
+        <a href="/" title="Бюро усмішок і підтримки">
+          <Image
+            src="/images/logo.svg"
+            alt="Бюро усмішок і підтримки"
+            width={86}
+            height={50}
+          />
+        </a>
       </div>
-      <nav className="flex w-3/5 justify-end overflow-y-auto whitespace-nowrap pr-11 font-groppled text-xl font-bold leading-5 relative z-10">
+      <nav className="relative z-10 flex w-3/5 justify-end overflow-y-auto whitespace-nowrap pr-11 font-groppled text-xl font-bold leading-5">
         <ul className="flex items-center">
           <li className="pl-4 pr-5">
-            <a href="/" title="Головна">Головна</a>
+            <a href="/" title="Головна">
+              Головна
+            </a>
           </li>
           <li className="pl-4 pr-5">
-            <a href="/about" title="Про нас">Про нас</a>
+            <a href="/about" title="Про нас">
+              Про нас
+            </a>
           </li>
           <li className="pl-4 pr-5">
-            <a href="/school" title="Школа Клоунів">Школа Клоунів</a>
+            <a href="/school" title="Школа Клоунів">
+              Школа Клоунів
+            </a>
           </li>
           <li className="pl-4 pr-5">
-            <a href="/contacts" title="Контакти">Контакти</a>
+            <a href="/contacts" title="Контакти">
+              Контакти
+            </a>
           </li>
         </ul>
       </nav>
-      <div className="-ml-5 flex w-1/5 items-center justify-end pl-8 font-raleway relative z-10">
+      <div className="relative z-10 -ml-5 flex w-1/5 items-center justify-end pl-8 font-raleway">
         <button className="flex items-center pr-2 font-semibold">
           UA
           <Image
@@ -42,7 +57,7 @@ const Header = () => {
             height={50}
           />
         </button>
-        <button className="-mr-11 ml-1 whitespace-nowrap rounded-full bg-red px-4 py-3 text-xl font-bold leading-5 text-white relative z-10">
+        <button className="relative z-10 -mr-11 ml-1 whitespace-nowrap rounded-full bg-red px-4 py-3 text-xl font-bold leading-5 text-white">
           Підтримати проєкт
         </button>
       </div>
