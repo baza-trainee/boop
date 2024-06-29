@@ -1,6 +1,7 @@
 'use client';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Header = () => {
   const pathname = usePathname();
@@ -11,7 +12,7 @@ const Header = () => {
   if (isAdminPage) return null;
 
   return (
-    <div className="container flex h-[100px] w-full items-center justify-between bg-beige text-violet">
+    <div className="container fixed z-50 flex h-[100px] w-full items-center justify-between bg-beige text-violet">
       <div className="w-1/5">
         <a href="/" title="Бюро усмішок і підтримки">
           <Image
@@ -47,7 +48,7 @@ const Header = () => {
         </ul>
       </nav>
       <div className="relative z-10 -ml-5 flex w-1/5 items-center justify-end pl-8 font-raleway">
-        <button className="flex items-center pr-2 font-semibold">
+        {/* <button className="flex items-center pr-2 font-semibold">
           UA
           <Image
             className="w-6"
@@ -56,7 +57,8 @@ const Header = () => {
             width={86}
             height={50}
           />
-        </button>
+        </button> */}
+        <LanguageSwitcher />
         <button className="relative z-10 -mr-11 ml-1 whitespace-nowrap rounded-full bg-red px-4 py-3 text-xl font-bold leading-5 text-white">
           Підтримати проєкт
         </button>
