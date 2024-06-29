@@ -4,6 +4,7 @@ import { contactsApi } from '@/store/api/contactsApi';
 import PageTitle from '../shared/PageTitle';
 import Loader from '@/components/shared/loader/Loader';
 import ContactsItem from './ContactsItem';
+import ContactsForm from './form/ContactsForm';
 
 const ContactsPage = () => {
   const {
@@ -18,11 +19,12 @@ const ContactsPage = () => {
     <section className="no-scrollbar relative max-h-[150vh] overflow-y-auto px-[24px] py-[100px]">
       <PageTitle title="Контакти" />
       <div className="flex flex-col gap-[24px]">
-        <div className="flex w-[856px] items-center justify-start gap-[24px]">
+        {/* <div className="flex w-[856px] items-center justify-start gap-[24px]">
           <ContactsItem
             title="Адреса"
             content={contacts?.[0].addressUa}
             type="address"
+            isFirst={true}
           />
           <ContactsItem
             title="Телефон"
@@ -46,7 +48,8 @@ const ContactsPage = () => {
             content={contacts?.[0].facebook}
             type="facebook"
           />
-        </div>
+        </div> */}
+        <ContactsForm />
       </div>
     </section>
   );
