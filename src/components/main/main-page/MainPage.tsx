@@ -9,6 +9,7 @@ import PressAboutUs from './press-about-us/PressAboutUs';
 import Mission from './mission/Mission';
 import Partners from './partners/Partners';
 import Hero from './hero/Hero';
+import Founders from './founders/Founders';
 
 const MainPage = () => {
   return (
@@ -24,6 +25,7 @@ const MainPage = () => {
       </div> */}
       <div className="bg-bgWhite">
         <Hero />
+        <Founders />
         <Vision />
         <Values />
         <Mission />
