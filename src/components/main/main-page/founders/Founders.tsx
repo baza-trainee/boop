@@ -1,11 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 const Founders = () => {
   const t = useTranslations('Founders');
-  const locale = useLocale();
 
   return (
     <section className="container  mb-[120px]  flex   items-center justify-between whitespace-pre bg-inherit">
