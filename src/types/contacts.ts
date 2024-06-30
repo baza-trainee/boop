@@ -4,11 +4,7 @@ export interface IContact {
   email: string;
   facebook: string;
   instagram: string;
-  addressUa: string;
-  addressEn: string;
-  latitude: string;
-  longitude: string;
+  address: string;
 }
 
 export type ContactFormData = Omit<IContact, 'id'>;
-export type UpdateContactDto = Partial<ContactFormData>;
