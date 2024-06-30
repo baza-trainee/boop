@@ -10,6 +10,7 @@ import Mission from './mission/Mission';
 import Partners from './partners/Partners';
 import Hero from './hero/Hero';
 import Founders from './founders/Founders';
+import Gallery from './gallery/Gallery';
 
 const MainPage = () => {
   return (
@@ -32,6 +33,7 @@ const MainPage = () => {
         <Goals />
         <Counter />
         <PressAboutUs />
+        <Gallery />
         <Partners />
       </div>
     </>
