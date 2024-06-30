@@ -2,20 +2,22 @@ import Image from 'next/image';
 import React from 'react';
 
 type GalleryCardProps = {
-  //   card: {
-  image: string;
-  text?: string;
-  //   };
+  items: [
+    {
+      image: string;
+      text?: string;
+    },
+  ];
   index?: number;
 };
 
-const GalleryCard = ({ text, image, index }: GalleryCardProps) => {
+const GalleryCard = ({ items, index }: GalleryCardProps) => {
   //   const subGallerysList = hoverText.split('. ');
 
   return (
     <div className="flex justify-between gap-6">
       <Image
-        src={image}
+        src={items[0].image}
         alt=""
         width={306}
         height={477}
@@ -23,7 +25,7 @@ const GalleryCard = ({ text, image, index }: GalleryCardProps) => {
         objectFit="cover"
       />
       <Image
-        src={image}
+        src={items[1].image}
         alt=""
         width={306}
         height={477}
@@ -42,7 +44,7 @@ const GalleryCard = ({ text, image, index }: GalleryCardProps) => {
       </div>
 
       <Image
-        src={image}
+        src={items[2].image}
         alt=""
         width={306}
         height={477}
