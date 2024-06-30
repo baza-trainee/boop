@@ -1,3 +1,4 @@
+import { ListResponse } from '@/types';
 import { ITeamMember } from '@/types/team';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
@@ -6,13 +7,12 @@ export const teamApi = createApi({
   tagTypes: ['Team'],
   baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_URL }),
   endpoints: (build) => ({
-    getAllTeam: build.query<ITeamMember[], string>({
-      query: () => `team`,
+    getAllTeam: build.query<
+      ListResponse<ITeamMember>,
+      { page?: number; limit?: number } | void
+    >({
+      query: ({ page = 1, limit } = {}) => `team?page=${page}&limit=${limit}`,
       providesTags: ['Team'],
-    }),
-
-    getTeamMemberById: build.query<ITeamMember, string>({
-      query: (id) => `team/${id}`,
     }),
 
     addTeamMember: build.mutation({
@@ -45,7 +45,6 @@ export const teamApi = createApi({
 
 export const {
   useGetAllTeamQuery,
-  useGetTeamMemberByIdQuery,
   useAddTeamMemberMutation,
   useEditTeamMemberMutation,
   useDeleteTeamMemberMutation,
