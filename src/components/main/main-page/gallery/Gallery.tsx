@@ -5,10 +5,10 @@ import { useTranslations } from 'next-intl';
 // import MissionCard from './missionCard/MIssionCard';
 import SectionTitle from '../../shared/SectionTitle';
 import SecondaryBtn from '../../shared/SecondaryBtn';
-import GalleryCard from './galleryCard/GalleryCard';
-import SecondGalleryCard from './galleryCard/SecondGalleryCard';
-import ThirdGalleryCard from './galleryCard/ThirdGalleryCard';
-import GalleryItem from './galleryCard/GalleryItem';
+// import GalleryCard from './galleryCard/GalleryCard';
+// import SecondGalleryCard from './galleryCard/SecondGalleryCard';
+// import ThirdGalleryCard from './galleryCard/ThirdGalleryCard';
+// import GalleryItem from './galleryCard/GalleryItem';
 import GalleryList from './galleryCard/GalleryList';
 // import GetMissionCardsInfo from './MissionCardsInfo';
 

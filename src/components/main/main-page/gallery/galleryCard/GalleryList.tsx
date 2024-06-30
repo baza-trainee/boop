@@ -21,12 +21,14 @@ const GalleryList: React.FC<GalleryCardProps> = ({
 
   for (let i = 0; i < images.length; i++) {
     combinedElements.push(
-      <div key={`image-${i}`} className="h-[477px] w-[306px]">
+      <div key={`image-${i}`} className="relative h-[477px] w-[306px]">
         <Image
           src={images[i].image}
           alt={`Gallery image ${i}`}
-          width={306}
-          height={477}
+          //   width={306}
+          //   height={477}
+          layout="fill"
+          objectFit="cover"
           className="h-full w-full"
         />
       </div>
