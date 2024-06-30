@@ -8,27 +8,38 @@ export async function GET(request: Request) {
     await prismaConnect();
 
     const { searchParams } = new URL(request.url);
-    const page = parseInt(searchParams.get('page') || '1', 10);
-    const limit = parseInt(searchParams.get('limit') || '6', 10);
+    const page = parseInt(searchParams.get('page') || '0', 10);
+    const limit = parseInt(searchParams.get('limit') || '0', 10);
 
-    const offset = (page - 1) * limit;
+    let teamMembers;
+    let totalRecords = 0;
+    let response;
 
-    const photos = await prisma.team.findMany({
-      skip: offset,
-      take: limit,
-    });
+    if (page > 0 && limit > 0) {
+      const offset = (page - 1) * limit;
 
-    const totalRecords = await prisma.team.count();
+      teamMembers = await prisma.team.findMany({
+        skip: offset,
+        take: limit,
+      });
 
-    const response = {
-      data: photos,
-      meta: {
-        page,
-        limit,
-        totalRecords,
-        totalPages: Math.ceil(totalRecords / limit),
-      },
-    };
+      totalRecords = await prisma.team.count();
+
+      response = {
+        data: teamMembers,
+        meta: {
+          page,
+          limit,
+          totalRecords,
+          totalPages: Math.ceil(totalRecords / limit),
+        },
+      };
+    } else {
+      teamMembers = await prisma.team.findMany();
+      response = {
+        data: teamMembers,
+      };
+    }
 
     return NextResponse.json(response, { status: 200 });
   } catch (error) {

@@ -9,30 +9,41 @@ export async function GET(request: Request) {
     await prismaConnect();
 
     const { searchParams } = new URL(request.url);
-    const page = parseInt(searchParams.get('page') || '1', 10);
-    const limit = parseInt(searchParams.get('limit') || '11', 10);
+    const page = parseInt(searchParams.get('page') || '0', 10);
+    const limit = parseInt(searchParams.get('limit') || '0', 10);
 
-    const offset = (page - 1) * limit;
+    let photos;
+    let totalRecords = 0;
+    let response;
 
-    const photos = await prisma.photo.findMany({
-      skip: offset,
-      take: limit,
-      orderBy: {
-        createdAt: 'desc',
-      },
-    });
+    if (page > 0 && limit > 0) {
+      const offset = (page - 1) * limit;
 
-    const totalRecords = await prisma.photo.count();
+      photos = await prisma.photo.findMany({
+        skip: offset,
+        take: limit,
+        orderBy: {
+          createdAt: 'desc',
+        },
+      });
 
-    const response = {
-      data: photos,
-      meta: {
-        page,
-        limit,
-        totalRecords,
-        totalPages: Math.ceil(totalRecords / limit),
-      },
-    };
+      totalRecords = await prisma.photo.count();
+
+      response = {
+        data: photos,
+        meta: {
+          page,
+          limit,
+          totalRecords,
+          totalPages: Math.ceil(totalRecords / limit),
+        },
+      };
+    } else {
+      photos = await prisma.photo.findMany();
+      response = {
+        data: photos,
+      };
+    }
 
     return NextResponse.json(response, { status: 200 });
   } catch (error) {

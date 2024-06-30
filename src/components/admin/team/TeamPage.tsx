@@ -24,7 +24,7 @@ const TeamPage = () => {
     data: team,
     isLoading,
     isFetching,
-  } = teamApi.useGetAllTeamQuery({ page: currentPage, limit: 6 });
+  } = teamApi.useGetAllTeamQuery({ page: currentPage, limit: 5 });
   const [deleteTeamMember] = teamApi.useDeleteTeamMemberMutation();
 
   if (isLoading || isFetching) return <Loader />;
@@ -85,7 +85,7 @@ const TeamPage = () => {
                 height={247}
                 className="h-[247px] w-[306px] object-cover"
               />
-              <p className="absolute bottom-[44px] left-0 flex h-[37px] w-full items-center justify-center bg-bgVioletTransparent text-[16px] font-[800] text-textViolet">
+              <p className="bg-bgVioletTransparent absolute bottom-[44px] left-0 flex h-[37px] w-full items-center justify-center text-[16px] font-[800] text-textViolet">
                 {member.nameUa}
               </p>
               <ActionButtons
