@@ -20,9 +20,9 @@ const EditPhotoForm = ({ id }: { id: string }) => {
   const [isProcessing, setIsProcessing] = useState(false);
 
   const [editPhoto] = photoApi.useEditPhotoMutation();
-  const { data: photos } = photoApi.useGetAllPhotoQuery('photos');
+  const { data: photos } = photoApi.useGetAllPhotoQuery();
 
-  const photo = photos?.find((image) => image.id === id);
+  const photo = photos?.data.find((image) => image.id === id);
 
   const {
     handleSubmit,

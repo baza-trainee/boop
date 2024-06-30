@@ -18,9 +18,9 @@ const EditTeamForm = ({ id }: { id: string }) => {
   const [isProcessing, setIsProcessing] = useState(false);
 
   const [editTeamMember] = teamApi.useEditTeamMemberMutation();
-  const { data: team } = teamApi.useGetAllTeamQuery('team');
+  const { data: team } = teamApi.useGetAllTeamQuery();
 
-  const teamMember = team?.find((member) => member.id === id);
+  const teamMember = team?.data.find((member) => member.id === id);
 
   const {
     handleSubmit,
