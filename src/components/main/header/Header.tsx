@@ -1,11 +1,8 @@
 'use client';
 import { usePathname } from 'next/navigation';
-<<<<<<< Updated upstream
-=======
 import Image from 'next/image';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useLocale, useTranslations } from 'next-intl';
->>>>>>> Stashed changes
 
 const Header = () => {
   const pathname = usePathname();
@@ -19,10 +16,6 @@ const Header = () => {
   const locale = useLocale();
 
   return (
-<<<<<<< Updated upstream
-    <div className="container flex h-[100px] w-full items-center bg-beige text-violet">
-      Header
-=======
     <div className="container flex h-[100px] w-full items-center justify-between bg-beige text-violet">
       <div className="w-1/5">
         <a href="/" title="Бюро усмішок і підтримки">
@@ -64,7 +57,6 @@ const Header = () => {
           {t('button')}
         </button>
       </div>
->>>>>>> Stashed changes
     </div>
   );
 };
