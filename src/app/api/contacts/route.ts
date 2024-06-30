@@ -24,10 +24,7 @@ export async function POST(request: Request) {
         email: data.email,
         instagram: data.instagram,
         facebook: data.facebook,
-        addressUa: data.addressUa,
-        addressEn: data.addressEn,
-        latitude: data.latitude,
-        longitude: data.latitude,
+        address: data.address,
       },
     });
     return NextResponse.json(response, { status: 200 });
