@@ -1,3 +1,4 @@
+import { ListResponse } from '@/types';
 import { IPhoto } from '@/types/photo';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
@@ -6,13 +7,12 @@ export const photoApi = createApi({
   tagTypes: ['Photo'],
   baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_URL }),
   endpoints: (build) => ({
-    getAllPhoto: build.query<IPhoto[], string>({
-      query: () => `photo`,
+    getAllPhoto: build.query<
+      ListResponse<IPhoto>,
+      { page?: number; limit?: number } | void
+    >({
+      query: ({ page = 1, limit } = {}) => `photo?page=${page}&limit=${limit}`,
       providesTags: ['Photo'],
-    }),
-
-    getPhotoById: build.query<IPhoto, string>({
-      query: (id) => `photo/${id}`,
     }),
 
     addPhoto: build.mutation({
@@ -45,7 +45,6 @@ export const photoApi = createApi({
 
 export const {
   useGetAllPhotoQuery,
-  useGetPhotoByIdQuery,
   useAddPhotoMutation,
   useEditPhotoMutation,
   useDeletePhotoMutation,

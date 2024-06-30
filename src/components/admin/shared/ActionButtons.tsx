@@ -4,34 +4,44 @@ type ActionButtonProps = {
   action: 'all' | 'edit' | 'delete';
   deleteAction?: () => void;
   editAction?: () => void;
+  width?: string;
 };
 
 const ActionButtons = ({
   deleteAction,
   editAction,
   action,
+  width,
 }: ActionButtonProps) => {
   return (
-    <div className="absolute right-2 top-2 flex gap-2">
+    <div
+      className={`absolute bottom-0  flex ${width ? width : 'w-full'} ${width ? 'right-[50%] translate-x-[50%]' : 'right-0'}`}
+    >
       {action === 'all' || action === 'edit' ? (
-        <button onClick={editAction}>
+        <button
+          onClick={editAction}
+          className="flex h-[44px] flex-1 items-center justify-center border border-lightViolet bg-bgViolet"
+        >
           <Image
             src="/icons/admin/edit.svg"
             alt="add"
             width={50}
             height={50}
-            className="w-full object-cover"
+            className="h-[30px] w-[30px] object-cover"
           />
         </button>
       ) : null}
       {action === 'all' || action === 'delete' ? (
-        <button onClick={deleteAction}>
+        <button
+          onClick={deleteAction}
+          className="flex h-[44px] flex-1 items-center justify-center border border-lightViolet bg-bgViolet"
+        >
           <Image
             src="/icons/admin/delete.svg"
             alt="add"
             width={50}
             height={50}
-            className="w-full object-cover"
+            className="h-[30px] w-[30px] object-cover"
           />
         </button>
       ) : null}
