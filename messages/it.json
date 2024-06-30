@@ -1,5 +1,18 @@
 {
   "hello": "ciao!",
+<<<<<<< Updated upstream
+=======
+  "Header": {
+    "home": "Home",
+    "about": "Chi Siamo",
+    "school": "Scuola di Clown",
+    "contacts": "Contatti",
+    "button": "Sostienici il Progetto"
+  },
+  "Hero": {
+    "title": "Nonostante tutto, l'infanzia deve continuare"
+  },
+>>>>>>> Stashed changes
   "Error": {
     "title": "Ops, sembra che ti sia perso!",
     "text": "Purtroppo, la pagina che stai cercando non esiste.",
