@@ -31,7 +31,10 @@ export async function POST(request: Request) {
       },
     });
 
-    return NextResponse.json({ user }, { status: 201 });
+    return NextResponse.json(
+      { user: { id: user.id, email: user.email } },
+      { status: 201 }
+    );
   } catch (error) {
     return NextResponse.json({ message: 'An error occured' }, { status: 500 });
   }

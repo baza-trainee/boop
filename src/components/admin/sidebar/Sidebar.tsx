@@ -37,9 +37,9 @@ const Sidebar = () => {
           </Link>
         ))}
       </ul>
-      <button
-        className="flex w-full items-center justify-center gap-4 rounded-3xl border-2 border-[#e6d57a] px-[20px] py-[12px]"
-        onClick={() => signOut({ callbackUrl: '/' })}
+      <Link
+        href={'/admin/signOut'}
+        className="flex w-full items-center justify-center gap-4 rounded-3xl  bg-[#e6d57a] px-[20px] py-[12px]"
       >
         <Image
           src={`/icons/admin/sidebar/logout.svg`}
@@ -48,7 +48,7 @@ const Sidebar = () => {
           height={25}
         />
         <span className="font-[800]">Вийти</span>
-      </button>
+      </Link>
     </aside>
   );
 };

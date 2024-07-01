@@ -1,7 +1,7 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import { Session } from 'next-auth';
 import { getSession, signOut } from 'next-auth/react';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -9,25 +9,22 @@ import { clsx } from 'clsx';
 import { passwordSchema } from './passwordSchema';
 import { useDispatch } from 'react-redux';
 import { openAlert } from '@/store/slices/alertSlice';
+import Loader from '@/components/shared/loader/Loader';
 
 interface CustomSession extends Session {
   user: { email: string };
 }
 
 interface IFormInput {
+  oldPassword: string;
   newPassword: string;
   confirmNewPassword: string;
 }
 
-const delayedSignOut = () => {
-  setTimeout(() => {
-    signOut({ callbackUrl: '/admin' });
-  }, 2000);
-};
-
-function FormPassword() {
+function FormChangePassword() {
+  const [isLoader, setIsLoader] = useState(false);
   const [session, setSession] = useState<CustomSession | null>(null);
-  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -45,20 +42,18 @@ function FormPassword() {
     register,
     handleSubmit,
     reset,
-    watch,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<IFormInput>({
-    defaultValues: {
-      newPassword: '',
-      confirmNewPassword: '',
-    },
+    defaultValues: { oldPassword: '', newPassword: '', confirmNewPassword: '' },
     resolver: zodResolver(passwordSchema),
     mode: 'all',
   });
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
     try {
+      setIsLoader(true);
       const response = await axios.post('/api/change-password', {
+        oldPassword: data.oldPassword,
         newPassword: data.newPassword,
         email: session?.user.email,
       });
@@ -69,49 +64,96 @@ function FormPassword() {
             data: { message: 'Пароль успішно змінений!', state: 'success' },
           })
         );
-        delayedSignOut();
+        signOut({ callbackUrl: '/admin' });
+      }
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        const status = error.response?.status;
+        if (status === 400) {
+          dispatch(
+            openAlert({
+              data: {
+                message: 'Не всі дані введено',
+                state: 'error',
+              },
+            })
+          );
+        } else if (status === 404) {
+          dispatch(
+            openAlert({
+              data: {
+                message: 'Користувача з таким логіном не знайдено',
+                state: 'error',
+              },
+            })
+          );
+        } else if (status === 401) {
+          dispatch(
+            openAlert({
+              data: {
+                message: 'Старий пароль введено не вірно',
+                state: 'error',
+              },
+            })
+          );
+        } else {
+          dispatch(
+            openAlert({
+              data: {
+                message: 'Сталася помилка під час зміни пароля',
+                state: 'error',
+              },
+            })
+          );
+        }
       } else {
         dispatch(
           openAlert({
-            data: { message: 'Не вдалося змінити пароль!', state: 'error' },
+            data: {
+              message: 'Сталася невідома помилка',
+              state: 'error',
+            },
           })
         );
       }
-    } catch (error) {
-      dispatch(
-        openAlert({
-          data: { message: 'Не вдалося змінити пароль!', state: 'error' },
-        })
-      );
+    } finally {
+      setIsLoader(false);
     }
   };
 
-  useEffect(() => {
-    const subscription = watch((value) => {
-      const newPassword = value.newPassword;
-      const confirmNewPassword = value.confirmNewPassword;
-
-      if (
-        newPassword &&
-        confirmNewPassword &&
-        newPassword.length >= 8 &&
-        newPassword.length <= 30 &&
-        newPassword === confirmNewPassword
-      ) {
-        setIsButtonDisabled(false);
-      } else {
-        setIsButtonDisabled(true);
-      }
-    });
-
-    return () => subscription.unsubscribe();
-  }, [watch]);
+  if (isLoader) {
+    return <Loader />;
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="py-[4px]">
-      <div className="flex h-96 max-w-[292px] flex-col justify-between rounded-lg pb-4">
+      <div className="flex max-w-[292px] flex-col justify-between rounded-lg pb-4">
         <div className="w-full">
           <div className="mt-0">
+            <label
+              className={
+                "mb-1 text-left font-['Raleway',_sans-serif] text-[16px] font-medium normal-case not-italic leading-[24px] tracking-[0px] text-[#0a0a0a]"
+              }
+              htmlFor="oldPassword"
+            >
+              Вкажіть дійсний пароль
+            </label>
+            <div className="relative">
+              <input
+                className={clsx(
+                  "peer block w-full rounded-xl border-[2px] border-[#50439f] py-[8px] pl-[9px] font-['Raleway',_sans-serif] text-base not-italic  placeholder-[#949398] outline-none placeholder-shown:border-[#949398]",
+                  !errors.oldPassword && 'text-[#177e3a]',
+                  errors.oldPassword && 'text-[#ff4004]'
+                )}
+                id="oldPassword"
+                type="password"
+                autoComplete="false"
+                placeholder="Введіть старий пароль"
+                {...register('oldPassword')}
+              />
+            </div>
+          </div>
+          <div className="mt-3">
             <label
               className={
                 "mb-1 text-left font-['Raleway',_sans-serif] text-[16px] font-medium normal-case not-italic leading-[24px] tracking-[0px] text-[#0a0a0a]"
@@ -128,7 +170,7 @@ function FormPassword() {
                   errors.newPassword && 'text-[#ff4004]'
                 )}
                 id="newPassword"
-                type="text"
+                type="password"
                 autoComplete="false"
                 autoFocus
                 placeholder="Введіть новий пароль"
@@ -156,7 +198,7 @@ function FormPassword() {
                   errors.confirmNewPassword && 'text-[#ff4004]'
                 )}
                 id="confirmNewPassword"
-                type="text"
+                type="password"
                 autoComplete="false"
                 placeholder="Введіть новий пароль ще раз"
                 {...register('confirmNewPassword')}
@@ -170,24 +212,24 @@ function FormPassword() {
           </div>
         </div>
 
-        <div className="relative box-border flex w-full max-w-[296px] flex-col items-start justify-start gap-[12px]">
+        <div className="relative mt-10 box-border flex w-full max-w-[296px] flex-col items-start justify-start gap-[12px]">
           <h3 className="mb-0 mt-0 text-left font-['Raleway',_sans-serif] text-[17px] font-medium normal-case not-italic leading-[26px] tracking-[0px] text-[#343333]">
             Змінити пароль?
           </h3>
           <div className="relative box-border flex w-full max-w-[296px] items-start justify-start gap-[20px]">
             <button
               type="submit"
-              disabled={isButtonDisabled}
+              disabled={!isValid}
               className={clsx(
                 'relative box-border flex w-full max-w-[127px] items-center justify-center gap-[8px] overflow-hidden rounded-[32px] bg-[#e3e3e4] px-[24px] py-[18px]',
-                !isButtonDisabled && 'bg-[#e93405]'
+                isValid && 'bg-[#e93405]'
               )}
             >
               <p
                 className={clsx(
                   "mb-0 mt-0 text-center font-['Raleway',_sans-serif] text-[20px] font-bold normal-case not-italic leading-[20px] tracking-[0px] ",
-                  !isButtonDisabled && 'text-[#ffffff]',
-                  isButtonDisabled && 'text-[#97979a]'
+                  isValid && 'text-[#ffffff]',
+                  !isValid && 'text-[#97979a]'
                 )}
               >
                 Змінити
@@ -196,18 +238,18 @@ function FormPassword() {
             <button
               onClick={() => reset()}
               type="button"
-              disabled={isButtonDisabled}
+              disabled={!isValid}
               className={clsx(
                 'relative box-border flex w-full max-w-[149px] items-center justify-center gap-[8px] overflow-hidden rounded-[32px] border-[2px]  px-[24px] py-[18px]',
-                !isButtonDisabled && 'border-[#ffab0b]',
-                isButtonDisabled && 'border-[#e3e3e4]'
+                isValid && 'border-[#ffab0b]',
+                !isValid && 'border-[#e3e3e4]'
               )}
             >
               <p
                 className={clsx(
                   "mb-0 mt-0 text-center font-['Raleway',_sans-serif] text-[20px] font-medium normal-case not-italic leading-[20px] tracking-[0px] ",
-                  !isButtonDisabled && 'text-[#2f245e]',
-                  isButtonDisabled && 'text-[#97979a]'
+                  isValid && 'text-[#2f245e]',
+                  !isValid && 'text-[#97979a]'
                 )}
               >
                 Скасувати
@@ -220,4 +262,4 @@ function FormPassword() {
   );
 }
 
-export default FormPassword;
+export default FormChangePassword;

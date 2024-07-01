@@ -3,15 +3,20 @@ import './swagger-comments';
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
 
+interface ChangePasswordRequest {
+  newPassword: string;
+  email: string;
+  oldPassword: string;
+}
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
+    const body: ChangePasswordRequest = await req.json();
 
-    const { newPassword, email } = body;
+    const { newPassword, email, oldPassword } = body;
 
-    if (!newPassword || !email) {
+    if (!oldPassword || !newPassword || !email) {
       return NextResponse.json(
-        { message: 'Email and password are required' },
+        { message: 'Email and passwords are required' },
         { status: 400 }
       );
     }
@@ -22,6 +27,18 @@ export async function POST(req: Request) {
 
     if (!user || !user.password) {
       return NextResponse.json({ message: 'User not found' }, { status: 404 });
+    }
+
+    const passwordMatch = await bcrypt.compare(oldPassword, user.password);
+
+    if (!passwordMatch) {
+      return NextResponse.json(
+        {
+          message:
+            'The current password is incorrect. Please, double check the current password.',
+        },
+        { status: 401 }
+      );
     }
 
     const hashedNewPassword = await bcrypt.hash(newPassword, 10);
