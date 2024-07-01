@@ -1,7 +1,7 @@
 export const PHOTO_LOCATION_VALUES = [
-  'Головна сторінка. Галерея',
-  'Школа клоунів. Світлини',
-  'Модальне вікно. Посмішки',
+  { name: 'Головна сторінка. Галерея', value: 'gallery' },
+  { name: 'Школа клоунів. Світлини', value: 'gallery' },
+  { name: 'Модальне вікно. Посмішки', value: 'gallery' },
 ];
 
 export const CONTACT_INFO = {

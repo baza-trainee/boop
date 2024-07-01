@@ -15,6 +15,13 @@ export const photoApi = createApi({
       providesTags: ['Photo'],
     }),
 
+    getPhotoByLocation: build.query<IPhoto, string>({
+      query: (location) => ({
+        url: `photo/location/${location}`,
+      }),
+      providesTags: ['Photo'],
+    }),
+
     addPhoto: build.mutation({
       query: (body) => ({
         url: 'photo',
@@ -45,6 +52,7 @@ export const photoApi = createApi({
 
 export const {
   useGetAllPhotoQuery,
+  useGetPhotoByLocationQuery,
   useAddPhotoMutation,
   useEditPhotoMutation,
   useDeletePhotoMutation,

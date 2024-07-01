@@ -9,11 +9,14 @@ import {
 
 interface ISelectFieldProps {
   title: string;
-  values: string[];
   value?: string;
   errors?: string;
   placeholder?: string;
   isRequired?: boolean;
+  values: {
+    name: string;
+    value: string;
+  }[];
 }
 
 type TProps<T extends FieldValues> = InputHTMLAttributes<HTMLSelectElement> &
@@ -59,8 +62,8 @@ const SelectInput = <T extends FieldValues>({
         </option>
         {values &&
           values.map((el, index) => (
-            <option key={index} value={el}>
-              {el}
+            <option key={index} value={el.value}>
+              {el.name}
             </option>
           ))}
       </select>

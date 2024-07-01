@@ -95,7 +95,7 @@ const ContactsPage = () => {
   };
 
   return (
-    <section className="relative max-h-[150vh] px-[24px] py-[100px]">
+    <section className="relative px-[24px] py-[100px]">
       <PageTitle title="Контакти" />
       <div className="flex flex-col gap-[24px]">
         <form
