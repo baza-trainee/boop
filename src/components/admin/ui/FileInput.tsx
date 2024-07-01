@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { ChangeEvent, InputHTMLAttributes } from 'react';
 import {
   DeepMap,
@@ -8,7 +9,11 @@ import {
 } from 'react-hook-form';
 
 type TProps<T extends FieldValues> = InputHTMLAttributes<HTMLInputElement> &
-  UseControllerProps<T> & { title?: string; isRequired: boolean };
+  UseControllerProps<T> & {
+    title?: string;
+    isRequired: boolean;
+    isEditMode?: boolean;
+  };
 
 const FileInput = <T extends FieldValues>({
   title,
@@ -17,6 +22,7 @@ const FileInput = <T extends FieldValues>({
   name,
   rules,
   isRequired,
+  isEditMode,
   ...rest
 }: TProps<T>) => {
   const { field, formState } = useController<T>({ name, control, rules });
@@ -40,15 +46,30 @@ const FileInput = <T extends FieldValues>({
   return (
     <div className={inputWrapperStyle}>
       {!!title && (
-        <label htmlFor="title" className=" text-sm font-medium">
+        <label
+          htmlFor="title"
+          className={`text-sm font-[800]  ${isEditMode ? 'text-mainViolet' : 'text-black'}`}
+        >
           {title}
           {isRequired && <span className="text-red">*</span>}
         </label>
       )}
 
+      {isEditMode ? (
+        <Image
+          src="/icons/admin/upload.svg"
+          alt="edit icon"
+          width={30}
+          height={30}
+          className="absolute right-2 top-[50%] -translate-y-[15%]"
+        />
+      ) : null}
+
       <label htmlFor={title + 'file'}>
         <div className={inputContainerStyle}>
-          <span className="w-[250px] truncate text-center text-sm text-violet">
+          <span
+            className={`w-[296px] truncate text-sm text-violet ${isEditMode ? 'text-left' : 'text-center'}`}
+          >
             {fileName || placeholder}
           </span>
         </div>
