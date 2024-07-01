@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 
 import SectionTitle from '../../shared/SectionTitle';
 import SecondaryBtn from '../../shared/SecondaryBtn';
-import { galleryItems, decorativeElements } from './items';
+import { galleryItems, decorativeElements } from './Items';
 import GalleryList from './galleryCard/GalleryList';
 
 const Gallery = () => {

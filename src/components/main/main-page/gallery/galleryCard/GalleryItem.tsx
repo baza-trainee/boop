@@ -1,5 +1,5 @@
 import React from 'react';
-import { galleryItems } from '../items';
+import { galleryItems } from '../Items';
 import GalleryCard from './GalleryCard';
 import SecondGalleryCard from './SecondGalleryCard';
 import ThirdGalleryCard from './ThirdGalleryCard';
