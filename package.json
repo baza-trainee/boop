@@ -34,6 +34,7 @@
     "react-dom": "^18",
     "react-hook-form": "^7.52.0",
     "react-redux": "^9.1.2",
+    "react-responsive": "^10.0.0",
     "swagger-ui-react": "^5.17.14",
     "swiper": "^11.1.4",
     "zod": "^3.23.8"
