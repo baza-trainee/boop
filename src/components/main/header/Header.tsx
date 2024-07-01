@@ -2,7 +2,7 @@
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import LanguageSwitcher from './LanguageSwitcher';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 const Header = () => {
   const pathname = usePathname();

@@ -1,5 +1,5 @@
 import React from "react";
-import { socialLinks } from "../FooterLinks/constants";
+import { socialLinks } from "../FooterLinks/links";
 import MainLink from "../MainLink/MainLink";
 import Image from "next/image";
 
@@ -13,7 +13,6 @@ const SocialLinks: React.FC<SocialLinksProps> = () => {
       {socialLinks.map(({ url, name, icon }, index) => (
         <MainLink url={url} key={index}>
           <Image src={icon} alt={name} width={24} height={24} />
-          {name}
         </MainLink>
       ))}
     </div>

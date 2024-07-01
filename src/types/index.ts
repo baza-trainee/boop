@@ -1,4 +1,9 @@
-export type Pokemon = {
-  id: number;
-  name: string;
-};
+export interface ListResponse<T> {
+  data: T[];
+  meta: {
+    page: number;
+    limit: number;
+    totalRecords: number;
+    totalPages: number;
+  };
+}

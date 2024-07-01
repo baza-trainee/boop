@@ -16,7 +16,6 @@ export async function PATCH(
         id: params.id,
       },
       data: {
-        title: data.newDocument.title,
         documentUrl: data.newDocument.documentUrl,
         documentId: data.newDocument.documentId,
       },
