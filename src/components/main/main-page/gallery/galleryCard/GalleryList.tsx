@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { useMediaQuery } from 'react-responsive';
 
 interface ImageProps {
   image: string;
@@ -7,93 +8,56 @@ interface ImageProps {
 
 interface GalleryCardProps {
   images: ImageProps[];
-  decorativeElements: JSX.Element[];
+  decorativeElements: JSX.Element[][];
 }
 
 const GalleryList: React.FC<GalleryCardProps> = ({
   images,
   decorativeElements,
 }) => {
-  const combinedElements = [];
+  const isLargeDesktop = useMediaQuery({ query: '(min-width: 1920px)' });
 
-  const decorativeIndices = [1, 3, 4, 4, 4]; // Позиции, после которых следует вставлять декоративные элементы
+  const combinedElements = [];
+  const decorativeIndices = isLargeDesktop ? [1, 4, 6] : [1, 3, 4]; // Позиции, после которых следует вставлять декоративные элементы 1530
+  const limit = isLargeDesktop ? 10 : 7;
+
   let decorativeIndex = 0;
 
   for (let i = 0; i < images.length; i++) {
     combinedElements.push(
-      <div key={`image-${i}`} className="relative h-[477px] w-[306px]">
+      <div
+        key={`image-${i}`}
+        className="relative h-[477px] min-w-[306px] flex-1"
+      >
         <Image
           src={images[i].image}
           alt={`Gallery image ${i}`}
           //   width={306}
           //   height={477}
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: 'cover' }}
           className="h-full w-full"
+          sizes="(max-width: 768px) 50vw,  306px"
         />
       </div>
     );
 
-    //     while (
-    //       decorativeIndex < decorativeIndices.length &&
-    //       i === decorativeIndices[decorativeIndex]
-    //     ) {
-    //       combinedElements.push(
-    //         <div
-    //           key={`decorative-${decorativeIndex}`}
-    //           className="h-[477px] w-[306px]"
-    //         >
-    //           {decorativeElements[decorativeIndex]}
-    //         </div>
-    //       );
-    //       decorativeIndex++;
-    //     }
-    //   }
+    if (
+      decorativeIndex < decorativeElements.length &&
+      i % limit === decorativeIndices[decorativeIndex]
+    ) {
+      decorativeElements[decorativeIndex].map((el) =>
+        combinedElements.push(
+          <div
+            key={`decorative-${decorativeIndex}`}
+            className="min-w-[306px] flex-1"
+          >
+            {el}
+          </div>
+        )
+      );
 
-    //     if (
-    //       decorativeIndex < decorativeElements.length &&
-    //       i % 6 === decorativeIndices[decorativeIndex]
-    //     ) {
-    //       combinedElements.push(
-    //         <div
-    //           key={`decorative-${decorativeIndex}`}
-    //           className="min-w-[306px] flex-1"
-    //         >
-    //           {decorativeElements[decorativeIndex]}
-    //         </div>
-    //       );
-    //       decorativeIndex = (decorativeIndex + 1) % decorativeElements.length;
-    //     }
-    //   }
-
-    if (i % 7 === 1) {
-      combinedElements.push(
-        <div key={`decorative-${0}`} className="min-w-[306px] flex-1">
-          {decorativeElements[0]}
-        </div>
-      );
-    } else if (i % 7 === 3) {
-      combinedElements.push(
-        <div key={`decorative-${i}`} className="min-w-[306px] flex-1">
-          {decorativeElements[1]}
-        </div>
-      );
-    } else if (i % 7 === 4) {
-      combinedElements.push(
-        <div key={`decorative-${i}`} className="min-w-[306px] flex-1">
-          {decorativeElements[2]}
-        </div>
-      );
-      combinedElements.push(
-        <div key={`decorative-${i}`} className="min-w-[306px] flex-1">
-          {decorativeElements[3]}
-        </div>
-      );
-      combinedElements.push(
-        <div key={`decorative-${i}`} className="min-w-[306px] flex-1">
-          {decorativeElements[4]}
-        </div>
-      );
+      decorativeIndex = (decorativeIndex + 1) % decorativeElements.length;
     }
   }
 
