@@ -1,4 +1,4 @@
-import ChandePasswordPage from '@/components/admin/change-password/ChandePasswordPage';
+import ChandePasswordPage from '@/components/admin/authComponents/ChangePassword/ChandePasswordPage';
 
 export default function ChangePasswordForm() {
   return <ChandePasswordPage />;

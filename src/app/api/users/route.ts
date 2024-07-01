@@ -6,12 +6,12 @@ export async function GET() {
   try {
     await prismaConnect();
     const response = await prisma.user.findMany();
+
     if (!response || response.length === 0) {
       return NextResponse.json({ message: 'Users not found' }, { status: 400 });
     }
 
-    return NextResponse.json({ message: 'User exists' }, { status: 200 });
-    // return NextResponse.json(response, { status: 200 });
+    return NextResponse.json({ message: 'Admin exists' }, { status: 200 });
   } catch (error) {
     console.log('[GET Users]', error);
     return NextResponse.json(

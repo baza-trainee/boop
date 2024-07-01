@@ -2,7 +2,7 @@
 
 import Sidebar from '@/components/admin/sidebar/Sidebar';
 import { AlertWindow } from '@/components/admin/shared/AlertWindow';
-import LoginPage from '@/components/admin/authComponents/login/LoginPage';
+import LoginPage from '@/components/admin/authComponents/LoginPage/LoginPage';
 import { isUserLogined } from '@/components/admin/authComponents/ui/fetchSession';
 import { useState, useEffect } from 'react';
 
@@ -23,7 +23,12 @@ export default function AdminLayout({
   }, []);
 
   if (!userIsLogined) {
-    return <LoginPage />;
+    return (
+      <>
+        <LoginPage />
+        <AlertWindow />
+      </>
+    );
   }
 
   return (
