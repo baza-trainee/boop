@@ -1,6 +1,8 @@
 'use client';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import LanguageSwitcher from './LanguageSwitcher';
+import { useTranslations } from 'next-intl';
 
 const Header = () => {
   const pathname = usePathname();
@@ -10,8 +12,10 @@ const Header = () => {
 
   if (isAdminPage) return null;
 
+  const t = useTranslations('Header');
+
   return (
-    <div className="container flex h-[100px] w-full items-center justify-between bg-beige text-violet">
+    <div className="container fixed left-0 right-0 top-0 z-50 flex h-[100px] w-full items-center justify-between bg-beige text-violet">
       <div className="w-1/5">
         <a href="/" title="Бюро усмішок і підтримки">
           <Image
@@ -25,40 +29,31 @@ const Header = () => {
       <nav className="relative z-10 flex w-3/5 justify-end overflow-y-auto whitespace-nowrap pr-11 font-groppled text-xl font-bold leading-5">
         <ul className="flex items-center">
           <li className="pl-4 pr-5">
-            <a href="/" title="Головна">
-              Головна
+            <a href="/" title={t('home')}>
+              {t('home')}
             </a>
           </li>
           <li className="pl-4 pr-5">
-            <a href="/about" title="Про нас">
-              Про нас
+            <a href="/about" title={t('about')}>
+              {t('about')}
             </a>
           </li>
           <li className="pl-4 pr-5">
-            <a href="/school" title="Школа Клоунів">
-              Школа Клоунів
+            <a href="/school" title={t('school')}>
+              {t('school')}
             </a>
           </li>
           <li className="pl-4 pr-5">
-            <a href="/contacts" title="Контакти">
-              Контакти
+            <a href="/contacts" title={t('contacts')}>
+              {t('contacts')}
             </a>
           </li>
         </ul>
       </nav>
       <div className="relative z-10 -ml-5 flex w-1/5 items-center justify-end pl-8 font-raleway">
-        <button className="flex items-center pr-2 font-semibold">
-          UA
-          <Image
-            className="w-6"
-            src="/images/keyboard_arrow_down.svg"
-            alt="logo"
-            width={86}
-            height={50}
-          />
-        </button>
+        <LanguageSwitcher />
         <button className="relative z-10 -mr-11 ml-1 whitespace-nowrap rounded-full bg-red px-4 py-3 text-xl font-bold leading-5 text-white">
-          Підтримати проєкт
+          {t('button')}
         </button>
       </div>
     </div>
