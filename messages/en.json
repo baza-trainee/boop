@@ -1,7 +1,5 @@
 {
   "hello": "hello",
-<<<<<<< Updated upstream
-=======
   "Header": {
     "home": "Main",
     "about": "About us",
@@ -12,7 +10,6 @@
   "Hero": {
     "title": "We make sure that childhood lasts, no matter the circumstances"
   },
->>>>>>> Stashed changes
   "Vision": {
     "subtitle": "Vision",
     "text": "We strive to ensure that every children's hospital in Ukraine becomes a place of joy and smiles for children who find themselves in difficult and crisis situations."

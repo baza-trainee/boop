@@ -1,7 +1,5 @@
 {
   "hello": "ciao!",
-<<<<<<< Updated upstream
-=======
   "Header": {
     "home": "Home",
     "about": "Chi Siamo",
@@ -12,7 +10,6 @@
   "Hero": {
     "title": "Nonostante tutto, l'infanzia deve continuare"
   },
->>>>>>> Stashed changes
   "Error": {
     "title": "Ops, sembra che ti sia perso!",
     "text": "Purtroppo, la pagina che stai cercando non esiste.",

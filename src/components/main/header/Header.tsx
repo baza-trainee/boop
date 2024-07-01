@@ -13,10 +13,9 @@ const Header = () => {
   if (isAdminPage) return null;
 
   const t = useTranslations('Header');
-  const locale = useLocale();
 
   return (
-    <div className="container flex h-[100px] w-full items-center justify-between bg-beige text-violet">
+    <div className="container fixed left-0 right-0 top-0 z-50 flex h-[100px] w-full items-center justify-between bg-beige text-violet">
       <div className="w-1/5">
         <a href="/" title="Бюро усмішок і підтримки">
           <Image
@@ -30,22 +29,22 @@ const Header = () => {
       <nav className="relative z-10 flex w-3/5 justify-end overflow-y-auto whitespace-nowrap pr-11 font-groppled text-xl font-bold leading-5">
         <ul className="flex items-center">
           <li className="pl-4 pr-5">
-            <a href="/" title="Головна">
+            <a href="/" title={t('home')}>
               {t('home')}
             </a>
           </li>
           <li className="pl-4 pr-5">
-            <a href="/about" title="Про нас">
+            <a href="/about" title={t('about')}>
               {t('about')}
             </a>
           </li>
           <li className="pl-4 pr-5">
-            <a href="/school" title="Школа Клоунів">
+            <a href="/school" title={t('school')}>
               {t('school')}
             </a>
           </li>
           <li className="pl-4 pr-5">
-            <a href="/contacts" title="Контакти">
+            <a href="/contacts" title={t('contacts')}>
               {t('contacts')}
             </a>
           </li>
