@@ -11,7 +11,6 @@ const LanguageSwitcher = () => {
   const locale: string = useLocale();
   const [currentLocale, setCurrentLocale] = useState(locale);
   const [isOpen, setIsOpen] = useState(false);
-  const [isTop, setIsTop] = useState(false);
   const [containerPosition, setContainerPosition] = useState('');
   const menuRef = useRef<HTMLDivElement>(null);
   const submenuRef = useRef<HTMLDivElement>(null);
