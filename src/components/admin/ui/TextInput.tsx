@@ -9,7 +9,7 @@ interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   isEditMode?: boolean;
   className?: string;
   titleClassName?: string;
-  iconSize?: number;
+  imageSize?: { width: number; height: number };
   iconClassName?: string;
 }
 
@@ -23,7 +23,7 @@ const TextInput = forwardRef(function TextInput(
     className = '',
     titleClassName = '',
     iconClassName = '',
-    iconSize = 30,
+    imageSize = { width: 30, height: 30 },
     ...rest
   }: TextInputProps,
   _ref: ForwardedRef<HTMLInputElement>
@@ -56,8 +56,8 @@ const TextInput = forwardRef(function TextInput(
         <Image
           src="/icons/admin/edit.svg"
           alt="edit icon"
-          width={iconSize}
-          height={iconSize}
+          width={imageSize.width}
+          height={imageSize.height}
           className={`absolute right-2 top-[50%] -translate-y-[15%] ${iconClassName}`}
         />
       ) : null}

@@ -25,7 +25,7 @@ const CounterPage = () => {
               <TextInput
                 title={orderTitles[item.order]}
                 titleClassName="text-[#50439F] font-[700] leading-[140%] text-xl"
-                iconSize={24}
+                imageSize={{ width: 24, height: 24 }}
                 iconClassName="translate-y-[0%]"
                 isRequired={false}
                 isEditMode={true}
