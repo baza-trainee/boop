@@ -33,7 +33,10 @@ export const GalleryItems = [
 
 export const DecorativeElements = [
   [
-    <div className="flex h-[477px] w-[306px] flex-1 items-center justify-center">
+    <div
+      key={`purpul_triangulars`}
+      className="flex h-[477px] w-[306px] flex-1 items-center justify-center"
+    >
       <Image
         src="/images/gallerySection/purpul_triangulars.svg"
         alt=""
@@ -44,7 +47,10 @@ export const DecorativeElements = [
     </div>,
   ],
   [
-    <div className="flex h-[477px] w-[306px] flex-1 items-center justify-center">
+    <div
+      key={`bow_ties`}
+      className="flex h-[477px] w-[306px] flex-1 items-center justify-center"
+    >
       <Image
         src="/images/gallerySection/bow_ties.svg"
         alt=""
@@ -55,7 +61,10 @@ export const DecorativeElements = [
     </div>,
   ],
   [
-    <div className="relative flex h-[477px] w-[306px] flex-1 items-end justify-center">
+    <div
+      key={`yellow_man`}
+      className="relative flex h-[477px] w-[306px] flex-1 items-end justify-center"
+    >
       <Image
         src="/images/gallerySection/yellow_man.svg"
         alt=""
@@ -64,7 +73,10 @@ export const DecorativeElements = [
         className="absolute -bottom-6 h-auto"
       />
     </div>,
-    <div className="x-2 flex h-[477px] w-[636px] flex-shrink-0 items-end ">
+    <div
+      key={`orange_man`}
+      className="x-2 flex h-[477px] w-[636px] flex-shrink-0 items-end "
+    >
       <Image
         src="/images/gallerySection/orange_man.svg"
         alt=""
@@ -73,6 +85,6 @@ export const DecorativeElements = [
         className=" relative bottom-[18px] left-[51px] "
       />
     </div>,
-    <div className="h-[477px]  w-[306px] flex-1"></div>,
+    <div key={`empty_card`} className="h-[477px]  w-[306px] flex-1"></div>,
   ],
 ];

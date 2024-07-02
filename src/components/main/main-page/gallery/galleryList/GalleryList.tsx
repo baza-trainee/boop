@@ -42,10 +42,10 @@ const GalleryList: React.FC<GalleryCardProps> = ({
       decorativeIndex < decorativeElements.length &&
       i % limit === decorativeIndices[decorativeIndex]
     ) {
-      decorativeElements[decorativeIndex].map((el) =>
+      decorativeElements[decorativeIndex].map((el, index) =>
         combinedElements.push(
           <div
-            key={`decorative-${decorativeIndex}`}
+            key={`decorative-${decorativeIndex}-${index}`}
             className="min-w-[306px] flex-1"
           >
             {el}
