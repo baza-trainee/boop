@@ -1,7 +1,8 @@
 import React from 'react';
+import CounterPage from '@/components/admin/counter/CounterPage';
 
-const CounterPage = () => {
-  return <div>page</div>;
+const Counter = () => {
+  return <CounterPage />;
 };
 
-export default CounterPage;
+export default Counter;
