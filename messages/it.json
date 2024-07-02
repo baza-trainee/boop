@@ -1,5 +1,8 @@
 {
   "hello": "ciao!",
+  "Hero": {
+    "title": "Nonostante tutto, l'infanzia deve continuare"
+  },
   "Error": {
     "title": "Ops, sembra che ti sia perso!",
     "text": "Purtroppo, la pagina che stai cercando non esiste.",

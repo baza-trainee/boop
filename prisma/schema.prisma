@@ -46,10 +46,7 @@ model Contacts {
   email      String
   facebook   String
   instagram  String
-  addressUa  String
-  addressEn  String
-  latitude   String
-  longitude  String
+  address  String
 }
 
 model Blog {

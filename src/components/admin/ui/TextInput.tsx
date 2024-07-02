@@ -1,14 +1,23 @@
 import { modifyTitle } from '@/helpers/modifyTitle';
+import Image from 'next/image';
 import { ForwardedRef, InputHTMLAttributes, forwardRef } from 'react';
 
 interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   title?: string;
   errorText?: string;
   isRequired: boolean;
+  isEditMode?: boolean;
 }
 
 const TextInput = forwardRef(function TextInput(
-  { title, errorText, isRequired, value = '', ...rest }: TextInputProps,
+  {
+    title,
+    errorText,
+    isRequired,
+    isEditMode,
+    value = '',
+    ...rest
+  }: TextInputProps,
   _ref: ForwardedRef<HTMLInputElement>
 ) {
   const inputClassName = `w-full rounded-xl border p-2 placeholder:text-sm
@@ -21,7 +30,7 @@ const TextInput = forwardRef(function TextInput(
 
   return (
     <div
-      className={`w-full min-w-[100px] max-w-[442px] ${
+      className={`relative w-full min-w-[100px] max-w-[442px] ${
         errorText ? 'text-error' : 'text-inherit'
       }`}
     >
@@ -31,6 +40,15 @@ const TextInput = forwardRef(function TextInput(
           {isRequired && <span className="text-red">*</span>}
         </label>
       )}
+      {isEditMode ? (
+        <Image
+          src="/icons/admin/edit.svg"
+          alt="edit icon"
+          width={30}
+          height={30}
+          className="absolute right-2 top-[50%] -translate-y-[15%]"
+        />
+      ) : null}
       <input {...rest} id={title} value={value} className={inputClassName} />
       {errorText && <span className="text-xs text-red">{errorText}</span>}
     </div>

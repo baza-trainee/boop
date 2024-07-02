@@ -1,5 +1,14 @@
 {
   "hello": "hello",
+  "Hero": {
+    "title": "We make sure that childhood lasts, no matter the circumstances"
+  },
+  "Founders": {
+    "subtitle": "Project Co-Founders",
+    "title": "Olha Bulkina \nand Maryna Berdar",
+    "text": "Certified Hospital Clowns. \nEducational Facilitators. \nHonored Affiliates of \nthe ”SOCCORSO CLOWN” Organization",
+    "caption": "Bureau of Smiles and Support"
+  },
   "Vision": {
     "subtitle": "Vision",
     "text": "We strive to ensure that every children's hospital in Ukraine becomes a place of joy and smiles for children who find themselves in difficult and crisis situations."

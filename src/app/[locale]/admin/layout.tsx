@@ -1,11 +1,36 @@
+'use client';
+
 import Sidebar from '@/components/admin/sidebar/Sidebar';
 import { AlertWindow } from '@/components/admin/shared/AlertWindow';
+import LoginPage from '@/components/admin/authComponents/LoginPage/LoginPage';
+import { isUserLogined } from '@/components/admin/authComponents/ui/fetchSession';
+import { useState, useEffect } from 'react';
 
-export default async function AdminLayout({
+export default function AdminLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [userIsLogined, setUserIsLogined] = useState(false);
+
+  useEffect(() => {
+    const checkLoginStatus = async () => {
+      const logined = await isUserLogined();
+      setUserIsLogined(logined);
+    };
+
+    checkLoginStatus();
+  }, []);
+
+  if (!userIsLogined) {
+    return (
+      <>
+        <LoginPage />
+        <AlertWindow />
+      </>
+    );
+  }
+
   return (
     <div className="flex min-h-[100vh] w-full">
       <Sidebar />
