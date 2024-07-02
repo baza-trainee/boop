@@ -99,6 +99,10 @@
     "title": "Press about us",
     "link_text": "Read more"
   },
+  "Gallery": {
+    "title": "Gallery",
+    "btn": "Download more"
+  },
   "Error": {
     "title": "Uh-oh, you seem to be lost!",
     "text": "Unfortunately, the page you're looking for doesn't exist.",

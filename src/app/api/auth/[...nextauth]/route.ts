@@ -54,7 +54,7 @@ const authOptions: AuthOptions = {
     }),
   ],
   pages: {
-    signIn: '/login',
+    signIn: '/admin',
   },
   session: {
     strategy: 'jwt',
