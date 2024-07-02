@@ -197,7 +197,7 @@ const EditTeamForm = ({ id }: { id: string }) => {
             disabled={!isValid}
             className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white hover:shadow-xl disabled:bg-gray-500"
           >
-            {isProcessing ? 'Обробка запиту...' : 'Додати'}
+            {isProcessing ? 'Обробка запиту...' : 'Оновити'}
           </button>
           <button
             onClick={() => dispatch(closeModal())}
