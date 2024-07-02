@@ -1,25 +1,23 @@
 import React from 'react';
 import Image from 'next/image';
 import { useMediaQuery } from 'react-responsive';
-
-interface ImageProps {
-  image: string;
-}
+import { IPhoto } from '@/types/photo';
 
 interface GalleryCardProps {
-  images: ImageProps[];
+  images: IPhoto[];
   decorativeElements: JSX.Element[][];
+  limit: number;
 }
 
 const GalleryList: React.FC<GalleryCardProps> = ({
   images,
   decorativeElements,
+  limit,
 }) => {
   const isLargeDesktop = useMediaQuery({ query: '(min-width: 1920px)' });
 
   const combinedElements = [];
   const decorativeIndices = isLargeDesktop ? [1, 4, 6] : [1, 3, 4]; // Позиции, после которых следует вставлять декоративные элементы 1530
-  const limit = isLargeDesktop ? 10 : 7;
 
   let decorativeIndex = 0;
 
@@ -30,10 +28,8 @@ const GalleryList: React.FC<GalleryCardProps> = ({
         className="relative h-[477px] min-w-[306px] flex-1"
       >
         <Image
-          src={images[i].image}
+          src={images[i].imageUrl}
           alt={`Gallery image ${i}`}
-          //   width={306}
-          //   height={477}
           fill
           style={{ objectFit: 'cover' }}
           className="h-full w-full"
