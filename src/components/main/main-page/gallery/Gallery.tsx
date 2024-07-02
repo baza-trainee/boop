@@ -5,11 +5,11 @@ import { useTranslations } from 'next-intl';
 import SectionTitle from '../../shared/SectionTitle';
 import SecondaryBtn from '../../shared/SecondaryBtn';
 
-import GalleryList from './galleryCard/GalleryList';
+import GalleryList from './galleryList/GalleryList';
 import { useGetAllPhotoQuery } from '@/store/api/photoApi';
 import { IPhoto } from '@/types/photo';
 import { useMediaQuery } from 'react-responsive';
-import { decorativeElements } from './Items';
+import { DecorativeElements } from './GalleryItems';
 
 const Gallery = () => {
   const t = useTranslations('Gallery');
@@ -49,7 +49,7 @@ const Gallery = () => {
       {!isFetching && items && (
         <GalleryList
           images={photos}
-          decorativeElements={decorativeElements}
+          decorativeElements={DecorativeElements}
           limit={limit}
         />
       )}

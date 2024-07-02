@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-export const galleryItems = [
+export const GalleryItems = [
   {
     image: '/images/missionSection/a_boy_in_a_mask.png',
     text: `Світлина`,
@@ -31,7 +31,7 @@ export const galleryItems = [
   },
 ];
 
-export const decorativeElements = [
+export const DecorativeElements = [
   [
     <div className="flex h-[477px] w-[306px] flex-1 items-center justify-center">
       <Image
