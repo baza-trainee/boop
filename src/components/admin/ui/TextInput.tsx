@@ -7,6 +7,10 @@ interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   errorText?: string;
   isRequired: boolean;
   isEditMode?: boolean;
+  className?: string;
+  titleClassName?: string;
+  iconSize?: number;
+  iconClassName?: string;
 }
 
 const TextInput = forwardRef(function TextInput(
@@ -16,6 +20,10 @@ const TextInput = forwardRef(function TextInput(
     isRequired,
     isEditMode,
     value = '',
+    className = '',
+    titleClassName = '',
+    iconClassName = '',
+    iconSize = 30,
     ...rest
   }: TextInputProps,
   _ref: ForwardedRef<HTMLInputElement>
@@ -26,6 +34,7 @@ const TextInput = forwardRef(function TextInput(
           ? 'border-red caret-red outline-red focus:outline-red'
           : 'border-violet outline-none'
       }
+      ${className}
     `;
 
   return (
@@ -35,7 +44,10 @@ const TextInput = forwardRef(function TextInput(
       }`}
     >
       {!!title && (
-        <label htmlFor={title} className="text-sm font-medium">
+        <label
+          htmlFor={title}
+          className={`text-sm font-medium ${titleClassName}`}
+        >
           {modifyTitle(title)}
           {isRequired && <span className="text-red">*</span>}
         </label>
@@ -44,9 +56,9 @@ const TextInput = forwardRef(function TextInput(
         <Image
           src="/icons/admin/edit.svg"
           alt="edit icon"
-          width={30}
-          height={30}
-          className="absolute right-2 top-[50%] -translate-y-[15%]"
+          width={iconSize}
+          height={iconSize}
+          className={`absolute right-2 top-[50%] -translate-y-[15%] ${iconClassName}`}
         />
       ) : null}
       <input {...rest} id={title} value={value} className={inputClassName} />
