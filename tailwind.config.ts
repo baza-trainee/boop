@@ -25,6 +25,7 @@ const config: Config = {
         bgYellow: 'var(--bgYellow)',
         bgViolet: 'var(--bgViolet)',
         bgVioletTransparent: 'var(--bgVioletTransparent)',
+        bgHeader: 'rgba(255, 171, 11, 0.1)',
         beige: 'var(--beige)',
         violet: 'var(--violet)',
         lightViolet: 'var(--lightViolet)',

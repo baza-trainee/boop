@@ -1,10 +1,11 @@
 'use client';
+import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import LanguageSwitcher from './LanguageSwitcher';
-import { useTranslations } from 'next-intl';
 
 const Header = () => {
+  const t = useTranslations('Header');
   const pathname = usePathname();
   const isAdminPage =
     pathname.split('/').includes('admin') ||
@@ -12,11 +13,9 @@ const Header = () => {
 
   if (isAdminPage) return null;
 
-  const t = useTranslations('Header');
-
   return (
-    <div className="container fixed left-0 right-0 top-0 z-50 flex h-[100px] w-full items-center justify-between bg-beige text-violet">
-      <div className="w-1/5">
+    <div className="bg-bgHeader container fixed left-0 right-0 top-0 z-50 flex h-[100px] w-full items-center justify-between px-[120px] py-[26px] text-violet">
+      <div>
         <a href="/" title="Бюро усмішок і підтримки">
           <Image
             src="/images/logo.svg"
@@ -26,33 +25,33 @@ const Header = () => {
           />
         </a>
       </div>
-      <nav className="relative z-10 flex w-3/5 justify-end overflow-y-auto whitespace-nowrap pr-11 font-groppled text-xl font-bold leading-5">
+      <nav className="relative z-10 flex h-[24px] w-[462px] justify-between gap-[48px] whitespace-nowrap px-[4px] py-0 font-groppled text-[20px] font-bold leading-[31.6px] text-mainViolet">
         <ul className="flex items-center">
-          <li className="pl-4 pr-5">
+          <li className="pr-6">
             <a href="/" title={t('home')}>
               {t('home')}
             </a>
           </li>
-          <li className="pl-4 pr-5">
+          <li className="pl-5 pr-6">
             <a href="/about" title={t('about')}>
               {t('about')}
             </a>
           </li>
-          <li className="pl-4 pr-5">
+          <li className="pl-5 pr-6">
             <a href="/school" title={t('school')}>
               {t('school')}
             </a>
           </li>
-          <li className="pl-4 pr-5">
+          <li className="pl-6">
             <a href="/contacts" title={t('contacts')}>
               {t('contacts')}
             </a>
           </li>
         </ul>
       </nav>
-      <div className="relative z-10 -ml-5 flex w-1/5 items-center justify-end pl-8 font-raleway">
+      <div className="relative z-10 flex items-center justify-end pl-8 font-raleway">
         <LanguageSwitcher />
-        <button className="relative z-10 -mr-11 ml-1 whitespace-nowrap rounded-full bg-red px-4 py-3 text-xl font-bold leading-5 text-white">
+        <button className="relative z-10 whitespace-nowrap rounded-full bg-red px-4 py-3 text-xl font-bold leading-5 text-white">
           {t('button')}
         </button>
       </div>
