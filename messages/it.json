@@ -19,11 +19,12 @@
     "title": "I nostri contatti"
   },
   "School": {
-    "main_title": "Scuola di Clown",
+    "main_title": "Scuola di Clownerie Ospedaliera",
     "join_title": "Chi Può Diventare un Clown Ospedaliero?",
     "training_title": "Come Funziona la Formazione",
-    "main_text_primary": "La Scuola di Clownterapia Ospedaliera è un progetto congiunto di BUP -",
-    "main_text_secondary": "Ufficio di Sorrisi e Supporto e 'Tabletochki'",
+    "main_text_primary": "Scuola di Clownerie Ospedaliera -",
+    "main_text_secondary": "un progetto congiunto di",
+    "and": "e",
     "join": {
       "paragraph_1": "Una persona che comprende cos'è l'empatia. Pronta ad accettare e riconoscere le emozioni di coloro che necessitano di supporto. E fornire questo supporto in base ai bisogni emotivi di bambini e genitori.",
       "paragraph_2": "Qualcuno che non ha paura di essere divertente. Ridere sinceramente di se stesso e di questa vita capricciosa. Ridere e amarla sopra ogni cosa.",
