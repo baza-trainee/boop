@@ -41,8 +41,8 @@ const Photos = () => {
       <div className="flex items-center justify-between pb-8">
         <SectionTitle title={t('photo_title')} />
         <div className="flex items-center  gap-2">
-          <CarouselButton className="press-about-us-prev-el rotate-180" />
-          <CarouselButton className="press-about-us-next-el" />
+          <CarouselButton className="photos-prev-el rotate-180" />
+          <CarouselButton className="photos-next-el" />
         </div>
       </div>
 
@@ -52,8 +52,8 @@ const Photos = () => {
       {!isFetching && items && (
         <Carousel
           items={items}
-          prevEl=".press-about-us-prev-el"
-          nextEl=".press-about-us-next-el"
+          prevEl=".photos-prev-el"
+          nextEl=".photos-next-el"
           slidesPerView={limit}
           speed={500}
           spaceBetween={24}
