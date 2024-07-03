@@ -18,8 +18,8 @@ const SchoolPage = () => {
         </div>
       </section>
       <Training />
-      <Photos />
       <Feedback />
+      <Photos />
     </>
   );
 };
