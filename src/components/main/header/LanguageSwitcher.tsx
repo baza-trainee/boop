@@ -48,12 +48,12 @@ const LanguageSwitcher = () => {
 
   return (
     <div
-      className={`reletive flex cursor-pointer items-center bg-beige ${containerPosition}`}
+      className={`reletive flex cursor-pointer items-center ${containerPosition}`}
     >
       <div
         ref={menuRef}
         onClick={handleImageClick}
-        className="-mb-1 mt-[5px] flex h-[35px] w-[60px] items-center justify-between px-[5px] text-violet"
+        className="-mb-1 mt-[5px] flex h-[35px] w-[60px] items-center justify-between px-[5px] text-mainViolet"
       >
         <span className="font-sans' text-[18px] font-semibold">
           {currentLocale.toUpperCase()}
@@ -71,7 +71,7 @@ const LanguageSwitcher = () => {
       {isOpen && (
         <div
           ref={submenuRef}
-          className="absolute top-[100%] flex w-[60px] flex-col rounded-none bg-beige"
+          className="absolute top-[100%] flex w-[60px] flex-col rounded-none"
         >
           {filteredLocales.map((item: string) => (
             <span
