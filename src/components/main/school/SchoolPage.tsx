@@ -2,6 +2,7 @@ import React from 'react';
 import Introduction from './components/Introduction';
 import WhoCanJoin from './components/WhoCanJoin';
 import Training from './components/Training';
+import Photos from './components/Photos';
 
 const SchoolPage = () => {
   return (
@@ -16,6 +17,7 @@ const SchoolPage = () => {
         </div>
       </section>
       <Training />
+      <Photos />
     </>
   );
 };
