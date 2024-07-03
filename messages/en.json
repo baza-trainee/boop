@@ -1,5 +1,12 @@
 {
   "hello": "hello",
+  "Header": {
+    "home": "Main",
+    "about": "About us",
+    "school": "School",
+    "contacts": "Contacts",
+    "button": "Support the project"
+  },
   "Hero": {
     "title": "We make sure that childhood lasts, no matter the circumstances"
   },
@@ -125,6 +132,7 @@
       "paragraph_3": "After the training, volunteers go to practice in the hospital, accompanied by experienced hospital clowns.",
       "paragraph_4": "Over the next three months, they meet for classes once a week and delve deeper into the mechanisms of hospital clowning.",
       "paragraph_5": "In parallel, regular visits to hospital wards occur under constant trainer supervision and psychological support."
-    }
+    },
+    "photo_title": "Photos"
   }
 }
