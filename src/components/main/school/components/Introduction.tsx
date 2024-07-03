@@ -5,11 +5,11 @@ import Image from 'next/image';
 const Introduction = () => {
   const t = useTranslations('School');
   return (
-    <div className="relative mb-[120px]">
+    <div className="relative lg:mb-[100px] 3xl:mb-[120px]">
       <h2 className="title-gradient mb-8 font-groppled text-3xl font-bold">
         {t('main_title')}
       </h2>
-      <svg className="absolute top-[10%] h-[1rem] w-[5rem]">
+      <svg className="absolute h-[1rem] w-[5rem] lg:top-[11%] 3xl:top-[10%]">
         <use href="/icons/sprite.svg#title-line"></use>
       </svg>
       <h3 className="text-gradient mb-4 ml-[110px] font-raleway  text-xl font-bold leading-[1.32]">
@@ -33,9 +33,9 @@ const Introduction = () => {
         />
       </div>
       <div className="relative mt-12 flex gap-6">
-        <div className="bg- h-[533px] w-[416px] bg-yellow bg-[url('/icons/school/right-photo.png')] bg-[length:416px_533px] bg-no-repeat"></div>
-        <div className="h-[406px] w-[306px]  bg-gray-300 bg-[url('/icons/school/midle-photo.jpg')] bg-[length:306px_406px] bg-no-repeat"></div>
-        <div className="h-[395px] w-[526px] translate-y-[-35%] bg-gray-300 bg-[url('/icons/school/left-photo.jpg')] bg-[length:526px_395px] bg-no-repeat"></div>
+        <div className="h-[533px] w-[416px] bg-yellow bg-[url('/icons/school/right-photo.png')] bg-[length:416px_533px] bg-no-repeat lg:h-[456px] lg:w-[344px] lg:bg-[length:344px_456px]"></div>
+        <div className="h-[406px] w-[306px]  bg-gray-300 bg-[url('/icons/school/midle-photo.jpg')] bg-[length:306px_406px] bg-no-repeat lg:h-[378px] lg:w-[294px] lg:bg-[length:294px_378px]"></div>
+        <div className="h-[395px] w-[526px] translate-y-[-35%] bg-gray-300 bg-[url('/icons/school/left-photo.jpg')] bg-[length:526px_395px] bg-no-repeat lg:h-[348px] lg:w-[466px] lg:bg-[length:466px_348px]"></div>
       </div>
     </div>
   );
