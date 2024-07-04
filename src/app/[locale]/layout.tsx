@@ -7,6 +7,7 @@ import StoreProvider from '@/components/providers/StoreProvider';
 import Header from '@/components/main/header/Header';
 import Footer from '@/components/main/footer/Footer';
 import './globals.css';
+import { useRouter } from 'next/navigation';
 
 const raleway = Raleway({
   weight: '400',
@@ -44,13 +45,14 @@ export default async function RootLayout({
   params: { locale: string };
 }>) {
   const messages = await getMessages();
+
   return (
     <StoreProvider>
       <html lang={locale}>
         <body
           className={`${raleway.variable} ${groppled.variable} ${redhat.variable}`}
         >
-          <NextIntlClientProvider messages={messages}>
+          <NextIntlClientProvider messages={messages} locale={locale}>
             <div className="wrapper font-raleway">
               <Header />
               {children}

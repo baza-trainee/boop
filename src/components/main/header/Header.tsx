@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import LanguageSwitcher from './LanguageSwitcher';
+import { Link } from '@/navigation';
 
 const Header = () => {
   const t = useTranslations('Header');
@@ -28,24 +29,28 @@ const Header = () => {
       <nav className="relative z-10 ml-[8px] flex h-[24px] w-[462px] justify-between whitespace-nowrap px-[4px] py-0 font-groppled text-[20px] font-bold leading-[31.6px] text-mainViolet">
         <ul className="flex items-center">
           <li className="pr-[48px]">
-            <a href="/" title={t('home')}>
+            {/* <a href="/" title={t('home')}>
               {t('home')}
-            </a>
+            </a> */}
+            <Link href="/">{t('home')}</Link>
           </li>
           <li className="pr-[48px]">
-            <a href="/about" title={t('about')}>
+            {/* <a href="/about" title={t('about')}>
               {t('about')}
-            </a>
+            </a> */}
+            <Link href="/about">{t('about')}</Link>
           </li>
           <li className="pr-[48px]">
-            <a href="/school" title={t('school')}>
+            {/* <a href="/school" title={t('school')}>
               {t('school')}
-            </a>
+            </a> */}
+            <Link href="/school">{t('school')}</Link>
           </li>
           <li className="">
-            <a href="/contacts" title={t('contacts')}>
+            {/* <a href="/contacts" title={t('contacts')}>
               {t('contacts')}
-            </a>
+            </a> */}
+            <Link href="/contacts">{t('contacts')}</Link>
           </li>
         </ul>
       </nav>
