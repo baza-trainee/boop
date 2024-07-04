@@ -11,6 +11,8 @@ interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   titleClassName?: string;
   imageSize?: { width: number; height: number };
   iconClassName?: string;
+  onImageEditClick?: () => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const TextInput = forwardRef(function TextInput(
@@ -18,12 +20,14 @@ const TextInput = forwardRef(function TextInput(
     title,
     errorText,
     isRequired,
-    isEditMode,
+    isEditMode = true,
     value = '',
     className = '',
     titleClassName = '',
     iconClassName = '',
     imageSize = { width: 30, height: 30 },
+    onImageEditClick,
+    onChange,
     ...rest
   }: TextInputProps,
   _ref: ForwardedRef<HTMLInputElement>
@@ -54,6 +58,7 @@ const TextInput = forwardRef(function TextInput(
       )}
       {isEditMode ? (
         <Image
+          onClick={onImageEditClick}
           src="/icons/admin/edit.svg"
           alt="edit icon"
           width={imageSize.width}
@@ -61,7 +66,13 @@ const TextInput = forwardRef(function TextInput(
           className={`absolute right-2 top-[50%] -translate-y-[15%] ${iconClassName}`}
         />
       ) : null}
-      <input {...rest} id={title} value={value} className={inputClassName} />
+      <input
+        onChange={onChange}
+        {...rest}
+        id={title}
+        value={value}
+        className={inputClassName}
+      />
       {errorText && <span className="text-xs text-red">{errorText}</span>}
     </div>
   );
