@@ -24,7 +24,9 @@ export async function POST(request: Request) {
         email: data.email,
         instagram: data.instagram,
         facebook: data.facebook,
-        address: data.address,
+        addressUa: data.addressUa,
+        addressEn: data.addressEn,
+        addressIt: data.addressIt,
       },
     });
     return NextResponse.json(response, { status: 200 });
