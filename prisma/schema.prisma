@@ -40,6 +40,19 @@ model Team {
   imageId  String
 }
 
+model Testimonial {
+  id         String @id @default(uuid())
+  nameUa     String
+  nameEn     String
+  nameIt     String
+  reviewUa   String
+  reviewEn   String
+  reviewIt   String
+  imageUrl   String
+  imageId    String
+  createdAt DateTime @default(now())
+}
+
 model Contacts {
   id          String @id @default(uuid())
   phone       String
