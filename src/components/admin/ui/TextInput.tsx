@@ -46,7 +46,7 @@ const TextInput = forwardRef(function TextInput(
       {!!title && (
         <label
           htmlFor={title}
-          className={`text-sm font-medium ${titleClassName}`}
+          className={`text-sm font-[500] ${titleClassName}`}
         >
           {modifyTitle(title)}
           {isRequired && <span className="text-red">*</span>}
