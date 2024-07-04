@@ -31,7 +31,9 @@ const ContactsPage = () => {
     resolver: zodResolver(contactsValidation),
     mode: 'onChange',
     defaultValues: {
-      address: '',
+      addressUa: '',
+      addressEn: '',
+      addressIt: '',
       phone: '',
       email: '',
       facebook: '',
@@ -44,7 +46,9 @@ const ContactsPage = () => {
     const result = contacts[0];
     setValue('phone', result.phone);
     setValue('email', result.email);
-    setValue('address', result.address);
+    setValue('addressUa', result.addressUa);
+    setValue('addressEn', result.addressEn);
+    setValue('addressIt', result.addressIt);
     setValue('instagram', result.instagram);
     setValue('facebook', result.facebook);
   }, [contacts]);
@@ -55,7 +59,9 @@ const ContactsPage = () => {
     const result = contacts[0];
     setValue('phone', result.phone);
     setValue('email', result.email);
-    setValue('address', result.address);
+    setValue('addressUa', result.addressUa);
+    setValue('addressEn', result.addressEn);
+    setValue('addressIt', result.addressIt);
     setValue('instagram', result.instagram);
     setValue('facebook', result.facebook);
   };
@@ -71,7 +77,9 @@ const ContactsPage = () => {
       const updatedContacts = {
         phone: values.phone,
         email: values.email,
-        address: values.address,
+        addressUa: values.addressUa,
+        addressEn: values.addressEn,
+        addressIt: values.addressIt,
         facebook: values.facebook,
         instagram: values.instagram,
       };
@@ -101,91 +109,130 @@ const ContactsPage = () => {
         <form
           onSubmit={handleSubmit(onSubmit)}
           autoComplete="off"
-          className="flex w-[50%] flex-col items-start gap-[24px]"
+          className="flex w-full flex-col items-start gap-[24px]"
         >
-          <Controller
-            name="phone"
-            control={control}
-            render={({ field }) => (
-              <TextInput
-                {...field}
-                errorText={errors.phone?.message}
-                placeholder="+380 67 596 1600"
-                title="Телефон"
-                isRequired={true}
-                isEditMode={true}
+          <div className="flex gap-[24px]">
+            <div className="flex w-[292px] flex-col items-start gap-[24px]">
+              <Controller
+                name="addressUa"
+                control={control}
+                render={({ field }) => (
+                  <TextInput
+                    {...field}
+                    errorText={errors.addressUa?.message}
+                    placeholder="01135, м. Київ, вул. В.Чорновола, 28/1"
+                    title="Адреса українською"
+                    isRequired={true}
+                    isEditMode={true}
+                  />
+                )}
               />
-            )}
-          />
-          <Controller
-            name="email"
-            control={control}
-            render={({ field }) => (
-              <TextInput
-                {...field}
-                errorText={errors.email?.message}
-                placeholder="bulkina.ola@gmail.com"
-                title="Email"
-                isRequired={true}
-                isEditMode={true}
+              <Controller
+                name="addressEn"
+                control={control}
+                render={({ field }) => (
+                  <TextInput
+                    {...field}
+                    errorText={errors.addressEn?.message}
+                    placeholder="01135, Kyiv, str. V. Chornovola, 28/1"
+                    title="Адреса англійською"
+                    isRequired={true}
+                    isEditMode={true}
+                  />
+                )}
               />
-            )}
-          />
-          <Controller
-            name="address"
-            control={control}
-            render={({ field }) => (
-              <TextInput
-                {...field}
-                errorText={errors.address?.message}
-                placeholder="вулиця В'ячеслава Чорновола, 28"
-                title="Адреса"
-                isRequired={true}
-                isEditMode={true}
+              <Controller
+                name="addressIt"
+                control={control}
+                render={({ field }) => (
+                  <TextInput
+                    {...field}
+                    errorText={errors.addressIt?.message}
+                    placeholder="01135, Kiev, str. V.Chornvola, 28/1"
+                    title="Адреса італійською"
+                    isRequired={true}
+                    isEditMode={true}
+                  />
+                )}
               />
-            )}
-          />
-          <Controller
-            name="instagram"
-            control={control}
-            render={({ field }) => (
-              <TextInput
-                {...field}
-                errorText={errors.instagram?.message}
-                placeholder="https://www.instagram..."
-                title="Instagram"
-                isRequired={true}
-                isEditMode={true}
-              />
-            )}
-          />
-          <Controller
-            name="facebook"
-            control={control}
-            render={({ field }) => (
-              <TextInput
-                {...field}
-                errorText={errors.facebook?.message}
-                placeholder="https://www.facebook..."
-                title="Facebook"
-                isRequired={true}
-                isEditMode={true}
-              />
-            )}
-          />
-          <div className="relative mt-[60px] flex w-[90%] justify-between">
-            <button
-              disabled={!!Object.keys(errors).length}
-              className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white disabled:bg-gray-500"
-            >
-              {isProcessing ? 'Обробка запиту...' : 'Змінити'}
-            </button>
-            <button
-              onClick={(e) => handleReset(e)}
-              className="w-[149px] rounded-3xl border border-yellow px-4 py-2 text-violet"
-            >
-              Скасувати
-            </button>
+              <div className="relative mt-[60px] flex w-full justify-between">
+                <button
+                  disabled={!!Object.keys(errors).length}
+                  className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white disabled:bg-gray-500"
+                >
+                  {isProcessing ? 'Обробка запиту...' : 'Змінити'}
+                </button>
+                <button
+                  onClick={(e) => handleReset(e)}
+                  className="w-[149px] rounded-3xl border border-yellow px-4 py-2 font-[800] text-violet"
+                >
+                  Скасувати
+                </button>
+              </div>
+            </div>
+
+            <div className="flex w-[628px] flex-col gap-[24px]">
+              <div className="flex gap-[24px]">
+                <Controller
+                  name="phone"
+                  control={control}
+                  render={({ field }) => (
+                    <TextInput
+                      {...field}
+                      errorText={errors.phone?.message}
+                      placeholder="+380 67 596 1600"
+                      title="Телефон"
+                      isRequired={true}
+                      isEditMode={true}
+                    />
+                  )}
+                />
+                <Controller
+                  name="email"
+                  control={control}
+                  render={({ field }) => (
+                    <TextInput
+                      {...field}
+                      errorText={errors.email?.message}
+                      placeholder="bulkina.ola@gmail.com"
+                      title="Email"
+                      isRequired={true}
+                      isEditMode={true}
+                    />
+                  )}
+                />
+              </div>
+              <div className="flex gap-[24px]">
+                <Controller
+                  name="instagram"
+                  control={control}
+                  render={({ field }) => (
+                    <TextInput
+                      {...field}
+                      errorText={errors.instagram?.message}
+                      placeholder="https://www.instagram..."
+                      title="Instagram"
+                      isRequired={true}
+                      isEditMode={true}
+                    />
+                  )}
+                />
+                <Controller
+                  name="facebook"
+                  control={control}
+                  render={({ field }) => (
+                    <TextInput
+                      {...field}
+                      errorText={errors.facebook?.message}
+                      placeholder="https://www.facebook..."
+                      title="Facebook"
+                      isRequired={true}
+                      isEditMode={true}
+                    />
+                  )}
+                />
+              </div>
+            </div>
           </div>
         </form>
       </div>

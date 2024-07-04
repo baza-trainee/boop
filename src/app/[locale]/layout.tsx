@@ -9,7 +9,7 @@ import Footer from '@/components/main/footer/Footer';
 import './globals.css';
 
 const raleway = Raleway({
-  weight: '400',
+  weight: '500',
   subsets: ['latin', 'cyrillic'],
   variable: '--font-raleway',
 });

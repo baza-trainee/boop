@@ -102,7 +102,7 @@ const AddTeamForm = () => {
                   {...field}
                   errorText={errors.nameUa?.message}
                   placeholder="Напишіть псевдонім"
-                  title="Вкажіть псевдонім українською:"
+                  title="Вкажіть псевдонім українською"
                   isRequired={true}
                 />
               )}
@@ -115,7 +115,7 @@ const AddTeamForm = () => {
                   {...field}
                   errorText={errors.nameEn?.message}
                   placeholder="Напишіть псевдонім"
-                  title="Вкажіть псевдонім англійською:"
+                  title="Вкажіть псевдонім англійською"
                   isRequired={true}
                 />
               )}
@@ -128,7 +128,7 @@ const AddTeamForm = () => {
                   {...field}
                   errorText={errors.nameIt?.message}
                   placeholder="Напишіть псевдонім"
-                  title="Вкажіть псевдонім італійською:"
+                  title="Вкажіть псевдонім італійською"
                   isRequired={true}
                 />
               )}
