@@ -11,7 +11,7 @@ export const items: TItem[][] = [
       id: 1,
       imgSrc: '/images/feedback-test.png',
       name: 'Maria',
-      text: 'Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem',
+      text: 'Lorem Lorem',
     },
     {
       id: 2,

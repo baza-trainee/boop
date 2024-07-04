@@ -1,18 +1,26 @@
+import clsx from 'clsx';
 import Image from 'next/image';
 import React from 'react';
 
 interface FeedbackItemProps {
-  id: number;
+  idx: number;
   imgSrc: string;
   name: string;
   text: string;
 }
 
-const FeedbackItem = ({ id, imgSrc, name, text }: FeedbackItemProps) => {
+const FeedbackItem = ({ idx, imgSrc, name, text }: FeedbackItemProps) => {
   return (
-    <div className="odd:self-start even:self-end">
-      <div className="text-center">
-        <div className="relative mb-6 h-[188px] w-[180px] overflow-hidden rounded-full border-2 border-solid border-yellow">
+    <div className="relative pl-[120px] pt-[60px] odd:self-start even:self-end">
+      <div className="absolute left-0 top-0 z-[2] w-[180px] text-center">
+        <div
+          className={clsx(
+            'relative mb-6 h-[188px] w-full overflow-hidden rounded-full border-2 border-solid',
+            idx === 0 && 'border-yellow',
+            idx === 1 && 'border-red',
+            idx === 2 && 'border-textViolet'
+          )}
+        >
           <Image
             className="object-contain"
             src={imgSrc}
@@ -21,11 +29,20 @@ const FeedbackItem = ({ id, imgSrc, name, text }: FeedbackItemProps) => {
             alt={name}
           />
         </div>
-        <p className="title-gradient font-groppled text-2xl font-bold leading-[1.5]">
+        <h4 className="title-gradient font-groppled text-2xl font-bold leading-[1.5]">
           {name}
-        </p>
+        </h4>
       </div>
-      <div className=""></div>
+      <div className="relative py-16 pl-16 pr-10">
+        <Image
+          src={'/images/feedback/text-bg.png'}
+          alt={'background image'}
+          fill
+          sizes="100%"
+          className="-z-[1]"
+        />
+        <p className="max-w-[550px] text-center">{text}</p>
+      </div>
     </div>
   );
 };

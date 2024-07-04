@@ -34,16 +34,17 @@ const Feedback = () => {
                     alt={'yellow buddy'}
                     fill
                     sizes="100%"
+                    className="-z-[1]"
                   />
                 </div>
                 <div className="flex flex-col">
-                  {items.map((item) => (
+                  {items.map((item, idx) => (
                     <FeedbackItem
                       key={item.id}
                       imgSrc={item.imgSrc}
                       name={item.name}
                       text={item.text}
-                      id={item.id}
+                      idx={idx}
                     />
                   ))}
                 </div>
