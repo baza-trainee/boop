@@ -4,7 +4,9 @@ export interface IContact {
   email: string;
   facebook: string;
   instagram: string;
-  address: string;
+  addressUa: string;
+  addressEn: string;
+  addressIt: string;
 }
 
 export type ContactFormData = Omit<IContact, 'id'>;

@@ -23,9 +23,11 @@ export async function PATCH(
       data: {
         phone: updatedContacts.phone,
         email: updatedContacts.email,
-        address: updatedContacts.address,
         facebook: updatedContacts.facebook,
         instagram: updatedContacts.instagram,
+        addressUa: updatedContacts.addressUa,
+        addressEn: updatedContacts.addressEn,
+        addressIt: updatedContacts.addressIt,
       },
     });
     return NextResponse.json(response, { status: 200 });

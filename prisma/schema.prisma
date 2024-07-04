@@ -41,12 +41,14 @@ model Team {
 }
 
 model Contacts {
-  id        String @id @default(uuid())
-  phone     String
-  email     String
-  facebook  String
-  instagram String
-  address   String
+  id          String @id @default(uuid())
+  phone       String
+  email       String
+  facebook    String
+  instagram   String
+  addressUa   String
+  addressEn   String
+  addressIt   String
 }
 
 model Blog {
