@@ -46,8 +46,8 @@ export async function GET(request: Request) {
     } else {
       testimonials = await prisma.testimonial.findMany();
       response = {
-        data: chunkArray(testimonials, 3);
-      }
+        data: chunkArray(testimonials, 3),
+      };
     }
 
     return NextResponse.json(response, { status: 200 });

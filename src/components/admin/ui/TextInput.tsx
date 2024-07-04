@@ -28,7 +28,7 @@ const TextInput = forwardRef(function TextInput(
   }: TextInputProps,
   _ref: ForwardedRef<HTMLInputElement>
 ) {
-  const inputClassName = `w-full rounded-xl border p-2 placeholder:text-sm
+  const inputClassName = `w-full rounded-xl border p-2 text-sm placeholder:text-sm
       ${
         errorText
           ? 'border-red caret-red outline-red focus:outline-red'
@@ -39,7 +39,7 @@ const TextInput = forwardRef(function TextInput(
 
   return (
     <div
-      className={`relative w-full min-w-[100px] max-w-[442px] ${
+      className={` relative w-full min-w-[100px] max-w-[442px] ${
         errorText ? 'text-error' : 'text-inherit'
       }`}
     >

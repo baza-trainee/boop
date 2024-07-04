@@ -35,14 +35,14 @@ export async function DELETE(
 ) {
   try {
     await prismaConnect();
-    const response = await prisma.team.delete({
+    const response = await prisma.testimonial.delete({
       where: {
         id: params.id,
       },
     });
     return NextResponse.json(response, { status: 200 });
   } catch (error) {
-    console.log('[DELETE TEAM MEMBER]', error);
+    console.log('[DELETE TESTIMONIAL]', error);
     return new NextResponse('Internal Server Error', { status: 500 });
   }
 }
