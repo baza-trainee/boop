@@ -8,7 +8,7 @@ const SchoolPage = () => {
   return (
     <>
       <section
-        className="bg-bgWhite bg-[right_top_35px] bg-no-repeat pb-[120px] pt-[100px]"
+        className="bg-bgWhite bg-[right_top_35px] bg-no-repeat pb-[130px] pt-[100px]"
         style={{ backgroundImage: "url('/icons/school/wave.svg')" }}
       >
         <div className="container">
