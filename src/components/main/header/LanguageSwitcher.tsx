@@ -38,7 +38,7 @@ const LanguageSwitcher = () => {
   const handleImageClick = (event: React.MouseEvent) => {
     event.stopPropagation();
     setIsOpen(!isOpen);
-    setContainerPosition(isOpen ? '' : 'absolute -top-9 left-5');
+    setContainerPosition(isOpen ? '' : 'absolute -top-[35px] left-0');
   };
 
   useEffect(() => {
@@ -48,22 +48,22 @@ const LanguageSwitcher = () => {
 
   return (
     <div
-      className={`reletive flex cursor-pointer items-center ${containerPosition}`}
+      className={`relative flex h-[24px] cursor-pointer items-center text-[20px] font-semibold leading-[20px] text-mainViolet ${containerPosition}`}
     >
       <div
         ref={menuRef}
         onClick={handleImageClick}
-        className="-mb-1 mt-[5px] flex h-[35px] w-[60px] items-center justify-between px-[5px] text-mainViolet"
+        className="mt-[5px] flex w-[80px] items-center px-[5px] pl-[14px]"
       >
-        <span className="font-sans' text-[18px] font-semibold">
+        <span className="mr-[10px] w-[24px] font-bold">
           {currentLocale.toUpperCase()}
         </span>
         <span className={`${!isOpen && 'rotate-[180deg]'}`}>
           <Image
-            className="w-6"
+            className="mr-[10px] w-[24px] font-bold"
             src="/images/keyboard_arrow_down.svg"
             alt="arrow down"
-            width={86}
+            width={90}
             height={50}
           />
         </span>
@@ -71,12 +71,12 @@ const LanguageSwitcher = () => {
       {isOpen && (
         <div
           ref={submenuRef}
-          className="absolute top-[100%] flex w-[60px] flex-col rounded-none"
+          className="absolute left-[11px] top-[30px] flex w-[100px] flex-col rounded-none"
         >
           {filteredLocales.map((item: string) => (
             <span
               key={item}
-              className="ml-1 flex h-[30px] cursor-pointer items-center font-sans text-[18px] font-semibold text-violet"
+              className="ml-1 flex h-[30px] cursor-pointer items-center"
               onClick={() => handleCheckLocale(item)}
             >
               {item.toUpperCase()}
@@ -87,4 +87,5 @@ const LanguageSwitcher = () => {
     </div>
   );
 };
+
 export default LanguageSwitcher;

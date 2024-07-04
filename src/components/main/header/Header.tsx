@@ -14,7 +14,7 @@ const Header = () => {
   if (isAdminPage) return null;
 
   return (
-    <div className="bg-bgHeader container fixed left-0 right-0 top-0 z-50 flex h-[100px] w-full items-center justify-between px-[120px] py-[26px] text-violet">
+    <div className="container fixed left-0 right-0 top-0 z-50 flex h-[100px] w-full items-center justify-between bg-bgHeader bg-opacity-80 px-[120px] py-[26px] text-violet backdrop-blur-sm backdrop-filter">
       <div>
         <a href="/" title="Бюро усмішок і підтримки">
           <Image
@@ -25,33 +25,35 @@ const Header = () => {
           />
         </a>
       </div>
-      <nav className="relative z-10 flex h-[24px] w-[462px] justify-between gap-[48px] whitespace-nowrap px-[4px] py-0 font-groppled text-[20px] font-bold leading-[31.6px] text-mainViolet">
+      <nav className="relative z-10 ml-[8px] flex h-[24px] w-[462px] justify-between whitespace-nowrap px-[4px] py-0 font-groppled text-[20px] font-bold leading-[31.6px] text-mainViolet">
         <ul className="flex items-center">
-          <li className="pr-6">
+          <li className="pr-[48px]">
             <a href="/" title={t('home')}>
               {t('home')}
             </a>
           </li>
-          <li className="pl-5 pr-6">
+          <li className="pr-[48px]">
             <a href="/about" title={t('about')}>
               {t('about')}
             </a>
           </li>
-          <li className="pl-5 pr-6">
+          <li className="pr-[48px]">
             <a href="/school" title={t('school')}>
               {t('school')}
             </a>
           </li>
-          <li className="pl-6">
+          <li className="">
             <a href="/contacts" title={t('contacts')}>
               {t('contacts')}
             </a>
           </li>
         </ul>
       </nav>
-      <div className="relative z-10 flex items-center justify-end pl-8 font-raleway">
-        <LanguageSwitcher />
-        <button className="relative z-10 whitespace-nowrap rounded-full bg-red px-4 py-3 text-xl font-bold leading-5 text-white">
+      <div className="font-ralewayb relative z-10 flex w-[330px] items-center">
+        <div className="relative w-[100px]">
+          <LanguageSwitcher />
+        </div>
+        <button className="ml-[30px] h-[56px] w-[238px] whitespace-nowrap rounded-[32px] bg-red px-[24px] py-[18px] text-[20px] font-bold leading-[20px] text-white">
           {t('button')}
         </button>
       </div>
