@@ -2,6 +2,7 @@ import React from 'react';
 import Introduction from './components/Introduction';
 import WhoCanJoin from './components/WhoCanJoin';
 import Training from './components/Training';
+import Feedback from './components/feedback/Feedback';
 import Photos from './components/Photos';
 
 const SchoolPage = () => {
@@ -17,6 +18,7 @@ const SchoolPage = () => {
         </div>
       </section>
       <Training />
+      <Feedback />
       <Photos />
     </>
   );
