@@ -19,7 +19,7 @@ export const localePrefix = undefined;
 
 export const pathnames = {
   '/': '/',
-  about: '/about',
-  school: '/school',
-  contacts: '/contacts',
+  '/about': '/about',
+  '/school': '/school',
+  '/contacts': '/contacts',
 };
