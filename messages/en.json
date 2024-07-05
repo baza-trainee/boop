@@ -111,7 +111,6 @@
   "Contacts": {
     "title": "Our сontacts"
   },
-
   "School": {
     "main_title": "Clown Hospital School",
     "join_title": "Who Can Become a Hospital Clown?",
@@ -135,5 +134,26 @@
       "paragraph_5": "In parallel, regular visits to hospital departments take place, under the constant supervision of trainers and psychological support"
     },
     "photo_title": "Photos"
+  },
+  "Form": {
+    "joinUs": "Join us",
+    "leaveForm": "Leave your form and we will contact you within three days",
+    "name": "Your name",
+    "phone": "Phone number",
+    "phonePlaceholder": "Enter phone number in format +380",
+    "email": "Email",
+    "emailPlaceholder": "example@gmail.com",
+    "social": "Social networks",
+    "socialPlaceholder": "Link to Facebook, Telegram or Instagram",
+    "submit": "Submit",
+    "required": "This field is required.",
+    "invalidPhone": "Please enter a valid phone number.",
+    "invalidEmail": "Please enter a valid email address."
+  },
+  "ClownSchoolForm": {
+    "formSubmitted": "Your form has been submitted.",
+    "contactWithinThreeDays": "We will contact you within three days.",
+    "somethingWentWrong": "Something went wrong...",
+    "pleaseTryAgain": "Please try again."
   }
 }
