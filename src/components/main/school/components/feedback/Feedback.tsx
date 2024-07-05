@@ -8,9 +8,11 @@ import SectionTitle from '@/components/main/shared/SectionTitle';
 import Image from 'next/image';
 import { useGetAllTestimonialsQuery } from '@/store/api/testimonialsApi';
 import { useParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 const Feedback = () => {
   const { locale } = useParams();
+  const t = useTranslations('School');
   const {
     data: feedbackData,
     isError,
@@ -21,7 +23,7 @@ const Feedback = () => {
     <section className="bg-bgWhite pb-[120px] pt-[120px]">
       <div className="container">
         <div className="mb-8 flex items-center justify-between gap-5">
-          <SectionTitle title={'Відгуки студентів Школи Клоунів'} />
+          <SectionTitle title={t('feedback_title')} />
           <div className="flex items-center gap-2">
             <CarouselButton className="feedback-prev-el rotate-180" />
             <CarouselButton className="feedback-next-el" />
