@@ -18,6 +18,15 @@
   "Contacts": {
     "title": "I nostri contatti"
   },
+  "About": {
+    "team_structure": {
+      "title": "Squadra",
+      "management_title": "Capo squadra",
+      "management_text": "Comunicazione con la direzione e il personale medico dell'ospedale. Pianificazione e preparazione di event.",
+      "volunteers_title": "Volontari",
+      "volunteers_text": "Reclutamento di volontari e sviluppo \ndella community di volontariato intorno all'ospedale."
+    }
+  },
   "School": {
     "main_title": "Scuola di Clownerie Ospedaliera",
     "join_title": "Chi Può Diventare un Clown Ospedaliero?",

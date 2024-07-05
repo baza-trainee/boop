@@ -111,6 +111,15 @@
   "Contacts": {
     "title": "Our сontacts"
   },
+  "About": {
+    "team_structure": {
+      "title": "Team Structure",
+      "management_title": "Management",
+      "management_text": "Communication with hospital management and medical staff. \nEvent planning and preparation.",
+      "volunteers_title": "Volunteers",
+      "volunteers_text": "Volunteer recruitment and development of the volunteer community around the hospital."
+    }
+  },
   "School": {
     "main_title": "Clown Hospital School",
     "join_title": "Who Can Become a Hospital Clown?",
