@@ -4,15 +4,14 @@ import { useAppDispatch } from '@/store/hook';
 import {
   useGetAllNumbersQuery,
   useUpdateNumberByIdMutation,
-} from '../../../store/api/counterApi';
-// import { SubmitHandler, useForm } from 'react-hook-form';
+} from '@/store/api/counterApi';
+
 import TextInput from '../ui/TextInput';
 import PageTitle from '../shared/PageTitle';
 import UniversalButton from '../shared/UniversalButton';
-import FormModal from '../shared/FormModal';
-import { openModal, closeModal } from '@/store/slices/modalSlice';
-import CounterModalBody from './CounterModalBody';
+import { openAlert } from '@/store/slices/alertSlice';
 import LoaderLayout from '@/components/shared/loader/Loader';
+import LoaderSmile from './LoaderSmile';
 
 const orderTitles: Record<number, string> = {
   1: 'Роки досвіду',
@@ -25,7 +24,7 @@ const orderTitles: Record<number, string> = {
 const CounterPage = () => {
   const dispatch = useAppDispatch();
   const { data, isError, isLoading } = useGetAllNumbersQuery();
-
+  const [isProcessing, setIsProcessing] = useState(false);
   const [isDisabled, setIsDisabled] = useState(true);
 
   const [editingItemId, setEditingItemId] = useState<number[]>([]);
@@ -55,6 +54,7 @@ const CounterPage = () => {
   const handleSubmitForm = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
+      setIsProcessing(true);
       const promises = Object.keys(inputValues).map((id) =>
         updateNumber({ id: Number(id), number: inputValues[Number(id)] })
       );
@@ -62,9 +62,28 @@ const CounterPage = () => {
 
       setIsDisabled(true);
       setEditingItemId([]);
-      dispatch(openModal({ type: 'update-counter' }));
+      dispatch(
+        openAlert({
+          data: {
+            state: 'success',
+            message: 'Дані статистики успішно змінені!',
+          },
+        })
+      );
     } catch (error) {
       console.error('Error updating numbers:', error);
+      dispatch(
+        openAlert({
+          data: {
+            state: 'error',
+            message: 'При оновленні сталася помилка!',
+          },
+        })
+      );
+      // Restoring previous values
+      // setInputValues(initialValues);
+    } finally {
+      setIsProcessing(false);
     }
   };
 
@@ -74,9 +93,6 @@ const CounterPage = () => {
     setEditingItemId([]);
   };
 
-  const handleCloseModal = () => {
-    dispatch(closeModal());
-  };
   useEffect(() => {
     if (data) {
       const initialValues = data.reduce(
@@ -96,6 +112,19 @@ const CounterPage = () => {
     }
   }, [editingItemId]);
 
+  if (isError) {
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <div className="flex h-[50%] w-[80%] items-center justify-center rounded-[20px] bg-slate-200  p-[40px]">
+          <p className="text-center text-[32px] text-yellow">
+            Сталася помилка під час завантаження даних.
+            <br /> Будь ласка, спробуйте оновити сторінку або повторити спробу
+            пізніше.
+          </p>
+        </div>
+      </div>
+    );
+  }
   if (isLoading) {
     return <LoaderLayout />;
   }
@@ -127,10 +156,10 @@ const CounterPage = () => {
           <UniversalButton
             type="submit"
             disabled={isDisabled}
-            btnTextStyle={` text-center text-xl font-bold leading-[100%] ${isDisabled ? `text-[#97979A]  ` : `text-white`}`}
-            className={`flex h-[56px] items-center justify-center gap-2 rounded-[32px] ${isDisabled ? `bg-[#E3E3E4] ` : `bg-[#E93405]`}  px-[24px] py-[18px] text-white `}
+            btnTextStyle={` text-center ${isProcessing ? 'text-sm' : 'text-lg'} font-bold leading-[100%] ${isDisabled ? `text-[#97979A]  ` : `text-white`}`}
+            className={`flex h-[56px] items-center justify-center gap-2 rounded-[32px]  ${isDisabled ? `bg-[#E3E3E4] ` : `bg-[#E93405]`}  px-[24px] py-[18px] text-white `}
           >
-            Змінити
+            {isProcessing ? <LoaderSmile /> : 'Змінити'}
           </UniversalButton>
           <UniversalButton
             type="button"
@@ -143,14 +172,6 @@ const CounterPage = () => {
           </UniversalButton>
         </div>
       </form>
-
-      <FormModal type="update-counter">
-        <CounterModalBody
-          onClick={handleCloseModal}
-          text="Дані статистики успішно змінені"
-          textBtn="OK"
-        />
-      </FormModal>
     </section>
   );
 };

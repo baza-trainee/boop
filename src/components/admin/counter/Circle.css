@@ -1,0 +1,31 @@
+.loader {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  animation: spin 1.5s linear infinite; /* Анимация вращения */
+}
+
+.loader:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 3.5px;
+  left: 3.5px;
+  width: 25px;
+  height: 25px;
+  border: 3.5px dashed transparent;
+  border-top-color: #3498db;
+  border-bottom-color: #f39c12;
+  border-left-color: #ffffff;
+  border-right-color: transparent;
+  border-radius: 50%;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
