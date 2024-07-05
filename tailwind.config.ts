@@ -34,6 +34,7 @@ const config: Config = {
         textViolet: 'var(--textViolet)',
         red: 'var(--red)',
         yellow: 'var(--yellow)',
+        customOverlay: 'rgba(202, 196, 226, 0.5)',
       },
       screens: {
         xs: '320px',
