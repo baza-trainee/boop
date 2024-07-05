@@ -2,12 +2,9 @@ import React from 'react';
 import { useTranslations } from 'next-intl';
 import { partnerItems } from './partnerItems';
 import PartnersCard from './partnersCard/PartnersCard';
-// import CarouselButton from '../../shared/carousel/carousel-button/CarouselButton';
+import CarouselButton from '../../shared/carousel/carousel-button/CarouselButton';
 import { Carousel } from '../../shared/carousel/Carousel';
 import SectionTitle from '../../shared/SectionTitle';
-import VerticalCarouselButton from '../../shared/carousel/VerticalCarouselButton';
-
-
 
 
 const Partners = () => {
@@ -43,8 +40,8 @@ const Partners = () => {
                     />
                     ))}
                     <div className="absolute bottom-4 right-0 flex flex-col gap-[5px]">
-                    <VerticalCarouselButton  className="partners-prev-el" /> 
-                    <VerticalCarouselButton  className="partners-next-el" /> 
+                    <CarouselButton  className="partners-prev-el -rotate-90 " /> 
+                    <CarouselButton  className="partners-next-el rotate-90" /> 
                     </div>
                 </div>
                 )}}
@@ -60,7 +57,7 @@ const Partners = () => {
               autoHeight={true}
               loop={true}
               items={partnerItems}
-              prevEl=".partners-yeloow-prev-el"
+              prevEl=".partners-yellow-prev-el"
               nextEl=".partners-yellow-next-el"
               slidesPerView={1}
               direction="vertical"
@@ -79,8 +76,8 @@ const Partners = () => {
                     />
                     ))}
                     <div className="absolute bottom-4 right-0 flex flex-col gap-[5px]">
-                    <VerticalCarouselButton  className="partners-yellow-prev-el" /> 
-                    <VerticalCarouselButton  className="partners-yellow-next-el" /> 
+                    <CarouselButton  className="partners-yellow-prev-el -rotate-90" /> 
+                    <CarouselButton  className="partners-yellow-next-el rotate-90" /> 
                     </div>
                 </div>
                 )}}
