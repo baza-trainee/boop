@@ -1,16 +1,7 @@
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
 import { prismaConnect } from '@/utils/prismaConnect';
-import { ITestimonial, TestimonialFormData } from '@/types/testimonials';
-
-function chunkArray(array: ITestimonial[], chunkSize: number) {
-  const result = [];
-  for (let i = 0; i < array.length; i += chunkSize) {
-    const chunk = array.slice(i, i + chunkSize);
-    result.push(chunk);
-  }
-  return result;
-}
+import { TestimonialFormData } from '@/types/testimonials';
 
 export async function GET(request: Request) {
   try {
@@ -46,7 +37,7 @@ export async function GET(request: Request) {
     } else {
       testimonials = await prisma.testimonial.findMany();
       response = {
-        data: chunkArray(testimonials, 3),
+        data: testimonials,
       };
     }
 

@@ -1,5 +1,4 @@
 import { ListResponse } from '@/types';
-import { ITeamMember } from '@/types/team';
 import { ITestimonial } from '@/types/testimonials';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 

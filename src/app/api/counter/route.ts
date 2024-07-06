@@ -2,6 +2,7 @@ import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
 import { prismaConnect } from '@/utils/prismaConnect';
 import { CounterFormData } from '@/types/counterItem';
+import initialData from './exemple-db.json';
 
 import './swagger-comments';
 
@@ -9,6 +10,10 @@ export async function GET() {
   try {
     await prismaConnect();
     const response = await prisma.counterItem.findMany();
+
+    if (response.length === 0) {
+      return NextResponse.json(initialData, { status: 200 });
+    }
     response.sort((a, b) => a.order - b.order);
     return NextResponse.json(response, { status: 200 });
   } catch (error) {

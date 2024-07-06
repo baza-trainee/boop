@@ -59,7 +59,6 @@ const EditPhotoForm = ({ id }: { id: string }) => {
     try {
       setIsProcessing(true);
       if (values.image[0]?.size > 0) {
-        //need to delete old and upload new photo
         const formData = new FormData();
         formData.append('file', values.image[0]);
         formData.append('folderName', 'photos');
