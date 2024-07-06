@@ -1,7 +1,7 @@
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
 import { prismaConnect } from '@/utils/prismaConnect';
-import { TeamFormData } from '@/types/team';
+import { TestimonialFormData } from '@/types/testimonials';
 
 export async function PATCH(
   request: Request,
@@ -9,22 +9,26 @@ export async function PATCH(
 ) {
   try {
     await prismaConnect();
-    const data: { newMember: TeamFormData } = await request.json();
-    const updatedPhoto = await prisma.team.update({
+    const { updatedTestimonial }: { updatedTestimonial: TestimonialFormData } =
+      await request.json();
+    const editedTestimonial = await prisma.testimonial.update({
       where: {
         id: params.id,
       },
       data: {
-        nameUa: data.newMember.nameUa,
-        nameEn: data.newMember.nameEn,
-        nameIt: data.newMember.nameIt,
-        imageUrl: data.newMember.imageUrl,
-        imageId: data.newMember.imageId,
+        nameUa: updatedTestimonial.nameUa,
+        nameEn: updatedTestimonial.nameEn,
+        nameIt: updatedTestimonial.nameIt,
+        reviewUa: updatedTestimonial.reviewUa,
+        reviewEn: updatedTestimonial.reviewEn,
+        reviewIt: updatedTestimonial.reviewIt,
+        imageUrl: updatedTestimonial.imageUrl,
+        imageId: updatedTestimonial.imageId,
       },
     });
-    return NextResponse.json(updatedPhoto, { status: 200 });
+    return NextResponse.json(editedTestimonial, { status: 200 });
   } catch (error) {
-    console.log('[UPDATE TEAM MEMBER]', error);
+    console.log('[UPDATE TESTIMONIAL]', error);
     return new NextResponse('Internal Server Error', { status: 500 });
   }
 }

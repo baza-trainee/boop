@@ -13,6 +13,7 @@ import Loader from '@/components/shared/loader/Loader';
 import Pagination from '../shared/Pagination';
 import FormModal from '../shared/FormModal';
 import AddTestimonialForm from './form/AddTestimonialForm';
+import EditTestimonialForm from './form/EditTestimonialForm';
 
 const TestimonialsPage = () => {
   const dispatch = useAppDispatch();
@@ -112,6 +113,9 @@ const TestimonialsPage = () => {
       )}
       <FormModal type="add-testimonial">
         <AddTestimonialForm />
+      </FormModal>
+      <FormModal type="edit-testimonial">
+        <EditTestimonialForm id={currentId} />
       </FormModal>
     </section>
   );
