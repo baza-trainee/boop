@@ -1,5 +1,5 @@
 import React from 'react';
-import SectionTitle from '../shared/SectionTitle';
+import SectionTitle from '../../shared/SectionTitle';
 import ValueCard from './valueCard/ValueCard';
 import GetValuesCardsInfo from './ValuesCardsInfo';
 import { useTranslations } from 'next-intl';
