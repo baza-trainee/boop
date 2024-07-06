@@ -14,9 +14,6 @@ import Pagination from '../shared/Pagination';
 import FormModal from '../shared/FormModal';
 import AddTestimonialForm from './form/AddTestimonialForm';
 
-const text =
-  'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dolore in asperiores expedita delectus exercitationem doloremque ullam, quibusdam, eos, eaque vel unde est suscipit fugia perspiciatis dolorem magni minus.Sed eos, eaque vel unde est suscipit fugiat perspiciatis dolorem magni minus.';
-
 const TestimonialsPage = () => {
   const dispatch = useAppDispatch();
   const [currentPage, setCurrentPage] = useState(1);
