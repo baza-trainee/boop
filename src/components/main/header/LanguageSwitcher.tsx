@@ -1,90 +1,90 @@
 'use client';
 
-import { usePathname, useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import { locales } from '../../../i18n';
+import Image from 'next/image';
+import { locales } from '@/i18n';
+import { usePathname, useRouter } from '@/navigation';
 import { useLocale } from 'next-intl';
+import { useEffect, useRef, useState } from 'react';
 
-const LanguageSwitcher: React.FC = () => {
-  const locale = useLocale();
+const LanguageSwitcher = () => {
   const router = useRouter();
-  const pathname = usePathname();
+  const path = usePathname();
+  const locale: string = useLocale();
+  const [currentLocale, setCurrentLocale] = useState(locale);
+  const [isOpen, setIsOpen] = useState(false);
+  const [containerPosition, setContainerPosition] = useState('');
+  const menuRef = useRef<HTMLDivElement>(null);
+  const submenuRef = useRef<HTMLDivElement>(null);
+  const filteredLocales = locales.filter((item) => item !== currentLocale);
 
-  // Укажите поддерживаемые локали
-
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
-
-  const changeLanguage = (newLocale: string) => {
-    const segments = pathname.split('/');
-    if (locales.includes(segments[1])) {
-      segments[1] = newLocale;
-    } else {
-      segments.unshift(newLocale);
-    }
-    const newPathname = segments.join('/');
-    router.push(newPathname);
+  const handleCheckLocale = (item: string) => {
+    setIsOpen(!isOpen);
+    setCurrentLocale(item);
+    router.replace(path, { locale: item });
   };
 
+  const handleOutsideClick = (event: Event): void => {
+    if (
+      !submenuRef.current?.contains(event.target as HTMLElement) &&
+      !(
+        event.target === menuRef.current ||
+        menuRef.current?.contains(event.target as HTMLElement)
+      )
+    ) {
+      setIsOpen(false);
+      setContainerPosition('');
+    }
+  };
+
+  const handleImageClick = (event: React.MouseEvent) => {
+    event.stopPropagation();
+    setIsOpen(!isOpen);
+    setContainerPosition(isOpen ? '' : 'absolute -top-[35px] left-0');
+  };
+
+  useEffect(() => {
+    window.addEventListener('click', handleOutsideClick);
+    return () => window.removeEventListener('click', handleOutsideClick);
+  }, [isOpen]);
+
   return (
-    // <div>
-    //   {locales.map((loc) => (
-    //     <button key={loc} onClick={() => changeLanguage(loc)}>
-    //       {loc.toUpperCase()}
-    //     </button>
-    //   ))}
-    // </div>
-    <div className="relative inline-block text-left">
-      <div>
-        <button
-          type="button"
-          className="inline-flex w-full justify-center rounded-md border-none bg-beige px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-          id="menu-button"
-          aria-expanded="true"
-          aria-haspopup="true"
-        >
-          {locale.toUpperCase()}
-          <svg
-            className="-mr-1 ml-2 h-5 w-5"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              fillRule="evenodd"
-              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 111.414 1.414l-4 4a1 1 01-1.414 0l-4-4a1 1 010-1.414z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
+    <div
+      className={`relative flex h-[24px] cursor-pointer items-center text-[20px] font-semibold leading-[20px] text-mainViolet ${containerPosition}`}
+    >
       <div
-        className="w-54  absolute right-0 mt-2 origin-top-right rounded-md bg-beige shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-        role="menu"
-        aria-orientation="vertical"
-        aria-labelledby="menu-button"
+        ref={menuRef}
+        onClick={handleImageClick}
+        className="mt-[5px] flex w-[80px] items-center px-[5px] pl-[14px]"
       >
-        <div className=" py-1" role="none">
-          {locales.map((loc) => (
-            <button
-              key={loc}
-              onClick={() => changeLanguage(loc)}
-              className="block w-full px-4 py-2 text-left text-sm text-violet"
-              role="menuitem"
+        <span className="mr-[10px] w-[24px] font-bold">
+          {currentLocale.toUpperCase()}
+        </span>
+        <span className={`${!isOpen && 'rotate-[180deg]'}`}>
+          <Image
+            className="mr-[10px] w-[24px] font-bold"
+            src="/images/keyboard_arrow_down.svg"
+            alt="arrow down"
+            width={90}
+            height={50}
+          />
+        </span>
+      </div>
+      {isOpen && (
+        <div
+          ref={submenuRef}
+          className="absolute left-[11px] top-[30px] flex w-[100px] flex-col rounded-none"
+        >
+          {filteredLocales.map((item: string) => (
+            <span
+              key={item}
+              className="ml-1 flex h-[30px] cursor-pointer items-center"
+              onClick={() => handleCheckLocale(item)}
             >
-              {loc.toUpperCase()}
-            </button>
+              {item.toUpperCase()}
+            </span>
           ))}
         </div>
-      </div>
+      )}
     </div>
   );
 };

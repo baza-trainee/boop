@@ -1,5 +1,12 @@
 {
   "hello": "ciao!",
+  "Header": {
+    "home": "Home",
+    "about": "Chi Siamo",
+    "school": "Scuola",
+    "contacts": "Contatti",
+    "button": "Sostienici il Progetto"
+  },
   "Hero": {
     "title": "Nonostante tutto, l'infanzia deve continuare"
   },
@@ -11,12 +18,26 @@
   "Contacts": {
     "title": "I nostri contatti"
   },
+  "About": {
+    "team_structure": {
+      "title": "Squadra",
+      "management_title": "Capo squadra",
+      "management_text": "Comunicazione con la direzione e il personale medico dell'ospedale. Pianificazione e preparazione di event.",
+      "volunteers_title": "Volontari",
+      "volunteers_text": "Reclutamento di volontari e sviluppo \ndella community di volontariato intorno all'ospedale."
+    }
+  },
+  "Partners": {
+    "title_1": "I nostri amici",
+    "title_2": "e partner"
+  },
   "School": {
-    "main_title": "Scuola di Clown",
+    "main_title": "Scuola di Clownerie Ospedaliera",
     "join_title": "Chi Può Diventare un Clown Ospedaliero?",
     "training_title": "Come Funziona la Formazione",
-    "main_text_primary": "La Scuola di Clownterapia Ospedaliera è un progetto congiunto di BUP -",
-    "main_text_secondary": "Ufficio di Sorrisi e Supporto e 'Tabletochki'",
+    "main_text_primary": "Scuola di Clownerie Ospedaliera -",
+    "main_text_secondary": "un progetto congiunto di",
+    "and": "e",
     "join": {
       "paragraph_1": "Una persona che comprende cos'è l'empatia. Pronta ad accettare e riconoscere le emozioni di coloro che necessitano di supporto. E fornire questo supporto in base ai bisogni emotivi di bambini e genitori.",
       "paragraph_2": "Qualcuno che non ha paura di essere divertente. Ridere sinceramente di se stesso e di questa vita capricciosa. Ridere e amarla sopra ogni cosa.",
@@ -32,5 +53,26 @@
       "paragraph_4": "Nei tre mesi successivi, si incontrano per lezioni una volta alla settimana e approfondiscono i meccanismi della clownterapia ospedaliera.",
       "paragraph_5": "Parallelamente, si svolgono visite regolari ai reparti ospedalieri sotto la costante supervisione dei formatori e il supporto psicologico."
     }
+  },
+  "Form": {
+    "joinUs": "Unisciti a noi",
+    "leaveForm": "Lascia il tuo modulo e ti contatteremo entro tre giorni",
+    "name": "Il tuo nome",
+    "phone": "Numero di telefono",
+    "phonePlaceholder": "Inserisci il numero di telefono nel formato +380",
+    "email": "E-mail",
+    "emailPlaceholder": "example@gmail.com",
+    "social": "Social network",
+    "socialPlaceholder": "Link a Facebook, Telegram o Instagram",
+    "submit": "Invia",
+    "required": "Questo campo è obbligatorio.",
+    "invalidPhone": "Inserisci un numero di telefono valido.",
+    "invalidEmail": "Inserisci un indirizzo email valido."
+  },
+  "ClownSchoolForm": {
+    "formSubmitted": "Il tuo modulo è stato inviato.",
+    "contactWithinThreeDays": "Ti contatteremo entro tre giorni.",
+    "somethingWentWrong": "Qualcosa è andato storto...",
+    "pleaseTryAgain": "Per favore riprova."
   }
 }

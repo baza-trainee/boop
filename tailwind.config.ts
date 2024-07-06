@@ -24,6 +24,8 @@ const config: Config = {
         bgWhite: 'var(--bgWhite)',
         bgYellow: 'var(--bgYellow)',
         bgViolet: 'var(--bgViolet)',
+        bgVioletTransparent: 'var(--bgVioletTransparent)',
+        bgHeader: 'rgba(255, 171, 11, 0.1)',
         beige: 'var(--beige)',
         violet: 'var(--violet)',
         lightViolet: 'var(--lightViolet)',
@@ -32,6 +34,7 @@ const config: Config = {
         textViolet: 'var(--textViolet)',
         red: 'var(--red)',
         yellow: 'var(--yellow)',
+        customOverlay: 'rgba(202, 196, 226, 0.5)',
       },
       screens: {
         xs: '320px',

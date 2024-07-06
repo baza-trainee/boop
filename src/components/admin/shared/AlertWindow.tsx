@@ -66,6 +66,17 @@ export const AlertWindow: React.FC = () => {
           </div>
         </div>
 
+        {state === 'success' && (
+          <div className="mt-[1.7rem] flex gap-[20px]">
+            <button
+              className="flex items-center justify-center whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white"
+              onClick={() => confirmHandler(false)}
+            >
+              Ok
+            </button>
+          </div>
+        )}
+
         {buttons && (
           <div className="mt-[1.7rem] flex gap-[20px]">
             <button

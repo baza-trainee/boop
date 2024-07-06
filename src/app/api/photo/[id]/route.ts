@@ -10,15 +10,15 @@ export async function PATCH(
 ) {
   try {
     await prismaConnect();
-    const data: { newPhoto: PhotoFormData } = await request.json();
+    const { newPhoto }: { newPhoto: PhotoFormData } = await request.json();
     const updatedPhoto = await prisma.photo.update({
       where: {
         id: params.id,
       },
       data: {
-        location: data.newPhoto.location,
-        imageUrl: data.newPhoto.imageUrl,
-        imageId: data.newPhoto.imageId,
+        location: newPhoto.location,
+        imageUrl: newPhoto.imageUrl,
+        imageId: newPhoto.imageId,
       },
     });
     return NextResponse.json(updatedPhoto, { status: 200 });

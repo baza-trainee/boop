@@ -1,6 +1,11 @@
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
 import { prismaConnect } from '@/utils/prismaConnect';
+import { ContactFormData } from '@/types/contacts';
+
+interface ContactsData {
+  updatedContacts: ContactFormData;
+}
 
 export async function PATCH(
   request: Request,
@@ -8,14 +13,21 @@ export async function PATCH(
 ) {
   try {
     await prismaConnect();
-    const data = await request.json();
-    const { key, value } = data;
+
+    const { updatedContacts }: ContactsData = await request.json();
+
     const response = await prisma.contacts.update({
       where: {
         id: params.id,
       },
       data: {
-        [key]: value,
+        phone: updatedContacts.phone,
+        email: updatedContacts.email,
+        facebook: updatedContacts.facebook,
+        instagram: updatedContacts.instagram,
+        addressUa: updatedContacts.addressUa,
+        addressEn: updatedContacts.addressEn,
+        addressIt: updatedContacts.addressIt,
       },
     });
     return NextResponse.json(response, { status: 200 });

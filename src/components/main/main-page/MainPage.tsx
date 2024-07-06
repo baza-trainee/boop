@@ -9,6 +9,8 @@ import PressAboutUs from './press-about-us/PressAboutUs';
 import Mission from './mission/Mission';
 import Partners from './partners/Partners';
 import Hero from './hero/Hero';
+import Founders from './founders/Founders';
+import Gallery from './gallery/Gallery';
 
 const MainPage = () => {
   return (
@@ -24,12 +26,14 @@ const MainPage = () => {
       </div> */}
       <div className="bg-bgWhite">
         <Hero />
+        <Founders />
         <Vision />
         <Values />
         <Mission />
         <Goals />
         <Counter />
         <PressAboutUs />
+        <Gallery />
         <Partners />
       </div>
     </>

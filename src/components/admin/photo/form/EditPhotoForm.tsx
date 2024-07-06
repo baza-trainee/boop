@@ -20,9 +20,9 @@ const EditPhotoForm = ({ id }: { id: string }) => {
   const [isProcessing, setIsProcessing] = useState(false);
 
   const [editPhoto] = photoApi.useEditPhotoMutation();
-  const { data: photos } = photoApi.useGetAllPhotoQuery('photos');
+  const { data: photos } = photoApi.useGetAllPhotoQuery();
 
-  const photo = photos?.find((image) => image.id === id);
+  const photo = photos?.data.find((image) => image.id === id);
 
   const {
     handleSubmit,
@@ -59,7 +59,6 @@ const EditPhotoForm = ({ id }: { id: string }) => {
     try {
       setIsProcessing(true);
       if (values.image[0]?.size > 0) {
-        //need to delete old and upload new photo
         const formData = new FormData();
         formData.append('file', values.image[0]);
         formData.append('folderName', 'photos');
