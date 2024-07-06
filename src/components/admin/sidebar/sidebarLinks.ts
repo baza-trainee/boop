@@ -26,7 +26,7 @@ export const sidebarLinks = [
   {
     name: 'Партнери',
     href: '/admin/partners',
-    icon: 'friends',
+    icon: 'partners',
     link: 'partners',
   },
   {

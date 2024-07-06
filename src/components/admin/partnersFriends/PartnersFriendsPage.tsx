@@ -43,10 +43,6 @@ function PartnersFriendsPage({
   const [deletePartnersFriends] =
     partnersFriendsApi.useDeletePartnersFriendsMutation();
 
-  useEffect(() => {
-    console.log(partners);
-  }, [partners]);
-
   const handleEdit = (id: string, logoId: string) => {
     setCurrentId(id);
     setLogoId(logoId);

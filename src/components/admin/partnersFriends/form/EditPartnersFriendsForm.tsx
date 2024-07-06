@@ -60,8 +60,6 @@ function EditPartnersFriendsForm({
     (imageWatch && imageWatch.length > 0 && !errors.image && isDirty);
 
   const onSubmit: SubmitHandler<SubmitForm> = async (values) => {
-    console.log('values>', values);
-
     try {
       setIsProcessing(true);
       const updatedPartnerFriend: Partial<UpdatedPartners> = {};
@@ -85,13 +83,11 @@ function EditPartnersFriendsForm({
       if (values.urlLink) {
         updatedPartnerFriend.link = values.urlLink;
       }
-      console.log(updatedPartnerFriend);
 
       const response = await editPartnersFriends({
         id,
         ...updatedPartnerFriend,
       });
-      console.log(response);
 
       if (response && response.data) {
         reset();
@@ -106,7 +102,6 @@ function EditPartnersFriendsForm({
         );
       }
     } catch (error) {
-      console.log(error);
       dispatch(
         openAlert({
           data: {
