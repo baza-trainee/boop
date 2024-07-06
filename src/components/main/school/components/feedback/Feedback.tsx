@@ -2,22 +2,37 @@
 
 import { Carousel } from '@/components/main/shared/carousel/Carousel';
 import CarouselButton from '@/components/main/shared/carousel/carousel-button/CarouselButton';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import FeedbackItem from './feedback-item/FeedbackItem';
 import SectionTitle from '@/components/main/shared/SectionTitle';
 import Image from 'next/image';
 import { useGetAllTestimonialsQuery } from '@/store/api/testimonialsApi';
 import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
+import { ITestimonial } from '@/types/testimonials';
 
 const Feedback = () => {
   const { locale } = useParams();
   const t = useTranslations('School');
-  const {
-    data: feedbackData,
-    isError,
-    isFetching,
-  } = useGetAllTestimonialsQuery();
+  const { data, isError, isFetching } = useGetAllTestimonialsQuery();
+  const [feedbackData, setFeedbackData] = useState<ITestimonial[][] | null>(
+    null
+  );
+
+  const chunkArray = (data: ITestimonial[], chunkSize: number) => {
+    return data.reduce<ITestimonial[][]>((result, item, index) => {
+      const chunkIndex = Math.floor(index / chunkSize);
+      if (!result[chunkIndex]) {
+        result[chunkIndex] = [];
+      }
+      result[chunkIndex].push(item);
+      return result;
+    }, []);
+  };
+
+  useEffect(() => {
+    if (data?.data) setFeedbackData(chunkArray(data.data, 3));
+  }, [data]);
 
   return (
     <section className="bg-bgWhite pb-[120px] pt-[120px]">
@@ -33,7 +48,7 @@ const Feedback = () => {
         {isError && <p className="container">Something went wrong!</p>}
         {!isFetching && feedbackData && (
           <Carousel
-            items={feedbackData.data}
+            items={feedbackData}
             prevEl=".feedback-prev-el"
             nextEl=".feedback-next-el"
             slidesPerView={1}

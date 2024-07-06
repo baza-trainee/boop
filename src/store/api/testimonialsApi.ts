@@ -8,7 +8,7 @@ export const testimonialsApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_URL }),
   endpoints: (build) => ({
     getAllTestimonials: build.query<
-      ListResponse<ITestimonial[]>,
+      ListResponse<ITestimonial>,
       { page?: number; limit?: number } | void
     >({
       query: ({ page = 1, limit } = {}) =>
