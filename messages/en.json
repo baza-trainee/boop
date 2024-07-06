@@ -103,6 +103,10 @@
     "title": "Gallery",
     "btn": "Download more"
   },
+  "Partners": {
+    "title_1": "Our friends",
+    "title_2": "and partners"
+  },
   "Error": {
     "title": "Uh-oh, you seem to be lost!",
     "text": "Unfortunately, the page you're looking for doesn't exist.",
