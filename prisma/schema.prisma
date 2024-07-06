@@ -46,7 +46,9 @@ model Contacts {
   email     String
   facebook  String
   instagram String
-  address   String
+  addressUa String
+  addressEn String
+  addressIt String
 }
 
 model Blog {
@@ -89,7 +91,21 @@ model CounterItem {
 model PartnersFriends {
   id        String   @id @default(uuid())
   logoUrl   String
+  logoId    String
   link      String
   section   String
+  createdAt DateTime @default(now())
+}
+
+model Testimonial {
+  id        String   @id
+  nameUa    String
+  nameEn    String
+  nameIt    String
+  reviewUa  String
+  reviewEn  String
+  reviewIt  String
+  imageUrl  String
+  imageId   String
   createdAt DateTime @default(now())
 }

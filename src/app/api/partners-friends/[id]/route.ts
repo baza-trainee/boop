@@ -48,6 +48,9 @@ export async function PATCH(
     if (data.logoUrl) {
       updateData.logoUrl = data.logoUrl;
     }
+    if (data.logoId) {
+      updateData.logoId = data.logoId;
+    }
     if (data.link) {
       updateData.link = data.link;
     }

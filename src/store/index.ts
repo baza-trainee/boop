@@ -8,6 +8,7 @@ import { documentsApi } from './api/documentsApi';
 import { contactsApi } from './api/contactsApi';
 import { counterApi } from './api/counterApi';
 import paymentFormSlice from './slices/paymentFormSlice';
+import { partnersFriendsApi } from './api/partnersFriendsApi';
 
 const rootReducer = combineReducers({
   modals: modalSlice,
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   [documentsApi.reducerPath]: documentsApi.reducer,
   [contactsApi.reducerPath]: contactsApi.reducer,
   [counterApi.reducerPath]: counterApi.reducer,
+  [partnersFriendsApi.reducerPath]: partnersFriendsApi.reducer,
 });
 
 export const rootStore = configureStore({
@@ -29,7 +31,8 @@ export const rootStore = configureStore({
       contactsApi.middleware,
       documentsApi.middleware,
       teamApi.middleware,
-      counterApi.middleware
+      counterApi.middleware,
+      partnersFriendsApi.middleware
     ),
 });
 

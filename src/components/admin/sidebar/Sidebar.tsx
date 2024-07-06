@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { sidebarLinks } from './sidebarLinks';
-import { signOut } from 'next-auth/react';
 
 const Sidebar = () => {
   const pathname = usePathname();
