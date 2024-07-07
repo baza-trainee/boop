@@ -8,6 +8,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import Loader from '@/components/shared/loader/Loader';
 import clsx from 'clsx';
+import ButtonPWDType from './ButtonPWDType';
 
 interface IFormInput {
   email: string;
@@ -23,6 +24,8 @@ function LoginForm() {
     handleSubmit,
     formState: { isValid, errors },
   } = useForm<IFormInput>({ mode: 'onChange' });
+
+  const toglePWDType = () => setIsVisiblePWD(!isVisiblePWD);
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
     setIsLoader(true);
@@ -117,44 +120,41 @@ function LoginForm() {
               >
                 Пароль
               </label>
-              <div className="relative">
-                <input
-                  className={clsx(
-                    'peer block w-full rounded-xl border-[2px] border-[#50439f] py-[8px] pl-[9px] pr-9 text-base font-medium  outline-none placeholder:text-[#949398] placeholder-shown:border-[#949398]',
-                    !errors.password?.message
-                      ? 'text-[#177e3a]'
-                      : 'text-[#e93405]'
-                  )}
-                  id="password"
-                  type={isVisiblePWD ? 'text' : 'password'}
-                  placeholder="Введіть пароль"
-                  {...register('password', {
-                    required: 'Введіть дійсний пароль',
-                    minLength: { value: 8, message: 'Введіть дійсний пароль' },
-                    maxLength: { value: 30, message: 'Введіть дійсний пароль' },
-                  })}
-                />
+              <div>
+                <div className="relative">
+                  <input
+                    // style={{ all: 'unset' }}
+                    className={clsx(
+                      'peer block w-full rounded-xl border-[2px] border-[#50439f] py-[8px] pl-[9px] pr-9 text-base font-medium  outline-none placeholder:text-[#949398] placeholder-shown:border-[#949398]',
+                      !errors.password?.message
+                        ? 'text-[#177e3a]'
+                        : 'text-[#e93405]'
+                    )}
+                    id="password"
+                    type={isVisiblePWD ? 'text' : 'password'}
+                    placeholder="Введіть пароль"
+                    {...register('password', {
+                      required: 'Введіть дійсний пароль',
+                      minLength: {
+                        value: 8,
+                        message: 'Введіть дійсний пароль',
+                      },
+                      maxLength: {
+                        value: 30,
+                        message: 'Введіть дійсний пароль',
+                      },
+                    })}
+                  />
+                  <ButtonPWDType
+                    isVisiblePWD={isVisiblePWD}
+                    toglePWDType={toglePWDType}
+                  />
+                </div>
                 {errors.password && (
                   <p className="mt-1 font-['Raleway',_sans-serif] text-[14px] font-normal  leading-[18px]  text-[#ff4004]">
                     {errors.password.message}
                   </p>
                 )}
-                <button
-                  type="button"
-                  className="absolute right-2 top-2"
-                  onClick={() => setIsVisiblePWD(!isVisiblePWD)}
-                >
-                  <Image
-                    src={
-                      isVisiblePWD
-                        ? '/icons/admin/OpenEye.svg'
-                        : '/icons/admin/CloseEye.svg'
-                    }
-                    alt={isVisiblePWD ? 'Приховати пароль' : 'Показати пароль'}
-                    width={24}
-                    height={24}
-                  />
-                </button>
               </div>
             </div>
           </div>
