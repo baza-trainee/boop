@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { modifyTitle } from '@/helpers/modifyTitle';
 import Image from 'next/image';
 import { ForwardedRef, InputHTMLAttributes, forwardRef } from 'react';
@@ -5,7 +6,7 @@ import { ForwardedRef, InputHTMLAttributes, forwardRef } from 'react';
 interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   title?: string;
   errorText?: string;
-  isRequired: boolean;
+  isRequired?: boolean;
   isEditMode?: boolean;
   className?: string;
   titleClassName?: string;
@@ -20,7 +21,7 @@ const TextInput = forwardRef(function TextInput(
     title,
     errorText,
     isRequired,
-    isEditMode = true,
+    isEditMode,
     value = '',
     className = '',
     titleClassName = '',
@@ -43,7 +44,7 @@ const TextInput = forwardRef(function TextInput(
 
   return (
     <div
-      className={` relative w-full min-w-[100px] max-w-[442px] ${
+      className={`relative w-full min-w-[100px] max-w-[442px] ${
         errorText ? 'text-error' : 'text-inherit'
       }`}
     >
@@ -53,7 +54,7 @@ const TextInput = forwardRef(function TextInput(
           className={`text-sm font-[500] ${titleClassName}`}
         >
           {modifyTitle(title)}
-          {isRequired && <span className="text-red mt-1">*</span>}
+          {isRequired && <span className="mt-1 text-red">*</span>}
         </label>
       )}
       {isEditMode ? (
@@ -73,7 +74,7 @@ const TextInput = forwardRef(function TextInput(
         value={value}
         className={inputClassName}
       />
-      {errorText && <span className="text-xs text-red mt-1">{errorText}</span>}
+      {errorText && <span className="mt-1 text-xs text-red">{errorText}</span>}
     </div>
   );
 });

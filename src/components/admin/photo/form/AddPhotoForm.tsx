@@ -87,17 +87,15 @@ const AddPhotoForm = () => {
             <SelectInput
               name="location"
               control={control}
-              title="Оберіть розділ сайту:"
+              title="Оберіть розділ сайту"
               values={PHOTO_LOCATION_VALUES}
               placeholder="Оберіть розділ для фото"
-              isRequired={true}
             />
             <FileInput
               name="image"
               control={control}
-              placeholder={'Оберіть файл'}
-              title="Оберіть файл:"
-              isRequired={true}
+              placeholder="Завантажити зображення"
+              title="Оберіть файл"
               accept="image/*"
             />
             <div className="relative mt-[60px] flex w-full justify-between">
