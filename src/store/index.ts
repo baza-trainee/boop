@@ -8,6 +8,7 @@ import { documentsApi } from './api/documentsApi';
 import { contactsApi } from './api/contactsApi';
 import { counterApi } from './api/counterApi';
 import { testimonialsApi } from './api/testimonialsApi';
+import { applicationsApi } from './api/applicationsApi';
 import paymentFormSlice from './slices/paymentFormSlice';
 
 const rootReducer = combineReducers({
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
   [contactsApi.reducerPath]: contactsApi.reducer,
   [counterApi.reducerPath]: counterApi.reducer,
   [testimonialsApi.reducerPath]: testimonialsApi.reducer,
+  [applicationsApi.reducerPath]: applicationsApi.reducer,
 });
 
 export const rootStore = configureStore({
@@ -32,7 +34,8 @@ export const rootStore = configureStore({
       documentsApi.middleware,
       teamApi.middleware,
       counterApi.middleware,
-      testimonialsApi.middleware
+      testimonialsApi.middleware,
+      applicationsApi.middleware
     ),
 });
 
