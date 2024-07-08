@@ -1,16 +1,30 @@
+'use client';
+
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import { useMediaQuery } from 'react-responsive';
 
 const Introduction = () => {
   const t = useTranslations('School');
+
+  const isMobile = useMediaQuery({
+    query: '(min-width: 320px) and (max-width: 767.98px)',
+  });
+  const isTablet = useMediaQuery({
+    query: '(min-width: 768px) and (max-width: 1024.98px)',
+  });
+
+  const isDesktop = useMediaQuery({ query: '(min-width: 1280px)' });
 
   return (
     <div className="relative mb-[72.5px] lg:mb-[100px] 3xl:mb-[120px]">
       <h2 className="title-gradient mb-[26.5px] font-groppled text-2xl font-bold leading-[1.6] md:mb-8 md:text-[28px] ml:text-[32px]">
         {t('main_title')}
       </h2>
-      <svg className="absolute hidden h-[1rem] w-[5rem] sm:block lg:top-[11%] 3xl:top-[10%]">
+      <svg
+        className={`absolute h-[12px] w-[53px] lg:top-[11%] lg:w-[86px] 3xl:top-[10%]`}
+      >
         <use href="/icons/sprite.svg#title-line"></use>
       </svg>
       <h3 className="text-gradient ml:0 mb-4 font-raleway text-xl font-bold leading-[1.32] md:ml-[75px]  ml:ml-[77px] lg:ml-[98px] xl:ml-[103px] 3xl:ml-[110px] 4xl:ml-[142px]">
