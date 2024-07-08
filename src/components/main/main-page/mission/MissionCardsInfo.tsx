@@ -18,7 +18,7 @@ const GetMissionCardsInfo = () => {
       hoverText: `${t('second.hoverText')}`,
     },
     {
-      image: '/images/missionSection/a_girl_plays_with_a_toy_bear.png',
+      image: '/public/images/missionSection/new_girl.jpg',
       text: `${t('third.text')}`,
       cardGradient: `var(--yellowCardGradient)`,
       overlayGradient: `var(--yellowOverlayGradient)`,

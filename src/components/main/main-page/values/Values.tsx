@@ -9,12 +9,12 @@ const Values = () => {
   const valuesCards = GetValuesCardsInfo();
 
   return (
-    <section className="mb-[120px] flex w-full flex-col gap-8">
+    <section className=" flex    w-full flex-col gap-8  xs:mb-[70px] md:mb-[88px] ml:mb-[100px] xl:mb-[120px]">
       <div className="container">
         <SectionTitle title={t('title')} />
       </div>
 
-      <div className="flex  w-full items-center  justify-center bg-bgYellow pb-[96px] pt-[55px]">
+      <div className="flex  w-full items-center  justify-center bg-bgYellow 2xl:pb-[96px] 2xl:pt-[55px]">
         <ul className="container flex h-[160px]  items-start justify-between  px-[120px]">
           {valuesCards.map((el, index) => {
             return (
