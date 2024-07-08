@@ -21,9 +21,18 @@ export const applicationsApi = createApi({
     }),
 
     editApplication: build.mutation({
-      query: (id) => ({
+      query: ({ id, isProcessed }) => ({
         url: `applications/${id}`,
         method: 'PATCH',
+        body: isProcessed,
+      }),
+      invalidatesTags: ['Applications'],
+    }),
+
+    deleteApplication: build.mutation({
+      query: (id) => ({
+        url: `applications/${id}`,
+        method: 'DELETE',
       }),
       invalidatesTags: ['Applications'],
     }),
@@ -34,4 +43,5 @@ export const {
   useGetAllApplicationsQuery,
   useEditApplicationMutation,
   useAddApplicationMutation,
+  useDeleteApplicationMutation,
 } = applicationsApi;
