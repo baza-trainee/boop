@@ -18,7 +18,6 @@ const Counter = () => {
       </div>
       <div className="mt-8 py-[30px] sm:bg-beige sm:py-[75px]">
         {isFetching && <p className="container">Loading...</p>}
-        {isError && <p className="container">Something went wrong!</p>}
         {!isFetching && counterItems && (
           <ul className="container mx-auto flex max-w-screen-3xl flex-col flex-wrap sm:flex-row sm:justify-center sm:gap-10 ml:justify-between ml:gap-[18px] [&>*:nth-child(n+2):nth-child(-n+4)]:text-yellow">
             {counterItems?.map(({ id, number, text, variant }) => (
