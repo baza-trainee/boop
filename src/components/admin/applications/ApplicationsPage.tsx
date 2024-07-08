@@ -1,11 +1,44 @@
 'use client';
+
+import { useAppDispatch } from '@/store/hook';
 import { applicationsApi } from '@/store/api/applicationsApi';
 import PageTitle from '../shared/PageTitle';
 import Loader from '@/components/shared/loader/Loader';
+import Image from 'next/image';
+import { openAlert } from '@/store/slices/alertSlice';
 
 const ApplicationsPage = () => {
+  const dispatch = useAppDispatch();
+  const [deleteApplication] = applicationsApi.useDeleteApplicationMutation();
+  const [editApplication] = applicationsApi.useEditApplicationMutation();
   const { data, isLoading, isFetching } =
     applicationsApi.useGetAllApplicationsQuery();
+
+  const handleDelete = (id: string) => {
+    dispatch(
+      openAlert({
+        data: {
+          state: 'confirm',
+          message: 'Ви дійсно бажаєте видалити цю заявку?',
+          func: async () => {
+            await deleteApplication(id);
+            dispatch(
+              openAlert({
+                data: {
+                  state: 'success',
+                  message: 'Заявку успішно видалено!',
+                },
+              })
+            );
+          },
+        },
+      })
+    );
+  };
+
+  const handleEdit = async (id: string, isProcessed: boolean) => {
+    await editApplication({ id, isProcessed });
+  };
 
   if (isLoading || isFetching) return <Loader />;
 
@@ -57,10 +90,28 @@ const ApplicationsPage = () => {
                 <td className="h-[60px] border border-violet p-2 text-center md:table-cell">
                   {row.social}
                 </td>
-                <td className="h-[60px] border border-violet p-2 text-center md:table-cell">
-                  <button className="text-center font-[800] text-violet underline ">
-                    Обробити
-                  </button>
+                <td className="h-[60px] border border-violet text-center md:table-cell">
+                  <div className="flex w-full items-center justify-center gap-4">
+                    <button
+                      onClick={() => handleEdit(row.id, row.isProcessed)}
+                      className={`text-center font-[800] transition-all hover:underline ${!row.isProcessed ? 'text-violet' : 'text-[#666]'}`}
+                    >
+                      {!row.isProcessed ? 'Обробити' : 'Оброблено'}
+                    </button>
+                    {row.isProcessed && (
+                      <button
+                        onClick={() => handleDelete(row.id)}
+                        className="text-center font-[800] text-violet transition-all hover:scale-[1.1]"
+                      >
+                        <Image
+                          src="/icons/admin/delete.svg"
+                          width={25}
+                          height={25}
+                          alt="delete"
+                        />
+                      </button>
+                    )}
+                  </div>
                 </td>
               </tr>
             ))}
