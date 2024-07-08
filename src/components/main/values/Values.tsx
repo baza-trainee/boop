@@ -9,13 +9,13 @@ const Values = () => {
   const valuesCards = GetValuesCardsInfo();
 
   return (
-    <section className="mb-[120px] flex w-full flex-col gap-8">
-      <div className="container">
+    <section className="mb-[120px] flex flex-col gap-8">
+      <div className="container mx-auto max-w-screen-3xl">
         <SectionTitle title={t('title')} />
       </div>
 
-      <div className="flex  w-full items-center  justify-center bg-bgYellow pb-[96px] pt-[55px]">
-        <ul className="container flex h-[160px]  items-start justify-between  px-[120px]">
+      <div className="flex w-full items-center justify-center bg-bgYellow py-[55px]">
+        <ul className="container mx-auto max-w-screen-3xl flex h-[160px] items-start justify-between  px-[120px]">
           {valuesCards.map((el, index) => {
             return (
               <li key={index}>

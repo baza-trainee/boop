@@ -43,7 +43,7 @@
   },
   "Form": {
     "joinUs": "Unisciti a noi",
-    "leaveForm": "Lascia il tuo modulo e ti contatteremo entro tre giorni",
+    "leaveForm": "Lascia il tuo modulo e ti contatteremo entro tre giorni.",
     "name": "Il tuo nome",
     "phone": "Numero di telefono",
     "phonePlaceholder": "Inserisci il numero di telefono nel formato +380",
@@ -61,5 +61,10 @@
     "contactWithinThreeDays": "Ti contatteremo entro tre giorni.",
     "somethingWentWrong": "Qualcosa è andato storto...",
     "pleaseTryAgain": "Per favore riprova."
+  },
+  "ClownSchoolFormDescription": {
+    "formTitle": "Compila il modulo",
+    "formSubtitle": "La formazione per volontari è gratuita.",
+    "formDescription": "Attendiamo con ansia nuove persone nel nostro team, in modo che ci siano più sorrisi e gioia per i bambini."
   }
 }

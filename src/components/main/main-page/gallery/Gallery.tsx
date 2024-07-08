@@ -41,7 +41,7 @@ const Gallery = () => {
   const isLoadMoreDisabled = items && items.length === photos.length;
 
   return (
-    <section className="container bg-inherit  pb-[120px] ">
+    <section className="container mx-auto mb-[120px]">
       <SectionTitle title={t('title')} />
       {isFetching && <p className="container">Loading...</p>}
       {isError && <p className="container">Something went wrong!</p>}
