@@ -11,13 +11,16 @@ const Counter = () => {
   return (
     <section className="mb-[120px]">
       <div className="container mx-auto max-w-screen-3xl">
-        <SectionTitle title={t('title')} />
+        <SectionTitle
+          title={t('title')}
+          className="[&>svg]:hidden sm:[&>svg]:block"
+        />
       </div>
-      <div className="mt-8 bg-beige pb-[75px] pt-[75px]">
+      <div className="mt-8 py-[30px] sm:bg-beige sm:py-[75px]">
         {isFetching && <p className="container">Loading...</p>}
         {isError && <p className="container">Something went wrong!</p>}
         {!isFetching && counterItems && (
-          <ul className="container mx-auto max-w-screen-3xl flex flex-wrap justify-between gap-[20px] [&>*:nth-child(n+2):nth-child(-n+4)]:text-yellow">
+          <ul className="container mx-auto flex max-w-screen-3xl flex-col flex-wrap sm:flex-row sm:justify-center sm:gap-10 ml:justify-between ml:gap-[18px] [&>*:nth-child(n+2):nth-child(-n+4)]:text-yellow">
             {counterItems?.map(({ id, number, text, variant }) => (
               <CounterItem
                 key={id}
