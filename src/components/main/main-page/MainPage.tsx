@@ -24,7 +24,7 @@ const MainPage = () => {
           className="-z-1 absolute -top-[100px] right-0"
         />
       </div> */}
-      <div className="bg-bgWhite">
+      <div className="bg-bgWhite pt-[120px] md:pt-[200px]">
         <Hero />
         <Founders />
         <Vision />

@@ -49,7 +49,7 @@ const SelectInput = <T extends FieldValues>({
     <div className="flex max-h-[85px] w-full max-w-[442px] grow flex-col gap-[5px]">
       <label htmlFor="title" className="text-sm font-medium">
         {title}
-        {isRequired && <span className="text-red">*</span>}
+        {isRequired && <span className="text-red mt-1">*</span>}
       </label>
       <select
         id={title}
@@ -68,7 +68,7 @@ const SelectInput = <T extends FieldValues>({
           ))}
       </select>
       {!!errorMessage && (
-        <span className="text-xs text-red">{errorMessage}</span>
+        <span className="text-xs text-red mt-1">{errorMessage}</span>
       )}
     </div>
   );

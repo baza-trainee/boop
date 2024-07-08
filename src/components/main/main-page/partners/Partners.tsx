@@ -10,8 +10,8 @@ import SectionTitle from '../../shared/SectionTitle';
 const Partners = () => {
   const t = useTranslations('Partners');
   return (
-    <section className="pb-[120px] pt-[120px]">
-      <div className="flex flex-row  items-center justify-center">
+    <section className="mb-[120px]">
+      <div className="flex flex-row items-center justify-center">
         <div className="w-full h-[600px] flex flex-col bg-bgViolet py-[50px] pl-[80px] gap-[32px]">
           <div className="flex gap-[10px] flex-row">
           <SectionTitle title={t("title_1")}/>
@@ -40,8 +40,8 @@ const Partners = () => {
                     />
                     ))}
                     <div className="absolute bottom-4 right-0 flex flex-col gap-[5px]">
-                    <CarouselButton  className="partners-prev-el -rotate-90 " /> 
-                    <CarouselButton  className="partners-next-el rotate-90" /> 
+                    <CarouselButton  className="partners-prev-el -rotate-90 " />
+                    <CarouselButton  className="partners-next-el rotate-90" />
                     </div>
                 </div>
                 )}}
@@ -76,8 +76,8 @@ const Partners = () => {
                     />
                     ))}
                     <div className="absolute bottom-4 right-0 flex flex-col gap-[5px]">
-                    <CarouselButton  className="partners-yellow-prev-el -rotate-90" /> 
-                    <CarouselButton  className="partners-yellow-next-el rotate-90" /> 
+                    <CarouselButton  className="partners-yellow-prev-el -rotate-90" />
+                    <CarouselButton  className="partners-yellow-next-el rotate-90" />
                     </div>
                 </div>
                 )}}

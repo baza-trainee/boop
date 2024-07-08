@@ -35,8 +35,8 @@ const Feedback = () => {
   }, [data]);
 
   return (
-    <section className="bg-bgWhite pb-[120px] pt-[120px]">
-      <div className="container">
+    <section className="mb-[120px]">
+      <div className="container mx-auto max-w-screen-3xl">
         <div className="mb-8 flex items-center justify-between gap-5">
           <SectionTitle title={t('feedback_title')} />
           <div className="flex items-center gap-2">

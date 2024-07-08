@@ -177,25 +177,30 @@
 	"Contacts": {
 		"title": "Наші контакти"
 	},
-	"Form": {
-		"joinUs": "Приєднуйтесь до нас",
-		"leaveForm": "Залиште вашу анкету та ми з вами зв'яжемося протягом трьох днів",
-		"name": "Ваше ім'я",
-		"phone": "Номер телефону",
-		"phonePlaceholder": "Введіть номер у форматі +380",
-		"email": "Електронна пошта",
-		"emailPlaceholder": "example@gmail.com",
-		"social": "Соціальні мережі",
-		"socialPlaceholder": "Посилання на Facebook, Telegram або Instagram",
-		"submit": "Відправити",
-		"required": "Це поле є обов'язковим.",
-		"invalidPhone": "Будь ласка, введіть правильний номер телефону.",
-		"invalidEmail": "Будь ласка, введіть правильний email."
-	},
-	"ClownSchoolForm": {
-		"formSubmitted": "Ваша анкета відправлена.",
-		"contactWithinThreeDays": "Ми зв'яжемося з вами протягом трьох днів.",
-		"somethingWentWrong": "Щось пішло не так...",
-		"pleaseTryAgain": "Будь ласка, спробуйте ще раз."
-	}
+    "Form": {
+      "joinUs": "Приєднуйтесь до нас",
+      "leaveForm": "Залиште вашу анкету та ми з вами зв'яжемося протягом трьох днів.",
+      "name": "Ваше ім'я",
+      "phone": "Номер телефону",
+      "phonePlaceholder": "Введіть номер у форматі +380",
+      "email": "Електронна пошта",
+      "emailPlaceholder": "example@gmail.com",
+      "social": "Соціальні мережі",
+      "socialPlaceholder": "Посилання на Facebook, Telegram або Instagram",
+      "submit": "Відправити",
+      "required": "Це поле є обов'язковим.",
+      "invalidPhone": "Будь ласка, введіть правильний номер телефону.",
+      "invalidEmail": "Будь ласка, введіть правильний email."
+    },
+    "ClownSchoolForm": {
+      "formSubmitted": "Ваша анкета відправлена.",
+      "contactWithinThreeDays": "Ми зв'яжемося з вами протягом трьох днів.",
+      "somethingWentWrong": "Щось пішло не так...",
+      "pleaseTryAgain": "Будь ласка, спробуйте ще раз."
+    },
+    "ClownSchoolFormDescription": {
+      "formTitle": "Заповнити анкету",
+      "formSubtitle": "Навчання для волонтерів безкоштовне.",
+      "formDescription": "Ми дуже чекаємо на нових людей у нашій команді, щоб дитячих усмішок і радості ставало все більше."
+    }
 }

@@ -53,7 +53,7 @@ const TextInput = forwardRef(function TextInput(
           className={`text-sm font-[500] ${titleClassName}`}
         >
           {modifyTitle(title)}
-          {isRequired && <span className="text-red">*</span>}
+          {isRequired && <span className="text-red mt-1">*</span>}
         </label>
       )}
       {isEditMode ? (
@@ -73,7 +73,7 @@ const TextInput = forwardRef(function TextInput(
         value={value}
         className={inputClassName}
       />
-      {errorText && <span className="text-xs text-red">{errorText}</span>}
+      {errorText && <span className="text-xs text-red mt-1">{errorText}</span>}
     </div>
   );
 });
