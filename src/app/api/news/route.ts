@@ -8,7 +8,13 @@ import './swagger-comments';
 export async function GET() {
   try {
     await prismaConnect();
-    const response = await prisma.news.findMany();
+
+    const news = await prisma.news.findMany();
+    const response = {
+      data: news,
+      meta: {},
+    };
+
     return NextResponse.json(response, { status: 200 });
   } catch (error) {
     console.log('GET NEWS', error);

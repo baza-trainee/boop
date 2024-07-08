@@ -7,6 +7,7 @@ import { teamApi } from './api/teamApi';
 import { documentsApi } from './api/documentsApi';
 import { contactsApi } from './api/contactsApi';
 import { counterApi } from './api/counterApi';
+import { pressApi } from './api/pressApi';
 import { testimonialsApi } from './api/testimonialsApi';
 import paymentFormSlice from './slices/paymentFormSlice';
 
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   [documentsApi.reducerPath]: documentsApi.reducer,
   [contactsApi.reducerPath]: contactsApi.reducer,
   [counterApi.reducerPath]: counterApi.reducer,
+  [pressApi.reducerPath]: pressApi.reducer,
   [testimonialsApi.reducerPath]: testimonialsApi.reducer,
 });
 
@@ -32,7 +34,8 @@ export const rootStore = configureStore({
       documentsApi.middleware,
       teamApi.middleware,
       counterApi.middleware,
-      testimonialsApi.middleware
+      testimonialsApi.middleware,
+      pressApi.middleware
     ),
 });
 
