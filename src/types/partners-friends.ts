@@ -1,6 +1,7 @@
 export interface PartnersFriends {
   id: string;
   logoUrl: string;
+  logoId: string;
   link: string;
   section: string;
   createdAt: Date;

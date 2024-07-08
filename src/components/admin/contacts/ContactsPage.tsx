@@ -20,7 +20,7 @@ const ContactsPage = () => {
     data: contacts,
     isLoading,
     isFetching,
-  } = contactsApi.useGetAllContactsQuery('contacts');
+  } = contactsApi.useGetAllContactsQuery();
 
   const {
     handleSubmit,
