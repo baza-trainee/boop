@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Vision from '../vision/Vision';
-import Values from '../values/Values';
+import Values from './values/Values';
 import Goals from '../goals/Goals';
 import Counter from './counter/Counter';
 import PressAboutUs from './press-about-us/PressAboutUs';
