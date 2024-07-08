@@ -1,5 +1,5 @@
 import React from 'react';
-import SectionTitle from '../shared/SectionTitle';
+import SectionTitle from '@/components/main/shared/SectionTitle';
 import ValueCard from './valueCard/ValueCard';
 import GetValuesCardsInfo from './ValuesCardsInfo';
 import { useTranslations } from 'next-intl';
@@ -15,7 +15,7 @@ const Values = () => {
       </div>
 
       <div className="flex w-full items-center justify-center bg-bgYellow py-[55px]">
-        <ul className="container mx-auto max-w-screen-3xl flex h-[160px] items-start justify-between  px-[120px]">
+        <ul className="container mx-auto flex h-[160px] max-w-screen-3xl items-start justify-between  px-[120px]">
           {valuesCards.map((el, index) => {
             return (
               <li key={index}>
