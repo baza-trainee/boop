@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 import PageTitle from '../shared/PageTitle';
 import {
   ADD_TYPES,
@@ -23,13 +23,7 @@ import ActionButtons from '../shared/ActionButtons';
 import { openAlert } from '@/store/slices/alertSlice';
 import axios from 'axios';
 
-function PartnersFriendsPage({
-  title,
-  section,
-  buttonTitle,
-  addType,
-  editType,
-}: PropsPartnersFriends) {
+function PartnersFriendsPage({ title, section }: PropsPartnersFriends) {
   const dispatch = useAppDispatch();
 
   const [currentId, setCurrentId] = useState('');
@@ -46,7 +40,7 @@ function PartnersFriendsPage({
   const handleEdit = (id: string, logoId: string) => {
     setCurrentId(id);
     setLogoId(logoId);
-    dispatch(openModal({ type: EDIT_TYPES[editType] }));
+    dispatch(openModal({ type: EDIT_TYPES[section] }));
   };
 
   const handleDelete = (id: string, imageId: string, sectionDell: string) => {
@@ -83,19 +77,19 @@ function PartnersFriendsPage({
       <ul className=" flex max-h-[100vh] flex-wrap gap-6 overflow-y-auto">
         <li className="flex w-[306px] flex-col items-center justify-center gap-[10px] bg-[#edebf5] p-[36px]">
           <p className="ml-auto mr-auto font-['Raleway',_sans-serif] text-[20px] font-medium normal-case not-italic leading-[28px] tracking-[0px] text-[#50439f]">
-            Додати {BUTTON_TITLE[buttonTitle]}
+            Додати {BUTTON_TITLE[section]}
           </p>
           <button
             type="button"
             onClick={() => {
-              dispatch(openModal({ type: ADD_TYPES[addType] }));
+              dispatch(openModal({ type: ADD_TYPES[section] }));
             }}
           >
             <Image src="/images/add.svg" alt="add" width={70} height={70} />
           </button>
         </li>
         {partners
-          ?.filter((item) => item.section === SECTION_PARTNERS_FRIENDS[addType])
+          ?.filter((item) => item.section === SECTION_PARTNERS_FRIENDS[section])
           .map((item: PartnersFriends) => (
             <li
               key={item.id}
@@ -113,19 +107,19 @@ function PartnersFriendsPage({
                   action="all"
                   editAction={() => handleEdit(item.id, item.logoId)}
                   deleteAction={() =>
-                    handleDelete(item.id, item.logoId, BUTTON_TITLE[editType])
+                    handleDelete(item.id, item.logoId, BUTTON_TITLE[section])
                   }
                 />
               </div>
             </li>
           ))}
       </ul>
-      <FormModal type={ADD_TYPES[addType]}>
-        <AddPartnersFriendsForm addType={addType} />
+      <FormModal type={ADD_TYPES[section]}>
+        <AddPartnersFriendsForm addType={section} />
       </FormModal>
-      <FormModal type={EDIT_TYPES[editType]}>
+      <FormModal type={EDIT_TYPES[section]}>
         <EditPartnersFriendsForm
-          editType={editType}
+          editType={section}
           logoId={logoIdState}
           id={currentId}
         />

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import clsx from 'clsx';
 import { useForm, SubmitHandler } from 'react-hook-form';
@@ -25,7 +25,7 @@ interface UpdatedPartners {
 }
 
 type SubmitForm = {
-  image?: any;
+  image?: File[];
   urlLink?: string;
 };
 

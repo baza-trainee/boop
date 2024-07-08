@@ -19,11 +19,6 @@ export const BUTTON_TITLE = {
   friends: 'Друга',
 };
 
-export const ACTION_NAME = {
-  Редагування: 'Редагування',
-  Додавання: 'Додавання',
-};
-
 export const EDIT_TYPES = {
   partners: 'edit-partners',
   friends: 'edit-friends',
@@ -37,7 +32,4 @@ export const ADD_TYPES = {
 export interface PropsPartnersFriends {
   title: string;
   section: keyof typeof SECTION_PARTNERS_FRIENDS;
-  buttonTitle: keyof typeof BUTTON_TITLE;
-  editType: keyof typeof EDIT_TYPES;
-  addType: keyof typeof ADD_TYPES;
 }

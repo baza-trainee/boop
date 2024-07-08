@@ -2,6 +2,7 @@ import { createPortal } from 'react-dom';
 import { useAppDispatch, useAppSelector } from '@/store/hook';
 import { useBodyScrollLock } from '@/hooks/useBodyScrollLock';
 import { closeModal } from '@/store/slices/modalSlice';
+import Image from 'next/image';
 
 const FormModal = ({
   children,
@@ -24,7 +25,12 @@ const FormModal = ({
           onClick={() => dispatch(closeModal())}
           className=" absolute right-5 top-5 text-rose-600"
         >
-          close modal
+          <Image
+            src={'/icons/admin/close.svg'}
+            alt="close"
+            width={32}
+            height={32}
+          />
         </button>
         {children}
       </div>
