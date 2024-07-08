@@ -58,7 +58,6 @@ const EditTeamForm = ({ id }: { id: string }) => {
     try {
       setIsProcessing(true);
       if (values.image[0]?.size > 0) {
-        //need to delete old and upload new photo
         const formData = new FormData();
         formData.append('file', values.image[0]);
         formData.append('folderName', 'team');
@@ -66,21 +65,21 @@ const EditTeamForm = ({ id }: { id: string }) => {
           `/cloudinary/${encodeURIComponent(teamMember?.imageId as string)}`
         );
         const res = await axios.post('/cloudinary', formData);
-        const newMember = {
+        const updatedMember = {
           nameUa: values.nameUa,
           nameEn: values.nameEn,
           nameIt: values.nameIt,
           imageUrl: replaceExtensionWithWebp(res.data.fileUrl),
           imageId: res.data.fileId,
         };
-        const response = await editTeamMember({ id, newMember });
+        const response = await editTeamMember({ id, updatedMember });
         if (response && response.data) {
           dispatch(closeModal());
           dispatch(
             openAlert({
               data: {
                 state: 'success',
-                message: 'Учасника успішно відредаговано!',
+                message: 'Учасника успішно відредаговано',
               },
             })
           );
@@ -101,7 +100,7 @@ const EditTeamForm = ({ id }: { id: string }) => {
             openAlert({
               data: {
                 state: 'success',
-                message: 'Зміни в записі успішно збережено!',
+                message: 'Учасника успішно відредаговано',
               },
             })
           );

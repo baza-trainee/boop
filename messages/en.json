@@ -1,164 +1,186 @@
 {
-  "hello": "hello",
-  "Header": {
-    "home": "Main",
-    "about": "About us",
-    "school": "School",
-    "contacts": "Contacts",
-    "button": "Support the project"
-  },
-  "Hero": {
-    "title": "We make sure that childhood lasts, no matter the circumstances"
-  },
-  "Founders": {
-    "subtitle": "Project Co-Founders",
-    "title": "Olha Bulkina \nand Maryna Berdar",
-    "text": "Certified Hospital Clowns. \nEducational Facilitators. \nHonored Affiliates of \nthe ”SOCCORSO CLOWN” Organization",
-    "caption": "Bureau of Smiles and Support"
-  },
-  "Vision": {
-    "subtitle": "Vision",
-    "text": "We strive to ensure that every children's hospital in Ukraine becomes a place of joy and smiles for children who find themselves in difficult and crisis situations."
-  },
-  "Values": {
-    "title": "Our Values",
-    "inclusivity": {
-      "text": "Inclusivity",
-      "hoverText": "we value everyone, regardless of their circumstances, and do our best to make everyone feel important and needed"
+	"hello": "hello",
+	"Header": {
+		"home": "Main",
+		"about": "About us",
+		"school": "School",
+		"contacts": "Contacts",
+		"button": "Support the project"
+	},
+	"Hero": {
+		"title": "We make sure that childhood lasts, no matter the circumstances"
+	},
+	"Founders": {
+		"subtitle": "Project Co-Founders",
+		"title": "Olha Bulkina \nand Maryna Berdar",
+		"text": "Certified Hospital Clowns. \nEducational Facilitators. \nHonored Affiliates of \nthe ”SOCCORSO CLOWN” Organization",
+		"caption": "Bureau of Smiles and Support"
+	},
+	"Vision": {
+		"subtitle": "Vision",
+		"text": "We strive to ensure that every children's hospital in Ukraine becomes a place of joy and smiles for children who find themselves in difficult and crisis situations."
+	},
+	"Values": {
+		"title": "Our Values",
+		"inclusivity": {
+			"text": "Inclusivity",
+			"hoverText": "we value everyone, regardless of their circumstances, and do our best to make everyone feel important and needed"
+		},
+		"proactivity": {
+			"text": "Proactivity",
+			"hoverText": "we take action in advance, always looking for new ways to bring joy and relief"
+		},
+		"respect": {
+			"text": "Respect",
+			"hoverText": "we treat everyone with deep respect, valuing the uniqueness of each individual"
+		},
+		"sincerity": {
+			"text": "Sincerity",
+			"hoverText": "our actions and words always come from the heart, creating an atmosphere of trust"
+		},
+		"empathy": {
+			"text": "Empathy",
+			"hoverText": "we understand and feel what you feel, providing support in the most difficult moments"
+		}
+	},
+	"Mission": {
+		"title": "Our Mission",
+		"first": {
+			"text": "Hospital Clowning:\n An Emotional Support Program for Children in Hospitals",
+			"hoverText": "Boosting children's mood and morale. Facilitating adaptation to hospital conditions. Сompanying children for procedures or surgeries. Collaborating with parents and doctors"
+		},
+		"second": {
+			"text": "Organizing\n social and rehabilitation events",
+			"hoverText": "Weekly Events. Bubble Shows. Winners' Games. Beauty Days. Art Therapy. Sound Therapy. Themed Concerts"
+		},
+		"third": {
+			"text": "Developing\n the volunteer community",
+			"hoverText": "Training hospital clowns.  Conducting team building for the team with the support of the international community of hospital clowns.  We work with the emotional state of volunteers.  We promote and develop hospital clowning in Ukraine"
+		}
+	},
+	"Goals": {
+		"title": "Our Goals",
+		"first": {
+			"cardNumber": "1",
+			"text": "To establish an Ukrainian Association of Hospital Clowns with colleagues from cities across Ukraine"
+		},
+		"second": {
+			"cardNumber": "2",
+			"text": "To launch new teams in children's hospitals in Kyiv and other cities"
+		},
+		"third": {
+			"cardNumber": "3",
+			"text": "To create a national program of emotional support in children's hospitals"
+		},
+		"fourth": {
+			"cardNumber": "4",
+			"text": "To expand international cooperation"
+		}
+	},
+	"Counter_section": {
+		"title": "Achievements in numbers",
+		"counter_1": {
+			"text": "years of experience"
+		},
+		"counter_2": {
+			"text": "hospital clowns"
+		},
+		"counter_3": {
+			"text": "performances per month"
+		},
+		"counter_4": {
+			"text": "hospitals where we work"
+		},
+		"counter_5": {
+			"text": "children per month"
+		}
+	},
+	"Press_about_us": {
+		"title": "Press about us",
+		"link_text": "Read more"
+	},
+	"Gallery": {
+		"title": "Gallery",
+		"btn": "Download more"
+	},
+	"Partners": {
+		"title_1": "Our friends",
+		"title_2": "and partners"
+	},
+	"Error": {
+		"title": "Uh-oh, you seem to be lost!",
+		"text": "Unfortunately, the page you're looking for doesn't exist.",
+		"btn": "Home"
+	},
+	"Contacts": {
+		"title": "Our сontacts"
+	},
+	"About": {
+		"main_rules": {
+			"title": " – we make sure that childhood lasts, no matter the circumstances",
+			"rules": {
+				"paragraph_1": "Sometimes, all we can do is be there for one another, especially during unexpected and traumatic events.",
+				"paragraph_2": "”Do no harm!” - is the most important rule. \nNot to others, and not to ourselves. Let's be the support system for those around us. After all, we need each other so much.",
+				"paragraph_3": "There are countless ways to show care and acceptance. We can simply talk, be silent, distract, offer a warm drink, hold someone's hand, blow up a balloon..."
+			}
+		},
+		"team_structure": {
+			"title": "Team Structure",
+			"management_title": "Management",
+			"management_text": "Communication with hospital management and medical staff. \nEvent planning and preparation.",
+			"volunteers_title": "Volunteers",
+			"volunteers_text": "Volunteer recruitment and development of the volunteer community around the hospital."
+		}
+	},
+	"School": {
+		"main_title": "Clown Hospital School",
+		"join_title": "Who Can Become a Hospital Clown?",
+		"training_title": "How the Training Works",
+		"main_text_primary": "Clown Hospital School -",
+		"main_text_secondary": "a joint project of",
+		"and": "and",
+		"join": {
+			"paragraph_1": "A person who understands empathy. They are ready to accept and acknowledge the emotions of those who need support and to provide that support based on the emotional needs of children and parents.",
+			"paragraph_2": "Someone who is not afraid to be funny. They can genuinely laugh at themselves and at this crazy life. They laugh and love it more than anything.",
+			"paragraph_3": "A person with charisma who is willing to work on developing it.",
+			"paragraph_4": "Someone who is ready to learn, grow, seek themselves out, and find their comedic character. They are ready to create a celebration of life in the midst of disaster."
+		},
+		"training": {
+			"title": "Think there are any classes more fun than the Clown School?",
+			"text": "We think not. Because here students play, dress up in funny costumes and dance. It's very interesting to watch how this clown magic works, when a group of adults, strangers to each other, turn into children and allow themselves to be as they feel - light, real, silly, funny, whatever!",
+			"paragraph_1": "Volunteers undergo a two-day training in the basics of hospital clowning - on the course, students learn to express themselves, release their inner child, not be afraid to be funny, play with each other.",
+			"paragraph_2": "Everyone can awaken their inner clown - a unique, interesting, funny character who is just exploring the world around them, but is already ready to dive into the unknown. This is the base with which you can already work and go to the departments to the children.",
+			"paragraph_3": "After the training, volunteers go on practice to the hospital, accompanied by experienced hospital clowns.",
+			"paragraph_4": "Over the next three months, they gather for classes once a week and delve deeper into the mechanisms of hospital clowns.",
+			"paragraph_5": "In parallel, regular visits to hospital departments take place, under the constant supervision of trainers and psychological support"
+		},
+		"feedback_title": "Reviews of students of the School of Clowns",
+		"photo_title": "Photos"
+	},
+    "Form": {
+      "joinUs": "Join us",
+      "leaveForm": "Leave your form and we will contact you within three days.",
+      "name": "Your name",
+      "phone": "Phone number",
+      "phonePlaceholder": "Enter phone number in format +380",
+      "email": "Email",
+      "emailPlaceholder": "example@gmail.com",
+      "social": "Social networks",
+      "socialPlaceholder": "Link to Facebook, Telegram or Instagram",
+      "submit": "Submit",
+      "required": "This field is required.",
+      "invalidPhone": "Please enter a valid phone number.",
+      "invalidEmail": "Please enter a valid email address."
     },
-    "proactivity": {
-      "text": "Proactivity",
-      "hoverText": "we take action in advance, always looking for new ways to bring joy and relief"
+    "ClownSchoolForm": {
+      "formSubmitted": "Your form has been submitted.",
+      "contactWithinThreeDays": "We will contact you within three days.",
+      "somethingWentWrong": "Something went wrong...",
+      "pleaseTryAgain": "Please try again."
     },
-    "respect": {
-      "text": "Respect",
-      "hoverText": "we treat everyone with deep respect, valuing the uniqueness of each individual"
-    },
-    "sincerity": {
-      "text": "Sincerity",
-      "hoverText": "our actions and words always come from the heart, creating an atmosphere of trust"
-    },
-    "empathy": {
-      "text": "Empathy",
-      "hoverText": "we understand and feel what you feel, providing support in the most difficult moments"
+    "ClownSchoolFormDescription": {
+      "formTitle": "Fill out the form",
+      "formSubtitle": "Volunteer training is free.",
+      "formDescription": "We are eagerly awaiting new people to join our team, so that there will be more children's smiles and joy."
     }
-  },
-  "Mission": {
-    "title": "Our Mission",
-    "first": {
-      "text": "Hospital Clowning:\n An Emotional Support Program for Children in Hospitals",
-      "hoverText": "Boosting children's mood and morale. Facilitating adaptation to hospital conditions. Сompanying children for procedures or surgeries. Collaborating with parents and doctors"
-    },
-    "second": {
-      "text": "Organizing\n social and rehabilitation events",
-      "hoverText": "Weekly Events. Bubble Shows. Winners' Games. Beauty Days. Art Therapy. Sound Therapy. Themed Concerts"
-    },
-    "third": {
-      "text": "Developing\n the volunteer community",
-      "hoverText": "Training hospital clowns.  Conducting team building for the team with the support of the international community of hospital clowns.  We work with the emotional state of volunteers.  We promote and develop hospital clowning in Ukraine"
-    }
-  },
-  "Goals": {
-    "title": "Our Goals",
-    "first": {
-      "cardNumber": "1",
-      "text": "To establish an Ukrainian Association of Hospital Clowns with colleagues from cities across Ukraine"
-    },
-    "second": {
-      "cardNumber": "2",
-      "text": "To launch new teams in children's hospitals in Kyiv and other cities"
-    },
-    "third": {
-      "cardNumber": "3",
-      "text": "To create a national program of emotional support in children's hospitals"
-    },
-    "fourth": {
-      "cardNumber": "4",
-      "text": "To expand international cooperation"
-    }
-  },
-  "Counter_section": {
-    "title": "Achievements in numbers",
-    "counter_1": {
-      "text": "years of experience"
-    },
-    "counter_2": {
-      "text": "hospital clowns"
-    },
-    "counter_3": {
-      "text": "performances per month"
-    },
-    "counter_4": {
-      "text": "hospitals where we work"
-    },
-    "counter_5": {
-      "text": "children per month"
-    }
-  },
-  "Press_about_us": {
-    "title": "Press about us",
-    "link_text": "Read more"
-  },
-  "Gallery": {
-    "title": "Gallery",
-    "btn": "Download more"
-  },
-  "Error": {
-    "title": "Uh-oh, you seem to be lost!",
-    "text": "Unfortunately, the page you're looking for doesn't exist.",
-    "btn": "Home"
-  },
-  "Contacts": {
-    "title": "Our сontacts"
-  },
-  "School": {
-    "main_title": "Clown Hospital School",
-    "join_title": "Who Can Become a Hospital Clown?",
-    "training_title": "How the Training Works",
-    "main_text_primary": "Clown Hospital School -",
-    "main_text_secondary": "a joint project of",
-    "and": "and",
-    "join": {
-      "paragraph_1": "A person who understands empathy. They are ready to accept and acknowledge the emotions of those who need support and to provide that support based on the emotional needs of children and parents.",
-      "paragraph_2": "Someone who is not afraid to be funny. They can genuinely laugh at themselves and at this crazy life. They laugh and love it more than anything.",
-      "paragraph_3": "A person with charisma who is willing to work on developing it.",
-      "paragraph_4": "Someone who is ready to learn, grow, seek themselves out, and find their comedic character. They are ready to create a celebration of life in the midst of disaster."
-    },
-    "training": {
-      "title": "Think there are any classes more fun than the Clown School?",
-      "text": "We think not. Because here students play, dress up in funny costumes and dance. It's very interesting to watch how this clown magic works, when a group of adults, strangers to each other, turn into children and allow themselves to be as they feel - light, real, silly, funny, whatever!",
-      "paragraph_1": "Volunteers undergo a two-day training in the basics of hospital clowning - on the course, students learn to express themselves, release their inner child, not be afraid to be funny, play with each other.",
-      "paragraph_2": "Everyone can awaken their inner clown - a unique, interesting, funny character who is just exploring the world around them, but is already ready to dive into the unknown. This is the base with which you can already work and go to the departments to the children.",
-      "paragraph_3": "After the training, volunteers go on practice to the hospital, accompanied by experienced hospital clowns.",
-      "paragraph_4": "Over the next three months, they gather for classes once a week and delve deeper into the mechanisms of hospital clowns.",
-      "paragraph_5": "In parallel, regular visits to hospital departments take place, under the constant supervision of trainers and psychological support"
-    },
-    "photo_title": "Photos"
-  },
-  "Form": {
-    "joinUs": "Join us",
-    "leaveForm": "Leave your form and we will contact you within three days.",
-    "name": "Your name",
-    "phone": "Phone number",
-    "phonePlaceholder": "Enter phone number in format +380",
-    "email": "Email",
-    "emailPlaceholder": "example@gmail.com",
-    "social": "Social networks",
-    "socialPlaceholder": "Link to Facebook, Telegram or Instagram",
-    "submit": "Submit",
-    "required": "This field is required.",
-    "invalidPhone": "Please enter a valid phone number.",
-    "invalidEmail": "Please enter a valid email address."
-  },
-  "ClownSchoolForm": {
-    "formSubmitted": "Your form has been submitted.",
-    "contactWithinThreeDays": "We will contact you within three days.",
-    "somethingWentWrong": "Something went wrong...",
-    "pleaseTryAgain": "Please try again."
-  },
-  "ClownSchoolFormDescription": {
-    "formTitle": "Fill out the form",
-    "formSubtitle": "Volunteer training is free.",
-    "formDescription": "We are eagerly awaiting new people to join our team, so that there will be more children's smiles and joy."
-  }
 }
