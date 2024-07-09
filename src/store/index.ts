@@ -36,7 +36,7 @@ export const rootStore = configureStore({
       documentsApi.middleware,
       teamApi.middleware,
       counterApi.middleware,
-      partnersFriendsApi.middleware
+      partnersFriendsApi.middleware,
       testimonialsApi.middleware,
       applicationsApi.middleware
     ),
