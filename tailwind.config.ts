@@ -42,7 +42,7 @@ const config: Config = {
         md: '768px',
         ml: '1024px',
         lg: '1280px',
-        xl: '1368px',
+        xl: '1366px',
         '2xl': '1440px',
         '3xl': '1536px',
         '4xl': '1920px',

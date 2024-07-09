@@ -86,7 +86,7 @@ body.lock {
 
 @layer components {
   .container {
-    @apply mx-auto w-full max-w-[2920px] px-[20px] md:px-[40px] lg:px-[64px] 2xl:px-[80px] 3xl:px-[120px];
+    @apply mx-auto w-full max-w-[1920px] px-[20px] md:px-[64px] lg:px-[64px] xl:px-[80px] 2xl:px-[120px];
   }
   .title-gradient {
     @apply bg-gradient-to-r from-[rgb(114,99,177)] to-[rgb(47,36,94)] bg-clip-text text-transparent;

@@ -2,8 +2,9 @@
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
-import LanguageSwitcher from './LanguageSwitcher';
+
 import { Link } from '@/navigation';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Header = () => {
   const t = useTranslations('Header');
@@ -15,7 +16,9 @@ const Header = () => {
   if (isAdminPage) return null;
 
   return (
+
     <header className="container fixed left-0 right-0 top-0 z-50 flex h-[100px] items-center justify-between bg-golden bg-opacity-80 px-[120px] py-[26px] text-violet backdrop-blur-sm backdrop-filter">
+
       <div>
         <Link href="/" title="Бюро усмішок і підтримки">
           <Image
@@ -50,6 +53,7 @@ const Header = () => {
           </li>
         </ul>
       </nav>
+
       <div className="font-ralewayb relative z-10 flex w-[330px] items-center">
         <div className="relative w-[100px]">
           <LanguageSwitcher />
