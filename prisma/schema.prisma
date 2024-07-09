@@ -120,15 +120,3 @@ model PartnersFriends {
   createdAt DateTime @default(now())
 }
 
-model Testimonial {
-  id        String   @id
-  nameUa    String
-  nameEn    String
-  nameIt    String
-  reviewUa  String
-  reviewEn  String
-  reviewIt  String
-  imageUrl  String
-  imageId   String
-  createdAt DateTime @default(now())
-}
