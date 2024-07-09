@@ -38,8 +38,9 @@ const WhoCanJoin = () => {
             </li>
           ))}
         </ul>
+
         {isMobile ? (
-          ' '
+          ''
         ) : (
           <div className="relative h-[322px] w-[250px] ml:h-[417px] ml:w-[328px] lg:h-[477px] lg:w-[396px] xl:h-[505px] xl:w-[484px] 3xl:h-[516px] 3xl:w-[526px] 4xl:h-[565px] 4xl:w-[544px]">
             <div className="absolute bottom-0 h-[154px] w-[250px] bg-[#50439F] ml:h-[200px] ml:w-[328px] lg:h-[224px] lg:w-[396px] xl:h-[237px] xl:w-[484px] 3xl:h-[242px] 3xl:w-[525px] 4xl:h-[265px] 4xl:w-[544px]"></div>

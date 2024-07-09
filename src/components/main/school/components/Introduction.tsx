@@ -8,9 +8,8 @@ import { useMediaQuery } from 'react-responsive';
 const Introduction = () => {
   const t = useTranslations('School');
 
-  const isMobile = useMediaQuery({
-    query: '(min-width: 320px) and (max-width: 767.98px)',
-  });
+  const isMobile = useMediaQuery({ query: '(max-width: 767.98px)' });
+
   const isTablet = useMediaQuery({
     query: '(min-width: 768px) and (max-width: 1024.98px)',
   });
@@ -23,7 +22,7 @@ const Introduction = () => {
         {t('main_title')}
       </h2>
       <svg
-        className={`absolute h-[12px] w-[53px] lg:top-[11%] lg:w-[86px] 3xl:top-[10%]`}
+        className={`absolute h-[1rem] w-[5rem] xs:hidden md:block lg:top-[11%] 3xl:top-[10%]`}
       >
         <use href="/icons/sprite.svg#title-line"></use>
       </svg>

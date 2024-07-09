@@ -11,7 +11,7 @@ const SchoolPage: React.FC = () => {
   return (
     <ModalProvider>
       <section
-        className="bg-[right_top_35px] bg-no-repeat pb-[130px] pt-[120px] md:pt-[200px]"
+        className="bg-[right_top_35px] bg-no-repeat pb-[70px] pt-[72.5px] md:pb-[100px] md:pt-[100px] xl:pb-[120px] 3xl:pt-[120px]"
         style={{ backgroundImage: "url('/icons/school/wave.svg')" }}
       >
         <div className="container mx-auto max-w-screen-3xl">
