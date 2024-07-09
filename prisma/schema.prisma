@@ -119,3 +119,4 @@ model PartnersFriends {
   section   String
   createdAt DateTime @default(now())
 }
+

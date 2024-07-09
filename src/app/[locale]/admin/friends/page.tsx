@@ -1,7 +1,8 @@
-import React from 'react';
 
-const Friends = () => {
-  return <div>Friends</div>;
-};
+import PartnersFriendsPage from '@/components/admin/partnersFriends/PartnersFriendsPage';
 
-export default Friends;
+function FriendsPage() {
+  return <PartnersFriendsPage title="Друзі" section="friends" />;
+}
+
+export default FriendsPage;
