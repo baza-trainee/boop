@@ -10,6 +10,7 @@
     "commit": "git-cz",
     "prepare": "husky install",
     "postinstall": "prisma generate",
+    "prisma:db:push": "prisma db push",
     "lint": "eslint '*/**/*.{js,jsx,ts,tsx}' --quiet",
     "format": "prettier --write '*/**/*.{js,jsx,ts,tsx,json,css,md}'",
     "ts-check": "tsc --project tsconfig.json --pretty --noEmit && echo "

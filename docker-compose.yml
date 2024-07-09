@@ -22,6 +22,8 @@ services:
   app:
     image: boop
     env_file: .env
+    environment:
+      - DATABASE_URL=`postgresql://postgres:postgres@localhost:5433/boop_db?schema=public`
     build:
       context: ./
       target: dev
