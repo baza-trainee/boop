@@ -7,8 +7,8 @@ const Founders = () => {
   const t = useTranslations('Founders');
 
   return (
-    <section className="container  mb-[120px]  flex   items-center justify-between whitespace-pre bg-inherit">
-      <div className=" flex items-end gap-[2px]">
+    <section className="container max-w-screen-3xl mx-auto mb-[120px] flex items-center justify-between whitespace-pre bg-inherit">
+      <div className="flex items-end gap-[2px]">
         <Image
           src="/images/founders_image.png"
           alt="Founders foto"
@@ -16,7 +16,7 @@ const Founders = () => {
           height={724}
           className=" "
         />
-        <span className=" relative -bottom-4  h-4 w-[163px] origin-top-left -rotate-90 text-left font-raleway text-[12px] font-semibold leading-[132%] text-textViolet">
+        <span className="relative -bottom-4  h-4 w-[163px] origin-top-left -rotate-90 text-left font-raleway text-[12px] font-semibold leading-[132%] text-textViolet">
           {t('caption')}
         </span>
       </div>

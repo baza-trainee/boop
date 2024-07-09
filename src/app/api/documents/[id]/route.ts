@@ -10,15 +10,15 @@ export async function PATCH(
 ) {
   try {
     await prismaConnect();
-    const data: { newDocument: DocumentFormData } = await request.json();
+    const { newDocument }: { newDocument: DocumentFormData } =
+      await request.json();
     const updatedDocument = await prisma.document.update({
       where: {
         id: params.id,
       },
       data: {
-        title: data.newDocument.title,
-        documentUrl: data.newDocument.documentUrl,
-        documentId: data.newDocument.documentId,
+        documentUrl: newDocument.documentUrl,
+        documentId: newDocument.documentId,
       },
     });
     return NextResponse.json(updatedDocument, { status: 200 });

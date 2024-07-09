@@ -26,8 +26,7 @@ export async function POST(request: Request) {
         facebook: data.facebook,
         addressUa: data.addressUa,
         addressEn: data.addressEn,
-        latitude: data.latitude,
-        longitude: data.latitude,
+        addressIt: data.addressIt,
       },
     });
     return NextResponse.json(response, { status: 200 });

@@ -6,9 +6,7 @@ export interface IContact {
   instagram: string;
   addressUa: string;
   addressEn: string;
-  latitude: string;
-  longitude: string;
+  addressIt: string;
 }
 
 export type ContactFormData = Omit<IContact, 'id'>;
-export type UpdateContactDto = Partial<ContactFormData>;

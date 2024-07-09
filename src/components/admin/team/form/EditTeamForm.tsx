@@ -18,9 +18,9 @@ const EditTeamForm = ({ id }: { id: string }) => {
   const [isProcessing, setIsProcessing] = useState(false);
 
   const [editTeamMember] = teamApi.useEditTeamMemberMutation();
-  const { data: team } = teamApi.useGetAllTeamQuery('team');
+  const { data: team } = teamApi.useGetAllTeamQuery();
 
-  const teamMember = team?.find((member) => member.id === id);
+  const teamMember = team?.data.find((member) => member.id === id);
 
   const {
     handleSubmit,
@@ -58,7 +58,6 @@ const EditTeamForm = ({ id }: { id: string }) => {
     try {
       setIsProcessing(true);
       if (values.image[0]?.size > 0) {
-        //need to delete old and upload new photo
         const formData = new FormData();
         formData.append('file', values.image[0]);
         formData.append('folderName', 'team');
@@ -66,21 +65,21 @@ const EditTeamForm = ({ id }: { id: string }) => {
           `/cloudinary/${encodeURIComponent(teamMember?.imageId as string)}`
         );
         const res = await axios.post('/cloudinary', formData);
-        const newMember = {
+        const updatedMember = {
           nameUa: values.nameUa,
           nameEn: values.nameEn,
           nameIt: values.nameIt,
           imageUrl: replaceExtensionWithWebp(res.data.fileUrl),
           imageId: res.data.fileId,
         };
-        const response = await editTeamMember({ id, newMember });
+        const response = await editTeamMember({ id, updatedMember });
         if (response && response.data) {
           dispatch(closeModal());
           dispatch(
             openAlert({
               data: {
                 state: 'success',
-                message: 'Учасника успішно відредаговано!',
+                message: 'Учасника успішно відредаговано',
               },
             })
           );
@@ -101,7 +100,7 @@ const EditTeamForm = ({ id }: { id: string }) => {
             openAlert({
               data: {
                 state: 'success',
-                message: 'Зміни в записі успішно збережено!',
+                message: 'Учасника успішно відредаговано',
               },
             })
           );
@@ -132,9 +131,8 @@ const EditTeamForm = ({ id }: { id: string }) => {
             <FileInput
               name="image"
               control={control}
-              placeholder={'Оберіть файл'}
-              title="Оберіть файл:"
-              isRequired={true}
+              placeholder="Завантажити зображення"
+              title="Оберіть файл"
               accept="image/*"
             />
             <Controller
@@ -145,8 +143,7 @@ const EditTeamForm = ({ id }: { id: string }) => {
                   {...field}
                   errorText={errors.nameUa?.message}
                   placeholder="Напишіть псевдонім"
-                  title="Вкажіть псевдонім українською:"
-                  isRequired={true}
+                  title="Вкажіть псевдонім українською"
                 />
               )}
             />
@@ -158,8 +155,7 @@ const EditTeamForm = ({ id }: { id: string }) => {
                   {...field}
                   errorText={errors.nameEn?.message}
                   placeholder="Напишіть псевдонім"
-                  title="Вкажіть псевдонім англійською:"
-                  isRequired={true}
+                  title="Вкажіть псевдонім англійською"
                 />
               )}
             />
@@ -171,8 +167,7 @@ const EditTeamForm = ({ id }: { id: string }) => {
                   {...field}
                   errorText={errors.nameIt?.message}
                   placeholder="Напишіть псевдонім"
-                  title="Вкажіть псевдонім італійською:"
-                  isRequired={true}
+                  title="Вкажіть псевдонім італійською"
                 />
               )}
             />
@@ -197,7 +192,7 @@ const EditTeamForm = ({ id }: { id: string }) => {
             disabled={!isValid}
             className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white hover:shadow-xl disabled:bg-gray-500"
           >
-            {isProcessing ? 'Обробка запиту...' : 'Додати'}
+            {isProcessing ? 'Обробка запиту...' : 'Змінити'}
           </button>
           <button
             onClick={() => dispatch(closeModal())}

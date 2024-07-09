@@ -14,16 +14,18 @@ import FormModal from '../shared/FormModal';
 import AddTeamForm from './form/AddTeamForm';
 import EditTeamForm from './form/EditTeamForm';
 import Loader from '@/components/shared/loader/Loader';
+import Pagination from '../shared/Pagination';
 
 const TeamPage = () => {
   const dispatch = useAppDispatch();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [currentId, setCurrentId] = useState('');
   const {
     data: team,
     isLoading,
     isFetching,
-  } = teamApi.useGetAllTeamQuery('team');
+  } = teamApi.useGetAllTeamQuery({ page: currentPage, limit: 5 });
   const [deleteTeamMember] = teamApi.useDeleteTeamMemberMutation();
-  const [currentId, setCurrentId] = useState('');
 
   if (isLoading || isFetching) return <Loader />;
 
@@ -37,7 +39,7 @@ const TeamPage = () => {
       openAlert({
         data: {
           state: 'confirm',
-          message: 'Ви впевнеі, що хочете видалити запис з Команди?',
+          message: 'Ви впевнені, що хочете видалити запис з Команди?',
           func: async () => {
             await axios.delete(`/cloudinary/${encodeURIComponent(imageId)}`);
             await deleteTeamMember(id);
@@ -56,10 +58,13 @@ const TeamPage = () => {
   };
 
   return (
-    <section className="no-scrollbar relative max-h-[150vh] overflow-y-auto px-[24px] py-[100px]">
+    <section className="relative h-[864px]  px-[24px] py-[100px]">
       <PageTitle title="Команда" />
       <div className="flex flex-wrap gap-[32px]">
-        <div className="flex h-[447px] w-[306px] flex-col items-center justify-center gap-[10px] bg-bgViolet font-[800] text-violet">
+        <div
+          className="flex h-[247px] w-[306px] flex-col items-center justify-center 
+        gap-[10px] bg-bgViolet font-[800] text-violet"
+        >
           <span className="text-xl">Додати учасника</span>
           <button
             onClick={() => dispatch(openModal({ type: 'add-team-member' }))}
@@ -68,12 +73,19 @@ const TeamPage = () => {
           </button>
         </div>
         {team &&
-          team.map((member: ITeamMember) => (
+          team.data.map((member: ITeamMember) => (
             <div
               key={member.id}
-              className="relative flex h-[447px] w-[306px] flex-col items-center justify-center"
+              className="relative flex h-[247px] w-[306px] flex-col items-center justify-center"
             >
-              <p className="sideText absolute -left-6 top-0 rotate-180 font-medium [writing-mode:vertical-lr]">
+              <Image
+                src={member.imageUrl}
+                alt={member.nameUa}
+                width={306}
+                height={247}
+                className="h-[247px] w-[306px] object-cover"
+              />
+              <p className="absolute bottom-[44px] left-0 flex h-[37px] w-full items-center justify-center bg-bgVioletTransparent text-[16px] font-[800] text-textViolet">
                 {member.nameUa}
               </p>
               <ActionButtons
@@ -81,16 +93,18 @@ const TeamPage = () => {
                 editAction={() => handleEdit(member.id)}
                 deleteAction={() => handleDelete(member.id, member.imageId)}
               />
-              <Image
-                src={member.imageUrl}
-                alt={member.nameUa}
-                width={306}
-                height={447}
-                className="h-[447px] w-[306px] object-cover"
-              />
             </div>
           ))}
       </div>
+
+      {team && team?.meta.totalPages > 1 && (
+        <Pagination
+          totalPages={team.meta.totalPages}
+          currentPage={currentPage}
+          onPageChange={setCurrentPage}
+        />
+      )}
+
       <FormModal type="add-team-member">
         <AddTeamForm />
       </FormModal>

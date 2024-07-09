@@ -9,21 +9,23 @@ import { openModal } from '@/store/slices/modalSlice';
 import { openAlert } from '@/store/slices/alertSlice';
 import { photoApi } from '@/store/api/photoApi';
 import PageTitle from '../shared/PageTitle';
-import ActionButtons from '../shared/ActionButtons';
 import FormModal from '../shared/FormModal';
 import AddPhotoForm from './form/AddPhotoForm';
 import EditPhotoForm from './form/EditPhotoForm';
 import Loader from '@/components/shared/loader/Loader';
+import Pagination from '../shared/Pagination';
+import ActionButtons from '../shared/ActionButtons';
 
 const PhotoPage = () => {
   const dispatch = useAppDispatch();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [currentId, setCurrentId] = useState('');
   const {
     data: photos,
     isLoading,
     isFetching,
-  } = photoApi.useGetAllPhotoQuery('photos');
+  } = photoApi.useGetAllPhotoQuery({ page: currentPage, limit: 11 });
   const [deletePhoto] = photoApi.useDeletePhotoMutation();
-  const [currentId, setCurrentId] = useState('');
 
   if (isLoading || isFetching) return <Loader />;
 
@@ -56,36 +58,51 @@ const PhotoPage = () => {
   };
 
   return (
-    <section className="no-scrollbar relative max-h-[150vh] overflow-y-auto px-[24px] py-[100px]">
+    <section className="relative h-[864px] px-[24px] py-[100px]">
       <PageTitle title="Фото" />
       <div className="flex flex-wrap gap-[24px]">
-        <div className="flex h-[447px] w-[306px] flex-col items-center justify-center gap-[10px] bg-bgViolet font-[800] text-violet">
-          <span className="text-xl">Додати фото</span>
+        <div className="flex h-[171px] w-[223px] flex-col items-center justify-center gap-[10px] bg-bgViolet font-[800] text-violet">
+          <span className="text-[20px] font-[500]">Додати фото</span>
           <button onClick={() => dispatch(openModal({ type: 'add-photo' }))}>
-            <Image src="/images/add.svg" alt="add" width={100} height={100} />
+            <Image
+              src="/images/add.svg"
+              alt="add photo"
+              width={70}
+              height={70}
+            />
           </button>
         </div>
         {photos &&
-          photos.map((item: IPhoto) => (
+          photos.data.map((item: IPhoto) => (
             <div
               key={item.id}
-              className="relative flex h-[447px] w-[306px] flex-col items-center justify-center overflow-hidden"
+              className="relative flex h-[171px] w-[223px] flex-col gap-[12px] bg-bgViolet p-2"
             >
-              <ActionButtons
-                action="all"
-                editAction={() => handleEdit(item.id)}
-                deleteAction={() => handleDelete(item.id, item.imageId)}
-              />
               <Image
                 src={item.imageUrl}
                 alt={`${item.location} photo`}
-                width={306}
-                height={447}
-                className="h-[447px] w-[306px] object-cover"
+                width={207}
+                height={105}
+                className="h-[105px] w-[207px] object-cover object-center"
+              />
+              <ActionButtons
+                action="all"
+                width="w-[207px]"
+                editAction={() => handleEdit(item.id)}
+                deleteAction={() => handleDelete(item.id, item.imageId)}
               />
             </div>
           ))}
       </div>
+
+      {photos && photos?.meta.totalPages > 1 && (
+        <Pagination
+          totalPages={photos.meta.totalPages}
+          currentPage={currentPage}
+          onPageChange={setCurrentPage}
+        />
+      )}
+
       <FormModal type="add-photo">
         <AddPhotoForm />
       </FormModal>

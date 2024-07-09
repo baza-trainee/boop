@@ -1,8 +1,13 @@
 'use client';
+import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 
+import { Link } from '@/navigation';
+import LanguageSwitcher from './LanguageSwitcher';
+
 const Header = () => {
+  const t = useTranslations('Header');
   const pathname = usePathname();
   const isAdminPage =
     pathname.split('/').includes('admin') ||
@@ -11,57 +16,53 @@ const Header = () => {
   if (isAdminPage) return null;
 
   return (
-    <div className="container flex h-[100px] w-full items-center justify-between bg-beige text-violet">
-      <div className="w-1/5">
-        <a href="/" title="Бюро усмішок і підтримки">
+
+    <header className="container fixed left-0 right-0 top-0 z-50 flex h-[100px] items-center justify-between bg-golden bg-opacity-80 px-[120px] py-[26px] text-violet backdrop-blur-sm backdrop-filter">
+
+      <div>
+        <Link href="/" title="Бюро усмішок і підтримки">
           <Image
             src="/images/logo.svg"
             alt="Бюро усмішок і підтримки"
             width={86}
             height={50}
           />
-        </a>
+        </Link>
       </div>
-      <nav className="relative z-10 flex w-3/5 justify-end overflow-y-auto whitespace-nowrap pr-11 font-groppled text-xl font-bold leading-5">
+      <nav className="relative z-10 ml-[8px] flex h-[24px] w-[462px] justify-between whitespace-nowrap px-[4px] py-0 font-groppled text-[20px] font-bold leading-[31.6px] text-mainViolet">
         <ul className="flex items-center">
-          <li className="pl-4 pr-5">
-            <a href="/" title="Головна">
-              Головна
-            </a>
+          <li className="pr-[48px]">
+            <Link href="/" title={t('home')}>
+              {t('home')}
+            </Link>
           </li>
-          <li className="pl-4 pr-5">
-            <a href="/about" title="Про нас">
-              Про нас
-            </a>
+          <li className="pr-[48px]">
+            <Link href="/about" title={t('about')}>
+              {t('about')}
+            </Link>
           </li>
-          <li className="pl-4 pr-5">
-            <a href="/school" title="Школа Клоунів">
-              Школа Клоунів
-            </a>
+          <li className="pr-[48px]">
+            <Link href="/school" title={t('school')}>
+              {t('school')}
+            </Link>
           </li>
-          <li className="pl-4 pr-5">
-            <a href="/contacts" title="Контакти">
-              Контакти
-            </a>
+          <li className="">
+            <Link href="/contacts" title={t('contacts')}>
+              {t('contacts')}
+            </Link>
           </li>
         </ul>
       </nav>
-      <div className="relative z-10 -ml-5 flex w-1/5 items-center justify-end pl-8 font-raleway">
-        <button className="flex items-center pr-2 font-semibold">
-          UA
-          <Image
-            className="w-6"
-            src="/images/keyboard_arrow_down.svg"
-            alt="logo"
-            width={86}
-            height={50}
-          />
-        </button>
-        <button className="relative z-10 -mr-11 ml-1 whitespace-nowrap rounded-full bg-red px-4 py-3 text-xl font-bold leading-5 text-white">
-          Підтримати проєкт
+
+      <div className="font-ralewayb relative z-10 flex w-[330px] items-center">
+        <div className="relative w-[100px]">
+          <LanguageSwitcher />
+        </div>
+        <button className="ml-[30px] h-[56px] w-[238px] whitespace-nowrap rounded-[32px] bg-red px-[24px] py-[18px] text-[20px] font-bold leading-[20px] text-white">
+          {t('button')}
         </button>
       </div>
-    </div>
+    </header>
   );
 };
 

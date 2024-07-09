@@ -22,7 +22,7 @@ export const CustomNotFound = () => {
           alt="Clown"
           width={200}
           height={200}
-          className="px-3 md:px-7 max-md:max-w-[164px]"
+          className="px-3 md:px-7 max-md:max-w-[135px]"
         />
         <span className="h-[155px]">4</span>
       </div>

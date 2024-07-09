@@ -9,11 +9,14 @@ import {
 
 interface ISelectFieldProps {
   title: string;
-  values: string[];
   value?: string;
   errors?: string;
   placeholder?: string;
   isRequired?: boolean;
+  values: {
+    name: string;
+    value: string;
+  }[];
 }
 
 type TProps<T extends FieldValues> = InputHTMLAttributes<HTMLSelectElement> &
@@ -46,12 +49,13 @@ const SelectInput = <T extends FieldValues>({
     <div className="flex max-h-[85px] w-full max-w-[442px] grow flex-col gap-[5px]">
       <label htmlFor="title" className="text-sm font-medium">
         {title}
-        {isRequired && <span className="text-red">*</span>}
+        {isRequired && <span className="mt-1 text-red">*</span>}
       </label>
       <select
         id={title}
         value={value}
-        className="box-border h-[44px] rounded-xl border border-violet bg-bgViolet px-2 py-[6px] text-sm text-violet outline-none"
+        className="selectIcon box-border h-[40px] rounded-xl border border-violet 
+         bg-bgViolet px-2 py-[6px] text-sm text-violet outline-none"
         onChange={handleChange}
       >
         <option className="bg-bgViolet" value="">
@@ -59,13 +63,13 @@ const SelectInput = <T extends FieldValues>({
         </option>
         {values &&
           values.map((el, index) => (
-            <option key={index} value={el}>
-              {el}
+            <option key={index} value={el.value}>
+              {el.name}
             </option>
           ))}
       </select>
       {!!errorMessage && (
-        <span className="text-xs text-red">{errorMessage}</span>
+        <span className="mt-1 text-xs text-red">{errorMessage}</span>
       )}
     </div>
   );

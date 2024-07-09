@@ -4,14 +4,30 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { sidebarLinks } from './sidebarLinks';
-import { signOut } from 'next-auth/react';
+import { applicationsApi } from '@/store/api/applicationsApi';
+import { isLessThan48Hours } from '@/helpers/isLessThan48Hours';
+import Loader from '@/components/shared/loader/Loader';
 
 const Sidebar = () => {
   const pathname = usePathname();
 
+  const { data, isFetching, isLoading } =
+    applicationsApi.useGetAllApplicationsQuery();
+
+  const isNewApplications = () => {
+    const filteredApplications = data?.filter(
+      (application) =>
+        application.isProcessed === false &&
+        isLessThan48Hours(application.createdAt)
+    );
+    return !!filteredApplications?.length;
+  };
+
   const isLinkActive = (link: string) => {
     return pathname.split('/').includes(link);
   };
+
+  if (isLoading || isFetching) return <Loader />;
 
   return (
     <aside className="flex w-[306px] flex-col items-center bg-beige p-[24px] text-violet">
@@ -25,21 +41,24 @@ const Sidebar = () => {
               className={`border-box flex w-full items-center gap-[24px] rounded-3xl border-2 border-transparent py-2 pl-[32px] pr-[16px] hover:border-violet
                 ${isLinkActive(link.link) && 'border-violet'} ${index === sidebarLinks.length - 3 ? 'mb-[60px]' : 'mb-[10px]'}`}
             >
-              <svg className="h-[30px] w-[30px]">
+              <svg className={`h-[32px] w-[32px]`}>
                 <use
                   href={`/icons/admin/sidebar/sprite.svg#${link.icon}`}
                 ></use>
               </svg>
-              <span className="whitespace-nowrap text-[16px] font-bold">
+              <span className="relative whitespace-nowrap text-[16px] font-bold">
                 {link.name}
+                {isNewApplications() && link.link === 'applications' && (
+                  <div className="absolute -left-[30px] top-0 z-50 h-[5px] w-[5px] rounded-full bg-red"></div>
+                )}
               </span>
             </li>
           </Link>
         ))}
       </ul>
-      <button
-        className="flex w-full items-center justify-center gap-4 rounded-3xl border-2 border-[#e6d57a] px-[20px] py-[12px]"
-        onClick={() => signOut({ callbackUrl: '/' })}
+      <Link
+        href={'/admin/signOut'}
+        className="flex w-full items-center justify-center gap-4 rounded-3xl  bg-[#e6d57a] px-[20px] py-[12px]"
       >
         <Image
           src={`/icons/admin/sidebar/logout.svg`}
@@ -48,7 +67,7 @@ const Sidebar = () => {
           height={25}
         />
         <span className="font-[800]">Вийти</span>
-      </button>
+      </Link>
     </aside>
   );
 };

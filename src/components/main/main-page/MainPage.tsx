@@ -1,15 +1,17 @@
 'use client';
 
 import Image from 'next/image';
-import Vision from '../vision/Vision';
-import Values from '../values/Values';
-import Goals from '../goals/Goals';
+import Vision from './vision/Vision';
+import Values from './values/Values';
+import Goals from './goals/Goals';
+
 import Counter from './counter/Counter';
 import PressAboutUs from './press-about-us/PressAboutUs';
 import Mission from './mission/Mission';
 import Partners from './partners/Partners';
 import Hero from './hero/Hero';
 import Founders from './founders/Founders';
+import Gallery from './gallery/Gallery';
 
 const MainPage = () => {
   return (
@@ -23,7 +25,7 @@ const MainPage = () => {
           className="-z-1 absolute -top-[100px] right-0"
         />
       </div> */}
-      <div className="bg-bgWhite">
+      <div className="bg-bgWhite pt-[120px] md:pt-[200px]">
         <Hero />
         <Founders />
         <Vision />
@@ -32,6 +34,7 @@ const MainPage = () => {
         <Goals />
         <Counter />
         <PressAboutUs />
+        <Gallery />
         <Partners />
       </div>
     </>

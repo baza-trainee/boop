@@ -1,6 +1,5 @@
 'use client';
 import { usePathname } from 'next/navigation';
-import React from 'react';
 import Image from 'next/image';
 import Logo from './Logo/Logo';
 import FooterLinks from './FooterLinks/FooterLinks';
@@ -13,6 +12,11 @@ import { useTranslations } from 'next-intl';
 const Footer = () => {
   const t = useTranslations('Footer');
 
+  const scrollToTop = () => {
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
   const pathname = usePathname();
   const isAdminPage =
     pathname.split('/').includes('admin') ||
@@ -21,7 +25,7 @@ const Footer = () => {
   if (isAdminPage) return null;
 
   return (
-    <div className="relative">
+    <footer className="relative">
       <div className="relative z-0 h-full w-full bg-bgWhite">
         <Image
           src="/images/clown.svg"
@@ -42,9 +46,9 @@ const Footer = () => {
         </div>
       </div>
       <div className="absolute left-2 top-40 z-10 flex w-full flex-row text-textViolet ">
-        <div className="flex  h-full w-full flex-col  gap-5 pl-28">
+        <div className="flex h-full w-full flex-col gap-5 pl-28">
           <div className="h-full w-full font-redhat">
-            <Logo />
+            <Logo onClick={scrollToTop} />
             <h1>{t('title')}</h1>
           </div>
           <div className="color-violet h-full w-full gap-3 font-raleway">
@@ -66,7 +70,7 @@ const Footer = () => {
           <SocialLinks />
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
