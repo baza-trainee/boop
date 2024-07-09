@@ -154,11 +154,12 @@
       "paragraph_4": "Over the next three months, they gather for classes once a week and delve deeper into the mechanisms of hospital clowns.",
       "paragraph_5": "In parallel, regular visits to hospital departments take place, under the constant supervision of trainers and psychological support"
     },
+    "feedback_title": "Reviews of students of the School of Clowns",
     "photo_title": "Photos"
   },
   "Form": {
     "joinUs": "Join us",
-    "leaveForm": "Leave your form and we will contact you within three days",
+    "leaveForm": "Leave your form and we will contact you within three days.",
     "name": "Your name",
     "phone": "Phone number",
     "phonePlaceholder": "Enter phone number in format +380",
@@ -169,12 +170,18 @@
     "submit": "Submit",
     "required": "This field is required.",
     "invalidPhone": "Please enter a valid phone number.",
-    "invalidEmail": "Please enter a valid email address."
+    "invalidEmail": "Please enter a valid email address.",
+    "processing": "Request processing"
   },
   "ClownSchoolForm": {
     "formSubmitted": "Your form has been submitted.",
     "contactWithinThreeDays": "We will contact you within three days.",
     "somethingWentWrong": "Something went wrong...",
     "pleaseTryAgain": "Please try again."
+  },
+  "ClownSchoolFormDescription": {
+    "formTitle": "Fill out the form",
+    "formSubtitle": "Volunteer training is free.",
+    "formDescription": "We are eagerly awaiting new people to join our team, so that there will be more children's smiles and joy."
   }
 }

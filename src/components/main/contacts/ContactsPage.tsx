@@ -13,9 +13,9 @@ const ContactsPage = () => {
   return (
     <>
       <section
-        className="md:bg-[url('/images/wave-secondary.svg')] bg-bgWhite bg-[right_top_0px] bg-no-repeat pb-5 md:pb-[255px] pt-[20px] md:pt-[100px]"
+        className="md:bg-[url('/images/wave-secondary.svg')] bg-bgWhite bg-[right_top_0px] bg-no-repeat pb-5 md:pb-[255px] pt-[120px] md:pt-[200px]"
       >
-        <div className="container m-auto max-w-[1536px] items-center">
+        <div className="container mx-auto max-w-screen-3xl items-center">
           <div className="flex flex-col md:flex-row justify-between">
             <div className="md:w-[45%] ml:w-[35%] md:flex flex-col space-y-4 justify-center relative mb-4">
               <SectionTitle title={t('title')} />
@@ -25,7 +25,7 @@ const ContactsPage = () => {
                 alt="Clown"
                 width={251}
                 height={185}
-                className="absolute right-0 ml:-bottom-[120px] max-ml:hidden"
+                className="absolute right-5 ml:-bottom-[130px] max-ml:hidden"
                 style={{ width: 'auto', height: 'auto' }}
               />
             </div>

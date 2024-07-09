@@ -8,21 +8,21 @@ const Hero = () => {
   const locale = useLocale();
 
   return (
-    <section className="container mx-auto  box-border flex  h-[876px] items-center justify-center bg-inherit pt-[43px]">
+    <section className="container mx-auto max-w-screen-3xl box-border flex h-[876px] items-center justify-center bg-inherit">
       <Image
         src="/images/hero-bg-image.svg"
         alt=""
         width={996}
         height={1090}
-        className="absolute right-0 top-0 z-[2] "
+        className="absolute right-0 top-0 z-[2]"
       />
-      <div className="absolute right-[329px] top-[142px] h-[733px] w-[878px] items-center justify-center ">
+      <div className="relative h-[733px] w-[878px] items-center justify-center ">
         <Image
           src="/images/heroSection/orange_circle.png"
           alt=""
           width={329}
           height={329}
-          className="absolute left-0 top-[107px] z-0 "
+          className="absolute left-0 top-[107px] z-0"
         />
         <Image
           src="/images/heroSection/purpul_circle.png"

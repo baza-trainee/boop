@@ -25,7 +25,7 @@ const config: Config = {
         bgYellow: 'var(--bgYellow)',
         bgViolet: 'var(--bgViolet)',
         bgVioletTransparent: 'var(--bgVioletTransparent)',
-        bgHeader: 'rgba(255, 171, 11, 0.1)',
+        golden: 'rgba(255, 171, 11, 0.1)',
         beige: 'var(--beige)',
         violet: 'var(--violet)',
         lightViolet: 'var(--lightViolet)',
@@ -47,8 +47,12 @@ const config: Config = {
         '3xl': '1536px',
         '4xl': '1920px',
       },
+      maxWidth: {
+        'screen-3xl': '1536px',
+      },
     },
   },
   plugins: [require('tailwind-scrollbar')],
 };
+
 export default config;

@@ -62,7 +62,7 @@ const PhotoPage = () => {
       <PageTitle title="Фото" />
       <div className="flex flex-wrap gap-[24px]">
         <div className="flex h-[171px] w-[223px] flex-col items-center justify-center gap-[10px] bg-bgViolet font-[800] text-violet">
-          <span className="text-[20px]">Додати фото</span>
+          <span className="text-[20px] font-[500]">Додати фото</span>
           <button onClick={() => dispatch(openModal({ type: 'add-photo' }))}>
             <Image
               src="/images/add.svg"

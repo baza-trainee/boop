@@ -5,8 +5,7 @@ import MissionCard from './missionCard/MIssionCard';
 import SectionTitle from '../../shared/SectionTitle';
 import GetMissionCardsInfo from './MissionCardsInfo';
 import { useMediaQuery } from 'react-responsive';
-import CarouselButton from '../../shared/carousel/carousel-button/CarouselButton';
-import { Carousel } from '../../shared/carousel/Carousel';
+
 import Image from 'next/image';
 
 const Mission = () => {

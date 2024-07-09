@@ -10,6 +10,28 @@
   "Hero": {
     "title": "Nonostante tutto, l'infanzia deve continuare"
   },
+  "Counter_section": {
+    "title": "I risultati in numeri",
+    "counter_1": {
+      "text": "anni di esperienza"
+    },
+    "counter_2": {
+      "text": "clown di corsia"
+    },
+    "counter_3": {
+      "text": "uscite al mese"
+    },
+    "counter_4": {
+      "text": "ospedali in cui operiamo"
+    },
+    "counter_5": {
+      "text": "bambini al mese"
+    }
+  },
+  "Press_about_us": {
+    "title": "Stampa su di noi",
+    "link_text": "Leggi di più"
+  },
   "Error": {
     "title": "Ops, sembra che ti sia perso!",
     "text": "Purtroppo, la pagina che stai cercando non esiste.",
@@ -52,11 +74,12 @@
       "paragraph_3": "Dopo il corso di formazione, i volontari vanno a fare pratica in ospedale, accompagnati da clown ospedalieri esperti.",
       "paragraph_4": "Nei tre mesi successivi, si incontrano per lezioni una volta alla settimana e approfondiscono i meccanismi della clownterapia ospedaliera.",
       "paragraph_5": "Parallelamente, si svolgono visite regolari ai reparti ospedalieri sotto la costante supervisione dei formatori e il supporto psicologico."
-    }
+    },
+    "feedback_title": "Recensioni degli studenti della Scuola di Clown"
   },
   "Form": {
     "joinUs": "Unisciti a noi",
-    "leaveForm": "Lascia il tuo modulo e ti contatteremo entro tre giorni",
+    "leaveForm": "Lascia il tuo modulo e ti contatteremo entro tre giorni.",
     "name": "Il tuo nome",
     "phone": "Numero di telefono",
     "phonePlaceholder": "Inserisci il numero di telefono nel formato +380",
@@ -67,12 +90,18 @@
     "submit": "Invia",
     "required": "Questo campo è obbligatorio.",
     "invalidPhone": "Inserisci un numero di telefono valido.",
-    "invalidEmail": "Inserisci un indirizzo email valido."
+    "invalidEmail": "Inserisci un indirizzo email valido.",
+    "processing": "Elaborazione"
   },
   "ClownSchoolForm": {
     "formSubmitted": "Il tuo modulo è stato inviato.",
     "contactWithinThreeDays": "Ti contatteremo entro tre giorni.",
     "somethingWentWrong": "Qualcosa è andato storto...",
     "pleaseTryAgain": "Per favore riprova."
+  },
+  "ClownSchoolFormDescription": {
+    "formTitle": "Compila il modulo",
+    "formSubtitle": "La formazione per volontari è gratuita.",
+    "formDescription": "Attendiamo con ansia nuove persone nel nostro team, in modo che ci siano più sorrisi e gioia per i bambini."
   }
 }

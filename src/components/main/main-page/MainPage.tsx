@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Vision from './vision/Vision';
 import Values from './values/Values';
 import Goals from './goals/Goals';
+
 import Counter from './counter/Counter';
 import PressAboutUs from './press-about-us/PressAboutUs';
 import Mission from './mission/Mission';
@@ -24,7 +25,7 @@ const MainPage = () => {
           className="-z-1 absolute -top-[100px] right-0"
         />
       </div> */}
-      <div className="bg-bgWhite">
+      <div className="bg-bgWhite pt-[120px] md:pt-[200px]">
         <Hero />
         <Founders />
         <Vision />
