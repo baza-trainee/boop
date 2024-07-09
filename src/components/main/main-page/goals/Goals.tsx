@@ -1,5 +1,5 @@
 import React from 'react';
-import SectionTitle from '@/components/shared/SectionTitle';
+import SectionTitle from '@/components/main/shared/SectionTitle';
 import GoalCard from './goalCard/GoalCard';
 import { useTranslations, useLocale } from 'next-intl';
 import GetGoalsCardsInfo from './GoalsCardInfo';
