@@ -1,3 +1,4 @@
+
 import PartnersFriendsPage from '@/components/admin/partnersFriends/PartnersFriendsPage';
 
 function FriendsPage() {

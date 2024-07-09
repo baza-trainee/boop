@@ -6,7 +6,7 @@
   --bgWhite: #f3f4ee;
   --bgViolet: #edebf5;
   --bgVioletTransparent: rgba(237, 235, 245, 0.5);
-  --bgYellow: #f5e9cc;
+  --bgYellow: rgba(255, 171, 11, 0.15);
   --beige: #fff6c5;
   --violet: #6b5ad1;
   --lightViolet: #958ac4;
@@ -104,6 +104,7 @@ body.lock {
   text-orientation: mixed;
 }
 
+
 /* Приховати іконку показу/приховання пароля у WebKit браузерах (Chrome, Safari) */
 input[type='password']::-ms-reveal,
 input[type='password']::-ms-clear {
@@ -112,4 +113,13 @@ input[type='password']::-ms-clear {
 
 input[type='password']::-webkit-textfield-decoration-container {
   display: none;
+}
+
+.selectIcon {
+  appearance: none;
+  background-image: url('/icons/admin/caret-down.svg');
+  background-repeat: no-repeat;
+  background-position: right 0.7rem top 50%;
+  background-size: 24px 24px;
+
 }

@@ -10,7 +10,16 @@ export const counterApi = createApi({
       query: () => `counter`,
       providesTags: ['Counter'],
     }),
+    updateNumberById: build.mutation({
+      query: ({ id, number }) => ({
+        url: `counter/${id}`,
+        method: 'PUT',
+        body: { number: number },
+      }),
+      invalidatesTags: ['Counter'],
+    }),
   }),
 });
 
-export const { useGetAllNumbersQuery } = counterApi;
+export const { useGetAllNumbersQuery, useUpdateNumberByIdMutation } =
+  counterApi;

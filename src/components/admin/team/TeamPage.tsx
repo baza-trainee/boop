@@ -39,7 +39,7 @@ const TeamPage = () => {
       openAlert({
         data: {
           state: 'confirm',
-          message: 'Ви впевнеі, що хочете видалити запис з Команди?',
+          message: 'Ви впевнені, що хочете видалити запис з Команди?',
           func: async () => {
             await axios.delete(`/cloudinary/${encodeURIComponent(imageId)}`);
             await deleteTeamMember(id);
@@ -85,7 +85,7 @@ const TeamPage = () => {
                 height={247}
                 className="h-[247px] w-[306px] object-cover"
               />
-              <p className="bg-bgVioletTransparent absolute bottom-[44px] left-0 flex h-[37px] w-full items-center justify-center text-[16px] font-[800] text-textViolet">
+              <p className="absolute bottom-[44px] left-0 flex h-[37px] w-full items-center justify-center bg-bgVioletTransparent text-[16px] font-[800] text-textViolet">
                 {member.nameUa}
               </p>
               <ActionButtons
