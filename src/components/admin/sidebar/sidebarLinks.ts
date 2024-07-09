@@ -1,11 +1,5 @@
 export const sidebarLinks = [
   {
-    name: 'Заявки до школи',
-    href: '/admin/applications',
-    icon: 'applications',
-    link: 'applications',
-  },
-  {
     name: 'Каунтер',
     href: '/admin/counter',
     icon: 'counter',
@@ -24,9 +18,15 @@ export const sidebarLinks = [
     link: 'photo',
   },
   {
-    name: 'Друзі та партнери',
-    href: '/admin/partners',
+    name: 'Друзі',
+    href: '/admin/friends',
     icon: 'friends',
+    link: 'friends',
+  },
+  {
+    name: 'Партнери',
+    href: '/admin/partners',
+    icon: 'partners',
     link: 'partners',
   },
   {
@@ -40,6 +40,12 @@ export const sidebarLinks = [
     href: '/admin/blog',
     icon: 'blog',
     link: 'blog',
+  },
+  {
+    name: 'Заявки до школи',
+    href: '/admin/applications',
+    icon: 'applications',
+    link: 'applications',
   },
   {
     name: 'Відгуки',

@@ -6,8 +6,8 @@ const GetValuesCardsInfo = () => {
     {
       text: `${t('inclusivity.text')}`,
       icon: '/icons/values/red-hat.svg',
+      width: 46,
       height: 64,
-      width: 45,
       hoverText: `${t('inclusivity.hoverText')}`,
     },
     {
@@ -20,15 +20,15 @@ const GetValuesCardsInfo = () => {
     {
       text: `${t('proactivity.text')}`,
       icon: '/icons/values/red-cap.svg',
+      width: 73,
       height: 48,
-      width: 72,
       hoverText: `${t('proactivity.hoverText')}`,
     },
     {
       text: `${t('empathy.text')}`,
       icon: '/icons/values/blue-hat.svg',
       width: 45,
-      height: 64,
+      height: 65,
       hoverText: `${t('empathy.hoverText')}`,
     },
     {

@@ -9,8 +9,8 @@ const Training = () => {
   const textBlock = GetTextBlockTraining();
 
   return (
-    <section className="bg-bgWhite pb-[120px] font-raleway text-xl font-normal leading-normal text-textViolet antialiased">
-      <div className="container">
+    <section className="mb-[120px] font-raleway text-xl font-normal leading-normal text-textViolet antialiased">
+      <div className="container mx-auto max-w-screen-3xl">
         <SectionTitle title={t('training_title')} />
         <div className="relative flex justify-between">
           <div className="absolute -left-[120px] -z-0 h-[312px] w-[756px] bg-bgYellow">

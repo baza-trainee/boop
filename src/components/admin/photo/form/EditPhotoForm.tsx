@@ -59,7 +59,6 @@ const EditPhotoForm = ({ id }: { id: string }) => {
     try {
       setIsProcessing(true);
       if (values.image[0]?.size > 0) {
-        //need to delete old and upload new photo
         const formData = new FormData();
         formData.append('file', values.image[0]);
         formData.append('folderName', 'photos');
@@ -128,18 +127,16 @@ const EditPhotoForm = ({ id }: { id: string }) => {
             <SelectInput
               name="location"
               control={control}
-              title="Оберіть розділ сайту:"
+              title="Оберіть розділ сайту"
               values={PHOTO_LOCATION_VALUES}
               placeholder="Оберіть розділ для фото"
-              isRequired={true}
               value={curLocation}
             />
             <FileInput
               name="image"
               control={control}
-              placeholder={'Оберіть файл'}
-              title="Оберіть файл:"
-              isRequired={true}
+              placeholder="Завантажити зображення"
+              title="Оберіть файл"
               accept="image/*"
             />
             <div className="relative mt-[60px] flex w-full justify-between">

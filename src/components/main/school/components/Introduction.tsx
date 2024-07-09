@@ -1,27 +1,41 @@
 import React from 'react';
-import SectionTitle from '../../shared/SectionTitle';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 const Introduction = () => {
   const t = useTranslations('School');
   return (
-    <div className="mb-[120px]">
-      <SectionTitle title={t('main_title')} />
-      <p
-        className="mb-4 font-raleway font-normal text-textViolet
-      3xl:text-xl 3xl:leading-normal"
-      >
+    <div className="relative lg:mb-[100px] 3xl:mb-[120px]">
+      <h2 className="title-gradient mb-8 font-groppled text-3xl font-bold">
+        {t('main_title')}
+      </h2>
+      <svg className="absolute h-[1rem] w-[5rem] lg:top-[11%] 3xl:top-[10%]">
+        <use href="/icons/sprite.svg#title-line"></use>
+      </svg>
+      <h3 className="text-gradient mb-4 ml-[110px] font-raleway  text-xl font-bold leading-[1.32]">
         {t('main_text_primary')}
-        <br />
-        {t('main_text_secondary')}
-      </p>
-      <div className="relative flex min-h-[630px] gap-6">
-        <div className="bg- h-[564px] w-[440px] translate-y-[12%] bg-yellow bg-[url('/icons/school/right-photo.png')] bg-[length:440px_564px] bg-no-repeat"></div>
-        <div className="h-[324px] w-[502px] bg-gray-300 bg-[url('/icons/school/midle-photo.jpg')] bg-[length:502px_324px] bg-no-repeat"></div>
-        <div className="h-[400px] w-[306px] translate-y-[-19%] bg-gray-300 bg-[url('/icons/school/left-photo.jpg')] bg-[length:306px_400px] bg-no-repeat"></div>
-        <svg className="absolute bottom-1/4 left-1/2 h-[62px] w-[69px] rotate-[14.68deg]">
-          <use href="/icons/school/yellow_bow_tie.svg#yellow_bow_tie"></use>
-        </svg>
+      </h3>
+
+      <div className="ml-[110px] flex items-start gap-3">
+        <span className="font-raleway text-xl font-normal leading-[1.32] text-textViolet">
+          {t('main_text_secondary')}
+        </span>
+        <Image src="/images/logo.svg" alt="Boop logo" width={86} height={50} />
+        <span className="font-raleway text-xl font-normal leading-normal text-textViolet">
+          {t('and')}
+        </span>
+
+        <Image
+          src="/icons/partners/tabletochki.svg"
+          alt="tabletochki logo"
+          width={160}
+          height={23}
+        />
+      </div>
+      <div className="relative mt-12 flex gap-6">
+        <div className="h-[533px] w-[416px] bg-yellow bg-[url('/icons/school/right-photo.png')] bg-[length:416px_533px] bg-no-repeat lg:h-[456px] lg:w-[344px] lg:bg-[length:344px_456px]"></div>
+        <div className="h-[406px] w-[306px]  bg-gray-300 bg-[url('/icons/school/midle-photo.jpg')] bg-[length:306px_406px] bg-no-repeat lg:h-[378px] lg:w-[294px] lg:bg-[length:294px_378px]"></div>
+        <div className="h-[395px] w-[526px] translate-y-[-35%] bg-gray-300 bg-[url('/icons/school/left-photo.jpg')] bg-[length:526px_395px] bg-no-repeat lg:h-[348px] lg:w-[466px] lg:bg-[length:466px_348px]"></div>
       </div>
     </div>
   );
