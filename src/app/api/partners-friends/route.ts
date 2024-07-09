@@ -55,8 +55,7 @@ export async function POST(request: Request) {
         logoUrl,
         logoId,
         link,
-        section,
-        logoId,
+        section
       },
     });
 
