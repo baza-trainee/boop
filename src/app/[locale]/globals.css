@@ -104,7 +104,6 @@ body.lock {
   text-orientation: mixed;
 }
 
-
 /* Приховати іконку показу/приховання пароля у WebKit браузерах (Chrome, Safari) */
 input[type='password']::-ms-reveal,
 input[type='password']::-ms-clear {
@@ -121,7 +120,6 @@ input[type='password']::-webkit-textfield-decoration-container {
   background-repeat: no-repeat;
   background-position: right 0.7rem top 50%;
   background-size: 24px 24px;
-
 }
 .uploadIcon {
   appearance: none;
