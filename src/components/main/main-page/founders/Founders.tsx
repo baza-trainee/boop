@@ -23,15 +23,17 @@ const Founders = () => {
             alt=""
             width={686}
             height={782}
-            className="lg:h-auto lg:w-[636px] 4xl:w-[686px]"
+            className="lg:h-auto lg:w-[636px] 4xl:w-[686px]
+            "
+            priority={true}
           />
         </picture>
-        <span className="absolute bottom-0 right-0  hidden h-4 w-[163px] origin-top-left  translate-x-[calc(100%+2px)] translate-y-full -rotate-90 text-left  font-raleway text-[12px] font-semibold leading-[132%] text-textViolet md:block">
+        <span className="absolute bottom-0 right-0  hidden h-4 w-[163px] origin-top-left  translate-x-[calc(100%+2px)] translate-y-full -rotate-90 text-left  font-raleway text-[12px] font-semibold leading-[132%] text-textViolet ml:block">
           {t('caption')}
         </span>
       </div>
 
-      <div className="flex  flex-col  gap-4  xs:pl-5  md:pl-0 ">
+      <div className="flex  flex-col  gap-4  xs:pl-5  md:pl-0 ml:w-[359px] lg:w-fit">
         <h3 className="font-raleway text-xl font-[500]  leading-[132%] text-mainViolet ">
           {t('subtitle')}
         </h3>
