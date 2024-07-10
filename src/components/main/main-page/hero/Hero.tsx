@@ -12,7 +12,7 @@ const Hero = () => {
   });
 
   return (
-    <section className=" container relative mx-auto box-border flex   max-w-screen-3xl flex-col items-center  justify-center pt-14 ">
+    <section className=" container relative mx-auto box-border flex   max-w-screen-3xl flex-col items-center  justify-center  ">
       {/* <Image
         src="/images/heroSection/hero_bg_xs.svg"
         alt=""
@@ -50,10 +50,8 @@ const Hero = () => {
             />
           </>
         )} */}
-      <div
-        className={` flex w-[247px] flex-col items-center justify-center md:w-[341px] ${locale === 'en' ? 'gap-3' : 'gap-6'} `}
-      >
-        <picture>
+      <div className="relative">
+        {/* <picture>
           <source
             media="(max-width: 767px)"
             srcSet="/images/heroSection/hero_bg_xs.svg"
@@ -67,34 +65,33 @@ const Hero = () => {
             alt="Responsive Hero Logo"
             width={1173} // Максимальная ширина изображения
             height={1375} // Максимальная высота изображения
-            className="relative -top-2 right-0 z-[2] 
+            className=" relative -right-5 -top-0 z-[2] w-[872px]
         "
           />
-        </picture>
-        {/* <svg
-          className="relative -right-20 -top-20 z-[2] h-[711px] w-[390px]  md:h-[944px] md:w-[868px]"
+        </picture> */}
+        <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="1173"
-          height="1375"
-          viewBox="0 0 1173 1375"
+          width="390"
+          height="711"
+          viewBox="0 0 390 711"
           fill="none"
         >
-          <g filter="url(#filter0_bd_2287_14918)">
+          <g filter="url(#filter0_bd_2287_18168)">
             <path
-              d="M104.664 -108.72C104.664 -108.72 190.476 11.5909 245.312 73.7117C284.137 117.693 319.161 140.677 364.215 169.934C518.788 270.311 661.9 251.316 853.296 300.983C931.645 321.314 1017.27 350.495 1047.57 443.478C1058.33 476.517 1057.41 529.122 1025 577.429C990.326 629.12 925.38 657.902 864.033 658.809C617.737 662.45 529.051 476.752 292.54 475.324C248.228 475.057 208.866 485.116 173.804 514.127C120.268 558.424 101.232 629.625 133.985 691.153C151.293 723.666 177.309 747.362 214.488 766.617C389.421 857.209 526.653 839.704 736.259 897.133C792.05 912.418 831.292 924.639 895.106 951.99C954.433 977.417 1015.55 1010.46 1050.42 1030.83C1116.75 1069.58 1145.64 1090.13 1215.1 1140.29C1289.05 1193.69 1366.96 1253.27 1366.96 1253.27"
-              stroke="url(#paint0_linear_2287_14918)"
+              d="M120.826 -27.2939C120.826 -27.2939 124.721 10.5197 138.5 40C141.607 46.6474 166.5 83.5 185 95.5C211.271 112.541 281.18 122.891 337.282 146.813C360 156.5 399.681 180.654 403.5 227.5C404.315 237.5 405.693 258 393 283C373.961 320.5 337.87 331.049 317.627 332.649C231 339.5 177.159 275 138.5 275C133 275 110.237 273.915 88.5 289.5C62 308.5 47 339 59 377C60.1036 380.495 66 397 88.5 416C132.736 453.355 198.411 443.862 260.75 463.509C275 468 289.812 472.847 308.752 483.743C326.361 493.873 344.058 507.874 354.058 516.655C373.078 533.359 381.125 542.546 400.423 565.027C420.968 588.959 442.397 615.905 442.397 615.905"
+              stroke="url(#paint0_linear_2287_18168)"
               stroke-opacity="0.75"
-              stroke-width="155"
+              stroke-width="110"
               shape-rendering="crispEdges"
             />
           </g>
           <defs>
             <filter
-              id="filter0_bd_2287_14918"
-              x="0.238281"
-              y="-173.725"
-              width="1453.8"
-              height="1548.55"
+              id="filter0_bd_2287_18168"
+              x="-40.2461"
+              y="-53.0675"
+              width="565.689"
+              height="763.208"
               filterUnits="userSpaceOnUse"
               color-interpolation-filters="sRGB"
             >
@@ -103,7 +100,7 @@ const Hero = () => {
               <feComposite
                 in2="SourceAlpha"
                 operator="in"
-                result="effect1_backgroundBlur_2287_14918"
+                result="effect1_backgroundBlur_2287_18168"
               />
               <feColorMatrix
                 in="SourceAlpha"
@@ -120,22 +117,22 @@ const Hero = () => {
               />
               <feBlend
                 mode="normal"
-                in2="effect1_backgroundBlur_2287_14918"
-                result="effect2_dropShadow_2287_14918"
+                in2="effect1_backgroundBlur_2287_18168"
+                result="effect2_dropShadow_2287_18168"
               />
               <feBlend
                 mode="normal"
                 in="SourceGraphic"
-                in2="effect2_dropShadow_2287_14918"
+                in2="effect2_dropShadow_2287_18168"
                 result="shape"
               />
             </filter>
             <linearGradient
-              id="paint0_linear_2287_14918"
-              x1="1233.38"
-              y1="1326.78"
-              x2="173.125"
-              y2="-72.6698"
+              id="paint0_linear_2287_18168"
+              x1="394.294"
+              y1="661.216"
+              x2="-86.3578"
+              y2="259.743"
               gradientUnits="userSpaceOnUse"
             >
               <stop stop-color="#50439F" stop-opacity="0.6" />
@@ -143,8 +140,27 @@ const Hero = () => {
               <stop offset="0.9999" stop-color="#50439F" stop-opacity="0.5" />
             </linearGradient>
           </defs>
-        </svg> */}
-        <Image
+        </svg>
+        <div
+          className={`absolute right-[50px] top-[247px] z-10 flex w-[247px]  flex-col items-center justify-center md:w-[341px] ${locale === 'en' ? 'gap-3' : 'gap-6'} `}
+        >
+          <Image
+            src="/images/heroSection/hero_logo.png"
+            alt=""
+            width={391}
+            height={227}
+            className="relative z-10 px-[5px]"
+          />
+          <h2 className="z-10 w-[245px] text-center font-groppled text-xl font-semibold leading-[132%] text-bgWhite md:w-[275px]">
+            {t('title')}
+          </h2>
+        </div>
+      </div>
+      {/* <div
+        className={` flex w-[247px] flex-col items-center justify-center md:w-[341px] ${locale === 'en' ? 'gap-3' : 'gap-6'} `}
+      > */}
+
+      {/* <Image
           src="/images/heroSection/hero_logo.png"
           alt=""
           width={391}
@@ -154,7 +170,7 @@ const Hero = () => {
         <h2 className="z-10 w-[245px] text-center font-groppled text-xl font-semibold leading-[132%] text-bgWhite md:w-[275px]">
           {t('title')}
         </h2>
-      </div>
+      </div> */}
       {/* </div> */}
     </section>
   );
