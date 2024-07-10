@@ -58,7 +58,7 @@ const Sidebar = () => {
       </ul>
       <Link
         href={'/admin/signOut'}
-        className="flex w-full items-center justify-center gap-4 rounded-3xl  bg-[#e6d57a] px-[20px] py-[12px]"
+        className={`flex w-full items-center justify-center gap-4 rounded-3xl border-2  border-[#e6d57a]  px-[20px] py-[12px]  ${isLinkActive('signOut') ? 'bg-[#e6d57a]' : 'bg-[#fbf3e0]'}`}
       >
         <Image
           src={`/icons/admin/sidebar/logout.svg`}

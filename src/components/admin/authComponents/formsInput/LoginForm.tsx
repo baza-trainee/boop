@@ -37,11 +37,6 @@ function LoginForm() {
 
     if (res?.status === 200) {
       setIsLoader(false);
-      dispatch(
-        openAlert({
-          data: { message: 'Ви успішно увійшли в систему', state: 'success' },
-        })
-      );
       window.location.reload();
     } else if (res?.status === 401) {
       setIsLoader(false);

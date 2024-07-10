@@ -44,8 +44,6 @@ function PartnersFriendsPage({ title, section }: PropsPartnersFriends) {
   };
 
   const handleDelete = (id: string, imageId: string, sectionDell: string) => {
-    console.log(imageId);
-
     dispatch(
       openAlert({
         data: {
