@@ -30,32 +30,54 @@ const PressAboutUsSlide = ({
   const secondParagraph = sentences.slice(half).join('. ') + '.';
 
   return (
-    <div className="pl-[110px]">
+    <div className="xl:pl-[110px]">
       <div className="mb-6 flex justify-between gap-5">
-        <div className="max-w-[538px]">
+        <div className="max-w-[684px] max-3xl:max-w-[528px] max-ml:max-w-[510px] max-md:max-w-none">
           <div className="mb-8 flex items-center gap-[20px]">
-            <svg className="h-[1rem] w-[5rem]">
+            <svg className="max-custom:hidden h-[1rem] w-[5rem]">
               <use href="/icons/sprite.svg#title-line"></use>
             </svg>
-            <h3 className="font-groppled text-[20px] font-bold leading-[1.32] text-textViolet">
+            <h3 className="font-groppled text-[20px] font-bold leading-[1.32] text-textViolet max-sm:text-[18px]">
               {title}
             </h3>
           </div>
-          <div className="mb-4 [&>p:first-child]:mb-3">
-            <p className="text-xl leading-[1.5] text-textViolet">
-              {firstParagraph}
-            </p>
-            <p className="text-xl leading-[1.5] text-textViolet">
-              {secondParagraph}
-            </p>
+          <div className="flex items-center gap-6">
+            <div className="mb-4 [&>p:first-child]:mb-3">
+              <p className="text-xl leading-[1.5] text-textViolet max-ml:text-[18px] max-sm:text-base">
+                {firstParagraph}
+              </p>
+              <p className="text-xl leading-[1.5] text-textViolet max-ml:text-[18px] max-sm:text-base">
+                {secondParagraph}
+              </p>
+            </div>
+            <div className="max-custom:hidden flex min-w-[200px] flex-shrink-0 basis-[35%] flex-col items-end md:hidden">
+              <span className="mb-4 text-right font-medium leading-[1.32] text-lightViolet">
+                {date}
+              </span>
+              <div className="relative mb-6 h-[280px] w-full">
+                <Image
+                  className="bg-red object-cover"
+                  src={imgSrc}
+                  fill
+                  sizes="100%"
+                  alt={title ?? ''}
+                />
+              </div>
+              <Link
+                href={link}
+                className="inline-block rounded-[32px] border-2 border-solid border-yellow px-[29px] py-4 text-xl font-medium text-textViolet transition-all duration-200 ease-linear hover:bg-yellow"
+              >
+                {t('link_text')}
+              </Link>
+            </div>
           </div>
-          <span className="float-right font-medium leading-[1.32] text-lightViolet">
+          <span className="max-custom:block float-right font-medium leading-[1.32] text-lightViolet max-md:hidden">
             {date}
           </span>
         </div>
-        <div className="relative w-[418px] ">
+        <div className="relative w-[537px] flex-shrink-0 max-3xl:max-h-[491px] max-3xl:w-[420px] max-ml:max-h-[390px] max-ml:w-[280px] max-md:hidden">
           <Image
-            className="bg-red object-contain"
+            className="bg-red object-cover"
             src={imgSrc}
             fill
             sizes="100%"
@@ -65,7 +87,7 @@ const PressAboutUsSlide = ({
       </div>
       <Link
         href={link}
-        className="inline-block rounded-[32px] border-2 border-solid border-yellow px-6 py-4 text-xl font-medium text-textViolet transition-all duration-200 ease-linear hover:bg-yellow"
+        className="max-custom:inline-block inline-block rounded-[32px] border-2 border-solid border-yellow px-6 py-4 text-xl font-medium text-textViolet transition-all duration-200 ease-linear hover:bg-yellow max-md:hidden max-sm:px-[26.5px] max-sm:py-3"
       >
         {t('link_text')}
       </Link>
