@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { ChangeEvent, InputHTMLAttributes } from 'react';
 import {
   DeepMap,
@@ -55,16 +54,8 @@ const FileInput = <T extends FieldValues>({
         </label>
       )}
 
-      <Image
-        src="/icons/admin/upload.svg"
-        alt="edit icon"
-        width={24}
-        height={24}
-        className="absolute right-2 top-[50%] -translate-y-[10%]"
-      />
-
       <label htmlFor={title + 'file'}>
-        <div className={inputContainerStyle}>
+        <div className={`${inputContainerStyle} uploadIcon`}>
           <span className={`w-[250px] truncate text-left text-sm text-black`}>
             {fileName || placeholder}
           </span>
