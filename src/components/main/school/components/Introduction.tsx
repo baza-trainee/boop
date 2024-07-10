@@ -3,18 +3,9 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { useMediaQuery } from 'react-responsive';
 
 const Introduction = () => {
   const t = useTranslations('School');
-
-  const isMobile = useMediaQuery({ query: '(max-width: 767.98px)' });
-
-  const isTablet = useMediaQuery({
-    query: '(min-width: 768px) and (max-width: 1024.98px)',
-  });
-
-  const isDesktop = useMediaQuery({ query: '(min-width: 1280px)' });
 
   return (
     <div className="relative mb-[72.5px] lg:mb-[100px] 3xl:mb-[120px]">

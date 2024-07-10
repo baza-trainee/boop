@@ -12,11 +12,6 @@ const WhoCanJoin = () => {
   const isMobile = useMediaQuery({
     query: '(min-width: 320px) and (max-width: 767.98px)',
   });
-  const isTablet = useMediaQuery({
-    query: '(min-width: 768px) and (max-width: 1024.98px)',
-  });
-
-  const isDesktop = useMediaQuery({ query: '(min-width: 1280px)' });
 
   return (
     <>
