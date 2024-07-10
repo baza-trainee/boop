@@ -123,3 +123,10 @@ input[type='password']::-webkit-textfield-decoration-container {
   background-size: 24px 24px;
 
 }
+.uploadIcon {
+  appearance: none;
+  background-image: url('/icons/admin/upload.svg');
+  background-repeat: no-repeat;
+  background-position: right 0.7rem top 50%;
+  background-size: 24px 24px;
+}
