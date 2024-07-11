@@ -2,14 +2,10 @@ import React from 'react';
 import Image from 'next/image';
 
 import { useLocale, useTranslations } from 'next-intl';
-import { useMediaQuery } from 'react-responsive';
 
 const Hero = () => {
   const t = useTranslations('Hero');
   const locale = useLocale();
-  const isMobile = useMediaQuery({
-    query: '(max-width:767px)',
-  });
 
   return (
     <section className=" container relative mx-auto box-border flex   max-w-screen-3xl flex-col items-center  justify-center  ">
@@ -50,127 +46,54 @@ const Hero = () => {
             />
           </>
         )} */}
-      <div className="relative">
-        {/* <picture>
+      <div className="relative flex h-[588px] w-[567px] items-center justify-center pt-[100px] custom:h-[770px] custom:w-[869px] md:h-[810px] md:w-[869px] ml:h-[808px] ml:w-[996px]  lg:h-[990px] lg:w-[963px] xl:h-[970px] xl:w-[974px] 3xl:h-[855px] 3xl:w-[1530px] 4xl:h-[1105px] 4xl:w-[1920px]">
+        <picture>
           <source
-            media="(max-width: 767px)"
+            media="(max-width: 650px)"
             srcSet="/images/heroSection/hero_bg_xs.svg"
           />
           <source
-            media="(max-width: 1024px)"
+            media="(max-width: 1023px)"
             srcSet="/images/heroSection/hero_bg_md.svg"
           />
+          <source
+            media="(max-width: 1279px)"
+            srcSet="/images/heroSection/hero_bg_ml.svg"
+          />
+          <source
+            media="(max-width: 2560px)"
+            srcSet="/images/heroSection/hero_bg_3xl.svg"
+          />
+          {/* <source
+            media="(max-width: 2560px)"
+            srcSet="/images/heroSection/hero_bg_4xl.svg"
+          /> */}
           <Image
-            src="/images/heroSection/hero_bg_md.svg"
+            src="/images/heroSection/hero_bg_3xl.svg"
             alt="Responsive Hero Logo"
             width={1173} // Максимальная ширина изображения
             height={1375} // Максимальная высота изображения
-            className=" relative -right-5 -top-0 z-[2] w-[872px]
+            className=" absolute -top-[73px]  left-12 z-[2] w-[567px] custom:left-[100px] custom:h-[900px] custom:w-[869px] md:-top-[128px] md:left-[158px] md:h-auto md:w-[869px] ml:left-[155px] ml:top-0 ml:h-[1008px] ml:w-[868px] lg:h-[1190px] lg:w-[963px] xl:left-[190px] xl:h-[1190px] xl:w-[974px] 2xl:left-[230px] 3xl:left-[537px] 3xl:top-0 3xl:h-[1090px] 3xl:w-[996px] 4xl:left-[743px]  4xl:h-[1380px] 4xl:w-[1173px]
         "
           />
-        </picture> */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="390"
-          height="711"
-          viewBox="0 0 390 711"
-          fill="none"
-        >
-          <g filter="url(#filter0_bd_2287_18168)">
-            <path
-              d="M120.826 -27.2939C120.826 -27.2939 124.721 10.5197 138.5 40C141.607 46.6474 166.5 83.5 185 95.5C211.271 112.541 281.18 122.891 337.282 146.813C360 156.5 399.681 180.654 403.5 227.5C404.315 237.5 405.693 258 393 283C373.961 320.5 337.87 331.049 317.627 332.649C231 339.5 177.159 275 138.5 275C133 275 110.237 273.915 88.5 289.5C62 308.5 47 339 59 377C60.1036 380.495 66 397 88.5 416C132.736 453.355 198.411 443.862 260.75 463.509C275 468 289.812 472.847 308.752 483.743C326.361 493.873 344.058 507.874 354.058 516.655C373.078 533.359 381.125 542.546 400.423 565.027C420.968 588.959 442.397 615.905 442.397 615.905"
-              stroke="url(#paint0_linear_2287_18168)"
-              stroke-opacity="0.75"
-              stroke-width="110"
-              shape-rendering="crispEdges"
-            />
-          </g>
-          <defs>
-            <filter
-              id="filter0_bd_2287_18168"
-              x="-40.2461"
-              y="-53.0675"
-              width="565.689"
-              height="763.208"
-              filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
-            >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
-              <feGaussianBlur in="BackgroundImageFix" stdDeviation="5" />
-              <feComposite
-                in2="SourceAlpha"
-                operator="in"
-                result="effect1_backgroundBlur_2287_18168"
-              />
-              <feColorMatrix
-                in="SourceAlpha"
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                result="hardAlpha"
-              />
-              <feOffset dy="20" />
-              <feGaussianBlur stdDeviation="20" />
-              <feComposite in2="hardAlpha" operator="out" />
-              <feColorMatrix
-                type="matrix"
-                values="0 0 0 0 0.405844 0 0 0 0 0.377416 0 0 0 0 0.578597 0 0 0 0.35 0"
-              />
-              <feBlend
-                mode="normal"
-                in2="effect1_backgroundBlur_2287_18168"
-                result="effect2_dropShadow_2287_18168"
-              />
-              <feBlend
-                mode="normal"
-                in="SourceGraphic"
-                in2="effect2_dropShadow_2287_18168"
-                result="shape"
-              />
-            </filter>
-            <linearGradient
-              id="paint0_linear_2287_18168"
-              x1="394.294"
-              y1="661.216"
-              x2="-86.3578"
-              y2="259.743"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stop-color="#50439F" stop-opacity="0.6" />
-              <stop offset="0.48" stop-color="#50439F" />
-              <stop offset="0.9999" stop-color="#50439F" stop-opacity="0.5" />
-            </linearGradient>
-          </defs>
-        </svg>
+        </picture>
+
         <div
-          className={`absolute right-[50px] top-[247px] z-10 flex w-[247px]  flex-col items-center justify-center md:w-[341px] ${locale === 'en' ? 'gap-3' : 'gap-6'} `}
+          className={`  z-10 flex w-[247px]  flex-col items-center justify-center px-[5px] md:w-[341px] ml:w-[433px] ml:px-5 ${locale === 'en' ? 'gap-3' : 'gap-8'} `}
         >
           <Image
             src="/images/heroSection/hero_logo.png"
             alt=""
             width={391}
             height={227}
-            className="relative z-10 px-[5px]"
+            className="relative z-10 "
           />
           <h2 className="z-10 w-[245px] text-center font-groppled text-xl font-semibold leading-[132%] text-bgWhite md:w-[275px]">
             {t('title')}
           </h2>
         </div>
       </div>
-      {/* <div
-        className={` flex w-[247px] flex-col items-center justify-center md:w-[341px] ${locale === 'en' ? 'gap-3' : 'gap-6'} `}
-      > */}
 
-      {/* <Image
-          src="/images/heroSection/hero_logo.png"
-          alt=""
-          width={391}
-          height={227}
-          className="relative z-10 px-[5px]"
-        />
-        <h2 className="z-10 w-[245px] text-center font-groppled text-xl font-semibold leading-[132%] text-bgWhite md:w-[275px]">
-          {t('title')}
-        </h2>
-      </div> */}
       {/* </div> */}
     </section>
   );
