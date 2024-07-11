@@ -9,13 +9,15 @@ interface FeedbackItemProps {
   text: string;
 }
 
+// max-md:[&>div:first-child]:even:right-0
+
 const FeedbackItem = ({ idx, imgSrc, name, text }: FeedbackItemProps) => {
   return (
-    <div className="relative pb-[32px] pl-[88px] pr-[24px] pt-[65px] odd:self-start even:self-end">
-      <div className="absolute left-0 top-0 z-[2] w-[180px] text-center">
+    <div className="relative pb-[21px] pl-[88px] pr-[24px] odd:self-start even:self-end max-ml:pl-[55px] max-sm:flex max-sm:flex-col max-sm:items-center max-sm:gap-2 max-sm:pl-[15px] sm:pt-[65px]">
+      <div className="w-[180px] text-center max-ml:w-[130px] sm:absolute sm:left-0 sm:top-0 sm:z-[2]">
         <div
           className={clsx(
-            'relative mb-6 h-[188px] w-full overflow-hidden rounded-full border-2 border-solid',
+            'relative mb-6 h-[188px] w-full overflow-hidden rounded-full border-2 border-solid max-ml:h-[130px]',
             idx === 0 && 'border-yellow',
             idx === 1 && 'border-red',
             idx === 2 && 'border-textViolet'
@@ -33,7 +35,7 @@ const FeedbackItem = ({ idx, imgSrc, name, text }: FeedbackItemProps) => {
           {name}
         </h4>
       </div>
-      <div className="relative flex min-h-[220px] items-center justify-center py-[65px] pl-[105px] pr-[44px]">
+      <div className="relative flex min-h-[230px] items-center justify-center py-[65px] pl-[105px] pr-[44px] max-ml:py-[45px] max-ml:pl-[85px] max-ml:pr-[30px] max-sm:px-[28px] max-sm:pb-[50px] max-sm:pt-[40px]">
         <Image
           src={'/images/feedback/text-bg.png'}
           alt={'background image'}
@@ -41,19 +43,6 @@ const FeedbackItem = ({ idx, imgSrc, name, text }: FeedbackItemProps) => {
           sizes="100%"
           className="-z-[1]"
         />
-        {/* <div className="absolute -right-[23px] -top-[22px] h-[72px] w-[60px]">
-          <Image
-            src={'/icons/school/feedback-decoration.svg'}
-            alt={'background image'}
-            fill
-            sizes="100%"
-            className={clsx(
-              idx === 0 && '[&>svg]:fill-[#837ABB]',
-              idx === 1 && '[&>svg]:fill-[#F5E9CC]',
-              idx === 2 && '[&>svg]:fill-[#EA6D50]'
-            )}
-          />
-        </div> */}
         <svg
           className="absolute -right-[23px] -top-[22px] h-[72px] w-[60px]"
           width="66"
@@ -68,7 +57,7 @@ const FeedbackItem = ({ idx, imgSrc, name, text }: FeedbackItemProps) => {
           />
         </svg>
         <svg
-          className="absolute -bottom-[31px] -left-[25px] h-[72px] w-[60px]"
+          className="absolute -bottom-[20px] -left-[15px] h-[72px] w-[60px]"
           width="66"
           height="75"
           viewBox="0 0 66 75"
@@ -81,7 +70,9 @@ const FeedbackItem = ({ idx, imgSrc, name, text }: FeedbackItemProps) => {
           />
         </svg>
 
-        <p className="max-w-[530px] text-center">{text}</p>
+        <p className="max-w-[530px] text-center max-lg:max-w-[450px] max-ml:max-w-[350px]">
+          {text}
+        </p>
       </div>
     </div>
   );
