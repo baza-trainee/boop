@@ -32,6 +32,11 @@
     "title": "Stampa su di noi",
     "link_text": "Leggi di più"
   },
+  "Gallery": {
+    "title": "Galleria",
+    "btn": "Carica altro",
+    "btnCollapse": "Riduci"
+  },
   "Error": {
     "title": "Ops, sembra che ti sia perso!",
     "text": "Purtroppo, la pagina che stai cercando non esiste.",

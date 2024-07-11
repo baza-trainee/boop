@@ -16,7 +16,7 @@ const Mission = () => {
   });
 
   return (
-    <section className=" w-full  bg-inherit xs:mb-[70px]    md:mb-[88px] ml:mb-[100px] xl:mb-[120px]   ">
+    <section className=" w-full  bg-inherit xs:mb-[70px]    md:mb-[100px] ml:mb-[100px] xl:mb-[120px]   ">
       <div className="container relative flex flex-col gap-8">
         <SectionTitle title={t('title')} />
         {isTablet && (
