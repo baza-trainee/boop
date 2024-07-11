@@ -9,20 +9,21 @@ export async function PATCH(
 ) {
   try {
     await prismaConnect();
-    const data: { newMember: TeamFormData } = await request.json();
-    const updatedPhoto = await prisma.team.update({
+    const { updatedMember }: { updatedMember: TeamFormData } =
+      await request.json();
+    const updatedTeamMemeber = await prisma.team.update({
       where: {
         id: params.id,
       },
       data: {
-        nameUa: data.newMember.nameUa,
-        nameEn: data.newMember.nameEn,
-        nameIt: data.newMember.nameIt,
-        imageUrl: data.newMember.imageUrl,
-        imageId: data.newMember.imageId,
+        nameUa: updatedMember.nameUa,
+        nameEn: updatedMember.nameEn,
+        nameIt: updatedMember.nameIt,
+        imageUrl: updatedMember.imageUrl,
+        imageId: updatedMember.imageId,
       },
     });
-    return NextResponse.json(updatedPhoto, { status: 200 });
+    return NextResponse.json(updatedTeamMemeber, { status: 200 });
   } catch (error) {
     console.log('[UPDATE TEAM MEMBER]', error);
     return new NextResponse('Internal Server Error', { status: 500 });

@@ -1,5 +1,6 @@
 generator client {
   provider = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
 }
 
 datasource db {
@@ -41,27 +42,37 @@ model Team {
 }
 
 model Testimonial {
-  id         String @id @default(uuid())
-  nameUa     String
-  nameEn     String
-  nameIt     String
-  reviewUa   String
-  reviewEn   String
-  reviewIt   String
-  imageUrl   String
-  imageId    String
+  id        String   @id @default(uuid())
+  nameUa    String
+  nameEn    String
+  nameIt    String
+  reviewUa  String
+  reviewEn  String
+  reviewIt  String
+  imageUrl  String
+  imageId   String
   createdAt DateTime @default(now())
 }
 
 model Contacts {
+  id        String @id @default(uuid())
+  phone     String
+  email     String
+  facebook  String
+  instagram String
+  addressUa String
+  addressEn String
+  addressIt String
+}
+
+model Applications {
   id          String @id @default(uuid())
-  phone       String
+  name        String
   email       String
-  facebook    String
-  instagram   String
-  addressUa   String
-  addressEn   String
-  addressIt   String
+  phone       String
+  social      String
+  isProcessed Boolean
+  createdAt   DateTime @default(now())
 }
 
 model Blog {
@@ -104,7 +115,9 @@ model CounterItem {
 model PartnersFriends {
   id        String   @id @default(uuid())
   logoUrl   String
+  logoId    String
   link      String
   section   String
   createdAt DateTime @default(now())
 }
+

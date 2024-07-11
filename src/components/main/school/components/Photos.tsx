@@ -37,7 +37,7 @@ const Photos = () => {
           : 4;
 
   return (
-    <section className="container bg-bgWhite  pb-[120px] ">
+    <section className="container mx-auto max-w-screen-3xl pb-[120px] ">
       <div className="flex items-center justify-between pb-8">
         <SectionTitle title={t('photo_title')} />
         <div className="flex items-center  gap-2">
@@ -58,13 +58,13 @@ const Photos = () => {
           speed={500}
           spaceBetween={24}
           renderItem={(item, index) => (
-            <div className="relative h-[412px]  flex-1  sm:w-full md:w-[306px]">
+            <div className="relative h-[412px] flex-1 sm:w-full md:w-[306px]">
               <Image
                 src={item.imageUrl}
                 alt={`photoSchool-${index + 1}`}
                 fill
                 className="h-auto object-cover"
-                sizes="(max-width: 768px) 50hw,  306px"
+                sizes="(max-width: 768px) 50hw, 306px"
               />
             </div>
           )}

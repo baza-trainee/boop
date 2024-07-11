@@ -1,7 +1,7 @@
-import React from 'react';
+import ApplicationsPage from '@/components/admin/applications/ApplicationsPage';
 
-const ApplicationsPage = () => {
-  return <div>page</div>;
+const Applications = () => {
+  return <ApplicationsPage />;
 };
 
-export default ApplicationsPage;
+export default Applications;

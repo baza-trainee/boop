@@ -1,7 +1,7 @@
-import React from 'react';
+import PartnersFriendsPage from '@/components/admin/partnersFriends/PartnersFriendsPage';
 
 const PartnersPage = () => {
-  return <div>page</div>;
+  return <PartnersFriendsPage title="Партнери" section="partners" />;
 };
 
 export default PartnersPage;

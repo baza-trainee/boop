@@ -6,7 +6,7 @@ export const contactsApi = createApi({
   tagTypes: ['Contacts'],
   baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_URL }),
   endpoints: (build) => ({
-    getAllContacts: build.query<IContact[], string>({
+    getAllContacts: build.query<IContact[], void>({
       query: () => `contacts`,
       providesTags: ['Contacts'],
     }),

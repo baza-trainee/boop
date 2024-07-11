@@ -31,10 +31,10 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     await prismaConnect();
-    const { logoUrl, link, section }: PartnersFriendsFormData =
-      await request.json();
 
-    if (!logoUrl || !link || !section) {
+    const { logoUrl, logoId, link, section }: PartnersFriendsFormData = await request.json();
+
+    if (!logoUrl || !link || !section || !logoId) {
       return NextResponse.json(
         { message: 'All fields are required' },
         { status: 400 }
@@ -53,8 +53,9 @@ export async function POST(request: Request) {
     const response = await prisma.partnersFriends.create({
       data: {
         logoUrl,
+        logoId,
         link,
-        section,
+        section
       },
     });
 

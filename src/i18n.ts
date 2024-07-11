@@ -20,6 +20,6 @@ export const localePrefix = undefined;
 export const pathnames = {
   '/': '/',
   '/about': '/about',
-  '/contacts': '/contacts',
   '/school': '/school',
+  '/contacts': '/contacts',
 };

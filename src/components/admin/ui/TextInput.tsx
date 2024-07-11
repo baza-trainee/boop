@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { modifyTitle } from '@/helpers/modifyTitle';
 import Image from 'next/image';
 import { ForwardedRef, InputHTMLAttributes, forwardRef } from 'react';
@@ -5,12 +6,14 @@ import { ForwardedRef, InputHTMLAttributes, forwardRef } from 'react';
 interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   title?: string;
   errorText?: string;
-  isRequired: boolean;
+  isRequired?: boolean;
   isEditMode?: boolean;
   className?: string;
   titleClassName?: string;
   imageSize?: { width: number; height: number };
   iconClassName?: string;
+  onImageEditClick?: () => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const TextInput = forwardRef(function TextInput(
@@ -24,6 +27,8 @@ const TextInput = forwardRef(function TextInput(
     titleClassName = '',
     iconClassName = '',
     imageSize = { width: 30, height: 30 },
+    onImageEditClick,
+    onChange,
     ...rest
   }: TextInputProps,
   _ref: ForwardedRef<HTMLInputElement>
@@ -39,7 +44,7 @@ const TextInput = forwardRef(function TextInput(
 
   return (
     <div
-      className={` relative w-full min-w-[100px] max-w-[442px] ${
+      className={`relative w-full min-w-[100px] max-w-[442px] ${
         errorText ? 'text-error' : 'text-inherit'
       }`}
     >
@@ -49,11 +54,12 @@ const TextInput = forwardRef(function TextInput(
           className={`text-sm font-[500] ${titleClassName}`}
         >
           {modifyTitle(title)}
-          {isRequired && <span className="text-red">*</span>}
+          {isRequired && <span className="mt-1 text-red">*</span>}
         </label>
       )}
       {isEditMode ? (
         <Image
+          onClick={onImageEditClick}
           src="/icons/admin/edit.svg"
           alt="edit icon"
           width={imageSize.width}
@@ -61,8 +67,14 @@ const TextInput = forwardRef(function TextInput(
           className={`absolute right-2 top-[50%] -translate-y-[15%] ${iconClassName}`}
         />
       ) : null}
-      <input {...rest} id={title} value={value} className={inputClassName} />
-      {errorText && <span className="text-xs text-red">{errorText}</span>}
+      <input
+        onChange={onChange}
+        {...rest}
+        id={title}
+        value={value}
+        className={inputClassName}
+      />
+      {errorText && <span className="mt-1 text-xs text-red">{errorText}</span>}
     </div>
   );
 });
