@@ -1,14 +1,18 @@
 import { createPortal } from 'react-dom';
 import { useAppSelector } from '@/store/hook';
 import { useBodyScrollLock } from '@/hooks/useBodyScrollLock';
+import { useAppDispatch } from '@/store/hook';
+import { closeModal } from '@/store/slices/modalSlice';
+import CloseButton from '../form/CloseButton';
 
-const FormModal = ({
+const FormModalWidFull = ({
   children,
   type,
 }: {
   children: React.ReactNode;
   type: string;
 }) => {
+  const dispatch = useAppDispatch();
   const isModalOpen = useAppSelector((state) => state.modals.isModalOpen);
   const modalType = useAppSelector((state) => state.modals.type);
 
@@ -16,7 +20,8 @@ const FormModal = ({
 
   const ModalLayout = () => (
     <div className="fixed left-0 top-0 flex h-screen w-full items-center justify-center bg-[rgba(0,0,0,0.8)] ">
-      <div className="no-scrollbar  max-h-screen w-[920px] overflow-y-auto bg-bgWhite p-[60px] text-black">
+      <div className="no-scrollbar relative max-h-screen max-w-[1171px] overflow-y-auto bg-bgWhite p-[60px] text-black">
+        <CloseButton onClick={() => dispatch(closeModal())} />
         {children}
       </div>
     </div>
@@ -31,4 +36,4 @@ const FormModal = ({
   );
 };
 
-export default FormModal;
+export default FormModalWidFull;

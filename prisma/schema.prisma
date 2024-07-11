@@ -41,27 +41,27 @@ model Team {
 }
 
 model Testimonial {
-  id         String @id @default(uuid())
-  nameUa     String
-  nameEn     String
-  nameIt     String
-  reviewUa   String
-  reviewEn   String
-  reviewIt   String
-  imageUrl   String
-  imageId    String
+  id        String   @id @default(uuid())
+  nameUa    String
+  nameEn    String
+  nameIt    String
+  reviewUa  String
+  reviewEn  String
+  reviewIt  String
+  imageUrl  String
+  imageId   String
   createdAt DateTime @default(now())
 }
 
 model Contacts {
-  id          String @id @default(uuid())
-  phone       String
-  email       String
-  facebook    String
-  instagram   String
-  addressUa   String
-  addressEn   String
-  addressIt   String
+  id        String @id @default(uuid())
+  phone     String
+  email     String
+  facebook  String
+  instagram String
+  addressUa String
+  addressEn String
+  addressIt String
 }
 
 model Blog {
@@ -82,15 +82,14 @@ model News {
   id         Int      @id @default(autoincrement())
   sourceLink String
   createdAt  DateTime @default(now())
-  imageId    String
-  imageUrl   String
-  location   String
   textEN     String
   textIT     String
   textUA     String
   titleEN    String
   titleIT    String
   titleUA    String
+  imageLink  String?
+  imageId  String?
 }
 
 model CounterItem {
@@ -104,7 +103,18 @@ model CounterItem {
 model PartnersFriends {
   id        String   @id @default(uuid())
   logoUrl   String
+  logoId    String
   link      String
   section   String
   createdAt DateTime @default(now())
+}
+
+model Applications {
+  id          String   @id
+  name        String
+  email       String
+  phone       String
+  social      String
+  isProcessed Boolean
+  createdAt   DateTime @default(now())
 }

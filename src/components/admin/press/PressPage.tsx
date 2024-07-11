@@ -1,25 +1,58 @@
 'use client';
-import React from 'react';
+import { useState } from 'react';
+
+import axios from '@/utils/axios';
 import { useAppDispatch } from '@/store/hook';
-import { useGetAllPressQuery } from '@/store/api/pressApi';
+import {
+  useGetAllPressQuery,
+  useDeletePressMutation,
+} from '@/store/api/pressApi';
 import { INews } from '@/types/news';
 import { openModal } from '@/store/slices/modalSlice';
+import { openAlert } from '@/store/slices/alertSlice';
 import PageTitle from '../shared/PageTitle';
 import Image from 'next/image';
 import ActionButtonProps from './ActionPressButtons';
-import FormModal from '../shared/FormModal';
+import FormModalWidFull from './modal-form/ModalFormWidFull';
+import truncateText from '@/helpers/truncateText';
+import AddPressForm from './form/AddPressForm';
+import EditPressForm from './form/EditPressForm';
 
 const placeHolderImg = `/images/mainRules/image_1.png`;
 
-const truncateText = (text: string, maxChars: number): string => {
-  const truncatedText =
-    text.length > maxChars ? text.substring(0, maxChars) + '...' : text;
-  return truncatedText;
-};
 const PressPage = () => {
   const dispatch = useAppDispatch();
   const { data: news, isError, isLoading } = useGetAllPressQuery();
-  console.log('news', news);
+  const [deletePress] = useDeletePressMutation();
+  const [currentId, setCurrentId] = useState(0);
+
+  const handleEdit = (id: number) => {
+    setCurrentId(id);
+    dispatch(openModal({ type: 'edit-news' }));
+  };
+
+  const handleDelete = (id: string, imageId: string) => {
+    dispatch(
+      openAlert({
+        data: {
+          state: 'confirm',
+          message: 'Ви впевнені, що хочете видалити новину?',
+          func: async () => {
+            await axios.delete(`/cloudinary/${encodeURIComponent(imageId)}`);
+            await deletePress(id);
+            dispatch(
+              openAlert({
+                data: {
+                  state: 'success',
+                  message: 'Новина видалена!',
+                },
+              })
+            );
+          },
+        },
+      })
+    );
+  };
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -29,9 +62,6 @@ const PressPage = () => {
     return <div>Error loading data</div>;
   }
 
-  // if (!press || !press.data) {
-  //   return <div>No data available</div>;
-  // }
   return (
     <section className="pb-[91px] pl-[24px] pt-[104px]">
       <PageTitle title="Преса про нас" />
@@ -52,8 +82,8 @@ const PressPage = () => {
             <div key={item.id} className="relative h-[290px] w-[306px]">
               <div className="h-[111px] w-[100%] overflow-hidden  border border-b-0 border-[#E5E5E5] object-cover">
                 <Image
-                  src={placeHolderImg}
-                  alt={item.location}
+                  src={item.imageLink || placeHolderImg}
+                  alt={item.titleUA}
                   width={306}
                   height={150}
                 />
@@ -67,13 +97,21 @@ const PressPage = () => {
                 </p>
               </div>
 
-              <ActionButtonProps action="all" width="w-[306px]" />
+              <ActionButtonProps
+                editAction={() => handleEdit(item.id)}
+                deleteAction={() => handleDelete(String(item.id), item.imageId)}
+                action="all"
+                width="w-[306px]"
+              />
             </div>
           ))}
       </div>
-      {/* <FormModal type="add-news">
-        <p>Add News!!!</p>
-      </FormModal> */}
+      <FormModalWidFull type="add-news">
+        <AddPressForm />
+      </FormModalWidFull>
+      <FormModalWidFull type="edit-news">
+        <EditPressForm id={String(currentId)} />
+      </FormModalWidFull>
     </section>
   );
 };

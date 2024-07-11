@@ -14,30 +14,31 @@ export async function PATCH(
         status: 400,
       });
     }
-    const data: { newNews: NewsFormData } = await request.json();
-    if (!data.newNews) {
+    const { newPress }: { newPress: NewsFormData } = await request.json();
+
+    if (!newPress) {
       return new NextResponse('Invalid request: Missing data for update', {
         status: 400,
       });
     }
-    const updatedNews = await prisma.news.update({
+    const updatedPress = await prisma.news.update({
       where: {
         id: Number(params.id),
       },
       data: {
-        location: data.newNews.location,
-        imageUrl: data.newNews.imageUrl,
-        imageId: data.newNews.imageId,
-        sourceLink: data.newNews.sourceLink,
-        titleUA: data.newNews.titleUA,
-        textUA: data.newNews.textUA,
-        titleEN: data.newNews.titleEN,
-        textEN: data.newNews.textEN,
-        titleIT: data.newNews.titleIT,
-        textIT: data.newNews.textIT,
+        imageLink: newPress.imageLink,
+        imageId: newPress.imageId,
+        sourceLink: newPress.sourceLink,
+        titleUA: newPress.titleUA,
+        textUA: newPress.textUA,
+        titleEN: newPress.titleEN,
+        textEN: newPress.textEN,
+        titleIT: newPress.titleIT,
+        textIT: newPress.textIT,
       },
     });
-    return NextResponse.json(updatedNews, { status: 200 });
+
+    return NextResponse.json(updatedPress, { status: 200 });
   } catch (error) {
     console.log('[UPDATE NEWS]', error);
     return new NextResponse('Internal Server Error', { status: 500 });

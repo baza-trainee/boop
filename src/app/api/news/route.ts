@@ -26,11 +26,9 @@ export async function POST(request: Request) {
   try {
     await prismaConnect();
     const data: NewsFormData = await request.json();
+
     const response = await prisma.news.create({
       data: {
-        location: data.location,
-        imageUrl: data.imageUrl,
-        imageId: data.imageId,
         sourceLink: data.sourceLink,
         titleUA: data.titleUA,
         textUA: data.textUA,
@@ -38,6 +36,8 @@ export async function POST(request: Request) {
         textEN: data.textEN,
         titleIT: data.titleIT,
         textIT: data.textIT,
+        imageLink: data.imageLink,
+        imageId: data.imageId,
       },
     });
     return NextResponse.json(response, { status: 200 });
