@@ -7,6 +7,7 @@ const Founders = () => {
   const t = useTranslations('Founders');
 
   return (
+
     <section className="container  flex  max-w-screen-3xl   flex-col-reverse items-center justify-center gap-8 whitespace-pre bg-inherit xs:mb-[70px] md:mb-[88px] md:flex-row md:justify-between md:gap-[23px] ml:mb-[100px]  xl:mb-[120px] 4xl:justify-center 4xl:gap-[200px]">
       <div className="relative ml:w-[513px] lg:w-fit">
         <picture>
@@ -17,6 +18,7 @@ const Founders = () => {
           <source
             media="(max-width: 1536px)"
             srcSet="/images/founders_image.png"
+
           />
           <Image
             src="/images/founders_image.png"

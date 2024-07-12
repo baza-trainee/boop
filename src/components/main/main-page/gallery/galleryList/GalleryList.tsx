@@ -1,31 +1,26 @@
 import React from 'react';
 import Image from 'next/image';
-import { useMediaQuery } from 'react-responsive';
+
 import { IPhoto } from '@/types/photo';
 
 interface GalleryCardProps {
   images: IPhoto[];
-  decorativeElements: JSX.Element[][];
+  decorativeIndex: number;
   limit: number;
 }
 
 const GalleryList: React.FC<GalleryCardProps> = ({
   images,
-  decorativeElements,
+  decorativeIndex,
   limit,
 }) => {
-  const isLargeDesktop = useMediaQuery({ query: '(min-width: 1920px)' });
-
   const combinedElements = [];
-  const decorativeIndices = isLargeDesktop ? [1, 4, 6] : [1, 3, 4]; // Позиции, после которых следует вставлять декоративные элементы 1530
-
-  let decorativeIndex = 0;
 
   for (let i = 0; i < images.length; i++) {
     combinedElements.push(
       <div
         key={`image-${i}`}
-        className="relative h-[477px] min-w-[306px] flex-1"
+        className="relative h-[477px] min-w-[197px] flex-1 md:h-[287px] lg:h-[394px] xl:h-[415px] 3xl:h-[447px]"
       >
         <Image
           src={images[i].imageUrl}
@@ -38,27 +33,28 @@ const GalleryList: React.FC<GalleryCardProps> = ({
       </div>
     );
 
-    if (
-      decorativeIndex < decorativeElements.length &&
-      i % limit === decorativeIndices[decorativeIndex]
-    ) {
-      decorativeElements[decorativeIndex].map((el, index) =>
-        combinedElements.push(
+    if (i % limit === decorativeIndex) {
+      combinedElements.push(
+        <div className="min-w-[197px] flex-1">
           <div
-            key={`decorative-${decorativeIndex}-${index}`}
-            className="min-w-[306px] flex-1"
+            key={`yellow_man`}
+            className="relative flex h-[477px] min-w-[197px]  flex-1 items-end justify-center md:h-[287px] lg:h-[394px] xl:h-[415px] 3xl:h-[447px]"
           >
-            {el}
+            <Image
+              src="/images/gallerySection/yellow_man.svg"
+              alt=""
+              width={218}
+              height={230}
+              className="absolute -bottom-6 h-auto md:h-auto md:w-[130px] ml:w-[164px] lg:w-[218px]"
+            />
           </div>
-        )
+        </div>
       );
-
-      decorativeIndex = (decorativeIndex + 1) % decorativeElements.length;
     }
   }
 
   return (
-    <div className="grid grid-cols-1 gap-6 pt-8 sm:grid-cols-2 lg:grid-cols-4  4xl:grid-cols-5">
+    <div className="grid grid-cols-1 gap-6 pt-8 md:grid-cols-3 ml:grid-cols-4 4xl:grid-cols-5 ">
       {combinedElements.map((item, index) => (
         <React.Fragment key={index}>{item}</React.Fragment>
       ))}

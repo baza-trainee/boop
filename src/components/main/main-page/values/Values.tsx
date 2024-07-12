@@ -11,7 +11,7 @@ const Values = () => {
   const valuesCards = GetValuesCardsInfo();
 
   return (
-    <section className=" flex    w-full flex-col gap-8  xs:mb-[70px] md:mb-[88px] ml:mb-[100px] xl:mb-[120px]">
+    <section className=" flex    w-full flex-col gap-8  xs:mb-[70px] md:mb-[100px] ml:mb-[100px] xl:mb-[120px]">
       <div className="container">
         <SectionTitle title={t('title')} />
       </div>
