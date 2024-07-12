@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Vision from './vision/Vision';
 import Values from './values/Values';
 import Goals from './goals/Goals';
-
 import Counter from './counter/Counter';
 import PressAboutUs from './press-about-us/PressAboutUs';
 import Mission from './mission/Mission';
@@ -12,7 +11,7 @@ import Partners from './partners/Partners';
 import Hero from './hero/Hero';
 import Founders from './founders/Founders';
 import Gallery from './gallery/Gallery';
-import Team from './team/Team';
+// import Team from './team/Team';
 
 
 const MainPage = () => {
@@ -38,7 +37,7 @@ const MainPage = () => {
         <PressAboutUs />
         <Gallery />
         <Partners />
-        <Team />
+        {/* <Team /> */}
       </div>
     </>
   );

@@ -8,6 +8,7 @@ import Photos from './components/Photos';
 import ClownSchoolForm from './components/ClownSchoolForm';
 import { ModalProvider } from '../../providers/ModalProvider';
 import { useMediaQuery } from 'react-responsive';
+import Team from './team/Team';
 
 const SchoolPage: React.FC = () => {
   const isMobile = useMediaQuery({
@@ -47,6 +48,7 @@ const SchoolPage: React.FC = () => {
         <Feedback />
         <ClownSchoolForm />
         <Photos />
+        <Team />
       </div>
     </ModalProvider>
   );
