@@ -6,12 +6,12 @@ const GetTeamCardsInfo = () => {
     {
       title: `${t('management_title')}`,
       text: `${t('management_text')}`,
-      image: '/images/missionSection/a_girl_with_a_clown_nose.png',
+      image: '/images/teamStructure/manedgers.png',
     },
     {
       title: `${t('volunteers_title')}`,
       text: `${t('volunteers_text')}`,
-      image: '/images/missionSection/a_girl_with_a_clown_nose.png',
+      image: '/images/teamStructure/volontirs.png',
     },
   ];
 };

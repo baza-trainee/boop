@@ -48,7 +48,7 @@ const MainRules = () => {
               alt="image_3"
               width={2048}
               height={1346}
-              className="relative"
+              className="relative z-10"
             />
             <p className="w-[414px]">{t('rules.paragraph_3')}</p>
           </div>
