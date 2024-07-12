@@ -16,9 +16,7 @@ const Header = () => {
   if (isAdminPage) return null;
 
   return (
-
     <header className="container fixed left-0 right-0 top-0 z-50 flex h-[100px] items-center justify-between bg-golden bg-opacity-80 px-[120px] py-[26px] text-violet backdrop-blur-sm backdrop-filter">
-
       <div>
         <Link href="/" title="Бюро усмішок і підтримки">
           <Image
