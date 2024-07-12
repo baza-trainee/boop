@@ -7,7 +7,7 @@ const MainRules = () => {
   const t = useTranslations('About.main_rules');
 
   return (
-    <section className="mb-[70px] flex w-full flex-col gap-[50px] whitespace-pre-line px-[20px] pt-10 md:mb-[100px] md:gap-[70px] md:px-[40px]  ml:px-[64px] xl:mb-[120px] xl:px-[80px]  2xl:px-[120px]">
+    <section className="mx-auto mb-[70px] flex w-full max-w-screen-3xl flex-col gap-[50px] whitespace-pre-line px-[20px] pt-10 md:mb-[100px] md:gap-[70px] md:px-[40px]  ml:px-[64px] xl:mb-[120px] xl:px-[80px]  2xl:px-[120px]">
       <div className=" flex flex-col items-center justify-center gap-[18px] md:flex-row md:items-start md:justify-center md:gap-[5px] ">
         <Image
           src="/images/heroSection/hero_logo.png"
