@@ -104,7 +104,6 @@ body.lock {
   text-orientation: mixed;
 }
 
-/* Приховати іконку показу/приховання пароля у WebKit браузерах (Chrome, Safari) */
 input[type='password']::-ms-reveal,
 input[type='password']::-ms-clear {
   display: none;
@@ -112,6 +111,25 @@ input[type='password']::-ms-clear {
 
 input[type='password']::-webkit-textfield-decoration-container {
   display: none;
+}
+
+input[type='password']::-webkit-input-placeholder {
+  background: none;
+  -webkit-appearance: none;
+}
+
+input[type='password']::-moz-placeholder {
+  background: none;
+}
+
+input[type='password']::-ms-input-placeholder {
+  background: none;
+}
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .selectIcon {
