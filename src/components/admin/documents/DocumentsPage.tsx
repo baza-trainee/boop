@@ -183,14 +183,13 @@ const DocumentsPage = () => {
         <form
           onSubmit={handleSubmit(onSubmit)}
           autoComplete="off"
-          className="flex w-[50%] flex-col items-start gap-[40px]"
+          className="flex w-[292px] flex-col items-start gap-[40px]"
         >
           <FileInput
             name="regulations"
             control={control}
             placeholder="Завантажити файл"
             title="Статут"
-            isRequired={true}
             isEditMode={true}
             accept="application/pdf"
           />
@@ -199,7 +198,6 @@ const DocumentsPage = () => {
             control={control}
             placeholder="Завантажити файл"
             title="Звітність"
-            isRequired={true}
             isEditMode={true}
             accept="application/pdf"
           />
@@ -208,7 +206,6 @@ const DocumentsPage = () => {
             control={control}
             placeholder="Завантажити файл"
             title="Політика конфіденційності"
-            isRequired={true}
             isEditMode={true}
             accept="application/pdf"
           />
@@ -217,7 +214,6 @@ const DocumentsPage = () => {
             control={control}
             placeholder="Завантажити файл"
             title="Правила користування"
-            isRequired={true}
             isEditMode={true}
             accept="application/pdf"
           />

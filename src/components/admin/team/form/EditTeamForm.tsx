@@ -131,9 +131,8 @@ const EditTeamForm = ({ id }: { id: string }) => {
             <FileInput
               name="image"
               control={control}
-              placeholder={'Оберіть файл'}
-              title="Оберіть файл:"
-              isRequired={true}
+              placeholder="Завантажити зображення"
+              title="Оберіть файл"
               accept="image/*"
             />
             <Controller
@@ -144,8 +143,7 @@ const EditTeamForm = ({ id }: { id: string }) => {
                   {...field}
                   errorText={errors.nameUa?.message}
                   placeholder="Напишіть псевдонім"
-                  title="Вкажіть псевдонім українською:"
-                  isRequired={true}
+                  title="Вкажіть псевдонім українською"
                 />
               )}
             />
@@ -157,8 +155,7 @@ const EditTeamForm = ({ id }: { id: string }) => {
                   {...field}
                   errorText={errors.nameEn?.message}
                   placeholder="Напишіть псевдонім"
-                  title="Вкажіть псевдонім англійською:"
-                  isRequired={true}
+                  title="Вкажіть псевдонім англійською"
                 />
               )}
             />
@@ -170,8 +167,7 @@ const EditTeamForm = ({ id }: { id: string }) => {
                   {...field}
                   errorText={errors.nameIt?.message}
                   placeholder="Напишіть псевдонім"
-                  title="Вкажіть псевдонім італійською:"
-                  isRequired={true}
+                  title="Вкажіть псевдонім італійською"
                 />
               )}
             />
@@ -196,7 +192,7 @@ const EditTeamForm = ({ id }: { id: string }) => {
             disabled={!isValid}
             className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white hover:shadow-xl disabled:bg-gray-500"
           >
-            {isProcessing ? 'Обробка запиту...' : 'Оновити'}
+            {isProcessing ? 'Обробка запиту...' : 'Змінити'}
           </button>
           <button
             onClick={() => dispatch(closeModal())}

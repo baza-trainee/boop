@@ -93,9 +93,8 @@ const AddTestimonialForm = () => {
             <FileInput
               name="image"
               control={control}
-              placeholder={'Оберіть файл'}
+              placeholder="Завантажте зображення"
               title="Оберіть файл"
-              isRequired={true}
               accept="image/*"
             />
             <Controller
@@ -107,8 +106,7 @@ const AddTestimonialForm = () => {
                   errorText={errors.nameUa?.message}
                   placeholder="Напишіть ім’я"
                   title="Вкажіть ім’я волонтера українською"
-                  isRequired={true}
-                  className={'h-[55px]'}
+                  className={'h-[53px]'}
                 />
               )}
             />
@@ -121,8 +119,7 @@ const AddTestimonialForm = () => {
                   errorText={errors.nameEn?.message}
                   placeholder="Напишіть ім’я"
                   title="Вкажіть ім’я волонтера англійською"
-                  isRequired={true}
-                  className={'h-[55px]'}
+                  className={'h-[53px]'}
                 />
               )}
             />
@@ -135,8 +132,7 @@ const AddTestimonialForm = () => {
                   errorText={errors.nameIt?.message}
                   placeholder="Напишіть ім’я"
                   title="Вкажіть ім’я волонтера італійською"
-                  isRequired={true}
-                  className={'h-[55px]'}
+                  className={'h-[53px]'}
                 />
               )}
             />

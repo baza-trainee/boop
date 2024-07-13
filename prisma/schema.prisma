@@ -1,5 +1,6 @@
 generator client {
   provider = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
 }
 
 datasource db {
@@ -62,6 +63,17 @@ model Contacts {
   addressUa String
   addressEn String
   addressIt String
+
+}
+
+model Applications {
+  id          String @id @default(uuid())
+  name        String
+  email       String
+  phone       String
+  social      String
+  isProcessed Boolean
+  createdAt   DateTime @default(now())
 }
 
 model Blog {
@@ -109,12 +121,4 @@ model PartnersFriends {
   createdAt DateTime @default(now())
 }
 
-model Applications {
-  id          String   @id
-  name        String
-  email       String
-  phone       String
-  social      String
-  isProcessed Boolean
-  createdAt   DateTime @default(now())
-}
+

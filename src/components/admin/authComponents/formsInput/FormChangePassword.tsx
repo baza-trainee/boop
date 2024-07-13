@@ -10,6 +10,7 @@ import { passwordSchema } from './passwordSchema';
 import { useDispatch } from 'react-redux';
 import { openAlert } from '@/store/slices/alertSlice';
 import Loader from '@/components/shared/loader/Loader';
+import ButtonPWDType from './ButtonPWDType';
 
 interface CustomSession extends Session {
   user: { email: string };
@@ -23,6 +24,9 @@ interface IFormInput {
 
 function FormChangePassword() {
   const [isLoader, setIsLoader] = useState(false);
+  const [isVisiblePWDOld, setIsVisiblePWDOld] = useState<boolean>(false);
+  const [isVisiblePWDNew, setIsVisiblePWDNew] = useState<boolean>(false);
+  const [isVisiblePWDRepit, setIsVisiblePWDRepit] = useState<boolean>(false);
   const [session, setSession] = useState<CustomSession | null>(null);
 
   const dispatch = useDispatch();
@@ -141,15 +145,19 @@ function FormChangePassword() {
             <div className="relative">
               <input
                 className={clsx(
-                  "peer block w-full rounded-xl border-[2px] border-[#50439f] py-[8px] pl-[9px] font-['Raleway',_sans-serif] text-base not-italic  placeholder-[#949398] outline-none placeholder-shown:border-[#949398]",
+                  "peer block w-full rounded-xl border-[2px] border-[#50439f] py-[8px] pl-[9px] pr-9 font-['Raleway',_sans-serif] text-base not-italic  placeholder-[#949398] outline-none placeholder-shown:border-[#949398]",
                   !errors.oldPassword && 'text-[#177e3a]',
                   errors.oldPassword && 'text-[#ff4004]'
                 )}
                 id="oldPassword"
-                type="password"
+                type={isVisiblePWDOld ? 'text' : 'password'}
                 autoComplete="false"
                 placeholder="Введіть старий пароль"
                 {...register('oldPassword')}
+              />
+              <ButtonPWDType
+                toglePWDType={() => setIsVisiblePWDOld(!isVisiblePWDOld)}
+                isVisiblePWD={isVisiblePWDOld}
               />
             </div>
           </div>
@@ -163,19 +171,25 @@ function FormChangePassword() {
               Вкажіть новий пароль:
             </label>
             <div className="relative">
-              <input
-                className={clsx(
-                  "peer block w-full rounded-xl border-[2px] border-[#50439f] py-[8px] pl-[9px] font-['Raleway',_sans-serif] text-base not-italic  placeholder-[#949398] outline-none placeholder-shown:border-[#949398]",
-                  !errors.newPassword && 'text-[#177e3a]',
-                  errors.newPassword && 'text-[#ff4004]'
-                )}
-                id="newPassword"
-                type="password"
-                autoComplete="false"
-                autoFocus
-                placeholder="Введіть новий пароль"
-                {...register('newPassword')}
-              />
+              <div className="relative">
+                <input
+                  className={clsx(
+                    "peer block w-full rounded-xl border-[2px] border-[#50439f] py-[8px] pl-[9px] pr-9 font-['Raleway',_sans-serif] text-base not-italic  placeholder-[#949398] outline-none placeholder-shown:border-[#949398]",
+                    !errors.newPassword && 'text-[#177e3a]',
+                    errors.newPassword && 'text-[#ff4004]'
+                  )}
+                  id="newPassword"
+                  type={isVisiblePWDNew ? 'text' : 'password'}
+                  autoComplete="false"
+                  autoFocus
+                  placeholder="Введіть новий пароль"
+                  {...register('newPassword')}
+                />
+                <ButtonPWDType
+                  toglePWDType={() => setIsVisiblePWDNew(!isVisiblePWDNew)}
+                  isVisiblePWD={isVisiblePWDNew}
+                />
+              </div>
               {errors.newPassword?.message && (
                 <span className="mb-0 mt-0 text-left font-['Raleway',_sans-serif] text-[14px] font-normal normal-case not-italic leading-[18px] tracking-[0px] text-[#ff4004]">
                   {errors.newPassword.message}
@@ -191,18 +205,24 @@ function FormChangePassword() {
               Повторіть новий пароль:
             </label>
             <div className="relative">
-              <input
-                className={clsx(
-                  "peer block w-full rounded-xl border-[2px] border-[#50439f] py-[8px] pl-[9px] font-['Raleway',_sans-serif] text-base not-italic  placeholder-[#949398] outline-none placeholder-shown:border-[#949398]",
-                  !errors.confirmNewPassword && 'text-[#177e3a]',
-                  errors.confirmNewPassword && 'text-[#ff4004]'
-                )}
-                id="confirmNewPassword"
-                type="password"
-                autoComplete="false"
-                placeholder="Введіть новий пароль ще раз"
-                {...register('confirmNewPassword')}
-              />
+              <div className="relative">
+                <input
+                  className={clsx(
+                    "peer block w-full rounded-xl border-[2px] border-[#50439f] py-[8px] pl-[9px] pr-9 font-['Raleway',_sans-serif] text-base not-italic  placeholder-[#949398] outline-none placeholder-shown:border-[#949398]",
+                    !errors.confirmNewPassword && 'text-[#177e3a]',
+                    errors.confirmNewPassword && 'text-[#ff4004]'
+                  )}
+                  id="confirmNewPassword"
+                  type={isVisiblePWDRepit ? 'text' : 'password'}
+                  autoComplete="false"
+                  placeholder="Введіть новий пароль ще раз"
+                  {...register('confirmNewPassword')}
+                />
+                <ButtonPWDType
+                  toglePWDType={() => setIsVisiblePWDRepit(!isVisiblePWDRepit)}
+                  isVisiblePWD={isVisiblePWDRepit}
+                />
+              </div>
               {errors.confirmNewPassword && (
                 <span className="mb-0 mt-0 text-left font-['Raleway',_sans-serif] text-[14px] font-normal normal-case not-italic leading-[18px] tracking-[0px] text-[#ff4004]">
                   {errors.confirmNewPassword.message}

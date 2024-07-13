@@ -101,7 +101,8 @@
   },
   "Gallery": {
     "title": "Gallery",
-    "btn": "Download more"
+    "btn": "Load more",
+    "btnCollapse": "Collapse"
   },
   "Partners": {
     "title_1": "Our friends",
@@ -146,19 +147,19 @@
       "paragraph_4": "Someone who is ready to learn, grow, seek themselves out, and find their comedic character. They are ready to create a celebration of life in the midst of disaster."
     },
     "training": {
-      "title": "Think there are any classes more fun than the Clown School?",
-      "text": "We think not. Because here students play, dress up in funny costumes and dance. It's very interesting to watch how this clown magic works, when a group of adults, strangers to each other, turn into children and allow themselves to be as they feel - light, real, silly, funny, whatever!",
+      "text": "Think there are any classes more fun than the Clown School? \nWe think not. Because here students play, dress up in funny costumes and dance. It's very interesting to watch how this clown magic works, when a group of adults, strangers to each other, turn into children and allow themselves to be as they feel - light, real, silly, funny, whatever!",
       "paragraph_1": "Volunteers undergo a two-day training in the basics of hospital clowning - on the course, students learn to express themselves, release their inner child, not be afraid to be funny, play with each other.",
       "paragraph_2": "Everyone can awaken their inner clown - a unique, interesting, funny character who is just exploring the world around them, but is already ready to dive into the unknown. This is the base with which you can already work and go to the departments to the children.",
       "paragraph_3": "After the training, volunteers go on practice to the hospital, accompanied by experienced hospital clowns.",
       "paragraph_4": "Over the next three months, they gather for classes once a week and delve deeper into the mechanisms of hospital clowns.",
       "paragraph_5": "In parallel, regular visits to hospital departments take place, under the constant supervision of trainers and psychological support"
     },
+    "feedback_title": "Reviews of students of the School of Clowns",
     "photo_title": "Photos"
   },
   "Form": {
     "joinUs": "Join us",
-    "leaveForm": "Leave your form and we will contact you within three days",
+    "leaveForm": "Leave your form and we will contact you within three days.",
     "name": "Your name",
     "phone": "Phone number",
     "phonePlaceholder": "Enter phone number in format +380",
@@ -169,12 +170,18 @@
     "submit": "Submit",
     "required": "This field is required.",
     "invalidPhone": "Please enter a valid phone number.",
-    "invalidEmail": "Please enter a valid email address."
+    "invalidEmail": "Please enter a valid email address.",
+    "processing": "Request processing"
   },
   "ClownSchoolForm": {
     "formSubmitted": "Your form has been submitted.",
     "contactWithinThreeDays": "We will contact you within three days.",
     "somethingWentWrong": "Something went wrong...",
     "pleaseTryAgain": "Please try again."
+  },
+  "ClownSchoolFormDescription": {
+    "formTitle": "Fill out the form",
+    "formSubtitle": "Volunteer training is free.",
+    "formDescription": "We are eagerly awaiting new people to join our team, so that there will be more children's smiles and joy."
   }
 }

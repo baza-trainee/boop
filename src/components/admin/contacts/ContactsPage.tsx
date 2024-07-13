@@ -20,7 +20,7 @@ const ContactsPage = () => {
     data: contacts,
     isLoading,
     isFetching,
-  } = contactsApi.useGetAllContactsQuery('contacts');
+  } = contactsApi.useGetAllContactsQuery();
 
   const {
     handleSubmit,
@@ -122,7 +122,6 @@ const ContactsPage = () => {
                     errorText={errors.addressUa?.message}
                     placeholder="01135, м. Київ, вул. В.Чорновола, 28/1"
                     title="Адреса українською"
-                    isRequired={true}
                     isEditMode={true}
                   />
                 )}
@@ -136,7 +135,6 @@ const ContactsPage = () => {
                     errorText={errors.addressEn?.message}
                     placeholder="01135, Kyiv, str. V. Chornovola, 28/1"
                     title="Адреса англійською"
-                    isRequired={true}
                     isEditMode={true}
                   />
                 )}
@@ -150,7 +148,6 @@ const ContactsPage = () => {
                     errorText={errors.addressIt?.message}
                     placeholder="01135, Kiev, str. V.Chornvola, 28/1"
                     title="Адреса італійською"
-                    isRequired={true}
                     isEditMode={true}
                   />
                 )}
@@ -182,7 +179,6 @@ const ContactsPage = () => {
                       errorText={errors.phone?.message}
                       placeholder="+380 67 596 1600"
                       title="Телефон"
-                      isRequired={true}
                       isEditMode={true}
                     />
                   )}
@@ -196,7 +192,6 @@ const ContactsPage = () => {
                       errorText={errors.email?.message}
                       placeholder="bulkina.ola@gmail.com"
                       title="Email"
-                      isRequired={true}
                       isEditMode={true}
                     />
                   )}
@@ -212,7 +207,6 @@ const ContactsPage = () => {
                       errorText={errors.instagram?.message}
                       placeholder="https://www.instagram..."
                       title="Instagram"
-                      isRequired={true}
                       isEditMode={true}
                     />
                   )}
@@ -226,7 +220,6 @@ const ContactsPage = () => {
                       errorText={errors.facebook?.message}
                       placeholder="https://www.facebook..."
                       title="Facebook"
-                      isRequired={true}
                       isEditMode={true}
                     />
                   )}

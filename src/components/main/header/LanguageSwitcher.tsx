@@ -1,4 +1,5 @@
 'use client';
+
 import Image from 'next/image';
 import { locales } from '@/i18n';
 import { usePathname, useRouter } from '@/navigation';
@@ -48,14 +49,14 @@ const LanguageSwitcher = () => {
 
   return (
     <div
-      className={`relative flex h-[24px] cursor-pointer items-center text-[20px] font-semibold leading-[20px] text-mainViolet ${containerPosition}`}
+      className={`relative flex h-[24px] cursor-pointer items-center text-[20px] font-semibold leading-[20px] text-mainViolet xs:mr-[20px] md:mr-0 ${containerPosition}`}
     >
       <div
         ref={menuRef}
         onClick={handleImageClick}
-        className="mt-[5px] flex w-[80px] items-center px-[5px] pl-[14px]"
+        className="mt-[5px] flex w-[80px] items-center px-[5px] pl-[14px] md:pl-0"
       >
-        <span className="mr-[10px] w-[24px] font-bold">
+        <span className="mr-[10px] w-[24px] font-bold md:mr-0">
           {currentLocale.toUpperCase()}
         </span>
         <span className={`${!isOpen && 'rotate-[180deg]'}`}>
@@ -71,7 +72,7 @@ const LanguageSwitcher = () => {
       {isOpen && (
         <div
           ref={submenuRef}
-          className="absolute left-[11px] top-[30px] flex w-[100px] flex-col rounded-none"
+          className="absolute left-[11px] top-[30px] flex w-[90px] flex-col rounded-none md:-left-[5px]"
         >
           {filteredLocales.map((item: string) => (
             <span
