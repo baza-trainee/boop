@@ -1,4 +1,5 @@
 'use client';
+
 import Image from 'next/image';
 import { locales } from '@/i18n';
 import { usePathname, useRouter } from '@/navigation';

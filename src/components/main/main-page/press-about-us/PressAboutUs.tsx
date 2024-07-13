@@ -9,10 +9,10 @@ const PressAboutUs = () => {
   const t = useTranslations('Press_about_us');
 
   return (
-    <section className="pb-[120px] pt-[120px]">
-      <div className="container">
+    <section className="mb-[120px]">
+      <div className="container mx-auto">
         <div className="mb-8 flex items-center justify-between gap-5">
-          <h2 className="title-gradient font-groppled text-3xl font-bold">
+          <h2 className="title-gradient font-groppled text-3xl font-bold max-sm:text-[28px]">
             {t('title')}
           </h2>
           <div className="flex items-center gap-2">

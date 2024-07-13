@@ -1,10 +1,10 @@
-import 'swiper/css';
 import clsx from 'clsx';
 import { useCallback, type ReactNode } from 'react';
 import { SwiperOptions } from 'swiper/types';
 import { Navigation } from 'swiper/modules';
 import type { SwiperProps } from 'swiper/react';
 import { SwiperSlide, Swiper } from 'swiper/react';
+import 'swiper/css';
 
 export interface CarouselProps<T> extends SwiperProps {
   items: T[] | undefined;

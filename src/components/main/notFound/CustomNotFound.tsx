@@ -7,7 +7,7 @@ export const CustomNotFound = () => {
   const t = useTranslations('Error');
 
   return (
-    <div className="h-full bg-bgWhite bg-[url('/icons/404/footprints.png')] bg-[length:926px_873px] bg-left-top bg-no-repeat pt-[30px] px-10 pb-[350px] 3xl:pb-[72px] 3xl:pt-[120px]">
+    <div className="h-full bg-bgWhite bg-[url('/icons/404/footprints.png')] bg-[length:926px_873px] bg-left-top bg-no-repeat px-10 pb-[350px] 3xl:pb-[72px] pt-[120px] md:pt-[200px]">
       <h2 className="title-gradient bg-clip-text text-center font-groppled mb-6 text-3xl xl:text-5xl font-bold leading-[1.3] md:leading-[1.7]">
         {t('title')}
       </h2>
@@ -22,7 +22,7 @@ export const CustomNotFound = () => {
           alt="Clown"
           width={200}
           height={200}
-          className="px-3 md:px-7 max-md:max-w-[164px]"
+          className="px-3 md:px-7 max-md:max-w-[135px]"
         />
         <span className="h-[155px]">4</span>
       </div>

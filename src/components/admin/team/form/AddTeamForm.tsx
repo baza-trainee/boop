@@ -89,9 +89,8 @@ const AddTeamForm = () => {
             <FileInput
               name="image"
               control={control}
-              placeholder={'Оберіть файл'}
-              title="Оберіть файл:"
-              isRequired={true}
+              placeholder="Завантажити зображення"
+              title="Оберіть файл"
               accept="image/*"
             />
             <Controller
@@ -102,8 +101,7 @@ const AddTeamForm = () => {
                   {...field}
                   errorText={errors.nameUa?.message}
                   placeholder="Напишіть псевдонім"
-                  title="Вкажіть псевдонім українською:"
-                  isRequired={true}
+                  title="Вкажіть псевдонім українською"
                 />
               )}
             />
@@ -115,8 +113,7 @@ const AddTeamForm = () => {
                   {...field}
                   errorText={errors.nameEn?.message}
                   placeholder="Напишіть псевдонім"
-                  title="Вкажіть псевдонім англійською:"
-                  isRequired={true}
+                  title="Вкажіть псевдонім англійською"
                 />
               )}
             />
@@ -128,8 +125,7 @@ const AddTeamForm = () => {
                   {...field}
                   errorText={errors.nameIt?.message}
                   placeholder="Напишіть псевдонім"
-                  title="Вкажіть псевдонім італійською:"
-                  isRequired={true}
+                  title="Вкажіть псевдонім італійською"
                 />
               )}
             />

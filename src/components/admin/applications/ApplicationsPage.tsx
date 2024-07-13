@@ -1,0 +1,124 @@
+'use client';
+
+import { useAppDispatch } from '@/store/hook';
+import { applicationsApi } from '@/store/api/applicationsApi';
+import PageTitle from '../shared/PageTitle';
+import Loader from '@/components/shared/loader/Loader';
+import Image from 'next/image';
+import { openAlert } from '@/store/slices/alertSlice';
+
+const ApplicationsPage = () => {
+  const dispatch = useAppDispatch();
+  const [deleteApplication] = applicationsApi.useDeleteApplicationMutation();
+  const [editApplication] = applicationsApi.useEditApplicationMutation();
+  const { data, isLoading, isFetching } =
+    applicationsApi.useGetAllApplicationsQuery();
+
+  const handleDelete = (id: string) => {
+    dispatch(
+      openAlert({
+        data: {
+          state: 'confirm',
+          message: 'Ви дійсно бажаєте видалити цю заявку?',
+          func: async () => {
+            await deleteApplication(id);
+            dispatch(
+              openAlert({
+                data: {
+                  state: 'success',
+                  message: 'Заявку успішно видалено!',
+                },
+              })
+            );
+          },
+        },
+      })
+    );
+  };
+
+  const handleEdit = async (id: string, isProcessed: boolean) => {
+    await editApplication({ id, isProcessed });
+  };
+
+  if (isLoading || isFetching) return <Loader />;
+
+  return (
+    <section className="relative h-[864px] px-[24px] py-[100px]">
+      <PageTitle title="Заявки до школи" />
+      <table className="block min-w-full border-collapse border border-violet md:table">
+        <thead className="block border border-violet text-mainViolet md:table-header-group">
+          <tr className="block border border-gray-300 md:table-row md:border-none">
+            <th className="h-[46px] border border-violet p-2 text-left text-center md:table-cell">
+              №
+            </th>
+            <th className="h-[46px] border border-violet p-2 text-left text-center md:table-cell">
+              Ім’я
+            </th>
+            <th className="h-[46px] border border-violet p-2 text-left text-center md:table-cell">
+              E-mail
+            </th>
+            <th className="h-[46px] border border-violet p-2 text-left text-center md:table-cell">
+              Номер телефону
+            </th>
+            <th className="h-[46px] border border-violet p-2 text-left text-center md:table-cell">
+              Соцмережі
+            </th>
+            <th className="h-[46px] border border-violet p-2 text-left text-center md:table-cell">
+              Дія
+            </th>
+          </tr>
+        </thead>
+        <tbody className="block md:table-row-group">
+          {data &&
+            data.map((row, index) => (
+              <tr
+                key={row.id}
+                className="block border border-gray-300 md:table-row md:border-none"
+              >
+                <td className="h-[60px] border border-violet p-2 text-center md:table-cell">
+                  {index + 1}
+                </td>
+                <td className="h-[60px] border border-violet p-2 text-center md:table-cell">
+                  {row.name}
+                </td>
+                <td className="h-[60px] border border-violet p-2 text-center md:table-cell">
+                  {row.email}
+                </td>
+                <td className="h-[60px] border border-violet p-2 text-center md:table-cell">
+                  {row.phone}
+                </td>
+                <td className="h-[60px] border border-violet p-2 text-center md:table-cell">
+                  {row.social}
+                </td>
+                <td className="h-[60px] border border-violet text-center md:table-cell">
+                  <div className="flex w-full items-center justify-center gap-4">
+                    <button
+                      onClick={() => handleEdit(row.id, row.isProcessed)}
+                      className={`text-center font-[800] transition-all hover:underline ${!row.isProcessed ? 'text-violet' : 'text-[#666]'}`}
+                    >
+                      {!row.isProcessed ? 'Обробити' : 'Оброблено'}
+                    </button>
+                    {row.isProcessed && (
+                      <button
+                        onClick={() => handleDelete(row.id)}
+                        className="text-center font-[800] text-violet transition-all hover:scale-[1.1]"
+                      >
+                        <Image
+                          src="/icons/admin/delete.svg"
+                          width={25}
+                          height={25}
+                          alt="delete"
+                        />
+                      </button>
+                    )}
+                  </div>
+                </td>
+              </tr>
+            ))}
+        </tbody>
+      </table>
+    </section>
+  );
+};
+
+export default ApplicationsPage;

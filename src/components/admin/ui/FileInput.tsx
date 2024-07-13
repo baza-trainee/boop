@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { ChangeEvent, InputHTMLAttributes } from 'react';
 import {
   DeepMap,
@@ -11,7 +10,7 @@ import {
 type TProps<T extends FieldValues> = InputHTMLAttributes<HTMLInputElement> &
   UseControllerProps<T> & {
     title?: string;
-    isRequired: boolean;
+    isRequired?: boolean;
     isEditMode?: boolean;
   };
 
@@ -34,7 +33,7 @@ const FileInput = <T extends FieldValues>({
 
   const inputWrapperStyle = `relative w-full`;
 
-  const inputContainerStyle = `flex bg-bgViolet w-full gap-6 rounded-xl border p-2 cursor-pointer ${
+  const inputContainerStyle = `flex bg-bgViolet w-full h-[40px] gap-6 rounded-xl border p-2 cursor-pointer text-[16px] ${
     errorMessage ? 'border-red' : 'border-violet'
   }`;
 
@@ -48,28 +47,16 @@ const FileInput = <T extends FieldValues>({
       {!!title && (
         <label
           htmlFor="title"
-          className={`text-sm font-[800]  ${isEditMode ? 'text-mainViolet' : 'text-black'}`}
+          className={`text-sm font-[500]  ${isEditMode ? 'font-[700] text-mainViolet' : 'text-black'}`}
         >
           {title}
           {isRequired && <span className="text-red">*</span>}
         </label>
       )}
 
-      {isEditMode ? (
-        <Image
-          src="/icons/admin/upload.svg"
-          alt="edit icon"
-          width={30}
-          height={30}
-          className="absolute right-2 top-[50%] -translate-y-[15%]"
-        />
-      ) : null}
-
       <label htmlFor={title + 'file'}>
-        <div className={inputContainerStyle}>
-          <span
-            className={`w-[296px] truncate text-sm text-violet ${isEditMode ? 'text-left' : 'text-center'}`}
-          >
+        <div className={`${inputContainerStyle} uploadIcon`}>
+          <span className={`w-[250px] truncate text-left text-sm text-black`}>
             {fileName || placeholder}
           </span>
         </div>

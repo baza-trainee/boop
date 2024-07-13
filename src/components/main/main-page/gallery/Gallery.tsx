@@ -1,23 +1,48 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { useMediaQuery } from 'react-responsive';
+
+import { useGetAllPhotoQuery } from '@/store/api/photoApi';
+import { IPhoto } from '@/types/photo';
 
 import SectionTitle from '../../shared/SectionTitle';
 import SecondaryBtn from '../../shared/SecondaryBtn';
-
 import GalleryList from './galleryList/GalleryList';
-import { useGetAllPhotoQuery } from '@/store/api/photoApi';
-import { IPhoto } from '@/types/photo';
-import { useMediaQuery } from 'react-responsive';
-import { DecorativeElements } from './GalleryItems';
 
 const Gallery = () => {
   const t = useTranslations('Gallery');
   const { data, isFetching, isError } = useGetAllPhotoQuery();
-  const isLargeDesktop = useMediaQuery({ query: '(min-width: 1920px)' });
-
   const items = data?.data?.filter((el) => el.location === 'gallery');
-  const limit = isLargeDesktop ? 10 : 7;
+
+  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  const isTablet = useMediaQuery({
+    query: '(min-width: 768px) and (max-width: 1023px)',
+  });
+  const isDesktop = useMediaQuery({
+    query: '(min-width: 1024px) and (max-width: 1919px)',
+  });
+
+  let limit: number;
+  let decorativeIndex: number;
+
+  switch (true) {
+    case isMobile:
+      limit = 3;
+      decorativeIndex = 4;
+      break;
+    case isTablet:
+      limit = 8;
+      decorativeIndex = 4;
+      break;
+    case isDesktop:
+      limit = 11;
+      decorativeIndex = 6;
+      break;
+    default:
+      limit = 14;
+      decorativeIndex = 8;
+  }
 
   const [photos, setPhotos] = useState<IPhoto[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -38,10 +63,17 @@ const Gallery = () => {
     }
   };
 
+  const showLessPhotos = () => {
+    if (items) {
+      setPhotos(items.slice(0, limit));
+      setCurrentIndex(limit);
+    }
+  };
+
   const isLoadMoreDisabled = items && items.length === photos.length;
 
   return (
-    <section className="container bg-inherit  pb-[120px] ">
+    <section className="container mx-auto xs:mb-[70px]    md:mb-[100px]  xl:mb-[120px]">
       <SectionTitle title={t('title')} />
       {isFetching && <p className="container">Loading...</p>}
       {isError && <p className="container">Something went wrong!</p>}
@@ -49,16 +81,16 @@ const Gallery = () => {
       {!isFetching && items && (
         <GalleryList
           images={photos}
-          decorativeElements={DecorativeElements}
+          decorativeIndex={decorativeIndex}
           limit={limit}
         />
       )}
-      <div className="flex items-center justify-center pt-12">
-        <SecondaryBtn
-          text={t('btn')}
-          onClick={loadMorePhotos}
-          disabled={isLoadMoreDisabled}
-        />
+      <div className="flex items-center justify-center pt-8">
+        {isLoadMoreDisabled ? (
+          <SecondaryBtn text={t('btnCollapse')} onClick={showLessPhotos} />
+        ) : (
+          <SecondaryBtn text={t('btn')} onClick={loadMorePhotos} />
+        )}
       </div>
     </section>
   );

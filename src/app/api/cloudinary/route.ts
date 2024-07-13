@@ -17,7 +17,7 @@ const uploadToCloudinary = (
         invalidate: true,
         resource_type: 'auto',
         use_filename: true,
-        unique_filename: false,
+        unique_filename: true,
         folder: `boop/${folderName}`,
         filename_override: fileName,
       })
@@ -51,13 +51,11 @@ export async function POST(req: NextRequest) {
     );
 
     if (res.success && res.result) {
-      if (res.success && res.result) {
-        return NextResponse.json({
-          message: 'success',
-          fileUrl: res.result.secure_url,
-          fileId: res.result.public_id,
-        });
-      }
+      return NextResponse.json({
+        message: 'success',
+        fileUrl: res.result.secure_url,
+        fileId: res.result.public_id,
+      });
     } else return NextResponse.json({ message: 'failure' });
   } catch (error) {
     console.log(error);
