@@ -32,7 +32,10 @@ export async function POST(request: Request) {
   try {
     await prismaConnect();
 
+
+
     const { logoUrl, logoId, link, section }: PartnersFriendsFormData = await request.json();
+
 
     if (!logoUrl || !link || !section || !logoId) {
       return NextResponse.json(

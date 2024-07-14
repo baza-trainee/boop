@@ -63,6 +63,7 @@ model Contacts {
   addressUa String
   addressEn String
   addressIt String
+
 }
 
 model Applications {
@@ -93,15 +94,14 @@ model News {
   id         Int      @id @default(autoincrement())
   sourceLink String
   createdAt  DateTime @default(now())
-  imageId    String
-  imageUrl   String
-  location   String
   textEN     String
   textIT     String
   textUA     String
   titleEN    String
   titleIT    String
   titleUA    String
+  imageLink  String?
+  imageId    String?
 }
 
 model CounterItem {
@@ -120,4 +120,5 @@ model PartnersFriends {
   section   String
   createdAt DateTime @default(now())
 }
+
 

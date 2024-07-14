@@ -33,6 +33,7 @@ const config: Config = {
         lightVioletSecond: 'var(--lightVioletSecond)',
         mainViolet: 'var(--mainViolet)',
         textViolet: 'var(--textViolet)',
+        darkGrey: 'var(--darkGrey)',
         red: 'var(--red)',
         yellow: 'var(--yellow)',
         customOverlay: 'rgba(202, 196, 226, 0.5)',

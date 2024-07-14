@@ -12,6 +12,7 @@ type TProps<T extends FieldValues> = InputHTMLAttributes<HTMLInputElement> &
     title?: string;
     isRequired?: boolean;
     isEditMode?: boolean;
+    isPressPage?: boolean;
   };
 
 const FileInput = <T extends FieldValues>({
@@ -22,6 +23,7 @@ const FileInput = <T extends FieldValues>({
   rules,
   isRequired,
   isEditMode,
+  isPressPage,
   ...rest
 }: TProps<T>) => {
   const { field, formState } = useController<T>({ name, control, rules });
@@ -47,7 +49,10 @@ const FileInput = <T extends FieldValues>({
       {!!title && (
         <label
           htmlFor="title"
-          className={`text-sm font-[500]  ${isEditMode ? 'font-[700] text-mainViolet' : 'text-black'}`}
+
+          className={`text-sm font-[500]  ${isEditMode && !isPressPage ? 'text-mainViolet' : 'text-black'}`}
+
+
         >
           {title}
           {isRequired && <span className="text-red">*</span>}
