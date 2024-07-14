@@ -39,12 +39,11 @@ export const rootStore = configureStore({
       teamApi.middleware,
       counterApi.middleware,
       testimonialsApi.middleware,
-      pressApi.middleware
+      pressApi.middleware,
 
       partnersFriendsApi.middleware,
       testimonialsApi.middleware,
       applicationsApi.middleware
-
     ),
 });
 
