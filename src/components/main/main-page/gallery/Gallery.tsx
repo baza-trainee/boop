@@ -9,7 +9,6 @@ import { IPhoto } from '@/types/photo';
 import SectionTitle from '../../shared/SectionTitle';
 import SecondaryBtn from '../../shared/SecondaryBtn';
 import GalleryList from './galleryList/GalleryList';
-// import AnimatedSVG from './galleryAnimatedElement/GalleryAnimatedElement';
 
 const Gallery = () => {
   const t = useTranslations('Gallery');
@@ -92,7 +91,6 @@ const Gallery = () => {
         ) : (
           <SecondaryBtn text={t('btn')} onClick={loadMorePhotos} />
         )}
-        {/* <AnimatedSVG /> */}
       </div>
     </section>
   );
