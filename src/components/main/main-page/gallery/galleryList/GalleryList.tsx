@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 
 import { IPhoto } from '@/types/photo';
+import AnimatedYellowMan from '../galleryAnimatedElement/AnimatedYellowMan';
 
 interface GalleryCardProps {
   images: IPhoto[];
@@ -35,18 +36,12 @@ const GalleryList: React.FC<GalleryCardProps> = ({
 
     if (i % limit === decorativeIndex) {
       combinedElements.push(
-        <div className="min-w-[197px] flex-1">
+        <div className="relative min-w-[197px] flex-1">
           <div
             key={`yellow_man`}
-            className="relative flex h-[477px] min-w-[197px]  flex-1 items-end justify-center md:h-[287px] lg:h-[394px] xl:h-[415px] 3xl:h-[447px]"
+            className="absolute -bottom-6 left-6 flex h-[477px] min-w-[197px]  flex-1 cursor-pointer items-end justify-end md:h-[287px] lg:h-[394px] xl:h-[415px] 3xl:h-[447px]"
           >
-            <Image
-              src="/images/gallerySection/yellow_man.svg"
-              alt=""
-              width={218}
-              height={230}
-              className="absolute -bottom-6 h-auto md:h-auto md:w-[130px] ml:w-[164px] lg:w-[218px]"
-            />
+            <AnimatedYellowMan />
           </div>
         </div>
       );
