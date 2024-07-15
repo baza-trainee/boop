@@ -9,11 +9,14 @@ import { useGetAllPhotoQuery } from '@/store/api/photoApi';
 import CarouselButton from '../../shared/carousel/carousel-button/CarouselButton';
 import { Carousel } from '../../shared/carousel/Carousel';
 import Image from 'next/image';
+import Loader from '@/components/shared/loader/Loader';
 
 const Photos = () => {
   const t = useTranslations('School');
   const { data, isFetching, isError } = useGetAllPhotoQuery();
   const items = data?.data?.filter((el) => el.location === 'school');
+
+  if (isFetching) return <Loader />;
 
   return (
     <section className="container mx-auto max-w-screen-3xl pb-[90px] md:pb-[100px] xl:pb-[120px] ">
@@ -44,7 +47,7 @@ const Photos = () => {
             },
           }}
           renderItem={(item, index) => (
-            <div className="srelative h-[450px] flex-1   sm:w-full md:h-[254px] md:w-[197px] ml:h-[365px] ml:w-[283px] lg:h-[348px] lg:w-[270px] xl:h-[380px] xl:w-[283px] 3xl:h-[412px] 3xl:w-[306px] 4xl:h-[541px] 4xl:w-[402px]">
+            <div className="srelative 4xl:h-[541px] 4xl:w-[402px]   h-[450px] flex-1 sm:w-full md:h-[254px] md:w-[197px] ml:h-[365px] ml:w-[283px] lg:h-[348px] lg:w-[270px] xl:h-[380px] xl:w-[283px] 3xl:h-[412px] 3xl:w-[306px]">
               <Image
                 src={item.imageUrl}
                 alt={`photoSchool-${index + 1}`}

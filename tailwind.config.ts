@@ -52,6 +52,15 @@ const config: Config = {
       maxWidth: {
         'screen-3xl': '1920px',
       },
+      keyframes: {
+        'move-to-center': {
+          '0%': { opacity: '0', transform: 'translate(4em, 0) rotate(0)' },
+          '100%': { opacity: '1', transform: 'translate(0, 0) rotate(360deg)' },
+        },
+      },
+      animation: {
+        'move-to-center': 'move-to-center 3s ease-in-out infinite',
+      },
     },
   },
   plugins: [require('tailwind-scrollbar')],
