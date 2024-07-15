@@ -9,7 +9,6 @@ import { IPhoto } from '@/types/photo';
 import SectionTitle from '../../shared/SectionTitle';
 import SecondaryBtn from '../../shared/SecondaryBtn';
 import GalleryList from './galleryList/GalleryList';
-import Loader from '@/components/shared/loader/Loader';
 
 const Gallery = () => {
   const t = useTranslations('Gallery');
@@ -73,13 +72,11 @@ const Gallery = () => {
 
   const isLoadMoreDisabled = items && items.length === photos.length;
 
-  if (isFetching) return <Loader />;
-
   return (
     <section className="container mx-auto xs:mb-[70px]    md:mb-[100px]  xl:mb-[120px]">
       <SectionTitle title={t('title')} />
       {isError && <p className="container">Something went wrong!</p>}
-
+      {isFetching && <p>Loading...</p>}
       {!isFetching && items && (
         <GalleryList
           images={photos}
