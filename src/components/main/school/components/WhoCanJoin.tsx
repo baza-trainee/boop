@@ -1,25 +1,20 @@
-'use client';
 import React from 'react';
-import SectionTitle from '../../shared/SectionTitle';
 import { useTranslations } from 'next-intl';
 import GetTextBlockJoin from '../assets/GetTextBlockJoin';
-import { useMediaQuery } from 'react-responsive';
 
 const WhoCanJoin = () => {
   const t = useTranslations('School');
   const textBlock = GetTextBlockJoin();
 
-  const isMobile = useMediaQuery({
-    query: '(min-width: 320px) and (max-width: 767.98px)',
-  });
-
   return (
     <>
-      <SectionTitle title={t('join_title')} />
+      <h2 className="title-gradient after:contetnt[''] mb-6 flex items-center justify-start gap-6 py-[2.5px] font-groppled text-2xl font-bold leading-[1.6] after:hidden after:h-[4px] after:w-[80px] after:bg-no-repeat after:py-1 md:py-[6px] md:text-[28px] ml:after:block ml:after:-translate-y-3/4 ml:after:bg-[url('/icons/school/title_line_desk.svg')]">
+        {t('join_title')}
+      </h2>
       <div className="relative flex items-end  justify-between">
         <ul
           role="list"
-          className="leading-norma mt-12 pl-9 font-raleway text-base font-normal md:max-w-[331px] md:pl-8 md:text-lg ml:max-w-[481px] lg:max-w-[462px] lg:text-xl 3xl:max-w-[487px] 4xl:max-w-[602px] 4xl:pl-12"
+          className="leading-norma pl-9 font-raleway text-base font-normal md:max-w-[331px] md:pl-8 md:text-lg ml:max-w-[481px] lg:max-w-[462px] lg:text-xl 3xl:max-w-[487px] 4xl:max-w-[602px] 4xl:pl-12"
         >
           {textBlock.map((block, index) => (
             <li
@@ -33,15 +28,10 @@ const WhoCanJoin = () => {
             </li>
           ))}
         </ul>
-
-        {isMobile ? (
-          ''
-        ) : (
-          <div className="relative h-[322px] w-[250px] ml:h-[417px] ml:w-[328px] lg:h-[477px] lg:w-[396px] xl:h-[505px] xl:w-[484px] 3xl:h-[516px] 3xl:w-[526px] 4xl:h-[565px] 4xl:w-[544px]">
-            <div className="absolute bottom-0 h-[154px] w-[250px] bg-[#50439F] ml:h-[200px] ml:w-[328px] lg:h-[224px] lg:w-[396px] xl:h-[237px] xl:w-[484px] 3xl:h-[242px] 3xl:w-[525px] 4xl:h-[265px] 4xl:w-[544px]"></div>
-            <div className="absolute inset-0 left-1/2 h-[322px] w-[220px] -translate-x-1/2 bg-[url('/icons/school/man-smiling-with-fake-red-nose@2x.png')] bg-[length:220px_322px] ml:h-[417px] ml:w-[287px] ml:bg-[length:287px_417px]  lg:h-[477px] lg:w-[355px] lg:bg-[length:355px_477px] xl:h-[505px] xl:w-[357px] xl:bg-[length:357px_505px] 3xl:h-[516px]  3xl:w-[387px] 3xl:bg-[length:387px_516px] 4xl:h-[566px] 4xl:w-[401px]  4xl:bg-[length:401px_566px]"></div>
-          </div>
-        )}
+        <div className="relative hidden h-[322px] w-[250px] md:block ml:h-[417px] ml:w-[328px] lg:h-[477px] lg:w-[396px] xl:h-[505px] xl:w-[484px] 3xl:h-[516px] 3xl:w-[526px] 4xl:h-[565px] 4xl:w-[544px]">
+          <div className="absolute bottom-0 h-[154px] w-[250px] bg-[#50439F] ml:h-[200px] ml:w-[328px] lg:h-[224px] lg:w-[396px] xl:h-[237px] xl:w-[484px] 3xl:h-[242px] 3xl:w-[525px] 4xl:h-[265px] 4xl:w-[544px]"></div>
+          <div className="absolute inset-0 left-1/2 h-[322px] w-[220px] -translate-x-1/2 bg-[url('/icons/school/man-smiling-with-fake-red-nose@2x.png')] bg-[length:220px_322px] ml:h-[417px] ml:w-[287px] ml:bg-[length:287px_417px]  lg:h-[477px] lg:w-[355px] lg:bg-[length:355px_477px] xl:h-[505px] xl:w-[357px] xl:bg-[length:357px_505px] 3xl:h-[516px]  3xl:w-[387px] 3xl:bg-[length:387px_516px] 4xl:h-[566px] 4xl:w-[401px]  4xl:bg-[length:401px_566px]"></div>
+        </div>
       </div>
     </>
   );
