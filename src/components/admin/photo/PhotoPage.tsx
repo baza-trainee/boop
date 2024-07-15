@@ -60,6 +60,7 @@ const PhotoPage = () => {
   return (
     <section className="relative h-[864px] px-[24px] py-[100px]">
       <PageTitle title="Фото" />
+      <Loader />
       <div className="flex flex-wrap gap-[24px]">
         <div className="flex h-[171px] w-[223px] flex-col items-center justify-center gap-[10px] bg-bgViolet font-[800] text-violet">
           <span className="text-[20px] font-[500]">Додати фото</span>

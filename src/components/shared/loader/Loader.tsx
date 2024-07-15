@@ -12,7 +12,7 @@ const LoaderLayout = () => {
         alt="loader"
         width={120}
         height={120}
-        className="loader h-[118px] w-[121px]"
+        className="loader min-h-[118px] min-w-[121px]"
       />
     </div>
   );
