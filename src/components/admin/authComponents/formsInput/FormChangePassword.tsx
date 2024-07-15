@@ -145,7 +145,7 @@ function FormChangePassword() {
             <div className="relative">
               <input
                 className={clsx(
-                  "peer block w-full rounded-xl border-[2px] border-[#50439f] py-[8px] pl-[9px] font-['Raleway',_sans-serif] text-base not-italic  placeholder-[#949398] outline-none placeholder-shown:border-[#949398]",
+                  "peer block w-full rounded-xl border-[2px] border-[#50439f] py-[8px] pl-[9px] pr-9 font-['Raleway',_sans-serif] text-base not-italic  placeholder-[#949398] outline-none placeholder-shown:border-[#949398]",
                   !errors.oldPassword && 'text-[#177e3a]',
                   errors.oldPassword && 'text-[#ff4004]'
                 )}
@@ -174,7 +174,7 @@ function FormChangePassword() {
               <div className="relative">
                 <input
                   className={clsx(
-                    "peer block w-full rounded-xl border-[2px] border-[#50439f] py-[8px] pl-[9px] font-['Raleway',_sans-serif] text-base not-italic  placeholder-[#949398] outline-none placeholder-shown:border-[#949398]",
+                    "peer block w-full rounded-xl border-[2px] border-[#50439f] py-[8px] pl-[9px] pr-9 font-['Raleway',_sans-serif] text-base not-italic  placeholder-[#949398] outline-none placeholder-shown:border-[#949398]",
                     !errors.newPassword && 'text-[#177e3a]',
                     errors.newPassword && 'text-[#ff4004]'
                   )}
@@ -208,7 +208,7 @@ function FormChangePassword() {
               <div className="relative">
                 <input
                   className={clsx(
-                    "peer block w-full rounded-xl border-[2px] border-[#50439f] py-[8px] pl-[9px] font-['Raleway',_sans-serif] text-base not-italic  placeholder-[#949398] outline-none placeholder-shown:border-[#949398]",
+                    "peer block w-full rounded-xl border-[2px] border-[#50439f] py-[8px] pl-[9px] pr-9 font-['Raleway',_sans-serif] text-base not-italic  placeholder-[#949398] outline-none placeholder-shown:border-[#949398]",
                     !errors.confirmNewPassword && 'text-[#177e3a]',
                     errors.confirmNewPassword && 'text-[#ff4004]'
                   )}

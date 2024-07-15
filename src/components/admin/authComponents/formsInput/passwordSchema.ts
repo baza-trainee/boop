@@ -22,7 +22,7 @@ export const passwordSchema = z
     confirmNewPassword: z.string(),
   })
   .refine((data) => data.newPassword === data.confirmNewPassword, {
-    message: 'Паролі не однакові, перевірте ще раз',
+    message: 'Паролі не співпадають, перевірте ще раз',
     path: ['confirmNewPassword'],
   });
 
@@ -33,6 +33,6 @@ export const passwordRegisterSchema = z
     confirmNewPassword: z.string(),
   })
   .refine((data) => data.newPassword === data.confirmNewPassword, {
-    message: 'Паролі не однакові, перевірте ще раз',
+    message: 'Паролі не співпадають, перевірте ще раз',
     path: ['confirmNewPassword'],
   });

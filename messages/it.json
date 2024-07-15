@@ -32,6 +32,11 @@
     "title": "Stampa su di noi",
     "link_text": "Leggi di più"
   },
+  "Gallery": {
+    "title": "Galleria",
+    "btn": "Carica altro",
+    "btnCollapse": "Riduci"
+  },
   "Error": {
     "title": "Ops, sembra che ti sia perso!",
     "text": "Purtroppo, la pagina che stai cercando non esiste.",
@@ -67,8 +72,7 @@
       "paragraph_4": "Una persona pronta ad imparare, svilupparsi e cercare se stessa, il proprio personaggio comico. Una persona pronta a creare una celebrazione della vita in mezzo al disastro."
     },
     "training": {
-      "title": "Pensate che ci siano lezioni più divertenti di quelle della Scuola di Clownterapia Ospedaliera?",
-      "text": "Noi pensiamo di no. Perché qui gli studenti giocano, si vestono con costumi divertenti e ballano. È affascinante osservare come funziona questa magia clownesca, quando un gruppo di adulti, estranei tra loro, si trasforma in bambini e si permette di essere come si sente - leggeri, autentici, sciocchi, buffi, qualunque cosa!",
+      "text": "Pensate che ci siano lezioni più divertenti di quelle della Scuola di Clownterapia Ospedaliera? \nNoi pensiamo di no. Perché qui gli studenti giocano, si vestono con costumi divertenti e ballano. È affascinante osservare come funziona questa magia clownesca, quando un gruppo di adulti, estranei tra loro, si trasforma in bambini e si permette di essere come si sente - leggeri, autentici, sciocchi, buffi, qualunque cosa!",
       "paragraph_1": "I volontari seguono un corso di formazione di due giorni sui fondamenti della clownterapia ospedaliera - durante il corso, gli studenti imparano a esprimersi, liberare il bambino interiore, non avere paura di essere buffi e giocare tra loro.",
       "paragraph_2": "Ognuno può risvegliare il clown dentro di sé - un personaggio unico, interessante, buffo che non solo esplora il mondo intorno a sé ma è anche pronto a tuffarsi nell'ignoto. Questa è la base con cui possono lavorare e visitare i reparti per vedere i bambini.",
       "paragraph_3": "Dopo il corso di formazione, i volontari vanno a fare pratica in ospedale, accompagnati da clown ospedalieri esperti.",

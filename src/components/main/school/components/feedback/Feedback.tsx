@@ -2,14 +2,14 @@
 
 import { Carousel } from '@/components/main/shared/carousel/Carousel';
 import CarouselButton from '@/components/main/shared/carousel/carousel-button/CarouselButton';
-import React, { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import FeedbackItem from './feedback-item/FeedbackItem';
 import SectionTitle from '@/components/main/shared/SectionTitle';
-import Image from 'next/image';
 import { useGetAllTestimonialsQuery } from '@/store/api/testimonialsApi';
 import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { ITestimonial } from '@/types/testimonials';
+import YellowBuddy from './yellow-buddy/YellowBuddy';
 
 const Feedback = () => {
   const { locale } = useParams();
@@ -19,7 +19,7 @@ const Feedback = () => {
     null
   );
 
-  const chunkArray = (data: ITestimonial[], chunkSize: number) => {
+  const chunkArray = useCallback((data: ITestimonial[], chunkSize: number) => {
     return data.reduce<ITestimonial[][]>((result, item, index) => {
       const chunkIndex = Math.floor(index / chunkSize);
       if (!result[chunkIndex]) {
@@ -28,17 +28,32 @@ const Feedback = () => {
       result[chunkIndex].push(item);
       return result;
     }, []);
-  };
+  }, []);
+
+  const handleResize = useCallback(() => {
+    if (data?.data && window.innerWidth > 430) {
+      setFeedbackData(chunkArray(data.data, 3));
+    } else if (data?.data && window.innerWidth <= 430) {
+      setFeedbackData(chunkArray(data.data, 1));
+    }
+  }, [data]);
 
   useEffect(() => {
-    if (data?.data) setFeedbackData(chunkArray(data.data, 3));
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, [data]);
 
   return (
     <section className="mb-[120px]">
       <div className="container mx-auto max-w-screen-3xl">
         <div className="mb-8 flex items-center justify-between gap-5">
-          <SectionTitle title={t('feedback_title')} />
+          <SectionTitle
+            className="max-md:[&>svg]:hidden"
+            title={t('feedback_title')}
+          />
           <div className="flex items-center gap-2">
             <CarouselButton className="feedback-prev-el rotate-180" />
             <CarouselButton className="feedback-next-el" />
@@ -56,16 +71,8 @@ const Feedback = () => {
             renderItem={(items) => {
               return (
                 <div className="relative">
-                  <div className="absolute right-[97px] top-[37px] h-[192px] w-[211px]">
-                    <Image
-                      src={'/icons/school/yellow-buddy-feedback.svg'}
-                      alt={'yellow buddy'}
-                      fill
-                      sizes="100%"
-                      className="-z-[1]"
-                    />
-                  </div>
-                  <div className="flex flex-col">
+                  <YellowBuddy />
+                  <div className="flex flex-col max-md:gap-4">
                     {items.map((item, idx) => (
                       <FeedbackItem
                         key={item.id}

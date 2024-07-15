@@ -15,7 +15,7 @@ const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
         <div className="relative">
           {variant === '1' && (
             <>
-              <div className="h-[157px] w-[162px] md:h-[180px] md:w-[187px] ml:h-[157px] ml:w-[162px] lg:h-[180px] lg:w-[187px]">
+              <div className="relative h-[157px] w-[162px] md:h-[180px] md:w-[187px] ml:h-[157px] ml:w-[162px] lg:h-[180px] lg:w-[187px]">
                 <Image
                   src="/icons/counter/yellow-circle.svg"
                   fill
@@ -43,7 +43,7 @@ const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
           )}
           {variant === '2' && (
             <>
-              <div className="xs:h-[161px] xs:w-[162px] md:h-[179px] md:w-[180px] ml:h-[161px] ml:w-[162px] lg:h-[179px] lg:w-[180px]">
+              <div className="relative xs:h-[161px] xs:w-[162px] md:h-[179px] md:w-[180px] ml:h-[161px] ml:w-[162px] lg:h-[179px] lg:w-[180px]">
                 <Image
                   src="/icons/counter/red-circle.svg"
                   fill
@@ -71,7 +71,7 @@ const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
           )}
           {variant === '3' && (
             <>
-              <div className="h-[156px] w-[162px] md:h-[173px] md:w-[180px] ml:h-[156px] ml:w-[162px] lg:h-[173px] lg:w-[180px]">
+              <div className="relative h-[156px] w-[162px] md:h-[173px] md:w-[180px] ml:h-[156px] ml:w-[162px] lg:h-[173px] lg:w-[180px]">
                 <Image
                   src="/icons/counter/purple-circle.svg"
                   fill
@@ -99,7 +99,7 @@ const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
           )}
           {variant === '4' && (
             <>
-              <div className="xs:h-[161px] xs:w-[162px] md:h-[179px] md:w-[180px] ml:h-[161px] ml:w-[162px] lg:h-[179px] lg:w-[180px]">
+              <div className="relative xs:h-[161px] xs:w-[162px] md:h-[179px] md:w-[180px] ml:h-[161px] ml:w-[162px] lg:h-[179px] lg:w-[180px]">
                 <Image
                   src="/icons/counter/red-circle.svg"
                   fill
@@ -127,7 +127,7 @@ const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
           )}
           {variant === '5' && (
             <>
-              <div className="h-[157px] w-[162px] md:h-[180px] md:w-[187px] ml:h-[157px] ml:w-[162px] lg:h-[180px] lg:w-[187px]">
+              <div className="relative h-[157px] w-[162px] md:h-[180px] md:w-[187px] ml:h-[157px] ml:w-[162px] lg:h-[180px] lg:w-[187px]">
                 <Image
                   src="/icons/counter/yellow-circle.svg"
                   fill
@@ -159,7 +159,7 @@ const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
             <CountUp
               start={0}
               end={number}
-              duration={3}
+              duration={2}
               enableScrollSpy
               scrollSpyOnce={true}
             />
