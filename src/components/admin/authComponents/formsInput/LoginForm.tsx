@@ -118,7 +118,6 @@ function LoginForm() {
               <div>
                 <div className="relative">
                   <input
-                    // style={{ all: 'unset' }}
                     className={clsx(
                       'peer block w-full rounded-xl border-[2px] border-[#50439f] py-[8px] pl-[9px] pr-9 text-base font-medium  outline-none placeholder:text-[#949398] placeholder-shown:border-[#949398]',
                       !errors.password?.message

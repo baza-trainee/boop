@@ -32,6 +32,7 @@ const FormModal = ({
             height={32}
           />
         </button>
+
         {children}
       </div>
     </div>
