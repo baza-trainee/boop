@@ -9,15 +9,10 @@ const Introduction = () => {
 
   return (
     <div className="relative mb-[72.5px] lg:mb-[100px] 3xl:mb-[120px]">
-      <h2 className="title-gradient mb-[26.5px] font-groppled text-2xl font-bold leading-[1.6] md:mb-8 md:text-[28px] ml:text-[32px]">
+      <h2 className="title-gradient  mb-[26.5px] font-groppled text-2xl font-bold leading-[1.6]  md:mb-8 md:text-[28px]  ml:text-[32px]">
         {t('main_title')}
       </h2>
-      <svg
-        className={`absolute h-[1rem] w-[5rem] xs:hidden md:block lg:top-[11%] 3xl:top-[10%]`}
-      >
-        <use href="/icons/sprite.svg#title-line"></use>
-      </svg>
-      <h3 className="text-gradient ml:0 mb-4 font-raleway text-xl font-bold leading-[1.32] md:ml-[75px]  ml:ml-[77px] lg:ml-[98px] xl:ml-[103px] 3xl:ml-[110px] 4xl:ml-[142px]">
+      <h3 className="before:contetnt[''] text-gradient mb-4 flex items-center justify-start gap-6 font-raleway text-xl font-bold leading-[1.32] before:hidden before:h-[5px] before:w-[53px] before:bg-no-repeat before:py-1  md:before:block  md:before:bg-[url('/icons/school/title_line_tablet.svg')] lg:before:h-[4px]  lg:before:w-[80px] lg:before:bg-[url('/icons/school/title_line_desk.svg')]">
         {t('main_text_primary')}
       </h3>
 

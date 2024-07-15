@@ -25,6 +25,7 @@
     "bcrypt": "^5.1.1",
     "cloudinary": "^2.2.0",
     "clsx": "^2.1.1",
+    "framer-motion": "^11.3.2",
     "next": "14.2.3",
     "next-auth": "^4.24.7",
     "next-intl": "^3.14.1",
