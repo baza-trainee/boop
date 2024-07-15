@@ -47,7 +47,8 @@ const config: Config = {
         lg: '1280px',
         xl: '1366px',
         '2xl': '1440px',
-        '3xl': '1920px',
+        '3xl': '1536px',
+        '4xl': '1920px',
       },
       maxWidth: {
         'screen-3xl': '1920px',

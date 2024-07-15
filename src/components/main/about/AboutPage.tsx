@@ -4,6 +4,7 @@ import React from 'react';
 import TeamStructure from './components/teamStructure/TeamStructure';
 import MainRules from './components/mainRules/MainRules';
 import Team from '../main-page/team/Team';
+import Blog from './components/blog/Blog';
 
 const AboutPage = () => {
   return (
@@ -11,6 +12,7 @@ const AboutPage = () => {
       <MainRules />
       <TeamStructure />
       <Team />
+      <Blog />
     </div>
   );
 };
