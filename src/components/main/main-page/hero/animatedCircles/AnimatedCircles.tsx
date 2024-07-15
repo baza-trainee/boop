@@ -8,7 +8,7 @@ const div1Variants = {
     y: [0, 390, -150, 0],
     transition: {
       duration: 8,
-      ease: 'easeOut',
+      ease: 'backOut',
       times: [0, 0.33, 0.67, 1],
     },
   },
@@ -21,7 +21,7 @@ const div2Variants = {
     y: [0, -551, -390, 0],
     transition: {
       duration: 8,
-      ease: 'easeOut',
+      ease: 'backOut',
       times: [0, 0.33, 0.67, 1],
     },
   },
@@ -34,7 +34,7 @@ const div3Variants = {
     y: [0, 140, 510, 0],
     transition: {
       duration: 8,
-      ease: 'easeOut',
+      ease: 'backOut',
       times: [0, 0.33, 0.67, 1],
     },
   },

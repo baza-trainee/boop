@@ -39,7 +39,7 @@ const GalleryList: React.FC<GalleryCardProps> = ({
         <div className="relative min-w-[197px] flex-1">
           <div
             key={`yellow_man`}
-            className="absolute -bottom-6 left-6 flex h-[477px] min-w-[197px]  flex-1 items-end justify-end md:h-[287px] lg:h-[394px] xl:h-[415px] 3xl:h-[447px]"
+            className="absolute -bottom-6 left-6 flex h-[477px] min-w-[197px]  flex-1 cursor-pointer items-end justify-end md:h-[287px] lg:h-[394px] xl:h-[415px] 3xl:h-[447px]"
           >
             <AnimatedYellowMan />
           </div>
