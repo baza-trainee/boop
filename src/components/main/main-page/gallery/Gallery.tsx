@@ -71,6 +71,7 @@ const Gallery = () => {
   };
 
   const isLoadMoreDisabled = items && items.length === photos.length;
+  const isBtnShowed = items && items.length > limit;
 
   return (
     <section className="container mx-auto xs:mb-[70px]    md:mb-[100px]  xl:mb-[120px]">
@@ -85,11 +86,12 @@ const Gallery = () => {
         />
       )}
       <div className="flex items-center justify-center pt-8">
-        {isLoadMoreDisabled ? (
-          <SecondaryBtn text={t('btnCollapse')} onClick={showLessPhotos} />
-        ) : (
-          <SecondaryBtn text={t('btn')} onClick={loadMorePhotos} />
-        )}
+        {isBtnShowed &&
+          (isLoadMoreDisabled ? (
+            <SecondaryBtn text={t('btnCollapse')} onClick={showLessPhotos} />
+          ) : (
+            <SecondaryBtn text={t('btn')} onClick={loadMorePhotos} />
+          ))}
       </div>
     </section>
   );

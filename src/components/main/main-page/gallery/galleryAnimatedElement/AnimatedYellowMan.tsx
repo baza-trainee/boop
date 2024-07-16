@@ -1,10 +1,14 @@
-const AnimatedYellowMan = () => (
+interface AnimatedYellowManProps {
+  width: string;
+}
+
+const AnimatedYellowMan: React.FC<AnimatedYellowManProps> = ({ width }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
     preserveAspectRatio="xMidYMid meet"
-    width="250"
-    height="227"
+    width={width}
+    height={String(Number(width) / 1.101)}
     viewBox="0 0 250 227"
     id="yellowMan"
   >
