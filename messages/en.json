@@ -133,7 +133,11 @@
 			"volunteers_text": "Volunteer recruitment and development of the volunteer community around the hospital."
 		},
 		"blog": {
-			"title": "Blog"
+			"title": "Blog",
+			"read_more_btn": {
+				"read": "Read on",
+				"close": "Roll up"
+			}
 		}
 	},
 	"School": {

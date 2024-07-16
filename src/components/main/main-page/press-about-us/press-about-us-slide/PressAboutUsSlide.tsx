@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';
 import { useTranslations } from 'next-intl';
+import { useFormatDate } from '@/hooks/useFormatDate';
 
 interface PressAboutUsSlideProps {
   imgSrc: string;
@@ -19,7 +20,11 @@ const PressAboutUsSlide = ({
   date,
 }: PressAboutUsSlideProps) => {
   const t = useTranslations('Press_about_us');
-  console.log(date);
+  const formattedDate = useFormatDate(date, {
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+  });
 
   const sentences = text
     .split('.')
@@ -53,7 +58,7 @@ const PressAboutUsSlide = ({
             </div>
             <div className="flex min-w-[200px] flex-shrink-0 basis-[35%] flex-col items-end max-custom:hidden md:hidden">
               <span className="mb-4 text-right font-medium leading-[1.32] text-lightViolet">
-                {/* {date} */}
+                {formattedDate}
               </span>
               <div className="relative mb-6 h-[280px] w-full">
                 <Image
@@ -73,7 +78,7 @@ const PressAboutUsSlide = ({
             </div>
           </div>
           <span className="float-right font-medium leading-[1.32] text-lightViolet max-md:hidden max-custom:block">
-            {/* {date} */}
+            {formattedDate}
           </span>
         </div>
         <div className="relative w-[537px] flex-shrink-0 max-3xl:max-h-[491px] max-3xl:w-[420px] max-ml:max-h-[390px] max-ml:w-[280px] max-md:hidden">

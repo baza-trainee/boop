@@ -54,7 +54,11 @@
 			"volunteers_text": "Reclutamento di volontari e sviluppo \ndella community di volontariato intorno all'ospedale."
 		},
 		"blog": {
-			"title": "Blog"
+			"title": "Blog",
+			"read_more_btn": {
+				"read": "Continuare a leggere",
+				"close": "Arrotolare"
+			}
 		}
 	},
 	"Partners": {
