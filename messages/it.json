@@ -1,114 +1,122 @@
 {
-	"hello": "ciao!",
-	"Header": {
-		"home": "Home",
-		"about": "Chi Siamo",
-		"school": "Scuola",
-		"contacts": "Contatti",
-		"button": "Sostienici il Progetto"
-	},
-	"Hero": {
-		"title": "Nonostante tutto, l'infanzia deve continuare"
-	},
-	"Counter_section": {
-		"title": "I risultati in numeri",
-		"counter_1": {
-			"text": "anni di esperienza"
-		},
-		"counter_2": {
-			"text": "clown di corsia"
-		},
-		"counter_3": {
-			"text": "uscite al mese"
-		},
-		"counter_4": {
-			"text": "ospedali in cui operiamo"
-		},
-		"counter_5": {
-			"text": "bambini al mese"
-		}
-	},
-	"Press_about_us": {
-		"title": "Stampa su di noi",
-		"link_text": "Leggi di più"
-	},
-	"Gallery": {
-		"title": "Galleria",
-		"btn": "Carica altro",
-		"btnCollapse": "Riduci"
-	},
-	"Error": {
-		"title": "Ops, sembra che ti sia perso!",
-		"text": "Purtroppo, la pagina che stai cercando non esiste.",
-		"btn": "HomePage"
-	},
-	"Contacts": {
-		"title": "I nostri contatti"
-	},
-	"About": {
-		"team_structure": {
-			"title": "Squadra",
-			"management_title": "Capo squadra",
-			"management_text": "Comunicazione con la direzione e il personale medico dell'ospedale. Pianificazione e preparazione di event.",
-			"volunteers_title": "Volontari",
-			"volunteers_text": "Reclutamento di volontari e sviluppo \ndella community di volontariato intorno all'ospedale."
-		},
-		"blog": {
-			"title": "Blog"
-		}
-	},
-	"Partners": {
-		"title_1": "I nostri amici",
-		"title_2": "e partner"
-	},
-	"School": {
-		"main_title": "Scuola di Clownerie Ospedaliera",
-		"join_title": "Chi Può Diventare un Clown Ospedaliero?",
-		"training_title": "Come Funziona la Formazione",
-		"main_text_primary": "Scuola di Clownerie Ospedaliera -",
-		"main_text_secondary": "un progetto congiunto di",
-		"and": "e",
-		"join": {
-			"paragraph_1": "Una persona che comprende cos'è l'empatia. Pronta ad accettare e riconoscere le emozioni di coloro che necessitano di supporto. E fornire questo supporto in base ai bisogni emotivi di bambini e genitori.",
-			"paragraph_2": "Qualcuno che non ha paura di essere divertente. Ridere sinceramente di se stesso e di questa vita capricciosa. Ridere e amarla sopra ogni cosa.",
-			"paragraph_3": "Una persona con carisma, pronta a lavorare sullo sviluppo di essa.",
-			"paragraph_4": "Una persona pronta ad imparare, svilupparsi e cercare se stessa, il proprio personaggio comico. Una persona pronta a creare una celebrazione della vita in mezzo al disastro."
-		},
-		"training": {
-			"text": "Pensate che ci siano lezioni più divertenti di quelle della Scuola di Clownterapia Ospedaliera? \nNoi pensiamo di no. Perché qui gli studenti giocano, si vestono con costumi divertenti e ballano. È affascinante osservare come funziona questa magia clownesca, quando un gruppo di adulti, estranei tra loro, si trasforma in bambini e si permette di essere come si sente - leggeri, autentici, sciocchi, buffi, qualunque cosa!",
-			"paragraph_1": "I volontari seguono un corso di formazione di due giorni sui fondamenti della clownterapia ospedaliera - durante il corso, gli studenti imparano a esprimersi, liberare il bambino interiore, non avere paura di essere buffi e giocare tra loro.",
-			"paragraph_2": "Ognuno può risvegliare il clown dentro di sé - un personaggio unico, interessante, buffo che non solo esplora il mondo intorno a sé ma è anche pronto a tuffarsi nell'ignoto. Questa è la base con cui possono lavorare e visitare i reparti per vedere i bambini.",
-			"paragraph_3": "Dopo il corso di formazione, i volontari vanno a fare pratica in ospedale, accompagnati da clown ospedalieri esperti.",
-			"paragraph_4": "Nei tre mesi successivi, si incontrano per lezioni una volta alla settimana e approfondiscono i meccanismi della clownterapia ospedaliera.",
-			"paragraph_5": "Parallelamente, si svolgono visite regolari ai reparti ospedalieri sotto la costante supervisione dei formatori e il supporto psicologico."
-		},
-		"feedback_title": "Recensioni degli studenti della Scuola di Clown"
-	},
-	"Form": {
-		"joinUs": "Unisciti a noi",
-		"leaveForm": "Lascia il tuo modulo e ti contatteremo entro tre giorni.",
-		"name": "Il tuo nome",
-		"phone": "Numero di telefono",
-		"phonePlaceholder": "Inserisci il numero di telefono nel formato +380",
-		"email": "E-mail",
-		"emailPlaceholder": "example@gmail.com",
-		"social": "Social network",
-		"socialPlaceholder": "Link a Facebook, Telegram o Instagram",
-		"submit": "Invia",
-		"required": "Questo campo è obbligatorio.",
-		"invalidPhone": "Inserisci un numero di telefono valido.",
-		"invalidEmail": "Inserisci un indirizzo email valido.",
-		"processing": "Elaborazione"
-	},
-	"ClownSchoolForm": {
-		"formSubmitted": "Il tuo modulo è stato inviato.",
-		"contactWithinThreeDays": "Ti contatteremo entro tre giorni.",
-		"somethingWentWrong": "Qualcosa è andato storto...",
-		"pleaseTryAgain": "Per favore riprova."
-	},
-	"ClownSchoolFormDescription": {
-		"formTitle": "Compila il modulo",
-		"formSubtitle": "La formazione per volontari è gratuita.",
-		"formDescription": "Attendiamo con ansia nuove persone nel nostro team, in modo che ci siano più sorrisi e gioia per i bambini."
-	}
+  "hello": "ciao!",
+  "Header": {
+    "home": "Home",
+    "about": "Chi Siamo",
+    "school": "Scuola",
+    "contacts": "Contatti",
+    "button": "Sostienici il Progetto"
+  },
+  "Hero": {
+    "title": "Nonostante tutto, l'infanzia deve continuare"
+  },
+  "Counter_section": {
+    "title": "I risultati in numeri",
+    "counter_1": {
+      "text": "anni di esperienza"
+    },
+    "counter_2": {
+      "text": "clown di corsia"
+    },
+    "counter_3": {
+      "text": "uscite al mese"
+    },
+    "counter_4": {
+      "text": "ospedali in cui operiamo"
+    },
+    "counter_5": {
+      "text": "bambini al mese"
+    }
+  },
+  "Press_about_us": {
+    "title": "Stampa su di noi",
+    "link_text": "Leggi di più"
+  },
+  "Gallery": {
+    "title": "Galleria",
+    "btn": "Carica altro",
+    "btnCollapse": "Riduci"
+  },
+  "Error": {
+    "title": "Ops, sembra che ti sia perso!",
+    "text": "Purtroppo, la pagina che stai cercando non esiste.",
+    "btn": "HomePage"
+  },
+  "Contacts": {
+    "title": "I nostri contatti"
+  },
+  "About": {
+    "team_structure": {
+      "title": "Squadra",
+      "management_title": "Capo squadra",
+      "management_text": "Comunicazione con la direzione e il personale medico dell'ospedale. Pianificazione e preparazione di event.",
+      "volunteers_title": "Volontari",
+      "volunteers_text": "Reclutamento di volontari e sviluppo \ndella community di volontariato intorno all'ospedale."
+    },
+    "blog": {
+      "title": "Blog"
+    },
+    "hospital_clowning": {
+      "title": "Cos'è la Clownerie Ospedaliera",
+      "subtitle": "La clownerie ospedaliera non riguarda sempre la risata. A volte, un bambino ha semplicemente bisogno di una conversazione cuore a cuore con qualcuno con cui può connettersi, qualcuno diverso da un adulto, che spesso sembra fraintendere così tanto.",
+      "paragraph_1": "La clownerie ospedaliera è una forma di lavoro psicosociale con i bambini in contesti sanitari. Ha lo scopo di promuovere l'adattamento e la riabilitazione attraverso la terapia del gioco, la terapia della risata e la terapia artistica. Questo approccio individualizzato si concentra sul supporto emotivo, il contatto e il coinvolgimento.",
+      "paragraph_2": "Lavoriamo con ogni bambino individualmente nella loro stanza d'ospedale. Accompagniamo i bambini durante le procedure, celebriamo le loro operazioni, solleviamo il loro morale e aiutiamo i medici a stabilire un rapporto con i pazienti.",
+      "paragraph_3": "I clown ospedalieri lavorano come parte del team medico e sono responsabili del benessere emotivo di un bambino durante trattamenti difficili e spesso invasivi. Questo metodo di intervento psicologico mira a ridurre i livelli di ansia e stress nei bambini.",
+      "paragraph_4": "Seguiamo un ampio addestramento in psicologia, teatro, lavoro sociale, improvvisazione, giocoleria, teatro fisico, intelligenza emotiva, gestione dello stress, supporto emotivo e una vasta gamma di altre discipline."
+    }
+  },
+  "Partners": {
+    "title_1": "I nostri amici",
+    "title_2": "e partner"
+  },
+  "School": {
+    "main_title": "Scuola di Clownerie Ospedaliera",
+    "join_title": "Chi Può Diventare un Clown Ospedaliero?",
+    "training_title": "Come Funziona la Formazione",
+    "main_text_primary": "Scuola di Clownerie Ospedaliera -",
+    "main_text_secondary": "un progetto congiunto di",
+    "and": "e",
+    "join": {
+      "paragraph_1": "Una persona che comprende cos'è l'empatia. Pronta ad accettare e riconoscere le emozioni di coloro che necessitano di supporto. E fornire questo supporto in base ai bisogni emotivi di bambini e genitori.",
+      "paragraph_2": "Qualcuno che non ha paura di essere divertente. Ridere sinceramente di se stesso e di questa vita capricciosa. Ridere e amarla sopra ogni cosa.",
+      "paragraph_3": "Una persona con carisma, pronta a lavorare sullo sviluppo di essa.",
+      "paragraph_4": "Una persona pronta ad imparare, svilupparsi e cercare se stessa, il proprio personaggio comico. Una persona pronta a creare una celebrazione della vita in mezzo al disastro."
+    },
+    "training": {
+      "text": "Pensate che ci siano lezioni più divertenti di quelle della Scuola di Clownterapia Ospedaliera? \nNoi pensiamo di no. Perché qui gli studenti giocano, si vestono con costumi divertenti e ballano. È affascinante osservare come funziona questa magia clownesca, quando un gruppo di adulti, estranei tra loro, si trasforma in bambini e si permette di essere come si sente - leggeri, autentici, sciocchi, buffi, qualunque cosa!",
+      "paragraph_1": "I volontari seguono un corso di formazione di due giorni sui fondamenti della clownterapia ospedaliera - durante il corso, gli studenti imparano a esprimersi, liberare il bambino interiore, non avere paura di essere buffi e giocare tra loro.",
+      "paragraph_2": "Ognuno può risvegliare il clown dentro di sé - un personaggio unico, interessante, buffo che non solo esplora il mondo intorno a sé ma è anche pronto a tuffarsi nell'ignoto. Questa è la base con cui possono lavorare e visitare i reparti per vedere i bambini.",
+      "paragraph_3": "Dopo il corso di formazione, i volontari vanno a fare pratica in ospedale, accompagnati da clown ospedalieri esperti.",
+      "paragraph_4": "Nei tre mesi successivi, si incontrano per lezioni una volta alla settimana e approfondiscono i meccanismi della clownterapia ospedaliera.",
+      "paragraph_5": "Parallelamente, si svolgono visite regolari ai reparti ospedalieri sotto la costante supervisione dei formatori e il supporto psicologico."
+    },
+    "feedback_title": "Recensioni degli studenti della Scuola di Clown"
+  },
+  "Form": {
+    "joinUs": "Unisciti a noi",
+    "leaveForm": "Lascia il tuo modulo e ti contatteremo entro tre giorni.",
+    "name": "Il tuo nome",
+    "phone": "Numero di telefono",
+    "phonePlaceholder": "Inserisci il numero di telefono nel formato +380",
+    "email": "E-mail",
+    "emailPlaceholder": "example@gmail.com",
+    "social": "Social network",
+    "socialPlaceholder": "Link a Facebook, Telegram o Instagram",
+    "submit": "Invia",
+    "required": "Questo campo è obbligatorio.",
+    "invalidPhone": "Inserisci un numero di telefono valido.",
+    "invalidEmail": "Inserisci un indirizzo email valido.",
+    "processing": "Elaborazione"
+  },
+  "ClownSchoolForm": {
+    "formSubmitted": "Il tuo modulo è stato inviato.",
+    "contactWithinThreeDays": "Ti contatteremo entro tre giorni.",
+    "somethingWentWrong": "Qualcosa è andato storto...",
+    "pleaseTryAgain": "Per favore riprova."
+  },
+  "ClownSchoolFormDescription": {
+    "formTitle": "Compila il modulo",
+    "formSubtitle": "La formazione per volontari è gratuita.",
+    "formDescription": "Attendiamo con ansia nuove persone nel nostro team, in modo che ci siano più sorrisi e gioia per i bambini."
+  }
 }
