@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import { useBodyScrollLock } from '@/hooks/useBodyScrollLock';
 
 import { Link } from '@/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -15,6 +16,7 @@ const Header = () => {
     pathname.split('/').includes('login');
 
   const [menuOpen, setMenuOpen] = useState(false);
+  useBodyScrollLock(menuOpen);
 
   if (isAdminPage) return null;
 
@@ -23,7 +25,7 @@ const Header = () => {
   };
 
   return (
-    <div className="bg-golden container fixed left-0 right-0 top-0 z-50 flex h-[100px] w-full items-center justify-between bg-opacity-80 py-[26px] text-violet backdrop-blur-sm backdrop-filter xs:px-[20px] md:px-[40px] ml:px-[64px] xl:px-[80px] 3xl:px-[120px]">
+    <div className="container fixed left-0 right-0 top-0 z-50 flex h-[100px] w-full items-center justify-between bg-golden bg-opacity-80 py-[26px] text-violet backdrop-blur-sm backdrop-filter xs:px-[20px] md:px-[40px] ml:px-[64px] xl:px-[80px] 3xl:px-[120px]">
       <div className="flex w-full items-center justify-between">
         <Link href="/" title="Бюро усмішок і підтримки">
           <Image
