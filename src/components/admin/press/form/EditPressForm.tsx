@@ -146,7 +146,7 @@ const EditPressForm = ({ id }: { id: string }) => {
   return (
     <div className=" mx-auto max-w-[930px] ">
       <h1 className="mb-[40px] text-center text-[32px] font-bold">
-        Додавання новини
+        Редагування новини
       </h1>
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col ">
         <div className="flex flex-wrap gap-[24px] ">
@@ -303,7 +303,7 @@ const EditPressForm = ({ id }: { id: string }) => {
           </div>
         </div>
         <div className="mb-[12px] mt-[40px] text-center text-[17px] font-medium leading-[150%] text-[#343333]">
-          Додати новину в Преса про нас?
+          Редагувати новину в Преса про нас?
         </div>
         <div className="flex justify-center gap-[20px]">
           <button
@@ -311,7 +311,7 @@ const EditPressForm = ({ id }: { id: string }) => {
             disabled={!isValid}
             className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white hover:shadow-xl disabled:bg-[#E3E3E4] disabled:text-[#97979A]"
           >
-            {isProcessing ? 'Обробка запиту...' : 'Додати'}
+            {isProcessing ? 'Обробка запиту...' : 'Змінити'}
           </button>
           <button
             disabled={!isValid}

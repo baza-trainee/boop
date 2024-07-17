@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { sidebarLinks } from './sidebarLinks';
 import { applicationsApi } from '@/store/api/applicationsApi';
-import { isLessThan48Hours } from '@/helpers/isLessThan48Hours';
 import Loader from '@/components/shared/loader/Loader';
 
 const Sidebar = () => {
@@ -14,11 +13,9 @@ const Sidebar = () => {
   const { data, isFetching, isLoading } =
     applicationsApi.useGetAllApplicationsQuery();
 
-  const isNewApplications = () => {
+  const isUnprocessedApplications = () => {
     const filteredApplications = data?.filter(
-      (application) =>
-        application.isProcessed === false &&
-        isLessThan48Hours(application.createdAt)
+      (application) => application.isProcessed === false
     );
     return !!filteredApplications?.length;
   };
@@ -48,9 +45,10 @@ const Sidebar = () => {
               </svg>
               <span className="relative whitespace-nowrap text-[16px] font-bold">
                 {link.name}
-                {isNewApplications() && link.link === 'applications' && (
-                  <div className="absolute -left-[30px] top-0 z-50 h-[5px] w-[5px] rounded-full bg-red"></div>
-                )}
+                {isUnprocessedApplications() &&
+                  link.link === 'applications' && (
+                    <div className="absolute -left-[30px] top-0 z-50 h-[5px] w-[5px] rounded-full bg-red"></div>
+                  )}
               </span>
             </li>
           </Link>
