@@ -44,7 +44,7 @@ const PressPage = () => {
               openAlert({
                 data: {
                   state: 'success',
-                  message: 'Новина видалена!',
+                  message: 'Новина видалена',
                 },
               })
             );
