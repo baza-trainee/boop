@@ -53,6 +53,9 @@ const config: Config = {
       maxWidth: {
         'screen-3xl': '1920px',
       },
+      scale: {
+        '-1': '-1',
+      },
     },
   },
   plugins: [require('tailwind-scrollbar')],

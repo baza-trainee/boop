@@ -4,12 +4,13 @@ import React from 'react';
 type SectionTitleProps = {
   title: string;
   className?: string;
+  titleClassName?: string;
 };
 
-const SectionTitle = ({ title, className }: SectionTitleProps) => {
+const SectionTitle = ({ title, className, titleClassName }: SectionTitleProps) => {
   return (
     <div className={clsx('flex items-center gap-[20px]', className)}>
-      <h2 className="title-gradient font-groppled text-3xl font-bold max-ml:text-2xl">
+      <h2 className={clsx('title-gradient font-groppled text-3xl font-bold max-ml:text-2xl', titleClassName)}>
         {title}
       </h2>
       <svg className="h-[1rem] w-[5rem]">

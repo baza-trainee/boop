@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import { useBodyScrollLock } from '@/hooks/useBodyScrollLock';
 
 import { Link } from '@/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -15,6 +16,7 @@ const Header = () => {
     pathname.split('/').includes('login');
 
   const [menuOpen, setMenuOpen] = useState(false);
+  useBodyScrollLock(menuOpen);
 
   if (isAdminPage) return null;
 
