@@ -4,9 +4,11 @@ import { Carousel } from '../../shared/carousel/Carousel';
 import PressAboutUsSlide from './press-about-us-slide/PressAboutUsSlide';
 import { useTranslations } from 'next-intl';
 import { useGetAllPressQuery } from '@/store/api/pressApi';
+import { useParams } from 'next/navigation';
 
 const PressAboutUs = () => {
   const t = useTranslations('Press_about_us');
+  const { locale } = useParams();
   const { data, isFetching, isError } = useGetAllPressQuery();
 
   if (!data) return;
@@ -32,8 +34,20 @@ const PressAboutUs = () => {
             renderItem={(item) => (
               <PressAboutUsSlide
                 imgSrc={item.imageLink}
-                title={item.titleUA}
-                text={item.textUA}
+                title={
+                  locale === 'ua'
+                    ? item.titleUA
+                    : locale === 'en'
+                      ? item.titleEN
+                      : item.titleIT
+                }
+                text={
+                  locale === 'ua'
+                    ? item.textUA
+                    : locale === 'en'
+                      ? item.textEN
+                      : item.textIT
+                }
                 link={item.sourceLink}
                 date={item.createdAt}
               />
