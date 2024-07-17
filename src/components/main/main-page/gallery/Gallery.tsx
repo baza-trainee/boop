@@ -68,13 +68,20 @@ const Gallery = () => {
       setPhotos(items.slice(0, limit));
       setCurrentIndex(limit);
     }
+    // const nextElement = document.getElementById('gallery-section');
+    // if (nextElement) {
+    //   nextElement.scrollIntoView({ behavior: 'smooth' });
+    // }
   };
 
   const isLoadMoreDisabled = items && items.length === photos.length;
   const isBtnShowed = items && items.length > limit;
 
   return (
-    <section className="container mx-auto xs:mb-[70px]    md:mb-[100px]  xl:mb-[120px]">
+    <section
+      className="container mx-auto xs:mb-[70px]    md:mb-[100px]  xl:mb-[120px]"
+      id="gallery-section"
+    >
       <SectionTitle title={t('title')} />
       {isError && <p className="container">Something went wrong!</p>}
       {isFetching && <p>Loading...</p>}
