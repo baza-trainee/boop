@@ -27,7 +27,7 @@ const AnimatedDivs = () => {
       >
         <motion.img
           src="/images/heroSection/red_circle.png"
-          alt=""
+          alt="happy child"
           width={213}
           height={213}
           initial="hidden"
