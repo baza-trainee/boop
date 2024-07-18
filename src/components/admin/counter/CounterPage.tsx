@@ -10,7 +10,7 @@ import TextInput from '../ui/TextInput';
 import PageTitle from '../shared/PageTitle';
 import UniversalButton from '../shared/UniversalButton';
 import { openAlert } from '@/store/slices/alertSlice';
-import LoaderLayout from '@/components/shared/loader/Loader';
+import Loader from '@/components/shared/loader/Loader';
 import LoaderSmile from './LoaderSmile';
 
 const orderTitles: Record<number, string> = {
@@ -125,8 +125,9 @@ const CounterPage = () => {
       </div>
     );
   }
+
   if (isLoading) {
-    return <LoaderLayout />;
+    return <Loader />;
   }
 
   return (

@@ -32,6 +32,7 @@ function PartnersFriendsPage({ title, section }: PropsPartnersFriends) {
     data: partners,
     isLoading,
     isFetching,
+    isError,
   } = partnersFriendsApi.useGetAllPartnersFriendsQuery();
 
   const [deletePartnersFriends] =
@@ -65,6 +66,20 @@ function PartnersFriendsPage({ title, section }: PropsPartnersFriends) {
       })
     );
   };
+
+  if (isError) {
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <div className="flex h-[50%] w-[80%] items-center justify-center rounded-[20px] bg-slate-200  p-[40px]">
+          <p className="text-center text-[32px] text-yellow">
+            Сталася помилка під час завантаження даних.
+            <br /> Будь ласка, спробуйте оновити сторінку або повторити спробу
+            пізніше.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   if (isFetching || isLoading) {
     return <Loader />;

@@ -17,6 +17,7 @@ import FormModalWidFull from './modal-form/ModalFormWidFull';
 import truncateText from '@/helpers/truncateText';
 import AddPressForm from './form/AddPressForm';
 import EditPressForm from './form/EditPressForm';
+import Loader from '@/components/shared/loader/Loader';
 
 const placeHolderImg = `/images/mainRules/image_1.png`;
 
@@ -55,11 +56,21 @@ const PressPage = () => {
   };
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   if (isError) {
-    return <div>Error loading data</div>;
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <div className="flex h-[50%] w-[80%] items-center justify-center rounded-[20px] bg-slate-200  p-[40px]">
+          <p className="text-center text-[32px] text-yellow">
+            Сталася помилка під час завантаження даних.
+            <br /> Будь ласка, спробуйте оновити сторінку або повторити спробу
+            пізніше.
+          </p>
+        </div>
+      </div>
+    );
   }
 
   return (

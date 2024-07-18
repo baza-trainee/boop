@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import './loader.css';
 
-const LoaderLayout = () => {
+const Loader = () => {
   return (
     <div
       className="backdrop-brightness-10 fixed left-0 right-0 top-0 z-[9999] flex h-full w-full flex-col items-center 
@@ -18,4 +18,4 @@ const LoaderLayout = () => {
   );
 };
 
-export default LoaderLayout;
+export default Loader;
