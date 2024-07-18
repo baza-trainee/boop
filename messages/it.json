@@ -10,6 +10,73 @@
   "Hero": {
     "title": "Nonostante tutto, l'infanzia deve continuare"
   },
+  "Founders": {
+    "subtitle": "Fondatrici del progetto",
+    "title": "Olga Bulkina \ne Marina Berdar",
+    "text": "Clown ospedaliere \ndiplomate. Allenatrici. \nMembri onorari dell'organizzazione \n”SOCCORSO CLOWN”",
+    "caption": "Ufficio dei Sorrisi e del Sostegno"
+  },
+  "Vision": {
+    "subtitle": "Visione",
+    "text": "Aspiriamo a fare in modo che in ogni ospedale pediatrico dell'Ucraina ci sia spazio per la gioia e i sorrisi dei bambini che si trovano in situazioni difficili e di crisi."
+  },
+  "Values": {
+    "title": "I nostri valori",
+    "inclusivity": {
+      "text": "Inclusività",
+      "hoverText": "noi valorizziamo ogni individuo, indipendentemente dalle circostanze, e facciamo tutto il possibile perché ognuno si senta importante e necessario"
+    },
+    "proactivity": {
+      "text": "Proattività",
+      "hoverText": "noi agiamo in anticipo, cercando sempre nuovi modi per portare gioia e sollievo"
+    },
+    "respect": {
+      "text": "Rispetto",
+      "hoverText": "noi ci rapportiamo a tutti con profondo rispetto, apprezzando l'unicità di ciascuno"
+    },
+    "sincerity": {
+      "text": "Sincerità",
+      "hoverText": "nostre azioni e parole vengono sempre dal cuore, creando un'atmosfera di fiducia"
+    },
+    "empathy": {
+      "text": "Empatia",
+      "hoverText": "comprendiamo e sentiamo quello che sentite voi, sostenendovi nei momenti più difficili"
+    }
+  },
+  "Mission": {
+    "title": "La nostra missione",
+    "first": {
+      "text": "Clown ospedaliero, programma \ndi supporto emotivo per i bambini in ospedale",
+      "hoverText": "Solleviamo il morale e lo spirito combattivo del bambino. Riduciamo il livello di stress. Agevoliamo l'adattamento alle condizioni ospedaliere. Accompagniamo il bambino durante procedure o operazioni. Collaboriamo con genitori e medici "
+    },
+    "second": {
+      "text": "Organizzazione \ndi eventi di riabilitazione sociale",
+      "hoverText": "Concerti settimanali. Spettacoli di bolle di sapone. Giochi per vincitori. Giornate di bellezza. Arteterapia. Suonoterapia. Concerti a tema "
+    },
+    "third": {
+      "text": "Sviluppo della comunità dei volontari",
+      "hoverText": "Insegniamo clown ospedalieri. Organizziamo team building con il supporto della comunità internazionale dei clown ospedalieri. Lavoriamo sullo stato emotivo dei volontari. Promuoviamo lo sviluppo della clown terapia in Ucraina"
+    }
+  },
+  "Goals": {
+    "title": "I nostri obiettivi",
+    "first": {
+      "cardNumber": "1",
+      "text": "Creazione dell'Associazione Ucraina dei Clown Ospedalieri con colleghi da città in Ucraina"
+    },
+    "second": {
+      "cardNumber": "2",
+      "text": "Lancio di nuovi team nelle cliniche pediatriche di Kiev e altre città"
+    },
+    "third": {
+      "cardNumber": "3",
+      "text": "Creazione di un programma di supporto emotivo nelle ospedali pediatrici a livello statale"
+    },
+    "fourth": {
+      "cardNumber": "4",
+      "text": "Espansione della cooperazione internazionale"
+    }
+  },
   "Counter_section": {
     "title": "I risultati in numeri",
     "counter_1": {
@@ -46,6 +113,14 @@
     "title": "I nostri contatti"
   },
   "About": {
+    "main_rules": {
+      "title": " – ci assicuriamo che l'infanzia duri, indipendentemente dalle circostanze",
+      "rules": {
+        "paragraph_1": "A volte tutto ciò che possiamo fare è essere semplicemente accanto. Specialmente nei momenti in cui si verificano eventi del tutto inaspettati e traumatici.",
+        "paragraph_2": "”Non fare del male!” - è la regola più importante. \nNé agli altri, né a noi stessi. Siamo il sistema di supporto per coloro che ci circondano. Dopotutto, ci serviamo così tanto l'un l'altro.",
+        "paragraph_3": "Ci sono innumerevoli modi per mostrare cura e accettazione. Possiamo semplicemente parlare, tacere, distrarre, offrire una bevanda calda, prendere per mano, gonfiare un palloncino..."
+      }
+    },
     "team_structure": {
       "title": "Squadra",
       "management_title": "Capo squadra",
