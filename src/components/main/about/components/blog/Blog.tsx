@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import CarouselButton from '@/components/main/shared/carousel/carousel-button/CarouselButton';

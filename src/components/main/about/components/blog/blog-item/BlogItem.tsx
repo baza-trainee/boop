@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 import clsx from 'clsx';
+import BlogItemText from './blog-item-text/BlogItemText';
 
 interface BlogItemProps {
   imgSrc: string;
@@ -27,9 +28,7 @@ const BlogItem = ({ imgSrc, title, text, date }: BlogItemProps) => {
               {title}
             </h3>
           </div>
-          <p className="text-xl leading-[1.5] text-textViolet max-ml:text-[18px] max-sm:text-base">
-            {text}
-          </p>
+          <BlogItemText text={text} />
           <span className="self-end font-medium leading-[1.32] text-lightViolet max-md:hidden max-custom:block">
             {date}
           </span>
