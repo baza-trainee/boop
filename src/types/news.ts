@@ -1,10 +1,9 @@
 export interface INews {
   id: number;
-  imageUrl: string;
-  imageId: string;
   sourceLink: string;
+  imageLink: string;
+  imageId: string;
   createdAt: Date;
-  location: string;
   titleUA: string;
   textUA: string;
   titleEN: string;

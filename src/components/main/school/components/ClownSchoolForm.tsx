@@ -82,40 +82,51 @@ const ClownSchoolForm: React.FC = () => {
   // };
 
   return (
-    <div className="mb-[120px] bg-bgYellow">
-      <div className="container mx-auto flex max-w-screen-3xl flex-col p-8 lg:flex-row lg:p-16">
-        <div className="mb-8 flex flex-col justify-center text-mainViolet lg:mb-0 lg:w-1/2 lg:pr-10">
+    <section className="mb-[120px] bg-bgYellow">
+      <div className="container mx-auto flex max-w-screen-3xl flex-col py-8 ml:flex-row lg:py-16">
+        <div className="relative mb-8 flex flex-col justify-center text-mainViolet md:mb-0 md:max-w-[60%] ml:w-[55%] lg:max-w-[658px] lg:w-1/2 ml:pr-10">
           <SectionTitle
             title={tClownSchoolFormDescription('formTitle')}
-            className="mb-6"
+            className="mb-2"
+            titleClassName="max-ml:text-3xl"
           />
-          <p className="mb-8 text-xl">
+          <p className="md:mb-6 ml:mb-14 text-lg ml:text-xl">
             {tClownSchoolFormDescription('formSubtitle')}
             <br />
             {tClownSchoolFormDescription('formDescription')}
           </p>
-          <div className="flex items-baseline space-x-4">
+          <div className="max-ml:absolute max-ml:-right-[65%] flex items-baseline space-x-4">
             <Image
               src="/images/clown1.svg"
               alt="Clown"
               width={61}
               height={45}
+              className="w-[61px] h-[45px] max-ml:transform max-ml:scale-x-[-1]"
             />
             <Image
               src="/images/clown2.svg"
               alt="Clown"
               width={141}
               height={105}
+              className="max-ml:transform max-ml:scale-x-[-1]"
             />
             <Image
               src="/images/clown3.svg"
               alt="Clown"
               width={232}
               height={172}
+              className="max-ml:hidden"
             />
           </div>
         </div>
-        <div className="lg:max-w-[522px]">
+        <div className="md:max-w-[55%] lg:max-w-[522px] lg:ml-auto lg:mr-[96px] relative">
+          <Image
+            src="/images/clown3.svg"
+            alt="Clown"
+            width={232}
+            height={172}
+            className="absolute bottom-0 -right-[80%] scale-x-[-1] transform ml:hidden"
+          />
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col text-mainViolet"
@@ -196,7 +207,7 @@ const ClownSchoolForm: React.FC = () => {
           </form>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

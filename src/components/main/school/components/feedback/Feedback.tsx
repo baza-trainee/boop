@@ -30,20 +30,12 @@ const Feedback = () => {
     }, []);
   }, []);
 
-  const handleResize = useCallback(() => {
+  useEffect(() => {
     if (data?.data && window.innerWidth > 430) {
       setFeedbackData(chunkArray(data.data, 3));
     } else if (data?.data && window.innerWidth <= 430) {
       setFeedbackData(chunkArray(data.data, 1));
     }
-  }, [data]);
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
   }, [data]);
 
   return (

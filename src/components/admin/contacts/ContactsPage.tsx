@@ -20,6 +20,7 @@ const ContactsPage = () => {
     data: contacts,
     isLoading,
     isFetching,
+    isError,
   } = contactsApi.useGetAllContactsQuery();
 
   const {
@@ -65,6 +66,20 @@ const ContactsPage = () => {
     setValue('instagram', result.instagram);
     setValue('facebook', result.facebook);
   };
+
+  if (isError) {
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <div className="flex h-[50%] w-[80%] items-center justify-center rounded-[20px] bg-slate-200  p-[40px]">
+          <p className="text-center text-[32px] text-yellow">
+            Сталася помилка під час завантаження даних.
+            <br /> Будь ласка, спробуйте оновити сторінку або повторити спробу
+            пізніше.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   if (isLoading || isFetching) return <Loader />;
 

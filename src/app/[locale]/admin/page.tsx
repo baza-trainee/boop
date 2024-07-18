@@ -1,7 +1,9 @@
-import AdminPage from '@/components/admin/AdminPage';
+'use client';
+import { useEffect } from 'react';
+import { redirect } from 'next/navigation';
 
-const Admin = () => {
-  return <AdminPage />;
-};
-
-export default Admin;
+export default function AdminPage() {
+  useEffect(() => {
+    redirect('/admin/counter');
+  }, []);
+}

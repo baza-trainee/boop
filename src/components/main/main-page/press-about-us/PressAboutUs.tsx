@@ -1,13 +1,17 @@
 import React from 'react';
 import CarouselButton from '../../shared/carousel/carousel-button/CarouselButton';
 import { Carousel } from '../../shared/carousel/Carousel';
-import { pressAboutUsItems } from './items';
 import PressAboutUsSlide from './press-about-us-slide/PressAboutUsSlide';
 import { useTranslations } from 'next-intl';
+import { useGetAllPressQuery } from '@/store/api/pressApi';
+import { useParams } from 'next/navigation';
 
 const PressAboutUs = () => {
   const t = useTranslations('Press_about_us');
+  const { locale } = useParams();
+  const { data, isFetching, isError } = useGetAllPressQuery();
 
+  if (!data) return;
   return (
     <section className="mb-[120px]">
       <div className="container mx-auto">
@@ -20,14 +24,36 @@ const PressAboutUs = () => {
             <CarouselButton className="press-about-us-next-el" />
           </div>
         </div>
-        <Carousel
-          items={pressAboutUsItems}
-          prevEl=".press-about-us-prev-el"
-          nextEl=".press-about-us-next-el"
-          slidesPerView={1}
-          speed={500}
-          renderItem={(item) => <PressAboutUsSlide {...item} />}
-        />
+        {data && !isError && !isFetching && (
+          <Carousel
+            items={data.data}
+            prevEl=".press-about-us-prev-el"
+            nextEl=".press-about-us-next-el"
+            slidesPerView={1}
+            speed={500}
+            renderItem={(item) => (
+              <PressAboutUsSlide
+                imgSrc={item.imageLink}
+                title={
+                  locale === 'ua'
+                    ? item.titleUA
+                    : locale === 'en'
+                      ? item.titleEN
+                      : item.titleIT
+                }
+                text={
+                  locale === 'ua'
+                    ? item.textUA
+                    : locale === 'en'
+                      ? item.textEN
+                      : item.textIT
+                }
+                link={item.sourceLink}
+                date={item.createdAt}
+              />
+            )}
+          />
+        )}
       </div>
     </section>
   );
