@@ -10,7 +10,7 @@ const Goals = () => {
   const goalsCards = GetGoalsCardsInfo();
 
   return (
-    <section className=" w-full  bg-bgViolet pb-10    pt-10 xs:mb-[70px] md:mb-[100px]  md:pb-[50px] ml:mb-[100px] lg:pb-[60px] lg:pt-[60px] xl:mb-[120px] xl:pb-[70px] xl:pt-[80px] 2xl:mb-[120px] 2xl:pb-[104px]">
+    <section className=" mb-[70px]  w-full bg-bgViolet    pb-10 pt-10 md:mb-[100px]  md:pb-[50px] ml:mb-[100px] lg:pb-[60px] lg:pt-[60px] xl:mb-[120px] xl:pb-[70px] xl:pt-[80px] 2xl:mb-[120px] 2xl:pb-[104px]">
       <div className="container flex flex-col gap-11">
         <SectionTitle title={t('title')} />
         <ul
