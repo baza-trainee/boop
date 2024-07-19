@@ -170,7 +170,7 @@ const Header = () => {
           </li>
         </ul>
       </div>
-    </header>
+    </div>
   );
 };
 
