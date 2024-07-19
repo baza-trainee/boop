@@ -23,7 +23,7 @@ const Founders = () => {
             alt=""
             width={686}
             height={782}
-            className="lg:h-auto lg:w-[636px] 4xl:w-[686px]
+            className="bg-yellow lg:h-auto lg:w-[636px] 4xl:w-[686px]
             "
             priority={true}
           />
