@@ -1,12 +1,13 @@
 'use client';
-import { useState } from 'react';
+
+import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { useBodyScrollLock } from '@/hooks/useBodyScrollLock';
-
 import { Link } from '@/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
+import useWindowSize from '@/hooks/useWindowSize';
 
 const Header = () => {
   const t = useTranslations('Header');
@@ -16,7 +17,15 @@ const Header = () => {
     pathname.split('/').includes('login');
 
   const [menuOpen, setMenuOpen] = useState(false);
-  useBodyScrollLock(menuOpen);
+  const windowSize = useWindowSize();
+
+  useEffect(() => {
+    if (windowSize.width > 768 && menuOpen) {
+      setMenuOpen(false);
+    }
+  }, [windowSize.width, menuOpen]);
+
+  useBodyScrollLock(menuOpen && windowSize.width <= 768);
 
   if (isAdminPage) return null;
 
@@ -25,7 +34,7 @@ const Header = () => {
   };
 
   return (
-    <header className="container fixed left-0 right-0 top-0 z-50 flex h-[100px] w-full items-center justify-between bg-golden bg-opacity-80 py-[26px] text-violet backdrop-blur-sm backdrop-filter xs:px-[20px] md:px-[40px] ml:px-[64px] xl:px-[80px] 3xl:px-[120px]">
+    <div className="container fixed left-0 right-0 top-0 z-50 flex h-[100px] w-full items-center justify-between bg-golden bg-opacity-80 py-[26px] text-violet backdrop-blur-sm backdrop-filter xs:px-[20px] md:flex-shrink md:flex-grow md:px-[40px] ml:px-[64px] xl:px-[80px] 3xl:px-[120px]">
       <div className="flex w-full items-center justify-between">
         <Link href="/" title="Бюро усмішок і підтримки">
           <Image
@@ -53,17 +62,17 @@ const Header = () => {
         </div>
         <nav className="relative z-10 ml-[8px] hidden h-[460px] w-[768px] justify-between whitespace-nowrap px-[4px] py-0 font-groppled font-bold text-mainViolet md:ml-0 md:flex md:w-[359px] md:gap-[24px] md:text-[18px] md:leading-[27.36px] lg:w-[462px] 3xl:text-[20px] 3xl:leading-[31.6px]">
           <ul className="flex items-center">
-            <li className="xs:pr-[15px] md:pr-[25px] lg:pr-[48px]">
+            <li className="md:pr-[25px] lg:pr-[48px]">
               <Link href="/" title={t('home')}>
                 {t('home')}
               </Link>
             </li>
-            <li className="xs:pr-[15px] md:pr-[25px] lg:pr-[48px]">
+            <li className="md:pr-[25px] lg:pr-[48px]">
               <Link href="/about" title={t('about')}>
                 {t('about')}
               </Link>
             </li>
-            <li className="xs:pr-[15px] md:pr-[25px] lg:pr-[48px]">
+            <li className="md:pr-[25px] lg:pr-[48px]">
               <Link href="/school" title={t('school')}>
                 {t('school')}
               </Link>
@@ -76,22 +85,22 @@ const Header = () => {
           </ul>
         </nav>
         <div className="font-ralewayb relative z-10 hidden items-center md:flex md:w-[278px] lg:w-[330px]">
-          <div className="relative w-[100px]">
+          <div className="relative xs:w-[60px] ml:w-[100px]">
             <LanguageSwitcher />
           </div>
-          <button className="whitespace-nowrap rounded-[32px] bg-[rgba(233,52,5,1)] px-[24px] py-[18px] font-raleway font-bold text-white md:h-[52px] md:w-[200px] md:text-[16px] md:leading-[16px] lg:h-[56px] lg:w-[238px] lg:text-[20px] lg:leading-[20px]">
+          <button className="whitespace-nowrap rounded-[32px] bg-[rgba(233,52,5,1)] px-[24px] py-[18px] font-raleway font-bold text-white md:h-[52px] md:w-[190px] md:text-[16px] md:leading-[16px] lg:h-[56px] lg:w-[238px] lg:text-[20px] lg:leading-[20px]">
             {t('button')}
           </button>
         </div>
       </div>
-      {menuOpen && (
+      {menuOpen && window.innerWidth <= 768 && (
         <div
           className="fixed inset-0 z-40 h-[100vh] bg-[rgba(202,196,226,0.5)]"
           onClick={toggleMenu}
         ></div>
       )}
       <div
-        className={`lg:hidden ${menuOpen ? 'block' : 'hidden'} absolute left-0 right-0 top-0 z-50 h-[464px] w-full rounded-b-[16px] border-b-[16px] border-b-yellow bg-bgBurgerMenu px-[48px] py-[10px] pb-[48px] pt-[10px] font-groppled font-bold text-textViolet xs:h-[460px]`}
+        className={`md:hidden ${menuOpen ? 'block' : 'hidden'} absolute left-0 right-0 top-0 z-50 h-[464px] w-full rounded-b-[16px] border-b-[16px] border-b-yellow bg-bgBurgerMenu px-[48px] py-[10px] pb-[48px] pt-[10px] font-groppled font-bold text-textViolet xs:h-[460px]`}
       >
         <div className="-mb-[15px] -mr-[25px] flex justify-end pt-[10px]">
           <button
@@ -161,7 +170,7 @@ const Header = () => {
           </li>
         </ul>
       </div>
-    </header>
+    </div>
   );
 };
 
