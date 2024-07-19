@@ -131,6 +131,21 @@
       "management_text": "Communication with hospital management and medical staff. \nEvent planning and preparation.",
       "volunteers_title": "Volunteers",
       "volunteers_text": "Volunteer recruitment and development of the volunteer community around the hospital."
+    },
+    "blog": {
+      "title": "Blog",
+      "read_more_btn": {
+        "read": "Read on",
+        "close": "Roll up"
+      }
+    },
+    "hospital_clowning": {
+      "title": "What is Hospital Clowning",
+      "subtitle": "Hospital clowning isn't always about laughter. \nSometimes, a child simply needs a heart-to-heart conversation with someone they connect with, someone other than an adult, who often seem to misunderstand so much.",
+      "paragraph_1": "Hospital clowning is a form of psychosocial work with children in healthcare settings. It aims to promote adaptation and rehabilitation through play therapy, laughter therapy, and art therapy. This individualized approach focuses on emotional support, contact, and engagement.",
+      "paragraph_2": "We work with each child individually in their hospital room. We accompany children to procedures, celebrate their surgeries, boost their morale, and help doctors establish rapport with patients.",
+      "paragraph_3": "Hospital clowns work as part of the medical team and are responsible for a child's emotional well-being during challenging and often invasive treatments. This psychological intervention method aims to reduce anxiety and stress levels in children.",
+      "paragraph_4": "We undergo extensive training in psychology, theater, social work, improvisation, juggling, physical theater, emotional intelligence, stress management, emotional support, and a wide range of other disciplines."
     }
   },
   "School": {
@@ -183,5 +198,10 @@
     "formTitle": "Fill out the form",
     "formSubtitle": "Volunteer training is free.",
     "formDescription": "We are eagerly awaiting new people to join our team, so that there will be more children's smiles and joy."
+  },
+  "errorpage": {
+    "paragraph_1": "An error occurred while loading data.",
+    "paragraph_2": "Please try refreshing the page or try again later.",
+    "button": "Reset"
   }
 }

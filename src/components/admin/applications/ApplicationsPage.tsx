@@ -11,7 +11,7 @@ const ApplicationsPage = () => {
   const dispatch = useAppDispatch();
   const [deleteApplication] = applicationsApi.useDeleteApplicationMutation();
   const [editApplication] = applicationsApi.useEditApplicationMutation();
-  const { data, isLoading, isFetching } =
+  const { data, isLoading, isFetching, isError } =
     applicationsApi.useGetAllApplicationsQuery();
 
   const handleDelete = (id: string) => {
@@ -39,6 +39,20 @@ const ApplicationsPage = () => {
   const handleEdit = async (id: string, isProcessed: boolean) => {
     await editApplication({ id, isProcessed });
   };
+
+  if (isError) {
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <div className="flex h-[50%] w-[80%] items-center justify-center rounded-[20px] bg-slate-200  p-[40px]">
+          <p className="text-center text-[32px] text-yellow">
+            Сталася помилка під час завантаження даних.
+            <br /> Будь ласка, спробуйте оновити сторінку або повторити спробу
+            пізніше.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   if (isLoading || isFetching) return <Loader />;
 

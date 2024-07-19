@@ -2,6 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 
 import { IPhoto } from '@/types/photo';
+import AnimatedYellowMan from '../galleryAnimatedElement/AnimatedYellowMan';
+import { useMediaQuery } from 'react-responsive';
 
 interface GalleryCardProps {
   images: IPhoto[];
@@ -14,6 +16,15 @@ const GalleryList: React.FC<GalleryCardProps> = ({
   decorativeIndex,
   limit,
 }) => {
+  const isDesktop = useMediaQuery({
+    query: '(min-width: 1028px) and (max-width: 1919px)',
+  });
+  const isLargeScren = useMediaQuery({
+    query: '(min-width: 1920px)',
+  });
+
+  const width = isLargeScren ? '250' : isDesktop ? '217' : '176';
+
   const combinedElements = [];
 
   for (let i = 0; i < images.length; i++) {
@@ -35,18 +46,12 @@ const GalleryList: React.FC<GalleryCardProps> = ({
 
     if (i % limit === decorativeIndex) {
       combinedElements.push(
-        <div className="min-w-[197px] flex-1">
+        <div className="relative min-w-[197px] flex-1">
           <div
             key={`yellow_man`}
-            className="relative flex h-[477px] min-w-[197px]  flex-1 items-end justify-center md:h-[287px] lg:h-[394px] xl:h-[415px] 3xl:h-[447px]"
+            className="absolute -bottom-6 flex  h-[477px] min-w-[197px]  cursor-pointer items-end justify-end md:h-[287px] lg:left-6 lg:h-[394px] xl:h-[415px] 3xl:h-[447px]"
           >
-            <Image
-              src="/images/gallerySection/yellow_man.svg"
-              alt=""
-              width={218}
-              height={230}
-              className="absolute -bottom-6 h-auto md:h-auto md:w-[130px] ml:w-[164px] lg:w-[218px]"
-            />
+            <AnimatedYellowMan width={width} />
           </div>
         </div>
       );
@@ -54,7 +59,7 @@ const GalleryList: React.FC<GalleryCardProps> = ({
   }
 
   return (
-    <div className="grid grid-cols-1 gap-6 pt-8 md:grid-cols-3 ml:grid-cols-4 4xl:grid-cols-5 ">
+    <div className="4xl:grid-cols-5 grid grid-cols-1 gap-6 pt-8 md:grid-cols-3 ml:grid-cols-4 ">
       {combinedElements.map((item, index) => (
         <React.Fragment key={index}>{item}</React.Fragment>
       ))}

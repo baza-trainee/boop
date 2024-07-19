@@ -24,10 +24,25 @@ const PhotoPage = () => {
     data: photos,
     isLoading,
     isFetching,
+    isError,
   } = photoApi.useGetAllPhotoQuery({ page: currentPage, limit: 11 });
   const [deletePhoto] = photoApi.useDeletePhotoMutation();
 
   if (isLoading || isFetching) return <Loader />;
+
+  if (isError) {
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <div className="flex h-[50%] w-[80%] items-center justify-center rounded-[20px] bg-slate-200  p-[40px]">
+          <p className="text-center text-[32px] text-yellow">
+            Сталася помилка під час завантаження даних.
+            <br /> Будь ласка, спробуйте оновити сторінку або повторити спробу
+            пізніше.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   const handleEdit = (id: string) => {
     setCurrentId(id);

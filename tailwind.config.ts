@@ -33,6 +33,7 @@ const config: Config = {
         lightVioletSecond: 'var(--lightVioletSecond)',
         mainViolet: 'var(--mainViolet)',
         textViolet: 'var(--textViolet)',
+        darkGrey: 'var(--darkGrey)',
         red: 'var(--red)',
         yellow: 'var(--yellow)',
         customOverlay: 'rgba(202, 196, 226, 0.5)',
@@ -46,10 +47,14 @@ const config: Config = {
         lg: '1280px',
         xl: '1366px',
         '2xl': '1440px',
-        '3xl': '1920px',
+        '3xl': '1536px',
+        '4xl': '1920px',
       },
       maxWidth: {
         'screen-3xl': '1920px',
+      },
+      scale: {
+        '-1': '-1',
       },
     },
   },
