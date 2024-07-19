@@ -1,13 +1,13 @@
 'use client';
-import { useState } from 'react';
+
+import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { useBodyScrollLock } from '@/hooks/useBodyScrollLock';
-import { useWindowSize } from '@/hooks/useWindowSize';
-
 import { Link } from '@/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
+import useWindowSize from '@/hooks/useWindowSize';
 
 const Header = () => {
   const t = useTranslations('Header');
@@ -17,8 +17,15 @@ const Header = () => {
     pathname.split('/').includes('login');
 
   const [menuOpen, setMenuOpen] = useState(false);
-  const { width } = useWindowSize();
-  useBodyScrollLock(menuOpen && (width ?? 0) <= 768);
+  const windowSize = useWindowSize();
+
+  useEffect(() => {
+    if (windowSize.width > 768 && menuOpen) {
+      setMenuOpen(false);
+    }
+  }, [windowSize.width, menuOpen]);
+
+  useBodyScrollLock(menuOpen && windowSize.width <= 768);
 
   if (isAdminPage) return null;
 
@@ -86,7 +93,7 @@ const Header = () => {
           </button>
         </div>
       </div>
-      {menuOpen && (width ?? 0) <= 768 && (
+      {menuOpen && window.innerWidth <= 768 && (
         <div
           className="fixed inset-0 z-40 h-[100vh] bg-[rgba(202,196,226,0.5)]"
           onClick={toggleMenu}
