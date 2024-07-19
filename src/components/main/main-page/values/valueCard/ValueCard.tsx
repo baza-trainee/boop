@@ -22,7 +22,7 @@ const ValueCard = ({
       <div
         className={`flex flex-row items-end justify-end gap-4 pb-2 ${index === 0 ? `flex-row-reverse justify-start  md:flex-row` : index === 3 ? `flex-row-reverse justify-start ml:relative ml:-right-12 xl:right-0` : index === 4 ? `relative left-[50px] flex-row-reverse justify-start md:static md:flex-row xl:relative xl:left-[80px]` : index === 2 ? 'md:flex-row-reverse' : ``} `}
       >
-        <p className="title-gradient p-0 pb-2 font-groppled text-xl font-bold leading-none 4xl:text-[28px] ">
+        <p className="title-gradient p-0 pb-2 pt-[8px] font-groppled text-xl font-bold leading-none 4xl:text-[28px] ">
           {text}
         </p>
 

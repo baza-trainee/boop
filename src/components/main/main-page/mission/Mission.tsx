@@ -12,7 +12,7 @@ const Mission = () => {
   const t = useTranslations('Mission');
   const missionCards = GetMissionCardsInfo();
   const isTablet = useMediaQuery({
-    query: '(min-width: 427px) and (max-width: 1023px)',
+    query: '(min-width: 500px) and (max-width: 1023px)',
   });
 
   return (
