@@ -33,7 +33,7 @@ const PaymentCurrency = () => {
           />
           <label
             htmlFor={item.value}
-            className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-lightVioletSecond text-xl font-bold leading-[1] text-textViolet transition-all duration-300 ease-linear peer-checked/:bg-mainViolet peer-checked/:text-white"
+            className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-lightVioletSecond text-xl font-bold leading-[1] text-textViolet transition-all duration-300 ease-linear peer-checked/:bg-mainViolet peer-checked/:text-white max-custom:text-base max-custom:leading-none"
           >
             {item.text}
           </label>
