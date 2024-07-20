@@ -101,8 +101,8 @@
   },
   "Gallery": {
     "title": "Gallery",
-    "btn": "Load more",
-    "btnCollapse": "Collapse"
+    "btn": "Download more",
+    "btnCollapse": "Roll up"
   },
   "Partners": {
     "title_1": "Our friends",

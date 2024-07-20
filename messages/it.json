@@ -13,56 +13,56 @@
   "Founders": {
     "subtitle": "Fondatrici del progetto",
     "title": "Olga Bulkina \ne Marina Berdar",
-    "text": "Clown ospedaliere \ndiplomate. Allenatrici. \nMembri onorari dell'organizzazione \n”SOCCORSO CLOWN”",
-    "caption": "Ufficio dei Sorrisi e del Sostegno"
+    "text": "Clown di corsia diplomate. \nFormatrici. Membri onorari \ndell'organizzazione \n”SOCCORSO CLOWN”",
+    "caption": "Ufficio Sorrisi e Supporto"
   },
   "Vision": {
     "subtitle": "Visione",
-    "text": "Aspiriamo a fare in modo che in ogni ospedale pediatrico dell'Ucraina ci sia spazio per la gioia e i sorrisi dei bambini che si trovano in situazioni difficili e di crisi."
+    "text": "Ci impegniamo a garantire che ogni ospedale pediatrico in Ucraina sia un luogo di gioia e sorrisi per i bambini che si trovano in situazioni difficili e di crisi"
   },
   "Values": {
     "title": "I nostri valori",
     "inclusivity": {
       "text": "Inclusività",
-      "hoverText": "apprezziamo ognuno, indipendentemente dalle circostanze, e facciamo tutto il possibile affinché ognuno si senta importante e necessario"
+      "hoverText": "valutiamo tutti, indipendentemente dalle circostanze, e facciamo del nostro meglio per far sentire tutti importanti e necessari"
     },
     "proactivity": {
       "text": "Proattività",
-      "hoverText": "agiamo in modo proattivo, cercando sempre nuovi modi per portare gioia e sollievo"
+      "hoverText": "aghiamo in anticipo, cercando sempre nuovi modi per portare gioia e sollievo"
     },
     "respect": {
       "text": "Rispetto",
-      "hoverText": "trattiamo tutti con profondo rispetto, apprezzando l'unicità di ciascuno"
+      "hoverText": "trattiamo tutti con profondo rispetto, apprezzando l'unicità di ogni individuo"
     },
     "sincerity": {
       "text": "Sincerità",
-      "hoverText": "nostre azioni e parole vengono sempre dal cuore, creando un'atmosfera di fiducia"
+      "hoverText": "le nostre azioni e parole provengono sempre dal cuore, creando un'atmosfera di fiducia"
     },
     "empathy": {
       "text": "Empatia",
-      "hoverText": "comprendiamo e sentiamo quello che sentite voi, sostenendovi nei momenti più difficili"
+      "hoverText": "comprendiamo e proviamo ciò che provate voi, sostenendovi nei momenti più difficili"
     }
   },
   "Mission": {
     "title": "La nostra missione",
     "first": {
       "text": "Clown ospedaliero, programma \ndi supporto emotivo per i bambini in ospedale",
-      "hoverText": "Solleviamo il morale e lo spirito combattivo del bambino. Riduciamo il livello di stress. Agevoliamo l'adattamento alle condizioni ospedaliere. Accompagniamo il bambino durante procedure o operazioni. Collaboriamo con genitori e medici "
+      "hoverText": "Eleviamo l'umore e lo spirito combattivo del bambino. Riduciamo il livello di stress. Facilitiamo l'adattamento alle condizioni ospedaliere. Accompagniamo il bambino durante le procedure o gli interventi chirurgici. Lavoriamo con i genitori e i medici "
     },
     "second": {
-      "text": "Organizzazione \ndi eventi di riabilitazione sociale",
-      "hoverText": "Concerti settimanali. Spettacoli di bolle di sapone. Giochi per vincitori. Giornate di bellezza. Arteterapia. Suonoterapia. Concerti a tema "
+      "text": "Organizzazione \ndi attività di riabilitazione sociale",
+      "hoverText": "Concerti settimanali. Spettacoli di bolle di sapone. Giochi di vincitori. Giornate di bellezza. Arteterapia. Suonoterapia. Concerti a tema "
     },
     "third": {
       "text": "Sviluppo della comunità dei volontari",
-      "hoverText": "Insegniamo clown ospedalieri. Organizziamo team building con il supporto della comunità internazionale dei clown ospedalieri. Lavoriamo sullo stato emotivo dei volontari. Promuoviamo lo sviluppo della clown terapia in Ucraina"
+      "hoverText": "Formiamo clown di ospedale. Organizziamo team building per la squadra con il supporto della comunità internazionale di clown di ospedale. Lavoriamo sullo stato emotivo dei volontari. Promuoviamo e sviluppiamo la clownerie in ospedale in Ucraina "
     }
   },
   "Goals": {
     "title": "I nostri obiettivi",
     "first": {
       "cardNumber": "1",
-      "text": "Creazione dell'Associazione tutta ucraina dei clown ospedalieri con i colleghi delle città dell'Ucraina"
+      "text": "Creazione dell'Associazione tutta Ucraina dei clown ospedalieri con i colleghi delle città dell'Ucraina"
     },
     "second": {
       "cardNumber": "2",
@@ -74,7 +74,7 @@
     },
     "fourth": {
       "cardNumber": "4",
-      "text": "Espansione della cooperazione internazionale"
+      "text": "Espansione della collaborazione internazionale"
     }
   },
   "Counter_section": {
@@ -101,8 +101,8 @@
   },
   "Gallery": {
     "title": "Galleria",
-    "btn": "Carica altro",
-    "btnCollapse": "Riduci"
+    "btn": "Scarica altro",
+    "btnCollapse": "Arrotolare"
   },
   "Error": {
     "title": "Ops, sembra che ti sia perso!",
@@ -114,17 +114,17 @@
   },
   "About": {
     "main_rules": {
-      "title": " – ci assicuriamo che l'infanzia duri, indipendentemente dalle circostanze",
+      "title": " – nonostante tutto, l'infanzia \ndeve continuare",
       "rules": {
-        "paragraph_1": "A volte tutto ciò che possiamo fare è essere semplicemente accanto. Specialmente nei momenti in cui si verificano eventi del tutto inaspettati e traumatici.",
-        "paragraph_2": "”Non fare del male!” - è la regola più importante. Né agli altri, né a noi stessi. Siamo il sistema di supporto per coloro che ci circondano. Dopotutto, ci serviamo così tanto l'un l'altro.",
-        "paragraph_3": "Ci sono innumerevoli modi per mostrare cura e accettazione. Possiamo semplicemente parlare, tacere, distrarre, offrire una bevanda calda, prendere per mano, gonfiare un palloncino..."
+        "paragraph_1": "A volte, tutto ciò che possiamo fare è semplicemente stare vicini. Soprattutto in quei momenti in cui si verificano eventi inaspettati e traumatici.",
+        "paragraph_2": "”Non nuocere!” - la regola più importante. Né agli altri, né a se stessi. Diventiamo un supporto per chi ci sta vicino. Perché abbiamo così tanto bisogno l'uno dell'altro.",
+        "paragraph_3": "Si può semplicemente parlare, stare in silenzio, distrarre, offrire una bevanda calda, prendere per mano, gonfiare un palloncino..."
       }
     },
     "team_structure": {
       "title": "Squadra",
       "management_title": "Capo squadra",
-      "management_text": "Comunicazione con la direzione e il personale medico dell'ospedale. Pianificazione e preparazione di event.",
+      "management_text": "Comunicazione con la direzione e il personale medico dell'ospedale. Pianificazione e preparazione di eventi.",
       "volunteers_title": "Volontari",
       "volunteers_text": "Reclutamento di volontari e sviluppo \ndella community di volontariato intorno all'ospedale."
     },

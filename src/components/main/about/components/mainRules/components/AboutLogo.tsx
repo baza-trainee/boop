@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import React from 'react';
 
@@ -22,7 +23,7 @@ const AboutLogo: React.FC<AboutLogoProps> = ({ text, isUkr, isIt }) => {
         className="relative"
       />
       <h1
-        className={`title-gradient relative w-[350px] text-center font-groppled text-[28px] font-bold leading-[132%] md:top-[20px] md:w-[570px]  ml:text-[32px] ml:leading-[150%] ${isIt && ' ml:w-[650px]'}`}
+        className={`${isIt ? 'w-[370px] md:w-[370px] ml:w-[420px]' : 'w-[350px] md:w-[470px] ml:w-[530px]'} title-gradient relative text-center font-groppled text-[28px] font-bold leading-[132%] md:top-[20px]    ml:text-[32px] ml:leading-[150%] `}
       >
         {text}
       </h1>
