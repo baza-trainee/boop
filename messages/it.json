@@ -10,6 +10,73 @@
   "Hero": {
     "title": "Nonostante tutto, l'infanzia deve continuare"
   },
+  "Founders": {
+    "subtitle": "Fondatrici del progetto",
+    "title": "Olga Bulkina \ne Marina Berdar",
+    "text": "Clown di corsia diplomate. \nFormatrici. Membri onorari \ndell'organizzazione \n”SOCCORSO CLOWN”",
+    "caption": "Ufficio Sorrisi e Supporto"
+  },
+  "Vision": {
+    "subtitle": "Visione",
+    "text": "Ci impegniamo a garantire che ogni ospedale pediatrico in Ucraina sia un luogo di gioia e sorrisi per i bambini che si trovano in situazioni difficili e di crisi"
+  },
+  "Values": {
+    "title": "I nostri valori",
+    "inclusivity": {
+      "text": "Inclusività",
+      "hoverText": "valutiamo tutti, indipendentemente dalle circostanze, e facciamo del nostro meglio per far sentire tutti importanti e necessari"
+    },
+    "proactivity": {
+      "text": "Proattività",
+      "hoverText": "aghiamo in anticipo, cercando sempre nuovi modi per portare gioia e sollievo"
+    },
+    "respect": {
+      "text": "Rispetto",
+      "hoverText": "trattiamo tutti con profondo rispetto, apprezzando l'unicità di ogni individuo"
+    },
+    "sincerity": {
+      "text": "Sincerità",
+      "hoverText": "le nostre azioni e parole provengono sempre dal cuore, creando un'atmosfera di fiducia"
+    },
+    "empathy": {
+      "text": "Empatia",
+      "hoverText": "comprendiamo e proviamo ciò che provate voi, sostenendovi nei momenti più difficili"
+    }
+  },
+  "Mission": {
+    "title": "La nostra missione",
+    "first": {
+      "text": "Clown ospedaliero, programma \ndi supporto emotivo per i bambini in ospedale",
+      "hoverText": "Eleviamo l'umore e lo spirito combattivo del bambino. Riduciamo il livello di stress. Facilitiamo l'adattamento alle condizioni ospedaliere. Accompagniamo il bambino durante le procedure o gli interventi chirurgici. Lavoriamo con i genitori e i medici "
+    },
+    "second": {
+      "text": "Organizzazione \ndi attività di riabilitazione sociale",
+      "hoverText": "Concerti settimanali. Spettacoli di bolle di sapone. Giochi di vincitori. Giornate di bellezza. Arteterapia. Suonoterapia. Concerti a tema "
+    },
+    "third": {
+      "text": "Sviluppo della comunità dei volontari",
+      "hoverText": "Formiamo clown di ospedale. Organizziamo team building per la squadra con il supporto della comunità internazionale di clown di ospedale. Lavoriamo sullo stato emotivo dei volontari. Promuoviamo e sviluppiamo la clownerie in ospedale in Ucraina "
+    }
+  },
+  "Goals": {
+    "title": "I nostri obiettivi",
+    "first": {
+      "cardNumber": "1",
+      "text": "Creazione dell'Associazione tutta Ucraina dei clown ospedalieri con i colleghi delle città dell'Ucraina"
+    },
+    "second": {
+      "cardNumber": "2",
+      "text": "Lancio di nuovi team nelle cliniche pediatriche di Kiev e altre città"
+    },
+    "third": {
+      "cardNumber": "3",
+      "text": "Creazione di un programma di supporto emotivo nelle ospedali pediatrici a livello statale"
+    },
+    "fourth": {
+      "cardNumber": "4",
+      "text": "Espansione della collaborazione internazionale"
+    }
+  },
   "Counter_section": {
     "title": "I risultati in numeri",
     "counter_1": {
@@ -34,8 +101,8 @@
   },
   "Gallery": {
     "title": "Galleria",
-    "btn": "Carica altro",
-    "btnCollapse": "Riduci"
+    "btn": "Scarica altro",
+    "btnCollapse": "Arrotolare"
   },
   "Error": {
     "title": "Ops, sembra che ti sia perso!",
@@ -46,10 +113,18 @@
     "title": "I nostri contatti"
   },
   "About": {
+    "main_rules": {
+      "title": " – nonostante tutto, l'infanzia \ndeve continuare",
+      "rules": {
+        "paragraph_1": "A volte, tutto ciò che possiamo fare è semplicemente stare vicini. Soprattutto in quei momenti in cui si verificano eventi inaspettati e traumatici.",
+        "paragraph_2": "”Non nuocere!” - la regola più importante. Né agli altri, né a se stessi. Diventiamo un supporto per chi ci sta vicino. Perché abbiamo così tanto bisogno l'uno dell'altro.",
+        "paragraph_3": "Si può semplicemente parlare, stare in silenzio, distrarre, offrire una bevanda calda, prendere per mano, gonfiare un palloncino..."
+      }
+    },
     "team_structure": {
       "title": "Squadra",
       "management_title": "Capo squadra",
-      "management_text": "Comunicazione con la direzione e il personale medico dell'ospedale. Pianificazione e preparazione di event.",
+      "management_text": "Comunicazione con la direzione e il personale medico dell'ospedale. Pianificazione e preparazione di eventi.",
       "volunteers_title": "Volontari",
       "volunteers_text": "Reclutamento di volontari e sviluppo \ndella community di volontariato intorno all'ospedale."
     },
@@ -94,7 +169,8 @@
       "paragraph_4": "Per i tre mesi successivi, si incontrano una volta alla settimana per conoscere meglio i meccanismi del lavoro dei clown ospedalieri.",
       "paragraph_5": "Allo stesso tempo, effettuano visite regolari ai reparti ospedalieri, sotto la costante supervisione dei formatori e del supporto psicologico."
     },
-    "feedback_title": "Recensioni degli studenti della Scuola di Clown"
+    "feedback_title": "Recensioni degli studenti della Scuola di Clown",
+    "photo_title": "Fotografie"
   },
   "Form": {
     "joinUs": "Unisciti a noi",

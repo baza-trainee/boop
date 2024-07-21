@@ -16,8 +16,8 @@ const HeroLogo: React.FC<HeroLogoProps> = ({ locale }) => {
           : '/images/heroSection/en_logo.svg'
       }
       alt="Boop"
-      width={isUkr ? 391 : 391}
-      height={isUkr ? 227 : 204}
+      width={isUkr ? 391 : 435}
+      height={isUkr ? 227 : 227}
       className="relative z-10 h-auto"
     />
   );

@@ -13,7 +13,7 @@
   "Founders": {
     "subtitle": "Project Co-Founders",
     "title": "Olha Bulkina \nand Maryna Berdar",
-    "text": "Certified Hospital Clowns. \nEducational Facilitators. \nHonored Affiliates of \nthe ”SOCCORSO CLOWN” Organization",
+    "text": "Certified Hospital Clowns. \nEducational Facilitators. \nHonored Affiliates of \nthe ”SOCCORSO CLOWN” \nOrganization",
     "caption": "Bureau of Smiles and Support"
   },
   "Vision": {
@@ -50,7 +50,7 @@
       "hoverText": "Boosting children's mood and morale. Facilitating adaptation to hospital conditions. Сompanying children for procedures or surgeries. Collaborating with parents and doctors"
     },
     "second": {
-      "text": "Organizing\n social and rehabilitation events",
+      "text": "Organizing\n social and rehabilitation \nevents",
       "hoverText": "Weekly Events. Bubble Shows. Winners' Games. Beauty Days. Art Therapy. Sound Therapy. Themed Concerts"
     },
     "third": {
@@ -101,8 +101,8 @@
   },
   "Gallery": {
     "title": "Gallery",
-    "btn": "Load more",
-    "btnCollapse": "Collapse"
+    "btn": "Download more",
+    "btnCollapse": "Roll up"
   },
   "Partners": {
     "title_1": "Our friends",
@@ -121,14 +121,14 @@
       "title": " – we make sure that childhood lasts, no matter the circumstances",
       "rules": {
         "paragraph_1": "Sometimes, all we can do is be there for one another, especially during unexpected and traumatic events.",
-        "paragraph_2": "”Do no harm!” - is the most important rule. \nNot to others, and not to ourselves. Let's be the support system for those around us. After all, we need each other so much.",
+        "paragraph_2": "”Do no harm!” - is the most important rule. Not to others, and not to ourselves. Let's be the support system for those around us. After all, we need each other so much.",
         "paragraph_3": "There are countless ways to show care and acceptance. We can simply talk, be silent, distract, offer a warm drink, hold someone's hand, blow up a balloon..."
       }
     },
     "team_structure": {
       "title": "Team Structure",
       "management_title": "Management",
-      "management_text": "Communication with hospital management and medical staff. \nEvent planning and preparation.",
+      "management_text": "Communication with hospital management \nand medical staff. \nEvent planning and preparation.",
       "volunteers_title": "Volunteers",
       "volunteers_text": "Volunteer recruitment and development of the volunteer community around the hospital."
     },
