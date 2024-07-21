@@ -16,7 +16,7 @@ const Hero = () => {
         <div className="relative flex h-[588px] w-[567px] items-center justify-center pt-[100px]  custom:h-[770px] custom:w-[869px] md:h-[810px] md:w-[869px] ml:h-[808px]  ml:w-[996px] lg:h-[990px] lg:w-[963px] xl:h-[970px] xl:w-[974px] 3xl:h-[860px] 3xl:w-[1530px] 4xl:h-[1105px] 4xl:w-[1920px]">
           <HeroBg />
           <div
-            className={`z-10 flex  w-[247px]  flex-col items-center justify-center px-[5px]  md:w-[341px] ml:w-[433px] ml:px-5 ${locale === 'en' ? 'gap-10  3xl:gap-8' : 'gap-8'} `}
+            className={`z-10 flex   flex-col items-center justify-center     ${locale === 'ua' ? 'w-[237px] gap-8 md:w-[331px] ml:w-[391px]' : 'w-[265px] gap-11 md:w-[368px] md:gap-6 ml:w-[451px]  2xl:gap-3 3xl:gap-1'} `}
           >
             <HeroLogo locale={locale} />
             <h2

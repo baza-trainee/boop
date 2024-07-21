@@ -43,7 +43,7 @@ const PressAboutUsSlide = ({
             <svg className="h-[1rem] w-[5rem] max-custom:hidden">
               <use href="/icons/sprite.svg#title-line"></use>
             </svg>
-            <h3 className="font-groppled text-[20px] font-bold leading-[1.32] text-textViolet max-sm:text-[18px]">
+            <h3 className="pt-2 font-groppled text-[20px] font-bold leading-[1.32] text-textViolet max-sm:text-[18px]">
               {title}
             </h3>
           </div>

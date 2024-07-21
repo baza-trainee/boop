@@ -19,11 +19,11 @@ const MissionCard = ({
 
   return (
     <div
-      className="bg-gray-[#D9D9D9] group relative w-[280px] cursor-pointer bg-cover bg-no-repeat xs:h-[366px]  ml:w-full    lg:h-[491px] 4xl:h-[610px]"
+      className="bg-gray-[#D9D9D9] group relative h-[366px] w-[280px] cursor-pointer bg-cover bg-no-repeat  ml:w-full    lg:h-[491px] 4xl:h-[610px]"
       style={{ backgroundImage: `url(${image})` }}
     >
       <div
-        className="absolute bottom-0 left-0 h-[134px] w-full p-8  opacity-100 backdrop-blur-custom  transition-opacity duration-[700ms] ease-in-out group-hover:opacity-0 xs:px-4  lg:bottom-[64px] 2xl:pt-6"
+        className="absolute bottom-0 left-0 h-[134px] w-full p-8  px-4 opacity-100  backdrop-blur-custom transition-opacity duration-[700ms] ease-in-out group-hover:opacity-0  lg:bottom-[64px] 2xl:pt-6"
         style={{ background: cardGradient }}
       >
         <h3

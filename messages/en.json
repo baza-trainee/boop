@@ -13,7 +13,7 @@
   "Founders": {
     "subtitle": "Project Co-Founders",
     "title": "Olha Bulkina \nand Maryna Berdar",
-    "text": "Certified Hospital Clowns. \nEducational Facilitators. \nHonored Affiliates of \nthe ”SOCCORSO CLOWN” Organization",
+    "text": "Certified Hospital Clowns. \nEducational Facilitators. \nHonored Affiliates of \nthe ”SOCCORSO CLOWN” \nOrganization",
     "caption": "Bureau of Smiles and Support"
   },
   "Vision": {
@@ -50,7 +50,7 @@
       "hoverText": "Boosting children's mood and morale. Facilitating adaptation to hospital conditions. Сompanying children for procedures or surgeries. Collaborating with parents and doctors"
     },
     "second": {
-      "text": "Organizing\n social and rehabilitation events",
+      "text": "Organizing\n social and rehabilitation \nevents",
       "hoverText": "Weekly Events. Bubble Shows. Winners' Games. Beauty Days. Art Therapy. Sound Therapy. Themed Concerts"
     },
     "third": {
@@ -101,8 +101,8 @@
   },
   "Gallery": {
     "title": "Gallery",
-    "btn": "Load more",
-    "btnCollapse": "Collapse"
+    "btn": "Download more",
+    "btnCollapse": "Roll up"
   },
   "Partners": {
     "title_1": "Our friends",
@@ -121,14 +121,14 @@
       "title": " – we make sure that childhood lasts, no matter the circumstances",
       "rules": {
         "paragraph_1": "Sometimes, all we can do is be there for one another, especially during unexpected and traumatic events.",
-        "paragraph_2": "”Do no harm!” - is the most important rule. \nNot to others, and not to ourselves. Let's be the support system for those around us. After all, we need each other so much.",
+        "paragraph_2": "”Do no harm!” - is the most important rule. Not to others, and not to ourselves. Let's be the support system for those around us. After all, we need each other so much.",
         "paragraph_3": "There are countless ways to show care and acceptance. We can simply talk, be silent, distract, offer a warm drink, hold someone's hand, blow up a balloon..."
       }
     },
     "team_structure": {
       "title": "Team Structure",
       "management_title": "Management",
-      "management_text": "Communication with hospital management and medical staff. \nEvent planning and preparation.",
+      "management_text": "Communication with hospital management \nand medical staff. \nEvent planning and preparation.",
       "volunteers_title": "Volunteers",
       "volunteers_text": "Volunteer recruitment and development of the volunteer community around the hospital."
     },
@@ -151,7 +151,7 @@
   "School": {
     "main_title": "Clown Hospital School",
     "join_title": "Who Can Become a Hospital Clown?",
-    "training_title": "How the Training Works",
+    "training_title": "How the Training Goes",
     "main_text_primary": "Clown Hospital School -",
     "main_text_secondary": "a joint project of",
     "and": "and",
@@ -163,11 +163,11 @@
     },
     "training": {
       "text": "Think there are any classes more fun than the Clown School? \nWe think not. Because here students play, dress up in funny costumes and dance. It's very interesting to watch how this clown magic works, when a group of adults, strangers to each other, turn into children and allow themselves to be as they feel - light, real, silly, funny, whatever!",
-      "paragraph_1": "Volunteers undergo a two-day training in the basics of hospital clowning - on the course, students learn to express themselves, release their inner child, not be afraid to be funny, play with each other.",
+      "paragraph_1": "Volunteers undergo a two-day training in the basics of hospital clowning - on the course, students learn to express themselves, release their inner child, not be afraid to be funny, and play with each other.",
       "paragraph_2": "Everyone can awaken their inner clown - a unique, interesting, funny character who is just exploring the world around them, but is already ready to dive into the unknown. This is the base with which you can already work and go to the departments to the children.",
       "paragraph_3": "After the training, volunteers go on practice to the hospital, accompanied by experienced hospital clowns.",
       "paragraph_4": "Over the next three months, they gather for classes once a week and delve deeper into the mechanisms of hospital clowns.",
-      "paragraph_5": "In parallel, regular visits to hospital departments take place, under the constant supervision of trainers and psychological support"
+      "paragraph_5": "In parallel, regular visits to hospital departments take place, under the constant supervision of trainers and psychological support."
     },
     "feedback_title": "Reviews of students of the School of Clowns",
     "photo_title": "Photos"
