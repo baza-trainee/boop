@@ -24,7 +24,7 @@ const BlogItem = ({ imgSrc, title, text, date }: BlogItemProps) => {
             <svg className="h-[1rem] w-[5rem]">
               <use href="/icons/sprite.svg#title-line"></use>
             </svg>
-            <h3 className="font-groppled text-[20px] font-bold leading-[1.32] text-textViolet max-sm:text-[18px]">
+            <h3 className="pt-2 font-groppled text-[20px] font-bold leading-[1.32] text-textViolet max-sm:text-[18px]">
               {title}
             </h3>
           </div>
