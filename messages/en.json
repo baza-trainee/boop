@@ -80,19 +80,19 @@
   "Counter_section": {
     "title": "Achievements in numbers",
     "counter_1": {
-      "text": "years of experience"
+      "text": "{count, plural, =1 {year of experience}  other {years of experience}}"
     },
     "counter_2": {
-      "text": "hospital clowns"
+      "text": "{count, plural, =1 {hospital clown}  other {hospital clowns}}"
     },
     "counter_3": {
-      "text": "performances per month"
+      "text": "{count, plural, =1 {performance per month}  other {performances per month}}"
     },
     "counter_4": {
-      "text": "hospitals where we work"
+      "text": "{count, plural, =1 {hospital where we work}  other {hospitals where we work}}"
     },
     "counter_5": {
-      "text": "children per month"
+      "text": "{count, plural, =1 {child per month}  other {children per month}}"
     }
   },
   "Press_about_us": {

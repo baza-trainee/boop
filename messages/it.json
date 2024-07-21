@@ -80,19 +80,19 @@
   "Counter_section": {
     "title": "I risultati in numeri",
     "counter_1": {
-      "text": "anni di esperienza"
+      "text": "{count, plural, =1 {anno di esperienza}  other {anni di esperienza}}"
     },
     "counter_2": {
-      "text": "clown di corsia"
+      "text": "{count, plural, =1 {clown di corsia}  other {clown di corsia}}"
     },
     "counter_3": {
-      "text": "uscite al mese"
+      "text": "{count, plural, =1 {uscite al mese}  other {uscite al mese}}"
     },
     "counter_4": {
-      "text": "ospedali in cui operiamo"
+      "text": "{count, plural, =1 {ospedale in cui operiamo}  other {ospedali in cui operiamo}}"
     },
     "counter_5": {
-      "text": "bambini al mese"
+      "text": "{count, plural, =1 {bambino al mese}  other {bambini al mese}}"
     }
   },
   "Press_about_us": {
