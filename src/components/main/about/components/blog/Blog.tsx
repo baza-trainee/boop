@@ -9,6 +9,7 @@ import { blogItems } from './items';
 const Blog = () => {
   const t = useTranslations('About.blog');
 
+  if (!blogItems) return;
   return (
     <section className="mb-[120px]">
       <div className="container mx-auto">
@@ -16,10 +17,12 @@ const Blog = () => {
           <h2 className="title-gradient font-groppled text-3xl font-bold max-sm:text-[28px]">
             {t('title')}
           </h2>
-          <div className="flex items-center gap-2">
-            <CarouselButton className="blog-prev-el rotate-180" />
-            <CarouselButton className="blog-next-el" />
-          </div>
+          {blogItems.length > 1 && (
+            <div className="flex items-center gap-2">
+              <CarouselButton className="blog-prev-el rotate-180" />
+              <CarouselButton className="blog-next-el" />
+            </div>
+          )}
         </div>
         <Carousel
           items={blogItems}
