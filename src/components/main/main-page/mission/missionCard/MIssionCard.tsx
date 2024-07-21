@@ -33,11 +33,11 @@ const MissionCard = ({
         </h3>
       </div>
       <div
-        className={`absolute left-0 top-0 flex h-full  w-full flex-col gap-4 p-4 pt-[50px] opacity-0 transition-opacity duration-[700ms] ease-in-out  group-hover:opacity-100 lg:px-6  xl:pt-[72px] 2xl:px-8 2xl:pb-6 4xl:p-[97px]`}
+        className={`absolute left-0 top-0 flex h-full  w-full flex-col gap-4 p-4 pt-[50px] opacity-0 transition-opacity duration-[700ms] ease-in-out  group-hover:opacity-100 lg:px-6  xl:pt-[72px] 2xl:pb-6 3xl:px-8 4xl:p-[97px]`}
         style={{ background: overlayGradient }}
       >
         <h3
-          className={`${index === 2 ? `w-[178px]` : index === 1 ? `w-[210px] lg:w-[330px]` : `lg:w-[300px] 2xl:w-[361px]`} whitespace-pre-line font-raleway text-[16px] font-[600] leading-[132%] text-bgWhite lg:text-2xl lg:font-[600] lg:leading-[120%]`}
+          className={`${index === 2 ? `w-[178px]` : index === 1 ? `w-[210px] lg:w-[330px]` : `lg:w-[300px] 2xl:w-[355px]`} whitespace-pre-line font-raleway text-[16px] font-[600] leading-[132%] text-bgWhite lg:text-2xl lg:font-[600] lg:leading-[120%]`}
         >
           {text}
         </h3>
