@@ -24,7 +24,10 @@ const Counter = () => {
               <CounterItem
                 key={id}
                 number={number}
-                text={t(text)}
+                text={t(text, {
+                  count: number,
+                  ordinal: true,
+                })}
                 variant={variant}
               />
             ))}
