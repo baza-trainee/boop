@@ -38,6 +38,7 @@ const Feedback = () => {
     }
   }, [data]);
 
+  if (!feedbackData) return;
   return (
     <section className="mb-[120px]">
       <div className="container mx-auto max-w-screen-3xl">
@@ -46,10 +47,12 @@ const Feedback = () => {
             className="max-md:[&>svg]:hidden"
             title={t('feedback_title')}
           />
-          <div className="flex items-center gap-2">
-            <CarouselButton className="feedback-prev-el rotate-180" />
-            <CarouselButton className="feedback-next-el" />
-          </div>
+          {feedbackData?.length > 1 && (
+            <div className="flex items-center gap-2">
+              <CarouselButton className="feedback-prev-el rotate-180" />
+              <CarouselButton className="feedback-next-el" />
+            </div>
+          )}
         </div>
         {isFetching && <p className="container">Loading...</p>}
         {isError && <p className="container">Something went wrong!</p>}
