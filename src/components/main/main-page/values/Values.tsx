@@ -17,7 +17,7 @@ const Values = () => {
       </div>
 
       <div className="ml:pt-[50px]md:pb-[125px]  flex w-full items-center justify-center bg-bgYellow pb-[92px] pt-8 md:pb-[122px] md:pt-[42px]  ml:pb-[108px] lg:pb-[112px] lg:pt-[62px]  xl:pt-[65px]  2xl:pb-[123px] 2xl:pt-[55px]">
-        <ul className="container flex flex-col items-stretch justify-between gap-[70px] md:h-[160px] md:flex-row  md:flex-wrap md:items-start md:justify-around ml:gap-[56px]   2xl:gap-[48px]">
+        <ul className="mx-auto flex w-full max-w-[1920px] flex-col items-stretch justify-between gap-[70px] px-[20px] custom:px-[80px] md:h-[160px] md:flex-row md:flex-wrap md:items-start md:justify-around md:px-[64px]  ml:gap-[56px] lg:px-[64px] xl:px-[80px] 2xl:gap-[48px]   2xl:px-[120px]">
           {valuesCards.map((el, index) => {
             return (
               <li
