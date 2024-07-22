@@ -12,4 +12,4 @@ export interface IBlog {
   textIT: string;
 }
 
-export type BlogFormData = Omit<IBlog, 'id' | 'createdAt'>;
+export type BlogFormData = Omit<IBlog, 'id' | 'createdAt' | 'location'>;

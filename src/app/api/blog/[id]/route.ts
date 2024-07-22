@@ -14,21 +14,21 @@ export async function PATCH(
         status: 400,
       });
     }
-    const data: { newBlog: BlogFormData } = await request.json();
+    const { updatedPost }: { updatedPost: BlogFormData } = await request.json();
     const updateBlog = await prisma.blog.update({
       where: {
         id: Number(params.id),
       },
       data: {
-        location: data.newBlog.location,
-        imageUrl: data.newBlog.imageUrl,
-        imageId: data.newBlog.imageId,
-        titleUA: data.newBlog.titleUA,
-        textUA: data.newBlog.textUA,
-        titleEN: data.newBlog.titleEN,
-        textEN: data.newBlog.textEN,
-        titleIT: data.newBlog.titleIT,
-        textIT: data.newBlog.textIT,
+        // location: data.newBlog.location,
+        imageUrl: updatedPost.imageUrl,
+        imageId: updatedPost.imageId,
+        titleUA: updatedPost.titleUA,
+        textUA: updatedPost.textUA,
+        titleEN: updatedPost.titleEN,
+        textEN: updatedPost.textEN,
+        titleIT: updatedPost.titleIT,
+        textIT: updatedPost.textIT,
       },
     });
     return NextResponse.json(updateBlog, { status: 200 });
