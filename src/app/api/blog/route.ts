@@ -5,12 +5,43 @@ import { BlogFormData } from '@/types/blog';
 
 import './swagger-comments';
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
     await prismaConnect();
-    const response = await prisma.blog.findMany();
-    if (!response) {
-      return new NextResponse('Posts is not found', { status: 400 });
+    const { searchParams } = new URL(request.url);
+    const page = parseInt(searchParams.get('page') || '0', 10);
+    const limit = parseInt(searchParams.get('limit') || '0', 10);
+
+    let posts;
+    let totalRecords = 0;
+    let response;
+
+    if (page > 0 && limit > 0) {
+      const offset = (page - 1) * limit;
+      posts = await prisma.blog.findMany({
+        skip: offset,
+        take: limit,
+      });
+
+      totalRecords = await prisma.blog.count();
+      response = {
+        data: posts,
+        meta: {
+          page,
+          limit,
+          totalRecords,
+          totalPages: Math.ceil(totalRecords / limit),
+        },
+      };
+    } else {
+      posts = await prisma.blog.findMany();
+      if (!posts) {
+        return new NextResponse('Posts is not found', { status: 400 });
+      }
+      response = {
+        data: posts,
+        meta: {},
+      };
     }
 
     return NextResponse.json(response, { status: 200 });
@@ -27,6 +58,7 @@ export async function POST(request: Request) {
     const response = await prisma.blog.create({
       data: {
         ...data,
+        location: '',
       },
     });
     return NextResponse.json(response);
