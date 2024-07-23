@@ -6,6 +6,8 @@ import FirstRuleCard from './components/FirstRuleCard';
 import SecondRuleCard from './components/SecondRuleCard';
 import ThirdRuleCard from './components/ThirdRuleCard';
 import AboutLogo from './components/AboutLogo';
+import AnimatedYellowMan from './components/AnimatedOrangeMan';
+import AnimatedOrangeMan from './components/AnimatedOrangeMan';
 
 const MainRules = () => {
   const t = useTranslations('About.main_rules');
@@ -22,12 +24,16 @@ const MainRules = () => {
           <SecondRuleCard text={t('rules.paragraph_2')} />
           <ThirdRuleCard text={t('rules.paragraph_3')} />
         </div>
-        <Image
+        {/* <Image
           src="/images/mainRules/orange_man.svg"
           alt="orange_man"
           width={168}
           height={164}
           className="absolute bottom-0 left-[75px] hidden ml:block"
+        /> */}
+        <AnimatedOrangeMan
+          width={'168'}
+          className={'absolute bottom-0 left-[75px] hidden ml:block'}
         />
       </div>
     </section>

@@ -17,7 +17,7 @@ const TeamStructure = () => {
         src="/images/teamStructure/aboutPage_bg_violet.svg"
         alt=""
         width={553}
-        height={1565}
+        height={1723}
         className="absolute -right-[93px] -top-[662px] z-0 hidden h-auto  w-[443px]  lg:block  xl:-right-[37px] xl:-top-[663px] 3xl:-top-[723px]  3xl:right-0 3xl:w-[467px] 4xl:-top-[845px] 4xl:w-[553px]"
       />
       <SectionTitle title={t('title')} />
