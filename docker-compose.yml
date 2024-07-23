@@ -22,6 +22,8 @@ services:
   app:
     image: boop
     env_file: .env
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
     build:
       context: ./
       target: dev
