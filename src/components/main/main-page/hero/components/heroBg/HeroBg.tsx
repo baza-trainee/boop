@@ -6,27 +6,31 @@ const HeroBg = () => {
     <picture>
       <source
         media="(max-width: 650px)"
-        srcSet="/images/heroSection/hero_bg_xs.svg"
+        srcSet="/images/heroSection/hero_bg_xs_light.png"
       />
       <source
         media="(max-width: 1023px)"
-        srcSet="/images/heroSection/hero_bg_md.svg"
+        srcSet="/images/heroSection/hero_bg_md_light.png"
       />
       <source
         media="(max-width: 1279px)"
-        srcSet="/images/heroSection/hero_bg_ml.svg"
+        srcSet="/images/heroSection/hero_bg_ml_light.png"
+      />
+      <source
+        media="(max-width: 1919px)"
+        srcSet="/images/heroSection/hero_bg_3xl_light.png"
       />
       <source
         media="(max-width: 2560px)"
-        srcSet="/images/heroSection/hero_bg_3xl.svg"
+        srcSet="/images/heroSection/hero_bg_4xl_light.png"
       />
 
       <Image
-        src="/images/heroSection/hero_bg_3xl.svg"
+        src="/images/heroSection/hero_bg_4xl_light.png"
         alt="BOOP"
-        width={1173}
-        height={1375}
-        className="absolute -top-[73px] left-12  z-[2] w-[567px] blur-[1px] custom:left-[100px] custom:h-[900px] custom:w-[869px] md:-top-[128px] md:left-[158px] md:h-auto md:w-[869px] ml:left-[155px] ml:top-0 ml:h-[1008px] ml:w-[868px] lg:h-[1190px] lg:w-[963px] xl:left-[190px] xl:h-[1190px] xl:w-[974px] 2xl:left-[230px] 3xl:left-[535px] 3xl:top-0 3xl:h-[1090px] 3xl:w-[996px] 4xl:left-[743px]  4xl:h-[1380px] 4xl:w-[1173px]
+        width={1455}
+        height={1549}
+        className="absolute -top-[73px] left-[70px]  z-[2] h-auto w-[608px] custom:-top-[189px] custom:left-[160px]  custom:w-[836px] md:-top-[149px] md:left-[163px] md:w-[836px] ml:-top-[139px] ml:left-[173px] ml:w-[1044px] lg:-top-[165px] lg:left-[253px] lg:w-[1205px] xl:-top-[175px] 3xl:-top-[213px] 3xl:left-[525px] 4xl:-top-[223px]  4xl:left-[725px] 4xl:w-[1455px] 
         "
       />
     </picture>
