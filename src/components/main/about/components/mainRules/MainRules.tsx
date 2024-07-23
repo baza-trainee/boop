@@ -1,4 +1,4 @@
-import Image from 'next/image';
+// import Image from 'next/image';
 import React from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 
@@ -6,7 +6,6 @@ import FirstRuleCard from './components/FirstRuleCard';
 import SecondRuleCard from './components/SecondRuleCard';
 import ThirdRuleCard from './components/ThirdRuleCard';
 import AboutLogo from './components/AboutLogo';
-import AnimatedYellowMan from './components/AnimatedOrangeMan';
 import AnimatedOrangeMan from './components/AnimatedOrangeMan';
 
 const MainRules = () => {
@@ -32,8 +31,9 @@ const MainRules = () => {
           className="absolute bottom-0 left-[75px] hidden ml:block"
         /> */}
         <AnimatedOrangeMan
-          width={'168'}
-          className={'absolute bottom-0 left-[75px] hidden ml:block'}
+          className={
+            'absolute bottom-0 left-[75px] hidden cursor-pointer ml:block'
+          }
         />
       </div>
     </section>

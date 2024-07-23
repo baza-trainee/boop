@@ -68,6 +68,12 @@ const Gallery = () => {
       setPhotos(items.slice(0, limit));
       setCurrentIndex(limit);
     }
+
+    // const element = document.querySelector('#nextElement');
+    // console.log('element', element);
+    // if (element) {
+    //   element.scrollIntoView({ behavior: 'auto' });
+    // }
   };
 
   const isLoadMoreDisabled = items && items.length === photos.length;
