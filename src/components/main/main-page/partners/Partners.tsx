@@ -6,17 +6,18 @@ import CarouselButton from '../../shared/carousel/carousel-button/CarouselButton
 import { Carousel } from '../../shared/carousel/Carousel';
 import SectionTitle from '../../shared/SectionTitle';
 
+
 const Partners = () => {
   const t = useTranslations('Partners');
   return (
     <section className="mb-[120px]">
-      <div className="flex flex-row items-center justify-center">
-        <div className="flex h-[600px] w-full flex-col gap-[32px] bg-bgViolet py-[50px] pl-[80px]">
-          <div className="flex flex-row gap-[10px]">
-            <SectionTitle title={t('title_1')} />
+      <div className="flex flex-col items-center justify-center w-full md:flex-row">
+          <div className="w-full h-[390px] flex flex-col bg-bgViolet gap-[24px] py-[15px] pl-[8px] ml:pl-10 xl:h-[376px] xl:py-[50px] xl:pl-[80px] xl:gap-[32px]">
+          <div className="flex gap-[10px] flex-row">
+          <SectionTitle title={t("title_1")}/>
           </div>
-          <div>
-            <Carousel
+          <div className="overflow-y-hidden">
+          <Carousel
               autoHeight={true}
               loop={true}
               items={partnerItems}
@@ -25,35 +26,34 @@ const Partners = () => {
               slidesPerView={1}
               direction="vertical"
               renderItem={(partnerItems) => {
-                return (
-                  <div className="relative flex w-[636px] flex-wrap gap-[24px]">
-                    {partnerItems.map((item) => (
-                      <PartnersCard
-                        key={item.id}
-                        imgSrc={item.imgSrc}
-                        name={item.name}
-                        id={item.id}
-                        width={item.width}
-                        height={item.height}
-                        url={item.url}
-                      />
+                return(
+                  <div className="relative flex flex-wrap gap-[24px] w-[350px]  ml:w-[436px] xl:w-[636px] 4xl:w-[828px]">
+                  {partnerItems.map((item) => (
+                    <PartnersCard
+                      key={item.id}
+                      imgSrc={item.imgSrc}
+                      name={item.name}
+                      id={item.id}
+                      width={item.width}
+                      height={item.height}
+                      url={item.url}
+                    />
                     ))}
                     <div className="absolute bottom-4 right-0 flex flex-col gap-[5px]">
-                      <CarouselButton className="partners-prev-el -rotate-90 " />
-                      <CarouselButton className="partners-next-el rotate-90" />
+                    <CarouselButton  className="partners-prev-el -rotate-90 " />
+                    <CarouselButton  className="partners-next-el rotate-90" />
                     </div>
-                  </div>
-                );
-              }}
-            />
+                </div>
+                )}}
+              />
           </div>
         </div>
-        <div className="flex h-[600px] w-full flex-col gap-[32px] bg-bgYellow py-[50px] pl-[80px]">
-          <div className="flex flex-row gap-[10px]">
-            <SectionTitle title={t('title_2')} />
+        <div className="w-full h-[390px] flex flex-col bg-bgYellow gap-[24px] py-[15px] pl-[8px] ml:pl-10  xl:h-[376px] xl:py-[50px] xl:pl-[80px] xl:gap-[32px]">
+          <div className="flex gap-[10px] flex-row">
+          <SectionTitle title={t("title_2")}/>
           </div>
-          <div>
-            <Carousel
+          <div className="overflow-y-hidden">
+          <Carousel
               autoHeight={true}
               loop={true}
               items={partnerItems}
@@ -62,29 +62,29 @@ const Partners = () => {
               slidesPerView={1}
               direction="vertical"
               renderItem={(partnerItems) => {
-                return (
-                  <div className="relative flex w-[636px] flex-wrap gap-[24px]">
-                    {partnerItems.map((item) => (
-                      <PartnersCard
-                        key={item.id}
-                        imgSrc={item.imgSrc}
-                        name={item.name}
-                        id={item.id}
-                        width={item.width}
-                        height={item.height}
-                        url={item.url}
-                      />
+                return(
+                  <div className="relative flex flex-wrap gap-[24px] w-[350px] ml:w-[436px] xl:w-[636px]  4xl:w-[828px]">
+                  {partnerItems.map((item) => (
+                    <PartnersCard
+                      key={item.id}
+                      imgSrc={item.imgSrc}
+                      name={item.name}
+                      id={item.id}
+                      width={item.width}
+                      height={item.height}
+                      url={item.url}
+                    />
                     ))}
                     <div className="absolute bottom-4 right-0 flex flex-col gap-[5px]">
-                      <CarouselButton className="partners-yellow-prev-el -rotate-90" />
-                      <CarouselButton className="partners-yellow-next-el rotate-90" />
+                    <CarouselButton  className="partners-yellow-prev-el -rotate-90" />
+                    <CarouselButton  className="partners-yellow-next-el rotate-90" />
                     </div>
-                  </div>
-                );
-              }}
-            />
+                </div>
+                )}}
+              />
           </div>
         </div>
+
       </div>
     </section>
   );
