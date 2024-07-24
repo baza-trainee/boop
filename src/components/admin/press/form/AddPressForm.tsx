@@ -254,7 +254,7 @@ const AddPressForm = () => {
           <button
             // disabled={false}
             disabled={!isValid}
-            className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white hover:shadow-xl disabled:bg-[#E3E3E4] disabled:text-[#97979A]"
+            className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-[20px] text-white hover:shadow-xl disabled:bg-[#E3E3E4] disabled:text-[#97979A]"
           >
             {isProcessing ? 'Обробка запиту...' : 'Додати'}
           </button>
@@ -262,7 +262,7 @@ const AddPressForm = () => {
             disabled={!isValid}
             // disabled={false}
             onClick={() => dispatch(closeModal())}
-            className="w-[149px] rounded-3xl border border-yellow px-4 py-2 text-violet disabled:border-[#E3E3E4] disabled:bg-[#F3F4EE] disabled:text-[#97979A]"
+            className="w-[149px] rounded-3xl border border-yellow px-4 py-2 text-[20px] text-violet disabled:border-[#E3E3E4] disabled:bg-[#F3F4EE] disabled:text-[#97979A]"
           >
             Скасувати
           </button>
