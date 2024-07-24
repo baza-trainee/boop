@@ -11,7 +11,7 @@ const TextArea = forwardRef(function TextArea(
   { title, errorText, value = '', className = '', ...rest }: TextAreaProps,
   _ref: ForwardedRef<HTMLInputElement>
 ) {
-  const inputClassName = `w-full rounded-xl border p-2 text-sm placeholder:text-sm
+  const inputClassName = `w-full rounded-xl border p-2 text-sm placeholder:text-sm overflow-auto no-scrollbar
       ${
         errorText
           ? 'border-red caret-red outline-red focus:outline-red'

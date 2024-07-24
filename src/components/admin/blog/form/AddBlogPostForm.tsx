@@ -3,11 +3,11 @@ import axios from '@/utils/axios';
 import { useEffect, useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
-import { TTestimonialScheme, testimonialValidation } from './scheme';
+import { TBlogScheme, blogValidation } from './scheme';
 import { useAppDispatch } from '@/store/hook';
 import { closeModal } from '@/store/slices/modalSlice';
 import { openAlert } from '@/store/slices/alertSlice';
-import { testimonialsApi } from '@/store/api/testimonialsApi';
+import { blogApi } from '@/store/api/blogApi';
 import { replaceExtensionWithWebp } from '@/helpers/convertToWebp';
 import { defaultValues } from './defaultValues';
 
@@ -15,19 +15,20 @@ import FileInput from '../../ui/FileInput';
 import TextInput from '../../ui/TextInput';
 import TextArea from '../../ui/TextArea';
 
-const AddTestimonialForm = () => {
+const AddBlogPostForm = () => {
   const dispatch = useAppDispatch();
+
   const [imagePreview, setImagePreview] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
-  const [addTestimonial] = testimonialsApi.useAddTestimonialMutation();
+  const [addPost] = blogApi.useAddPostMutation();
 
   const {
     handleSubmit,
     control,
     watch,
     formState: { isValid, errors },
-  } = useForm<TTestimonialScheme>({
-    resolver: zodResolver(testimonialValidation),
+  } = useForm<TBlogScheme>({
+    resolver: zodResolver(blogValidation),
     mode: 'onChange',
     defaultValues: defaultValues,
   });
@@ -38,35 +39,35 @@ const AddTestimonialForm = () => {
     if (!imageFile.length) return;
     const imageUrl = URL.createObjectURL(imageFile[0]);
     setImagePreview(imageUrl);
+    console.log('setImagePreview', imagePreview);
   }, [imageFile]);
 
-  const onSubmit: SubmitHandler<TTestimonialScheme> = async (
-    values: TTestimonialScheme
-  ) => {
+  const onSubmit: SubmitHandler<TBlogScheme> = async (values: TBlogScheme) => {
     try {
       setIsProcessing(true);
       const formData = new FormData();
       formData.append('file', values.image[0]);
-      formData.append('folderName', 'testimonials');
+      formData.append('folderName', 'blog');
       const res = await axios.post('/cloudinary', formData);
-      const newTestimonial = {
-        nameUa: values.nameUa,
-        nameEn: values.nameEn,
-        nameIt: values.nameIt,
-        reviewUa: values.reviewUa,
-        reviewEn: values.reviewEn,
-        reviewIt: values.reviewIt,
+      const newPost = {
+        titleUA: values.titleUA,
+        titleEN: values.titleEN,
+        titleIT: values.titleIT,
+        textEN: values.textEN,
+        textUA: values.textUA,
+        textIT: values.textIT,
+
         imageUrl: replaceExtensionWithWebp(res.data.fileUrl),
         imageId: res.data.fileId,
       };
-      const response = await addTestimonial(newTestimonial);
+      const response = await addPost(newPost);
       if (response && response.data) {
         dispatch(closeModal());
         dispatch(
           openAlert({
             data: {
               state: 'success',
-              message: 'Новий відгук успішно доданий',
+              message: 'Нова стаття успішно додана',
             },
           })
         );
@@ -81,7 +82,7 @@ const AddTestimonialForm = () => {
   return (
     <div className="flex h-full w-full flex-col items-center justify-center">
       <h1 className="mb-[24px] w-full text-center text-3xl font-[500] text-violet">
-        Додавання відгуку
+        Додавання статті
       </h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -98,40 +99,40 @@ const AddTestimonialForm = () => {
               accept="image/*"
             />
             <Controller
-              name="nameUa"
+              name="titleUA"
               control={control}
               render={({ field }) => (
                 <TextInput
                   {...field}
-                  errorText={errors.nameUa?.message}
-                  placeholder="Напишіть ім’я"
-                  title="Вкажіть ім’я волонтера українською"
+                  errorText={errors.titleUA?.message}
+                  placeholder="Напишіть назву статті"
+                  title="Вкажіть назву статті українською"
                   className={'h-[53px]'}
                 />
               )}
             />
             <Controller
-              name="nameEn"
+              name="titleEN"
               control={control}
               render={({ field }) => (
                 <TextInput
                   {...field}
-                  errorText={errors.nameEn?.message}
-                  placeholder="Напишіть ім’я"
-                  title="Вкажіть ім’я волонтера англійською"
+                  errorText={errors.titleEN?.message}
+                  placeholder="Напишіть назву статті"
+                  title="Вкажіть назву статті англійською"
                   className={'h-[53px]'}
                 />
               )}
             />
             <Controller
-              name="nameIt"
+              name="titleIT"
               control={control}
               render={({ field }) => (
                 <TextInput
                   {...field}
-                  errorText={errors.nameIt?.message}
-                  placeholder="Напишіть ім’я"
-                  title="Вкажіть ім’я волонтера італійською"
+                  errorText={errors.titleIT?.message}
+                  placeholder="Напишіть назву статті"
+                  title="Вкажіть назву статті італійською"
                   className={'h-[53px]'}
                 />
               )}
@@ -150,56 +151,58 @@ const AddTestimonialForm = () => {
             />
           </div>
         </div>
-        <div className="mb-[50px] flex gap-[24px]">
+        <div className="mb-[50px] flex gap-[18px]">
           <Controller
-            name="reviewUa"
+            name="textUA"
             control={control}
             render={({ field }) => (
               <TextArea
                 {...field}
-                errorText={errors.reviewUa?.message}
-                placeholder="Напишіть текст відгуку"
-                title="Напишіть текст відгуку українською"
+                errorText={errors.textUA?.message}
+                placeholder="Напишіть текст статті"
+                title="Вкажіть текст статті українською"
               />
             )}
           />
           <Controller
-            name="reviewEn"
+            name="textEN"
             control={control}
             render={({ field }) => (
               <TextArea
                 {...field}
-                errorText={errors.reviewEn?.message}
-                placeholder="Напишіть текст відгуку"
-                title="Напишіть текст відгуку англійською"
+                errorText={errors.textEN?.message}
+                placeholder="Напишіть текст статті"
+                title="Вкажіть текст статті англійською"
               />
             )}
           />
           <Controller
-            name="reviewIt"
+            name="textIT"
             control={control}
             render={({ field }) => (
               <TextArea
                 {...field}
-                errorText={errors.reviewIt?.message}
-                placeholder="Напишіть текст відгуку"
-                title="Напишіть текст відгуку італійською"
+                errorText={errors.textIT?.message}
+                placeholder="Напишіть текст статті"
+                title="Вкажіть текст статті італійською"
               />
             )}
           />
         </div>
         <div className="relative mx-auto flex w-[296px] justify-between">
-          <span className="absolute -top-8 left-0 text-sm">Додати відгук?</span>
+          <span className="absolute -top-8 left-0 text-sm">
+            Додати статтю в Блог?
+          </span>
           <button
             disabled={!isValid}
-            className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 font-[500] text-white disabled:bg-[#E3E3E4] disabled:text-[#97979A]"
+            // disabled={false}
+            className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white hover:shadow-xl disabled:bg-gray-500"
           >
             {isProcessing ? 'Обробка запиту...' : 'Додати'}
           </button>
           <button
-            disabled={!isValid}
             onClick={() => dispatch(closeModal())}
-            className="w-[149px] rounded-3xl border border-yellow px-4 py-2 text-violet disabled:border-[#E3E3E4] disabled:text-[#97979A]"
+            className="w-[149px] rounded-3xl border border-yellow px-4 py-2 text-violet"
           >
             Скасувати
           </button>
@@ -209,4 +212,4 @@ const AddTestimonialForm = () => {
   );
 };
 
-export default AddTestimonialForm;
+export default AddBlogPostForm;

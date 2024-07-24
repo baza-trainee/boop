@@ -3,33 +3,28 @@ import axios from '@/utils/axios';
 import { useEffect, useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
-import { TTestimonialScheme, testimonialValidation } from './scheme';
+import { TBlogScheme, blogValidation } from './scheme';
 import { useAppDispatch } from '@/store/hook';
 import { closeModal } from '@/store/slices/modalSlice';
 import { openAlert } from '@/store/slices/alertSlice';
-import { testimonialsApi } from '@/store/api/testimonialsApi';
+import { blogApi } from '@/store/api/blogApi';
 import { replaceExtensionWithWebp } from '@/helpers/convertToWebp';
 import { defaultValues } from './defaultValues';
 
-import Loader from '@/components/shared/loader/Loader';
 import FileInput from '../../ui/FileInput';
 import TextInput from '../../ui/TextInput';
 import TextArea from '../../ui/TextArea';
 
-const EditTestimonialForm = ({ id }: { id: string }) => {
+const EditBlogPostForm = ({ id }: { id: number }) => {
   const dispatch = useAppDispatch();
+
   const [imagePreview, setImagePreview] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
-  const [editTestimonial] = testimonialsApi.useEditTestimonialMutation();
-  const {
-    data: testimonials,
-    isLoading,
-    isFetching,
-  } = testimonialsApi.useGetAllTestimonialsQuery();
+  const [editPost] = blogApi.useEditPostMutation();
 
-  const testimonial = testimonials?.data.find(
-    (testimonial) => testimonial.id === id
-  );
+  const { data: posts, isLoading, isFetching } = blogApi.useGetAllPostsQuery();
+
+  const post = posts?.data.find((post) => post.id === id);
 
   const {
     handleSubmit,
@@ -37,65 +32,61 @@ const EditTestimonialForm = ({ id }: { id: string }) => {
     watch,
     setValue,
     formState: { isValid, errors },
-  } = useForm<TTestimonialScheme>({
-    resolver: zodResolver(testimonialValidation),
+  } = useForm<TBlogScheme>({
+    resolver: zodResolver(blogValidation),
     mode: 'onChange',
     defaultValues: defaultValues,
   });
 
   useEffect(() => {
-    if (!testimonial) return;
-    setValue('nameUa', testimonial.nameUa);
-    setValue('nameEn', testimonial.nameEn);
-    setValue('nameIt', testimonial.nameIt);
-    setValue('reviewUa', testimonial.reviewUa);
-    setValue('reviewEn', testimonial.reviewEn);
-    setValue('reviewIt', testimonial.reviewIt);
-    setValue('image', [
-      new File([], testimonial?.imageUrl, { type: 'for-url' }),
-    ]);
-    setImagePreview(testimonial.imageUrl);
-  }, [testimonial]);
+    if (!post) return;
+    setValue('titleUA', post.titleUA);
+    setValue('titleEN', post.titleEN);
+    setValue('titleIT', post.titleIT);
+    setValue('textUA', post.textUA);
+    setValue('textEN', post.textEN);
+    setValue('textIT', post.textIT);
+    setValue('image', [new File([], post?.imageUrl, { type: 'for-url' })]);
+    setImagePreview(post.imageUrl);
+  }, [post]);
 
   const imageFile = watch('image');
 
   useEffect(() => {
-    if (!imageFile[0]?.size) return;
+    if (!imageFile.length) return;
     const imageUrl = URL.createObjectURL(imageFile[0]);
     setImagePreview(imageUrl);
   }, [imageFile]);
-
-  const onSubmit: SubmitHandler<TTestimonialScheme> = async (
-    values: TTestimonialScheme
-  ) => {
+  const onSubmit: SubmitHandler<TBlogScheme> = async (values: TBlogScheme) => {
     try {
       setIsProcessing(true);
       if (values.image[0]?.size > 0) {
         const formData = new FormData();
         formData.append('file', values.image[0]);
-        formData.append('folderName', 'testimonials');
+        formData.append('folderName', 'blog');
         await axios.delete(
-          `/cloudinary/${encodeURIComponent(testimonial?.imageId as string)}`
+          `/cloudinary/${encodeURIComponent(post?.imageId as string)}`
         );
         const res = await axios.post('/cloudinary', formData);
-        const updatedtestimonial = {
-          nameUa: values.nameUa,
-          nameEn: values.nameEn,
-          nameIt: values.nameIt,
-          reviewUa: values.reviewUa,
-          reviewEn: values.reviewEn,
-          reviewIt: values.reviewIt,
+        const updatedPost = {
+          titleUA: values.titleUA,
+          titleEN: values.titleEN,
+          titleIT: values.titleIT,
+          textEN: values.textEN,
+          textUA: values.textUA,
+          textIT: values.textIT,
+
           imageUrl: replaceExtensionWithWebp(res.data.fileUrl),
           imageId: res.data.fileId,
         };
-        const response = await editTestimonial({ id, updatedtestimonial });
+        const response = await editPost({ id, updatedPost });
         if (response && response.data) {
           dispatch(closeModal());
           dispatch(
             openAlert({
               data: {
                 state: 'success',
-                message: 'Відгук успішно відредаговано',
+                message: 'Стаття успішно відредагована',
               },
             })
           );
@@ -103,23 +94,23 @@ const EditTestimonialForm = ({ id }: { id: string }) => {
           alert(response.error);
         }
       } else {
-        const updatedTestimonial = {
-          nameUa: values.nameUa,
-          nameEn: values.nameEn,
-          nameIt: values.nameIt,
-          reviewUa: values.reviewUa,
-          reviewEn: values.reviewEn,
-          reviewIt: values.reviewIt,
-          imageUrl: testimonial?.imageUrl,
-          imageId: testimonial?.imageId,
+        const updatedPost = {
+          titleUA: values.titleUA,
+          titleEN: values.titleEN,
+          titleIT: values.titleIT,
+          textEN: values.textEN,
+          textUA: values.textUA,
+          textIT: values.textIT,
+          imageUrl: post?.imageUrl,
+          imageId: post?.imageId,
         };
-        const response = await editTestimonial({ id, updatedTestimonial });
+        const response = await editPost({ id, updatedPost });
         if (response && response.data) {
           dispatch(
             openAlert({
               data: {
                 state: 'success',
-                message: 'Відгук успішно відредаговано',
+                message: 'Стаття успішно відредагована',
               },
             })
           );
@@ -133,12 +124,10 @@ const EditTestimonialForm = ({ id }: { id: string }) => {
     }
   };
 
-  if (isLoading || isFetching) return <Loader />;
-
   return (
     <div className="flex h-full w-full flex-col items-center justify-center">
       <h1 className="mb-[24px] w-full text-center text-3xl font-[500] text-violet">
-        Редагування відгуку
+        Редагування статті
       </h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -155,40 +144,40 @@ const EditTestimonialForm = ({ id }: { id: string }) => {
               accept="image/*"
             />
             <Controller
-              name="nameUa"
+              name="titleUA"
               control={control}
               render={({ field }) => (
                 <TextInput
                   {...field}
-                  errorText={errors.nameUa?.message}
-                  placeholder="Напишіть ім’я"
-                  title="Вкажіть ім’я волонтера українською"
+                  errorText={errors.titleUA?.message}
+                  placeholder="Напишіть назву статті"
+                  title="Вкажіть назву статті українською"
                   className={'h-[53px]'}
                 />
               )}
             />
             <Controller
-              name="nameEn"
+              name="titleEN"
               control={control}
               render={({ field }) => (
                 <TextInput
                   {...field}
-                  errorText={errors.nameEn?.message}
-                  placeholder="Напишіть ім’я"
-                  title="Вкажіть ім’я волонтера англійською"
+                  errorText={errors.titleEN?.message}
+                  placeholder="Напишіть назву статті"
+                  title="Вкажіть назву статті англійською"
                   className={'h-[53px]'}
                 />
               )}
             />
             <Controller
-              name="nameIt"
+              name="titleIT"
               control={control}
               render={({ field }) => (
                 <TextInput
                   {...field}
-                  errorText={errors.nameIt?.message}
-                  placeholder="Напишіть ім’я"
-                  title="Вкажіть ім’я волонтера італійською"
+                  errorText={errors.titleIT?.message}
+                  placeholder="Напишіть назву статті"
+                  title="Вкажіть назву статті італійською"
                   className={'h-[53px]'}
                 />
               )}
@@ -203,62 +192,62 @@ const EditTestimonialForm = ({ id }: { id: string }) => {
               width={384}
               height={437}
               alt="specialist"
-              className="h-[437px] w-[384px] object-cover object-center"
+              className="h-auto max-h-[437px] w-auto max-w-[384px] object-cover object-center"
             />
           </div>
         </div>
-        <div className="mb-[50px] flex gap-[24px]">
+        <div className="mb-[50px] flex gap-[18px]">
           <Controller
-            name="reviewUa"
+            name="textUA"
             control={control}
             render={({ field }) => (
               <TextArea
                 {...field}
-                errorText={errors.reviewUa?.message}
-                placeholder="Напишіть текст відгуку"
-                title="Напишіть текст відгуку українською"
+                errorText={errors.textUA?.message}
+                placeholder="Напишіть текст статті"
+                title="Вкажіть текст статті українською"
               />
             )}
           />
           <Controller
-            name="reviewEn"
+            name="textEN"
             control={control}
             render={({ field }) => (
               <TextArea
                 {...field}
-                errorText={errors.reviewEn?.message}
-                placeholder="Напишіть текст відгуку"
-                title="Напишіть текст відгуку англійською"
+                errorText={errors.textEN?.message}
+                placeholder="Напишіть текст статті"
+                title="Вкажіть текст статті англійською"
               />
             )}
           />
           <Controller
-            name="reviewIt"
+            name="textIT"
             control={control}
             render={({ field }) => (
               <TextArea
                 {...field}
-                errorText={errors.reviewIt?.message}
-                placeholder="Напишіть текст відгуку"
-                title="Напишіть текст відгуку італійською"
+                errorText={errors.textIT?.message}
+                placeholder="Напишіть текст статті"
+                title="Вкажіть текст статті італійською"
               />
             )}
           />
         </div>
         <div className="relative mx-auto flex w-[296px] justify-between">
           <span className="absolute -top-8 left-0 text-sm">
-            Змінити відгук?
+            Змінити статтю в Блог?
           </span>
           <button
             disabled={!isValid}
-            className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 font-[500] text-white disabled:bg-[#E3E3E4] disabled:text-[#97979A]"
+            // disabled={false}
+            className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white hover:shadow-xl disabled:bg-gray-500"
           >
             {isProcessing ? 'Обробка запиту...' : 'Змінити'}
           </button>
           <button
-            disabled={!isValid}
             onClick={() => dispatch(closeModal())}
-            className="w-[149px] rounded-3xl border border-yellow px-4 py-2 text-violet disabled:border-[#E3E3E4] disabled:text-[#97979A]"
+            className="w-[149px] rounded-3xl border border-yellow px-4 py-2 text-violet"
           >
             Скасувати
           </button>
@@ -268,4 +257,4 @@ const EditTestimonialForm = ({ id }: { id: string }) => {
   );
 };
 
-export default EditTestimonialForm;
+export default EditBlogPostForm;

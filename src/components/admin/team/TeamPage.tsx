@@ -38,7 +38,7 @@ const TeamPage = () => {
       openAlert({
         data: {
           state: 'confirm',
-          message: 'Ви впевнені, що хочете видалити запис з Команди?',
+          message: 'Ви впевнені, що хочете видалити учасника з Команди?',
           func: async () => {
             await axios.delete(`/cloudinary/${encodeURIComponent(imageId)}`);
             await deleteTeamMember(id);
@@ -59,7 +59,7 @@ const TeamPage = () => {
   if (isError) {
     return (
       <div className="flex h-screen items-center justify-center">
-        <div className="flex h-[50%] w-[80%] items-center justify-center rounded-[20px] bg-slate-200  p-[40px]">
+        <div className="flex h-[50%] w-[80%] items-center justify-center rounded-[20px] bg-slate-200 p-[40px]">
           <p className="text-center text-[32px] text-yellow">
             Сталася помилка під час завантаження даних.
             <br /> Будь ласка, спробуйте оновити сторінку або повторити спробу
@@ -73,13 +73,10 @@ const TeamPage = () => {
   if (isLoading || isFetching) return <Loader />;
 
   return (
-    <section className="relative h-[864px]  px-[24px] py-[100px]">
+    <section className="relative h-[864px] px-[24px] py-[100px]">
       <PageTitle title="Команда" />
       <div className="flex flex-wrap gap-[32px]">
-        <div
-          className="flex h-[247px] w-[306px] flex-col items-center justify-center 
-        gap-[10px] bg-bgViolet font-[800] text-violet"
-        >
+        <div className="flex h-[247px] w-[306px] flex-col items-center justify-center gap-[10px] bg-bgViolet font-[800] text-violet">
           <span className="text-xl">Додати учасника</span>
           <button
             onClick={() => dispatch(openModal({ type: 'add-team-member' }))}

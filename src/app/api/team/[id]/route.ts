@@ -11,7 +11,7 @@ export async function PATCH(
     await prismaConnect();
     const { updatedMember }: { updatedMember: TeamFormData } =
       await request.json();
-    const updatedTeamMemeber = await prisma.team.update({
+    const updatedTeamMember = await prisma.team.update({
       where: {
         id: params.id,
       },
@@ -23,7 +23,7 @@ export async function PATCH(
         imageId: updatedMember.imageId,
       },
     });
-    return NextResponse.json(updatedTeamMemeber, { status: 200 });
+    return NextResponse.json(updatedTeamMember, { status: 200 });
   } catch (error) {
     console.log('[UPDATE TEAM MEMBER]', error);
     return new NextResponse('Internal Server Error', { status: 500 });
