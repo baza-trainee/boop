@@ -43,7 +43,7 @@ const PressAboutUsSlide = ({
             <svg className="h-[1rem] w-[5rem] max-custom:hidden">
               <use href="/icons/sprite.svg#title-line"></use>
             </svg>
-            <h3 className="font-groppled text-[20px] font-bold leading-[1.32] text-textViolet max-sm:text-[18px]">
+            <h3 className="pt-2 font-groppled text-[20px] font-bold leading-[1.32] text-textViolet max-sm:text-[18px]">
               {title}
             </h3>
           </div>
@@ -93,7 +93,8 @@ const PressAboutUsSlide = ({
       </div>
       <Link
         href={link}
-        className="inline-block rounded-[32px] border-2 border-solid border-yellow px-6 py-4 text-xl font-medium text-textViolet transition-all duration-200 ease-linear hover:bg-yellow max-md:hidden max-custom:inline-block max-sm:px-[26.5px] max-sm:py-3"
+        target="_blank"
+        className="inline-block rounded-[32px] border-2 border-solid border-yellow bg-inherit px-6 py-[18px] font-raleway text-xl font-medium leading-none text-textViolet transition-all duration-200 ease-linear hover:bg-[#FFFDEA] active:border-[#E27E00] active:bg-[#FFFDEA] disabled:cursor-not-allowed disabled:border-[#E3E3E4] disabled:bg-inherit disabled:text-[#97979A]"
       >
         {t('link_text')}
       </Link>

@@ -16,13 +16,15 @@ const PressAboutUs = () => {
     <section className="mb-[120px]">
       <div className="container mx-auto">
         <div className="mb-8 flex items-center justify-between gap-5">
-          <h2 className="title-gradient font-groppled text-3xl font-bold max-sm:text-[28px]">
+          <h2 className="title-gradient pt-2 font-groppled text-3xl font-bold max-sm:text-[28px]">
             {t('title')}
           </h2>
-          <div className="flex items-center gap-2">
-            <CarouselButton className="press-about-us-prev-el rotate-180" />
-            <CarouselButton className="press-about-us-next-el" />
-          </div>
+          {data.data.length > 1 && (
+            <div className="flex items-center gap-2">
+              <CarouselButton className="press-about-us-prev-el rotate-180" />
+              <CarouselButton className="press-about-us-next-el" />
+            </div>
+          )}
         </div>
         {data && !isError && !isFetching && (
           <Carousel

@@ -16,6 +16,9 @@ const GalleryList: React.FC<GalleryCardProps> = ({
   decorativeIndex,
   limit,
 }) => {
+  const isMobile = useMediaQuery({
+    query: '(max-width: 767px) ',
+  });
   const isDesktop = useMediaQuery({
     query: '(min-width: 1028px) and (max-width: 1919px)',
   });
@@ -31,7 +34,7 @@ const GalleryList: React.FC<GalleryCardProps> = ({
     combinedElements.push(
       <div
         key={`image-${i}`}
-        className="relative h-[477px] min-w-[197px] flex-1 md:h-[287px] lg:h-[394px] xl:h-[415px] 3xl:h-[447px]"
+        className="relative h-[477px] min-w-[197px] flex-1 bg-mainViolet md:h-[287px] lg:h-[394px] xl:h-[415px] 3xl:h-[447px]"
       >
         <Image
           src={images[i].imageUrl}
@@ -44,7 +47,7 @@ const GalleryList: React.FC<GalleryCardProps> = ({
       </div>
     );
 
-    if (i % limit === decorativeIndex) {
+    if (!isMobile && i === decorativeIndex) {
       combinedElements.push(
         <div className="relative min-w-[197px] flex-1">
           <div
@@ -59,7 +62,7 @@ const GalleryList: React.FC<GalleryCardProps> = ({
   }
 
   return (
-    <div className="4xl:grid-cols-5 grid grid-cols-1 gap-6 pt-8 md:grid-cols-3 ml:grid-cols-4 ">
+    <div className="first:bg-red-500 nth-child(2n):bg-green-500 nth-child(3n):bg-blue-500 grid grid-cols-1 gap-6 pt-8 md:grid-cols-3 ml:grid-cols-4 4xl:grid-cols-5">
       {combinedElements.map((item, index) => (
         <React.Fragment key={index}>{item}</React.Fragment>
       ))}

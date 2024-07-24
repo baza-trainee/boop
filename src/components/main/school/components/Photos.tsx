@@ -47,13 +47,13 @@ const Photos = () => {
             },
           }}
           renderItem={(item, index) => (
-            <div className="srelative 4xl:h-[541px] 4xl:w-[402px]   h-[450px] flex-1 sm:w-full md:h-[254px] md:w-[197px] ml:h-[365px] ml:w-[283px] lg:h-[348px] lg:w-[270px] xl:h-[380px] xl:w-[283px] 3xl:h-[412px] 3xl:w-[306px]">
+            <div className="relative h-[450px] flex-1   sm:w-full md:h-[254px] md:w-[197px] ml:h-[365px] ml:w-[283px] lg:h-[348px] lg:w-[270px] xl:h-[380px] xl:w-[283px] 3xl:h-[412px] 3xl:w-[306px] 4xl:h-[541px] 4xl:w-[402px]">
               <Image
                 src={item.imageUrl}
                 alt={`photoSchool-${index + 1}`}
                 fill
-                className="h-auto w-full object-cover"
-                sizes="(max-width: 768px) 33hw, 306px"
+                className="h-auto w-full bg-mainViolet object-cover"
+                sizes="(max-width: 768px) 33hw, 402px"
               />
             </div>
           )}

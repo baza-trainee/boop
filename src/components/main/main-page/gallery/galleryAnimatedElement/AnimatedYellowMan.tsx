@@ -1,8 +1,9 @@
-interface AnimatedYellowManProps {
-  width: string;
+export interface AnimatedManProps {
+  width?: string;
+  className?: string;
 }
 
-const AnimatedYellowMan: React.FC<AnimatedYellowManProps> = ({ width }) => (
+const AnimatedYellowMan: React.FC<AnimatedManProps> = ({ width }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
