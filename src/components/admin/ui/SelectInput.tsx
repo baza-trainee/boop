@@ -47,7 +47,7 @@ const SelectInput = <T extends FieldValues>({
 
   return (
     <div className="flex max-h-[85px] w-full max-w-[442px] grow flex-col gap-[5px]">
-      <label htmlFor="title" className="text-sm font-medium">
+      <label htmlFor="title" className="text-base font-medium">
         {title}
         {isRequired && <span className="mt-1 text-red">*</span>}
       </label>

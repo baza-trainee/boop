@@ -27,7 +27,7 @@ const TextArea = forwardRef(function TextArea(
       }`}
     >
       {!!title && (
-        <label htmlFor={title} className="text-sm font-medium">
+        <label htmlFor={title} className="text-base font-medium">
           {modifyTitle(title)}
         </label>
       )}

@@ -90,7 +90,7 @@ const AddPressForm = () => {
 
   return (
     <div className=" mx-auto max-w-[930px] ">
-      <h1 className="mb-[40px] text-center text-[32px] font-bold">
+      <h1 className="mb-[40px] text-center text-[32px] font-bold text-[#50439F]">
         Додавання новини
       </h1>
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col ">
