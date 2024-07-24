@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import './swagger-comments';
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';

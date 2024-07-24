@@ -29,7 +29,7 @@ const EditPhotoForm = ({ id }: { id: string }) => {
     control,
     watch,
     setValue,
-    formState: { errors },
+    formState: { isValid },
   } = useForm<TPhotoScheme>({
     resolver: zodResolver(photoValidation),
     mode: 'onChange',
@@ -144,14 +144,15 @@ const EditPhotoForm = ({ id }: { id: string }) => {
                 Оновити фото?
               </span>
               <button
-                disabled={!!Object.keys(errors).length}
-                className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white disabled:bg-gray-500"
+                disabled={!isValid}
+                className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 font-[500] text-white disabled:bg-[#E3E3E4] disabled:text-[#97979A]"
               >
-                {isProcessing ? 'Обробка запиту...' : 'Оновити'}
+                {isProcessing ? 'Обробка запиту...' : 'Змінити'}
               </button>
               <button
+                disabled={!isValid}
                 onClick={() => dispatch(closeModal())}
-                className="w-[149px] rounded-3xl border border-yellow px-4 py-2 text-violet"
+                className="w-[149px] rounded-3xl border border-yellow px-4 py-2 text-violet disabled:border-[#E3E3E4] disabled:text-[#97979A]"
               >
                 Скасувати
               </button>

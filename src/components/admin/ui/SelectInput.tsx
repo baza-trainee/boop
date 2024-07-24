@@ -54,11 +54,10 @@ const SelectInput = <T extends FieldValues>({
       <select
         id={title}
         value={value}
-        className="selectIcon box-border h-[40px] rounded-xl border border-violet 
-         bg-bgViolet px-2 py-[6px] text-sm text-violet outline-none"
+        className="selectIcon box-border h-[40px] rounded-xl border border-violet bg-bgViolet px-2 py-[6px] text-sm text-violet outline-none"
         onChange={handleChange}
       >
-        <option className="bg-bgViolet" value="">
+        <option className="bg-bgViolet" value="" disabled selected hidden>
           {placeholder || 'Please Select'}
         </option>
         {values &&
