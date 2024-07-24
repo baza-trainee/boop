@@ -14,7 +14,7 @@ const GoalCard = ({
 }: GoalCardProps) => {
   return (
     <div
-      className={`relative flex h-[100px] items-center justify-center ${index === 0 ? (locale === 'en' ? 'w-[308px] xs:w-[361px]' : locale === 'it' ? 'ml: w-[308px] xs:w-[361px]' : 'w-[288px]') : index === 1 ? 'w-[260px]' : index === 2 ? (locale === 'it' ? 'w-[310px] xs:w-[317px]' : 'w-[315px]') : locale === 'it' ? 'w-[165px]' : 'w-[133px]'}`}
+      className={`relative flex h-[100px] items-center justify-center ${index === 0 ? (locale === 'en' ? 'w-[308px] xs:w-[361px]' : locale === 'it' ? 'w-[308px] xs:w-[361px]' : 'w-[288px]') : index === 1 ? 'w-[260px]' : index === 2 ? (locale === 'it' ? 'w-[310px] xs:w-[317px]' : 'w-[315px]') : locale === 'it' ? 'w-[165px]' : 'w-[133px]'}`}
     >
       {/* <h5
         className={`  absolute z-0  m-0 box-border pt-[105px] font-groppled text-[150px] font-bold leading-none text-lightVioletSecond lg:pt-0`}

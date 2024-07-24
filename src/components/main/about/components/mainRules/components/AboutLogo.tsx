@@ -15,7 +15,9 @@ const AboutLogo: React.FC<AboutLogoProps> = ({ text, isUkr, isIt }) => {
         src={
           isUkr
             ? '/images/heroSection/hero_logo.png'
-            : '/images/heroSection/en_logo.svg'
+            : isIt
+              ? '/images/heroSection/it_logo.svg'
+              : '/images/heroSection/en_logo.svg'
         }
         alt="Boop"
         width={isUkr ? 150 : 167}
