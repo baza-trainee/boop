@@ -78,7 +78,9 @@ const PressPage = () => {
       <PageTitle title="Преса про нас" />
       <div className="flex flex-wrap gap-[24px] ">
         <div className="flex h-[290px] w-[306px] flex-col items-center bg-bgViolet px-[80px] py-[92px]">
-          <span className="mb-[8px]">Додати новину</span>
+          <span className="mb-[8px] text-[20px] font-[500] text-[#50439F]">
+            Додати новину
+          </span>
           <button onClick={() => dispatch(openModal({ type: 'add-news' }))}>
             <Image
               src="/images/add.svg"
