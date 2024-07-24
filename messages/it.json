@@ -99,6 +99,18 @@
 		"title": "Stampa su di noi",
 		"link_text": "Leggi di più"
 	},
+	"Donate": {
+		"title": "È facile aiutare",
+		"text": "Il vostro sostegno può cambiare in meglio la vita dei piccoli pazienti. Ogni donazione, indipendentemente dall'entità, ci permette di continuare a portare sorrisi nelle corsie degli ospedali.",
+		"form_btns": {
+			"donation_type": {
+				"every_month": "Abbonamento mensile",
+				"once": "Pagamento unico"
+			},
+			"custom_donation_amount": "Inserite il vostro importo"
+		},
+		"support_btn": "Sostenete il progetto"
+	},
 	"Gallery": {
 		"title": "Galleria",
 		"btn": "Scarica altro",
