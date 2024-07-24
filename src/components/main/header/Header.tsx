@@ -8,6 +8,8 @@ import { useBodyScrollLock } from '@/hooks/useBodyScrollLock';
 import { Link } from '@/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
 import useWindowSize from '@/hooks/useWindowSize';
+import HeaderLogo from './HeaderLogo';
+import { useLocale } from 'next-intl';
 
 const Header = () => {
   const t = useTranslations('Header');
@@ -18,6 +20,7 @@ const Header = () => {
 
   const [menuOpen, setMenuOpen] = useState(false);
   const windowSize = useWindowSize();
+  const locale = useLocale();
 
   useEffect(() => {
     if (windowSize.width > 768 && menuOpen) {
@@ -36,13 +39,8 @@ const Header = () => {
   return (
     <div className="container fixed left-0 right-0 top-0 z-50 flex h-[100px] w-full items-center justify-between bg-golden bg-opacity-80 py-[26px] text-violet backdrop-blur-sm backdrop-filter xs:px-[20px] md:flex-shrink md:flex-grow md:px-[40px] ml:px-[64px] xl:px-[80px] 3xl:px-[120px]">
       <div className="flex w-full items-center justify-between">
-        <Link href="/" title="Бюро усмішок і підтримки">
-          <Image
-            src="/images/logo.svg"
-            alt="Бюро усмішок і підтримки"
-            width={86}
-            height={50}
-          />
+        <Link href="/" title={t('logoTitle')}>
+          <HeaderLogo locale={locale} />
         </Link>
         <div className="flex items-center md:hidden">
           <div className="relative w-[100px] md:w-[90px]">
@@ -53,7 +51,7 @@ const Header = () => {
             className="text-mainViolet focus:outline-none"
           >
             <Image
-              src={'/icons/icon-park-outline_hamburger-button.svg'}
+              src={'/icons/header/icon-park-outline_hamburger-button.svg'}
               alt="burger-button"
               width={60}
               height={60}
@@ -108,7 +106,7 @@ const Header = () => {
             className="text-mainViolet focus:outline-none"
           >
             <Image
-              src="/icons/close.svg"
+              src="/icons/header/close.svg"
               alt="close burger-button"
               width={54}
               height={54}
@@ -119,14 +117,14 @@ const Header = () => {
           <li>
             <Image
               src="/images/logo.svg"
-              alt="Бюро усмішок і підтримки"
+              alt={t('logoTitle')}
               width={86}
               height={50}
             />
           </li>
           <li className="pt-[13px]">
             <Image
-              src="/images/frame.svg"
+              src="/images/header/frame.svg"
               alt="wavy line"
               width={86}
               height={50}
@@ -154,7 +152,7 @@ const Header = () => {
           </li>
           <li className="pt-[13px]">
             <Image
-              src="/images/frame.svg"
+              src="/images/header/frame.svg"
               alt="wavy line"
               width={86}
               height={50}
