@@ -68,13 +68,19 @@ const Gallery = () => {
       setPhotos(items.slice(0, limit));
       setCurrentIndex(limit);
     }
+
+    // const element = document.querySelector('#nextElement');
+    // console.log('element', element);
+    // if (element) {
+    //   element.scrollIntoView({ behavior: 'auto' });
+    // }
   };
 
   const isLoadMoreDisabled = items && items.length === photos.length;
   const isBtnShowed = items && items.length > limit;
 
   return (
-    <section className="container mx-auto xs:mb-[70px]    md:mb-[100px]  xl:mb-[120px]">
+    <section className="container mx-auto mb-[70px]    md:mb-[100px]  xl:mb-[120px]">
       <SectionTitle title={t('title')} />
       {isError && <p className="container">Something went wrong!</p>}
       {isFetching && <p>Loading...</p>}

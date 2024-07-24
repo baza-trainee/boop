@@ -7,13 +7,16 @@ interface HeroLogoProps {
 
 const HeroLogo: React.FC<HeroLogoProps> = ({ locale }) => {
   const isUkr = locale === 'ua';
+  const isIt = locale === 'it';
 
   return (
     <Image
       src={
         isUkr
           ? '/images/heroSection/hero_logo.png'
-          : '/images/heroSection/en_logo.svg'
+          : isIt
+            ? '/images/heroSection/it_logo.svg'
+            : '/images/heroSection/en_logo.svg'
       }
       alt="Boop"
       width={isUkr ? 391 : 435}
