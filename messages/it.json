@@ -1,13 +1,13 @@
 {
-
-	"hello": "ciao!",
-	"Header": {
-		"home": "Home",
-		"about": "Chi Siamo",
-		"school": "Scuola",
-		"contacts": "Contatti",
-		"button": "Sostienici il Progetto"
-	},
+  "hello": "ciao!",
+  "Header": {
+    "logoTitle": "Ufficio Sorrisi e Supporto",
+    "home": "Home",
+    "about": "Chi Siamo",
+    "school": "Scuola",
+    "contacts": "Contatti",
+    "button": "Sostienici il Progetto"
+  },
 	"Hero": {
 		"title": "Nonostante tutto, l'infanzia deve continuare"
 	},
@@ -218,4 +218,3 @@
 		"button": "Ripristina"
 	}
 }
-

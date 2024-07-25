@@ -1,12 +1,13 @@
 {
-	"hello": "hello",
-	"Header": {
-		"home": "Main",
-		"about": "About us",
-		"school": "School",
-		"contacts": "Contacts",
-		"button": "Support the project"
-	},
+  "hello": "hello",
+  "Header": {
+    "logoTitle": "Bureau of smiles and support",
+    "home": "Main",
+    "about": "About us",
+    "school": "School",
+    "contacts": "Contacts",
+    "button": "Support the project"
+  },
 	"Hero": {
 		"title": "We make sure that childhood lasts, no matter the circumstances"
 	},
@@ -217,4 +218,3 @@
 		"button": "Reset"
 	}
 }
-
