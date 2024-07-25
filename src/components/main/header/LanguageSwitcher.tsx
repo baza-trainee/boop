@@ -56,7 +56,7 @@ const LanguageSwitcher = () => {
         </div>
         <div className={`${!isOpen && 'rotate-[180deg]'}`}>
           <Image
-            className="w-[24px] font-bold"
+            className="font-bold"
             src="/images/header/keyboard_arrow_down.svg"
             alt="arrow down"
             width={24}
@@ -67,8 +67,7 @@ const LanguageSwitcher = () => {
       {isOpen && (
         <div
           ref={submenuRef}
-          className="absolute -left-[3px] top-[30px] flex w-[81px] flex-col justify-around rounded-none
-          "
+          className="absolute -left-[3px] top-[30px] flex w-[81px] flex-col justify-around rounded-none"
         >
           {filteredLocales.map((item: string) => (
             <div className="flex w-[81px] gap-[8px]">

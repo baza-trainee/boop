@@ -36,12 +36,12 @@ const Header = () => {
   };
 
   return (
-    <header className="container fixed left-0 right-0 top-0 z-50 flex h-[100px] w-full items-center justify-between bg-golden py-[26px] text-violet backdrop-filter xs:px-[20px] md:flex-shrink md:flex-grow md:px-[40px] ml:px-[64px] xl:px-[80px] 3xl:px-[120px]">
+    <header className="fixed left-0 right-0 top-0 z-50 flex h-[100px] w-full items-center justify-between bg-golden py-[26px] text-violet backdrop-filter xs:px-[20px] md:px-[40px] ml:px-[64px] xl:px-[80px] 4xl:px-[120px]">
       <div className="flex w-full items-center justify-between">
         <Link href="/" title={t('logoTitle')}>
           <HeaderLogo locale={locale} />
         </Link>
-        <div className="flex items-center md:hidden">
+        <div className="flex items-center gap-[24px] xs:w-[144px] md:hidden">
           <div className="relative">
             <LanguageSwitcher />
           </div>
@@ -57,7 +57,7 @@ const Header = () => {
             />
           </button>
         </div>
-        <nav className="relative z-10 ml-[8px] hidden w-[768px] justify-between whitespace-nowrap px-[4px] py-0 font-groppled font-bold text-mainViolet md:ml-0 md:flex md:w-[359px] md:gap-[24px] md:text-[18px] md:leading-[27.36px] lg:w-[462px] 3xl:text-[20px] 3xl:leading-[31.6px]">
+        <nav className="relative z-10 hidden w-[768px] justify-between whitespace-nowrap px-[4px] py-0 font-groppled font-bold text-mainViolet md:flex md:w-[359px] md:gap-[24px] md:text-[18px] md:leading-[27.36px] lg:w-[462px] lg:gap-[48px]  4xl:text-[20px] 4xl:leading-[31.6px]">
           <ul className="flex items-center">
             <li className="md:pr-[25px] lg:pr-[48px]">
               <Link href="/" title={t('home')}>
@@ -81,7 +81,7 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        <div className="font-ralewayb relative z-10 hidden items-center md:flex md:w-[278px] lg:w-[330px]">
+        <div className="font-ralewayb relative z-10 hidden items-center gap-[32px] md:flex ml:w-[278px] lg:w-[330px]">
           <div className="relative">
             <LanguageSwitcher />
           </div>
