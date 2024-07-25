@@ -1,13 +1,15 @@
 import { useAppDispatch, useAppSelector } from '@/store/hook';
 import { setDonationAmount } from '@/store/slices/paymentFormSlice';
 import clsx from 'clsx';
+import { useTranslations } from 'next-intl';
+import { useEffect } from 'react';
 
 const PaymentDonationAmount = () => {
   const { donationAmount, selectedCurrency } = useAppSelector(
     (state) => state.paymentForm
   );
-
   const dispatch = useAppDispatch();
+  const t = useTranslations('Donate.form_btns');
 
   const DONATE_SUM = [
     {
@@ -39,7 +41,7 @@ const PaymentDonationAmount = () => {
           <div
             className={clsx(
               'flex-shrink-1 relative flex-grow-0 basis-1/5',
-              idx === DONATE_SUM.length - 1 && 'basis-2/5'
+              idx === DONATE_SUM.length - 1 && 'basis-2/5 '
             )}
             key={item.id}
           >
@@ -54,10 +56,10 @@ const PaymentDonationAmount = () => {
             />
             <label
               htmlFor={item.id}
-              className="inline-block w-full cursor-pointer border-2 border-solid border-yellow py-[22px] text-center text-xl font-bold leading-[1] text-textViolet transition-all duration-300 ease-linear peer-checked/:bg-yellow peer-checked/:text-white max-custom:text-sm max-custom:leading-none"
+              className="flex min-h-[70px] w-full cursor-pointer items-center justify-center border-2 border-solid border-yellow text-center text-xl font-bold leading-[1] text-textViolet transition-all duration-300 ease-linear peer-checked/:bg-yellow peer-checked/:text-white max-custom:text-sm max-custom:leading-none"
             >
               {idx === DONATE_SUM.length - 1
-                ? item.value
+                ? t('custom_donation_amount')
                 : `${item.value}${selectedCurrency === 'uah' ? '₴' : selectedCurrency === 'usd' ? '$' : '€'}`}
             </label>
           </div>

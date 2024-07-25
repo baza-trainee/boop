@@ -9,7 +9,7 @@ export const modifyTitle = (str: string) => {
     return (
       <span>
         {firstString}{' '}
-        <strong className="font-[800]">{strArray[strArray.length - 1]}</strong>{' '}
+        <strong className="font-[700]">{strArray[strArray.length - 1]}</strong>{' '}
       </span>
     );
   }
