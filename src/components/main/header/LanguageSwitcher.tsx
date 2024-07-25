@@ -71,9 +71,8 @@ const LanguageSwitcher = () => {
           "
         >
           {filteredLocales.map((item: string) => (
-            <div className="flex w-[81px] gap-[8px]">
+            <div key={item} className="flex w-[81px] gap-[8px]">
               <div
-                key={item}
                 className="ml-1 flex h-[30px] w-[28px] cursor-pointer items-center"
                 onClick={() => handleCheckLocale(item)}
               >
