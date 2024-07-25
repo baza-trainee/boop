@@ -78,7 +78,10 @@ const LanguageSwitcher = () => {
               >
                 {item.toUpperCase()}
               </div>
-              <div className="ml-1 flex h-[30px] w-[28px] items-center">
+              <div
+                key={item}
+                className="ml-1 flex h-[30px] w-[28px] items-center"
+              >
                 <Image
                   src={`/icons/header/${item}-flag.svg`}
                   alt={`${item} flag`}
