@@ -47,18 +47,17 @@ const SelectInput = <T extends FieldValues>({
 
   return (
     <div className="flex max-h-[85px] w-full max-w-[442px] grow flex-col gap-[5px]">
-      <label htmlFor="title" className="text-sm font-medium">
+      <label htmlFor="title" className="text-base font-medium">
         {title}
         {isRequired && <span className="mt-1 text-red">*</span>}
       </label>
       <select
         id={title}
         value={value}
-        className="selectIcon box-border h-[40px] rounded-xl border border-violet 
-         bg-bgViolet px-2 py-[6px] text-sm text-violet outline-none"
+        className="selectIcon box-border h-[40px] rounded-xl border border-violet bg-bgViolet px-2 py-[6px] text-sm text-violet outline-none"
         onChange={handleChange}
       >
-        <option className="bg-bgViolet" value="">
+        <option className="bg-bgViolet" value="" disabled selected hidden>
           {placeholder || 'Please Select'}
         </option>
         {values &&

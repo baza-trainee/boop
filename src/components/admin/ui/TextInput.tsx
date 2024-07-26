@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import { modifyTitle } from '@/helpers/modifyTitle';
-import Image from 'next/image';
 import { ForwardedRef, InputHTMLAttributes, forwardRef } from 'react';
 
 interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -33,12 +32,13 @@ const TextInput = forwardRef(function TextInput(
   }: TextInputProps,
   _ref: ForwardedRef<HTMLInputElement>
 ) {
-  const inputClassName = `w-full rounded-xl border p-2 text-sm placeholder:text-sm 
+  const inputClassName = `relative w-full rounded-xl border p-2 text-sm placeholder:text-sm
       ${
         errorText
           ? 'border-red caret-red outline-red focus:outline-red'
           : 'border-violet outline-none'
       }
+      ${isEditMode && 'editIcon'}
       ${className}
     `;
 
@@ -51,24 +51,15 @@ const TextInput = forwardRef(function TextInput(
       {!!title && (
         <label
           htmlFor={title}
-          className={`text-sm font-[500] ${titleClassName}`}
+          className={`text-base font-[500] text-[#0A0A0A] ${titleClassName}`}
         >
           {modifyTitle(title)}
           {isRequired && <span className="mt-1 text-red">*</span>}
         </label>
       )}
-      {isEditMode ? (
-        <Image
-          onClick={onImageEditClick}
-          src="/icons/admin/edit.svg"
-          alt="edit icon"
-          width={imageSize.width}
-          height={imageSize.height}
-          className={`absolute right-2 top-[50%] -translate-y-[15%] ${iconClassName}`}
-        />
-      ) : null}
       <input
         onChange={onChange}
+        onClick={onImageEditClick}
         {...rest}
         id={title}
         value={value}

@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 import { locales } from '@/i18n';
 import { usePathname, useRouter } from '@/navigation';
@@ -12,7 +10,6 @@ const LanguageSwitcher = () => {
   const locale: string = useLocale();
   const [currentLocale, setCurrentLocale] = useState(locale);
   const [isOpen, setIsOpen] = useState(false);
-  const [containerPosition, setContainerPosition] = useState('');
   const menuRef = useRef<HTMLDivElement>(null);
   const submenuRef = useRef<HTMLDivElement>(null);
   const filteredLocales = locales.filter((item) => item !== currentLocale);
@@ -32,14 +29,12 @@ const LanguageSwitcher = () => {
       )
     ) {
       setIsOpen(false);
-      setContainerPosition('');
     }
   };
 
   const handleImageClick = (event: React.MouseEvent) => {
     event.stopPropagation();
     setIsOpen(!isOpen);
-    setContainerPosition(isOpen ? '' : 'absolute -top-[35px] left-0');
   };
 
   useEffect(() => {
@@ -49,39 +44,52 @@ const LanguageSwitcher = () => {
 
   return (
     <div
-      className={`relative flex h-[24px] cursor-pointer items-center text-[20px] font-semibold leading-[20px] text-mainViolet xs:mr-[20px] md:mr-0 ${containerPosition}`}
+      className={`relative min-w-[100px] flex cursor-pointer items-center text-[20px] font-semibold leading-[20px] text-mainViolet`}
     >
       <div
         ref={menuRef}
         onClick={handleImageClick}
-        className="mt-[5px] flex w-[80px] items-center px-[5px] pl-[14px] md:pl-0"
+        className="flex items-center px-2"
       >
-        <span className="mr-[10px] w-[24px] font-bold md:mr-0">
+        <div className="font-bold w-[45px]">
           {currentLocale.toUpperCase()}
-        </span>
-        <span className={`${!isOpen && 'rotate-[180deg]'}`}>
+        </div>
+        <div className={`${!isOpen && 'rotate-[180deg]'}`}>
           <Image
-            className="mr-[10px] w-[24px] font-bold"
-            src="/images/keyboard_arrow_down.svg"
+            className="w-[24px] font-bold stroke-amber-400"
+            src="/images/header/keyboard_arrow_down.svg"
             alt="arrow down"
-            width={90}
-            height={50}
+            width={24}
+            height={24}
           />
-        </span>
+        </div>
       </div>
       {isOpen && (
         <div
           ref={submenuRef}
-          className="absolute left-[11px] top-[30px] flex w-[90px] flex-col rounded-none md:-left-[5px]"
+          className="flex flex-col justify-around absolute top-full pt-4 px-2 mt-2 bg-bgWhite rounded shadow"
         >
           {filteredLocales.map((item: string) => (
-            <span
-              key={item}
-              className="ml-1 flex h-[30px] cursor-pointer items-center"
-              onClick={() => handleCheckLocale(item)}
-            >
-              {item.toUpperCase()}
-            </span>
+            <div key={item} className="flex">
+              <div
+                className="cursor-pointer items-center mb-4 w-[45px]"
+                onClick={() => handleCheckLocale(item)}
+              >
+                {item.toUpperCase()}
+              </div>
+              <div
+                key={item}
+                className="mb-4"
+                onClick={() => handleCheckLocale(item)}
+              >
+                <Image
+                  src={`/icons/header/${item}-flag.svg`}
+                  alt={`${item} flag`}
+                  width={27}
+                  height={20}
+                />
+              </div>
+            </div>
           ))}
         </div>
       )}

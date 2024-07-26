@@ -1,12 +1,13 @@
 {
-	"hello": "hello",
-	"Header": {
-		"home": "Main",
-		"about": "About us",
-		"school": "School",
-		"contacts": "Contacts",
-		"button": "Support the project"
-	},
+  "hello": "hello",
+  "Header": {
+    "logoTitle": "Bureau of smiles and support",
+    "home": "Main",
+    "about": "About us",
+    "school": "School",
+    "contacts": "Contacts",
+    "button": "Support the project"
+  },
 	"Hero": {
 		"title": "We make sure that childhood lasts, no matter the circumstances"
 	},
@@ -18,7 +19,7 @@
 	},
 	"Vision": {
 		"subtitle": "Vision",
-		"text": "We strive to ensure that every children's hospital in Ukraine becomes a place of joy and smiles for children who find themselves in difficult and crisis situations."
+		"text": "We strive to ensure that every children's hospital in Ukraine becomes a place of joy and smiles for children who find themselves in difficult and crisis situations"
 	},
 	"Values": {
 		"title": "Our Values",
@@ -98,6 +99,18 @@
 	"Press_about_us": {
 		"title": "The press about us",
 		"link_text": "Read more"
+	},
+	"Donate": {
+		"title": "It's easy to help",
+		"text": "Your support can change the lives of little patients for the better. Every donation, no matter the size, allows us to continue bringing smiles to hospital rooms.",
+		"form_btns": {
+			"donation_type": {
+				"every_month": "Monthly subscription",
+				"once": "One-time payment"
+			},
+			"custom_donation_amount": "Enter your amount"
+		},
+		"support_btn": "Support the project"
 	},
 	"Gallery": {
 		"title": "Gallery",

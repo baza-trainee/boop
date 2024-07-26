@@ -1,9 +1,11 @@
 'use client';
+import { useTranslations } from 'next-intl';
 import PaymentCurrency from './payment-currency/PaymentCurrency';
 import PaymentDonateType from './payment-donate-type/PaymentDonateType';
 import PaymentDonationAmount from './payment-donation-amount/PaymentDonationAmount';
 
 const PaymentForm = () => {
+  const t = useTranslations('Donate');
   return (
     <form
       action=""
@@ -18,7 +20,7 @@ const PaymentForm = () => {
         type="submit"
         className="cursor-pointer whitespace-nowrap rounded-[32px] bg-red px-[34px] py-5 text-xl font-bold text-bgWhite"
       >
-        Підтримати проект
+        {t('support_btn')}
       </button>
     </form>
   );

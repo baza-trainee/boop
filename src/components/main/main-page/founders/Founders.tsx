@@ -37,7 +37,7 @@ const Founders = () => {
         <h3 className="font-raleway text-xl font-[500]  leading-[132%] text-mainViolet ">
           {t('subtitle')}
         </h3>
-        <h2 className="title-gradient  font-groppled font-bold xs:text-[28px] xs:leading-[160%] md:text-[32px] lg:text-5xl xl:w-[500px] xl:leading-[110%]">
+        <h2 className="title-gradient  font-groppled text-[28px] font-bold leading-[160%] md:text-[32px] lg:text-5xl xl:w-[500px] xl:leading-[110%]">
           {t('title')}
         </h2>
         <p className=" w-[308px] font-raleway text-xl font-bold leading-[132%] text-textViolet xl:w-[350px]">

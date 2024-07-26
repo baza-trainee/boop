@@ -1,19 +1,21 @@
+import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
 const TYPE_OF_DONATE = [
   {
     value: 'every-month',
-    text: 'Щомісячна підписка',
+    text: 'every_month',
   },
   {
     value: 'only-once',
-    text: 'Одноразовий внесок',
+    text: 'once',
   },
 ];
 
 const PaymentDonateType = () => {
   const [selectedTypeOfDonate, setSelectedTypeOfDonate] =
     useState<string>('every-month');
+  const t = useTranslations('Donate.form_btns.donation_type');
 
   return (
     <div className="mb-4 flex">
@@ -35,7 +37,7 @@ const PaymentDonateType = () => {
             htmlFor={item.value}
             className="inline-block w-full cursor-pointer border-2 border-solid border-yellow py-[22px] text-center text-xl font-bold leading-[1] text-textViolet transition-all duration-300 ease-linear peer-checked/:bg-yellow peer-checked/:text-white max-custom:text-sm max-custom:leading-none"
           >
-            {item.text}
+            {t(item.text)}
           </label>
         </div>
       ))}

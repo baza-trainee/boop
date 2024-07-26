@@ -1,4 +1,9 @@
-import { useState } from 'react';
+import { useAppDispatch, useAppSelector } from '@/store/hook';
+import {
+  setSelectedCurrency,
+  setDonationAmount,
+} from '@/store/slices/paymentFormSlice';
+import { useEffect } from 'react';
 
 const CURRENCY = [
   {
@@ -16,7 +21,15 @@ const CURRENCY = [
 ];
 
 const PaymentCurrency = () => {
-  const [selectedCurrency, setSelectedCurrency] = useState<string>('uah');
+  const selectedCurrency = useAppSelector(
+    (state) => state.paymentForm.selectedCurrency
+  );
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    if (selectedCurrency === 'uah') dispatch(setDonationAmount('50'));
+    else dispatch(setDonationAmount('5'));
+  }, [selectedCurrency]);
 
   return (
     <div className="flex gap-2">
@@ -29,7 +42,7 @@ const PaymentCurrency = () => {
             name="currency-type"
             id={item.value}
             className="peer absolute left-0 top-0 h-0 w-0 opacity-0"
-            onChange={(e) => setSelectedCurrency(e.target.value)}
+            onChange={(e) => dispatch(setSelectedCurrency(e.target.value))}
           />
           <label
             htmlFor={item.value}

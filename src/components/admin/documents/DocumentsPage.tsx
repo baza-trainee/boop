@@ -19,6 +19,7 @@ const DocumentsPage = () => {
   const [isProcessing, setIsProcessing] = useState(false);
 
   const [editDocument] = documentsApi.useEditDocumentsMutation();
+  // const [addDocument] = documentsApi.useAddDocumentsMutation();
 
   const {
     data: documents,
@@ -109,6 +110,21 @@ const DocumentsPage = () => {
         };
         const id = accounting?.id;
         response = await editDocument({ id, newDocument });
+        // if (accounting) {
+        //   const newDocument = {
+        //     documentUrl: res.data.fileUrl,
+        //     documentId: res.data.fileId,
+        //   };
+        //   const id = accounting?.id;
+        //   response = await editDocument({ id, newDocument });
+        // } else {
+        //   const newDocument = {
+        //     title: 'Звітність',
+        //     documentUrl: res.data.fileUrl,
+        //     documentId: res.data.fileId,
+        //   };
+        //   response = await addDocument(newDocument);
+        // }
       }
       if (values.regulations[0].size > 0) {
         const formData = new FormData();
@@ -161,7 +177,7 @@ const DocumentsPage = () => {
           openAlert({
             data: {
               state: 'success',
-              message: 'Документ успішно відредаговано!',
+              message: 'Документи успішно відредаговано!',
             },
           })
         );
@@ -178,7 +194,7 @@ const DocumentsPage = () => {
   if (isError) {
     return (
       <div className="flex h-screen items-center justify-center">
-        <div className="flex h-[50%] w-[80%] items-center justify-center rounded-[20px] bg-slate-200  p-[40px]">
+        <div className="flex h-[50%] w-[80%] items-center justify-center rounded-[20px] bg-slate-200 p-[40px]">
           <p className="text-center text-[32px] text-yellow">
             Сталася помилка під час завантаження даних.
             <br /> Будь ласка, спробуйте оновити сторінку або повторити спробу
@@ -235,11 +251,15 @@ const DocumentsPage = () => {
           <div className="relative mt-[60px] flex w-full justify-between">
             <button
               disabled={!!Object.keys(errors).length}
-              className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white disabled:bg-gray-500"
+              className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 font-[500] text-white disabled:bg-[#E3E3E4] disabled:text-[#97979A]"
             >
               {isProcessing ? 'Обробка запиту...' : 'Змінити'}
             </button>
-            <button className="w-[149px] rounded-3xl border border-yellow px-4 py-2 text-violet">
+            <button
+              disabled={!!Object.keys(errors).length}
+              onClick={() => dispatch(closeModal())}
+              className="w-[149px] rounded-3xl border border-yellow px-4 py-2 text-violet disabled:border-[#E3E3E4] disabled:text-[#97979A]"
+            >
               Скасувати
             </button>
           </div>

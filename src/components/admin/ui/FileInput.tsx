@@ -50,8 +50,7 @@ const FileInput = <T extends FieldValues>({
         <label
           htmlFor="title"
 
-          className={`text-sm font-[500]  ${isEditMode && !isPressPage ? 'text-mainViolet' : 'text-black'}`}
-
+          className={`text-base font-[500]  ${isEditMode && !isPressPage ? 'text-mainViolet' : 'text-black'}`}
 
         >
           {title}

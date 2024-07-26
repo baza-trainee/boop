@@ -1,12 +1,13 @@
 {
-	"hello": "ciao!",
-	"Header": {
-		"home": "Home",
-		"about": "Chi Siamo",
-		"school": "Scuola",
-		"contacts": "Contatti",
-		"button": "Sostienici il Progetto"
-	},
+  "hello": "ciao!",
+  "Header": {
+    "logoTitle": "Ufficio Sorrisi e Supporto",
+    "home": "Home",
+    "about": "Chi Siamo",
+    "school": "Scuola",
+    "contacts": "Contatti",
+    "button": "Sostienici il Progetto"
+  },
 	"Hero": {
 		"title": "Nonostante tutto, l'infanzia deve continuare"
 	},
@@ -99,6 +100,18 @@
 		"title": "Stampa su di noi",
 		"link_text": "Leggi di più"
 	},
+	"Donate": {
+		"title": "È facile aiutare",
+		"text": "Il vostro sostegno può cambiare in meglio la vita dei piccoli pazienti. Ogni donazione, indipendentemente dall'entità, ci permette di continuare a portare sorrisi nelle corsie degli ospedali.",
+		"form_btns": {
+			"donation_type": {
+				"every_month": "Abbonamento mensile",
+				"once": "Pagamento unico"
+			},
+			"custom_donation_amount": "Inserite il vostro importo"
+		},
+		"support_btn": "Sostenete il progetto"
+	},
 	"Gallery": {
 		"title": "Galleria",
 		"btn": "Scarica altro",
@@ -114,7 +127,7 @@
 	},
 	"About": {
 		"main_rules": {
-			"title": " – nonostante tutto, l'infanzia \ndeve continuare",
+			"title": " – nonostante tutto, \nl'infanzia deve continuare",
 			"rules": {
 				"paragraph_1": "A volte, tutto ciò che possiamo fare è semplicemente stare vicini. Soprattutto in quei momenti in cui si verificano eventi inaspettati e traumatici.",
 				"paragraph_2": "”Non nuocere!” - la regola più importante. Né agli altri, né a se stessi. Diventiamo un supporto per chi ci sta vicino. Perché abbiamo così tanto bisogno l'uno dell'altro.",

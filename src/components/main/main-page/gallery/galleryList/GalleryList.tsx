@@ -34,14 +34,14 @@ const GalleryList: React.FC<GalleryCardProps> = ({
     combinedElements.push(
       <div
         key={`image-${i}`}
-        className="relative h-[477px] min-w-[197px] flex-1 bg-mainViolet md:h-[287px] lg:h-[394px] xl:h-[415px] 3xl:h-[447px]"
+        className="relative h-[477px] min-w-[197px] flex-1  md:h-[287px] lg:h-[394px] xl:h-[415px] 3xl:h-[447px]"
       >
         <Image
           src={images[i].imageUrl}
           alt={`Gallery image ${i}`}
           fill
           style={{ objectFit: 'cover' }}
-          className="h-full w-full"
+          className="h-full w-full bg-[#D9D9D9]"
           sizes="(max-width: 768px) 50vw,  306px"
         />
       </div>

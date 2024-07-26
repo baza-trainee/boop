@@ -11,12 +11,12 @@ const Partners = () => {
   const t = useTranslations('Partners');
   return (
     <section className="mb-[120px]">
-      <div className="flex flex-row items-center justify-center">
-        <div className="w-full h-[600px] flex flex-col bg-bgViolet py-[50px] pl-[80px] gap-[32px]">
+      <div className="flex flex-col items-center justify-center w-full md:flex-row">
+          <div className="w-full h-[390px] flex flex-col bg-bgViolet gap-[24px] py-[15px] pl-[8px] ml:pl-10 xl:h-[376px] xl:py-[50px] xl:pl-[80px] xl:gap-[32px]">
           <div className="flex gap-[10px] flex-row">
           <SectionTitle title={t("title_1")}/>
           </div>
-          <div >
+          <div className="overflow-y-hidden">
           <Carousel
               autoHeight={true}
               loop={true}
@@ -27,7 +27,7 @@ const Partners = () => {
               direction="vertical"
               renderItem={(partnerItems) => {
                 return(
-                <div className="relative flex flex-wrap gap-[24px] w-[636px]">
+                  <div className="relative flex flex-wrap gap-[24px] w-[350px]  ml:w-[436px] xl:w-[636px] 4xl:w-[828px]">
                   {partnerItems.map((item) => (
                     <PartnersCard
                       key={item.id}
@@ -48,11 +48,11 @@ const Partners = () => {
               />
           </div>
         </div>
-        <div className="w-full h-[600px] flex flex-col bg-bgYellow py-[50px] pl-[80px] gap-[32px]">
+        <div className="w-full h-[390px] flex flex-col bg-bgYellow gap-[24px] py-[15px] pl-[8px] ml:pl-10  xl:h-[376px] xl:py-[50px] xl:pl-[80px] xl:gap-[32px]">
           <div className="flex gap-[10px] flex-row">
           <SectionTitle title={t("title_2")}/>
           </div>
-          <div >
+          <div className="overflow-y-hidden">
           <Carousel
               autoHeight={true}
               loop={true}
@@ -63,7 +63,7 @@ const Partners = () => {
               direction="vertical"
               renderItem={(partnerItems) => {
                 return(
-                <div className="relative flex flex-wrap gap-[24px] w-[636px]">
+                  <div className="relative flex flex-wrap gap-[24px] w-[350px] ml:w-[436px] xl:w-[636px]  4xl:w-[828px]">
                   {partnerItems.map((item) => (
                     <PartnersCard
                       key={item.id}
