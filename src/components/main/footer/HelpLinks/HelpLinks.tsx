@@ -11,7 +11,7 @@ const HelpLinks: React.FC<HelpLinksProps> = () => {
   const t = useTranslations("Footer");
 
   return (
-    <div className="flex flex-col gap-3 underline">
+    <div className="flex flex-col gap-3 underline mt-10">
       {helpLinks.map(({ url, name }, index) => (
         <MainLink url={url} key={index}>
           {t(name)}

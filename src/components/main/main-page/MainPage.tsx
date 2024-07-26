@@ -15,7 +15,7 @@ import Partners from './partners/Partners';
 const MainPage = () => {
   return (
     <>
-      <div className="bg-bgWhite ">
+      <main className="bg-bgWhite">
         <Hero />
         <Founders />
         <Vision />
@@ -27,7 +27,7 @@ const MainPage = () => {
         <Payment />
         <Gallery />
         <Partners />
-      </div>
+      </main>
     </>
   );
 };
