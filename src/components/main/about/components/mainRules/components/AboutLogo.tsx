@@ -15,7 +15,9 @@ const AboutLogo: React.FC<AboutLogoProps> = ({ text, isUkr, isIt }) => {
         src={
           isUkr
             ? '/images/heroSection/hero_logo.png'
-            : '/images/heroSection/en_logo.svg'
+            : isIt
+              ? '/images/heroSection/it_logo.svg'
+              : '/images/heroSection/en_logo.svg'
         }
         alt="Boop"
         width={isUkr ? 150 : 167}
@@ -23,7 +25,7 @@ const AboutLogo: React.FC<AboutLogoProps> = ({ text, isUkr, isIt }) => {
         className="relative"
       />
       <h1
-        className={`${isIt ? 'w-[370px] md:w-[370px] ml:w-[420px]' : 'w-[350px] md:w-[470px] ml:w-[530px]'} title-gradient relative text-center font-groppled text-[28px] font-bold leading-[132%] md:top-[20px]    ml:text-[32px] ml:leading-[150%] `}
+        className={`${isIt ? 'w-[345px] md:w-[348px] ml:w-[395px]' : isUkr ? 'w-[350px] md:w-[470px] ml:w-[530px]' : 'w-[370px] md:w-[476px] ml:w-[543px]'} title-gradient relative text-center font-groppled text-[28px] font-bold leading-[132%] md:top-[20px]    ml:text-[32px] ml:leading-[150%] `}
       >
         {text}
       </h1>

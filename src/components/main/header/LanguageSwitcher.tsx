@@ -70,9 +70,8 @@ const LanguageSwitcher = () => {
           className="absolute -left-[3px] top-[30px] flex w-[81px] flex-col justify-around rounded-none"
         >
           {filteredLocales.map((item: string) => (
-            <div className="flex w-[81px] gap-[8px]">
+            <div key={item} className="flex w-[81px] gap-[8px]">
               <div
-                key={item}
                 className="ml-1 flex h-[30px] w-[28px] cursor-pointer items-center"
                 onClick={() => handleCheckLocale(item)}
               >

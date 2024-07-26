@@ -69,7 +69,7 @@ export const AlertWindow: React.FC = () => {
         {state === 'success' && (
           <div className="mt-[1.7rem] flex gap-[20px]">
             <button
-              className="flex items-center justify-center whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white"
+              className="flex items-center justify-center whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-[20px] text-white"
               onClick={() => confirmHandler(false)}
             >
               Ок
@@ -80,13 +80,13 @@ export const AlertWindow: React.FC = () => {
         {buttons && (
           <div className="mt-[1.7rem] flex gap-[20px]">
             <button
-              className="flex min-w-[123px] items-center justify-center whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white disabled:bg-gray-500"
+              className="flex min-w-[123px] items-center justify-center whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-[20px] text-white disabled:bg-gray-500"
               onClick={() => confirmHandler(true)}
             >
               {isProcessing ? 'Обробка запиту...' : 'Видалити'}
             </button>
             <button
-              className="w-[149px] rounded-3xl border border-yellow px-4 py-2 text-violet"
+              className="w-[149px] rounded-3xl border border-yellow px-4 py-2 text-[20px] text-violet"
               onClick={() => confirmHandler(false)}
             >
               Скасувати

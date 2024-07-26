@@ -11,7 +11,7 @@ const CloseButton: FC<ICloseButtonProps> = ({ onClick }) => {
       className=" absolute right-[20px] top-[20px] flex h-[32px] w-[32px] items-center justify-center"
     >
       <svg
-        className=" h-[18px] w-[18px] transform text-[#4D4D4D]  transition-transform duration-200 hover:scale-125 "
+        className=" h-[32px] w-[32px]  text-[#4D4D4D]   "
         width="32"
         height="32"
         viewBox="0 0 32 32"
