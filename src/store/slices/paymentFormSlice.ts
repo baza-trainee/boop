@@ -7,7 +7,7 @@ export interface paymentFormState {
 }
 
 const initialState: paymentFormState = {
-  selectedCurrency: 'uah',
+  selectedCurrency: 'UAH',
   selectedTypeOfDonate: 'every-month',
   donationAmount: '50',
 };
