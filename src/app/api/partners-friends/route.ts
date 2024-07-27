@@ -10,7 +10,11 @@ import {
 export async function GET() {
   try {
     await prismaConnect();
-    const response = await prisma.partnersFriends.findMany();
+
+    const response = await prisma.partnersFriends.findMany({
+      orderBy: { createdAt: 'asc' },
+    });
+
     if (!response || response.length === 0) {
       return NextResponse.json(
         { message: 'Partners and friends are not found' },
@@ -32,10 +36,8 @@ export async function POST(request: Request) {
   try {
     await prismaConnect();
 
-
-
-    const { logoUrl, logoId, link, section }: PartnersFriendsFormData = await request.json();
-
+    const { logoUrl, logoId, link, section }: PartnersFriendsFormData =
+      await request.json();
 
     if (!logoUrl || !link || !section || !logoId) {
       return NextResponse.json(
@@ -58,7 +60,7 @@ export async function POST(request: Request) {
         logoUrl,
         logoId,
         link,
-        section
+        section,
       },
     });
 
