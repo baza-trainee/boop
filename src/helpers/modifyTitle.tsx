@@ -7,7 +7,7 @@ export const modifyTitle = (str: string) => {
     strArray[strArray.length - 1] === 'італійською'
   ) {
     return (
-      <span>
+      <span className="mb-1 block">
         {firstString}{' '}
         <strong className="font-[700]">{strArray[strArray.length - 1]}</strong>{' '}
       </span>
