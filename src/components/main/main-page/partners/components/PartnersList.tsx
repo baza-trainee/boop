@@ -30,6 +30,7 @@ const PartnersList: React.FC<PartnersListProps> = ({
     renderItems.push(partnerItems.slice(i, i + 6));
   }
   const partners = sectionName === 'partners';
+  console.log('window.innerWidth', window.innerWidth);
 
   return (
     <div
@@ -40,7 +41,7 @@ const PartnersList: React.FC<PartnersListProps> = ({
       </div>
 
       <div className="flex">
-        <div className="h-[237px] overflow-hidden md:h-[252px] ml:h-[309px] lg:h-[198px] 4xl:h-[236px]">
+        <div className="h-[237px] overflow-hidden md:h-[252px] ml:h-[309px] lg:h-[198px] 4xl:h-[237px]">
           <Carousel
             items={renderItems}
             prevEl={`.${sectionName}-prev-el`}
@@ -53,7 +54,7 @@ const PartnersList: React.FC<PartnersListProps> = ({
             className=""
             renderItem={(items: PartnerItem[]) => {
               return (
-                <div className="flex flex-wrap justify-between gap-y-6 lg:justify-start lg:gap-x-8 xl:gap-x-[60px] 2xl:gap-x-9 3xl:gap-x-2 4xl:gap-x-[37px]">
+                <div className="flex flex-wrap justify-between gap-y-6 custom:gap-x-6 md:gap-x-0 lg:justify-start lg:gap-x-7 xl:gap-x-10 2xl:gap-x-9 3xl:gap-x-0 4xl:gap-x-[37px]">
                   {items.map((item) => (
                     <a
                       key={item.id}
