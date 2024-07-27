@@ -20,7 +20,7 @@ const HeroLogo: React.FC<HeroLogoProps> = ({ locale, onClick, className }) => {
   };
 
   const src = getSrc(locale);
-  const width = locale === 'ua' ? 391 : 435;
+  const width = locale === 'en' ? 435 : 391;
   const height = 227;
 
   return (
