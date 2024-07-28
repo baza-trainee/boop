@@ -66,7 +66,7 @@ const PaymentDonationAmount = () => {
             {item.type === 'radio' ? (
               <>
                 <input
-                  checked={item.value === donationAmount}
+                  checked={item.value === donationAmount && !isCustomDonate}
                   value={item.value}
                   type="radio"
                   name="donate-sum"
@@ -93,7 +93,7 @@ const PaymentDonationAmount = () => {
                       ? donationAmount
                       : t('custom_donation_amount')
                   }
-                  placeholder={`${t('custom_donation_amount')}...`}
+                  placeholder={t('custom_donation_amount')}
                   type="text"
                   name="donate-sum"
                   id={item.id}
