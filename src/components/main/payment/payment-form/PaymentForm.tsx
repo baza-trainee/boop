@@ -4,18 +4,26 @@ import PaymentCurrency from './payment-currency/PaymentCurrency';
 import PaymentDonateType from './payment-donate-type/PaymentDonateType';
 import PaymentDonationAmount from './payment-donation-amount/PaymentDonationAmount';
 import { useAppDispatch, useAppSelector } from '@/store/hook';
-import { setDonationAmount } from '@/store/slices/paymentFormSlice';
+import {
+  setDonationAmount,
+  setIsCustomDonate,
+} from '@/store/slices/paymentFormSlice';
 
 const PaymentForm = () => {
   const t = useTranslations('Donate');
-  const { donationAmount, selectedTypeOfDonate, selectedCurrency } =
-    useAppSelector((state) => state.paymentForm);
+  const {
+    donationAmount,
+    selectedTypeOfDonate,
+    selectedCurrency,
+    isCustomDonate,
+  } = useAppSelector((state) => state.paymentForm);
   const dispatch = useAppDispatch();
 
   const handleSubmit = () => {
     console.log(
       `${selectedCurrency}, ${selectedTypeOfDonate}, ${donationAmount}`
     );
+    if (isCustomDonate) dispatch(setIsCustomDonate(false));
     if (selectedCurrency === 'UAH') dispatch(setDonationAmount('50'));
     else dispatch(setDonationAmount('5'));
   };

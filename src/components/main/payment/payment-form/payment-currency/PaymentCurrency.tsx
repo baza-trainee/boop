@@ -2,6 +2,7 @@ import { useAppDispatch, useAppSelector } from '@/store/hook';
 import {
   setSelectedCurrency,
   setDonationAmount,
+  setIsCustomDonate,
 } from '@/store/slices/paymentFormSlice';
 import { useEffect } from 'react';
 
@@ -21,12 +22,13 @@ const CURRENCY = [
 ];
 
 const PaymentCurrency = () => {
-  const selectedCurrency = useAppSelector(
-    (state) => state.paymentForm.selectedCurrency
+  const { selectedCurrency, isCustomDonate } = useAppSelector(
+    (state) => state.paymentForm
   );
   const dispatch = useAppDispatch();
 
   useEffect(() => {
+    if (isCustomDonate) dispatch(setIsCustomDonate(false));
     if (selectedCurrency === 'UAH') dispatch(setDonationAmount('50'));
     else dispatch(setDonationAmount('5'));
   }, [selectedCurrency]);

@@ -1,20 +1,22 @@
 import { useAppDispatch, useAppSelector } from '@/store/hook';
-import { setDonationAmount } from '@/store/slices/paymentFormSlice';
+import {
+  setDonationAmount,
+  setIsCustomDonate,
+} from '@/store/slices/paymentFormSlice';
 import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent } from 'react';
 
 const PaymentDonationAmount = () => {
-  const { donationAmount, selectedCurrency } = useAppSelector(
+  const { donationAmount, selectedCurrency, isCustomDonate } = useAppSelector(
     (state) => state.paymentForm
   );
   const dispatch = useAppDispatch();
   const t = useTranslations('Donate.form_btns');
-  const [isCustomDonate, setIsCustomDonate] = useState<boolean>(false);
 
   const handleRadioInputChange = (value: string) => {
     dispatch(setDonationAmount(value));
-    if (isCustomDonate) setIsCustomDonate(false);
+    if (isCustomDonate) dispatch(setIsCustomDonate(false));
   };
 
   const handleCustomAmountChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -26,7 +28,7 @@ const PaymentDonationAmount = () => {
 
   const handleCustomAmountFocus = () => {
     dispatch(setDonationAmount(''));
-    setIsCustomDonate(true);
+    dispatch(setIsCustomDonate(true));
   };
 
   const DONATE_SUM = [
@@ -99,7 +101,7 @@ const PaymentDonationAmount = () => {
                   id={item.id}
                   className={clsx(
                     'flex min-h-[70px] w-full cursor-pointer items-center justify-center border-2 border-solid border-yellow bg-transparent px-4 text-center text-xl font-bold leading-[1] text-textViolet placeholder-white outline-none transition-all duration-300 ease-linear max-custom:text-sm max-custom:leading-none',
-                    isCustomDonate && 'bg-[#ffab0b] text-white'
+                    isCustomDonate && 'bg-yellow text-white'
                   )}
                   onFocus={handleCustomAmountFocus}
                   onChange={(e) => handleCustomAmountChange(e)}
