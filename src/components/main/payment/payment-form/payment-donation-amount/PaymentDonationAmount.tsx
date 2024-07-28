@@ -98,6 +98,7 @@ const PaymentDonationAmount = () => {
                   placeholder={t('custom_donation_amount')}
                   type="text"
                   name="donate-sum"
+                  // pattern="[0-9]"
                   id={item.id}
                   className={clsx(
                     'flex min-h-[70px] w-full cursor-pointer items-center justify-center border-2 border-solid border-yellow bg-transparent px-4 text-center text-xl font-bold leading-[1] text-textViolet placeholder-white outline-none transition-all duration-300 ease-linear max-custom:text-sm max-custom:leading-none',
@@ -106,12 +107,6 @@ const PaymentDonationAmount = () => {
                   onFocus={handleCustomAmountFocus}
                   onChange={(e) => handleCustomAmountChange(e)}
                 />
-                {/* <label
-                  htmlFor={item.id}
-                  className="flex min-h-[70px] w-full cursor-pointer items-center justify-center border-2 border-solid border-yellow text-center text-xl font-bold leading-[1] text-textViolet transition-all duration-300 ease-linear peer-checked/:bg-yellow peer-checked/:text-white max-custom:text-sm max-custom:leading-none"
-                >
-                  {t('custom_donation_amount')}
-                </label> */}
               </>
             )}
           </div>
