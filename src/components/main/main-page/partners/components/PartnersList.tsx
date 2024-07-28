@@ -30,7 +30,6 @@ const PartnersList: React.FC<PartnersListProps> = ({
     renderItems.push(partnerItems.slice(i, i + 6));
   }
   const partners = sectionName === 'partners';
-  console.log('window.innerWidth', window.innerWidth);
 
   return (
     <div
@@ -65,7 +64,7 @@ const PartnersList: React.FC<PartnersListProps> = ({
                     >
                       <img
                         src={item.logoUrl}
-                        alt={`Partners image`}
+                        alt={`Partner image`}
                         style={{
                           maxWidth: '100%',
                           maxHeight: '100%',

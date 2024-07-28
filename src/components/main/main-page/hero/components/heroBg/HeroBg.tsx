@@ -30,8 +30,8 @@ const HeroBg = () => {
         alt="BOOP"
         width={1455}
         height={1549}
-        className="absolute -top-[73px] left-[70px]  z-[2] h-auto w-[608px] custom:-top-[189px] custom:left-[160px]  custom:w-[836px] md:-top-[149px] md:left-[163px] md:w-[836px] ml:-top-[139px] ml:left-[173px] ml:w-[1044px] lg:-top-[165px] lg:left-[253px] lg:w-[1205px] xl:-top-[175px] 3xl:-top-[213px] 3xl:left-[525px] 4xl:-top-[223px]  4xl:left-[725px] 4xl:w-[1455px] 
-        "
+        loading="eager"
+        className="absolute -top-[73px] left-[70px] z-[2] h-auto w-[608px] custom:-top-[189px] custom:left-[160px] custom:w-[836px] md:-top-[149px] md:left-[163px] md:w-[836px] ml:-top-[139px] ml:left-[173px] ml:w-[1044px] lg:-top-[165px] lg:left-[253px] lg:w-[1205px] xl:-top-[175px] 3xl:-top-[213px] 3xl:left-[525px] 4xl:-top-[223px] 4xl:left-[725px] 4xl:w-[1455px]"
       />
     </picture>
   );
