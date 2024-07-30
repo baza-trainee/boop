@@ -44,19 +44,17 @@ const LanguageSwitcher = () => {
 
   return (
     <div
-      className={`relative min-w-[100px] flex cursor-pointer items-center text-[20px] font-semibold leading-[20px] text-mainViolet`}
+      className={`relative flex min-w-[100px] cursor-pointer items-center text-[20px] font-semibold leading-[20px] text-mainViolet`}
     >
       <div
         ref={menuRef}
         onClick={handleImageClick}
         className="flex items-center px-2"
       >
-        <div className="font-bold w-[45px]">
-          {currentLocale.toUpperCase()}
-        </div>
+        <div className="w-[45px] font-bold">{currentLocale.toUpperCase()}</div>
         <div className={`${!isOpen && 'rotate-[180deg]'}`}>
           <Image
-            className="w-[24px] font-bold stroke-amber-400"
+            className="w-[24px] stroke-amber-400 font-bold"
             src="/images/header/keyboard_arrow_down.svg"
             alt="arrow down"
             width={24}
@@ -67,12 +65,12 @@ const LanguageSwitcher = () => {
       {isOpen && (
         <div
           ref={submenuRef}
-          className="flex flex-col justify-around absolute top-full pt-4 px-2 mt-2 bg-bgWhite rounded shadow"
+          className="absolute top-full mt-2 flex flex-col justify-around rounded bg-bgWhite px-2 pt-4 shadow"
         >
           {filteredLocales.map((item: string) => (
             <div key={item} className="flex">
               <div
-                className="cursor-pointer items-center mb-4 w-[45px]"
+                className="mb-4 w-[45px] cursor-pointer items-center"
                 onClick={() => handleCheckLocale(item)}
               >
                 {item.toUpperCase()}

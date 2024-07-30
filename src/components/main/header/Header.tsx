@@ -37,7 +37,7 @@ const Header = () => {
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 flex h-[100px] w-full items-center justify-between bg-golden py-[26px] text-violet backdrop-filter md:flex-shrink md:flex-grow">
-      <div className="container ">
+      <div className="container">
         <div className="flex w-full items-center justify-between">
           <Link href="/" title={t('logoTitle')}>
             <HeaderLogo locale={locale} />
@@ -60,22 +60,22 @@ const Header = () => {
           </div>
           <nav className="relative z-10 ml-[8px] hidden w-[768px] justify-between whitespace-nowrap px-[4px] py-0 font-groppled font-bold text-mainViolet md:ml-0 md:flex md:w-[359px] md:gap-[24px] md:text-[18px] md:leading-[27.36px] lg:w-[462px] 3xl:text-[20px] 3xl:leading-[31.6px]">
             <ul className="flex items-center">
-              <li className="md:pr-[25px] lg:pr-[48px]">
+              <li className="hover:underline md:pr-[25px] lg:pr-[48px]">
                 <Link href="/" title={t('home')}>
                   {t('home')}
                 </Link>
               </li>
-              <li className="md:pr-[25px] lg:pr-[48px]">
+              <li className="hover:underlinemd:pr-[25px] lg:pr-[48px]">
                 <Link href="/about" title={t('about')}>
                   {t('about')}
                 </Link>
               </li>
-              <li className="md:pr-[25px] lg:pr-[48px]">
+              <li className="hover:underlinemd:pr-[25px] lg:pr-[48px]">
                 <Link href="/school" title={t('school')}>
                   {t('school')}
                 </Link>
               </li>
-              <li className="">
+              <li className="hover:underline">
                 <Link href="/contacts" title={t('contacts')}>
                   {t('contacts')}
                 </Link>
@@ -125,22 +125,22 @@ const Header = () => {
                 height={50}
               />
             </li>
-            <li>
+            <li className="hover:underline">
               <Link href="/" title={t('home')} onClick={toggleMenu}>
                 {t('home')}
               </Link>
             </li>
-            <li>
+            <li className="hover:underline">
               <Link href="/about" title={t('about')} onClick={toggleMenu}>
                 {t('about')}
               </Link>
             </li>
-            <li>
+            <li className="hover:underline">
               <Link href="/school" title={t('school')} onClick={toggleMenu}>
                 {t('school')}
               </Link>
             </li>
-            <li>
+            <li className="hover:underline">
               <Link href="/contacts" title={t('contacts')} onClick={toggleMenu}>
                 {t('contacts')}
               </Link>
