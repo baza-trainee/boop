@@ -13,10 +13,12 @@ type TProps<T extends FieldValues> = InputHTMLAttributes<HTMLInputElement> &
     isRequired?: boolean;
     isEditMode?: boolean;
     isPressPage?: boolean;
+    titleColor?: string;
   };
 
 const FileInput = <T extends FieldValues>({
   title,
+  titleColor,
   placeholder,
   control,
   name,
@@ -49,7 +51,7 @@ const FileInput = <T extends FieldValues>({
       {!!title && (
         <label
           htmlFor="title"
-          className={`mb-1 block text-base font-[500]  ${isEditMode && !isPressPage ? 'text-mainViolet' : 'text-black'}`}
+          className={`mb-1 block text-base font-[500] ${isEditMode && !isPressPage ? 'text-mainViolet' : `text-[${titleColor}]` || 'text-black'}`}
         >
           {title}
           {isRequired && <span className="text-red">*</span>}
