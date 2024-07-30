@@ -49,12 +49,10 @@ const LanguageSwitcher = () => {
       <div
         ref={menuRef}
         onClick={handleImageClick}
-        className="mt-[5px] flex w-[60px] items-center gap-[8px] px-[5px] pl-[14px] md:pl-0"
+        className="mt-[5px] flex w-[60px] items-center gap-[8px]"
       >
-        <div className="mr-[10px] w-[28px] font-bold md:mr-0">
-          {currentLocale.toUpperCase()}
-        </div>
-        <div className={`${!isOpen && 'rotate-[180deg]'}`}>
+        <div className="font-bold md:mr-0">{currentLocale.toUpperCase()}</div>
+        <div className={`${!isOpen && 'rotate-[180deg]'} w-[24px]`}>
           <Image
             className="font-bold"
             src="/images/header/keyboard_arrow_down.svg"
@@ -70,7 +68,7 @@ const LanguageSwitcher = () => {
           className="absolute -left-[3px] top-[30px] flex w-[81px] flex-col justify-around rounded-none"
         >
           {filteredLocales.map((item: string) => (
-            <div key={item} className="flex w-[81px] gap-[8px]">
+            <div key={item} className="flex w-[81px] gap-[8px] pt-[5px]">
               <div
                 className="ml-1 flex h-[30px] w-[28px] cursor-pointer items-center"
                 onClick={() => handleCheckLocale(item)}
