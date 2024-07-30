@@ -106,7 +106,7 @@ const PaymentDonationAmount = ({ isValidate }: PaymentDonationAmountProps) => {
                   name="donate-sum"
                   id={item.id}
                   className={clsx(
-                    'basic-transition flex min-h-[70px] w-full cursor-pointer items-center justify-center border-2 border-solid border-yellow bg-transparent px-4 text-center text-xl font-bold leading-[1] text-textViolet placeholder-white outline-none max-custom:text-sm max-custom:leading-none',
+                    'basic-transition flex min-h-[70px] w-full cursor-pointer items-center justify-center border-2 border-solid border-yellow bg-transparent px-[10.5px] text-center text-xl font-bold leading-[1] text-textViolet placeholder-white outline-none max-custom:text-sm max-custom:leading-none',
                     isCustomDonate && 'bg-yellow text-white'
                   )}
                   onFocus={handleCustomAmountFocus}
