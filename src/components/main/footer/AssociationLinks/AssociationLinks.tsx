@@ -12,7 +12,7 @@ const AssociationLinks: React.FC<AssociationLinksProps> = () => {
   const t = useTranslations("Footer");
 
   return (
-    <div className="flex flex-col gap-3 pt-24">
+    <div className="flex flex-col gap-3 pt-10 md:pt-24">
     <h1>{t("association")}
     <Image src="/icons/arrow.svg" width={12} height={12} alt="arrow"/></h1>
       { associationLinks.map(({ url, name }, index) => (

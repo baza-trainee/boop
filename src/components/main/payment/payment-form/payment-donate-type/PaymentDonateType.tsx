@@ -1,5 +1,6 @@
+import { useAppDispatch, useAppSelector } from '@/store/hook';
+import { setSelectedTypeOfDonate } from '@/store/slices/paymentFormSlice';
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
 
 const TYPE_OF_DONATE = [
   {
@@ -13,9 +14,11 @@ const TYPE_OF_DONATE = [
 ];
 
 const PaymentDonateType = () => {
-  const [selectedTypeOfDonate, setSelectedTypeOfDonate] =
-    useState<string>('every-month');
   const t = useTranslations('Donate.form_btns.donation_type');
+  const selectedTypeOfDonate = useAppSelector(
+    (state) => state.paymentForm.selectedTypeOfDonate
+  );
+  const dispatch = useAppDispatch();
 
   return (
     <div className="mb-4 flex">
@@ -31,7 +34,7 @@ const PaymentDonateType = () => {
             name="donate-type"
             id={item.value}
             className="peer absolute left-0 top-0 h-0 w-0 opacity-0"
-            onChange={(e) => setSelectedTypeOfDonate(e.target.value)}
+            onChange={(e) => dispatch(setSelectedTypeOfDonate(e.target.value))}
           />
           <label
             htmlFor={item.value}

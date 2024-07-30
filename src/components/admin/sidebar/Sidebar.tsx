@@ -29,14 +29,18 @@ const Sidebar = () => {
   return (
     <aside className="flex w-[306px] flex-col items-center bg-beige p-[24px] text-violet">
       <Link href="/" className="mb-[32px]">
-        <Image src="/images/logo.svg" alt="logo" width={100} height={58} />
+        <Image
+          src="/icons/header/ua-logo.svg"
+          alt="logo"
+          width={100}
+          height={58}
+        />
       </Link>
       <ul className="flex w-full flex-col items-center">
         {sidebarLinks.map((link, index) => (
           <Link key={index} href={link.href} className="w-full">
             <li
-              className={`border-box flex w-full items-center gap-[24px] rounded-3xl border-2 border-transparent py-2 pl-[32px] pr-[16px] hover:border-violet
-                ${isLinkActive(link.link) && 'border-violet'} ${index === sidebarLinks.length - 3 ? 'mb-[60px]' : 'mb-[10px]'}`}
+              className={`border-box flex w-full items-center gap-[24px] rounded-3xl border-2 border-transparent py-2 pl-[32px] pr-[16px] hover:border-violet ${isLinkActive(link.link) && 'border-violet'} ${index === sidebarLinks.length - 3 ? 'mb-[60px]' : 'mb-[10px]'}`}
             >
               <svg className={`h-[32px] w-[32px]`}>
                 <use
@@ -56,7 +60,7 @@ const Sidebar = () => {
       </ul>
       <Link
         href={'/admin/signOut'}
-        className={`flex w-full items-center justify-center gap-4 rounded-3xl border-2  border-[#e6d57a]  px-[20px] py-[12px]  ${isLinkActive('signOut') ? 'bg-[#e6d57a]' : 'bg-[#fbf3e0]'}`}
+        className={`flex w-full items-center justify-center gap-4 rounded-3xl border-2 border-[#e6d57a] px-[20px] py-[12px] ${isLinkActive('signOut') ? 'bg-[#e6d57a]' : 'bg-[#fbf3e0]'}`}
       >
         <Image
           src={`/icons/admin/sidebar/logout.svg`}

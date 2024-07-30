@@ -26,37 +26,73 @@ const CounterPage = () => {
   const { data, isError, isLoading } = useGetAllNumbersQuery();
   const [isProcessing, setIsProcessing] = useState(false);
   const [isDisabled, setIsDisabled] = useState(true);
+  const [errors, setErrors] = useState<{ [key: number]: string }>({});
 
   const [editingItemId, setEditingItemId] = useState<number[]>([]);
-  const [inputValues, setInputValues] = useState<{ [key: number]: number }>({});
-  const [initialValues, setInitialValues] = useState<{ [key: number]: number }>(
+  const [inputValues, setInputValues] = useState<{ [key: number]: string }>({});
+  const [initialValues, setInitialValues] = useState<{ [key: number]: string }>(
     {}
   );
   const [updateNumber] = useUpdateNumberByIdMutation();
+
   const handleImageEditClick = (id: number) => {
     setEditingItemId((prevEditingItemId) =>
       prevEditingItemId.includes(id)
-        ? prevEditingItemId.filter((itemId) => itemId !== id) // delete  id
+        ? prevEditingItemId.filter((itemId) => itemId !== id) // delete id
         : [...prevEditingItemId, id]
     );
   };
+
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement>,
     id: number
   ) => {
     const { value } = event.target;
+    const numberValue = Number(value);
+
+    let error = '';
+    if (
+      !Number.isInteger(numberValue) ||
+      numberValue < 0 ||
+      numberValue > 9999
+    ) {
+      error = 'Число повинно бути цілим і в діапазоні від 1 до 9999';
+    }
+
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [id]: error,
+    }));
+
     setInputValues((prevValues) => ({
       ...prevValues,
-      [id]: Number(value),
+      [id]: value,
     }));
   };
 
   const handleSubmitForm = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    const hasErrors = Object.values(errors).some((error) => error !== '');
+    if (hasErrors) {
+      dispatch(
+        openAlert({
+          data: {
+            state: 'error',
+            message: 'Виправте помилки перед відправкою форми.',
+          },
+        })
+      );
+      return;
+    }
+
     try {
       setIsProcessing(true);
       const promises = Object.keys(inputValues).map((id) =>
-        updateNumber({ id: Number(id), number: inputValues[Number(id)] })
+        updateNumber({
+          id: Number(id),
+          number: Number(inputValues[Number(id)]),
+        })
       );
       await Promise.all(promises);
 
@@ -91,21 +127,23 @@ const CounterPage = () => {
     setInputValues(initialValues);
     setIsDisabled(true);
     setEditingItemId([]);
+    setErrors({});
   };
 
   useEffect(() => {
     if (data) {
       const initialValues = data.reduce(
         (acc, item) => {
-          acc[item.id] = item.number;
+          acc[item.id] = item.number.toString();
           return acc;
         },
-        {} as { [key: number]: number }
+        {} as { [key: number]: string }
       );
       setInputValues(initialValues);
       setInitialValues(initialValues);
     }
   }, [data]);
+
   useEffect(() => {
     if (editingItemId.length !== 0) {
       setIsDisabled(false);
@@ -150,6 +188,9 @@ const CounterPage = () => {
                 onChange={(event) => handleChange(event, item.id)}
                 className={` ${editingItemId.includes(item.id) ? `text-[#50439F]` : `text-[#949398]`} h-[40px] text-center font-medium`}
               />
+              {errors[item.id] && (
+                <p className="mt-1 text-xs text-red">{errors[item.id]}</p>
+              )}
             </li>
           ))}
         </ul>

@@ -44,17 +44,17 @@ const LanguageSwitcher = () => {
 
   return (
     <div
-      className={`relative flex h-[24px] cursor-pointer items-center text-[20px] font-semibold leading-[20px] text-mainViolet xs:mr-[20px] md:mr-0`}
+      className={`relative flex min-w-[100px] cursor-pointer items-center text-[20px] font-semibold leading-[20px] text-mainViolet`}
     >
       <div
         ref={menuRef}
         onClick={handleImageClick}
-        className="mt-[5px] flex w-[60px] items-center gap-[8px]"
+        className="flex items-center px-2"
       >
-        <div className="font-bold md:mr-0">{currentLocale.toUpperCase()}</div>
-        <div className={`${!isOpen && 'rotate-[180deg]'} w-[24px]`}>
+        <div className="w-[45px] font-bold">{currentLocale.toUpperCase()}</div>
+        <div className={`${!isOpen && 'rotate-[180deg]'}`}>
           <Image
-            className="font-bold"
+            className="w-[24px] stroke-amber-400 font-bold"
             src="/images/header/keyboard_arrow_down.svg"
             alt="arrow down"
             width={24}
@@ -65,19 +65,20 @@ const LanguageSwitcher = () => {
       {isOpen && (
         <div
           ref={submenuRef}
-          className="absolute -left-[3px] top-[30px] flex w-[81px] flex-col justify-around rounded-none"
+          className="absolute top-full mt-2 flex flex-col justify-around rounded bg-bgWhite px-2 pt-4 shadow"
         >
           {filteredLocales.map((item: string) => (
-            <div key={item} className="flex w-[81px] gap-[8px] pt-[5px]">
+            <div key={item} className="flex">
               <div
-                className="ml-1 flex h-[30px] w-[28px] cursor-pointer items-center"
+                className="mb-4 w-[45px] cursor-pointer items-center"
                 onClick={() => handleCheckLocale(item)}
               >
                 {item.toUpperCase()}
               </div>
               <div
                 key={item}
-                className="ml-1 flex h-[30px] w-[28px] items-center"
+                className="mb-4"
+                onClick={() => handleCheckLocale(item)}
               >
                 <Image
                   src={`/icons/header/${item}-flag.svg`}
