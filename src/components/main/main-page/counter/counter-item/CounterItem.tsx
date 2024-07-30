@@ -11,7 +11,7 @@ interface CounterItemProps {
 const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
   return (
     <>
-      <li className="font-groppleds relative h-[183px] first:text-violet last:text-violet odd:self-start even:self-end xs:-mt-[20px] sm:mt-0">
+      <li className="font-groppleds relative -mt-[20px] h-[183px] first:text-violet last:text-violet odd:self-start even:self-end sm:mt-0">
         <div className="relative">
           {variant === '1' && (
             <>
@@ -43,7 +43,7 @@ const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
           )}
           {variant === '2' && (
             <>
-              <div className="relative xs:h-[161px] xs:w-[162px] md:h-[179px] md:w-[180px] ml:h-[161px] ml:w-[162px] lg:h-[179px] lg:w-[180px]">
+              <div className="relative h-[161px] w-[162px] md:h-[179px] md:w-[180px] ml:h-[161px] ml:w-[162px] lg:h-[179px] lg:w-[180px]">
                 <Image
                   src="/icons/counter/red-circle.svg"
                   fill
@@ -51,7 +51,7 @@ const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
                   alt="red circle"
                 />
               </div>
-              <div className="absolute xs:bottom-[2px] xs:left-[2px] xs:h-[161px] xs:w-[162px] md:bottom-[4px] md:left-[5px] md:h-[181px] md:w-[182px] ml:bottom-[2px] ml:left-[2px] ml:h-[161px] ml:w-[162px] lg:bottom-[4px] lg:left-[5px] lg:h-[181px] lg:w-[182px]">
+              <div className="absolute bottom-[2px] left-[2px] h-[161px] w-[162px] md:bottom-[4px] md:left-[5px] md:h-[181px] md:w-[182px] ml:bottom-[2px] ml:left-[2px] ml:h-[161px] ml:w-[162px] lg:bottom-[4px] lg:left-[5px] lg:h-[181px] lg:w-[182px]">
                 <Image
                   src="/icons/counter/yellow-border.svg"
                   fill
@@ -99,7 +99,7 @@ const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
           )}
           {variant === '4' && (
             <>
-              <div className="relative xs:h-[161px] xs:w-[162px] md:h-[179px] md:w-[180px] ml:h-[161px] ml:w-[162px] lg:h-[179px] lg:w-[180px]">
+              <div className="relative h-[161px] w-[162px] md:h-[179px] md:w-[180px] ml:h-[161px] ml:w-[162px] lg:h-[179px] lg:w-[180px]">
                 <Image
                   src="/icons/counter/red-circle.svg"
                   fill
@@ -107,7 +107,7 @@ const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
                   alt="red circle"
                 />
               </div>
-              <div className="absolute left-[2px] top-[2px] xs:h-[161px] xs:w-[162px] md:bottom-[4px] md:left-[5px] md:h-[181px] md:w-[182px] ml:left-[2px] ml:top-[2px] ml:h-[161px] ml:w-[162px] lg:bottom-[4px] lg:left-[5px] lg:h-[181px] lg:w-[182px]">
+              <div className="absolute left-[2px] top-[2px] h-[161px] w-[162px] md:bottom-[4px] md:left-[5px] md:h-[181px] md:w-[182px] ml:left-[2px] ml:top-[2px] ml:h-[161px] ml:w-[162px] lg:bottom-[4px] lg:left-[5px] lg:h-[181px] lg:w-[182px]">
                 <Image
                   src="/icons/counter/yellow-border.svg"
                   fill

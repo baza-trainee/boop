@@ -1,3 +1,4 @@
+import { REG_EXP_DONATION_AMOUNT_INPUT } from '@/constants';
 import { useAppDispatch, useAppSelector } from '@/store/hook';
 import {
   setDonationAmount,
@@ -7,7 +8,12 @@ import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 import { ChangeEvent } from 'react';
 
-const PaymentDonationAmount = () => {
+interface PaymentDonationAmountProps {
+  // eslint-disable-next-line no-unused-vars
+  isValidate: (value: string, regex: RegExp) => boolean;
+}
+
+const PaymentDonationAmount = ({ isValidate }: PaymentDonationAmountProps) => {
   const { donationAmount, selectedCurrency, isCustomDonate } = useAppSelector(
     (state) => state.paymentForm
   );
@@ -21,9 +27,9 @@ const PaymentDonationAmount = () => {
 
   const handleCustomAmountChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    if (/^\d*$/.test(value)) {
-      dispatch(setDonationAmount(value));
-    }
+
+    const isValidateValue = isValidate(value, REG_EXP_DONATION_AMOUNT_INPUT);
+    if (isValidateValue) dispatch(setDonationAmount(value));
   };
 
   const handleCustomAmountFocus = () => {
@@ -78,7 +84,7 @@ const PaymentDonationAmount = () => {
                 />
                 <label
                   htmlFor={item.id}
-                  className="flex min-h-[70px] w-full cursor-pointer items-center justify-center border-2 border-solid border-yellow text-center text-xl font-bold leading-[1] text-textViolet transition-all duration-300 ease-linear peer-checked/:bg-yellow peer-checked/:text-white max-custom:text-sm max-custom:leading-none"
+                  className="basic-transition flex min-h-[70px] w-full cursor-pointer items-center justify-center border-2 border-r-0 border-solid border-yellow text-center text-xl font-bold leading-[1] text-textViolet peer-checked/:bg-yellow peer-checked/:text-white max-custom:text-sm max-custom:leading-none"
                 >
                   {selectedCurrency === 'UAH'
                     ? `${item.value} ₴`
@@ -98,10 +104,9 @@ const PaymentDonationAmount = () => {
                   placeholder={t('custom_donation_amount')}
                   type="text"
                   name="donate-sum"
-                  // pattern="[0-9]"
                   id={item.id}
                   className={clsx(
-                    'flex min-h-[70px] w-full cursor-pointer items-center justify-center border-2 border-solid border-yellow bg-transparent px-4 text-center text-xl font-bold leading-[1] text-textViolet placeholder-white outline-none transition-all duration-300 ease-linear max-custom:text-sm max-custom:leading-none',
+                    'basic-transition flex min-h-[70px] w-full cursor-pointer items-center justify-center border-2 border-solid border-yellow bg-transparent px-4 text-center text-xl font-bold leading-[1] text-textViolet placeholder-white outline-none max-custom:text-sm max-custom:leading-none',
                     isCustomDonate && 'bg-yellow text-white'
                   )}
                   onFocus={handleCustomAmountFocus}
