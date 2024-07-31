@@ -50,12 +50,12 @@ const AddBlogPostForm = () => {
       formData.append('folderName', 'blog');
       const res = await axios.post('/cloudinary', formData);
       const newPost = {
-        titleUA: values.titleUA,
-        titleEN: values.titleEN,
-        titleIT: values.titleIT,
-        textEN: values.textEN,
-        textUA: values.textUA,
-        textIT: values.textIT,
+        titleUA: values.titleUA.trim(),
+        titleEN: values.titleEN.trim(),
+        titleIT: values.titleIT.trim(),
+        textEN: values.textEN.trim(),
+        textUA: values.textUA.trim(),
+        textIT: values.textIT.trim(),
 
         imageUrl: replaceExtensionWithWebp(res.data.fileUrl),
         imageId: res.data.fileId,
@@ -67,7 +67,7 @@ const AddBlogPostForm = () => {
           openAlert({
             data: {
               state: 'success',
-              message: 'Нова стаття успішно додана',
+              message: 'Стаття успішно додана',
             },
           })
         );
@@ -81,7 +81,7 @@ const AddBlogPostForm = () => {
 
   return (
     <div className="flex h-full w-full flex-col items-center justify-center">
-      <h1 className="mb-[24px] w-full text-center text-3xl font-[500] text-violet">
+      <h1 className="mb-[24px] w-full text-center text-[32px] font-[500] text-[#50439F]">
         Додавання статті
       </h1>
       <form
@@ -94,49 +94,64 @@ const AddBlogPostForm = () => {
             <FileInput
               name="image"
               control={control}
-              placeholder="Завантажте зображення"
-              title="Оберіть файл"
+              placeholder="Завантажити зображення"
+              title="Оберіть фото"
               accept="image/*"
             />
-            <Controller
-              name="titleUA"
-              control={control}
-              render={({ field }) => (
-                <TextInput
-                  {...field}
-                  errorText={errors.titleUA?.message}
-                  placeholder="Напишіть назву статті"
-                  title="Вкажіть назву статті українською"
-                  className={'h-[53px]'}
-                />
-              )}
-            />
-            <Controller
-              name="titleEN"
-              control={control}
-              render={({ field }) => (
-                <TextInput
-                  {...field}
-                  errorText={errors.titleEN?.message}
-                  placeholder="Напишіть назву статті"
-                  title="Вкажіть назву статті англійською"
-                  className={'h-[53px]'}
-                />
-              )}
-            />
-            <Controller
-              name="titleIT"
-              control={control}
-              render={({ field }) => (
-                <TextInput
-                  {...field}
-                  errorText={errors.titleIT?.message}
-                  placeholder="Напишіть назву статті"
-                  title="Вкажіть назву статті італійською"
-                  className={'h-[53px]'}
-                />
-              )}
-            />
+            <div className="flex w-full flex-col">
+              <Controller
+                name="titleUA"
+                control={control}
+                render={({ field }) => (
+                  <TextInput
+                    {...field}
+                    errorText={errors.titleUA?.message}
+                    placeholder="Напишіть назву статті"
+                    title="Вкажіть назву статті українською"
+                    className={'h-[53px]'}
+                  />
+                )}
+              />
+              <p className="text-sm text-[#4D4D4D]">
+                Довжина тексту має бути 5-70 знаків
+              </p>
+            </div>
+            <div className="flex w-full flex-col">
+              <Controller
+                name="titleEN"
+                control={control}
+                render={({ field }) => (
+                  <TextInput
+                    {...field}
+                    errorText={errors.titleEN?.message}
+                    placeholder="Напишіть назву статті"
+                    title="Вкажіть назву статті англійською"
+                    className={'h-[53px]'}
+                  />
+                )}
+              />
+              <p className="text-sm text-[#4D4D4D]">
+                Довжина тексту має бути 5-70 знаків
+              </p>
+            </div>
+            <div className="flex w-full flex-col">
+              <Controller
+                name="titleIT"
+                control={control}
+                render={({ field }) => (
+                  <TextInput
+                    {...field}
+                    errorText={errors.titleIT?.message}
+                    placeholder="Напишіть назву статті"
+                    title="Вкажіть назву статті італійською"
+                    className={'h-[53px]'}
+                  />
+                )}
+              />
+              <p className="text-sm text-[#4D4D4D]">
+                Довжина тексту має бути 5-70 знаків
+              </p>
+            </div>
           </div>
 
           <div className="flex w-1/2 items-center justify-center">
@@ -152,57 +167,72 @@ const AddBlogPostForm = () => {
           </div>
         </div>
         <div className="mb-[50px] flex gap-[18px]">
-          <Controller
-            name="textUA"
-            control={control}
-            render={({ field }) => (
-              <TextArea
-                {...field}
-                errorText={errors.textUA?.message}
-                placeholder="Напишіть текст статті"
-                title="Вкажіть текст статті українською"
-              />
-            )}
-          />
-          <Controller
-            name="textEN"
-            control={control}
-            render={({ field }) => (
-              <TextArea
-                {...field}
-                errorText={errors.textEN?.message}
-                placeholder="Напишіть текст статті"
-                title="Вкажіть текст статті англійською"
-              />
-            )}
-          />
-          <Controller
-            name="textIT"
-            control={control}
-            render={({ field }) => (
-              <TextArea
-                {...field}
-                errorText={errors.textIT?.message}
-                placeholder="Напишіть текст статті"
-                title="Вкажіть текст статті італійською"
-              />
-            )}
-          />
+          <div className="flex w-full flex-col">
+            <Controller
+              name="textUA"
+              control={control}
+              render={({ field }) => (
+                <TextArea
+                  {...field}
+                  errorText={errors.textUA?.message}
+                  placeholder="Напишіть текст статті"
+                  title="Вкажіть текст статті українською"
+                />
+              )}
+            />
+            <p className="text-sm text-[#4D4D4D]">
+              Довжина тексту має бути 300-9000 знаків
+            </p>
+          </div>
+          <div className="flex w-full flex-col">
+            <Controller
+              name="textEN"
+              control={control}
+              render={({ field }) => (
+                <TextArea
+                  {...field}
+                  errorText={errors.textEN?.message}
+                  placeholder="Напишіть текст статті"
+                  title="Вкажіть текст статті англійською"
+                />
+              )}
+            />
+            <p className="text-sm text-[#4D4D4D]">
+              Довжина тексту має бути 300-9000 знаків
+            </p>
+          </div>
+          <div className="flex w-full flex-col">
+            <Controller
+              name="textIT"
+              control={control}
+              render={({ field }) => (
+                <TextArea
+                  {...field}
+                  errorText={errors.textIT?.message}
+                  placeholder="Напишіть текст статті"
+                  title="Вкажіть текст статті італійською"
+                />
+              )}
+            />
+            <p className="text-sm text-[#4D4D4D]">
+              Довжина тексту має бути 300-9000 знаків
+            </p>
+          </div>
         </div>
-        <div className="relative mx-auto flex w-[296px] justify-between">
-          <span className="absolute -top-8 left-0 text-sm">
+        <div className="relative mx-auto flex w-[296px] flex-wrap justify-between">
+          <span className="mb-[12px] w-full text-center text-[17px] text-[#343333]">
             Додати статтю в Блог?
           </span>
           <button
             disabled={!isValid}
             // disabled={false}
-            className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white hover:shadow-xl disabled:bg-gray-500"
+            className={`min-w-[123px] whitespace-nowrap rounded-3xl border border-[#E3E3E4] bg-red px-4 py-2 text-[20px] font-bold hover:shadow-xl disabled:bg-[#E3E3E4] ${!isValid ? 'text-[#97979A]' : 'text-white'}`}
           >
             {isProcessing ? 'Обробка запиту...' : 'Додати'}
           </button>
           <button
             onClick={() => dispatch(closeModal())}
-            className="w-[149px] rounded-3xl border border-yellow px-4 py-2 text-violet"
+            className="w-[149px] rounded-3xl border border-yellow bg-[#E3E3E4] px-4 py-2 text-[20px] text-[#97979A]"
           >
             Скасувати
           </button>

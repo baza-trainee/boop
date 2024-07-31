@@ -49,7 +49,7 @@ const FileInput = <T extends FieldValues>({
       {!!title && (
         <label
           htmlFor="title"
-          className={`mb-1 block text-base font-[500]  ${isEditMode && !isPressPage ? 'text-mainViolet' : 'text-black'}`}
+          className={`mb-1 block text-base font-[500] ${isEditMode && !isPressPage ? 'text-mainViolet' : 'text-black'}`}
         >
           {title}
           {isRequired && <span className="text-red">*</span>}
@@ -58,7 +58,9 @@ const FileInput = <T extends FieldValues>({
 
       <label htmlFor={title + 'file'}>
         <div className={`${inputContainerStyle} uploadIcon`}>
-          <span className={`w-[250px] truncate text-left text-sm text-black`}>
+          <span
+            className={`w-[250px] truncate text-left text-[16px] text-[#343333]`}
+          >
             {fileName || placeholder}
           </span>
         </div>
