@@ -75,7 +75,7 @@ function LoginForm() {
               Вхід до акаунту
             </h1>
             <Image
-              src="/images/logo.svg"
+              src="/icons/header/ua-logo.svg"
               alt="Бюро усмішок і підтримки"
               width={82}
               height={48}
@@ -119,7 +119,7 @@ function LoginForm() {
                 <div className="relative">
                   <input
                     className={clsx(
-                      'peer block w-full rounded-xl border-[2px] border-[#50439f] py-[8px] pl-[9px] pr-9 text-base font-medium  outline-none placeholder:text-[#949398] placeholder-shown:border-[#949398]',
+                      'peer block w-full rounded-xl border-[2px] border-[#50439f] py-[8px] pl-[9px] pr-9 text-base font-medium outline-none placeholder:text-[#949398] placeholder-shown:border-[#949398]',
                       !errors.password?.message
                         ? 'text-[#177e3a]'
                         : 'text-[#e93405]'
@@ -145,7 +145,7 @@ function LoginForm() {
                   />
                 </div>
                 {errors.password && (
-                  <p className="mt-1 font-['Raleway',_sans-serif] text-[14px] font-normal  leading-[18px]  text-[#ff4004]">
+                  <p className="mt-1 font-['Raleway',_sans-serif] text-[14px] font-normal leading-[18px] text-[#ff4004]">
                     {errors.password.message}
                   </p>
                 )}
