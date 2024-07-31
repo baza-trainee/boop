@@ -16,3 +16,7 @@ export const CONTACT_INFO = {
 
 export const ENCODED_ADDRESS = encodeURIComponent(CONTACT_INFO.address);
 export const MAP_URL = `https://www.google.com/maps?q=${ENCODED_ADDRESS}&output=embed&z=17`;
+
+export const MAX_DONATION_AMOUNT = 10000000;
+export const REG_EXP_DONATION_AMOUNT_INPUT = /^\d*$/;
+export const REG_EXP_DONATION_AMOUNT = /^\d+$/;

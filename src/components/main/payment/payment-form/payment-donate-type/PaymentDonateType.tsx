@@ -4,11 +4,11 @@ import { useTranslations } from 'next-intl';
 
 const TYPE_OF_DONATE = [
   {
-    value: 'every-month',
+    value: 'monthly',
     text: 'every_month',
   },
   {
-    value: 'only-once',
+    value: 'once',
     text: 'once',
   },
 ];
@@ -38,7 +38,7 @@ const PaymentDonateType = () => {
           />
           <label
             htmlFor={item.value}
-            className="inline-block w-full cursor-pointer border-2 border-solid border-yellow py-[22px] text-center text-xl font-bold leading-[1] text-textViolet transition-all duration-300 ease-linear peer-checked/:bg-yellow peer-checked/:text-white max-custom:text-sm max-custom:leading-none"
+            className="basic-transition flex min-h-[70px] w-full cursor-pointer items-center justify-center border-2 border-solid border-yellow text-center text-xl font-bold leading-[1] text-textViolet peer-checked/:bg-yellow peer-checked/:text-white max-custom:text-sm max-custom:leading-none"
           >
             {t(item.text)}
           </label>
