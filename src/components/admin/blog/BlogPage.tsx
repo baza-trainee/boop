@@ -66,7 +66,7 @@ const BlogPage = () => {
   if (isError) {
     return (
       <div className="flex h-screen items-center justify-center">
-        <div className="flex h-[50%] w-[80%] items-center justify-center rounded-[20px] bg-slate-200  p-[40px]">
+        <div className="flex h-[50%] w-[80%] items-center justify-center rounded-[20px] bg-slate-200 p-[40px]">
           <p className="text-center text-[32px] text-yellow">
             Сталася помилка під час завантаження даних.
             <br /> Будь ласка, спробуйте оновити сторінку або повторити спробу
@@ -79,9 +79,11 @@ const BlogPage = () => {
   return (
     <section className="bg-[#F3F4EE pb-[91px] pl-[24px] pt-[104px]">
       <PageTitle title="Блог" />
-      <div className="flex flex-wrap gap-[24px] ">
+      <div className="flex flex-wrap gap-[24px]">
         <div className="flex h-[290px] w-[306px] flex-col items-center bg-bgViolet px-[80px] py-[92px]">
-          <span className="mb-[8px]">Додати статтю</span>
+          <span className="mb-[8px] text-[20px] font-medium text-[#50439F]">
+            Додати статтю
+          </span>
           <button onClick={() => dispatch(openModal({ type: 'add-post' }))}>
             <Image
               src="/images/add.svg"
@@ -95,7 +97,7 @@ const BlogPage = () => {
           posts?.data.map((post) => (
             <div
               key={post.id}
-              className=" relative flex h-[290px] w-[306px] flex-col items-center  bg-white "
+              className="relative flex h-[290px] w-[306px] flex-col items-center bg-white"
             >
               <Image
                 src={post.imageUrl}
@@ -105,10 +107,10 @@ const BlogPage = () => {
                 className="h-[111px] object-cover"
               />
               <div className="mt-[8px] w-[100%] px-[8px]">
-                <h2 className="mb-[4px] text-[16px] font-bold leading-[132%] text-[#2F245E] ">
+                <h2 className="mb-[4px] text-[16px] font-bold leading-[132%] text-[#2F245E]">
                   {truncateText(post.titleUA, 65)}
                 </h2>
-                <div className=" mb-[5px] w-[306px] text-[16px] leading-[150%] text-[#2F245E]">
+                <div className="mb-[5px] w-[306px] text-[16px] leading-[150%] text-[#2F245E]">
                   {truncateText(post.textUA, 130)}
                 </div>
               </div>
