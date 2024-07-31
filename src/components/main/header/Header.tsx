@@ -37,7 +37,7 @@ const Header = () => {
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 flex h-[100px] w-full items-center justify-between bg-golden py-[26px] text-violet backdrop-filter md:flex-shrink md:flex-grow">
-      <div className="container ">
+      <div className="container">
         <div className="flex w-full items-center justify-between">
           <Link href="/" title={t('logoTitle')}>
             <HeaderLogo locale={locale} />
@@ -82,7 +82,7 @@ const Header = () => {
               </li>
             </ul>
           </nav>
-          <div className="font-ralewayb relative z-10 hidden items-center md:flex">
+          <div className="relative z-10 hidden items-center font-raleway md:flex">
             <LanguageSwitcher />
             <button className="whitespace-nowrap rounded-[32px] bg-[rgba(233,52,5,1)] px-[24px] py-[18px] font-raleway font-bold text-white md:h-[52px] md:w-[190px] md:text-[16px] md:leading-[16px] lg:h-[56px] lg:w-[238px] lg:text-[20px] lg:leading-[20px]">
               {t('button')}
