@@ -27,6 +27,8 @@ const config: Config = {
         bgVioletTransparent: 'var(--bgVioletTransparent)',
         bgBurgerMenu: 'rgba(243, 244, 238, 1)',
         golden: 'rgba(255, 171, 11, 0.1)',
+        btnDisabledBg: 'var(--btnDisabledBg)',
+        btnDisabledText: 'var(--btnDisabledText)',
         beige: 'var(--beige)',
         violet: 'var(--violet)',
         lightViolet: 'var(--lightViolet)',

@@ -12,6 +12,8 @@
   --lightViolet: #958ac4;
   --mainViolet: #50439f;
   --darkGrey: #4d4d4d;
+  --btnDisabledBg: #e3e3e4;
+  --btnDisabledText: #97979a;
   --lightVioletSecond: #cac4e2;
   --textViolet: #2f245e;
   --red: #e93405;
@@ -97,6 +99,9 @@ body.lock {
   }
   .text-gradient {
     @apply bg-gradient-to-r from-[rgb(47,36,94)] to-[rgb(80,67,159)] bg-clip-text text-transparent;
+  }
+  .basic-transition {
+    @apply transition-all duration-300 ease-in;
   }
 }
 

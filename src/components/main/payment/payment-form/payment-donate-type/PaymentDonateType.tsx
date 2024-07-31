@@ -1,21 +1,24 @@
+import { useAppDispatch, useAppSelector } from '@/store/hook';
+import { setSelectedTypeOfDonate } from '@/store/slices/paymentFormSlice';
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
 
 const TYPE_OF_DONATE = [
   {
-    value: 'every-month',
+    value: 'monthly',
     text: 'every_month',
   },
   {
-    value: 'only-once',
+    value: 'once',
     text: 'once',
   },
 ];
 
 const PaymentDonateType = () => {
-  const [selectedTypeOfDonate, setSelectedTypeOfDonate] =
-    useState<string>('every-month');
   const t = useTranslations('Donate.form_btns.donation_type');
+  const selectedTypeOfDonate = useAppSelector(
+    (state) => state.paymentForm.selectedTypeOfDonate
+  );
+  const dispatch = useAppDispatch();
 
   return (
     <div className="mb-4 flex">
@@ -31,11 +34,11 @@ const PaymentDonateType = () => {
             name="donate-type"
             id={item.value}
             className="peer absolute left-0 top-0 h-0 w-0 opacity-0"
-            onChange={(e) => setSelectedTypeOfDonate(e.target.value)}
+            onChange={(e) => dispatch(setSelectedTypeOfDonate(e.target.value))}
           />
           <label
             htmlFor={item.value}
-            className="inline-block w-full cursor-pointer border-2 border-solid border-yellow py-[22px] text-center text-xl font-bold leading-[1] text-textViolet transition-all duration-300 ease-linear peer-checked/:bg-yellow peer-checked/:text-white max-custom:text-sm max-custom:leading-none"
+            className="basic-transition flex min-h-[70px] w-full cursor-pointer items-center justify-center border-2 border-solid border-yellow text-center text-xl font-bold leading-[1] text-textViolet peer-checked/:bg-yellow peer-checked/:text-white max-custom:text-sm max-custom:leading-none"
           >
             {t(item.text)}
           </label>

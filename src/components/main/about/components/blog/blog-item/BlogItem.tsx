@@ -3,17 +3,23 @@ import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 import clsx from 'clsx';
 import BlogItemText from './blog-item-text/BlogItemText';
+import { useFormatDate } from '@/hooks/useFormatDate';
 
 interface BlogItemProps {
   imgSrc: string;
   title: string;
   text: string;
-  date: string;
+  date: Date;
 }
 
 const BlogItem = ({ imgSrc, title, text, date }: BlogItemProps) => {
   const isTablet = useMediaQuery({
     query: '(max-width: 825px)',
+  });
+  const formattedDate = useFormatDate(date, {
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
   });
 
   return (
@@ -30,7 +36,7 @@ const BlogItem = ({ imgSrc, title, text, date }: BlogItemProps) => {
           </div>
           <BlogItemText text={text} />
           <span className="self-end font-medium leading-[1.32] text-lightViolet max-md:hidden max-custom:block">
-            {date}
+            {formattedDate}
           </span>
         </div>
         <div
