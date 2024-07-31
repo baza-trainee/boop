@@ -9,7 +9,7 @@ import {
 } from '@/store/api/pressApi';
 import { INews } from '@/types/news';
 import { openModal } from '@/store/slices/modalSlice';
-import { openAlert } from '@/store/slices/alertSlice';
+import { openAlert, closeAlert } from '@/store/slices/alertSlice';
 import PageTitle from '../shared/PageTitle';
 import Image from 'next/image';
 import ActionButtonProps from './ActionPressButtons';
@@ -40,15 +40,20 @@ const PressPage = () => {
           message: 'Ви впевнені, що хочете видалити новину?',
           func: async () => {
             await axios.delete(`/cloudinary/${encodeURIComponent(imageId)}`);
-            await deletePress(id);
-            dispatch(
-              openAlert({
-                data: {
-                  state: 'success',
-                  message: 'Новина видалена',
-                },
-              })
-            );
+            const res = await deletePress(id);
+            dispatch(closeAlert());
+            if (res && res.data) {
+              dispatch(
+                openAlert({
+                  data: {
+                    state: 'success',
+                    message: 'Новина видалена',
+                  },
+                })
+              );
+            } else {
+              alert('Щось пійшло не так, спробуйте пізніше');
+            }
           },
         },
       })

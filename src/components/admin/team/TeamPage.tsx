@@ -6,7 +6,7 @@ import axios from '@/utils/axios';
 import { ITeamMember } from '@/types/team';
 import { useAppDispatch } from '@/store/hook';
 import { openModal } from '@/store/slices/modalSlice';
-import { openAlert } from '@/store/slices/alertSlice';
+import { openAlert, closeAlert } from '@/store/slices/alertSlice';
 import { teamApi } from '@/store/api/teamApi';
 import PageTitle from '../shared/PageTitle';
 import ActionButtons from '../shared/ActionButtons';
@@ -41,15 +41,20 @@ const TeamPage = () => {
           message: 'Ви впевнені, що хочете видалити учасника з Команди?',
           func: async () => {
             await axios.delete(`/cloudinary/${encodeURIComponent(imageId)}`);
-            await deleteTeamMember(id);
-            dispatch(
-              openAlert({
-                data: {
-                  state: 'success',
-                  message: 'Запис успішно видалено з Команди!',
-                },
-              })
-            );
+            const res = await deleteTeamMember(id);
+            dispatch(closeAlert());
+            if (res && res.data) {
+              dispatch(
+                openAlert({
+                  data: {
+                    state: 'success',
+                    message: 'Учасника успішно видалено з Команди!',
+                  },
+                })
+              );
+            } else {
+              alert('Щось пійшло не так, спробуйте пізніше');
+            }
           },
         },
       })

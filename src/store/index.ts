@@ -33,7 +33,9 @@ const rootReducer = combineReducers({
 export const rootStore = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }).concat(
       photoApi.middleware,
       documentsApi.middleware,
       contactsApi.middleware,

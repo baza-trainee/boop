@@ -4,6 +4,8 @@ import { usePathname, useRouter } from '@/navigation';
 import { useLocale } from 'next-intl';
 import { useEffect, useRef, useState } from 'react';
 
+type LocaleItem = 'ua' | 'en' | 'it';
+
 const LanguageSwitcher = () => {
   const router = useRouter();
   const path = usePathname();
@@ -14,7 +16,7 @@ const LanguageSwitcher = () => {
   const submenuRef = useRef<HTMLDivElement>(null);
   const filteredLocales = locales.filter((item) => item !== currentLocale);
 
-  const handleCheckLocale = (item: string) => {
+  const handleCheckLocale = (item: LocaleItem) => {
     setIsOpen(!isOpen);
     setCurrentLocale(item);
     router.replace(path, { locale: item });
@@ -71,14 +73,14 @@ const LanguageSwitcher = () => {
             <div key={item} className="flex">
               <div
                 className="mb-4 w-[45px] cursor-pointer items-center"
-                onClick={() => handleCheckLocale(item)}
+                onClick={() => handleCheckLocale(item as LocaleItem)}
               >
                 {item.toUpperCase()}
               </div>
               <div
                 key={item}
                 className="mb-4"
-                onClick={() => handleCheckLocale(item)}
+                onClick={() => handleCheckLocale(item as LocaleItem)}
               >
                 <Image
                   src={`/icons/header/${item}-flag.svg`}
