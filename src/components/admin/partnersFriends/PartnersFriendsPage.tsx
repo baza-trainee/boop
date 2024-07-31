@@ -20,7 +20,7 @@ import EditPartnersFriendsForm from './form/EditPartnersFriendsForm';
 import { partnersFriendsApi } from '@/store/api/partnersFriendsApi';
 import AddPartnersFriendsForm from './form/AddPartnersFriendsForm copy';
 import ActionButtons from '../shared/ActionButtons';
-import { openAlert } from '@/store/slices/alertSlice';
+import { openAlert, closeAlert } from '@/store/slices/alertSlice';
 import axios from 'axios';
 
 function PartnersFriendsPage({ title, section }: PropsPartnersFriends) {
@@ -52,15 +52,20 @@ function PartnersFriendsPage({ title, section }: PropsPartnersFriends) {
           message: `Ви впевнені, що хочете видалити цього ${sectionDell}?`,
           func: async () => {
             await axios.delete(`/cloudinary/${encodeURIComponent(imageId)}`);
-            await deletePartnersFriends(id);
-            dispatch(
-              openAlert({
-                data: {
-                  state: 'confirm',
-                  message: `${sectionDell} видалено`,
-                },
-              })
-            );
+            const res = await deletePartnersFriends(id);
+            dispatch(closeAlert());
+            if (res && res.data) {
+              dispatch(
+                openAlert({
+                  data: {
+                    state: 'success',
+                    message: `${sectionDell} видалено`,
+                  },
+                })
+              );
+            } else {
+              alert('Щось пійшло не так, спробуйте пізніше');
+            }
           },
         },
       })
@@ -70,7 +75,7 @@ function PartnersFriendsPage({ title, section }: PropsPartnersFriends) {
   if (isError) {
     return (
       <div className="flex h-screen items-center justify-center">
-        <div className="flex h-[50%] w-[80%] items-center justify-center rounded-[20px] bg-slate-200  p-[40px]">
+        <div className="flex h-[50%] w-[80%] items-center justify-center rounded-[20px] bg-slate-200 p-[40px]">
           <p className="text-center text-[32px] text-yellow">
             Сталася помилка під час завантаження даних.
             <br /> Будь ласка, спробуйте оновити сторінку або повторити спробу
@@ -87,7 +92,7 @@ function PartnersFriendsPage({ title, section }: PropsPartnersFriends) {
   return (
     <section className="h-screen scroll-m-0 pb-[159px] pl-[24px] pt-[104px]">
       <PageTitle title={title} />
-      <ul className=" flex max-h-[100vh] flex-wrap gap-6 overflow-y-auto">
+      <ul className="flex max-h-[100vh] flex-wrap gap-6 overflow-y-auto">
         <li className="flex w-[306px] flex-col items-center justify-center gap-[10px] bg-[#edebf5] p-[36px]">
           <p className="ml-auto mr-auto font-['Raleway',_sans-serif] text-[20px] font-medium normal-case not-italic leading-[28px] tracking-[0px] text-[#50439f]">
             Додати {BUTTON_TITLE[section]}

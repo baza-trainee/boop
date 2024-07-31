@@ -7,7 +7,6 @@ import StoreProvider from '@/components/providers/StoreProvider';
 import Header from '@/components/main/header/Header';
 import Footer from '@/components/main/footer/Footer';
 import './globals.css';
-import { useRouter } from 'next/navigation';
 
 const raleway = Raleway({
   weight: '400',
@@ -34,7 +33,7 @@ const groppled = localFont({
 
 export const metadata: Metadata = {
   title: 'БУП - бюро усмішок і підтримки',
-  description: 'Програма емоційної підтримки дітей у лікарнях by @tabletochki_'
+  description: 'Програма емоційної підтримки дітей у лікарнях by @tabletochki_',
 };
 
 export default async function RootLayout({

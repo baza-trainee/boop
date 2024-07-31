@@ -4,7 +4,7 @@ import axios from '@/utils/axios';
 import { useAppDispatch } from '@/store/hook';
 import { blogApi } from '@/store/api/blogApi';
 import { openModal } from '@/store/slices/modalSlice';
-import { openAlert } from '@/store/slices/alertSlice';
+import { openAlert, closeAlert } from '@/store/slices/alertSlice';
 
 import FormModal from '../shared/FormModal';
 import Loader from '@/components/shared/loader/Loader';
@@ -15,7 +15,7 @@ import EditBlogPostForm from './form/EditBlogPostForm';
 import ActionButtons from '../shared/ActionButtons';
 import truncateText from '@/helpers/truncateText';
 
-const placeHolderImg = `/images/mainRules/image_1.png`;
+// const placeHolderImg = `/images/mainRules/image_1.png`;
 
 const BlogPage = () => {
   const dispatch = useAppDispatch();
@@ -47,15 +47,20 @@ const BlogPage = () => {
           message: 'Ви впевнені, що хочете видалити новину?',
           func: async () => {
             await axios.delete(`/cloudinary/${encodeURIComponent(imageId)}`);
-            await deleteBlog(id);
-            dispatch(
-              openAlert({
-                data: {
-                  state: 'success',
-                  message: 'Стаття  видалена',
-                },
-              })
-            );
+            const res = await deleteBlog(id);
+            dispatch(closeAlert());
+            if (res && res.data) {
+              dispatch(
+                openAlert({
+                  data: {
+                    state: 'success',
+                    message: 'Стаття  видалена',
+                  },
+                })
+              );
+            } else {
+              alert('Щось пійшло не так, спробуйте пізніше');
+            }
           },
         },
       })

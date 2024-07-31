@@ -6,7 +6,7 @@ import axios from '@/utils/axios';
 import { IPhoto } from '@/types/photo';
 import { useAppDispatch } from '@/store/hook';
 import { openModal } from '@/store/slices/modalSlice';
-import { openAlert } from '@/store/slices/alertSlice';
+import { openAlert, closeAlert } from '@/store/slices/alertSlice';
 import { photoApi } from '@/store/api/photoApi';
 import PageTitle from '../shared/PageTitle';
 import FormModal from '../shared/FormModal';
@@ -33,7 +33,7 @@ const PhotoPage = () => {
   if (isError) {
     return (
       <div className="flex h-screen items-center justify-center">
-        <div className="flex h-[50%] w-[80%] items-center justify-center rounded-[20px] bg-slate-200  p-[40px]">
+        <div className="flex h-[50%] w-[80%] items-center justify-center rounded-[20px] bg-slate-200 p-[40px]">
           <p className="text-center text-[32px] text-yellow">
             Сталася помилка під час завантаження даних.
             <br /> Будь ласка, спробуйте оновити сторінку або повторити спробу
@@ -57,15 +57,20 @@ const PhotoPage = () => {
           message: 'Ви дійсно бажаєте видалити це фото?',
           func: async () => {
             await axios.delete(`/cloudinary/${encodeURIComponent(imageId)}`);
-            await deletePhoto(id);
-            dispatch(
-              openAlert({
-                data: {
-                  state: 'success',
-                  message: 'Фото успішно видалено!',
-                },
-              })
-            );
+            const res = await deletePhoto(id);
+            dispatch(closeAlert());
+            if (res && res.data) {
+              dispatch(
+                openAlert({
+                  data: {
+                    state: 'success',
+                    message: 'Фото успішно видалено!',
+                  },
+                })
+              );
+            } else {
+              alert('Щось пійшло не так, спробуйте пізніше');
+            }
           },
         },
       })

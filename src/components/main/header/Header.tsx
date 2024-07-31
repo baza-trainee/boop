@@ -82,7 +82,7 @@ const Header = () => {
               </li>
             </ul>
           </nav>
-          <div className="font-ralewayb relative z-10 hidden items-center md:flex">
+          <div className="relative z-10 hidden items-center font-raleway md:flex">
             <LanguageSwitcher />
             <button className="whitespace-nowrap rounded-[32px] bg-[rgba(233,52,5,1)] px-[24px] py-[18px] font-raleway font-bold text-white md:h-[52px] md:w-[190px] md:text-[16px] md:leading-[16px] lg:h-[56px] lg:w-[238px] lg:text-[20px] lg:leading-[20px]">
               {t('button')}

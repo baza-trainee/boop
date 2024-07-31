@@ -5,7 +5,7 @@ import { applicationsApi } from '@/store/api/applicationsApi';
 import PageTitle from '../shared/PageTitle';
 import Loader from '@/components/shared/loader/Loader';
 import Image from 'next/image';
-import { openAlert } from '@/store/slices/alertSlice';
+import { openAlert, closeAlert } from '@/store/slices/alertSlice';
 
 const ApplicationsPage = () => {
   const dispatch = useAppDispatch();
@@ -21,15 +21,20 @@ const ApplicationsPage = () => {
           state: 'confirm',
           message: 'Ви дійсно бажаєте видалити цю заявку?',
           func: async () => {
-            await deleteApplication(id);
-            dispatch(
-              openAlert({
-                data: {
-                  state: 'success',
-                  message: 'Заявку успішно видалено!',
-                },
-              })
-            );
+            const res = await deleteApplication(id);
+            dispatch(closeAlert());
+            if (res && res.data) {
+              dispatch(
+                openAlert({
+                  data: {
+                    state: 'success',
+                    message: 'Заявку успішно видалено!',
+                  },
+                })
+              );
+            } else {
+              alert('Щось пійшло не так, спробуйте пізніше');
+            }
           },
         },
       })
@@ -43,7 +48,7 @@ const ApplicationsPage = () => {
   if (isError) {
     return (
       <div className="flex h-screen items-center justify-center">
-        <div className="flex h-[50%] w-[80%] items-center justify-center rounded-[20px] bg-slate-200  p-[40px]">
+        <div className="flex h-[50%] w-[80%] items-center justify-center rounded-[20px] bg-slate-200 p-[40px]">
           <p className="text-center text-[32px] text-yellow">
             Сталася помилка під час завантаження даних.
             <br /> Будь ласка, спробуйте оновити сторінку або повторити спробу
