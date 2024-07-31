@@ -63,24 +63,37 @@ const Gallery = () => {
     }
   };
 
+  const scrollToStartSection = () => {
+    // setTimeout(() => {
+    const nextSection = document.getElementById('gallery');
+    if (nextSection) {
+      const nextSectionTop =
+        nextSection.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: nextSectionTop - 100,
+        behavior: 'smooth',
+      });
+    }
+    // }, 0);
+  };
+
   const showLessPhotos = () => {
     if (items) {
       setPhotos(items.slice(0, limit));
       setCurrentIndex(limit);
     }
 
-    // const element = document.querySelector('#nextElement');
-    // console.log('element', element);
-    // if (element) {
-    //   element.scrollIntoView({ behavior: 'auto' });
-    // }
+    scrollToStartSection();
   };
 
   const isLoadMoreDisabled = items && items.length === photos.length;
   const isBtnShowed = items && items.length > limit;
 
   return (
-    <section className="container mx-auto mb-[70px]    md:mb-[100px]  xl:mb-[120px]">
+    <section
+      id="gallery"
+      className="container mx-auto mb-[70px] md:mb-[100px] xl:mb-[120px]"
+    >
       <SectionTitle title={t('title')} />
       {isError && <p className="container">Something went wrong!</p>}
       {isFetching && <p>Loading...</p>}
