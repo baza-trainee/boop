@@ -35,7 +35,7 @@ const SchoolPage: React.FC = () => {
     <ModalProvider>
       <div className="bg-bgWhite">
         <section
-          className="bg-no-repeat pb-[70px] pt-[72.5px] xs:bg-[right_bottom_74px] md:pb-[100px] md:pt-[100px] ml:bg-[right_bottom_10px] xl:pb-[120px] 3xl:bg-[right_top_35px] 3xl:pt-[120px]"
+          className="bg-[right_bottom_200px] bg-no-repeat pb-[70px] pt-[72.5px] xs:bg-[right_bottom_74px] md:pb-[100px] md:pt-[100px] ml:bg-[right_bottom_10px] xl:pb-[120px] 3xl:bg-[right_top_35px] 3xl:pt-[120px]"
           style={{ backgroundImage }}
         >
           <div className="container mx-auto max-w-screen-3xl">
