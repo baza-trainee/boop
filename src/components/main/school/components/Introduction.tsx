@@ -1,11 +1,14 @@
 'use client';
 
 import React from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import Image from 'next/image';
 
 const Introduction = () => {
   const t = useTranslations('School');
+  const locale = useLocale();
+  const uaLocale = locale === 'ua';
+  const itLocale = locale === 'it';
 
   return (
     <div className="relative mb-[72.5px] lg:mb-[100px] 3xl:mb-[120px]">
@@ -21,7 +24,13 @@ const Introduction = () => {
           {t('main_text_secondary')}
         </span>
         <Image
-          src="/images/logo.svg"
+          src={
+            uaLocale
+              ? '/icons/header/ua-logo.svg'
+              : itLocale
+                ? '/icons/header/it-logo.svg'
+                : '/icons/header/en-logo.svg'
+          }
           alt="Boop logo"
           width={86}
           height={50}
