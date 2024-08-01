@@ -30,6 +30,7 @@ const HeroLogo: React.FC<HeroLogoProps> = ({ locale, onClick, className }) => {
         alt="Boop"
         width={width}
         height={height}
+        loading="eager"
         className="relative z-10 h-auto"
       />
     </div>

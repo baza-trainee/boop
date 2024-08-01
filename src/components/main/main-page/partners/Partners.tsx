@@ -15,7 +15,10 @@ const Partners = () => {
       {isFetching && <p className="container">Loading...</p>}
       {isError && <p className="container">Something went wrong!</p>}
       {!isFetching && data && (
-        <section className="screen-3xl mx-auto mb-[70px] flex w-full max-w-[1920px] flex-col items-center justify-center md:mb-[100px] md:flex-row ml:mb-[100px] xl:mb-[120px] 4xl:mb-[120px]">
+        <section
+          id="partners"
+          className="screen-3xl mx-auto mb-[70px] flex w-full max-w-[1920px] flex-col items-center justify-center md:mb-[100px] md:flex-row ml:mb-[100px] xl:mb-[120px] 4xl:mb-[120px]"
+        >
           <PartnersList
             title={t('title_1')}
             partnerItems={friends}
