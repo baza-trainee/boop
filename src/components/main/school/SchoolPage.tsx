@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Introduction from './components/Introduction';
 import WhoCanJoin from './components/WhoCanJoin';
 import Training from './components/Training';
@@ -20,17 +20,19 @@ const SchoolPage: React.FC = () => {
     query: '(min-width: 1024px) and (max-width: 1279.98px)',
   });
 
-  let backgroundImage;
+  const [backgroundImage, setBackgroundImage] = useState<string>('');
 
-  if (isMobile) {
-    backgroundImage = "url('/icons/school/wave_xs.svg')";
-  } else if (isTablet) {
-    backgroundImage = "url('/icons/school/wave_md.svg')";
-  } else if (isLargeTablet) {
-    backgroundImage = "url('/icons/school/wave_ml.svg')";
-  } else {
-    backgroundImage = "url('/icons/school/wave.svg')";
-  }
+  useEffect(() => {
+    if (isMobile) {
+      setBackgroundImage("url('/icons/school/wave_xs.svg')");
+    } else if (isTablet) {
+      setBackgroundImage("url('/icons/school/wave_md.svg')");
+    } else if (isLargeTablet) {
+      setBackgroundImage("url('/icons/school/wave_ml.svg')");
+    } else {
+      setBackgroundImage("url('/icons/school/wave.svg')");
+    }
+  }, [isMobile, isTablet, isLargeTablet]);
   return (
     <ModalProvider>
       <div className="bg-bgWhite">
