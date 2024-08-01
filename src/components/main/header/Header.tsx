@@ -36,7 +36,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 flex h-[100px] w-full items-center justify-between bg-golden py-[26px] text-violet backdrop-filter md:flex-shrink md:flex-grow">
+    <header className="fixed left-0 right-0 top-0 z-50 flex h-[100px] w-full items-center justify-between bg-golden bg-opacity-80 py-[26px] text-violet backdrop-blur-sm backdrop-filter md:flex-shrink md:flex-grow">
       <div className="container">
         <div className="flex w-full items-center justify-between">
           <Link href="/" title={t('logoTitle')}>
@@ -65,12 +65,12 @@ const Header = () => {
                   {t('home')}
                 </Link>
               </li>
-              <li className="hover:underlinemd:pr-[25px] lg:pr-[48px]">
+              <li className="hover:underline md:pr-[25px] lg:pr-[48px]">
                 <Link href="/about" title={t('about')}>
                   {t('about')}
                 </Link>
               </li>
-              <li className="hover:underlinemd:pr-[25px] lg:pr-[48px]">
+              <li className="hover:underline md:pr-[25px] lg:pr-[48px]">
                 <Link href="/school" title={t('school')}>
                   {t('school')}
                 </Link>
