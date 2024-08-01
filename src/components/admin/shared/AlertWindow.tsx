@@ -58,7 +58,7 @@ export const AlertWindow: React.FC = () => {
         </button>
         <div className="flex w-full justify-between">
           <div className="w-full">
-            <p className={`text-center text-[1.3rem] font-normal`}>{message}</p>
+            <p className={`text-[1.3rem] font-normal`}>{message}</p>
           </div>
         </div>
 

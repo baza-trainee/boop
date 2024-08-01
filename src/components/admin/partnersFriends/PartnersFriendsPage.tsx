@@ -59,7 +59,7 @@ function PartnersFriendsPage({ title, section }: PropsPartnersFriends) {
                 openAlert({
                   data: {
                     state: 'success',
-                    message: `${sectionDell} видалено`,
+                    message: `${sectionDell.slice(0, -1)} видалений`,
                   },
                 })
               );

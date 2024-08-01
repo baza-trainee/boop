@@ -62,7 +62,7 @@ function AddPartnersFriendsForm({ addType }: AddPartnersFriendsFormProps) {
           openAlert({
             data: {
               state: 'success',
-              message: `${BUTTON_TITLE[addType]} успішно додано!`,
+              message: `${BUTTON_TITLE[addType].slice(0, -1)} успішно доданий!`,
             },
           })
         );
@@ -127,7 +127,6 @@ function AddPartnersFriendsForm({ addType }: AddPartnersFriendsFormProps) {
             control={control}
             placeholder={'Завантажити файл'}
             title="Додайте логотип:"
-            isRequired={true}
             accept="image/*"
           />
           <div className="mt-10">
