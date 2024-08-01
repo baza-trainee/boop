@@ -44,12 +44,12 @@ const PaymentDonationAmount = ({ isValidate }: PaymentDonationAmountProps) => {
       type: 'radio',
     },
     {
-      value: selectedCurrency === 'UAH' ? '100' : '10',
+      value: selectedCurrency === 'UAH' ? '100' : '20',
       id: 'mediumDonate',
       type: 'radio',
     },
     {
-      value: selectedCurrency === 'UAH' ? '200' : '20',
+      value: selectedCurrency === 'UAH' ? '200' : '50',
       id: 'hugeDonate',
       type: 'radio',
     },
@@ -101,7 +101,7 @@ const PaymentDonationAmount = ({ isValidate }: PaymentDonationAmountProps) => {
                       ? donationAmount
                       : t('custom_donation_amount')
                   }
-                  placeholder={t('custom_donation_amount')}
+                  // placeholder={t('custom_donation_amount')}
                   type="text"
                   name="donate-sum"
                   id={item.id}
