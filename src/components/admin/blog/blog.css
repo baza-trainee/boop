@@ -1,0 +1,3 @@
+.break-word {
+  word-wrap: break-word; /* или overflow-wrap: break-word; */
+}

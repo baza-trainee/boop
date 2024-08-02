@@ -26,6 +26,7 @@ export async function POST(request: Request) {
   try {
     await prismaConnect();
     const data: CounterFormData = await request.json();
+
     const response = await prisma.counterItem.create({
       data: {
         number: data.number,
