@@ -1,3 +1,4 @@
+import { useLocale } from 'next-intl';
 import React from 'react';
 
 type MissionCardProps = {
@@ -16,24 +17,25 @@ const MissionCard = ({
   index,
 }: MissionCardProps) => {
   const subMissionsList = hoverText.split('. ');
+  const locale = useLocale();
 
   return (
     <div
-      className="bg-gray-[#D9D9D9] group relative h-[366px] w-[280px] cursor-pointer bg-cover bg-no-repeat  ml:w-full    lg:h-[491px] 4xl:h-[610px]"
+      className="bg-gray-[#D9D9D9] group relative h-[366px] w-[280px] cursor-pointer bg-cover bg-no-repeat ml:w-full lg:h-[491px] 4xl:h-[610px]"
       style={{ backgroundImage: `url(${image})` }}
     >
       <div
-        className="absolute bottom-0 left-0 h-[134px] w-full p-8  px-4 opacity-100  backdrop-blur-custom transition-opacity duration-[700ms] ease-in-out group-hover:opacity-0  lg:bottom-[64px] 2xl:pt-6"
+        className={`absolute bottom-0 left-0 flex h-[134px] w-full items-center px-4 opacity-100 backdrop-blur-custom transition-opacity duration-[700ms] ease-in-out group-hover:opacity-0 lg:bottom-[64px]`}
         style={{ background: cardGradient }}
       >
         <h3
-          className={`${index === 2 ? `w-[169px]` : index === 1 ? `w-[255px] 2xl:w-[266px]` : `w-[263px] lg:w-[306px]`} whitespace-pre-line font-raleway text-lg font-[500] leading-[132%] text-bgWhite 2xl:text-xl`}
+          className={`whitespace-pre-line font-raleway text-lg font-[500] leading-[132%] text-bgWhite 2xl:text-xl ${index === 2 ? `w-[169px]` : index === 1 ? `w-[255px] 2xl:w-[266px]` : `w-[263px] lg:w-[306px]`}`}
         >
           {text}
         </h3>
       </div>
       <div
-        className={`absolute left-0 top-0 flex h-full  w-full flex-col gap-4 p-4 pt-[50px] opacity-0 transition-opacity duration-[700ms] ease-in-out  group-hover:opacity-100 lg:px-6  xl:pt-[72px] 2xl:pb-6 3xl:px-8 4xl:p-[97px]`}
+        className={`absolute left-0 top-0 flex h-full w-full flex-col gap-4 p-4 pt-[50px] opacity-0 transition-opacity duration-[700ms] ease-in-out group-hover:opacity-100 lg:px-6 xl:pt-[72px] 2xl:pb-6 3xl:px-8 4xl:p-[97px]`}
         style={{ background: overlayGradient }}
       >
         <h3
