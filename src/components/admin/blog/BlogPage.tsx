@@ -15,6 +15,8 @@ import EditBlogPostForm from './form/EditBlogPostForm';
 import ActionButtons from '../shared/ActionButtons';
 import truncateText from '@/helpers/truncateText';
 
+import './blog.css';
+
 // const placeHolderImg = `/images/mainRules/image_1.png`;
 
 const BlogPage = () => {
@@ -115,7 +117,7 @@ const BlogPage = () => {
                 <h2 className="mb-[4px] text-[16px] font-bold leading-[132%] text-[#2F245E]">
                   {truncateText(post.titleUA, 65)}
                 </h2>
-                <div className="mb-[5px] w-[306px] text-[16px] leading-[150%] text-[#2F245E]">
+                <div className="break-word mb-[5px] overflow-hidden text-[16px] leading-[150%] text-[#2F245E]">
                   {truncateText(post.textUA, 130)}
                 </div>
               </div>

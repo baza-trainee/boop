@@ -268,23 +268,25 @@ const EditBlogPostForm = ({ id }: { id: number }) => {
             </p>
           </div>
         </div>
-        <div className="relative mx-auto flex w-[296px] flex-wrap justify-between">
+        <div className="mx-auto flex w-[296px] flex-wrap justify-between">
           <span className="mb-[12px] w-full text-center text-[17px] text-[#343333]">
             Змінити статтю в Блог?
           </span>
-          <button
-            disabled={!isValid}
-            // disabled={false}
-            className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white hover:shadow-xl disabled:bg-gray-500"
-          >
-            {isProcessing ? 'Обробка запиту...' : 'Змінити'}
-          </button>
-          <button
-            onClick={() => dispatch(closeModal())}
-            className="w-[149px] rounded-3xl border border-yellow px-4 py-2 text-violet"
-          >
-            Скасувати
-          </button>
+          <div className="flex flex-nowrap items-center gap-4">
+            <button
+              disabled={!isValid}
+              // disabled={false}
+              className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white hover:shadow-xl disabled:bg-gray-500"
+            >
+              {isProcessing ? 'Обробка запиту...' : 'Змінити'}
+            </button>
+            <button
+              onClick={() => dispatch(closeModal())}
+              className="flex-shrink-1 w-[149px] rounded-3xl border border-yellow px-4 py-2 text-violet"
+            >
+              Скасувати
+            </button>
+          </div>
         </div>
       </form>
     </div>

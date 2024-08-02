@@ -110,7 +110,7 @@ const PressPage = () => {
                 <h2 className="mb-[4px] text-[16px] font-bold leading-[150%] text-textViolet">
                   {truncateText(item.titleUA, 65)}
                 </h2>
-                <p className="text-[16px] font-normal leading-[132%] text-textViolet">
+                <p className="break-word font-normal leading-[132%] text-textViolet marker:text-[16px]">
                   {truncateText(item.textUA, 103)}
                 </p>
               </div>

@@ -15,14 +15,7 @@ export async function PUT(
       });
     }
     const { number }: { number: number } = await request.json();
-    if (!number) {
-      return new NextResponse(
-        'Invalid request: Missing location field for update',
-        {
-          status: 400,
-        }
-      );
-    }
+
     await prismaConnect();
 
     const updateNumber = await prisma.counterItem.update({
