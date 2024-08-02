@@ -223,19 +223,21 @@ const AddBlogPostForm = () => {
           <span className="mb-[12px] w-full text-center text-[17px] text-[#343333]">
             Додати статтю в Блог?
           </span>
-          <button
-            disabled={!isValid}
-            // disabled={false}
-            className={`min-w-[123px] whitespace-nowrap rounded-3xl border border-[#E3E3E4] bg-red px-4 py-2 text-[20px] font-bold hover:shadow-xl disabled:bg-[#E3E3E4] ${!isValid ? 'text-[#97979A]' : 'text-white'}`}
-          >
-            {isProcessing ? 'Обробка запиту...' : 'Додати'}
-          </button>
-          <button
-            onClick={() => dispatch(closeModal())}
-            className="w-[149px] rounded-3xl border border-yellow bg-[#E3E3E4] px-4 py-2 text-[20px] text-[#97979A]"
-          >
-            Скасувати
-          </button>
+          <div className="flex flex-nowrap items-center gap-4">
+            <button
+              disabled={!isValid}
+              // disabled={false}
+              className={`min-w-[123px] whitespace-nowrap rounded-3xl border border-[#E3E3E4] bg-red px-4 py-2 text-[20px] font-bold hover:shadow-xl disabled:bg-[#E3E3E4] ${!isValid ? 'text-[#97979A]' : 'text-white'}`}
+            >
+              {isProcessing ? 'Обробка запиту...' : 'Додати'}
+            </button>
+            <button
+              onClick={() => dispatch(closeModal())}
+              className="flex-shrink-1 w-[149px] rounded-3xl border border-yellow bg-[#E3E3E4] px-4 py-2 text-[20px] text-[#97979A]"
+            >
+              Скасувати
+            </button>
+          </div>
         </div>
       </form>
     </div>
