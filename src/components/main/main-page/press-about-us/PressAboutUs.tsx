@@ -16,7 +16,7 @@ const PressAboutUs = () => {
     <section className="mb-[120px]">
       <div className="container mx-auto">
         <div className="mb-8 flex items-center justify-between gap-5">
-          <h2 className="title-gradient pt-2 font-groppled text-3xl font-bold max-sm:text-[28px]">
+          <h2 className="title-gradient pt-2 font-groppled text-[28px] font-bold sm:text-3xl">
             {t('title')}
           </h2>
           {data.data.length > 1 && (
