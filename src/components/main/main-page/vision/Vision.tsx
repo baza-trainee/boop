@@ -8,7 +8,7 @@ const Vision = () => {
       <h3 className="font-raleway text-xl font-bold  leading-[132%] text-textViolet">
         {t('subtitle')}
       </h3>
-      <h2 className="title-gradient font-groppled font-bold xs:text-[28px] xs:leading-[160%] md:text-[32px] ml:text-5xl    ml:leading-[124%] lg:w-[1056px]">
+      <h2 className="title-gradient font-groppled font-bold text-[28px] leading-[160%] md:text-[32px] ml:text-5xl    ml:leading-[124%] lg:w-[1056px]">
         {t('text')}
       </h2>
     </section>
