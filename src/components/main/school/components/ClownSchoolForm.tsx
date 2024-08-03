@@ -74,15 +74,8 @@ const ClownSchoolForm: React.FC = () => {
     }
   };
 
-  // // Fake form submission function
-  // const fakeFormSubmission = () => {
-  //   return new Promise<{ success: boolean }>((resolve) => {
-  //     setTimeout(() => resolve({ success: Math.random() > 0.5 }), 1000);
-  //   });
-  // };
-
   return (
-    <section className="mb-[120px] bg-bgYellow">
+    <section className="mb-[120px] md:bg-bgYellow">
       <div className="container mx-auto flex max-w-screen-3xl flex-col py-8 ml:flex-row lg:py-16">
         <div className="relative mb-8 flex flex-col justify-center text-mainViolet md:mb-0 md:max-w-[60%] ml:w-[55%] lg:max-w-[658px] lg:w-1/2 ml:pr-10">
           <SectionTitle
@@ -95,7 +88,7 @@ const ClownSchoolForm: React.FC = () => {
             <br />
             {tClownSchoolFormDescription('formDescription')}
           </p>
-          <div className="max-ml:absolute max-ml:-right-[65%] flex items-baseline space-x-4">
+          <div className="hidden md:flex max-ml:absolute max-ml:-right-[65%] items-baseline space-x-4 mt-10">
             <Image
               src="/images/clown1.svg"
               alt="Clown"
@@ -125,7 +118,14 @@ const ClownSchoolForm: React.FC = () => {
             alt="Clown"
             width={232}
             height={172}
-            className="absolute bottom-0 -right-[80%] scale-x-[-1] transform ml:hidden"
+            className="hidden md:block absolute bottom-0 -right-[80%] scale-x-[-1] transform ml:hidden"
+          />
+          <Image
+              src="/images/clown2.svg"
+              alt="Clown"
+              width={141}
+              height={105}
+              className="absolute bottom-0 right-4 -mb-[60px] md:hidden transform scale-x-[-1]"
           />
           <form
             onSubmit={handleSubmit(onSubmit)}
