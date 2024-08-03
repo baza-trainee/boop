@@ -32,7 +32,7 @@ const TextInput = forwardRef(function TextInput(
   }: TextInputProps,
   _ref: ForwardedRef<HTMLInputElement>
 ) {
-  const inputClassName = `relative w-full rounded-xl border p-2 text-sm placeholder:text-sm
+  const inputClassName = `relative w-full rounded-xl border px-2 pt-2 pb-[23px] text-sm placeholder:text-sm 
       ${
         errorText
           ? 'border-red caret-red outline-red focus:outline-red'
@@ -51,7 +51,7 @@ const TextInput = forwardRef(function TextInput(
       {!!title && (
         <label
           htmlFor={title}
-          className={`text-base font-[500] text-[#0A0A0A] ${titleClassName}`}
+          className={`mb-1 block text-base font-[500] text-[#0A0A0A] ${titleClassName}`}
         >
           {modifyTitle(title)}
           {isRequired && <span className="mt-1 text-red">*</span>}

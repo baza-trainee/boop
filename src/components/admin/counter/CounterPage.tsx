@@ -48,7 +48,10 @@ const CounterPage = () => {
     id: number
   ) => {
     const { value } = event.target;
+
     const numberValue = Number(value);
+    console.log('value', value);
+    console.log('numberValue', numberValue);
 
     let error = '';
     if (
@@ -153,7 +156,7 @@ const CounterPage = () => {
   if (isError) {
     return (
       <div className="flex h-screen items-center justify-center">
-        <div className="flex h-[50%] w-[80%] items-center justify-center rounded-[20px] bg-slate-200  p-[40px]">
+        <div className="flex h-[50%] w-[80%] items-center justify-center rounded-[20px] bg-slate-200 p-[40px]">
           <p className="text-center text-[32px] text-yellow">
             Сталася помилка під час завантаження даних.
             <br /> Будь ласка, спробуйте оновити сторінку або повторити спробу
@@ -169,9 +172,9 @@ const CounterPage = () => {
   }
 
   return (
-    <section className=" h-screen  pb-[159px] pl-[24px] pt-[104px]">
+    <section className="h-screen pb-[159px] pl-[24px] pt-[104px]">
       <PageTitle title="Каунтер" />
-      <form onSubmit={handleSubmitForm} className=" w-[292px] ">
+      <form onSubmit={handleSubmitForm} className="w-[292px]">
         <ul className="flex flex-col gap-[20px]">
           {data?.map((item) => (
             <li className="w-[100%]" key={item.id}>
@@ -186,7 +189,7 @@ const CounterPage = () => {
                 onImageEditClick={() => handleImageEditClick(item.id)}
                 value={inputValues[item.id] || ''}
                 onChange={(event) => handleChange(event, item.id)}
-                className={` ${editingItemId.includes(item.id) ? `text-[#50439F]` : `text-[#949398]`} h-[40px] text-center font-medium`}
+                className={`pb-[8px] ${editingItemId.includes(item.id) ? `text-[#50439F]` : `text-[#949398]`} h-[40px] text-center font-medium`}
               />
               {errors[item.id] && (
                 <p className="mt-1 text-xs text-red">{errors[item.id]}</p>
@@ -199,7 +202,7 @@ const CounterPage = () => {
             type="submit"
             disabled={isDisabled}
             btnTextStyle={` text-center ${isProcessing ? 'text-sm' : 'text-lg'} font-bold leading-[100%] ${isDisabled ? `text-[#97979A]  ` : `text-white`}`}
-            className={`flex h-[56px] items-center justify-center gap-2 rounded-[32px]  ${isDisabled ? `bg-[#E3E3E4] ` : `bg-[#E93405]`}  px-[24px] py-[18px] text-white `}
+            className={`flex h-[56px] items-center justify-center gap-2 rounded-[32px] ${isDisabled ? `bg-[#E3E3E4]` : `bg-[#E93405]`} px-[24px] py-[18px] text-white`}
           >
             {isProcessing ? <LoaderSmile /> : 'Змінити'}
           </UniversalButton>
@@ -208,7 +211,7 @@ const CounterPage = () => {
             onClick={handleResetClick}
             disabled={isDisabled}
             btnTextStyle={`text-center text-xl font-medium leading-[100%] ${isDisabled ? `text-[#97979A] ` : `text-[#2F245E]`}`}
-            className={`flex h-[56px] items-center justify-center gap-2 rounded-[32px] border-2  px-[24px] py-[18px]   ${isDisabled ? `border-[#E3E3E4]  ` : `border-[#FFAB0B] `}  px-[24px] py-[18px]`}
+            className={`flex h-[56px] items-center justify-center gap-2 rounded-[32px] border-2 px-[24px] py-[18px] ${isDisabled ? `border-[#E3E3E4]` : `border-[#FFAB0B]`} px-[24px] py-[18px]`}
           >
             Скасувати
           </UniversalButton>

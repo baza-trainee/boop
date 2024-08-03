@@ -32,17 +32,13 @@ export const AlertWindow: React.FC = () => {
       setIsProcessing(true);
       await func();
       setIsProcessing(false);
-      dispatch(closeAlert());
     } else {
       dispatch(closeAlert());
     }
   };
 
   return (
-    <div
-      className="backdrop-brightness-10 fixed inset-0 z-50 flex 
-      items-center justify-center bg-[rgba(0,0,0,0.8)] backdrop-blur-sm"
-    >
+    <div className="backdrop-brightness-10 fixed inset-0 z-50 flex items-center justify-center bg-[rgba(0,0,0,0.8)] backdrop-blur-sm">
       <div
         role="dialog"
         aria-modal="true"
@@ -62,7 +58,7 @@ export const AlertWindow: React.FC = () => {
         </button>
         <div className="flex w-full justify-between">
           <div className="w-full">
-            <p className={`text-center text-[1.3rem] font-normal`}>{message}</p>
+            <p className={`text-[1.3rem] font-normal`}>{message}</p>
           </div>
         </div>
 

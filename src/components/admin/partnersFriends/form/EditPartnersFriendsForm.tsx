@@ -96,7 +96,7 @@ function EditPartnersFriendsForm({
           openAlert({
             data: {
               state: 'success',
-              message: `${BUTTON_TITLE[editType]} успішно змінено!`,
+              message: `${BUTTON_TITLE[editType].slice(0, -1)} успішно відредагований`,
             },
           })
         );
@@ -121,7 +121,7 @@ function EditPartnersFriendsForm({
 
   return (
     <div className="flex flex-col items-center justify-center gap-10">
-      <div className="flex flex-col items-center ">
+      <div className="flex flex-col items-center">
         <h2 className="mb-10 text-left font-['Raleway',_sans-serif] text-[32px] font-bold normal-case not-italic leading-[45px] tracking-[0px] text-[#50439f]">
           Редагування {BUTTON_TITLE[editType].toLowerCase()}
         </h2>
@@ -133,14 +133,14 @@ function EditPartnersFriendsForm({
           <div className="relative box-border flex w-full max-w-[296px] flex-col items-start justify-start gap-[4px]">
             <label
               htmlFor="urlLink"
-              className="text-left font-['Raleway',_sans-serif] text-[16px] font-medium normal-case not-italic leading-[24px] tracking-[0px] text-[#0a0a0a]"
+              className="font-['Raleway', sans-serif] text-left text-[16px] font-[500] not-italic leading-[24px] tracking-[0px] text-[#0a0a0a]"
             >
               Вкажіть посилання на сайт:
             </label>
             <div className="relative w-full">
               <input
                 className={clsx(
-                  " w-full rounded-xl border-[2px] border-[#50439f] p-2 font-['Raleway',_sans-serif] text-[16px] text-base font-medium normal-case not-italic leading-[22px] tracking-[0px] text-[#949398] placeholder-[#949398] outline-none placeholder-shown:border-[#949398]",
+                  "w-full rounded-xl border-[2px] border-[#50439f] p-2 font-['Raleway',_sans-serif] text-[16px] text-base font-medium normal-case not-italic leading-[22px] tracking-[0px] text-[#949398] placeholder-[#949398] outline-none placeholder-shown:border-[#949398]",
                   errors.urlLink && 'border-red-500'
                 )}
                 id="urlLink"
@@ -170,6 +170,7 @@ function EditPartnersFriendsForm({
             </div>
           </div>
           <FileInput
+            titleColor="#0a0a0a"
             name="image"
             control={control}
             placeholder={'Завантажити файл'}
@@ -186,7 +187,7 @@ function EditPartnersFriendsForm({
                 disabled={!isRedyToEdit}
                 type="submit"
                 className={clsx(
-                  "rounded-[32px] bg-[#e3e3e4] px-6 py-[18px] font-['Raleway',_sans-serif] text-[20px] font-bold normal-case not-italic leading-[20px] tracking-[0px] text-[#97979a] ",
+                  "rounded-[32px] bg-[#e3e3e4] px-6 py-[18px] font-['Raleway',_sans-serif] text-[20px] font-bold normal-case not-italic leading-[20px] tracking-[0px] text-[#97979a]",
                   isRedyToEdit && 'bg-[#e93405]',
                   isRedyToEdit && 'text-[#ffffff]'
                 )}

@@ -1,15 +1,18 @@
 'use client';
 
 import React from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import Image from 'next/image';
 
 const Introduction = () => {
   const t = useTranslations('School');
+  const locale = useLocale();
+  const uaLocale = locale === 'ua';
+  const itLocale = locale === 'it';
 
   return (
     <div className="relative mb-[72.5px] lg:mb-[100px] 3xl:mb-[120px]">
-      <h2 className="title-gradient  mb-[26.5px] font-groppled text-2xl font-bold leading-[1.6]  md:mb-8 md:text-[28px]  ml:text-[32px]">
+      <h2 className="title-gradient  mb-[26.5px] font-groppled text-2xl font-bold leading-[1.6] md:mb-8 md:text-[28px]  ml:text-[32px]">
         {t('main_title')}
       </h2>
       <h3 className="before:contetnt[''] text-gradient mb-4 flex items-center justify-start gap-6 font-raleway text-xl font-bold leading-[1.32] before:hidden before:h-[5px] before:w-[53px] before:bg-no-repeat before:py-1  md:before:block  md:before:bg-[url('/icons/school/title_line_tablet.svg')] lg:before:h-[4px]  lg:before:w-[80px] lg:before:bg-[url('/icons/school/title_line_desk.svg')]">
@@ -21,7 +24,13 @@ const Introduction = () => {
           {t('main_text_secondary')}
         </span>
         <Image
-          src="/images/logo.svg"
+          src={
+            uaLocale
+              ? '/icons/header/ua-logo.svg'
+              : itLocale
+                ? '/icons/header/it-logo.svg'
+                : '/icons/header/en-logo.svg'
+          }
           alt="Boop logo"
           width={86}
           height={50}

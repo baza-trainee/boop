@@ -8,6 +8,7 @@ import 'swiper/css';
 
 export interface CarouselProps<T> extends SwiperProps {
   items: T[] | undefined;
+  // eslint-disable-next-line no-unused-vars
   renderItem: (item: T, i: number) => ReactNode;
   className?: string;
   slideClassName?: string;
@@ -15,6 +16,7 @@ export interface CarouselProps<T> extends SwiperProps {
   prevEl: string;
 }
 
+// eslint-disable-next-line no-unused-vars
 export const Carousel = <T, _>({
   items,
   renderItem,

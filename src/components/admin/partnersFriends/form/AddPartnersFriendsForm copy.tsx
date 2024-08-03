@@ -62,7 +62,7 @@ function AddPartnersFriendsForm({ addType }: AddPartnersFriendsFormProps) {
           openAlert({
             data: {
               state: 'success',
-              message: `${BUTTON_TITLE[addType]} успішно додано!`,
+              message: `${BUTTON_TITLE[addType].slice(0, -1)} успішно доданий!`,
             },
           })
         );
@@ -88,7 +88,7 @@ function AddPartnersFriendsForm({ addType }: AddPartnersFriendsFormProps) {
 
   return (
     <div className="flex flex-col items-center justify-center gap-10">
-      <div className="flex flex-col items-center ">
+      <div className="flex flex-col items-center">
         <h2 className="mb-10 text-left font-['Raleway',_sans-serif] text-[32px] font-bold normal-case not-italic leading-[45px] tracking-[0px] text-[#50439f]">
           Додавання {BUTTON_TITLE[addType].toLowerCase()}
         </h2>
@@ -100,14 +100,14 @@ function AddPartnersFriendsForm({ addType }: AddPartnersFriendsFormProps) {
           <div className="relative box-border flex w-full max-w-[296px] flex-col items-start justify-start gap-[4px]">
             <label
               htmlFor="urlLink"
-              className="text-left font-['Raleway',_sans-serif] text-[16px] font-medium normal-case not-italic leading-[24px] tracking-[0px] text-[#0a0a0a]"
+              className="font-['Raleway', sans-serif] font-[500] text-[#0a0a0a]"
             >
               Вкажіть посилання на сайт:
             </label>
             <div className="relative w-full">
               <input
                 className={clsx(
-                  " w-full rounded-xl border-[2px] border-[#50439f] p-2 font-['Raleway',_sans-serif] text-[16px] text-base font-medium normal-case not-italic leading-[22px] tracking-[0px] text-[#949398] placeholder-[#949398] outline-none placeholder-shown:border-[#949398]",
+                  "w-full rounded-xl border-[2px] border-[#50439f] p-2 font-['Raleway',_sans-serif] text-[16px] text-base font-medium normal-case not-italic leading-[22px] tracking-[0px] text-[#949398] placeholder-[#949398] outline-none placeholder-shown:border-[#949398]",
                   errors.urlLink && 'border-red-500'
                 )}
                 id="urlLink"
@@ -123,14 +123,14 @@ function AddPartnersFriendsForm({ addType }: AddPartnersFriendsFormProps) {
           </div>
           <FileInput
             name="image"
+            titleColor="#0a0a0a"
             control={control}
             placeholder={'Завантажити файл'}
             title="Додайте логотип:"
-            isRequired={true}
             accept="image/*"
           />
           <div className="mt-10">
-            <span className="mb-0 mt-0 text-left font-['Raleway',_sans-serif] text-[17px] font-medium normal-case not-italic leading-[26px] tracking-[0px] text-[#343333]">
+            <span className="font-['Raleway', sans-serif] mb-0 mt-0 text-left text-[17px] font-medium normal-case not-italic leading-[26px] tracking-[0px] text-[#343333]">
               Додати нового {BUTTON_TITLE[addType]}?
             </span>
             <div className="mt-3 flex justify-between">
@@ -138,7 +138,7 @@ function AddPartnersFriendsForm({ addType }: AddPartnersFriendsFormProps) {
                 disabled={!isValid}
                 type="submit"
                 className={clsx(
-                  "rounded-[32px] bg-[#e3e3e4] px-6 py-[18px] font-['Raleway',_sans-serif] text-[20px] font-bold normal-case not-italic leading-[20px] tracking-[0px] ",
+                  "rounded-[32px] bg-[#e3e3e4] px-6 py-[18px] font-['Raleway',_sans-serif] text-[20px] font-bold normal-case not-italic leading-[20px] tracking-[0px]",
                   isValid && 'bg-[#e93405]',
                   isValid && 'text-[#ffffff]',
                   !isValid && 'text-[#97979a]'

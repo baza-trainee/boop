@@ -2,32 +2,34 @@ import { useAppDispatch, useAppSelector } from '@/store/hook';
 import {
   setSelectedCurrency,
   setDonationAmount,
+  setIsCustomDonate,
 } from '@/store/slices/paymentFormSlice';
 import { useEffect } from 'react';
 
 const CURRENCY = [
   {
     text: '₴',
-    value: 'uah',
+    value: 'UAH',
   },
   {
     text: '$',
-    value: 'usd',
+    value: 'USD',
   },
   {
     text: '€',
-    value: 'eur',
+    value: 'EUR',
   },
 ];
 
 const PaymentCurrency = () => {
-  const selectedCurrency = useAppSelector(
-    (state) => state.paymentForm.selectedCurrency
+  const { selectedCurrency, isCustomDonate } = useAppSelector(
+    (state) => state.paymentForm
   );
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (selectedCurrency === 'uah') dispatch(setDonationAmount('50'));
+    if (isCustomDonate) dispatch(setIsCustomDonate(false));
+    if (selectedCurrency === 'UAH') dispatch(setDonationAmount('50'));
     else dispatch(setDonationAmount('5'));
   }, [selectedCurrency]);
 
@@ -46,7 +48,7 @@ const PaymentCurrency = () => {
           />
           <label
             htmlFor={item.value}
-            className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-lightVioletSecond text-xl font-bold leading-[1] text-textViolet transition-all duration-300 ease-linear peer-checked/:bg-mainViolet peer-checked/:text-white max-custom:text-base max-custom:leading-none"
+            className="basic-transition flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-lightVioletSecond text-xl font-bold leading-[1] text-textViolet peer-checked/:bg-mainViolet peer-checked/:text-white max-custom:text-base max-custom:leading-none"
           >
             {item.text}
           </label>

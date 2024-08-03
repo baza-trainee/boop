@@ -5,7 +5,7 @@ import Image from 'next/image';
 import axios from '@/utils/axios';
 import { useAppDispatch } from '@/store/hook';
 import { openModal } from '@/store/slices/modalSlice';
-import { openAlert } from '@/store/slices/alertSlice';
+import { openAlert, closeAlert } from '@/store/slices/alertSlice';
 import { testimonialsApi } from '@/store/api/testimonialsApi';
 import PageTitle from '../shared/PageTitle';
 import ActionButtons from '../shared/ActionButtons';
@@ -59,15 +59,20 @@ const TestimonialsPage = () => {
           message: 'Ви впевнені, що хочете видалити цей відгук?',
           func: async () => {
             await axios.delete(`/cloudinary/${encodeURIComponent(imageId)}`);
-            await deleteTestimonial(id);
-            dispatch(
-              openAlert({
-                data: {
-                  state: 'success',
-                  message: 'Відгук видалений',
-                },
-              })
-            );
+            const res = await deleteTestimonial(id);
+            dispatch(closeAlert());
+            if (res && res.data) {
+              dispatch(
+                openAlert({
+                  data: {
+                    state: 'success',
+                    message: 'Відгук видалений',
+                  },
+                })
+              );
+            } else {
+              alert('Щось пійшло не так, спробуйте пізніше');
+            }
           },
         },
       })

@@ -21,8 +21,7 @@ const EditBlogPostForm = ({ id }: { id: number }) => {
   const [imagePreview, setImagePreview] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
   const [editPost] = blogApi.useEditPostMutation();
-
-  const { data: posts, isLoading, isFetching } = blogApi.useGetAllPostsQuery();
+  const { data: posts } = blogApi.useGetAllPostsQuery();
 
   const post = posts?.data.find((post) => post.id === id);
 
@@ -39,21 +38,26 @@ const EditBlogPostForm = ({ id }: { id: number }) => {
   });
 
   useEffect(() => {
-    if (!post) return;
-    setValue('titleUA', post.titleUA);
-    setValue('titleEN', post.titleEN);
-    setValue('titleIT', post.titleIT);
-    setValue('textUA', post.textUA);
-    setValue('textEN', post.textEN);
-    setValue('textIT', post.textIT);
-    setValue('image', [new File([], post?.imageUrl, { type: 'for-url' })]);
-    setImagePreview(post.imageUrl);
-  }, [post]);
+    if (post) {
+      setValue('titleUA', post.titleUA);
+      setValue('titleEN', post.titleEN);
+      setValue('titleIT', post.titleIT);
+      setValue('textUA', post.textUA);
+      setValue('textEN', post.textEN);
+      setValue('textIT', post.textIT);
+      setValue('image', [new File([], post?.imageUrl, { type: 'for-url' })]);
+      if (post.imageUrl) {
+        setImagePreview(post.imageUrl);
+      } else {
+        console.log('post.imageUrl is undefined or null');
+      }
+    }
+  }, [post, setValue]);
 
   const imageFile = watch('image');
 
   useEffect(() => {
-    if (!imageFile.length) return;
+    if (!imageFile[0]?.size) return;
     const imageUrl = URL.createObjectURL(imageFile[0]);
     setImagePreview(imageUrl);
   }, [imageFile]);
@@ -126,7 +130,7 @@ const EditBlogPostForm = ({ id }: { id: number }) => {
 
   return (
     <div className="flex h-full w-full flex-col items-center justify-center">
-      <h1 className="mb-[24px] w-full text-center text-3xl font-[500] text-violet">
+      <h1 className="mb-[24px] w-full text-center text-[32px] font-[500] text-[#50439F]">
         Редагування статті
       </h1>
       <form
@@ -139,49 +143,64 @@ const EditBlogPostForm = ({ id }: { id: number }) => {
             <FileInput
               name="image"
               control={control}
-              placeholder="Завантажте зображення"
-              title="Оберіть файл"
+              placeholder="Завантажити зображення"
+              title="Оберіть фото"
               accept="image/*"
             />
-            <Controller
-              name="titleUA"
-              control={control}
-              render={({ field }) => (
-                <TextInput
-                  {...field}
-                  errorText={errors.titleUA?.message}
-                  placeholder="Напишіть назву статті"
-                  title="Вкажіть назву статті українською"
-                  className={'h-[53px]'}
-                />
-              )}
-            />
-            <Controller
-              name="titleEN"
-              control={control}
-              render={({ field }) => (
-                <TextInput
-                  {...field}
-                  errorText={errors.titleEN?.message}
-                  placeholder="Напишіть назву статті"
-                  title="Вкажіть назву статті англійською"
-                  className={'h-[53px]'}
-                />
-              )}
-            />
-            <Controller
-              name="titleIT"
-              control={control}
-              render={({ field }) => (
-                <TextInput
-                  {...field}
-                  errorText={errors.titleIT?.message}
-                  placeholder="Напишіть назву статті"
-                  title="Вкажіть назву статті італійською"
-                  className={'h-[53px]'}
-                />
-              )}
-            />
+            <div className="flex w-full flex-col">
+              <Controller
+                name="titleUA"
+                control={control}
+                render={({ field }) => (
+                  <TextInput
+                    {...field}
+                    errorText={errors.titleUA?.message}
+                    placeholder="Напишіть назву статті"
+                    title="Вкажіть назву статті українською"
+                    className={'h-[53px]'}
+                  />
+                )}
+              />
+              <p className="text-sm text-[#4D4D4D]">
+                Довжина тексту має бути 5-70 знаків
+              </p>
+            </div>
+            <div className="flex w-full flex-col">
+              <Controller
+                name="titleEN"
+                control={control}
+                render={({ field }) => (
+                  <TextInput
+                    {...field}
+                    errorText={errors.titleEN?.message}
+                    placeholder="Напишіть назву статті"
+                    title="Вкажіть назву статті англійською"
+                    className={'h-[53px]'}
+                  />
+                )}
+              />
+              <p className="text-sm text-[#4D4D4D]">
+                Довжина тексту має бути 5-70 знаків
+              </p>
+            </div>
+            <div className="flex w-full flex-col">
+              <Controller
+                name="titleIT"
+                control={control}
+                render={({ field }) => (
+                  <TextInput
+                    {...field}
+                    errorText={errors.titleIT?.message}
+                    placeholder="Напишіть назву статті"
+                    title="Вкажіть назву статті італійською"
+                    className={'h-[53px]'}
+                  />
+                )}
+              />
+              <p className="text-sm text-[#4D4D4D]">
+                Довжина тексту має бути 5-70 знаків
+              </p>
+            </div>
           </div>
 
           <div className="flex w-1/2 items-center justify-center">
@@ -192,65 +211,82 @@ const EditBlogPostForm = ({ id }: { id: number }) => {
               width={384}
               height={437}
               alt="specialist"
-              className="h-auto max-h-[437px] w-auto max-w-[384px] object-cover object-center"
+              className="h-[412px] w-[306px] object-cover object-center"
             />
           </div>
         </div>
-        <div className="mb-[50px] flex gap-[18px]">
-          <Controller
-            name="textUA"
-            control={control}
-            render={({ field }) => (
-              <TextArea
-                {...field}
-                errorText={errors.textUA?.message}
-                placeholder="Напишіть текст статті"
-                title="Вкажіть текст статті українською"
-              />
-            )}
-          />
-          <Controller
-            name="textEN"
-            control={control}
-            render={({ field }) => (
-              <TextArea
-                {...field}
-                errorText={errors.textEN?.message}
-                placeholder="Напишіть текст статті"
-                title="Вкажіть текст статті англійською"
-              />
-            )}
-          />
-          <Controller
-            name="textIT"
-            control={control}
-            render={({ field }) => (
-              <TextArea
-                {...field}
-                errorText={errors.textIT?.message}
-                placeholder="Напишіть текст статті"
-                title="Вкажіть текст статті італійською"
-              />
-            )}
-          />
+        <div className="mb-[40px] flex gap-[18px]">
+          <div className="flex w-full flex-col">
+            <Controller
+              name="textUA"
+              control={control}
+              render={({ field }) => (
+                <TextArea
+                  {...field}
+                  errorText={errors.textUA?.message}
+                  placeholder="Напишіть текст статті"
+                  title="Вкажіть текст статті українською"
+                />
+              )}
+            />
+            <p className="text-sm text-[#4D4D4D]">
+              Довжина тексту має бути 300-9000 знаків
+            </p>
+          </div>
+          <div className="flex w-full flex-col">
+            <Controller
+              name="textEN"
+              control={control}
+              render={({ field }) => (
+                <TextArea
+                  {...field}
+                  errorText={errors.textEN?.message}
+                  placeholder="Напишіть текст статті"
+                  title="Вкажіть текст статті англійською"
+                />
+              )}
+            />
+            <p className="text-sm text-[#4D4D4D]">
+              Довжина тексту має бути 300-9000 знаків
+            </p>
+          </div>
+          <div className="flex w-full flex-col">
+            <Controller
+              name="textIT"
+              control={control}
+              render={({ field }) => (
+                <TextArea
+                  {...field}
+                  errorText={errors.textIT?.message}
+                  placeholder="Напишіть текст статті"
+                  title="Вкажіть текст статті італійською"
+                />
+              )}
+            />
+            <p className="text-sm text-[#4D4D4D]">
+              Довжина тексту має бути 300-9000 знаків
+            </p>
+          </div>
         </div>
-        <div className="relative mx-auto flex w-[296px] justify-between">
-          <span className="absolute -top-8 left-0 text-sm">
+        <div className="mx-auto flex w-[296px] flex-wrap justify-between">
+          <span className="mb-[12px] w-full text-center text-[17px] text-[#343333]">
             Змінити статтю в Блог?
           </span>
-          <button
-            disabled={!isValid}
-            // disabled={false}
-            className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white hover:shadow-xl disabled:bg-gray-500"
-          >
-            {isProcessing ? 'Обробка запиту...' : 'Змінити'}
-          </button>
-          <button
-            onClick={() => dispatch(closeModal())}
-            className="w-[149px] rounded-3xl border border-yellow px-4 py-2 text-violet"
-          >
-            Скасувати
-          </button>
+          <div className="flex flex-nowrap items-center gap-4">
+            <button
+              disabled={!isValid}
+              // disabled={false}
+              className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white hover:shadow-xl disabled:bg-gray-500"
+            >
+              {isProcessing ? 'Обробка запиту...' : 'Змінити'}
+            </button>
+            <button
+              onClick={() => dispatch(closeModal())}
+              className="flex-shrink-1 w-[149px] rounded-3xl border border-yellow px-4 py-2 text-violet"
+            >
+              Скасувати
+            </button>
+          </div>
         </div>
       </form>
     </div>

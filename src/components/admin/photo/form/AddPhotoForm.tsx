@@ -60,7 +60,7 @@ const AddPhotoForm = () => {
           openAlert({
             data: {
               state: 'success',
-              message: 'Фото успішно додано!',
+              message: 'Фото успішно додано',
             },
           })
         );
