@@ -8,213 +8,213 @@
     "contacts": "Contatti",
     "button": "Sostienici il Progetto"
   },
-	"Hero": {
-		"title": "Nonostante tutto, l'infanzia deve continuare"
-	},
-	"Founders": {
-		"subtitle": "Fondatrici del progetto",
-		"title": "Olga Bulkina \ne Marina Berdar",
-		"text": "Clown di corsia diplomate. \nFormatrici. Membri onorari \ndell'organizzazione \n”SOCCORSO CLOWN”",
-		"caption": "Ufficio Sorrisi e Supporto"
-	},
-	"Vision": {
-		"subtitle": "Visione",
-		"text": "Ci impegniamo a garantire che ogni ospedale pediatrico in Ucraina sia un luogo di gioia e sorrisi per i bambini che si trovano in situazioni difficili e di crisi"
-	},
-	"Values": {
-		"title": "I nostri valori",
-		"inclusivity": {
-			"text": "Inclusività",
-			"hoverText": "valutiamo tutti, indipendentemente dalle circostanze, e facciamo del nostro meglio per far sentire tutti importanti e necessari"
-		},
-		"proactivity": {
-			"text": "Proattività",
-			"hoverText": "aghiamo in anticipo, cercando sempre nuovi modi per portare gioia e sollievo"
-		},
-		"respect": {
-			"text": "Rispetto",
-			"hoverText": "trattiamo tutti con profondo rispetto, apprezzando l'unicità di ogni individuo"
-		},
-		"sincerity": {
-			"text": "Sincerità",
-			"hoverText": "le nostre azioni e parole provengono sempre dal cuore, creando un'atmosfera di fiducia"
-		},
-		"empathy": {
-			"text": "Empatia",
-			"hoverText": "comprendiamo e proviamo ciò che provate voi, sostenendovi nei momenti più difficili"
-		}
-	},
-	"Mission": {
-		"title": "La nostra missione",
-		"first": {
-			"text": "Clown ospedaliero, programma \ndi supporto emotivo per i bambini in ospedale",
-			"hoverText": "Eleviamo l'umore e lo spirito combattivo del bambino. Riduciamo il livello di stress. Facilitiamo l'adattamento alle condizioni ospedaliere. Accompagniamo il bambino durante le procedure o gli interventi chirurgici. Lavoriamo con i genitori e i medici "
-		},
-		"second": {
-			"text": "Organizzazione \ndi attività di riabilitazione sociale",
-			"hoverText": "Concerti settimanali. Spettacoli di bolle di sapone. Giochi di vincitori. Giornate di bellezza. Arteterapia. Suonoterapia. Concerti a tema "
-		},
-		"third": {
-			"text": "Sviluppo della comunità dei volontari",
-			"hoverText": "Formiamo clown di ospedale. Organizziamo team building per la squadra con il supporto della comunità internazionale di clown di ospedale. Lavoriamo sullo stato emotivo dei volontari. Promuoviamo e sviluppiamo la clownerie in ospedale in Ucraina "
-		}
-	},
-	"Goals": {
-		"title": "I nostri obiettivi",
-		"first": {
-			"cardNumber": "1",
-			"text": "Creazione dell'Associazione tutta Ucraina dei clown ospedalieri con i colleghi delle città dell'Ucraina"
-		},
-		"second": {
-			"cardNumber": "2",
-			"text": "Lancio di nuovi team nelle cliniche pediatriche di Kiev e altre città"
-		},
-		"third": {
-			"cardNumber": "3",
-			"text": "Creazione di un programma di supporto emotivo nelle ospedali pediatrici a livello statale"
-		},
-		"fourth": {
-			"cardNumber": "4",
-			"text": "Espansione della collaborazione internazionale"
-		}
-	},
-	"Counter_section": {
-		"title": "Conquiste in cifre",
-		"counter_1": {
-			"text": "{count, plural, =1 {anno di esperienza}  other {anni di esperienza}}"
-		},
-		"counter_2": {
-			"text": "{count, plural, =1 {clown di corsia}  other {clown di corsia}}"
-		},
-		"counter_3": {
-			"text": "{count, plural, =1 {uscite al mese}  other {uscite al mese}}"
-		},
-		"counter_4": {
-			"text": "{count, plural, =1 {ospedale in cui operiamo}  other {ospedali in cui operiamo}}"
-		},
-		"counter_5": {
-			"text": "{count, plural, =1 {bambino al mese}  other {bambini al mese}}"
-		}
-	},
-	"Press_about_us": {
-		"title": "Stampa su di noi",
-		"link_text": "Leggi di più"
-	},
-	"Donate": {
-		"title": "È facile aiutare",
-		"text": "Il vostro sostegno può cambiare in meglio la vita dei piccoli pazienti. Ogni donazione, indipendentemente dall'entità, ci permette di continuare a portare sorrisi nelle corsie degli ospedali.",
-		"form_btns": {
-			"donation_type": {
-				"every_month": "Abbonamento mensile",
-				"once": "Pagamento unico"
-			},
-			"custom_donation_amount": "Inserite il vostro importo"
-		},
-		"support_btn": "Sostenete il progetto"
-	},
-	"Gallery": {
-		"title": "Galleria",
-		"btn": "Scarica altro",
-		"btnCollapse": "Arrotolare"
-	},
-	"Error": {
-		"title": "Ops, sembra che ti sia perso!",
-		"text": "Purtroppo, la pagina che stai cercando non esiste.",
-		"btn": "HomePage"
-	},
-	"Contacts": {
-		"title": "I nostri contatti"
-	},
-	"About": {
-		"main_rules": {
-			"title": " – nonostante tutto, \nl'infanzia deve continuare",
-			"rules": {
-				"paragraph_1": "A volte, tutto ciò che possiamo fare è semplicemente stare vicini. Soprattutto in quei momenti in cui si verificano eventi inaspettati e traumatici.",
-				"paragraph_2": "”Non nuocere!” - la regola più importante. Né agli altri, né a se stessi. Diventiamo un supporto per chi ci sta vicino. Perché abbiamo così tanto bisogno l'uno dell'altro.",
-				"paragraph_3": "Si può semplicemente parlare, stare in silenzio, distrarre, offrire una bevanda calda, prendere per mano, gonfiare un palloncino..."
-			}
-		},
-		"team_structure": {
-			"title": "Squadra",
-			"management_title": "Capo squadra",
-			"management_text": "Comunicazione con la direzione e il personale medico dell'ospedale. Pianificazione e preparazione di eventi.",
-			"volunteers_title": "Volontari",
-			"volunteers_text": "Reclutamento di volontari e sviluppo \ndella community di volontariato intorno all'ospedale."
-		},
-		"blog": {
-			"title": "Blog",
-			"read_more_btn": {
-				"read": "Continuare a leggere",
-				"close": "Arrotolare"
-			}
-		},
-		"hospital_clowning": {
-			"title": "Cosa è la Clownterapia?",
-			"subtitle": "La Clownterapia non riguarda sempre il riso. \nA volte il bambino ha solo bisogno di parlare con qualcuno di “suo”, ma non con gli adulti, perché gli adulti non capiscono tante cose!",
-			"paragraph_1": "La Clownterapia è un lavoro psicosociale con i bambini in strutture ospedaliere. Si tratta dell'adattamento e della riabilitazione del bambino attraverso la terapia del gioco, del riso e dell'arte. È un approccio individuale, che lavora con le emozioni e il contatto.",
-			"paragraph_2": "Lavoriamo in reparto con ogni bambino individualmente. Li accompagniamo alle procedure, li mandiamo solennemente alle operazioni, solleviamo il loro morale e aiutiamo i medici a stabilire un contatto con il bambino che ha paura dei medici.",
-			"paragraph_3": "I clown di ospedale lavorano in team con i medici e sono responsabili dello stato emotivo del bambino durante un trattamento complesso e spesso aggressivo. È un metodo di lavoro psicologico volto a ridurre il livello di ansia e stress nel bambino.",
-			"paragraph_4": "Impariamo psicologia, recitazione, lavoro sociale, improvvisazione, giocoleria, teatro fisico, intelligenza emotiva, gestione dello stress ed emozioni e molte altre aree."
-		}
-	},
-	"Partners": {
-		"title_1": "I nostri amici",
-		"title_2": "e partner"
-	},
-	"School": {
-		"main_title": "Scuola di Clownerie Ospedaliera",
-		"join_title": "Chi può diventare un clown d'ospedale?",
-		"training_title": "Come si svolge la formazione",
-		"main_text_primary": "Scuola di Clownerie Ospedaliera -",
-		"main_text_secondary": "un progetto congiunto di",
-		"and": "e",
-		"join": {
-			"paragraph_1": "Una persona che sa cos'è l'empatia. Pronta ad accettare e comprendere le emozioni di chi ha bisogno di sostegno. E a fornire questo supporto, a seconda delle esigenze emotive di bambini e genitori.",
-			"paragraph_2": "Una persona che non ha paura di essere divertente. Ridere sinceramente di se stessi e di questa strana vita. Ridere e amarlo sopra ogni cosa.",
-			"paragraph_3": "Una persona con carisma, pronta a lavorare sul suo sviluppo.",
-			"paragraph_4": "È una persona pronta a imparare, sviluppare, cercare se stessa, il suo carattere comico. Una persona che è pronta a creare una celebrazione della vita nel bel mezzo di un disastro."
-		},
-		"training": {
-			"text": "Pensate che ci siano corsi più divertenti della Scuola di Clownerie Ospedaliera? \nNoi pensiamo di no. Perché qui gli studenti giocano, indossano costumi divertenti e ballano. È molto interessante vedere come funziona la magia del clown, quando un gruppo di adulti, persone che non si conoscono, si trasformano in bambini e si permettono di essere come si sentono - leggeri, veri, sciocchi, divertenti, qualsiasi cosa!",
-			"paragraph_1": "I volontari seguono un corso di formazione di due giorni sulle basi della clownerie ospedaliera. Durante il corso, gli studenti imparano a esprimersi, a far uscire il bambino che è in loro, a non aver paura di essere divertenti e a giocare tra loro.",
-			"paragraph_2": "Ognuno di noi può risvegliare un clown dentro di sé: un personaggio unico, interessante e divertente che sta solo esplorando il mondo che lo circonda, ma è pronto a tuffarsi nell'ignoto. Questa è la base con cui si può lavorare e andare nei reparti a visitare i bambini.",
-			"paragraph_3": "Dopo la formazione, i volontari vanno a fare pratica in ospedale, accompagnati da clown ospedalieri esperti. ",
-			"paragraph_4": "Per i tre mesi successivi, si incontrano una volta alla settimana per conoscere meglio i meccanismi del lavoro dei clown ospedalieri.",
-			"paragraph_5": "Allo stesso tempo, effettuano visite regolari ai reparti ospedalieri, sotto la costante supervisione dei formatori e del supporto psicologico."
-		},
-		"feedback_title": "Feedback degli studenti della scuola dei clown ospedalieri",
-		"photo_title": "Fotografie"
-	},
-	"Form": {
-		"joinUs": "Unisciti a noi",
-		"leaveForm": "Lascia il tuo modulo e ti contatteremo entro tre giorni.",
-		"name": "Il tuo nome",
-		"phone": "Numero di telefono",
-		"phonePlaceholder": "Inserisci il numero di telefono nel formato +380",
-		"email": "E-mail",
-		"emailPlaceholder": "example@gmail.com",
-		"social": "Social network",
-		"socialPlaceholder": "Link a Facebook, Telegram o Instagram",
-		"submit": "Invia",
-		"required": "Questo campo è obbligatorio.",
-		"invalidPhone": "Inserisci un numero di telefono valido.",
-		"invalidEmail": "Inserisci un indirizzo email valido.",
-		"processing": "Elaborazione"
-	},
-	"ClownSchoolForm": {
-		"formSubmitted": "Il tuo modulo è stato inviato.",
-		"contactWithinThreeDays": "Ti contatteremo entro tre giorni.",
-		"somethingWentWrong": "Qualcosa è andato storto...",
-		"pleaseTryAgain": "Per favore riprova."
-	},
-	"ClownSchoolFormDescription": {
-		"formTitle": "Compila il modulo",
-		"formSubtitle": "La formazione per volontari è gratuita.",
-		"formDescription": "Attendiamo con ansia nuove persone nel nostro team, in modo che ci siano più sorrisi e gioia per i bambini."
-	},
-	"errorpage": {
-		"paragraph_1": "Si è verificato un errore durante il caricamento dei dati.",
-		"paragraph_2": "Prova ad aggiornare la pagina o riprova più tardi.",
-		"button": "Ripristina"
-	}
+  "Hero": {
+    "title": "Nonostante tutto, l'infanzia deve continuare"
+  },
+  "Founders": {
+    "subtitle": "Fondatrici del progetto",
+    "title": "Olga Bulkina \ne Marina Berdar",
+    "text": "Clown di corsia diplomate. \nFormatrici. Membri onorari \ndell'organizzazione \n”SOCCORSO CLOWN”",
+    "caption": "Ufficio Sorrisi e Supporto"
+  },
+  "Vision": {
+    "subtitle": "Visione",
+    "text": "Ci impegniamo a garantire che ogni ospedale pediatrico in Ucraina sia un luogo di gioia e sorrisi per i bambini che si trovano in situazioni difficili e di crisi"
+  },
+  "Values": {
+    "title": "I nostri valori",
+    "inclusivity": {
+      "text": "Inclusività",
+      "hoverText": "valutiamo tutti, indipendentemente dalle circostanze, e facciamo del nostro meglio per far sentire tutti importanti e necessari"
+    },
+    "proactivity": {
+      "text": "Proattività",
+      "hoverText": "aghiamo in anticipo, cercando sempre nuovi modi per portare gioia e sollievo"
+    },
+    "respect": {
+      "text": "Rispetto",
+      "hoverText": "trattiamo tutti con profondo rispetto, apprezzando l'unicità di ogni individuo"
+    },
+    "sincerity": {
+      "text": "Sincerità",
+      "hoverText": "le nostre azioni e parole provengono sempre dal cuore, creando un'atmosfera di fiducia"
+    },
+    "empathy": {
+      "text": "Empatia",
+      "hoverText": "comprendiamo e proviamo ciò che provate voi, sostenendovi nei momenti più difficili"
+    }
+  },
+  "Mission": {
+    "title": "La nostra missione",
+    "first": {
+      "text": "Clownerie in ospedale, un \nprogramma di supporto emotivo per i bambini in ospedale",
+      "hoverText": "Eleviamo l'umore e lo spirito combattivo del bambino. Riduciamo il livello di stress. Facilitiamo l'adattamento alle condizioni ospedaliere. Accompagniamo il bambino durante le procedure o gli interventi chirurgici. Lavoriamo con i genitori e i medici "
+    },
+    "second": {
+      "text": "Organizzazione \ndi attività di riabilitazione sociale",
+      "hoverText": "Concerti settimanali. Spettacoli di bolle di sapone. Giochi di vincitori. Giornate di bellezza. Arteterapia. Suonoterapia. Concerti a tema "
+    },
+    "third": {
+      "text": "Sviluppo della comunità di \nvolontariato",
+      "hoverText": "Formiamo clown di ospedale. Organizziamo team building per la squadra con il supporto della comunità internazionale di clown di ospedale. Lavoriamo sullo stato emotivo dei volontari. Promuoviamo e sviluppiamo la clownerie in ospedale in Ucraina "
+    }
+  },
+  "Goals": {
+    "title": "I nostri obiettivi",
+    "first": {
+      "cardNumber": "1",
+      "text": "Creazione dell'Associazione tutta Ucraina dei clown ospedalieri con i colleghi delle città dell'Ucraina"
+    },
+    "second": {
+      "cardNumber": "2",
+      "text": "Avvio di nuovi team nelle ospedali pediatrici di Kyiv e di altre città"
+    },
+    "third": {
+      "cardNumber": "3",
+      "text": "Creazione di un programma di supporto emotivo nelle ospedali pediatrici a livello statale"
+    },
+    "fourth": {
+      "cardNumber": "4",
+      "text": "Espansione della collaborazione internazionale"
+    }
+  },
+  "Counter_section": {
+    "title": "Conquiste in cifre",
+    "counter_1": {
+      "text": "{count, plural, =1 {anno di esperienza}  other {anni di esperienza}}"
+    },
+    "counter_2": {
+      "text": "{count, plural, =1 {clown di corsia}  other {clown di corsia}}"
+    },
+    "counter_3": {
+      "text": "{count, plural, =1 {uscite al mese}  other {uscite al mese}}"
+    },
+    "counter_4": {
+      "text": "{count, plural, =1 {ospedale in cui operiamo}  other {ospedali in cui operiamo}}"
+    },
+    "counter_5": {
+      "text": "{count, plural, =1 {bambino al mese}  other {bambini al mese}}"
+    }
+  },
+  "Press_about_us": {
+    "title": "Stampa su di noi",
+    "link_text": "Leggi di più"
+  },
+  "Donate": {
+    "title": "È facile aiutare",
+    "text": "Il vostro sostegno può cambiare in meglio la vita dei piccoli pazienti. Ogni donazione, indipendentemente dall'entità, ci permette di continuare a portare sorrisi nelle corsie degli ospedali.",
+    "form_btns": {
+      "donation_type": {
+        "every_month": "Abbonamento mensile",
+        "once": "Pagamento unico"
+      },
+      "custom_donation_amount": "Inserite il vostro importo"
+    },
+    "support_btn": "Sostenete il progetto"
+  },
+  "Gallery": {
+    "title": "Galleria",
+    "btn": "Scarica altro",
+    "btnCollapse": "Arrotolare"
+  },
+  "Error": {
+    "title": "Ops, sembra che ti sia perso!",
+    "text": "Purtroppo, la pagina che stai cercando non esiste.",
+    "btn": "HomePage"
+  },
+  "Contacts": {
+    "title": "I nostri contatti"
+  },
+  "About": {
+    "main_rules": {
+      "title": " – nonostante tutto, \nl'infanzia deve continuare",
+      "rules": {
+        "paragraph_1": "A volte, tutto ciò che possiamo fare è semplicemente stare vicini. Soprattutto in quei momenti in cui si verificano eventi inaspettati e traumatici.",
+        "paragraph_2": "”Non nuocere!” - la regola più importante. Né agli altri, né a se stessi. Diventiamo un supporto per chi ci sta vicino. Perché abbiamo così tanto bisogno l'uno dell'altro.",
+        "paragraph_3": "Si può semplicemente parlare, stare in silenzio, distrarre, offrire una bevanda calda, prendere per mano, gonfiare un palloncino..."
+      }
+    },
+    "team_structure": {
+      "title": "Squadra",
+      "management_title": "Capo squadra",
+      "management_text": "Comunicazione con la direzione e il personale medico dell'ospedale. Pianificazione e preparazione di eventi.",
+      "volunteers_title": "Volontari",
+      "volunteers_text": "Reclutamento di volontari e sviluppo \ndella community di volontariato intorno all'ospedale."
+    },
+    "blog": {
+      "title": "Blog",
+      "read_more_btn": {
+        "read": "Continuare a leggere",
+        "close": "Arrotolare"
+      }
+    },
+    "hospital_clowning": {
+      "title": "Cosa è la Clownterapia?",
+      "subtitle": "La Clownterapia non riguarda sempre il riso. \nA volte il bambino ha solo bisogno di parlare con qualcuno di “suo”, ma non con gli adulti, perché gli adulti non capiscono tante cose!",
+      "paragraph_1": "La Clownterapia è un lavoro psicosociale con i bambini in strutture ospedaliere. Si tratta dell'adattamento e della riabilitazione del bambino attraverso la terapia del gioco, del riso e dell'arte. È un approccio individuale, che lavora con le emozioni e il contatto.",
+      "paragraph_2": "Lavoriamo in reparto con ogni bambino individualmente. Li accompagniamo alle procedure, li mandiamo solennemente alle operazioni, solleviamo il loro morale e aiutiamo i medici a stabilire un contatto con il bambino che ha paura dei medici.",
+      "paragraph_3": "I clown di ospedale lavorano in team con i medici e sono responsabili dello stato emotivo del bambino durante un trattamento complesso e spesso aggressivo. È un metodo di lavoro psicologico volto a ridurre il livello di ansia e stress nel bambino.",
+      "paragraph_4": "Impariamo psicologia, recitazione, lavoro sociale, improvvisazione, giocoleria, teatro fisico, intelligenza emotiva, gestione dello stress ed emozioni e molte altre aree."
+    }
+  },
+  "Partners": {
+    "title_1": "I nostri amici",
+    "title_2": "e partner"
+  },
+  "School": {
+    "main_title": "Scuola di Clownerie Ospedaliera",
+    "join_title": "Chi può diventare un clown d'ospedale?",
+    "training_title": "Come si svolge la formazione",
+    "main_text_primary": "Scuola di Clownerie Ospedaliera -",
+    "main_text_secondary": "un progetto congiunto di",
+    "and": "e",
+    "join": {
+      "paragraph_1": "Una persona che sa cos'è l'empatia. Pronta ad accettare e comprendere le emozioni di chi ha bisogno di sostegno. E a fornire questo supporto, a seconda delle esigenze emotive di bambini e genitori.",
+      "paragraph_2": "Una persona che non ha paura di essere divertente. Ridere sinceramente di se stessi e di questa strana vita. Ridere e amarlo sopra ogni cosa.",
+      "paragraph_3": "Una persona con carisma, pronta a lavorare sul suo sviluppo.",
+      "paragraph_4": "È una persona pronta a imparare, sviluppare, cercare se stessa, il suo carattere comico. Una persona che è pronta a creare una celebrazione della vita nel bel mezzo di un disastro."
+    },
+    "training": {
+      "text": "Pensate che ci siano corsi più divertenti della Scuola di Clownerie Ospedaliera? \nNoi pensiamo di no. Perché qui gli studenti giocano, indossano costumi divertenti e ballano. È molto interessante vedere come funziona la magia del clown, quando un gruppo di adulti, persone che non si conoscono, si trasformano in bambini e si permettono di essere come si sentono - leggeri, veri, sciocchi, divertenti, qualsiasi cosa!",
+      "paragraph_1": "I volontari seguono un corso di formazione di due giorni sulle basi della clownerie ospedaliera. Durante il corso, gli studenti imparano a esprimersi, a far uscire il bambino che è in loro, a non aver paura di essere divertenti e a giocare tra loro.",
+      "paragraph_2": "Ognuno di noi può risvegliare un clown dentro di sé: un personaggio unico, interessante e divertente che sta solo esplorando il mondo che lo circonda, ma è pronto a tuffarsi nell'ignoto. Questa è la base con cui si può lavorare e andare nei reparti a visitare i bambini.",
+      "paragraph_3": "Dopo la formazione, i volontari vanno a fare pratica in ospedale, accompagnati da clown ospedalieri esperti. ",
+      "paragraph_4": "Per i tre mesi successivi, si incontrano una volta alla settimana per conoscere meglio i meccanismi del lavoro dei clown ospedalieri.",
+      "paragraph_5": "Allo stesso tempo, effettuano visite regolari ai reparti ospedalieri, sotto la costante supervisione dei formatori e del supporto psicologico."
+    },
+    "feedback_title": "Feedback degli studenti della scuola dei clown ospedalieri",
+    "photo_title": "Fotografie"
+  },
+  "Form": {
+    "joinUs": "Unisciti a noi",
+    "leaveForm": "Lascia il tuo modulo e ti contatteremo entro tre giorni.",
+    "name": "Il tuo nome",
+    "phone": "Numero di telefono",
+    "phonePlaceholder": "Inserisci il numero di telefono nel formato +380",
+    "email": "E-mail",
+    "emailPlaceholder": "example@gmail.com",
+    "social": "Social network",
+    "socialPlaceholder": "Link a Facebook, Telegram o Instagram",
+    "submit": "Invia",
+    "required": "Questo campo è obbligatorio.",
+    "invalidPhone": "Inserisci un numero di telefono valido.",
+    "invalidEmail": "Inserisci un indirizzo email valido.",
+    "processing": "Elaborazione"
+  },
+  "ClownSchoolForm": {
+    "formSubmitted": "Il tuo modulo è stato inviato.",
+    "contactWithinThreeDays": "Ti contatteremo entro tre giorni.",
+    "somethingWentWrong": "Qualcosa è andato storto...",
+    "pleaseTryAgain": "Per favore riprova."
+  },
+  "ClownSchoolFormDescription": {
+    "formTitle": "Compila il modulo",
+    "formSubtitle": "La formazione per volontari è gratuita.",
+    "formDescription": "Attendiamo con ansia nuove persone nel nostro team, in modo che ci siano più sorrisi e gioia per i bambini."
+  },
+  "errorpage": {
+    "paragraph_1": "Si è verificato un errore durante il caricamento dei dati.",
+    "paragraph_2": "Prova ad aggiornare la pagina o riprova più tardi.",
+    "button": "Ripristina"
+  }
 }
