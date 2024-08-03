@@ -1,9 +1,10 @@
 'use client';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import PaymentCurrency from './payment-currency/PaymentCurrency';
 import PaymentDonateType from './payment-donate-type/PaymentDonateType';
 import PaymentDonationAmount from './payment-donation-amount/PaymentDonationAmount';
 import { useAppDispatch, useAppSelector } from '@/store/hook';
+import usePaymentHandler from '@/hooks/usePayment';
 import {
   setDonationAmount,
   setIsCustomDonate,
@@ -11,6 +12,7 @@ import {
 import { MAX_DONATION_AMOUNT, REG_EXP_DONATION_AMOUNT } from '@/constants';
 
 const PaymentForm = () => {
+  const locale = useLocale();
   const t = useTranslations('Donate');
   const {
     donationAmount,
@@ -20,13 +22,18 @@ const PaymentForm = () => {
   } = useAppSelector((state) => state.paymentForm);
   const dispatch = useAppDispatch();
 
-  const handleSubmit = () => {
-    console.log(
-      `${selectedCurrency}, ${selectedTypeOfDonate}, ${parseInt(donationAmount, 10)}`
-    );
+  const { handlePayment } = usePaymentHandler();
+
+  const handleSubmit = async () => {
     if (isCustomDonate) dispatch(setIsCustomDonate(false));
     if (selectedCurrency === 'UAH') dispatch(setDonationAmount('50'));
     else dispatch(setDonationAmount('5'));
+    handlePayment({
+      currency: selectedCurrency,
+      paymentAmount: donationAmount,
+      type: selectedTypeOfDonate,
+      lang: locale,
+    });
   };
 
   const isValidate = (value: string, regex: RegExp) => {
@@ -53,7 +60,7 @@ const PaymentForm = () => {
       </div>
       <button
         type="submit"
-        className="basic-transition disabled:bg-btnDisabledBg disabled:text-btnDisabledText cursor-pointer whitespace-nowrap rounded-[32px] bg-red px-[34px] py-5 text-xl font-bold text-bgWhite disabled:cursor-not-allowed"
+        className="basic-transition cursor-pointer whitespace-nowrap rounded-[32px] bg-red px-[34px] py-5 text-xl font-bold text-bgWhite disabled:cursor-not-allowed disabled:bg-btnDisabledBg disabled:text-btnDisabledText"
         disabled={!isValidate(donationAmount, REG_EXP_DONATION_AMOUNT)}
       >
         {t('support_btn')}
