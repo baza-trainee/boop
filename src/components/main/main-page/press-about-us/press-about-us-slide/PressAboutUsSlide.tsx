@@ -38,7 +38,7 @@ const PressAboutUsSlide = ({
   return (
     <div className="xl:pl-[110px]">
       <div className="mb-6 flex justify-between gap-5">
-        <div className="max-w-[510px] lg:max-w-[528px] 3xl:max-w-[684px]">
+        <div className="md:max-w-[510px] lg:max-w-[528px] 4xl:max-w-[684px]">
           <div className="mb-8 flex items-center gap-[20px]">
             <svg className="hidden h-[1rem] w-[5rem] custom:block">
               <use href="/icons/sprite.svg#title-line"></use>
@@ -82,7 +82,7 @@ const PressAboutUsSlide = ({
             {formattedDate}
           </span>
         </div>
-        <div className="relative hidden max-h-[390px] w-[280px] flex-shrink-0 md:block lg:max-h-[491px] lg:w-[420px] 3xl:w-[540px]">
+        <div className="relative hidden max-h-[390px] w-[280px] flex-shrink-0 md:inline-block lg:max-h-[491px] lg:w-[420px] 4xl:w-[540px]">
           <Image
             className="bg-red object-cover"
             src={imgSrc}

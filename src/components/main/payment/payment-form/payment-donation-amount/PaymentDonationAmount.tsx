@@ -91,7 +91,7 @@ const PaymentDonationAmount = ({ isValidate }: PaymentDonationAmountProps) => {
                 />
                 <label
                   htmlFor={item.id}
-                  className="basic-transition flex min-h-[70px] w-full cursor-pointer items-center justify-center border-2 border-r-0 border-solid border-yellow text-center text-xl font-bold leading-[1] text-textViolet peer-checked/:bg-yellow peer-checked/:text-white max-custom:text-sm max-custom:leading-none"
+                  className="basic-transition flex min-h-[70px] w-full cursor-pointer items-center justify-center border-2 border-solid border-yellow text-center text-xl font-bold leading-[1] text-textViolet peer-checked/:bg-yellow peer-checked/:text-white max-custom:text-sm max-custom:leading-none"
                 >
                   {selectedCurrency === 'UAH'
                     ? `${item.value} ₴`
@@ -113,7 +113,7 @@ const PaymentDonationAmount = ({ isValidate }: PaymentDonationAmountProps) => {
                   name="donate-sum"
                   id={item.id}
                   className={clsx(
-                    'basic-transition flex min-h-[70px] w-full cursor-pointer items-center justify-center border-2 border-solid border-yellow bg-transparent px-[10.5px] text-center text-xl font-bold leading-[1] text-textViolet placeholder-gray-300 outline-none max-custom:text-sm max-custom:leading-none',
+                    'basic-transition flex min-h-[70px] w-full cursor-pointer items-center justify-center border-2 border-solid border-yellow bg-transparent px-1 text-center text-xl font-bold leading-[1] text-textViolet placeholder-gray-300 outline-none max-custom:text-sm max-custom:leading-none sm:px-[10.5px]',
                     isCustomDonate && 'bg-yellow text-white'
                   )}
                   onFocus={handleCustomAmountFocus}
