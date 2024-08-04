@@ -144,14 +144,14 @@ const EditPressForm = ({ id }: { id: string }) => {
   };
 
   return (
-    <div className=" mx-auto max-w-[930px] ">
-      <h1 className="mb-[40px] text-center text-[32px] font-bold">
+    <div className="mx-auto max-w-[930px]">
+      <h1 className="mb-[40px] text-center text-[32px] font-bold text-[#50439F]">
         Редагування новини
       </h1>
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col ">
-        <div className="flex flex-wrap gap-[24px] ">
-          <div className="mb-[20px]  ">
-            <div className="mb-[20px] max-w-[294px] ">
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
+        <div className="flex flex-wrap gap-[24px]">
+          <div className="mb-[20px]">
+            <div className="mb-[20px] max-w-[294px]">
               <Controller
                 name="titleUA"
                 control={control}
@@ -163,15 +163,15 @@ const EditPressForm = ({ id }: { id: string }) => {
                     title="Вкажіть назву новини українською"
                     isRequired={false}
                     isEditMode={false}
-                    className="h-[52px]  "
+                    className="h-[52px]"
                   />
                 )}
               />
-              <p className=" text-[14px]  font-normal leading-[130%] text-darkGrey ">
+              <p className="text-[14px] font-normal leading-[130%] text-darkGrey">
                 Довжина тексту має бути 5-70 знаків
               </p>
             </div>
-            <div className="max-w-[294px] ">
+            <div className="max-w-[294px]">
               <Controller
                 name="textUA"
                 control={control}
@@ -181,11 +181,11 @@ const EditPressForm = ({ id }: { id: string }) => {
                     placeholder="Напишіть текст новини"
                     errorText={errors.textUA?.message}
                     title="Вкажіть текст новини українською"
-                    className="h-[167px]  "
+                    className="h-[167px]"
                   />
                 )}
               />
-              <p className="text-[14px]  font-normal leading-[130%] text-darkGrey">
+              <p className="text-[14px] font-normal leading-[130%] text-darkGrey">
                 Довжина тексту має бути 300-600 знаків
               </p>
             </div>
@@ -203,15 +203,15 @@ const EditPressForm = ({ id }: { id: string }) => {
                     title="Вкажіть назву новини англійською"
                     isRequired={false}
                     isEditMode={false}
-                    className="h-[52px]  "
+                    className="h-[52px]"
                   />
                 )}
               />
-              <p className="text-[14px] font-normal  leading-[130%] text-darkGrey ">
+              <p className="text-[14px] font-normal leading-[130%] text-darkGrey">
                 Довжина тексту має бути 5-70 знаків
               </p>
             </div>
-            <div className="max-w-[294px] ">
+            <div className="max-w-[294px]">
               <Controller
                 name="textEN"
                 control={control}
@@ -221,17 +221,17 @@ const EditPressForm = ({ id }: { id: string }) => {
                     placeholder="Напишіть текст новини"
                     errorText={errors.textEN?.message}
                     title="Вкажіть текст новини англійською"
-                    className="h-[167px]  "
+                    className="h-[167px]"
                   />
                 )}
               />
-              <p className="text-[14px] font-normal  leading-[130%] text-darkGrey">
+              <p className="text-[14px] font-normal leading-[130%] text-darkGrey">
                 Довжина тексту має бути 300-600 знаків
               </p>
             </div>
           </div>
           <div className="max-w-[294px]">
-            <div className="mb-[20px]  ">
+            <div className="mb-[20px]">
               <Controller
                 name="titleIT"
                 control={control}
@@ -243,15 +243,15 @@ const EditPressForm = ({ id }: { id: string }) => {
                     title="Вкажіть назву новини італійською"
                     isRequired={false}
                     isEditMode={false}
-                    className="h-[52px] "
+                    className="h-[52px]"
                   />
                 )}
               />
-              <p className="text-[14px] font-normal  leading-[130%] text-darkGrey ">
+              <p className="text-[14px] font-normal leading-[130%] text-darkGrey">
                 Довжина тексту має бути 5-70 знаків
               </p>
             </div>
-            <div className="max-w-[294px] ">
+            <div className="max-w-[294px]">
               <Controller
                 name="textIT"
                 control={control}
@@ -261,11 +261,11 @@ const EditPressForm = ({ id }: { id: string }) => {
                     placeholder="Напишіть текст новини"
                     errorText={errors.textIT?.message}
                     title="Вкажіть текст новини італійською"
-                    className="h-[167px] max-w-[294px] "
+                    className="h-[167px] max-w-[294px]"
                   />
                 )}
               />
-              <p className="text-[14px] font-normal  leading-[130%] text-darkGrey">
+              <p className="text-[14px] font-normal leading-[130%] text-darkGrey">
                 Довжина тексту має бути 300-600 знаків
               </p>
             </div>
@@ -284,7 +284,7 @@ const EditPressForm = ({ id }: { id: string }) => {
                   title="Вкажіть посилання на новину"
                   isRequired={false}
                   isEditMode={false}
-                  className="h-[52px]  "
+                  className="h-[52px]"
                 />
               )}
             />
