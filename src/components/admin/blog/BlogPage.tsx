@@ -106,13 +106,15 @@ const BlogPage = () => {
               key={post.id}
               className="relative flex h-[290px] w-[306px] flex-col items-center bg-white"
             >
-              <Image
-                src={post.imageUrl}
-                alt={post.titleUA}
-                width={306}
-                height={111}
-                className="h-[111px] object-cover"
-              />
+              <div className="h-[111px] w-[100%] overflow-hidden border border-b-0 border-[#E5E5E5] object-cover">
+                <Image
+                  src={post.imageUrl}
+                  alt={post.titleUA}
+                  width={306}
+                  height={111}
+                />
+              </div>
+
               <div className="mt-[8px] w-[100%] px-[8px]">
                 <h2 className="mb-[4px] text-[16px] font-bold leading-[132%] text-[#2F245E]">
                   {truncateText(post.titleUA, 65)}
