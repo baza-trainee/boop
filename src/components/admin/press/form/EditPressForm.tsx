@@ -168,7 +168,7 @@ const EditPressForm = ({ id }: { id: string }) => {
                 )}
               />
               <p className="text-[14px] font-normal leading-[130%] text-darkGrey">
-                Довжина тексту має бути 5-70 знаків
+                Довжина тексту має бути 5-150 знаків
               </p>
             </div>
             <div className="max-w-[294px]">
@@ -208,7 +208,7 @@ const EditPressForm = ({ id }: { id: string }) => {
                 )}
               />
               <p className="text-[14px] font-normal leading-[130%] text-darkGrey">
-                Довжина тексту має бути 5-70 знаків
+                Довжина тексту має бути 5-150 знаків
               </p>
             </div>
             <div className="max-w-[294px]">
@@ -248,7 +248,7 @@ const EditPressForm = ({ id }: { id: string }) => {
                 )}
               />
               <p className="text-[14px] font-normal leading-[130%] text-darkGrey">
-                Довжина тексту має бути 5-70 знаків
+                Довжина тексту має бути 5-150 знаків
               </p>
             </div>
             <div className="max-w-[294px]">
