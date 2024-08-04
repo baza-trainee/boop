@@ -113,7 +113,7 @@ const AddBlogPostForm = () => {
                 )}
               />
               <p className="text-sm text-[#4D4D4D]">
-                Довжина тексту має бути 5-70 знаків
+                Довжина тексту має бути 5-150 знаків
               </p>
             </div>
             <div className="flex w-full flex-col">
@@ -131,7 +131,7 @@ const AddBlogPostForm = () => {
                 )}
               />
               <p className="text-sm text-[#4D4D4D]">
-                Довжина тексту має бути 5-70 знаків
+                Довжина тексту має бути 5-150 знаків
               </p>
             </div>
             <div className="flex w-full flex-col">
@@ -149,7 +149,7 @@ const AddBlogPostForm = () => {
                 )}
               />
               <p className="text-sm text-[#4D4D4D]">
-                Довжина тексту має бути 5-70 знаків
+                Довжина тексту має бути 5-150 знаків
               </p>
             </div>
           </div>
