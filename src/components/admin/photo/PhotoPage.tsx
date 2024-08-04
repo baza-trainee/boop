@@ -54,7 +54,7 @@ const PhotoPage = () => {
       openAlert({
         data: {
           state: 'confirm',
-          message: 'Ви дійсно бажаєте видалити це фото?',
+          message: 'Ви впевнені, що хочете видалити це фото?',
           func: async () => {
             await axios.delete(`/cloudinary/${encodeURIComponent(imageId)}`);
             const res = await deletePhoto(id);
