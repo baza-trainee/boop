@@ -34,6 +34,7 @@ const usePaymentHandler = (urlBase = url) => {
       productCount: [1],
       productPrice: [Number(paymentAmount)],
       serviceUrl: `${urlBase}/payments/complete`,
+      regularMode: type,
     };
     if (Number(paymentAmount) && Number(paymentAmount) < MAX_DONATION_AMOUNT) {
       try {
