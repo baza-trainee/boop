@@ -3,10 +3,11 @@ import { useAppDispatch, useAppSelector } from '@/store/hook';
 import {
   setDonationAmount,
   setIsCustomDonate,
+  setSelectedCurrency,
 } from '@/store/slices/paymentFormSlice';
 import clsx from 'clsx';
-import { useTranslations } from 'next-intl';
-import { ChangeEvent } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
+import { ChangeEvent, useEffect } from 'react';
 
 interface PaymentDonationAmountProps {
   // eslint-disable-next-line no-unused-vars
@@ -19,6 +20,12 @@ const PaymentDonationAmount = ({ isValidate }: PaymentDonationAmountProps) => {
   );
   const dispatch = useAppDispatch();
   const t = useTranslations('Donate.form_btns');
+  const locale = useLocale();
+
+  useEffect(() => {
+    if (locale === 'en') dispatch(setSelectedCurrency('USD'));
+    else if (locale === 'it') dispatch(setSelectedCurrency('EUR'));
+  }, []);
 
   const handleRadioInputChange = (value: string) => {
     dispatch(setDonationAmount(value));
@@ -84,7 +91,7 @@ const PaymentDonationAmount = ({ isValidate }: PaymentDonationAmountProps) => {
                 />
                 <label
                   htmlFor={item.id}
-                  className="basic-transition flex min-h-[70px] w-full cursor-pointer items-center justify-center border-2 border-r-0 border-solid border-yellow text-center text-xl font-bold leading-[1] text-textViolet peer-checked/:bg-yellow peer-checked/:text-white max-custom:text-sm max-custom:leading-none"
+                  className="basic-transition flex min-h-[70px] w-full cursor-pointer items-center justify-center border-2 border-solid border-yellow text-center text-xl font-bold leading-[1] text-textViolet peer-checked/:bg-yellow peer-checked/:text-white max-custom:text-sm max-custom:leading-none"
                 >
                   {selectedCurrency === 'UAH'
                     ? `${item.value} ₴`
@@ -101,12 +108,12 @@ const PaymentDonationAmount = ({ isValidate }: PaymentDonationAmountProps) => {
                       ? donationAmount
                       : t('custom_donation_amount')
                   }
-                  // placeholder={t('custom_donation_amount')}
+                  placeholder={t('custom_donation_amount')}
                   type="text"
                   name="donate-sum"
                   id={item.id}
                   className={clsx(
-                    'basic-transition flex min-h-[70px] w-full cursor-pointer items-center justify-center border-2 border-solid border-yellow bg-transparent px-[10.5px] text-center text-xl font-bold leading-[1] text-textViolet placeholder-white outline-none max-custom:text-sm max-custom:leading-none',
+                    'basic-transition flex min-h-[70px] w-full cursor-pointer items-center justify-center border-2 border-solid border-yellow bg-transparent px-1 text-center text-xl font-bold leading-[1] text-textViolet placeholder-gray-300 outline-none max-custom:text-sm max-custom:leading-none sm:px-[10.5px]',
                     isCustomDonate && 'bg-yellow text-white'
                   )}
                   onFocus={handleCustomAmountFocus}

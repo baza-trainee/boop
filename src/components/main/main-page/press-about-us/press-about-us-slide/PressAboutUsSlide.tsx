@@ -38,25 +38,25 @@ const PressAboutUsSlide = ({
   return (
     <div className="xl:pl-[110px]">
       <div className="mb-6 flex justify-between gap-5">
-        <div className="max-w-[684px] max-3xl:max-w-[528px] max-ml:max-w-[510px] max-md:max-w-none">
+        <div className="md:max-w-[510px] lg:max-w-[528px] 4xl:max-w-[684px]">
           <div className="mb-8 flex items-center gap-[20px]">
-            <svg className="h-[1rem] w-[5rem] max-custom:hidden">
+            <svg className="hidden h-[1rem] w-[5rem] custom:block">
               <use href="/icons/sprite.svg#title-line"></use>
             </svg>
-            <h3 className="pt-2 font-groppled text-[20px] font-bold leading-[1.32] text-textViolet max-sm:text-[18px]">
+            <h3 className="pt-2 font-groppled text-[18px] font-bold leading-[1.32] text-textViolet sm:text-[20px]">
               {title}
             </h3>
           </div>
           <div className="flex items-center gap-6">
             <div className="mb-4 [&>p:first-child]:mb-3">
-              <p className="text-xl leading-[1.5] text-textViolet max-ml:text-[18px] max-sm:text-base">
+              <p className="text-base leading-[1.5] text-textViolet sm:text-[18px] ml:text-xl">
                 {firstParagraph}
               </p>
-              <p className="text-xl leading-[1.5] text-textViolet max-ml:text-[18px] max-sm:text-base">
+              <p className="text-base leading-[1.5] text-textViolet sm:text-[18px] ml:text-xl">
                 {secondParagraph}
               </p>
             </div>
-            <div className="flex min-w-[200px] flex-shrink-0 basis-[35%] flex-col items-end max-custom:hidden md:hidden">
+            <div className="hidden min-w-[200px] flex-shrink-0 basis-[35%] flex-col items-end custom:flex md:hidden">
               <span className="mb-4 text-right font-medium leading-[1.32] text-lightViolet">
                 {formattedDate}
               </span>
@@ -71,17 +71,18 @@ const PressAboutUsSlide = ({
               </div>
               <Link
                 href={link}
-                className="inline-block rounded-[32px] border-2 border-solid border-yellow px-[29px] py-4 text-xl font-medium text-textViolet transition-all duration-200 ease-linear hover:bg-yellow"
+                target="_blank"
+                className="hidden rounded-[32px] border-2 border-solid border-yellow bg-inherit px-6 py-[18px] font-raleway text-xl font-medium leading-none text-textViolet transition-all duration-200 ease-linear hover:bg-[#FFFDEA] active:border-[#E27E00] active:bg-[#FFFDEA] disabled:cursor-not-allowed disabled:border-[#E3E3E4] disabled:bg-inherit disabled:text-[#97979A] custom:inline-block md:hidden"
               >
                 {t('link_text')}
               </Link>
             </div>
           </div>
-          <span className="float-right font-medium leading-[1.32] text-lightViolet max-md:hidden max-custom:block">
+          <span className="float-right font-medium leading-[1.32] text-lightViolet custom:hidden md:block">
             {formattedDate}
           </span>
         </div>
-        <div className="relative w-[537px] flex-shrink-0 max-3xl:max-h-[491px] max-3xl:w-[420px] max-ml:max-h-[390px] max-ml:w-[280px] max-md:hidden">
+        <div className="relative hidden max-h-[390px] w-[280px] flex-shrink-0 md:inline-block lg:max-h-[491px] lg:w-[420px] 4xl:w-[540px]">
           <Image
             className="bg-red object-cover"
             src={imgSrc}
@@ -94,7 +95,7 @@ const PressAboutUsSlide = ({
       <Link
         href={link}
         target="_blank"
-        className="inline-block rounded-[32px] border-2 border-solid border-yellow bg-inherit px-6 py-[18px] font-raleway text-xl font-medium leading-none text-textViolet transition-all duration-200 ease-linear hover:bg-[#FFFDEA] active:border-[#E27E00] active:bg-[#FFFDEA] disabled:cursor-not-allowed disabled:border-[#E3E3E4] disabled:bg-inherit disabled:text-[#97979A]"
+        className="inline-block rounded-[32px] border-2 border-solid border-yellow bg-inherit px-6 py-[18px] font-raleway text-xl font-medium leading-none text-textViolet transition-all duration-200 ease-linear hover:bg-[#FFFDEA] active:border-[#E27E00] active:bg-[#FFFDEA] disabled:cursor-not-allowed disabled:border-[#E3E3E4] disabled:bg-inherit disabled:text-[#97979A] custom:hidden md:inline-block"
       >
         {t('link_text')}
       </Link>
