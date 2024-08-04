@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import axios from 'axios';
+import axios from '@/utils/axios';
 import clsx from 'clsx';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useAppDispatch } from '@/store/hook';
@@ -71,8 +71,8 @@ function EditPartnersFriendsForm({
         const formData = new FormData();
         formData.append('file', values.image[0]);
         formData.append('folderName', 'partners');
-        await axios.delete(`/api/cloudinary/${encodeURIComponent(logoId)}`);
-        const res = await axios.post('/api/cloudinary', formData);
+        await axios.delete(`/cloudinary/${encodeURIComponent(logoId)}`);
+        const res = await axios.post('/cloudinary', formData);
 
         updatedPartnerFriend.logoId = res.data.fileId;
         updatedPartnerFriend.logoUrl = replaceExtensionWithWebp(

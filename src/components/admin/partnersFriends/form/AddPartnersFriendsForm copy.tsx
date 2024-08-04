@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import axios from '@/utils/axios';
 import clsx from 'clsx';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm, SubmitHandler } from 'react-hook-form';
@@ -44,7 +44,7 @@ function AddPartnersFriendsForm({ addType }: AddPartnersFriendsFormProps) {
       const formData = new FormData();
       formData.append('file', values.image[0]);
       formData.append('folderName', 'partners');
-      const res = await axios.post('/api/cloudinary', formData);
+      const res = await axios.post('/cloudinary', formData);
 
       const newPartnerFriend = {
         logoId: res.data.fileId,
