@@ -2,6 +2,7 @@ export const navigationLinks = [
   { name: "about", url: "/about" },
   { name: "school", url: "/school"},
   { name: "contacts", url: "/contacts"},
+  { name: "main", url: "/"},
 ];
 
 export const helpLinks = [
