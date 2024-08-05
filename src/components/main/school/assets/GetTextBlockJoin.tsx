@@ -11,13 +11,6 @@ const GetTextBlockJoin = () => {
     'вчитись',
     'розвиватись',
     'шукати себе',
-    'empathy',
-    'support',
-    'funny',
-    'charisma',
-    'to learn',
-    'to develop',
-    'to seek oneself',
     'empatia',
     'supporto',
     'divertente',
@@ -25,6 +18,13 @@ const GetTextBlockJoin = () => {
     'imparare',
     'svilupparsi',
     'cercare se stessa',
+    'empathy',
+    'support',
+    'funny',
+    'charisma',
+    'to learn',
+    'to develop',
+    'to seek oneself',
   ];
   return [
     {

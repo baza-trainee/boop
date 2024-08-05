@@ -6,7 +6,7 @@ const highlightWords = (text, wordsToHighlight) => {
     wordsToHighlight.some(
       (word) => word.toLowerCase() === part.toLowerCase()
     ) ? (
-      <span key={index} className="text-yellow">
+      <span key={index} className="font-bold text-yellow">
         {part}
       </span>
     ) : (
