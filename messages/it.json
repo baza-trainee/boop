@@ -141,6 +141,11 @@
       "volunteers_title": "Volontari",
       "volunteers_text": "Reclutamento di volontari e sviluppo \ndella community di volontariato intorno all'ospedale."
     },
+    "team": {
+        "title": "Un Team Che Rende il Mondo Più Luminoso",
+        "text_1": "Il nostro team garantisce che l'infanzia continui indipendentemente dalle circostanze. Attraverso il gioco e la terapia del sorriso, aiutiamo i bambini e i loro genitori a far fronte allo stress e ad adattarsi alle condizioni ospedaliere. I nostri sforzi sono mirati a riempire la vita dei bambini in ospedale di momenti di gioia.",
+        "text_2": "Costruiamo una comunità di volontari. Assumiamo clown ospedalieri. Organizziamo e conduciamo attività di team building e supervisione per il team. Sviluppiamo strategie per la crescita professionale. Lavoriamo sullo stato emotivo dei volontari e forniamo il supporto necessario. Comunichiamo con il personale medico e la gestione ospedaliera. Comunichiamo con la fondazione. Gestiamo le attività amministrative del progetto. Promuoviamo e sviluppiamo la clownterapia ospedaliera in Ucraina."      
+		},
     "blog": {
       "title": "Blog",
       "read_more_btn": {

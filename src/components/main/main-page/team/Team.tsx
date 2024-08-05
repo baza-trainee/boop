@@ -24,12 +24,12 @@ const Team = () => {
               height={306}
               className='w-[350px] h-[306px] md:w-[332px] md:h-[290px] lg:w-[564px] lg:h-[415px]'
             />
-            <span className="font-raleway text-[18px]">
+            <p className="font-raleway text-textViolet text-[16px] md:text-[18px] ml:text-[20px]">
               {t('text_1')}
-            </span>
+            </p>
           </div>
-          <div className='hidden md:block font-raleway text-[18px] px-20 lg:flex flex-row items-end py-5'>
-            <span className='lg:px-10 py-10 text-[20px]'>{t('text_2')}</span>
+          <div className='hidden md:block font-raleway px-20 lg:flex flex-row items-end py-5'>
+            <p className='text-[16px] text-textViolet md:text-[18px] lg:px-10 py-10 ml:text-[20px]'>{t('text_2')}</p>
             <Image
               className="hidden lg:block"
               src="/images/teamSection/clown.svg"
