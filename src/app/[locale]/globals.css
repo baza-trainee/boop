@@ -110,6 +110,10 @@ body.lock {
   text-orientation: mixed;
 }
 
+.text-decoration-skip-ink {
+  text-decoration-skip-ink: none;
+}
+
 input[type='password']::-ms-reveal,
 input[type='password']::-ms-clear {
   display: none;

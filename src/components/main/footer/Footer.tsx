@@ -1,9 +1,8 @@
 'use client';
+
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
-import React from 'react';
 import HeroLogo from '../main-page/hero/components/heroLogo/HeroLogo';
-import FooterLinks from './FooterLinks/FooterLinks';
 import SocialLinks from './SocialLinks/SocialLinks';
 import HelpLinks from './HelpLinks/HelpLinks';
 import ContactInfo from '../shared/ContactInfo';
@@ -11,10 +10,15 @@ import AssociationLinks from './AssociationLinks/AssociationLinks';
 import { useLocale, useTranslations } from 'next-intl';
 
 import AnimatedFooterMan from './AnimatedFooterMan/AnimatedFooterMan';
+import FooterNavigationLinks from './footer-navigation-links/FooterNavigationLinks';
+import { useMediaQuery } from 'react-responsive';
 
 const Footer = () => {
   const t = useTranslations('Footer');
   const locale = useLocale();
+  // const isMobile = useMediaQuery({
+  //   query: '(min-width: 768px)',
+  // });
 
   const scrollToTop = () => {
     if (typeof window !== 'undefined') {
@@ -29,54 +33,59 @@ const Footer = () => {
 
   if (isAdminPage) return null;
 
+  // <HeroLogo locale={locale} onClick={scrollToTop} className="cursor-pointer" />;
+  // <AnimatedFooterMan
+  //   className={
+  //     'absolute -top-24 right-5 h-[112px] w-[115px] scale-x-[-1] transform md:-top-[110px] md:right-[10%] md:h-[168px] md:w-[164px]'
+  //   }
+  // />;
+
   return (
     <footer
-      className="bg-bgWhite bg-cover"
+      className="relative bg-bgWhite bg-cover pt-[39px] md:pt-[55px] ml:pt-[105px] lg:pt-[150px]"
       style={{ backgroundImage: "url('/images/wave.svg')" }}
     >
-      <div
-        className="bg-left-bottom bg-no-repeat pb-10 pt-5 md:pt-[150px]"
-        style={{ backgroundImage: "url('/images/arrow.svg')" }}
-      >
-        <div className="container relative flex flex-col text-textViolet md:flex-row">
-          {/* <Image
-            src="/images/clown.svg"
-            alt="clown"
-            width={154}
-            height={136}
-            className="absolute -top-24 right-5 md:-top-[110px] md:right-[10%]"
-            style={{ width: 'auto', height: 'auto' }}
-          /> */}
-          <AnimatedFooterMan
-            className={
-              'absolute -top-24 right-5 h-[112px] w-[115px] scale-x-[-1] transform md:-top-[110px] md:right-[10%] md:h-[168px] md:w-[164px]'
-            }
-          />
-          <div className="mr-auto flex flex-col gap-5">
-            <div className="h-full w-full font-redhat">
-              <div className="mb-4 max-w-[93px]">
-                <HeroLogo
-                  locale={locale}
-                  onClick={scrollToTop}
-                  className="cursor-pointer"
-                />
-              </div>
-              <h1 className="font-bold">{t('title')}</h1>
-            </div>
-            <div className="color-violet h-full w-full gap-3 font-raleway">
+      <span className="absolute left-0 top-0 inline-block h-full w-full">
+        <Image
+          src="/images/arrow.svg"
+          width={880}
+          height={510}
+          alt="decorative arrow"
+        />
+      </span>
+      <div className="mx-auto max-w-[1920px] px-[10px] md:px-[64px] lg:px-[64px] xl:px-[80px] 2xl:px-[120px]">
+        <div className="mb-6">
+          <div className="mb-2 max-w-[93px]">
+            <HeroLogo
+              locale={locale}
+              onClick={scrollToTop}
+              className="cursor-pointer"
+            />
+          </div>
+          <h4 className="font-bold leading-[132%] text-textViolet">
+            {t('title')}
+          </h4>
+        </div>
+        <div className="flex flex-wrap justify-between gap-x-4 gap-y-8 text-textViolet">
+          <div className="flex flex-col gap-8">
+            <div>
               <ContactInfo
                 showIcons={false}
                 showInstagram={false}
                 showFacebook={false}
               />
-              <HelpLinks />
             </div>
+            <HelpLinks className="hidden ml:flex" />
           </div>
           <AssociationLinks />
-          <div className="flex flex-col gap-5 pt-10 md:ml-auto md:pt-28">
-            <FooterLinks />
+          <div>
+            <FooterNavigationLinks className="mb-8" />
             <SocialLinks />
           </div>
+          <HelpLinks className="flex ml:hidden" />
+        </div>
+        <div className="py-6 text-center text-textViolet">
+          2024 © Розробка Baza Trainee Ukraine. Усі права захищені.
         </div>
       </div>
     </footer>

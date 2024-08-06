@@ -1,19 +1,20 @@
-import React from "react";
-import { socialLinks } from "../FooterLinks/links";
-import MainLink from "../MainLink/MainLink";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
+import { socialLinks } from '../links';
+import Link from 'next/link';
+import clsx from 'clsx';
 
 type SocialLinksProps = {
   className?: string;
 };
 
-const SocialLinks: React.FC<SocialLinksProps> = () => {
+const SocialLinks: React.FC<SocialLinksProps> = ({ className }) => {
   return (
-    <div className="flex flex-row gap-5">
-      {socialLinks.map(({ url, name, icon }, index) => (
-        <MainLink url={url} key={index}>
-          <Image src={icon} alt={name} width={24} height={24} />
-        </MainLink>
+    <div className={clsx('flex flex-row gap-10', className)}>
+      {socialLinks.map(({ url, name, icon }) => (
+        <Link href={url} key={url}>
+          <Image src={icon} alt={name} width={44} height={44} />
+        </Link>
       ))}
     </div>
   );

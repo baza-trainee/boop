@@ -1,30 +1,25 @@
-import React from "react";
-import { helpLinks } from "../FooterLinks/links";
-import MainLink from "../MainLink/MainLink";
-import { useTranslations } from "next-intl";
+import React from 'react';
+import { useTranslations } from 'next-intl';
+import { helpLinks } from '../links';
+import Link from 'next/link';
+import clsx from 'clsx';
 
 type HelpLinksProps = {
   className?: string;
 };
 
-const HelpLinks: React.FC<HelpLinksProps> = () => {
-  const t = useTranslations("Footer");
+const HelpLinks: React.FC<HelpLinksProps> = ({ className }) => {
+  const t = useTranslations('Footer');
 
   return (
-    <div className="flex flex-col gap-3 underline mt-10">
-      {helpLinks.map(({ url, name }, index) => (
-        <MainLink url={url} key={index}>
-          {t(name)}
-        </MainLink>
+    <ul className={clsx('flex flex-col gap-4', className)}>
+      {helpLinks.map(({ url, name }) => (
+        <li className="underline" key={name}>
+          <Link href={url}>{t(name)}</Link>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 
 export default HelpLinks;
-
-
-
-
-
-
