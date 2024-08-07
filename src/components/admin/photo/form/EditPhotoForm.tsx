@@ -121,7 +121,7 @@ const EditPhotoForm = ({ id }: { id: string }) => {
       >
         <div className="flex gap-[60px]">
           <div className="flex w-1/2 flex-col items-center justify-center gap-[24px]">
-            <h1 className="mb-[60px] text-3xl font-[500] text-violet">
+            <h1 className="mb-[60px] text-[32px] font-[500] text-[#50439F]">
               Редагування фото
             </h1>
             <SelectInput
@@ -140,19 +140,19 @@ const EditPhotoForm = ({ id }: { id: string }) => {
               accept="image/*"
             />
             <div className="relative mt-[60px] flex w-full justify-between">
-              <span className="absolute -top-8 left-0 text-sm">
+              <span className="absolute -top-8 left-0 text-[17px] text-[#343333]">
                 Оновити фото?
               </span>
               <button
                 disabled={!isValid}
-                className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 font-[500] text-white disabled:bg-[#E3E3E4] disabled:text-[#97979A]"
+                className="flex min-w-[123px] items-center justify-center whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-[20px] font-[500] text-white disabled:bg-[#E3E3E4] disabled:text-[#97979A]"
               >
                 {isProcessing ? 'Обробка запиту...' : 'Змінити'}
               </button>
               <button
                 disabled={!isValid}
                 onClick={() => dispatch(closeModal())}
-                className="w-[149px] rounded-3xl border border-yellow px-4 py-2 text-violet disabled:border-[#E3E3E4] disabled:text-[#97979A]"
+                className="w-[149px] rounded-3xl border border-yellow px-4 py-2 text-[20px] text-violet disabled:border-[#E3E3E4] disabled:text-[#97979A]"
               >
                 Скасувати
               </button>
