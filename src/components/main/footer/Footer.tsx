@@ -33,7 +33,6 @@ const Footer = () => {
 
   if (isAdminPage) return null;
 
-  // <HeroLogo locale={locale} onClick={scrollToTop} className="cursor-pointer" />;
   // <AnimatedFooterMan
   //   className={
   //     'absolute -top-24 right-5 h-[112px] w-[115px] scale-x-[-1] transform md:-top-[110px] md:right-[10%] md:h-[168px] md:w-[164px]'
@@ -45,14 +44,6 @@ const Footer = () => {
       className="relative bg-bgWhite bg-cover pt-[39px] md:pt-[55px] ml:pt-[105px] lg:pt-[150px]"
       style={{ backgroundImage: "url('/images/wave.svg')" }}
     >
-      <span className="absolute left-0 top-0 inline-block h-full w-full">
-        <Image
-          src="/images/arrow.svg"
-          width={880}
-          height={510}
-          alt="decorative arrow"
-        />
-      </span>
       <div className="mx-auto max-w-[1920px] px-[10px] md:px-[64px] lg:px-[64px] xl:px-[80px] 2xl:px-[120px]">
         <div className="mb-6">
           <div className="mb-2 max-w-[93px]">
@@ -88,6 +79,15 @@ const Footer = () => {
           2024 © Розробка Baza Trainee Ukraine. Усі права захищені.
         </div>
       </div>
+      <span className="absolute inline-block 3xl:-left-[50px] 3xl:bottom-0 3xl:h-[510px] 3xl:w-[880px]">
+        {/* -left-[406px] bottom-[89px] h-[382px] w-[662px]*/}
+        <Image
+          src="/images/arrow.svg"
+          width={880}
+          height={510}
+          alt="decorative arrow"
+        />
+      </span>
     </footer>
   );
 };
