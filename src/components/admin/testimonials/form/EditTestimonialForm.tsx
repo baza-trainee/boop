@@ -137,7 +137,7 @@ const EditTestimonialForm = ({ id }: { id: string }) => {
 
   return (
     <div className="flex h-full w-full flex-col items-center justify-center">
-      <h1 className="mb-[24px] w-full text-center text-3xl font-[500] text-violet">
+      <h1 className="mb-[24px] w-full text-center text-[32px] font-[500] text-[#50439F]">
         Редагування відгуку
       </h1>
       <form
@@ -246,19 +246,19 @@ const EditTestimonialForm = ({ id }: { id: string }) => {
           />
         </div>
         <div className="relative mx-auto flex w-[296px] justify-between">
-          <span className="absolute -top-8 left-0 text-sm">
+          <span className="absolute -top-8 left-0 text-[17px] text-[#343333]">
             Змінити відгук?
           </span>
           <button
             disabled={!isValid}
-            className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 font-[500] text-white disabled:bg-[#E3E3E4] disabled:text-[#97979A]"
+            className="flex min-w-[123px] items-center justify-center whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-[20px] font-[500] text-white disabled:bg-[#E3E3E4] disabled:text-[#97979A]"
           >
             {isProcessing ? 'Обробка запиту...' : 'Змінити'}
           </button>
           <button
             disabled={!isValid}
             onClick={() => dispatch(closeModal())}
-            className="w-[149px] rounded-3xl border border-yellow px-4 py-2 text-violet disabled:border-[#E3E3E4] disabled:text-[#97979A]"
+            className="w-[149px] rounded-3xl border border-yellow px-4 py-2 text-[20px] text-violet disabled:border-[#E3E3E4] disabled:text-[#97979A]"
           >
             Скасувати
           </button>
