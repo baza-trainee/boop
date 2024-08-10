@@ -57,6 +57,11 @@
   );
 }
 
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body.lock {
   overflow: hidden;
   touch-action: none;
