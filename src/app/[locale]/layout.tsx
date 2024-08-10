@@ -27,7 +27,13 @@ const groppled = localFont({
       weight: '700',
       style: 'normal',
     },
+    {
+      path: '../../../public/fonts/groppled.woff',
+      weight: '700',
+      style: 'normal',
+    },
   ],
+  display: 'swap',
   variable: '--font-groppled',
 });
 
