@@ -24,7 +24,9 @@ const AssociationLinks: React.FC<AssociationLinksProps> = ({ className }) => {
             className="text-decoration-skip-ink font-semibold leading-[132%] underline"
             key={url}
           >
-            <Link href={url}>{t(name)}</Link>
+            <Link target="_blank" href={url}>
+              {t(name)}
+            </Link>
           </li>
         ))}
       </ul>

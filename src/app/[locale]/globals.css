@@ -119,6 +119,12 @@ body.lock {
   text-decoration-skip-ink: none;
 }
 
+.footer-bg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 input[type='password']::-ms-reveal,
 input[type='password']::-ms-clear {
   display: none;

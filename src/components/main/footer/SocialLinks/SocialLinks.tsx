@@ -12,7 +12,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ className }) => {
   return (
     <div className={clsx('flex flex-row gap-10', className)}>
       {socialLinks.map(({ url, name, icon }) => (
-        <Link href={url} key={url}>
+        <Link target="_blank" href={url} key={url}>
           <Image src={icon} alt={name} width={44} height={44} />
         </Link>
       ))}

@@ -23,7 +23,7 @@ export const helpLinks = [
   },
   {
     name: 'privacy_policy',
-    url: '/test',
+    url: '/documents/terms_of_use.pdf',
     openInNewTab: true,
   },
   {

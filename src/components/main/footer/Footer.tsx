@@ -1,7 +1,6 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import Image from 'next/image';
 import HeroLogo from '../main-page/hero/components/heroLogo/HeroLogo';
 import SocialLinks from './SocialLinks/SocialLinks';
 import HelpLinks from './HelpLinks/HelpLinks';
@@ -11,14 +10,11 @@ import { useLocale, useTranslations } from 'next-intl';
 
 import AnimatedFooterMan from './AnimatedFooterMan/AnimatedFooterMan';
 import FooterNavigationLinks from './footer-navigation-links/FooterNavigationLinks';
-import { useMediaQuery } from 'react-responsive';
+import DecoratedSvg from './DecoratedSvg/DecoratedSvg';
 
 const Footer = () => {
   const t = useTranslations('Footer');
   const locale = useLocale();
-  // const isMobile = useMediaQuery({
-  //   query: '(min-width: 768px)',
-  // });
 
   const scrollToTop = () => {
     if (typeof window !== 'undefined') {
@@ -33,18 +29,19 @@ const Footer = () => {
 
   if (isAdminPage) return null;
 
-  // <AnimatedFooterMan
-  //   className={
-  //     'absolute -top-24 right-5 h-[112px] w-[115px] scale-x-[-1] transform md:-top-[110px] md:right-[10%] md:h-[168px] md:w-[164px]'
-  //   }
-  // />;
-
   return (
     <footer
-      className="relative bg-bgWhite bg-cover pt-[39px] md:pt-[55px] ml:pt-[105px] lg:pt-[150px]"
+      className="footer-bg relative bg-bgWhite pt-[39px] md:pt-[55px] ml:pt-[105px] lg:pt-[150px]"
       style={{ backgroundImage: "url('/images/wave.svg')" }}
     >
-      <div className="mx-auto max-w-[1920px] px-[10px] md:px-[64px] lg:px-[64px] xl:px-[80px] 2xl:px-[120px]">
+      <DecoratedSvg />
+      <AnimatedFooterMan
+        className={
+          'top-41 absolute right-16 h-[112px] w-[115px] md:right-[40px] md:top-[23px] md:h-[168px] md:w-[164px] ml:-top-[12px] ml:right-[64px] lg:right-[165px] lg:top-[2px] 3xl:right-[285px] 4xl:right-[460px]'
+        }
+      />
+      ;
+      <div className="relative z-[1] mx-auto max-w-[1920px] px-[10px] md:px-[64px] lg:px-[64px] xl:px-[80px] 2xl:px-[120px]">
         <div className="mb-6">
           <div className="mb-2 max-w-[93px]">
             <HeroLogo
@@ -79,15 +76,6 @@ const Footer = () => {
           2024 © Розробка Baza Trainee Ukraine. Усі права захищені.
         </div>
       </div>
-      <span className="absolute inline-block 3xl:-left-[50px] 3xl:bottom-0 3xl:h-[510px] 3xl:w-[880px]">
-        {/* -left-[406px] bottom-[89px] h-[382px] w-[662px]*/}
-        <Image
-          src="/images/arrow.svg"
-          width={880}
-          height={510}
-          alt="decorative arrow"
-        />
-      </span>
     </footer>
   );
 };
