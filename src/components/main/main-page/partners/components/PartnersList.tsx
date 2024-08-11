@@ -53,7 +53,7 @@ const PartnersList: React.FC<PartnersListProps> = ({
             className=""
             renderItem={(items: PartnerItem[]) => {
               return (
-                <div className="flex flex-wrap justify-between gap-y-6 custom:gap-x-6 md:gap-x-0 lg:justify-start lg:gap-x-7 xl:gap-x-10 2xl:gap-x-9 3xl:gap-x-0 4xl:gap-x-[37px]">
+                <div className="flex flex-wrap justify-between gap-y-6 custom:gap-x-6 md:gap-x-0 lg:justify-start lg:gap-x-[26px] xl:gap-x-10 2xl:gap-x-9 3xl:gap-x-0 4xl:gap-x-[37px]">
                   {items.map((item) => (
                     <a
                       key={item.id}

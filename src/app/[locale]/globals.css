@@ -180,3 +180,13 @@ input {
 .break-word {
   word-wrap: break-word; /* или overflow-wrap: break-word; */
 }
+
+/* .text-size-adjust-100 {
+   -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  height: fit-content;
+  text-rendering: optimizeLegibility; 
+  -webkit-font-smoothing: antialiased; 
+  -webkit-text-size-adjust: 100%;
+
+} */
