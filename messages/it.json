@@ -117,6 +117,26 @@
     "btn": "Scarica altro",
     "btnCollapse": "Arrotolare"
   },
+  "Footer": {
+    "title": "Ufficio di sorrisi e supporto",
+    "street": "Via Vyacheslava Chornvola, 28/1",
+    "country": "Kiev, Ucraina, 01111",
+    "main": "Pagina principale",
+    "about": "Chi siamo",
+    "school": "Scuola di clown",
+    "contacts": "Contatti",
+    "privacy_policy": "Politica sulla riservatezza",
+    "site_use_policy": "Condizioni d'uso",
+    "regulations": "Regolamenti",
+    "reporting": "Segnalazione",
+    "development": "Sviluppo",
+    "rights": "Tutti i diritti riservati",
+    "association": "Associazione dei clown ospedalieri dell'Ucraina",
+    "doctor_clown": "'Dottor Clown', Dnipro",
+    "funny_nouses": "'SmihoNosy' Zaporozhye",
+    "red_nouses": "'Nasi rossi', Rivne",
+    "smile_nouses": "'Nasi fini', Kharkiv"
+  },
   "Error": {
     "title": "Ops, sembra che ti sia perso!",
     "text": "Purtroppo, la pagina che stai cercando non esiste.",
@@ -142,10 +162,10 @@
       "volunteers_text": "Reclutamento di volontari e sviluppo \ndella community di volontariato intorno all'ospedale."
     },
     "team": {
-        "title": "La squadra che rende il mondo più luminoso",
-        "text_1": "La nostra squadra fa del suo meglio per garantire che l'infanzia continui indipendentemente dalle circostanze. Attraverso il gioco e la clownterapia, aiutiamo i bambini ei loro genitori a far fronte allo stress e ad adattarsi alle condizioni ospedaliere. I nostri sforzi sono mirati a colmare la vita dei bambini in ospedale di momenti di gioia.",    
-        "text_2": "Creiamo una comunità di volontari. Assumiamo clown di corsia. Organizziamo e conduciamo team building e supervisioni per il team. Sviluppiamo una strategia di sviluppo professionale. Lavoriamo sullo stato emotivo dei volontari e forniamo il supporto necessario. Comunichiamo con il personale medico e la direzione dell'ospedale. Comunichiamo con la fondazione. Ci occupiamo delle attività amministrative del progetto. Promuoviamo e sviluppiamo la clownerie ospedaliera in Ucraina. "
-      },
+      "title": "La squadra che rende il mondo più luminoso",
+      "text_1": "La nostra squadra fa del suo meglio per garantire che l'infanzia continui indipendentemente dalle circostanze. Attraverso il gioco e la clownterapia, aiutiamo i bambini ei loro genitori a far fronte allo stress e ad adattarsi alle condizioni ospedaliere. I nostri sforzi sono mirati a colmare la vita dei bambini in ospedale di momenti di gioia.",
+      "text_2": "Creiamo una comunità di volontari. Assumiamo clown di corsia. Organizziamo e conduciamo team building e supervisioni per il team. Sviluppiamo una strategia di sviluppo professionale. Lavoriamo sullo stato emotivo dei volontari e forniamo il supporto necessario. Comunichiamo con il personale medico e la direzione dell'ospedale. Comunichiamo con la fondazione. Ci occupiamo delle attività amministrative del progetto. Promuoviamo e sviluppiamo la clownerie ospedaliera in Ucraina. "
+    },
     "blog": {
       "title": "Blog",
       "read_more_btn": {
@@ -202,12 +222,17 @@
     "socialPlaceholder": "Link a Facebook, Telegram o Instagram",
     "submit": "Invia",
     "required": "Questo campo è obbligatorio.",
-    "invalidPhone": "Inserisci un numero di telefono valido.",
-    "invalidEmail": "Inserisci un indirizzo email valido.",
+    "invalidPhone": "Lascia perdere, invia il numero di telefono nel formato +380 ***",
+    "invalidEmail": "Lasciami, invia un'e-mail corretta",
+    "invalidLink": "Inserisci un collegamento valido",
+    "invalidName": "Inserisci un nome valido",
+    "linkMin": "Il collegamento deve contenere almeno 5 caratteri",
+    "nameMin": "Il nome deve contenere almeno 2 caratteri",
+    "nameMax": "Il nome deve contenere un massimo di 30 caratteri",
     "processing": "Elaborazione"
   },
   "ClownSchoolForm": {
-    "formSubmitted": "Il tuo modulo è stato inviato.",
+    "formSubmitted": "La tua richiesta è stata inviata. ",
     "contactWithinThreeDays": "Ti contatteremo entro tre giorni.",
     "somethingWentWrong": "Qualcosa è andato storto...",
     "pleaseTryAgain": "Per favore riprova."

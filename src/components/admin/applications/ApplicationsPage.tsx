@@ -62,7 +62,7 @@ const ApplicationsPage = () => {
   if (isLoading || isFetching) return <Loader />;
 
   return (
-    <section className="relative h-[864px] px-[24px] py-[100px]">
+    <section className="no-scrollbar relative max-h-[984px] overflow-auto px-[24px] py-[100px]">
       <PageTitle title="Заявки до школи" />
       <table className="block min-w-full border-collapse border border-violet md:table">
         <thead className="block border border-violet text-mainViolet md:table-header-group">
@@ -110,14 +110,15 @@ const ApplicationsPage = () => {
                   {row.social}
                 </td>
                 <td className="h-[60px] border border-violet text-center md:table-cell">
-                  <div className="flex w-full items-center justify-center gap-4">
-                    <button
-                      onClick={() => handleEdit(row.id, row.isProcessed)}
-                      className={`text-center font-[800] transition-all hover:underline ${!row.isProcessed ? 'text-violet' : 'text-[#666]'}`}
-                    >
-                      {!row.isProcessed ? 'Обробити' : 'Оброблено'}
-                    </button>
-                    {row.isProcessed && (
+                  <div className="flex w-full items-center justify-center gap-4 px-2">
+                    {!row.isProcessed ? (
+                      <button
+                        onClick={() => handleEdit(row.id, row.isProcessed)}
+                        className={`text-center font-[800] transition-all hover:underline ${!row.isProcessed ? 'text-violet' : 'text-[#666]'}`}
+                      >
+                        Обробити
+                      </button>
+                    ) : (
                       <button
                         onClick={() => handleDelete(row.id)}
                         className="text-center font-[800] text-violet transition-all hover:scale-[1.1]"

@@ -20,3 +20,6 @@ export const MAP_URL = `https://www.google.com/maps?q=${ENCODED_ADDRESS}&output=
 export const MAX_DONATION_AMOUNT = 10000000;
 export const REG_EXP_DONATION_AMOUNT_INPUT = /^\d*$/;
 export const REG_EXP_DONATION_AMOUNT = /^\d+$/;
+
+export const EMAIL_PATTERN =
+  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
