@@ -1,7 +1,5 @@
 import { z } from 'zod';
-
-const emailPattern =
-  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+import { EMAIL_PATTERN } from '@/constants';
 
 export const contactsValidation = z.object({
   addressUa: z
@@ -32,7 +30,7 @@ export const contactsValidation = z.object({
   email: z
     .string({ required_error: 'Поле повинно бути заповнене' })
     .min(1, 'Поле повинно бути заповнене')
-    .refine((value) => !value || emailPattern.test(value), {
+    .refine((value) => !value || EMAIL_PATTERN.test(value), {
       message: 'Введіть коректну адресу електронної пошти',
     }),
   phone: z

@@ -121,6 +121,26 @@
     "title_1": "Our friends",
     "title_2": "and partners"
   },
+  "Footer": {
+    "title": "Bureau of smiles and support",
+    "street": "Vyacheslava Chornovola Street, 28/1",
+    "country": "Kyiv, Ukraine, 01111",
+    "main": "Main page",
+    "about": "About us",
+    "school": "School of clowns",
+    "contacts": "Contacts",
+    "privacy_policy": "Privacy Policy",
+    "site_use_policy": "Terms of use",
+    "regulations": "Regulations",
+    "reporting": "Reporting",
+    "development": "Development",
+    "rights": "All rights reserved",
+    "association": "Association of hospital clowns of Ukraine",
+    "doctor_clown": "'Doctor Clown' Dnipro",
+    "funny_nouses": "'SmihoNosy' Zaporozhye",
+    "red_nouses": "'Red noses', Rivne",
+    "smile_nouses": "'Fine noses', Kharkiv"
+  },
   "Error": {
     "title": "Uh-oh, you seem to be lost!",
     "text": "Unfortunately, the page you're looking for doesn't exist.",
@@ -146,10 +166,10 @@
       "volunteers_text": "Volunteer recruitment and development of the volunteer community around the hospital."
     },
     "team": {
-        "title": "Team, who Making the World Brighter ",
-        "text_1": "Our team ensures that childhood lasts, no matter the circumstances. Through play and laughter therapy, we help children and their parents cope with stress and adapt to hospital conditions. Our efforts are aimed at filling the lives of hospitalized children with moments of joy.",
-        "text_2": "We build a volunteer community - we recruit and train hospital clowns. We conduct team building and supervision for our team. We develop a professional development strategy. We provide emotional support and necessary assistance to our volunteers. We communicate with hospital staff and management, as well as with the foundation. We handle the administrative activities of the project. We promote and develop hospital clowning in Ukraine"
-      },
+      "title": "Team, who Making the World Brighter ",
+      "text_1": "Our team ensures that childhood lasts, no matter the circumstances. Through play and laughter therapy, we help children and their parents cope with stress and adapt to hospital conditions. Our efforts are aimed at filling the lives of hospitalized children with moments of joy.",
+      "text_2": "We build a volunteer community - we recruit and train hospital clowns. We conduct team building and supervision for our team. We develop a professional development strategy. We provide emotional support and necessary assistance to our volunteers. We communicate with hospital staff and management, as well as with the foundation. We handle the administrative activities of the project. We promote and develop hospital clowning in Ukraine"
+    },
     "blog": {
       "title": "Blog",
       "read_more_btn": {
@@ -202,8 +222,13 @@
     "socialPlaceholder": "Link to Facebook, Telegram or Instagram",
     "submit": "Submit",
     "required": "This field is required.",
-    "invalidPhone": "Please enter a valid phone number.",
-    "invalidEmail": "Please enter a valid email address.",
+    "invalidPhone": "Please enter the phone number in the format +380 ***",
+    "invalidEmail": "Please enter a valid email",
+    "invalidLink": "Please enter a valid link",
+    "invalidName": "Please enter a valid name",
+    "linkMin": "The link must contain at least 5 characters",
+    "nameMin": "The name must contain at least 2 characters",
+    "nameMax": "The name must contain a maximum of 30 characters",
     "processing": "Request processing"
   },
   "ClownSchoolForm": {

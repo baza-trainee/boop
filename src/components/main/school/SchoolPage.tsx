@@ -5,7 +5,7 @@ import WhoCanJoin from './components/WhoCanJoin';
 import Training from './components/Training';
 import Feedback from './components/feedback/Feedback';
 import Photos from './components/Photos';
-import ClownSchoolForm from './components/ClownSchoolForm';
+import ClownSchoolForm from './components/form/ClownSchoolForm';
 import { ModalProvider } from '../../providers/ModalProvider';
 import { useMediaQuery } from 'react-responsive';
 
