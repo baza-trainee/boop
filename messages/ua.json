@@ -123,23 +123,26 @@
 	},
 	"Footer": {
 		"title": "Бюро усмішок і підтримки",
-		"street": "вулиця В'ячеслава Чорновола, 28/1 ",
-		"country": "Київ, Україна, 01111",
-		"main": "Головна",
-		"about": "Про нас",
-		"school": "Школа клоунів",
-		"contacts": "Контакти",
-		"privacy_policy": "Політика конфіденційності",
-		"site_use_policy": "Правила користування сайтом",
-		"regulations": "Статут",
-		"reporting": "Звітність",
-		"development": "Розробка",
-		"rights": "Усі права захищені",
-		"association": "Ассоціація лікарняних клоунів України",
-		"doctor_clown": "'Doctor Clown' м. Дніпро",
-		"funny_nouses": "'СміхоНоси' м. Запоріжжя",
-		"red_nouses": "'Червоні носи' м. Рівне",
-		"smile_nouses": "'Файні носи' м. Харків"
+		"documents": {
+			"regulations": "Статут",
+			"report": "Звітність",
+			"privacy_policy": "Політика конфіденційності",
+			"terms_of_use_site": "Правила користування сайтом"
+		},
+		"association": {
+			"title": "Ассоціація лікарняних клоунів України",
+			"doctor_clown": "'Doctor Clown' м. Дніпро",
+			"funny_nouses": "'СміхоНоси' м. Запоріжжя",
+			"red_nouses": "'Червоні носи' м. Рівне",
+			"smile_nouses": "'Файні носи' м. Харків"
+		},
+		"navigation": {
+			"main": "Головна",
+			"about": "Про нас",
+			"school": "Школа клоунів",
+			"contacts": "Контакти"
+		},
+		"rights": "2024 © Розробка Baza Trainee Ukraine. Усі права захищені."
 	},
 	"Error": {
 		"title": "Ой, здається ви загубилися!",

@@ -8,7 +8,7 @@ type HelpLinksProps = {
 };
 
 const HelpLinks: React.FC<HelpLinksProps> = ({ className }) => {
-  const t = useTranslations('Footer');
+  const t = useTranslations('Footer.documents');
   const { data: helpLinks } = useGetAllDocumentsQuery();
 
   const downloadPdf = (url: string) => {

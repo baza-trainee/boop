@@ -10,12 +10,12 @@ type AssociationLinksProps = {
 };
 
 const AssociationLinks: React.FC<AssociationLinksProps> = ({ className }) => {
-  const t = useTranslations('Footer');
+  const t = useTranslations('Footer.association');
 
   return (
     <div className={clsx('', className)}>
       <h4 className="mb-4 flex items-center gap-3 text-[18px] font-medium leading-[132%]">
-        {t('association')}
+        {t('title')}
         <Image src="/icons/arrow.svg" width={12} height={12} alt="arrow" />
       </h4>
       <ul className="flex flex-col gap-3">

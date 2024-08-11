@@ -72,9 +72,7 @@ const Footer = () => {
           </div>
           <HelpLinks className="flex ml:hidden" />
         </div>
-        <div className="py-6 text-center text-textViolet">
-          2024 © Розробка Baza Trainee Ukraine. Усі права захищені.
-        </div>
+        <div className="py-6 text-center text-textViolet">{t('rights')}</div>
       </div>
     </footer>
   );
