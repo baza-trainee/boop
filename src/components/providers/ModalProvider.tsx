@@ -1,4 +1,5 @@
-"use client";
+/* eslint-disable no-unused-vars */
+'use client';
 
 import React, { useState, useContext, createContext, ReactNode } from 'react';
 
@@ -9,7 +10,9 @@ interface ModalContextProps {
 
 const ModalContext = createContext<ModalContextProps | null>(null);
 
-export const ModalProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const ModalProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [modalContent, setModalContent] = useState<ReactNode>(null);
 
@@ -28,8 +31,11 @@ export const ModalProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       {children}
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-customOverlay">
-          <div className="mx-5 relative bg-purple-100 rounded-lg p-6 md:w-[636px] w-full text-xl">
-            <button className="absolute top-6 right-6 text-2xl font-bold text-black" onClick={closeModal}>
+          <div className="relative mx-5 w-[100%] w-full max-w-[800px] rounded-lg bg-purple-100 p-6 text-xl">
+            <button
+              className="absolute right-6 top-6 text-2xl font-bold text-black"
+              onClick={closeModal}
+            >
               ✕
             </button>
             {modalContent}
