@@ -26,7 +26,7 @@ const DocumentsPage = () => {
     isLoading,
     isFetching,
     isError,
-  } = documentsApi.useGetAllDocumentsQuery('documents');
+  } = documentsApi.useGetAllDocumentsQuery();
 
   const privacy_policy = documents?.find(
     (document) => document.title === 'Політика конфіденційності'
