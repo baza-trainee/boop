@@ -11,7 +11,7 @@ type FooterNavigationLinksProps = {
 const FooterNavigationLinks: React.FC<FooterNavigationLinksProps> = ({
   className,
 }) => {
-  const t = useTranslations('Footer');
+  const t = useTranslations('Footer.navigation');
 
   return (
     <ul className={clsx('flex flex-col gap-6', className)}>

@@ -10,29 +10,6 @@ export const navigationLinks: INavigationLink[] = [
   { name: 'main', url: '/' },
 ];
 
-export const helpLinks = [
-  {
-    name: 'regulations',
-    url: '/test',
-    openInNewTab: true,
-  },
-  {
-    name: 'reporting',
-    url: '/test',
-    openInNewTab: true,
-  },
-  {
-    name: 'privacy_policy',
-    url: '/documents/terms_of_use.pdf',
-    openInNewTab: true,
-  },
-  {
-    name: 'site_use_policy',
-    url: '/test',
-    openInNewTab: true,
-  },
-];
-
 export const socialLinks = [
   {
     name: 'Instagram',
