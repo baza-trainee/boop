@@ -41,7 +41,7 @@ const BlogItem = ({ imgSrc, title, text, date }: BlogItemProps) => {
         </div>
         <div
           className={clsx(
-            'relative h-[640px] w-[540px] flex-shrink-0 max-3xl:h-[490px] max-3xl:w-[416px] max-xl:h-[455px] max-xl:w-[386px] max-ml:h-[420px] max-ml:w-[360px] max-custom:hidden',
+            'relative h-[640px] w-[540px] flex-shrink-0 max-4xl:h-[490px] max-4xl:w-[416px] max-xl:h-[455px] max-xl:w-[386px] max-ml:h-[420px] max-ml:w-[360px] max-custom:hidden',
             isTablet && 'max-ml:h-[380px] max-ml:w-[240px]'
           )}
         >
