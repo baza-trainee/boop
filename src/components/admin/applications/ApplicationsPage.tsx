@@ -62,7 +62,7 @@ const ApplicationsPage = () => {
   if (isLoading || isFetching) return <Loader />;
 
   return (
-    <section className="no-scrollbar relative max-h-[984px] overflow-auto px-[24px] py-[100px]">
+    <section className="relative min-h-[784px] px-[24px] py-[100px]">
       <PageTitle title="Заявки до школи" />
       <table className="block min-w-full border-collapse border border-violet md:table">
         <thead className="block border border-violet text-mainViolet md:table-header-group">
