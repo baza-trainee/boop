@@ -26,8 +26,9 @@ const Footer = () => {
   const isAdminPage =
     pathname.split('/').includes('admin') ||
     pathname.split('/').includes('login');
+  const isDocumentsPage = pathname.split('/').includes('documents');
 
-  if (isAdminPage) return null;
+  if (isAdminPage || isDocumentsPage) return null;
 
   return (
     <footer
