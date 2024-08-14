@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 const ErrorPage = ({ reset }: { reset: () => void }) => {
   const t = useTranslations('errorpage');
   return (
-    <div className="flex h-screen flex-col items-center justify-center gap-4 bg-bgWhite  bg-[url('/icons/404/footprints.png')] bg-[length:926px_873px] bg-right-bottom bg-no-repeat px-10 pt-[30px] 3xl:pb-[72px] 3xl:pt-[120px]">
+    <div className="flex h-screen flex-col items-center justify-center gap-4 bg-bgWhite bg-[url('/icons/404/footprints.png')] bg-[length:926px_873px] bg-right-bottom bg-no-repeat px-10 pt-[30px] 3xl:pb-[72px] 3xl:pt-[120px]">
       <Image
         src="/icons/404/404.svg"
         alt="Clown"
@@ -12,7 +12,7 @@ const ErrorPage = ({ reset }: { reset: () => void }) => {
         height={200}
         className="px-3 max-md:max-w-[135px] md:px-7"
       />
-      <p className="mb-[65px] flex items-center items-baseline justify-center text-center font-groppled text-[20px] font-bold leading-[1.55] text-yellow md:text-[30px]">
+      <p className="mb-[65px] flex items-center justify-center text-center font-groppled text-[20px] font-bold leading-[1.55] text-yellow md:text-[30px]">
         {t('paragraph_1')}
         <br /> {t('paragraph_2')}
       </p>

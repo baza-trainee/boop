@@ -16,7 +16,7 @@ const Goals = () => {
         <ul
           className="flex   w-full flex-col items-center justify-center gap-[70px] 
            md:flex-row md:flex-wrap md:justify-around md:gap-x-6
-          md:gap-y-[96px]  lg:justify-between"
+          md:gap-y-[96px]  lg:justify-between lg:gap-x-0"
         >
           {goalsCards.map((el, index) => {
             return (

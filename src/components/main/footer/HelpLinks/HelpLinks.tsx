@@ -1,30 +1,29 @@
-import React from "react";
-import { helpLinks } from "../FooterLinks/links";
-import MainLink from "../MainLink/MainLink";
-import { useTranslations } from "next-intl";
+import { useTranslations } from 'next-intl';
+import clsx from 'clsx';
+import { useGetAllDocumentsQuery } from '@/store/api/documentsApi';
+import Link from 'next/link';
 
 type HelpLinksProps = {
   className?: string;
 };
 
-const HelpLinks: React.FC<HelpLinksProps> = () => {
-  const t = useTranslations("Footer");
+const HelpLinks: React.FC<HelpLinksProps> = ({ className }) => {
+  const t = useTranslations('Footer.documents');
+  const { data: helpLinks } = useGetAllDocumentsQuery();
 
   return (
-    <div className="flex flex-col gap-3 underline mt-10">
-      {helpLinks.map(({ url, name }, index) => (
-        <MainLink url={url} key={index}>
-          {t(name)}
-        </MainLink>
-      ))}
-    </div>
+    <ul className={clsx('flex flex-col gap-4', className)}>
+      {helpLinks && (
+        <>
+          {helpLinks.map(({ title }) => (
+            <li className="underline" key={title}>
+              <Link href={`/documents/${title}`}>{t(title)}</Link>
+            </li>
+          ))}
+        </>
+      )}
+    </ul>
   );
 };
 
 export default HelpLinks;
-
-
-
-
-
-

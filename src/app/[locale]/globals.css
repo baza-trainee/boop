@@ -57,6 +57,17 @@
   );
 }
 
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
 body.lock {
   overflow: hidden;
   touch-action: none;
@@ -108,6 +119,16 @@ body.lock {
 .sideText {
   writing-mode: vertical-lr;
   text-orientation: mixed;
+}
+
+.text-decoration-skip-ink {
+  text-decoration-skip-ink: none;
+}
+
+.footer-bg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 input[type='password']::-ms-reveal,
@@ -164,3 +185,13 @@ input {
 .break-word {
   word-wrap: break-word; /* или overflow-wrap: break-word; */
 }
+
+/* .text-size-adjust-100 {
+   -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  height: fit-content;
+  text-rendering: optimizeLegibility; 
+  -webkit-font-smoothing: antialiased; 
+  -webkit-text-size-adjust: 100%;
+
+} */

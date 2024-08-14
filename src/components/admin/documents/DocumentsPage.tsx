@@ -4,41 +4,39 @@ import axios from '@/utils/axios';
 import { useEffect, useState } from 'react';
 import { useAppDispatch } from '@/store/hook';
 import { documentsApi } from '@/store/api/documentsApi';
-import PageTitle from '../shared/PageTitle';
-import Loader from '@/components/shared/loader/Loader';
-
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { TDocumentScheme, pdfValidation } from './scheme';
-import FileInput from '../ui/FileInput';
 import { openAlert } from '@/store/slices/alertSlice';
 import { closeModal } from '@/store/slices/modalSlice';
+import FileInput from '../ui/FileInput';
+import PageTitle from '../shared/PageTitle';
+import Loader from '@/components/shared/loader/Loader';
 
 const DocumentsPage = () => {
   const dispatch = useAppDispatch();
   const [isProcessing, setIsProcessing] = useState(false);
 
   const [editDocument] = documentsApi.useEditDocumentsMutation();
-  // const [addDocument] = documentsApi.useAddDocumentsMutation();
 
   const {
     data: documents,
     isLoading,
     isFetching,
     isError,
-  } = documentsApi.useGetAllDocumentsQuery('documents');
+  } = documentsApi.useGetAllDocumentsQuery();
 
   const privacy_policy = documents?.find(
-    (document) => document.title === 'Політика конфіденційності'
+    (document) => document.title === 'privacy_policy'
   );
   const terms_of_use = documents?.find(
-    (document) => document.title === 'Правила користування'
+    (document) => document.title === 'terms_of_use'
   );
   const regulations = documents?.find(
-    (document) => document.title === 'Статут'
+    (document) => document.title === 'regulations'
   );
   const accounting = documents?.find(
-    (document) => document.title === 'Звітність'
+    (document) => document.title === 'accounting'
   );
 
   const {
@@ -110,21 +108,6 @@ const DocumentsPage = () => {
         };
         const id = accounting?.id;
         response = await editDocument({ id, newDocument });
-        // if (accounting) {
-        //   const newDocument = {
-        //     documentUrl: res.data.fileUrl,
-        //     documentId: res.data.fileId,
-        //   };
-        //   const id = accounting?.id;
-        //   response = await editDocument({ id, newDocument });
-        // } else {
-        //   const newDocument = {
-        //     title: 'Звітність',
-        //     documentUrl: res.data.fileUrl,
-        //     documentId: res.data.fileId,
-        //   };
-        //   response = await addDocument(newDocument);
-        // }
       }
       if (values.regulations[0].size > 0) {
         const formData = new FormData();

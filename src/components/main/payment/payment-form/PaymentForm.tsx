@@ -51,7 +51,7 @@ const PaymentForm = () => {
         e.preventDefault();
         handleSubmit();
       }}
-      className="flex flex-col items-end gap-8 max-ml:items-start"
+      className="flex flex-col items-end gap-8 max-ml:items-start max-sm:items-center"
     >
       <PaymentCurrency />
       <div className="w-[830px] max-4xl:w-[636px] max-lg:w-[540px] max-ml:w-[666px] max-md:w-full">

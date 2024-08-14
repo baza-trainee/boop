@@ -6,7 +6,7 @@ export const documentsApi = createApi({
   tagTypes: ['Documents'],
   baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_URL }),
   endpoints: (build) => ({
-    getAllDocuments: build.query<IDocument[], string>({
+    getAllDocuments: build.query<IDocument[], void>({
       query: () => `documents`,
       providesTags: ['Documents'],
     }),
