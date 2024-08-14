@@ -8,7 +8,10 @@ const Payment = () => {
   const t = useTranslations('Donate');
 
   return (
-    <section className="mb-[120px] bg-beige py-[55px] max-xl:py-[80px] max-ml:py-[60px] max-sm:py-5">
+    <section
+      id="donat"
+      className="mb-[120px] bg-beige py-[55px] max-xl:py-[80px] max-ml:py-[60px] max-sm:py-5"
+    >
       <div className="container">
         <div className="flex justify-between gap-6 max-ml:flex-col max-ml:gap-12 max-md:gap-8">
           <div className="text-right max-xl:text-center">
