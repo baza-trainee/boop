@@ -16,6 +16,7 @@ const Header = () => {
   const isAdminPage =
     pathname.split('/').includes('admin') ||
     pathname.split('/').includes('login');
+  const isDocumentsPage = pathname.split('/').includes('documents');
 
   const [menuOpen, setMenuOpen] = useState(false);
   const windowSize = useWindowSize();
@@ -29,7 +30,7 @@ const Header = () => {
 
   useBodyScrollLock(menuOpen && windowSize.width <= 768);
 
-  if (isAdminPage) return null;
+  if (isAdminPage || isDocumentsPage) return null;
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
