@@ -16,7 +16,7 @@ const FooterNavigationLinks: React.FC<FooterNavigationLinksProps> = ({
   return (
     <ul className={clsx('flex flex-col gap-6', className)}>
       {navigationLinks.map(({ url, name }) => (
-        <li className="" key={url}>
+        <li className="hover:underline" key={url}>
           <Link href={url}>{t(name)}</Link>
         </li>
       ))}
