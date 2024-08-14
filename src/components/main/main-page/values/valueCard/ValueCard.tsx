@@ -30,9 +30,9 @@ const ValueCard = ({
       </div>
 
       <div
-        className={`  absolute  top-[100%] ${index === 4 ? 'md:right-[-10px] ml:-right-1/2' : ''} w-[248px] rounded-2xl border-0 border-inherit bg-bgWhite p-4 opacity-0 shadow-[0_2px_6px_2px_rgba(47,36,94,0.15)] transition-opacity duration-[600ms] ease-in-out before:absolute before:inset-0 before:left-0 before:block before:h-[calc(100%-1px)]    before:origin-top-right before:rotate-[-1deg] before:rounded-2xl before:border-[1px] before:border-yellow before:content-[''] group-hover:opacity-100  ${index === 1 || index === 2 ? `self-end md:self-auto` : ''}${index === 2 ? ' ml:-right-[20px] ml:w-[217px] lg:w-[248px]' : ''}${index === 0 ? `ml: w-[287px]  md:-left-10 ml:w-[248px] lg:-left-5 lg:w-[248px] 2xl:-left-10 ` : ''}`}
+        className={`  absolute  top-[100%] ${index === 4 ? 'md:right-[-10px] ml:-right-1/2 xl:-right-[100%] 4xl:-right-2/3' : ''} w-[214px]  lg:w-[248px] xl:w-[248px] rounded-2xl border-0 border-inherit bg-bgWhite p-4 px-2 lg:px-4 opacity-0 shadow-[0_2px_6px_2px_rgba(47,36,94,0.15)] transition-opacity duration-[600ms] ease-in-out before:absolute before:inset-0 before:left-0 before:block before:h-[calc(100%-1px)]    before:origin-top-right before:rotate-[-1deg] before:rounded-2xl before:border-[1px] before:border-yellow before:content-[''] group-hover:opacity-100  ${index === 1 || index === 2 ? `self-end md:self-auto` : ''}${index === 2 ? ' ml:-right-[30px] ml:w-[180px] lg:w-[248px]' : ''}${index === 0 ? `   md:-left-8 ml:w-[214px] lg:-left-12 lg:w-[248px] 2xl:-left-10 ` : ''}`}
       >
-        <p className="text-left font-raleway text-[14px] font-normal leading-[116%]  text-textViolet">
+        <p className="text-left font-raleway text-[12px] lg:text-[14px] font-normal leading-[116%]  text-textViolet">
           {hoverText}
         </p>
       </div>
