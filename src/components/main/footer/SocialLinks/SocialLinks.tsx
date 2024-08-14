@@ -12,7 +12,12 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ className }) => {
   return (
     <div className={clsx('flex flex-row gap-10', className)}>
       {socialLinks.map(({ url, name, icon }) => (
-        <Link target="_blank" href={url} key={url}>
+        <Link
+          target="_blank"
+          className="basic-transition hover:scale-[1.1]"
+          href={url}
+          key={url}
+        >
           <Image src={icon} alt={name} width={44} height={44} />
         </Link>
       ))}
