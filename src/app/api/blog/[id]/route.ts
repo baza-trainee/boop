@@ -20,7 +20,6 @@ export async function PATCH(
         id: Number(params.id),
       },
       data: {
-        // location: data.newBlog.location,
         imageUrl: updatedPost.imageUrl,
         imageId: updatedPost.imageId,
         titleUA: updatedPost.titleUA,
