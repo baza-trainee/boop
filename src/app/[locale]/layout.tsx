@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { Raleway, Red_Hat_Display } from 'next/font/google';
-import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
+import { PageProps } from '@/types';
 import StoreProvider from '@/components/providers/StoreProvider';
 import Header from '@/components/main/header/Header';
 import Footer from '@/components/main/footer/Footer';
@@ -37,10 +38,30 @@ const groppled = localFont({
   variable: '--font-groppled',
 });
 
-export const metadata: Metadata = {
-  title: 'БУП - бюро усмішок і підтримки',
-  description: 'Програма емоційної підтримки дітей у лікарнях by @tabletochki_',
-};
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  return {
+    title: {
+      default: `${
+        params.locale === 'ua'
+          ? 'БУП - бюро усмішок і підтримки'
+          : params.locale === 'en'
+            ? 'BOOP - bureau of smiles and support'
+            : 'BOOP - ufficio dei sorrisi e del supporto'
+      }`,
+      template: '%s',
+    },
+    description: `${
+      params.locale === 'ua'
+        ? 'Програма емоційної підтримки дітей у лікарнях by @tabletochki'
+        : params.locale === 'en'
+          ? 'Program of emotional support for children in hospitals by @tabletochki'
+          : 'Programma di sostegno emotivo per i bambini negli ospedali di @tabletochki'
+    }`,
+    manifest: '/site.webmanifest',
+  };
+}
 
 export default async function RootLayout({
   children,

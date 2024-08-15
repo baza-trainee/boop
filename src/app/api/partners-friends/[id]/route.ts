@@ -5,7 +5,6 @@ import {
   PartnersFriendsFormData,
   SECTION_PARTNERS_FRIENDS,
 } from '@/types/partners-friends';
-import '../swagger-comments';
 
 export async function PATCH(
   request: Request,

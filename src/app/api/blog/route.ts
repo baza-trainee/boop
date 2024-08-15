@@ -3,8 +3,6 @@ import prisma from '@/lib/prisma';
 import { prismaConnect } from '@/utils/prismaConnect';
 import { BlogFormData } from '@/types/blog';
 
-import './swagger-comments';
-
 export async function GET(request: Request) {
   try {
     await prismaConnect();

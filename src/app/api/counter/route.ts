@@ -2,9 +2,7 @@ import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
 import { prismaConnect } from '@/utils/prismaConnect';
 import { CounterFormData } from '@/types/counterItem';
-import initialData from './exemple-db.json';
-
-import './swagger-comments';
+import initialData from './example-db.json';
 
 export async function GET() {
   try {
