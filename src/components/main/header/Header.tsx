@@ -62,22 +62,22 @@ const Header = () => {
           <nav className="relative z-10 ml-[8px] hidden w-[768px] justify-between whitespace-nowrap px-[4px] py-0 font-groppled font-bold text-mainViolet md:ml-0 md:flex md:w-[359px] md:gap-[24px] md:text-[18px] md:leading-[27.36px] lg:w-[462px] 3xl:text-[20px] 3xl:leading-[31.6px]">
             <ul className="flex items-center">
               <li className="hover:underline md:pr-[25px] lg:pr-[48px]">
-                <Link href="/" title={t('home')}>
+                <Link href="/" scroll={true} title={t('home')}>
                   {t('home')}
                 </Link>
               </li>
               <li className="hover:underline md:pr-[25px] lg:pr-[48px]">
-                <Link href="/about" title={t('about')}>
+                <Link href="/about" scroll={true} title={t('about')}>
                   {t('about')}
                 </Link>
               </li>
               <li className="hover:underline md:pr-[25px] lg:pr-[48px]">
-                <Link href="/school" title={t('school')}>
+                <Link href="/school" scroll={true} title={t('school')}>
                   {t('school')}
                 </Link>
               </li>
               <li className="hover:underline">
-                <Link href="/contacts" title={t('contacts')}>
+                <Link href="/contacts" scroll={true} title={t('contacts')}>
                   {t('contacts')}
                 </Link>
               </li>
