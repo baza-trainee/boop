@@ -7,3 +7,9 @@ export interface ListResponse<T> {
     totalPages: number;
   };
 }
+
+export interface PageProps {
+  params: {
+    locale: string;
+  };
+}

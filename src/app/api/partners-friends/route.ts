@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import { prismaConnect } from '@/utils/prismaConnect';
-import './swagger-comments';
 import {
   PartnersFriendsFormData,
   SECTION_PARTNERS_FRIENDS,

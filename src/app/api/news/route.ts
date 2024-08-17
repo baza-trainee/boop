@@ -3,8 +3,6 @@ import { NextResponse } from 'next/server';
 import { prismaConnect } from '@/utils/prismaConnect';
 import { NewsFormData } from '@/types/news';
 
-import './swagger-comments';
-
 export async function GET() {
   try {
     await prismaConnect();
