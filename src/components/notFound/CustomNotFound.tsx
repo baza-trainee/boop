@@ -7,7 +7,7 @@ export const CustomNotFound = () => {
   const t = useTranslations('Error');
 
   return (
-    <div className="relative z-10 bg-bgWhite px-5 pb-[82px] pt-[156px] after:absolute after:left-[3px] after:top-[109px] after:-z-10 after:h-full after:w-full after:bg-[url('/icons/404/xs_footprints.svg')] after:bg-no-repeat after:content-[''] md:pb-[262px] md:pt-[200px] md:after:left-0 md:after:top-[99px] md:after:bg-[url('/icons/404/md_footprints.svg')] ml:after:top-[69px] ml:after:bg-[url('/icons/404/ml_footprints.svg')] lg:after:bg-[url('/icons/404/lg_footprints.svg')] xl:after:bg-[url('/icons/404/xl_footprints.svg')] 3xl:after:top-[17px] 3xl:after:bg-[url('/icons/404/3xl_footprints.svg')] 4xl:pt-[240px]">
+    <div className="relative z-10 bg-bgWhite px-5 pb-[82px] pt-[156px] after:absolute after:left-[3px] after:top-[109px] after:-z-10 after:h-full after:w-full after:bg-[url('/icons/404/xs_footprints.svg')] after:bg-no-repeat after:content-[''] md:pb-[262px] md:pt-[200px] md:after:left-0 md:after:top-[99px] md:after:bg-[url('/icons/404/md_footprints.svg')] ml:after:top-[69px] ml:after:bg-[url('/icons/404/ml_footprints.svg')] lg:after:bg-[url('/icons/404/lg_footprints.svg')] xl:after:bg-[url('/icons/404/xl_footprints.svg')] 3xl:after:top-[17px] 3xl:after:bg-[url('/icons/404/3xl_footprints.svg')] 4xl:pt-[240px] 4xl:after:top-0 4xl:after:bg-[url('/icons/404/4xl_footprints.svg')]">
       <h2 className="title-gradient mb-2 h-[24px] bg-clip-text py-1 text-center font-groppled text-[24px] font-bold leading-[1.7] md:h-[45px] md:text-[40px] ml:mb-6 ml:text-[48px] xl:text-[48px] 4xl:mb-8">
         {t('title')}
       </h2>
