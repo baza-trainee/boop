@@ -1,5 +1,5 @@
-import React from 'react';
 import SectionTitle from '../shared/SectionTitle';
+import AnimatedPurpleMan from './AnimatedPurpleMan';
 import PaymentForm from './payment-form/PaymentForm';
 import { useTranslations } from 'next-intl';
 
