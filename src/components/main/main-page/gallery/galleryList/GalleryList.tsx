@@ -34,7 +34,7 @@ const GalleryList: React.FC<GalleryCardProps> = ({
     combinedElements.push(
       <div
         key={`image-${i}`}
-        className="relative h-[477px] min-w-[197px] flex-1  md:h-[287px] lg:h-[394px] xl:h-[415px] 3xl:h-[447px]"
+        className="relative h-[477px] min-w-[197px] flex-1 md:h-[287px] lg:h-[394px] xl:h-[415px] 3xl:h-[447px]"
       >
         <Image
           src={images[i].imageUrl}
@@ -52,7 +52,7 @@ const GalleryList: React.FC<GalleryCardProps> = ({
         <div className="relative min-w-[197px] flex-1">
           <div
             key={`yellow_man`}
-            className="absolute -bottom-6 flex  h-[477px] min-w-[197px]  cursor-pointer items-end justify-end md:h-[287px] lg:left-6 lg:h-[394px] xl:h-[415px] 3xl:h-[447px]"
+            className="absolute -bottom-6 flex h-[477px] min-w-[197px] cursor-pointer items-end justify-end md:h-[287px] lg:left-6 lg:h-[394px] xl:h-[415px] 3xl:h-[447px]"
           >
             <AnimatedYellowMan width={width} />
           </div>

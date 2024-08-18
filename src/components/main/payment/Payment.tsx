@@ -1,8 +1,8 @@
 import React from 'react';
 import SectionTitle from '../shared/SectionTitle';
-import Image from 'next/image';
 import PaymentForm from './payment-form/PaymentForm';
 import { useTranslations } from 'next-intl';
+import AnimatedPurpleMan from './AnimatedPurpleMan';
 
 const Payment = () => {
   const t = useTranslations('Donate');
@@ -23,13 +23,8 @@ const Payment = () => {
               <p className="text-gradient text-left text-xl font-semibold leading-[1.32] max-ml:max-w-[590px] max-md:max-w-[416px] max-custom:max-w-none">
                 {t('text')}
               </p>
-              <div className="relative inline-block h-[172px] w-[232px] flex-shrink-0 max-xl:top-6 max-lg:top-2 max-ml:absolute max-ml:-right-[40px] max-ml:top-0 max-ml:h-[124px] max-ml:w-[167px] max-ml:translate-y-16 max-ml:-scale-x-1 max-md:right-3 max-custom:hidden xl:right-8">
-                <Image
-                  src="/icons/purple-buddy-payment.svg"
-                  fill
-                  sizes="100%"
-                  alt="purple man"
-                />
+              <div className="relative inline-block h-[124x] w-[173px] flex-shrink-0 cursor-pointer max-xl:top-6 max-lg:top-2 max-ml:absolute max-ml:-right-[40px] max-ml:top-0 max-ml:translate-y-16 max-ml:-scale-x-1 max-md:right-3 max-custom:hidden lg:h-[172px] lg:w-[239px] xl:right-8 4xl:h-[204px] 4xl:w-[284px]">
+                <AnimatedPurpleMan />
               </div>
             </div>
           </div>
