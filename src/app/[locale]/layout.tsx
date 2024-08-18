@@ -7,6 +7,7 @@ import { PageProps } from '@/types';
 import StoreProvider from '@/components/providers/StoreProvider';
 import Header from '@/components/main/header/Header';
 import Footer from '@/components/main/footer/Footer';
+import NextTopLoader from 'nextjs-toploader';
 import './globals.css';
 
 const raleway = Raleway({
@@ -79,6 +80,14 @@ export default async function RootLayout({
           className={`${raleway.variable} ${groppled.variable} ${redhat.variable}`}
         >
           <NextIntlClientProvider messages={messages} locale={locale}>
+            <NextTopLoader
+              color="#958ac4"
+              height={2}
+              showSpinner={false}
+              easing="ease"
+              speed={200}
+              shadow="0 0 10px #958ac4,0 0 5px #958ac4"
+            />
             <div className="wrapper font-raleway">
               <Header />
               {children}

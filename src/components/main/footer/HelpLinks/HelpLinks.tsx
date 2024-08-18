@@ -17,7 +17,9 @@ const HelpLinks: React.FC<HelpLinksProps> = ({ className }) => {
         <>
           {helpLinks.map(({ title }) => (
             <li className="underline" key={title}>
-              <Link href={`/documents/${title}`}>{t(title)}</Link>
+              <Link target="_blank" href={`/documents/${title}`}>
+                {t(title)}
+              </Link>
             </li>
           ))}
         </>
