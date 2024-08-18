@@ -22,7 +22,7 @@ const Payment = () => {
               <p className="text-gradient text-left text-[18px] font-semibold leading-[1.32] md:max-w-[416px] ml:max-w-[590px] lg:max-w-none lg:text-[20px]">
                 {t('text')}
               </p>
-              <div className="relative inline-block h-[124x] w-[173px] flex-shrink-0 cursor-pointer max-xl:top-6 max-lg:top-2 max-ml:absolute max-ml:-right-[40px] max-ml:top-0 max-ml:translate-y-16 max-ml:-scale-x-1 max-md:right-3 max-custom:hidden lg:h-[172px] lg:w-[239px] xl:right-8 4xl:h-[204px] 4xl:w-[284px]">
+              <div className="absolute right-0 top-[25px] hidden h-[124x] w-[173px] flex-shrink-0 cursor-pointer max-lg:-scale-x-1 md:inline-block ml:right-[15px] lg:right-[50%] lg:top-[130px] lg:h-[172px] lg:w-[239px] lg:translate-x-[50%] xl:right-0 xl:translate-x-0 4xl:h-[204px] 4xl:w-[284px]">
                 <AnimatedPurpleMan />
               </div>
             </div>
