@@ -1,6 +1,7 @@
 export interface AnimatedManProps {
   width?: string;
   className?: string;
+  index?: number;
 }
 
 const AnimatedYellowMan: React.FC<AnimatedManProps> = ({ width }) => (

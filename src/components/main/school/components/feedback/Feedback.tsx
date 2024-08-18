@@ -10,6 +10,9 @@ import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { ITestimonial } from '@/types/testimonials';
 import YellowBuddy from './yellow-buddy/YellowBuddy';
+import AnimatedFeedbackMan from './yellow-buddy/AnimatedFeedbackMan';
+import { useMediaQuery } from 'react-responsive';
+import clsx from 'clsx';
 
 const Feedback = () => {
   const { locale } = useParams();
@@ -18,6 +21,10 @@ const Feedback = () => {
   const [feedbackData, setFeedbackData] = useState<ITestimonial[][] | null>(
     null
   );
+
+  const isDecorHidden = useMediaQuery({
+    query: '(max-width: 830px)',
+  });
 
   const chunkArray = useCallback((data: ITestimonial[], chunkSize: number) => {
     return data.reduce<ITestimonial[][]>((result, item, index) => {
@@ -63,10 +70,16 @@ const Feedback = () => {
             nextEl=".feedback-next-el"
             slidesPerView={1}
             speed={500}
-            renderItem={(items) => {
+            renderItem={(items, index) => {
               return (
                 <div className="relative">
-                  <YellowBuddy />
+                  <AnimatedFeedbackMan
+                    index={index}
+                    className={clsx(
+                      'absolute right-[97px] top-[37px] h-[192px] w-[211px] cursor-pointer max-lg:right-[0] max-lg:h-[179px] max-lg:w-[160px]',
+                      isDecorHidden && 'hidden'
+                    )}
+                  />
                   <div className="flex flex-col max-md:gap-4">
                     {items.map((item, idx) => (
                       <FeedbackItem
