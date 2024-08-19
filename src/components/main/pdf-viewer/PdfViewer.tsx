@@ -56,29 +56,31 @@ const PdfViewer = ({ document }: { document: string | null }) => {
   const reset = () => router.replace('/');
 
   return (
-    <div>
-      <div
-        className="mx-auto flex h-full w-full flex-col items-center justify-center xl:w-2/3"
-        ref={pdfWrapperRef}
-      >
-        <Document
-          loading={<Loader />}
-          file={documentUrl ? documentUrl : '/blank.pdf'}
-          onLoadSuccess={onDocumentLoadSuccess}
-          error={<ErrorPage reset={reset} />}
-          className={'flex w-full flex-col items-center justify-center p-5'}
+    <div className="w-full">
+      {documentUrl && (
+        <div
+          className="mx-auto flex h-full w-full flex-col items-center justify-center xl:w-2/3"
+          ref={pdfWrapperRef}
         >
-          {Array.from(new Array(numPages), (el, index) => (
-            <Page
-              key={`page_${index + 1}`}
-              pageNumber={index + 1}
-              renderAnnotationLayer={false}
-              renderTextLayer={false}
-              width={width}
-            />
-          ))}
-        </Document>
-      </div>
+          <Document
+            loading={<Loader />}
+            file={documentUrl}
+            onLoadSuccess={onDocumentLoadSuccess}
+            error={<ErrorPage reset={reset} />}
+            className={'flex w-full flex-col items-center justify-center p-5'}
+          >
+            {Array.from(new Array(numPages), (el, index) => (
+              <Page
+                key={`page_${index + 1}`}
+                pageNumber={index + 1}
+                renderAnnotationLayer={false}
+                renderTextLayer={false}
+                width={width}
+              />
+            ))}
+          </Document>
+        </div>
+      )}
     </div>
   );
 };
