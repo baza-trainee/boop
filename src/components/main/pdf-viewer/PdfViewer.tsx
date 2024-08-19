@@ -57,11 +57,11 @@ const PdfViewer = ({ document }: { document: string | null }) => {
 
   return (
     <div className="w-full">
-      {documentUrl && (
-        <div
-          className="mx-auto flex h-full w-full flex-col items-center justify-center xl:w-2/3"
-          ref={pdfWrapperRef}
-        >
+      <div
+        className="mx-auto flex h-full w-full flex-col items-center justify-center xl:w-2/3"
+        ref={pdfWrapperRef}
+      >
+        {documentUrl && (
           <Document
             loading={<Loader />}
             file={documentUrl}
@@ -79,10 +79,11 @@ const PdfViewer = ({ document }: { document: string | null }) => {
               />
             ))}
           </Document>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };
 
 export default PdfViewer;
+
