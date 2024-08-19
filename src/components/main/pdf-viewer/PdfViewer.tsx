@@ -63,7 +63,7 @@ const PdfViewer = ({ document }: { document: string | null }) => {
       >
         <Document
           loading={<Loader />}
-          file={documentUrl}
+          file={documentUrl ? documentUrl : '/blank.pdf'}
           onLoadSuccess={onDocumentLoadSuccess}
           error={<ErrorPage reset={reset} />}
           className={'flex w-full flex-col items-center justify-center p-5'}
