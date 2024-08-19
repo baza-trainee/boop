@@ -7,14 +7,11 @@ import { teamApi } from '@/store/api/teamApi';
 import TeamMatesCard from './teamMatesCard/TeamMatesCard';
 import SectionTitle from '@/components/main/shared/SectionTitle';
 import CarouselButton from '../../shared/carousel/carousel-button/CarouselButton';
-import { ITeamMember } from '@/types/team';
 
 const Team = () => {
   const t = useTranslations('About.team');
 
   const { data: teamMates } = teamApi.useGetAllTeamQuery();
-
-  console.log(teamMates?.data);
 
   return (
     <section className="container mb-[120px] flex flex-col gap-[48px]">
@@ -51,36 +48,38 @@ const Team = () => {
             <CarouselButton className="team-prev-el -rotate-90 md:-rotate-180 ml:-rotate-90" />
             <CarouselButton className="team-next-el rotate-90 md:rotate-0 ml:rotate-90" />
           </div>
-          <div className="h-full overflow-hidden">
-            <Carousel
-              items={teamMates?.data as ITeamMember[]}
-              autoHeight={true}
-              prevEl=".team-prev-el"
-              nextEl=".team-next-el"
-              spaceBetween={20}
-              speed={900}
-              effect={'fade'}
-              breakpoints={{
-                390: {
-                  direction: 'vertical',
-                  slidesPerView: 1,
-                },
-                768: {
-                  direction: 'horizontal',
-                  slidesPerView: 3,
-                },
-                1024: {
-                  direction: 'vertical',
-                  slidesPerView: 'auto',
-                },
-              }}
-              renderItem={(item) => (
-                <div className="relative flex flex-col gap-[24px] md:flex-row ml:flex-col">
-                  <TeamMatesCard {...item} />
-                </div>
-              )}
-            />
-          </div>
+          {teamMates?.data.length && (
+            <div className="h-full overflow-hidden">
+              <Carousel
+                items={teamMates.data}
+                autoHeight={true}
+                prevEl=".team-prev-el"
+                nextEl=".team-next-el"
+                spaceBetween={20}
+                speed={900}
+                effect={'fade'}
+                breakpoints={{
+                  390: {
+                    direction: 'vertical',
+                    slidesPerView: 1,
+                  },
+                  768: {
+                    direction: 'horizontal',
+                    slidesPerView: 3,
+                  },
+                  1024: {
+                    direction: 'vertical',
+                    slidesPerView: 'auto',
+                  },
+                }}
+                renderItem={(item) => (
+                  <div className="relative flex flex-col gap-[24px] md:flex-row ml:flex-col">
+                    <TeamMatesCard {...item} />
+                  </div>
+                )}
+              />
+            </div>
+          )}
         </div>
         <div className="block py-5 md:hidden">
           <span>{t('text_2')}</span>
