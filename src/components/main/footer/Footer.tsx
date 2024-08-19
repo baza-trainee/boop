@@ -7,6 +7,7 @@ import HelpLinks from './HelpLinks/HelpLinks';
 import ContactInfo from '../shared/ContactInfo';
 import AssociationLinks from './AssociationLinks/AssociationLinks';
 import { useLocale, useTranslations } from 'next-intl';
+import { contactsApi } from '@/store/api/contactsApi'; // Импорт API
 
 import AnimatedFooterMan from './AnimatedFooterMan/AnimatedFooterMan';
 import FooterNavigationLinks from './footer-navigation-links/FooterNavigationLinks';
@@ -15,6 +16,7 @@ import DecoratedSvg from './DecoratedSvg/DecoratedSvg';
 const Footer = () => {
   const t = useTranslations('Footer');
   const locale = useLocale();
+  const { data: contacts, isLoading, isError } = contactsApi.useGetAllContactsQuery(); // Получаем данные с API
 
   const scrollToTop = () => {
     if (typeof window !== 'undefined') {
@@ -30,6 +32,25 @@ const Footer = () => {
 
   if (isAdminPage || isDocumentsPage) return null;
 
+  if (isLoading || isError || !contacts || contacts.length === 0) {
+    return null; // Можно добавить загрузочный индикатор или просто вернуть null
+  }
+
+  const contactData = contacts[0]; // Берем первый контакт (или нужный вам)
+
+  // Выбираем адрес на основе текущей локали
+  let address;
+  switch (locale) {
+    case 'en':
+      address = contactData.addressEn;
+      break;
+    case 'it':
+      address = contactData.addressIt;
+      break;
+    default:
+      address = contactData.addressUa;
+  }
+
   return (
     <footer
       className="footer-bg relative bg-bgWhite pt-[39px] md:pt-[55px] ml:pt-[105px] lg:pt-[150px]"
@@ -41,7 +62,6 @@ const Footer = () => {
           'top-41 absolute right-16 h-[112px] w-[115px] md:right-[40px] md:top-[23px] md:h-[168px] md:w-[164px] ml:-top-[12px] ml:right-[64px] lg:right-[165px] lg:top-[2px] 3xl:right-[285px] 4xl:right-[460px]'
         }
       />
-      ;
       <div className="relative z-[1] mx-auto max-w-[1920px] px-[10px] md:px-[64px] lg:px-[64px] xl:px-[80px] 2xl:px-[120px]">
         <div className="mb-6">
           <div className="mb-2 max-w-[93px]">
@@ -60,8 +80,9 @@ const Footer = () => {
             <div>
               <ContactInfo
                 showIcons={false}
-                showInstagram={false}
-                showFacebook={false}
+                address={address}
+                phone={contactData.phone}
+                email={contactData.email}
               />
             </div>
             <HelpLinks className="hidden ml:flex" />

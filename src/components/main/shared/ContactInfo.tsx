@@ -1,28 +1,27 @@
-'use client';
-
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { CONTACT_INFO } from '../../../constants';
 
 interface ContactInfoProps {
   showIcons?: boolean;
-  showAddress?: boolean;
-  showEmail?: boolean;
-  showPhone?: boolean;
-  showInstagram?: boolean;
-  showFacebook?: boolean;
+  address?: string;
+  email?: string;
+  phone?: string;
+  instagramUrl?: string;
+  instagramText?: string;
+  facebookUrl?: string;
+  facebookText?: string;
 }
 
 const ContactInfo: React.FC<ContactInfoProps> = ({
   showIcons = true,
-  showAddress = true,
-  showEmail = true,
-  showPhone = true,
-  showInstagram = true,
-  showFacebook = true,
+  address,
+  email,
+  phone,
+  instagramUrl,
+  instagramText,
+  facebookUrl,
+  facebookText,
 }) => {
-  const { address, email, phone, instagramUrl, instagramText, facebookUrl, facebookText } = CONTACT_INFO;
-
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -40,7 +39,7 @@ const ContactInfo: React.FC<ContactInfoProps> = ({
 
   return (
     <>
-      {showAddress && (
+      {address && (
         <div className="flex items-center mb-2 pt-2">
           {showIcons && (
             <span className="material-icons">
@@ -55,22 +54,8 @@ const ContactInfo: React.FC<ContactInfoProps> = ({
           <p className={showIcons ? "ml-6" : ""}>{address}</p>
         </div>
       )}
-      {showEmail && (
-        <div className="flex items-center mb-2">
-          {showIcons && (
-            <span className="material-icons">
-              <Image
-                src="/icons/contacts/email.svg"
-                alt="Email"
-                width={24}
-                height={20}
-              />
-            </span>
-          )}
-          <p className={showIcons ? "ml-6" : ""}><a href={`mailto:${email}`} className="hover:underline">{email}</a></p>
-        </div>
-      )}
-      {showPhone && (
+
+      {phone && (
         <div className="flex items-center mb-2 font-redhat">
           {showIcons && (
             <span className="material-icons">
@@ -85,7 +70,24 @@ const ContactInfo: React.FC<ContactInfoProps> = ({
           <p className={showIcons ? "ml-6" : ""}><a href={`tel:${phone}`} title="Our phone number" className="max-ml:hover:underline js-phone-link ml:cursor-auto" onClick={handlePhoneClick}>{phone}</a></p>
         </div>
       )}
-      {showInstagram && instagramUrl && (
+
+      {email && (
+        <div className="flex items-center mb-2">
+          {showIcons && (
+            <span className="material-icons">
+              <Image
+                src="/icons/contacts/email.svg"
+                alt="Email"
+                width={24}
+                height={20}
+              />
+            </span>
+          )}
+          <p className={showIcons ? "ml-6" : ""}><a href={`mailto:${email}`} className="hover:underline">{email}</a></p>
+        </div>
+      )}
+
+      {instagramUrl && (
         <div className="flex items-center">
           {showIcons && (
             <span className="material-icons">
@@ -97,10 +99,11 @@ const ContactInfo: React.FC<ContactInfoProps> = ({
               />
             </span>
           )}
-          <p className={showIcons ? "ml-6" : ""}><a href={instagramUrl} target="_blank" className="hover:underline">{instagramText || instagramUrl}</a></p>
+          <p className={showIcons ? "ml-6" : ""}><a href={instagramUrl} target="_blank" className="hover:underline">{instagramText || 'Instagram'}</a></p>
         </div>
       )}
-      {showFacebook && facebookUrl && (
+
+      {facebookUrl && (
         <div className="flex items-center">
           {showIcons && (
             <span className="material-icons">
@@ -112,7 +115,7 @@ const ContactInfo: React.FC<ContactInfoProps> = ({
               />
             </span>
           )}
-          <p className={showIcons ? "ml-6" : ""}><a href={facebookUrl} target="_blank" className="hover:underline">{facebookText || facebookUrl}</a></p>
+          <p className={showIcons ? "ml-6" : ""}><a href={facebookUrl} target="_blank" className="hover:underline">{facebookText || 'Facebook'}</a></p>
         </div>
       )}
     </>
