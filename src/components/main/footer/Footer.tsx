@@ -7,7 +7,7 @@ import HelpLinks from './HelpLinks/HelpLinks';
 import ContactInfo from '../shared/ContactInfo';
 import AssociationLinks from './AssociationLinks/AssociationLinks';
 import { useLocale, useTranslations } from 'next-intl';
-import { contactsApi } from '@/store/api/contactsApi'; // Импорт API
+import { contactsApi } from '@/store/api/contactsApi';
 
 import AnimatedFooterMan from './AnimatedFooterMan/AnimatedFooterMan';
 import FooterNavigationLinks from './footer-navigation-links/FooterNavigationLinks';
@@ -16,7 +16,7 @@ import DecoratedSvg from './DecoratedSvg/DecoratedSvg';
 const Footer = () => {
   const t = useTranslations('Footer');
   const locale = useLocale();
-  const { data: contacts, isLoading, isError } = contactsApi.useGetAllContactsQuery(); // Получаем данные с API
+  const { data: contacts, isLoading, isError } = contactsApi.useGetAllContactsQuery();
 
   const scrollToTop = () => {
     if (typeof window !== 'undefined') {
@@ -33,12 +33,11 @@ const Footer = () => {
   if (isAdminPage || isDocumentsPage) return null;
 
   if (isLoading || isError || !contacts || contacts.length === 0) {
-    return null; // Можно добавить загрузочный индикатор или просто вернуть null
+    return null;
   }
 
-  const contactData = contacts[0]; // Берем первый контакт (или нужный вам)
+  const contactData = contacts[0];
 
-  // Выбираем адрес на основе текущей локали
   let address;
   switch (locale) {
     case 'en':
