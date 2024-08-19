@@ -275,10 +275,9 @@ const EditBlogPostForm = ({ id }: { id: number }) => {
           <div className="flex flex-nowrap items-center gap-4">
             <button
               disabled={!isValid}
-              // disabled={false}
               className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white hover:shadow-xl disabled:bg-gray-500"
             >
-              {isProcessing ? 'Обробка запиту...' : 'Змінити'}
+              {isProcessing ? 'Обробка...' : 'Змінити'}
             </button>
             <button
               onClick={() => dispatch(closeModal())}

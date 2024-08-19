@@ -1,35 +1,42 @@
 'use client';
-import SectionTitle from '@/components/main/shared/SectionTitle';
+
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import CarouselButton from '../../shared/carousel/carousel-button/CarouselButton';
 import { Carousel } from '../../shared/carousel/Carousel';
-import { teamMatesItems } from './items';
+import { teamApi } from '@/store/api/teamApi';
 import TeamMatesCard from './teamMatesCard/TeamMatesCard';
-import React from 'react';
+import SectionTitle from '@/components/main/shared/SectionTitle';
+import CarouselButton from '../../shared/carousel/carousel-button/CarouselButton';
+import { ITeamMember } from '@/types/team';
 
 const Team = () => {
   const t = useTranslations('About.team');
 
+  const { data: teamMates } = teamApi.useGetAllTeamQuery();
+
+  console.log(teamMates?.data);
+
   return (
     <section className="container mb-[120px] flex flex-col gap-[48px]">
       <SectionTitle title={t('title')} />
-      <div className="flex flex-col gap-5 ml:flex-row ]">
-        <div className="flex flex-col ">
-          <div className='flex flex-col md:flex-row gap-5 px-0'>
+      <div className="] flex flex-col gap-5 ml:flex-row">
+        <div className="flex flex-col">
+          <div className="flex flex-col gap-5 px-0 md:flex-row">
             <Image
               src="/images/teamSection/team.png"
               alt="teams photo"
               width={350}
               height={306}
-              className='w-[350px] h-[306px] md:w-[332px] md:h-[290px] lg:w-[564px] lg:h-[415px]'
+              className="h-[306px] w-[350px] md:h-[290px] md:w-[332px] lg:h-[415px] lg:w-[564px]"
             />
-            <p className="font-raleway text-textViolet text-[16px] md:text-[18px] ml:text-[20px]">
+            <p className="font-raleway text-[16px] text-textViolet md:text-[18px] ml:text-[20px]">
               {t('text_1')}
             </p>
           </div>
-          <div className='hidden md:block font-raleway px-20 lg:flex flex-row items-end py-5'>
-            <p className='text-[16px] text-textViolet md:text-[18px] lg:px-10 py-10 ml:text-[20px]'>{t('text_2')}</p>
+          <div className="hidden flex-row items-end px-20 py-5 font-raleway md:block lg:flex">
+            <p className="py-10 text-[16px] text-textViolet md:text-[18px] ml:text-[20px] lg:px-10">
+              {t('text_2')}
+            </p>
             <Image
               className="hidden lg:block"
               src="/images/teamSection/clown.svg"
@@ -39,14 +46,14 @@ const Team = () => {
             />
           </div>
         </div>
-        <div className='flex flex-row md:flex-col ml:flex-row h-full'>
-        <div className='md:flex items-center gap-2 ml:block gap-0'>
+        <div className="flex h-full flex-row md:flex-col ml:flex-row">
+          <div className="items-center gap-0 gap-2 md:flex ml:block">
             <CarouselButton className="team-prev-el -rotate-90 md:-rotate-180 ml:-rotate-90" />
             <CarouselButton className="team-next-el rotate-90 md:rotate-0 ml:rotate-90" />
           </div>
-          <div className='overflow-hidden h-full'>
+          <div className="h-full overflow-hidden">
             <Carousel
-              items={teamMatesItems}
+              items={teamMates?.data as ITeamMember[]}
               autoHeight={true}
               prevEl=".team-prev-el"
               nextEl=".team-next-el"
@@ -55,27 +62,27 @@ const Team = () => {
               effect={'fade'}
               breakpoints={{
                 390: {
-                  direction: "vertical",
+                  direction: 'vertical',
                   slidesPerView: 1,
                 },
                 768: {
-                  direction: "horizontal",
+                  direction: 'horizontal',
                   slidesPerView: 3,
                 },
                 1024: {
-                  direction: "vertical", 
-                  slidesPerView: "auto", 
-                }
+                  direction: 'vertical',
+                  slidesPerView: 'auto',
+                },
               }}
-              renderItem={(item) => 
-                <div className="relative flex flex-col  md:flex-row gap-[24px] ml:flex-col">
-                  <TeamMatesCard {...item}/>
+              renderItem={(item) => (
+                <div className="relative flex flex-col gap-[24px] md:flex-row ml:flex-col">
+                  <TeamMatesCard {...item} />
                 </div>
-              }
+              )}
             />
           </div>
         </div>
-        <div className='block py-5 md:hidden'>
+        <div className="block py-5 md:hidden">
           <span>{t('text_2')}</span>
           <Image
             className="hidden lg:block"

@@ -1,36 +1,39 @@
-// // import { useTranslations } from "next-intl";
-import Image from "next/image";
-import React from 'react';
+'use client';
+
+import Image from 'next/image';
+import { useLocale } from 'next-intl';
 
 interface TeamMatesCardProps {
-  imgSrc: string;
-  name: string;
-
+  imageUrl: string;
+  nameUa: string;
+  nameEn: string;
+  nameIt: string;
 }
 
 const TeamMatesCard = ({
-  imgSrc,
-  name,
-
+  imageUrl,
+  nameUa,
+  nameEn,
+  nameIt,
 }: TeamMatesCardProps) => {
-  // const t = useTranslations('Team');
+  const locale = useLocale();
 
   return (
     <div className="flex flex-row">
-      <span className="relative whitespace-nowrap w-4 h-6 font-raleway -bottom-40 block transform -rotate-90 leading-[132%] text-textViolet">
-       {name}
+      <span className="relative -bottom-40 block h-6 w-4 -rotate-90 transform whitespace-nowrap font-raleway leading-[132%] text-textViolet">
+        {locale === 'ua' ? nameUa : locale === 'en' ? nameEn : nameIt}
       </span>
-      <div className="relative w-[318px] h-[415px] md:w-[204px] md:h-[282px] ml:w-[306px] ml:h-[447px]">
-      <Image
-        className="bg-yellow object-content"
-        src={imgSrc}
-        fill
-        sizes="100%"
-        alt={name}
+      <div className="relative h-[415px] w-[318px] md:h-[282px] md:w-[204px] ml:h-[447px] ml:w-[306px]">
+        <Image
+          className="bg-yellow object-cover"
+          src={imageUrl}
+          fill
+          sizes="100%"
+          alt={locale === 'ua' ? nameUa : locale === 'en' ? nameEn : nameIt}
         />
+      </div>
     </div>
-        </div>
-  )
+  );
 };
 
 export default TeamMatesCard;

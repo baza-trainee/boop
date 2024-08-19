@@ -11,7 +11,6 @@ import PageTitle from '../shared/PageTitle';
 import UniversalButton from '../shared/UniversalButton';
 import { openAlert } from '@/store/slices/alertSlice';
 import Loader from '@/components/shared/loader/Loader';
-import LoaderSmile from './LoaderSmile';
 
 const orderTitles: Record<number, string> = {
   1: 'Роки досвіду',
@@ -204,7 +203,7 @@ const CounterPage = () => {
             btnTextStyle={` text-center ${isProcessing ? 'text-sm' : 'text-lg'} font-bold leading-[100%] ${isDisabled ? `text-[#97979A]  ` : `text-white`}`}
             className={`flex h-[56px] items-center justify-center gap-2 rounded-[32px] ${isDisabled ? `bg-[#E3E3E4]` : `bg-[#E93405]`} px-[24px] py-[18px] text-white`}
           >
-            {isProcessing ? <LoaderSmile /> : 'Змінити'}
+            {isProcessing ? 'Обробка...' : 'Змінити'}
           </UniversalButton>
           <UniversalButton
             type="button"
