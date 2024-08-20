@@ -56,6 +56,8 @@ const Team = () => {
                 spaceBetween={20}
                 speed={900}
                 effect={'fade'}
+                isDraggable={false}
+                slideClassName="teamSlide"
                 breakpoints={{
                   390: {
                     direction: 'vertical',
@@ -71,7 +73,7 @@ const Team = () => {
                   },
                 }}
                 renderItem={(item) => (
-                  <div className="relative flex flex-col gap-[24px] md:flex-row ml:flex-col">
+                  <div className="teamSlide relative flex flex-col gap-[24px] md:flex-row ml:flex-col">
                     <TeamMatesCard {...item} />
                   </div>
                 )}

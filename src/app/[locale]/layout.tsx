@@ -60,7 +60,6 @@ export async function generateMetadata({
           ? 'Program of emotional support for children in hospitals by @tabletochki'
           : 'Programma di sostegno emotivo per i bambini negli ospedali di @tabletochki'
     }`,
-    manifest: '/site.webmanifest',
   };
 }
 
