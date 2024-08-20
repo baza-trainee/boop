@@ -7,6 +7,7 @@ import { teamApi } from '@/store/api/teamApi';
 import TeamMatesCard from './teamMatesCard/TeamMatesCard';
 import SectionTitle from '@/components/main/shared/SectionTitle';
 import CarouselButton from '../../shared/carousel/carousel-button/CarouselButton';
+import AnimatedTeamMan from './AnimatedTeamMan';
 
 const Team = () => {
   const t = useTranslations('About.team');
@@ -30,17 +31,14 @@ const Team = () => {
               {t('text_1')}
             </p>
           </div>
-          <div className="hidden flex-row items-end px-20 py-5 font-raleway md:block lg:flex">
+          <div className="hidden flex-row items-end px-20 py-5 font-raleway md:block ml:pl-[100px] ml:pr-0 lg:flex">
             <p className="py-10 text-[16px] text-textViolet md:text-[18px] ml:text-[20px] lg:px-10">
               {t('text_2')}
             </p>
-            <Image
-              className="hidden lg:block"
-              src="/images/teamSection/clown.svg"
-              alt="yellow clown"
-              width={216}
-              height={192}
-            />
+
+            <div className="hidden w-[250px] cursor-pointer lg:block">
+              <AnimatedTeamMan className="" />
+            </div>
           </div>
         </div>
         <div className="flex h-full flex-row md:flex-col ml:flex-row">

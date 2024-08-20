@@ -9,6 +9,9 @@ import { applicationsApi } from '@/store/api/applicationsApi';
 import { useModal } from '@/components/providers/ModalProvider';
 import { applicationValidation, TApplication } from './scheme';
 import SectionTitle from '@/components/main/shared/SectionTitle';
+import PurpleFormMan from './animatedMen/PurpleFormMan';
+import OrangeFormMan from './animatedMen/OrangeFormMan';
+import YellowFormMan from './animatedMen/YellowFormMan';
 
 const ClownSchoolForm: React.FC = () => {
   const tForm = useTranslations();
@@ -83,9 +86,9 @@ const ClownSchoolForm: React.FC = () => {
   };
 
   return (
-    <section className="mb-[120px] md:bg-bgYellow">
+    <section className="relative mb-[90px] md:mb-[100px] md:bg-bgYellow 4xl:mb-[120px]">
       <div className="container mx-auto flex max-w-screen-3xl flex-col py-8 ml:flex-row lg:py-16">
-        <div className="relative mb-8 flex flex-col justify-center text-mainViolet md:mb-0 md:max-w-[60%] ml:w-[55%] ml:pr-10 lg:w-1/2 lg:max-w-[658px]">
+        <div className="mb-8 flex flex-col justify-center text-mainViolet md:mb-0 md:max-w-[60%] ml:w-[55%] ml:pr-10 lg:w-1/2 lg:max-w-[658px]">
           <SectionTitle
             title={tClownSchoolFormDescription('formTitle')}
             className="mb-2"
@@ -96,45 +99,16 @@ const ClownSchoolForm: React.FC = () => {
             <br />
             {tClownSchoolFormDescription('formDescription')}
           </p>
-          <div className="mt-10 hidden items-baseline space-x-4 max-ml:absolute max-ml:-right-[65%] md:flex">
-            <Image
-              src="/images/clown1.svg"
-              alt="Clown"
-              width={61}
-              height={45}
-              className="h-[45px] w-[61px] max-ml:scale-x-[-1] max-ml:transform"
-            />
-            <Image
-              src="/images/clown2.svg"
-              alt="Clown"
-              width={141}
-              height={105}
-              className="max-ml:scale-x-[-1] max-ml:transform"
-            />
-            <Image
-              src="/images/clown3.svg"
-              alt="Clown"
-              width={232}
-              height={172}
-              className="max-ml:hidden"
+          <div id="animatedMen" className="flex ml:items-end">
+            <YellowFormMan className="h-[45px] w-[61px] cursor-pointer max-ml:scale-x-[-1] max-ml:transform max-md:hidden md:absolute md:right-[60px] md:top-[140px] ml:static ml:mr-[40px]" />
+            <OrangeFormMan className="h-[123px] w-[166px] cursor-pointer max-ml:scale-x-[-1] max-ml:transform max-md:hidden md:absolute md:right-[127px] md:top-[80px] ml:static" />
+            <PurpleFormMan
+              index={1}
+              className="absolute -bottom-[50px] right-5 h-[118px] w-[163px] cursor-pointer max-ml:scale-x-[-1] md:bottom-[65px] md:right-14 md:h-[169px] md:w-[233px] ml:static ml:h-[203px] ml:w-[280px]"
             />
           </div>
         </div>
         <div className="relative md:max-w-[55%] lg:ml-auto lg:mr-[96px] lg:max-w-[522px]">
-          <Image
-            src="/images/clown3.svg"
-            alt="Clown"
-            width={232}
-            height={172}
-            className="absolute -right-[80%] bottom-0 hidden scale-x-[-1] transform md:block ml:hidden"
-          />
-          <Image
-            src="/images/clown2.svg"
-            alt="Clown"
-            width={141}
-            height={105}
-            className="absolute bottom-0 right-4 -mb-[60px] scale-x-[-1] transform md:hidden"
-          />
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col text-mainViolet"
