@@ -8,11 +8,16 @@ import { contactsApi } from '@/store/api/contactsApi';
 import { IContact } from '@/types/contacts';
 import AnimatedClown from './components/AnimatedClown';
 import { CONTACT_INFO } from '@/constants';
+import AnimatedContactsMan from './components/AnimatedContactsMan';
 
 const ContactsPage: React.FC = () => {
   const t = useTranslations('Contacts');
   const locale = useLocale();
-  const { data: contacts, isLoading, isError } = contactsApi.useGetAllContactsQuery();
+  const {
+    data: contacts,
+    isLoading,
+    isError,
+  } = contactsApi.useGetAllContactsQuery();
 
   if (isError) return <p>Error loading contacts</p>;
   if (isLoading || !contacts || contacts.length === 0) return <p>Loading...</p>;
@@ -50,7 +55,7 @@ const ContactsPage: React.FC = () => {
               facebookUrl={contactData.facebook}
               facebookText={CONTACT_INFO.facebookText || 'Facebook'}
             />
-            <AnimatedClown className="absolute right-5 max-ml:hidden ml:-bottom-[130px]" />
+            <AnimatedContactsMan className="absolute right-10 h-[204px] w-[277px] cursor-pointer max-ml:hidden ml:-bottom-[200px] lg:-bottom-[150px] 4xl:-bottom-10" />
           </div>
           <div className="mt-4 md:mt-0 md:w-[55%] ml:w-[65%]">
             {/* Карта */}
