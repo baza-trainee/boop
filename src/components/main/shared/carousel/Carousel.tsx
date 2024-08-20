@@ -14,6 +14,7 @@ export interface CarouselProps<T> extends SwiperProps {
   slideClassName?: string;
   nextEl: string;
   prevEl: string;
+  isDraggable?: boolean;
 }
 
 // eslint-disable-next-line no-unused-vars

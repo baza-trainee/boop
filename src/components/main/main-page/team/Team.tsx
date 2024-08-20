@@ -41,13 +41,13 @@ const Team = () => {
             </div>
           </div>
         </div>
-        <div className="flex h-full flex-row md:flex-col ml:flex-row">
+        <div className="flex h-[40vh] flex-row md:h-full md:flex-col ml:flex-row">
           <div className="items-center gap-0 gap-2 md:flex ml:block">
             <CarouselButton className="team-prev-el -rotate-90 md:-rotate-180 ml:-rotate-90" />
             <CarouselButton className="team-next-el rotate-90 md:rotate-0 ml:rotate-90" />
           </div>
           {teamMates?.data.length && (
-            <div className="h-full overflow-hidden">
+            <div className="h-[40vh] overflow-hidden md:h-full">
               <Carousel
                 items={teamMates.data}
                 autoHeight={true}
@@ -71,7 +71,7 @@ const Team = () => {
                   },
                 }}
                 renderItem={(item) => (
-                  <div className="relative flex flex-col gap-[24px] md:flex-row ml:flex-col">
+                  <div className="teamSlide relative flex flex-col gap-[24px] md:flex-row ml:flex-col">
                     <TeamMatesCard {...item} />
                   </div>
                 )}
