@@ -16,7 +16,11 @@ import DecoratedSvg from './DecoratedSvg/DecoratedSvg';
 const Footer = () => {
   const t = useTranslations('Footer');
   const locale = useLocale();
-  const { data: contacts, isLoading, isError } = contactsApi.useGetAllContactsQuery();
+  const {
+    data: contacts,
+    isLoading,
+    isError,
+  } = contactsApi.useGetAllContactsQuery();
 
   const scrollToTop = () => {
     if (typeof window !== 'undefined') {
@@ -58,7 +62,7 @@ const Footer = () => {
       <DecoratedSvg />
       <AnimatedFooterMan
         className={
-          'top-41 absolute right-16 h-[112px] w-[115px] md:right-[40px] md:top-[23px] md:h-[168px] md:w-[164px] ml:-top-[12px] ml:right-[64px] lg:right-[165px] lg:top-[2px] 3xl:right-[285px] 4xl:right-[460px]'
+          'top-41 absolute right-6 z-[2] h-[112px] w-[115px] xs:right-16 md:right-[40px] md:top-[23px] md:h-[168px] md:w-[164px] ml:-top-[12px] ml:right-[64px] lg:right-[165px] lg:top-[2px] 3xl:right-[285px] 4xl:right-[460px]'
         }
       />
       <div className="relative z-[1] mx-auto max-w-[1920px] px-[10px] md:px-[64px] lg:px-[64px] xl:px-[80px] 2xl:px-[120px]">
