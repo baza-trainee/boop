@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import axios from '@/utils/axios';
+import axios from '@/lib/axios';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { TPressScheme, pressValidation } from './scheme';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -252,15 +252,13 @@ const AddPressForm = () => {
         </div>
         <div className="flex justify-center gap-[20px]">
           <button
-            // disabled={false}
             disabled={!isValid}
             className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-[20px] text-white hover:shadow-xl disabled:bg-[#E3E3E4] disabled:text-[#97979A]"
           >
-            {isProcessing ? 'Обробка запиту...' : 'Додати'}
+            {isProcessing ? 'Обробка...' : 'Додати'}
           </button>
           <button
             disabled={!isValid}
-            // disabled={false}
             onClick={() => dispatch(closeModal())}
             className="w-[149px] rounded-3xl border border-yellow px-4 py-2 text-[20px] text-violet disabled:border-[#E3E3E4] disabled:bg-[#F3F4EE] disabled:text-[#97979A]"
           >

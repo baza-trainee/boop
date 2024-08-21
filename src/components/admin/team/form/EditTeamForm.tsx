@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import axios from '@/utils/axios';
+import axios from '@/lib/axios';
 import { useEffect, useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
@@ -192,7 +192,7 @@ const EditTeamForm = ({ id }: { id: string }) => {
             disabled={!isValid}
             className="flex min-w-[123px] items-center justify-center whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-[20px] font-[500] text-white disabled:bg-[#E3E3E4] disabled:text-[#97979A]"
           >
-            {isProcessing ? 'Обробка запиту...' : 'Змінити'}
+            {isProcessing ? 'Обробка...' : 'Змінити'}
           </button>
           <button
             disabled={!isValid}

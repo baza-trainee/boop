@@ -28,8 +28,7 @@ export const applicationValidation = z.object({
       message: 'Form.invalidEmail',
     }),
   social: z
-    .string({ required_error: 'Form.required' })
-    .min(5, 'Form.linkMin')
+    .string()
     .refine(
       (value) =>
         !value ||
@@ -39,7 +38,8 @@ export const applicationValidation = z.object({
       {
         message: 'Form.invalidLink',
       }
-    ),
+    )
+    .optional(),
 });
 
 export type TApplication = z.infer<typeof applicationValidation>;

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import axios from '@/utils/axios';
+import axios from '@/lib/axios';
 import { useEffect, useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
@@ -275,10 +275,9 @@ const EditBlogPostForm = ({ id }: { id: number }) => {
           <div className="flex flex-nowrap items-center gap-4">
             <button
               disabled={!isValid}
-              // disabled={false}
               className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white hover:shadow-xl disabled:bg-gray-500"
             >
-              {isProcessing ? 'Обробка запиту...' : 'Змінити'}
+              {isProcessing ? 'Обробка...' : 'Змінити'}
             </button>
             <button
               onClick={() => dispatch(closeModal())}

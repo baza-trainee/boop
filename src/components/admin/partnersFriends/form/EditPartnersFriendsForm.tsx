@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import axios from '@/utils/axios';
+import axios from '@/lib/axios';
 import clsx from 'clsx';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useAppDispatch } from '@/store/hook';

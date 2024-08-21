@@ -4,6 +4,7 @@ import {
   setDonationAmount,
   setIsCustomDonate,
 } from '@/store/slices/paymentFormSlice';
+import clsx from 'clsx';
 import { useEffect } from 'react';
 
 const CURRENCY = [
@@ -21,7 +22,11 @@ const CURRENCY = [
   },
 ];
 
-const PaymentCurrency = () => {
+interface PaymentCurrencyProps {
+  className?: string;
+}
+
+const PaymentCurrency = ({ className }: PaymentCurrencyProps) => {
   const { selectedCurrency, isCustomDonate } = useAppSelector(
     (state) => state.paymentForm
   );
@@ -34,7 +39,7 @@ const PaymentCurrency = () => {
   }, [selectedCurrency]);
 
   return (
-    <div className="flex gap-2">
+    <div className={clsx('flex gap-2', className)}>
       {CURRENCY.map((item) => (
         <div className="relative" key={item.value}>
           <input

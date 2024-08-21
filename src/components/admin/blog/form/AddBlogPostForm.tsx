@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import axios from '@/utils/axios';
+import axios from '@/lib/axios';
 import { useEffect, useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
@@ -229,7 +229,7 @@ const AddBlogPostForm = () => {
               // disabled={false}
               className={`min-w-[123px] whitespace-nowrap rounded-3xl border border-[#E3E3E4] bg-red px-4 py-2 text-[20px] font-bold hover:shadow-xl disabled:bg-[#E3E3E4] ${!isValid ? 'text-[#97979A]' : 'text-white'}`}
             >
-              {isProcessing ? 'Обробка запиту...' : 'Додати'}
+              {isProcessing ? 'Обробка...' : 'Додати'}
             </button>
             <button
               onClick={() => dispatch(closeModal())}

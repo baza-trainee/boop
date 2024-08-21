@@ -1,5 +1,4 @@
-import { CustomNotFound } from '@/components/notFound/CustomNotFound';
-import React from 'react';
+import { CustomNotFound } from '@/components/not-found/CustomNotFound';
 
 const NotFound = () => {
   return <CustomNotFound />;

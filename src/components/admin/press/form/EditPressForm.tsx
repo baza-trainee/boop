@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import axios from '@/utils/axios';
+import axios from '@/lib/axios';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { TPressScheme, pressValidation } from './scheme';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -311,7 +311,7 @@ const EditPressForm = ({ id }: { id: string }) => {
             disabled={!isValid}
             className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 text-white hover:shadow-xl disabled:bg-[#E3E3E4] disabled:text-[#97979A]"
           >
-            {isProcessing ? 'Обробка запиту...' : 'Змінити'}
+            {isProcessing ? 'Обробка...' : 'Змінити'}
           </button>
           <button
             disabled={!isValid}

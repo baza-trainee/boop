@@ -51,10 +51,10 @@ const PaymentForm = () => {
         e.preventDefault();
         handleSubmit();
       }}
-      className="flex flex-col items-end gap-8 max-ml:items-start"
+      className="flex basis-full flex-col items-center gap-8 sm:items-start ml:max-w-[666px] lg:max-w-[636px] lg:items-end 4xl:max-w-[830px]"
     >
       <PaymentCurrency />
-      <div className="w-[830px] max-4xl:w-[636px] max-lg:w-[540px] max-ml:w-[666px] max-md:w-full">
+      <div className="w-full">
         <PaymentDonateType />
         <PaymentDonationAmount isValidate={isValidate} />
       </div>

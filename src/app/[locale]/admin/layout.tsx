@@ -1,10 +1,10 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Sidebar from '@/components/admin/sidebar/Sidebar';
 import { AlertWindow } from '@/components/admin/shared/AlertWindow';
 import LoginPage from '@/components/admin/authComponents/LoginPage/LoginPage';
 import { isUserLogined } from '@/components/admin/authComponents/ui/fetchSession';
-import { useState, useEffect } from 'react';
 
 export default function AdminLayout({
   children,

@@ -56,7 +56,7 @@ const SchoolPage: React.FC = () => {
   ]);
   return (
     <ModalProvider>
-      <div className="bg-bgWhite">
+      <div className="bg-bgWhite pt-[100px]">
         <section
           className="bg-[right_bottom_200px] bg-no-repeat pb-[70px] pt-[72.5px] xs:bg-[right_bottom_69px] md:bg-[right_4px_bottom_-32px] md:pb-[100px] md:pt-[100px] ml:bg-[right_bottom_10px] lg:bg-[right_-7px_bottom_50px] xl:bg-[right_bottom_-5px] xl:pb-[120px] 3xl:bg-[right_top_168px] 3xl:pt-[120px] 4xl:bg-[right_bottom_-13px]"
           style={{ backgroundImage }}

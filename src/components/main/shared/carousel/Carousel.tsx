@@ -14,6 +14,7 @@ export interface CarouselProps<T> extends SwiperProps {
   slideClassName?: string;
   nextEl: string;
   prevEl: string;
+  isDraggable?: boolean;
 }
 
 // eslint-disable-next-line no-unused-vars
@@ -25,6 +26,7 @@ export const Carousel = <T, _>({
   modules,
   nextEl,
   prevEl,
+  isDraggable,
   ...options
 }: CarouselProps<T>) => {
   const renderSlides = useCallback(
@@ -39,6 +41,8 @@ export const Carousel = <T, _>({
 
   const swiperOptions: SwiperOptions = {
     spaceBetween: 15,
+    noSwiping: isDraggable,
+    noSwipingClass: slideClassName,
     ...options,
   };
 

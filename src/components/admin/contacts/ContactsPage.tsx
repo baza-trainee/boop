@@ -172,7 +172,7 @@ const ContactsPage = () => {
                   disabled={!!Object.keys(errors).length}
                   className="min-w-[123px] whitespace-nowrap rounded-3xl bg-red px-4 py-2 font-[500] text-white disabled:bg-[#E3E3E4] disabled:text-[#97979A]"
                 >
-                  {isProcessing ? 'Обробка запиту...' : 'Змінити'}
+                  {isProcessing ? 'Обробка...' : 'Змінити'}
                 </button>
                 <button
                   disabled={!!Object.keys(errors).length}
