@@ -37,7 +37,7 @@ const Footer = () => {
       <DecoratedSvg />
       <AnimatedFooterMan
         className={
-          'top-41 absolute right-16 h-[112px] w-[115px] md:right-[40px] md:top-[23px] md:h-[168px] md:w-[164px] ml:-top-[12px] ml:right-[64px] lg:right-[165px] lg:top-[2px] 3xl:right-[285px] 4xl:right-[460px]'
+          'top-41 absolute right-16 hidden h-[112px] w-[115px] sm:block md:right-[40px] md:top-[23px] md:h-[168px] md:w-[164px] ml:-top-[12px] ml:right-[64px] lg:right-[165px] lg:top-[2px] 3xl:right-[285px] 4xl:right-[460px]'
         }
       />
       ;
