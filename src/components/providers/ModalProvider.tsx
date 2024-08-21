@@ -2,6 +2,7 @@
 'use client';
 
 import React, { useState, useContext, createContext, ReactNode } from 'react';
+import { useBodyScrollLock } from '@/hooks/useBodyScrollLock';
 
 interface ModalContextProps {
   openModal: (content: ReactNode) => void;
@@ -15,6 +16,8 @@ export const ModalProvider: React.FC<{ children: ReactNode }> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [modalContent, setModalContent] = useState<ReactNode>(null);
+
+  useBodyScrollLock(isOpen);
 
   const openModal = (content: ReactNode) => {
     setModalContent(content);
