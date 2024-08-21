@@ -21,11 +21,11 @@ const Team = () => {
         <div className="flex flex-col">
           <div className="flex flex-col gap-5 px-0 md:flex-row">
             <Image
-              src="/images/teamSection/team.png"
+              src="/images/teamSection/boopTeam.jpg"
               alt="teams photo"
               width={350}
               height={306}
-              className="h-[306px] w-[350px] md:h-[290px] md:w-[332px] lg:h-[415px] lg:w-[564px]"
+              className="h-[306px] w-[350px] object-cover md:h-[290px] md:w-[332px] lg:h-[415px] lg:w-[564px]"
             />
             <p className="font-raleway text-[16px] text-textViolet md:text-[18px] ml:text-[20px]">
               {t('text_1')}
