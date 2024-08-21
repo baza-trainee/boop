@@ -100,7 +100,7 @@ const Header = () => {
           ></div>
         )}
         <div
-          className={`ml:hidden ${menuOpen ? 'block' : 'hidden'} absolute left-0 right-0 top-0 z-50 w-full rounded-b-[16px] border-b-[16px] border-b-yellow bg-bgBurgerMenu px-[48px] py-[10px] pb-[48px] pt-[10px] font-groppled font-bold text-textViolet`}
+          className={`md:hidden ${menuOpen ? 'block' : 'hidden'} absolute left-0 right-0 top-0 z-50 w-full rounded-b-[16px] border-b-[16px] border-b-yellow bg-bgBurgerMenu px-[48px] py-[10px] pb-[48px] pt-[10px] font-groppled font-bold text-textViolet`}
         >
           <div className="-mb-[15px] -mr-[25px] flex justify-end pt-[10px]">
             <button
@@ -115,7 +115,7 @@ const Header = () => {
               />
             </button>
           </div>
-          <ul className="flex flex-col items-start space-y-3">
+          <ul className="flex flex-col items-start space-y-5">
             <li>
               <Link href="/" title={t('logoTitle')}>
                 <HeaderLogo locale={locale} />
@@ -158,12 +158,13 @@ const Header = () => {
               />
             </li>
             <li className="pt-[15px]">
-              <button
+              <a
+                href="/#donat"
                 className="h-[56px] w-[238px] whitespace-nowrap rounded-[32px] bg-red px-[24px] py-[18px] font-raleway text-[20px] font-bold leading-[20px] text-white ml:h-[52px] ml:w-[200px] ml:text-[16px] ml:leading-[16px]"
                 onClick={toggleMenu}
               >
                 {t('button')}
-              </button>
+              </a>
             </li>
           </ul>
         </div>

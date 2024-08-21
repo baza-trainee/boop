@@ -46,8 +46,8 @@ const ClownSchoolForm: React.FC = () => {
 
       if (response && response.data) {
         openModal(
-          <div className="flex h-[310px] w-[800px] flex-col items-center justify-center text-center text-[24px] font-semibold text-violet">
-            <div>
+          <div className="flex h-[310px] w-full flex-col items-center justify-center text-center text-[24px] font-semibold text-violet">
+            <div className="mb-10 md:mb-0">
               <p className="mb-5">{tClownSchoolForm('formSubmitted')}</p>
               <p>{tClownSchoolForm('contactWithinThreeDays')}</p>
             </div>
