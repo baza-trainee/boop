@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from '@/utils/axios';
+import axios from '@/lib/axios';
 import clsx from 'clsx';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm, SubmitHandler } from 'react-hook-form';

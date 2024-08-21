@@ -1,6 +1,6 @@
 'use client';
 
-import axios from '@/utils/axios';
+import axios from '@/lib/axios';
 import { useEffect, useState } from 'react';
 import { useAppDispatch } from '@/store/hook';
 import { documentsApi } from '@/store/api/documentsApi';

@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import axios from '@/utils/axios';
+import axios from '@/lib/axios';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { TPressScheme, pressValidation } from './scheme';
 import { zodResolver } from '@hookform/resolvers/zod';
