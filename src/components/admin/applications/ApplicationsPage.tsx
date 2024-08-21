@@ -64,7 +64,7 @@ const ApplicationsPage = () => {
   return (
     <section className="relative min-h-[784px] px-[24px] py-[100px]">
       <PageTitle title="Заявки до школи" />
-      <table className="block min-w-full border-collapse border border-violet md:table">
+      <table className="mx-auto block w-full max-w-full border-collapse border border-violet md:table">
         <thead className="block border border-violet text-mainViolet md:table-header-group">
           <tr className="block border border-gray-300 md:table-row md:border-none">
             <th className="h-[46px] border border-violet p-2 text-left text-center md:table-cell">
@@ -107,7 +107,10 @@ const ApplicationsPage = () => {
                   {row.phone}
                 </td>
                 <td className="h-[60px] border border-violet p-2 text-center md:table-cell">
-                  {row.social}
+                  <a href={row.social} target="_blank">
+                    {' '}
+                    {row.social}
+                  </a>
                 </td>
                 <td className="h-[60px] border border-violet text-center md:table-cell">
                   <div className="flex w-full items-center justify-center gap-4 px-2">
