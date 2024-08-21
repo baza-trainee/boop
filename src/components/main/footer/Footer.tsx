@@ -54,8 +54,8 @@ const Footer = () => {
             {t('title')}
           </h4>
         </div>
-        <div className="flex flex-wrap justify-between gap-x-4 gap-y-8 text-textViolet">
-          <div className="flex flex-col gap-8">
+        <div className="grid grid-cols-1 gap-x-4 gap-y-8 text-textViolet custom:grid-cols-2 ml:flex ml:justify-between">
+          <div className="flex flex-col gap-8 max-ml:col-span-2">
             <div>
               <ContactInfo
                 showIcons={false}
@@ -67,8 +67,8 @@ const Footer = () => {
           </div>
           <AssociationLinks />
           <div>
-            <FooterNavigationLinks className="mb-8" />
-            <SocialLinks />
+            <FooterNavigationLinks className="mb-8 items-end" />
+            <SocialLinks className="justify-end" />
           </div>
           <HelpLinks className="flex ml:hidden" />
         </div>
