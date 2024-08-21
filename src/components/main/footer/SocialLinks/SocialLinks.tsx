@@ -14,8 +14,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ className }) => {
       {socialLinks.map(({ url, name, icon }) => (
         <Link
           target="_blank"
-          className="basic-transition hover:scale-[1.1]"
-          className="h-[44px] w-[44px]"
+          className="basic-transition h-[44px] w-[44px] hover:scale-[1.1]"
           href={url}
           key={url}
         >
