@@ -11,7 +11,7 @@ const GetTextBlockJoin = () => {
     'вчитись',
     'розвиватись',
     'шукати себе',
-    'empatia',
+    "l'empatia",
     'supporto',
     'divertente',
     'carisma',
