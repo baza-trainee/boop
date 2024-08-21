@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 
-import axios from '@/utils/axios';
+import axios from '@/lib/axios';
 import { useAppDispatch } from '@/store/hook';
 import {
   useGetAllPressQuery,

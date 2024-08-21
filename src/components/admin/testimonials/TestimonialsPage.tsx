@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import axios from '@/utils/axios';
+import axios from '@/lib/axios';
 import { useAppDispatch } from '@/store/hook';
 import { openModal } from '@/store/slices/modalSlice';
 import { openAlert, closeAlert } from '@/store/slices/alertSlice';

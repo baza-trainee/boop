@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import axios from '@/utils/axios';
+import axios from '@/lib/axios';
 import { useEffect, useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';

@@ -11,7 +11,7 @@ import {
   SECTION_PARTNERS_FRIENDS,
 } from '@/types/partners-friends';
 import Loader from '@/components/shared/loader/Loader';
-import axios from '@/utils/axios';
+import axios from '@/lib/axios';
 
 import Image from 'next/image';
 import { openModal } from '@/store/slices/modalSlice';
