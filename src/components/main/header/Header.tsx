@@ -159,7 +159,7 @@ const Header = () => {
             </li>
             <li className="pt-[15px]">
               <a
-                href="/#donat"
+                href={`/${locale}#donat`}
                 className="h-[56px] w-[238px] whitespace-nowrap rounded-[32px] bg-red px-[24px] py-[18px] font-raleway text-[20px] font-bold leading-[20px] text-white ml:h-[52px] ml:w-[200px] ml:text-[16px] ml:leading-[16px]"
                 onClick={toggleMenu}
               >
