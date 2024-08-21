@@ -16,9 +16,11 @@ const Training = () => {
           {t('training_title')}
         </h2>
         <div className="relative flex justify-between xs:flex-col">
-          <svg className="absolute hidden ml:-top-[8%] ml:right-[23%] ml:block lg:-top-[10%] lg:right-[49%] lg:h-[108px] lg:w-[76px] xl:right-[47%] xl:h-[117px] xl:w-[81px] 4xl:-top-[10%] 4xl:right-[57%]">
-            <use href="/icons/school/party-hat-violet.svg#party-hat-violet"></use>
-          </svg>
+          <svg className="z-10 ml:w-[58px] ml:h-[76px] absolute hidden ml:-top-[6%] ml:right-[49%] ml:block lg:right-[48%] lg:h-[108px] lg:w-[76px] xl:right-[46%] xl:h-[117px] xl:w-[81px] 3xl:-top-[7%] 4xl:right-[56%]">
+                   <use
+                  href="/icons/school/party-hat-violet.svg#party-hat-violet"
+                ></use>
+                  </svg>
 
           <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
             <div className="order-1 mt-6 max-w-[350px] text-base font-normal leading-normal md:mt-6 md:max-w-[293px] md:text-[18px] ml:mt-16 ml:max-w-[385px] lg:max-w-[510px] lg:text-[20px] xl:mt-10 xl:max-w-[587px] 3xl:mb-24 3xl:mt-8 4xl:max-w-[630px]">
