@@ -2,11 +2,11 @@
 
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { Carousel } from '../../shared/carousel/Carousel';
+import { Carousel } from '@/components/main/shared/carousel/Carousel';
 import { teamApi } from '@/store/api/teamApi';
 import TeamMatesCard from './teamMatesCard/TeamMatesCard';
 import SectionTitle from '@/components/main/shared/SectionTitle';
-import CarouselButton from '../../shared/carousel/carousel-button/CarouselButton';
+import CarouselButton from '@/components/main/shared/carousel/carousel-button/CarouselButton';
 import AnimatedTeamMan from './AnimatedTeamMan';
 
 const Team = () => {
@@ -21,7 +21,7 @@ const Team = () => {
         <div className="flex flex-col">
           <div className="flex flex-col gap-5 px-0 md:flex-row">
             <Image
-              src="/images/teamSection/boopTeam.jpg"
+              src="/images/teamSection/team.png"
               alt="teams photo"
               width={350}
               height={306}

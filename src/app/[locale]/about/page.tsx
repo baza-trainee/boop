@@ -1,6 +1,8 @@
+import { Suspense } from 'react';
 import { Metadata } from 'next';
 import { PageProps } from '@/types';
 import AboutPage from '@/components/main/about/AboutPage';
+import Loader from '@/components/shared/loader/Loader';
 
 export async function generateMetadata({
   params,
@@ -12,7 +14,11 @@ export async function generateMetadata({
 }
 
 const About = () => {
-  return <AboutPage />;
+  return (
+    <Suspense fallback={<Loader />}>
+      <AboutPage />
+    </Suspense>
+  );
 };
 
 export default About;

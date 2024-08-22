@@ -16,7 +16,7 @@ const FirstRuleCard: React.FC<RuleCardProps> = ({ text, isIt }) => {
       </p>
       <div className="md:w-[421px] ml:w-auto">
         <Image
-          src="/images/mainRules/image_1.png"
+          src="/images/mainRules/image_1.webp"
           alt="cloun plays with child"
           width={960}
           height={640}
