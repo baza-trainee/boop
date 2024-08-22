@@ -23,7 +23,7 @@ services:
     image: boop
     env_file: .env
     environment:
-      DATABASE_URL: postgresql://${DB_USER}:${DB_PASSWORD}@postgres:${LOCAL_DB_PORT}/${DB_NAME}?schema=public
+      DATABASE_URL: postgresql://${DB_USER}:${DB_PASSWORD}@postgres:${DB_PORT}/${DB_NAME}?schema=public
     build:
       context: ./
       target: dev

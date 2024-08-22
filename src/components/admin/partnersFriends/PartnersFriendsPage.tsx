@@ -89,6 +89,7 @@ function PartnersFriendsPage({ title, section }: PropsPartnersFriends) {
   if (isFetching || isLoading) {
     return <Loader />;
   }
+
   return (
     <section className="h-screen scroll-m-0 pb-[159px] pl-[24px] pt-[104px]">
       <PageTitle title={title} />
@@ -106,31 +107,34 @@ function PartnersFriendsPage({ title, section }: PropsPartnersFriends) {
             <Image src="/images/add.svg" alt="add" width={70} height={70} />
           </button>
         </li>
-        {partners
-          ?.filter((item) => item.section === SECTION_PARTNERS_FRIENDS[section])
-          .map((item: PartnersFriends) => (
-            <li
-              key={item.id}
-              className="relative flex h-[180px] w-[306px] flex-col justify-between bg-bgViolet p-2 pb-4"
-            >
-              <Image
-                alt="logo"
-                src={item.logoUrl}
-                width={290}
-                height={103}
-                className="h-[103px] w-[290px] object-cover object-center"
-              />
-              <div className="relative h-11 w-full">
-                <ActionButtons
-                  action="all"
-                  editAction={() => handleEdit(item.id, item.logoId)}
-                  deleteAction={() =>
-                    handleDelete(item.id, item.logoId, BUTTON_TITLE[section])
-                  }
+        {partners &&
+          partners
+            ?.filter(
+              (item) => item.section === SECTION_PARTNERS_FRIENDS[section]
+            )
+            .map((item: PartnersFriends) => (
+              <li
+                key={item.id}
+                className="relative flex h-[180px] w-[306px] flex-col justify-between bg-bgViolet p-2 pb-4"
+              >
+                <Image
+                  alt="logo"
+                  src={item.logoUrl}
+                  width={290}
+                  height={103}
+                  className="h-[103px] w-[290px] object-cover object-center"
                 />
-              </div>
-            </li>
-          ))}
+                <div className="relative h-11 w-full">
+                  <ActionButtons
+                    action="all"
+                    editAction={() => handleEdit(item.id, item.logoId)}
+                    deleteAction={() =>
+                      handleDelete(item.id, item.logoId, BUTTON_TITLE[section])
+                    }
+                  />
+                </div>
+              </li>
+            ))}
       </ul>
       <FormModal type={ADD_TYPES[section]}>
         <AddPartnersFriendsForm addType={section} />
