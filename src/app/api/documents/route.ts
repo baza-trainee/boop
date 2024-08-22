@@ -9,7 +9,7 @@ export async function GET() {
     const response = await prisma.document.findMany({
       orderBy: [
         {
-          createdAt: 'desc',
+          createdAt: 'asc',
         },
       ],
     });
