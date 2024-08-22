@@ -4,13 +4,10 @@ import { RuleCardProps } from './FirstRuleCard';
 
 const ThirdRuleCard: React.FC<RuleCardProps> = ({ text }) => {
   return (
-    <div
-      className="first-line: flex flex-col-reverse gap-6 md:absolute md:bottom-0 md:right-0 md:w-[708px] md:flex-row-reverse
-          ml:static ml:flex-col lg:w-fit"
-    >
+    <div className="first-line: flex flex-col-reverse gap-6 md:absolute md:bottom-0 md:right-0 md:w-[708px] md:flex-row-reverse ml:static ml:flex-col lg:w-fit">
       <div className="md:w-[421px] ml:w-[436px] lg:w-full">
         <Image
-          src="/images/mainRules/image_3.png"
+          src="/images/mainRules/image_3.webp"
           alt="cloun and girl"
           width={2048}
           height={1346}

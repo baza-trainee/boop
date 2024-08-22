@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
+import { Suspense } from 'react';
 import { PageProps } from '@/types';
+import Loader from '@/components/shared/loader/Loader';
 import SchoolPage from '@/components/main/school/SchoolPage';
 
 export async function generateMetadata({
@@ -12,7 +14,11 @@ export async function generateMetadata({
 }
 
 const School = () => {
-  return <SchoolPage />;
+  return (
+    <Suspense fallback={<Loader />}>
+      <SchoolPage />
+    </Suspense>
+  );
 };
 
 export default School;
