@@ -80,14 +80,16 @@ const Footer = () => {
         </div>
         <div className="grid grid-cols-1 gap-x-4 gap-y-8 text-textViolet custom:grid-cols-2 ml:flex ml:justify-between">
           <div className="flex flex-col gap-8 max-ml:col-span-2">
-            <div>
-              <ContactInfo
-                showIcons={false}
-                address={address}
-                phone={contactData.phone}
-                email={contactData.email}
-              />
-            </div>
+            {contactData && (
+              <div>
+                <ContactInfo
+                  showIcons={false}
+                  address={address}
+                  phone={contactData.phone}
+                  email={contactData.email}
+                />
+              </div>
+            )}
             <HelpLinks className="hidden ml:flex" />
           </div>
           <AssociationLinks />
