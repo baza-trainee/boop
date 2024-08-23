@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { useBodyScrollLock } from '@/hooks/useBodyScrollLock';
 import { Link } from '@/navigation';
@@ -13,6 +13,8 @@ import HeaderLogo from './HeaderLogo';
 const Header = () => {
   const t = useTranslations('Header');
   const pathname = usePathname();
+  const router = useRouter();
+  const locale = useLocale();
   const isAdminPage =
     pathname.split('/').includes('admin') ||
     pathname.split('/').includes('login');
@@ -20,7 +22,6 @@ const Header = () => {
 
   const [menuOpen, setMenuOpen] = useState(false);
   const windowSize = useWindowSize();
-  const locale = useLocale();
 
   useEffect(() => {
     if (windowSize.width > 1023 && menuOpen) {
@@ -34,6 +35,19 @@ const Header = () => {
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const handleScrollToDonate = () => {
+    if (pathname === '/') {
+      setTimeout(() => {
+        const donatElement = document.getElementById('donat');
+        if (donatElement) {
+          donatElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 300);
+    } else {
+      router.push(`/${locale}/#donat`);
+    }
   };
 
   return (
@@ -86,8 +100,13 @@ const Header = () => {
           <div className="relative z-10 hidden items-center font-raleway ml:flex">
             <LanguageSwitcher />
             <a
-              href="#donat"
+              href="#"
               className="whitespace-nowrap rounded-[32px] bg-[rgba(233,52,5,1)] px-[24px] py-[18px] font-raleway font-bold text-white ml:h-[52px] ml:w-[190px] ml:text-[16px] ml:leading-[16px] lg:h-[56px] lg:w-[238px] lg:text-[20px] lg:leading-[20px]"
+              onClick={(e) => {
+                e.preventDefault();
+                toggleMenu();
+                handleScrollToDonate();
+              }}
             >
               {t('button')}
             </a>
@@ -115,7 +134,7 @@ const Header = () => {
               />
             </button>
           </div>
-          <ul className="flex flex-col items-start space-y-5">
+          <ul className="flex max-h-[80vh] flex-col items-start space-y-5 overflow-y-auto">
             <li>
               <Link href="/" title={t('logoTitle')}>
                 <HeaderLogo locale={locale} />
@@ -159,9 +178,13 @@ const Header = () => {
             </li>
             <li className="pt-[15px]">
               <a
-                href={`/${locale}#donat`}
+                href="#"
                 className="h-[56px] w-[238px] whitespace-nowrap rounded-[32px] bg-red px-[24px] py-[18px] font-raleway text-[20px] font-bold leading-[20px] text-white ml:h-[52px] ml:w-[200px] ml:text-[16px] ml:leading-[16px]"
-                onClick={toggleMenu}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleMenu();
+                  handleScrollToDonate();
+                }}
               >
                 {t('button')}
               </a>
