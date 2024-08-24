@@ -1,6 +1,5 @@
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
-import { prismaConnect } from '@/utils/prismaConnect';
 import { DocumentFormData } from '@/types/documents';
 
 export async function PATCH(
@@ -8,7 +7,6 @@ export async function PATCH(
   { params }: { params: { id: string } }
 ) {
   try {
-    await prismaConnect();
     const { newDocument }: { newDocument: DocumentFormData } =
       await request.json();
     const updatedDocument = await prisma.document.update({

@@ -51,8 +51,9 @@ const Gallery = () => {
     if (items && items.length > 0) {
       setPhotos(items.slice(0, limit));
       setCurrentIndex(limit);
+      console.log(photos);
     }
-  }, [items]);
+  }, [items?.length]);
 
   const loadMorePhotos = () => {
     if (items) {

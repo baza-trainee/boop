@@ -6,27 +6,27 @@ const HeroBg = () => {
     <picture>
       <source
         media="(max-width: 650px)"
-        srcSet="/images/heroSection/hero_bg_xs_light.png"
+        srcSet="/images/heroSection/hero_bg_xs_light.webp"
       />
       <source
         media="(max-width: 1023px)"
-        srcSet="/images/heroSection/hero_bg_md_light.png"
+        srcSet="/images/heroSection/hero_bg_md_light.webp"
       />
       <source
         media="(max-width: 1279px)"
-        srcSet="/images/heroSection/hero_bg_ml_light.png"
+        srcSet="/images/heroSection/hero_bg_ml_light.webp"
       />
       <source
         media="(max-width: 1919px)"
-        srcSet="/images/heroSection/hero_bg_3xl_light.png"
+        srcSet="/images/heroSection/hero_bg_3xl_light.webp"
       />
       <source
         media="(max-width: 2560px)"
-        srcSet="/images/heroSection/hero_bg_4xl_light.png"
+        srcSet="/images/heroSection/hero_bg_4xl_light.webp"
       />
 
       <Image
-        src="/images/heroSection/hero_bg_4xl_light.png"
+        src="/images/heroSection/hero_bg_4xl_light.webp"
         alt="BOOP"
         width={1455}
         height={1549}

@@ -1,12 +1,9 @@
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
-import { prismaConnect } from '@/utils/prismaConnect';
 import { TeamFormData } from '@/types/team';
 
 export async function GET(request: Request) {
   try {
-    await prismaConnect();
-
     const { searchParams } = new URL(request.url);
     const page = parseInt(searchParams.get('page') || '0', 10);
     const limit = parseInt(searchParams.get('limit') || '0', 10);
@@ -50,7 +47,6 @@ export async function GET(request: Request) {
 
 export async function POST(request: Request) {
   try {
-    await prismaConnect();
     const data: TeamFormData = await request.json();
     const response = await prisma.team.create({
       data: {

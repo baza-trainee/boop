@@ -1,11 +1,9 @@
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
-import { prismaConnect } from '@/utils/prismaConnect';
 import { DocumentFormData } from '@/types/documents';
 
 export async function GET() {
   try {
-    await prismaConnect();
     const response = await prisma.document.findMany({
       orderBy: [
         {
@@ -22,7 +20,6 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
-    await prismaConnect();
     const data: DocumentFormData = await request.json();
     const response = await prisma.document.create({
       data: {

@@ -1,12 +1,10 @@
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
-import { prismaConnect } from '@/utils/prismaConnect';
 import { CounterFormData } from '@/types/counterItem';
 import initialData from './example-db.json';
 
 export async function GET() {
   try {
-    await prismaConnect();
     const response = await prisma.counterItem.findMany();
 
     if (response.length === 0) {
@@ -22,7 +20,6 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
-    await prismaConnect();
     const data: CounterFormData = await request.json();
 
     const response = await prisma.counterItem.create({

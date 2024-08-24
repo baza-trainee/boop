@@ -1,12 +1,9 @@
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
-import { prismaConnect } from '@/utils/prismaConnect';
 import { NewsFormData } from '@/types/news';
 
 export async function GET() {
   try {
-    await prismaConnect();
-
     const news = await prisma.news.findMany();
     const response = {
       data: news,
@@ -19,11 +16,9 @@ export async function GET() {
     return new NextResponse('Internal Server Error', { status: 500 });
   }
 }
-// method POST
 
 export async function POST(request: Request) {
   try {
-    await prismaConnect();
     const data: NewsFormData = await request.json();
 
     const response = await prisma.news.create({

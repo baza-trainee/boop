@@ -1,6 +1,5 @@
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
-import { prismaConnect } from '@/utils/prismaConnect';
 import { TestimonialFormData } from '@/types/testimonials';
 
 export async function PATCH(
@@ -8,7 +7,6 @@ export async function PATCH(
   { params }: { params: { id: string } }
 ) {
   try {
-    await prismaConnect();
     const { updatedTestimonial }: { updatedTestimonial: TestimonialFormData } =
       await request.json();
     const editedTestimonial = await prisma.testimonial.update({
@@ -38,7 +36,6 @@ export async function DELETE(
   { params }: { params: { id: string } }
 ) {
   try {
-    await prismaConnect();
     const response = await prisma.testimonial.delete({
       where: {
         id: params.id,

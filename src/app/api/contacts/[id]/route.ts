@@ -1,6 +1,5 @@
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
-import { prismaConnect } from '@/utils/prismaConnect';
 import { ContactFormData } from '@/types/contacts';
 
 interface ContactsData {
@@ -12,8 +11,6 @@ export async function PATCH(
   { params }: { params: { id: string } }
 ) {
   try {
-    await prismaConnect();
-
     const { updatedContacts }: ContactsData = await request.json();
 
     const response = await prisma.contacts.update({

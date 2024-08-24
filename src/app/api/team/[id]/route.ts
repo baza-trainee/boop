@@ -1,6 +1,5 @@
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
-import { prismaConnect } from '@/utils/prismaConnect';
 import { TeamFormData } from '@/types/team';
 
 export async function PATCH(
@@ -8,7 +7,6 @@ export async function PATCH(
   { params }: { params: { id: string } }
 ) {
   try {
-    await prismaConnect();
     const { updatedMember }: { updatedMember: TeamFormData } =
       await request.json();
     const updatedTeamMember = await prisma.team.update({
@@ -35,7 +33,6 @@ export async function DELETE(
   { params }: { params: { id: string } }
 ) {
   try {
-    await prismaConnect();
     const response = await prisma.team.delete({
       where: {
         id: params.id,
