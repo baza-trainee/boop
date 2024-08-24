@@ -56,7 +56,7 @@ export async function POST(req: NextRequest) {
         fileUrl: res.result.secure_url,
         fileId: res.result.public_id,
       });
-    } else return NextResponse.json({ message: 'failure' });
+    } else return NextResponse.json({ message: 'failure to upload' });
   } catch (error) {
     console.log(error);
   }

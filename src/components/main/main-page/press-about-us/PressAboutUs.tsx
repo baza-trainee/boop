@@ -1,10 +1,9 @@
-import React from 'react';
-import CarouselButton from '../../shared/carousel/carousel-button/CarouselButton';
-import { Carousel } from '../../shared/carousel/Carousel';
-import PressAboutUsSlide from './press-about-us-slide/PressAboutUsSlide';
 import { useTranslations } from 'next-intl';
 import { useGetAllPressQuery } from '@/store/api/pressApi';
 import { useParams } from 'next/navigation';
+import CarouselButton from '../../shared/carousel/carousel-button/CarouselButton';
+import { Carousel } from '../../shared/carousel/Carousel';
+import PressAboutUsSlide from './press-about-us-slide/PressAboutUsSlide';
 
 const PressAboutUs = () => {
   const t = useTranslations('Press_about_us');

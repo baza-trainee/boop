@@ -1,8 +1,7 @@
-import React from 'react';
-import SectionTitle from '../../shared/SectionTitle';
-import CounterItem from './counter-item/CounterItem';
 import { useTranslations } from 'next-intl';
 import { useGetAllNumbersQuery } from '@/store/api/counterApi';
+import SectionTitle from '../../shared/SectionTitle';
+import CounterItem from './counter-item/CounterItem';
 
 const Counter = () => {
   const t = useTranslations('Counter_section');

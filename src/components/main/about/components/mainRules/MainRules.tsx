@@ -1,5 +1,3 @@
-// import Image from 'next/image';
-import React from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 
 import FirstRuleCard from './components/FirstRuleCard';

@@ -52,7 +52,7 @@ const Gallery = () => {
       setPhotos(items.slice(0, limit));
       setCurrentIndex(limit);
     }
-  }, [items?.length]);
+  }, [items]);
 
   const loadMorePhotos = () => {
     if (items) {

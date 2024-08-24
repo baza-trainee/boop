@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import TeamStructure from './components/teamStructure/TeamStructure';
 import MainRules from './components/mainRules/MainRules';
 import Team from './components/team/Team';

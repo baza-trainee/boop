@@ -7,7 +7,6 @@ export async function GET() {
   try {
     await prismaConnect();
     const response = await prisma.applications.findMany();
-
     return NextResponse.json(response, { status: 200 });
   } catch (error) {
     console.log('[GET APPLICATIONS]', error);
