@@ -1,8 +1,6 @@
 import { Metadata } from 'next';
-import { Suspense } from 'react';
 import { PageProps } from '@/types';
 import ContactsPage from '@/components/main/contacts/ContactsPage';
-import Loader from '@/components/shared/loader/Loader';
 
 export async function generateMetadata({
   params,
@@ -14,11 +12,7 @@ export async function generateMetadata({
 }
 
 const Contacts = () => {
-  return (
-    <Suspense fallback={<Loader />}>
-      <ContactsPage />
-    </Suspense>
-  );
+  return <ContactsPage />;
 };
 
 export default Contacts;

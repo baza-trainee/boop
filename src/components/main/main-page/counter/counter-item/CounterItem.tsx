@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React from 'react';
+import { useEffect, useState } from 'react';
 import CountUp from 'react-countup';
 
 interface CounterItemProps {
@@ -9,9 +9,17 @@ interface CounterItemProps {
 }
 
 const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
+  const [endNumber, setEndNumber] = useState(0);
+  useEffect(() => {
+    if (number !== null && number !== undefined) {
+      setEndNumber(number);
+    } else {
+      setEndNumber(100);
+    }
+  });
   return (
     <>
-      <li className="font-groppleds relative -mt-[20px] h-[183px] first:text-violet last:text-violet odd:self-start even:self-end sm:mt-0">
+      <li className="relative -mt-[20px] h-[183px] font-groppled first:text-violet last:text-violet odd:self-start even:self-end sm:mt-0">
         <div className="relative">
           {variant === '1' && (
             <>
@@ -156,13 +164,15 @@ const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
         </div>
         <div className="absolute left-[50%] top-0 w-[121px] -translate-x-2/4 pt-5 text-center font-bold md:pt-9 ml:pt-5 lg:pt-9">
           <div className="mb-2 text-5xl leading-[1.2]">
-            <CountUp
-              start={0}
-              end={number}
-              duration={2}
-              enableScrollSpy
-              scrollSpyOnce={true}
-            />
+            {endNumber > 0 && (
+              <CountUp
+                start={0}
+                end={endNumber}
+                duration={2}
+                enableScrollSpy
+                scrollSpyOnce={true}
+              />
+            )}
           </div>
           <div className="text-base leading-[1] text-textViolet">{text}</div>
         </div>
