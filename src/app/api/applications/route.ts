@@ -1,13 +1,10 @@
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
-import { prismaConnect } from '@/utils/prismaConnect';
 import { ApplicationFormData } from '@/types/applications';
 
 export async function GET() {
   try {
-    await prismaConnect();
     const response = await prisma.applications.findMany();
-
     return NextResponse.json(response, { status: 200 });
   } catch (error) {
     console.log('[GET APPLICATIONS]', error);
@@ -17,7 +14,6 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
-    await prismaConnect();
     const data: ApplicationFormData = await request.json();
     const response = await prisma.applications.create({
       data: {

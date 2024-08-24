@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
-import { prismaConnect } from '@/utils/prismaConnect';
 import {
   PartnersFriendsFormData,
   SECTION_PARTNERS_FRIENDS,
@@ -8,8 +7,6 @@ import {
 
 export async function GET() {
   try {
-    await prismaConnect();
-
     const response = await prisma.partnersFriends.findMany({
       orderBy: { createdAt: 'asc' },
     });
@@ -33,8 +30,6 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
-    await prismaConnect();
-
     const { logoUrl, logoId, link, section }: PartnersFriendsFormData =
       await request.json();
 

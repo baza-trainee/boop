@@ -1,22 +1,17 @@
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
-import { prismaConnect } from '@/utils/prismaConnect';
 
 export async function PUT(
   request: Request,
   { params }: { params: { id: string } }
 ) {
   try {
-    await prismaConnect();
-
     if (!params.id) {
       return new NextResponse('Invalid request: Missing id parameter', {
         status: 400,
       });
     }
     const { number }: { number: number } = await request.json();
-
-    await prismaConnect();
 
     const updateNumber = await prisma.counterItem.update({
       where: {
@@ -38,7 +33,6 @@ export async function DELETE(
   { params }: { params: { id: string } }
 ) {
   try {
-    await prismaConnect();
     if (!params.id) {
       return new NextResponse('Invalid request: Missing id parameter', {
         status: 400,

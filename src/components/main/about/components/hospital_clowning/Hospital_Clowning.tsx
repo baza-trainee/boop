@@ -1,6 +1,5 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import React from 'react';
 
 const Hospital_Clowning = () => {
   const t = useTranslations('About.hospital_clowning');
@@ -10,7 +9,7 @@ const Hospital_Clowning = () => {
   return (
     <section className="mb-[70px] md:mb-[100px] ml:mb-[110px] lg:mb-[100px] xl:mb-[120px]">
       <div className="container md:px-10 ml:px-[64px] xl:px-[80px] 3xl:px-[120px]">
-        <h2 className="title-gradient after:contetnt[''] mb-8 flex items-center  justify-start gap-2 py-[2.5px] font-groppled text-2xl font-bold leading-[1.7] after:block after:h-[4px] after:w-[80px] after:-translate-y-3/4 after:bg-[url('/icons/school/title_line_desk.svg')] after:bg-no-repeat after:py-1 md:gap-8 md:py-[6px] ml:text-[32px] ml:leading-[1.6] lg:mb-10 4xl:mb-12">
+        <h2 className="title-gradient after:contetnt[''] mb-8 flex items-center justify-start gap-2 py-[2.5px] font-groppled text-2xl font-bold leading-[1.7] after:block after:h-[4px] after:w-[80px] after:-translate-y-3/4 after:bg-[url('/icons/school/title_line_desk.svg')] after:bg-no-repeat after:py-1 md:gap-8 md:py-[6px] ml:text-[32px] ml:leading-[1.6] lg:mb-10 4xl:mb-12">
           {t('title')}
         </h2>
         <div className="flex flex-col gap-6 font-raleway text-base leading-normal text-textViolet md:relative md:gap-4 md:text-lg lg:gap-0 lg:text-xl">
@@ -36,7 +35,7 @@ const Hospital_Clowning = () => {
             alt=""
             width={306}
             height={370} //width: 306px; height: 370px;
-            className="order-1 m-auto h-[417px] w-[350px] md:absolute md:right-0 md:h-[402px] md:w-[332px] ml:right-[153px] ml:h-[342px] ml:w-[283px] lg:right-[294px] lg:h-[327px] lg:w-[270px] xl:right-[307px] xl:h-[344px] xl:w-[284px] 3xl:right-[330px] 3xl:h-[370px] 3xl:w-[306px]  4xl:right-[426px] 4xl:h-[486px] 4xl:w-[402px]"
+            className="order-1 m-auto h-[417px] w-[350px] md:absolute md:right-0 md:h-[402px] md:w-[332px] ml:right-[153px] ml:h-[342px] ml:w-[283px] lg:right-[294px] lg:h-[327px] lg:w-[270px] xl:right-[307px] xl:h-[344px] xl:w-[284px] 3xl:right-[330px] 3xl:h-[370px] 3xl:w-[306px] 4xl:right-[426px] 4xl:h-[486px] 4xl:w-[402px]"
           />
           <Image
             src="/images/about/bottom@2x.jpg"

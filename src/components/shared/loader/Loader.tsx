@@ -3,12 +3,9 @@ import './loader.css';
 
 const Loader = () => {
   return (
-    <div
-      className="backdrop-brightness-10 fixed left-0 right-0 top-0 z-[9999] flex h-full w-full flex-col items-center 
-    justify-center bg-[rgba(0,0,0,0.85)] backdrop-blur-sm"
-    >
+    <div className="backdrop-brightness-10 fixed left-0 right-0 top-0 z-[9999] flex h-full w-full flex-col items-center justify-center bg-[rgba(0,0,0,0.85)] backdrop-blur-sm">
       <Image
-        src="/images/loader.png"
+        src="/images/loader.webp"
         alt="loader"
         width={120}
         height={120}

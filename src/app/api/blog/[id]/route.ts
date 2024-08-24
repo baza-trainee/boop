@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
-import { prismaConnect } from '@/utils/prismaConnect';
 import { BlogFormData } from '@/types/blog';
 
 export async function PATCH(
@@ -8,7 +7,6 @@ export async function PATCH(
   { params }: { params: { id: string } }
 ) {
   try {
-    await prismaConnect();
     if (!params.id) {
       return new NextResponse('Invalid request: Missing id parameter', {
         status: 400,
@@ -42,7 +40,6 @@ export async function DELETE(
   { params }: { params: { id: string } }
 ) {
   try {
-    await prismaConnect();
     const response = await prisma.blog.delete({
       where: {
         id: Number(params.id),

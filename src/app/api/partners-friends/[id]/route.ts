@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
-import { prismaConnect } from '@/utils/prismaConnect';
 import {
   PartnersFriendsFormData,
   SECTION_PARTNERS_FRIENDS,
@@ -11,8 +10,6 @@ export async function PATCH(
   { params }: { params: { id: string } }
 ) {
   try {
-    await prismaConnect();
-
     const id = params.id;
     if (!id) {
       return NextResponse.json(
@@ -87,7 +84,6 @@ export async function DELETE(
   { params }: { params: { id: string } }
 ) {
   try {
-    await prismaConnect();
     const id = params.id;
     if (!id) {
       return NextResponse.json({ message: 'ID is required' }, { status: 400 });

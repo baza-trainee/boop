@@ -1,11 +1,9 @@
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
-import { prismaConnect } from '@/utils/prismaConnect';
 import { ContactFormData } from '@/types/contacts';
 
 export async function GET() {
   try {
-    await prismaConnect();
     const response = await prisma.contacts.findMany();
     return NextResponse.json(response, { status: 200 });
   } catch (error) {
@@ -16,7 +14,6 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
-    await prismaConnect();
     const data: ContactFormData = await request.json();
     const response = await prisma.contacts.create({
       data: {

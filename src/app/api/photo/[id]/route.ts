@@ -1,6 +1,5 @@
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
-import { prismaConnect } from '@/utils/prismaConnect';
 import { PhotoFormData } from '@/types/photo';
 
 export async function PATCH(
@@ -8,7 +7,6 @@ export async function PATCH(
   { params }: { params: { id: string } }
 ) {
   try {
-    await prismaConnect();
     const { newPhoto }: { newPhoto: PhotoFormData } = await request.json();
     const updatedPhoto = await prisma.photo.update({
       where: {
@@ -32,7 +30,6 @@ export async function DELETE(
   { params }: { params: { id: string } }
 ) {
   try {
-    await prismaConnect();
     const response = await prisma.photo.delete({
       where: {
         id: params.id,

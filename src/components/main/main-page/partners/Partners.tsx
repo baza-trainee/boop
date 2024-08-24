@@ -1,6 +1,4 @@
-import React from 'react';
 import { useTranslations } from 'next-intl';
-
 import { useGetAllPartnersFriendsQuery } from '@/store/api/partnersFriendsApi';
 import PartnersList from './components/PartnersList';
 

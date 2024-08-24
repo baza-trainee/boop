@@ -1,13 +1,11 @@
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
-import { prismaConnect } from '@/utils/prismaConnect';
 
 export async function PATCH(
   request: Request,
   { params }: { params: { id: string } }
 ) {
   try {
-    await prismaConnect();
     const isProcessed = await request.json();
     const updatedApplication = await prisma.applications.update({
       where: {
@@ -29,7 +27,6 @@ export async function DELETE(
   { params }: { params: { id: string } }
 ) {
   try {
-    await prismaConnect();
     const response = await prisma.applications.delete({
       where: {
         id: params.id,

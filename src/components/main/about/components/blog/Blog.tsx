@@ -1,11 +1,11 @@
 'use client';
-import React from 'react';
+
+import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
+import { useGetAllPostsQuery } from '@/store/api/blogApi';
 import CarouselButton from '@/components/main/shared/carousel/carousel-button/CarouselButton';
 import { Carousel } from '@/components/main/shared/carousel/Carousel';
 import BlogItem from './blog-item/BlogItem';
-import { useParams } from 'next/navigation';
-import { useGetAllPostsQuery } from '@/store/api/blogApi';
 
 const Blog = () => {
   const t = useTranslations('About.blog');
