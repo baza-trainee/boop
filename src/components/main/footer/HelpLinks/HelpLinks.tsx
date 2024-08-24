@@ -12,9 +12,9 @@ const HelpLinks: React.FC<HelpLinksProps> = ({ className }) => {
   const { data: helpLinks } = useGetAllDocumentsQuery();
 
   return (
-    <ul className={clsx('flex flex-col gap-4', className)}>
+    <>
       {helpLinks && (
-        <>
+        <ul className={clsx('flex flex-col gap-4', className)}>
           {helpLinks.map(({ title }) => (
             <li className="underline" key={title}>
               <Link target="_blank" href={`/documents/${title}`}>
@@ -22,9 +22,9 @@ const HelpLinks: React.FC<HelpLinksProps> = ({ className }) => {
               </Link>
             </li>
           ))}
-        </>
+        </ul>
       )}
-    </ul>
+    </>
   );
 };
 
