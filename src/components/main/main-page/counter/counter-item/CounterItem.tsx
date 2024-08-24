@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import VisibilitySensor from 'react-visibility-sensor';
 import CountUp from 'react-countup';
 
 interface CounterItemProps {
@@ -9,14 +10,13 @@ interface CounterItemProps {
 }
 
 const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
-  const [endNumber, setEndNumber] = useState(0);
-  useEffect(() => {
-    if (number !== null && number !== undefined) {
-      setEndNumber(number);
-    } else {
-      setEndNumber(100);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+
+  const handleVisibilityChange = (isVisible: boolean) => {
+    if (isVisible) {
+      setIsVisible(true);
     }
-  });
+  };
   return (
     <>
       <li className="relative -mt-[20px] h-[183px] font-groppled first:text-violet last:text-violet odd:self-start even:self-end sm:mt-0">
@@ -164,14 +164,21 @@ const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
         </div>
         <div className="absolute left-[50%] top-0 w-[121px] -translate-x-2/4 pt-5 text-center font-bold md:pt-9 ml:pt-5 lg:pt-9">
           <div className="mb-2 text-5xl leading-[1.2]">
-            {endNumber > 0 && (
-              <CountUp
-                start={0}
-                end={endNumber}
-                duration={2}
-                enableScrollSpy
-                scrollSpyOnce={true}
-              />
+            {number > 0 ? (
+              <VisibilitySensor
+                onChange={handleVisibilityChange}
+                offset={{ bottom: 100 }}
+              >
+                {() => (
+                  <CountUp
+                    start={0}
+                    end={isVisible ? number : 0}
+                    duration={2}
+                  />
+                )}
+              </VisibilitySensor>
+            ) : (
+              <CountUp start={0} end={100} duration={2} />
             )}
           </div>
           <div className="text-base leading-[1] text-textViolet">{text}</div>
