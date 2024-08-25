@@ -98,9 +98,9 @@ const DocumentsPage = () => {
         const formData = new FormData();
         formData.append('file', values.accounting[0]);
         formData.append('folderName', 'documents');
-        await axios.delete(
-          `/cloudinary/${encodeURIComponent(accounting?.documentId as string)}`
-        );
+        await axios.post(`/cloudinary/remove`, {
+          imageId: accounting?.documentId,
+        });
         const res = await axios.post('/cloudinary', formData);
         const newDocument = {
           documentUrl: res.data.fileUrl,
@@ -113,9 +113,9 @@ const DocumentsPage = () => {
         const formData = new FormData();
         formData.append('file', values.regulations[0]);
         formData.append('folderName', 'documents');
-        await axios.delete(
-          `/cloudinary/${encodeURIComponent(regulations?.documentId as string)}`
-        );
+        await axios.post(`/cloudinary/remove`, {
+          imageId: regulations?.documentId,
+        });
         const res = await axios.post('/cloudinary', formData);
         const newDocument = {
           documentUrl: res.data.fileUrl,
@@ -128,9 +128,9 @@ const DocumentsPage = () => {
         const formData = new FormData();
         formData.append('file', values.terms_of_use[0]);
         formData.append('folderName', 'documents');
-        await axios.delete(
-          `/cloudinary/${encodeURIComponent(terms_of_use?.documentId as string)}`
-        );
+        await axios.post(`/cloudinary/remove`, {
+          imageId: terms_of_use?.documentId,
+        });
         const res = await axios.post('/cloudinary', formData);
         const newDocument = {
           documentUrl: res.data.fileUrl,
@@ -143,9 +143,9 @@ const DocumentsPage = () => {
         const formData = new FormData();
         formData.append('file', values.privacy_policy[0]);
         formData.append('folderName', 'documents');
-        await axios.delete(
-          `/cloudinary/${encodeURIComponent(privacy_policy?.documentId as string)}`
-        );
+        await axios.post(`/cloudinary/remove`, {
+          imageId: privacy_policy?.documentId,
+        });
         const res = await axios.post('/cloudinary', formData);
         const newDocument = {
           documentUrl: res.data.fileUrl,
