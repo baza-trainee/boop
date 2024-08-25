@@ -34,8 +34,9 @@ export const AlertWindow: React.FC = () => {
         await func();
         setIsProcessing(false);
       } catch (error) {
-        console.log(error);
+        alert(error);
         setIsProcessing(false);
+        dispatch(closeAlert());
       }
     } else {
       dispatch(closeAlert());
