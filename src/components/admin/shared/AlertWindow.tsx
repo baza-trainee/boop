@@ -29,9 +29,14 @@ export const AlertWindow: React.FC = () => {
 
   const confirmHandler = async (isAccepted: boolean) => {
     if (isAccepted && func) {
-      setIsProcessing(true);
-      await func();
-      setIsProcessing(false);
+      try {
+        setIsProcessing(true);
+        await func();
+        setIsProcessing(false);
+      } catch (error) {
+        console.log(error);
+        setIsProcessing(false);
+      }
     } else {
       dispatch(closeAlert());
     }
