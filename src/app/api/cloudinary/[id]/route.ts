@@ -9,7 +9,7 @@ export async function DELETE(
   try {
     await cloudinary.uploader.destroy(params.id);
     return NextResponse.json(
-      { message: 'teacher deleted successfully' },
+      { message: 'photo deleted successfully' },
       { status: 200 }
     );
   } catch (error) {
