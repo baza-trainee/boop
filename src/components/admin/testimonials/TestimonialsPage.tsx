@@ -58,7 +58,7 @@ const TestimonialsPage = () => {
           state: 'confirm',
           message: 'Ви впевнені, що хочете видалити цей відгук?',
           func: async () => {
-            await axios.delete(`/cloudinary/${encodeURIComponent(imageId)}`);
+            await axios.post(`/cloudinary/remove`, { imageId });
             const res = await deleteTestimonial(id);
             dispatch(closeAlert());
             if (res && res.data) {

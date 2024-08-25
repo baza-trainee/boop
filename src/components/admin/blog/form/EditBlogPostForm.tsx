@@ -68,9 +68,7 @@ const EditBlogPostForm = ({ id }: { id: number }) => {
         const formData = new FormData();
         formData.append('file', values.image[0]);
         formData.append('folderName', 'blog');
-        await axios.delete(
-          `/cloudinary/${encodeURIComponent(post?.imageId as string)}`
-        );
+        await axios.post(`/cloudinary/remove`, { imageId: post?.imageId });
         const res = await axios.post('/cloudinary', formData);
         const updatedPost = {
           titleUA: values.titleUA,

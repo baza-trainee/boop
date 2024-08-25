@@ -62,9 +62,7 @@ const EditPhotoForm = ({ id }: { id: string }) => {
         const formData = new FormData();
         formData.append('file', values.image[0]);
         formData.append('folderName', 'photos');
-        await axios.delete(
-          `/cloudinary/${encodeURIComponent(photo?.imageId as string)}`
-        );
+        await axios.post(`/cloudinary/remove`, { imageId: photo?.imageId });
         const res = await axios.post('/cloudinary', formData);
         const newPhoto = {
           location: values.location,

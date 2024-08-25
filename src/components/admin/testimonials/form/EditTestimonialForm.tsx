@@ -74,9 +74,9 @@ const EditTestimonialForm = ({ id }: { id: string }) => {
         const formData = new FormData();
         formData.append('file', values.image[0]);
         formData.append('folderName', 'testimonials');
-        await axios.delete(
-          `/cloudinary/${encodeURIComponent(testimonial?.imageId as string)}`
-        );
+        await axios.post(`/cloudinary/remove`, {
+          imageId: testimonial?.imageId,
+        });
         const res = await axios.post('/cloudinary', formData);
         const updatedtestimonial = {
           nameUa: values.nameUa,

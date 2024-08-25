@@ -39,7 +39,7 @@ const PressPage = () => {
           state: 'confirm',
           message: 'Ви впевнені, що хочете видалити новину?',
           func: async () => {
-            await axios.delete(`/cloudinary/${encodeURIComponent(imageId)}`);
+            await axios.post(`/cloudinary/remove`, { imageId });
             const res = await deletePress(id);
             dispatch(closeAlert());
             if (res && res.data) {

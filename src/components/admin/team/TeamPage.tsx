@@ -40,7 +40,7 @@ const TeamPage = () => {
           state: 'confirm',
           message: 'Ви впевнені, що хочете видалити учасника з Команди?',
           func: async () => {
-            await axios.delete(`/cloudinary/${encodeURIComponent(imageId)}`);
+            await axios.post(`/cloudinary/remove`, { imageId });
             const res = await deleteTeamMember(id);
             dispatch(closeAlert());
             if (res && res.data) {

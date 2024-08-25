@@ -61,9 +61,9 @@ const EditTeamForm = ({ id }: { id: string }) => {
         const formData = new FormData();
         formData.append('file', values.image[0]);
         formData.append('folderName', 'team');
-        await axios.delete(
-          `/cloudinary/${encodeURIComponent(teamMember?.imageId as string)}`
-        );
+        await axios.post(`/cloudinary/remove`, {
+          imageId: teamMember?.imageId,
+        });
         const res = await axios.post('/cloudinary', formData);
         const updatedMember = {
           nameUa: values.nameUa,
