@@ -17,8 +17,6 @@ import truncateText from '@/helpers/truncateText';
 
 import './blog.css';
 
-// const placeHolderImg = `/images/mainRules/image_1.png`;
-
 const BlogPage = () => {
   const dispatch = useAppDispatch();
   const [currentPage, setCurrentPage] = useState(1);
@@ -48,7 +46,7 @@ const BlogPage = () => {
           state: 'confirm',
           message: 'Ви впевнені, що хочете видалити новину?',
           func: async () => {
-            await axios.delete(`/cloudinary/${encodeURIComponent(imageId)}`);
+            await axios.post(`/cloudinary/remove`, { imageId });
             const res = await deleteBlog(id);
             dispatch(closeAlert());
             if (res && res.data) {

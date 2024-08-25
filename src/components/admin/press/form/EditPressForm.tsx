@@ -77,10 +77,7 @@ const EditPressForm = ({ id }: { id: string }) => {
         const formData = new FormData();
         formData.append('file', values.image[0]);
         formData.append('folderName', 'press');
-        await axios.delete(
-          `/cloudinary/${encodeURIComponent(pressPost?.imageId as string)}`
-        );
-
+        await axios.post(`/cloudinary/remove`, { imageId: pressPost?.imageId });
         const res = await axios.post('/cloudinary', formData);
         const fileUrl = res.data.fileUrl;
         const newPress = {

@@ -71,7 +71,7 @@ function EditPartnersFriendsForm({
         const formData = new FormData();
         formData.append('file', values.image[0]);
         formData.append('folderName', 'partners');
-        await axios.delete(`/cloudinary/${encodeURIComponent(logoId)}`);
+        await axios.post(`/cloudinary/remove`, { imageId: logoId });
         const res = await axios.post('/cloudinary', formData);
 
         updatedPartnerFriend.logoId = res.data.fileId;

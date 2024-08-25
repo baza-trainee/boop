@@ -51,7 +51,7 @@ function PartnersFriendsPage({ title, section }: PropsPartnersFriends) {
           state: 'confirm',
           message: `Ви впевнені, що хочете видалити цього ${sectionDell}?`,
           func: async () => {
-            await axios.delete(`/cloudinary/${encodeURIComponent(imageId)}`);
+            await axios.post(`/cloudinary/remove`, { imageId });
             const res = await deletePartnersFriends(id);
             dispatch(closeAlert());
             if (res && res.data) {
