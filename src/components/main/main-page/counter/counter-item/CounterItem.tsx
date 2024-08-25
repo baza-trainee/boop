@@ -1,6 +1,5 @@
 import Image from 'next/image';
-import { useState } from 'react';
-import VisibilitySensor from 'react-visibility-sensor';
+import { useInView } from 'react-intersection-observer';
 import CountUp from 'react-countup';
 
 interface CounterItemProps {
@@ -10,13 +9,9 @@ interface CounterItemProps {
 }
 
 const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
-  const [isVisible, setIsVisible] = useState<boolean>(false);
-
-  const handleVisibilityChange = (isVisible: boolean) => {
-    if (isVisible) {
-      setIsVisible(true);
-    }
-  };
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+  });
   return (
     <>
       <li className="relative -mt-[20px] h-[183px] font-groppled first:text-violet last:text-violet odd:self-start even:self-end sm:mt-0">
@@ -163,20 +158,9 @@ const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
           )}
         </div>
         <div className="absolute left-[50%] top-0 w-[121px] -translate-x-2/4 pt-5 text-center font-bold md:pt-9 ml:pt-5 lg:pt-9">
-          <div className="mb-2 text-5xl leading-[1.2]">
-            {number > 0 ? (
-              <VisibilitySensor
-                onChange={handleVisibilityChange}
-                offset={{ bottom: 100 }}
-              >
-                {() => (
-                  <CountUp
-                    start={0}
-                    end={isVisible ? number : 0}
-                    duration={2}
-                  />
-                )}
-              </VisibilitySensor>
+          <div className="mb-2 text-5xl leading-[1.2]" ref={ref}>
+            {number ? (
+              <CountUp start={0} end={inView ? number : 0} duration={2} />
             ) : (
               <CountUp start={0} end={100} duration={2} />
             )}
