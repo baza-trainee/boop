@@ -5,7 +5,7 @@ services:
     image: postgres
     restart: always
     ports:
-      - ${LOCAL_DB_PORT}:${DB_PORT}
+      - 127.0.0.1:${LOCAL_DB_PORT}:${DB_PORT}
     environment:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
