@@ -51,7 +51,6 @@ const Gallery = () => {
     if (items && items.length > 0) {
       setPhotos(items.slice(0, limit));
       setCurrentIndex(limit);
-      console.log(photos);
     }
   }, [items?.length]);
 
@@ -65,7 +64,6 @@ const Gallery = () => {
   };
 
   const scrollToStartSection = () => {
-    // setTimeout(() => {
     const nextSection = document.getElementById('gallery');
     if (nextSection) {
       const nextSectionTop =
@@ -75,7 +73,6 @@ const Gallery = () => {
         behavior: 'smooth',
       });
     }
-    // }, 0);
   };
 
   const showLessPhotos = () => {
