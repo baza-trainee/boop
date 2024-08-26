@@ -9,7 +9,7 @@ export async function GET() {
       return NextResponse.json({ message: 'Users not found' }, { status: 400 });
     }
 
-    return NextResponse.json({ data: response }, { status: 200 });
+    return NextResponse.json({ message: 'Admin exists' }, { status: 200 });
   } catch (error) {
     console.log('[GET Users]', error);
     return NextResponse.json(
