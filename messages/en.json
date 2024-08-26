@@ -215,7 +215,7 @@
   },
   "Form": {
     "joinUs": "Join us",
-    "leaveForm": "Leave your form and we will contact you within three days.",
+    "leaveForm": "Your application has been submitted. We will contact you within three days.",
     "name": "Your name",
     "phone": "Phone number",
     "phonePlaceholder": "Enter phone number in format +380",

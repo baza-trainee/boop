@@ -17,7 +17,8 @@
   --lightVioletSecond: #cac4e2;
   --textViolet: #2f245e;
   --red: #e93405;
-  --yellow: #ffab0b;
+  --yellow: rgb(255, 171, 11);
+  --yellowTransparent: rgba(255, 171, 11, 0.85);
   --blueOverlayGradient: linear-gradient(
     330deg,
     rgba(80, 67, 159, 0.45) -42.77%,
