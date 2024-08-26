@@ -119,7 +119,7 @@ const Header = () => {
           ></div>
         )}
         <div
-          className={`ml:hidden ${menuOpen ? 'block' : 'hidden'} absolute left-0 right-0 top-0 z-50 w-full rounded-b-[16px] border-b-[16px] border-b-yellow bg-bgBurgerMenu px-[48px] py-[10px] pb-[48px] pt-[10px] font-groppled font-bold text-textViolet`}
+          className={`ml:hidden ${menuOpen ? 'block' : 'hidden'} absolute left-0 right-0 top-0 z-50 w-full rounded-b-[16px] border-b-[16px] border-b-yellow bg-bgBurgerMenu px-[48px] py-[10px] pt-[10px] font-groppled font-bold text-textViolet`}
         >
           <div className="-mb-[15px] -mr-[25px] flex justify-end pt-[10px]">
             <button
@@ -134,7 +134,7 @@ const Header = () => {
               />
             </button>
           </div>
-          <ul className="flex max-h-[80vh] flex-col items-start space-y-5 overflow-y-auto">
+          <ul className="flex max-h-[80vh] flex-col items-start space-y-5 overflow-y-auto pb-[48px]">
             <li>
               <Link href="/" title={t('logoTitle')}>
                 <HeaderLogo locale={locale} />
