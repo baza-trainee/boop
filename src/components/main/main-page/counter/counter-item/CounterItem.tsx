@@ -1,4 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
+import CountUp from 'react-countup';
 
 interface CounterItemProps {
   number: number;
@@ -7,6 +10,29 @@ interface CounterItemProps {
 }
 
 const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
+  const containerRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const callbackFunction = (entries: any) => {
+    const [entry] = entries;
+    setIsVisible(entry.isIntersecting);
+  };
+
+  const options = {
+    root: null,
+    rootMarfin: '0px',
+    treshold: 0.1,
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(callbackFunction, options);
+    if (containerRef.current) observer.observe(containerRef.current);
+
+    return () => {
+      if (containerRef.current) observer.unobserve(containerRef.current);
+    };
+  }, [containerRef, options]);
+
   return (
     <>
       <li className="relative -mt-[20px] h-[183px] font-groppled first:text-violet last:text-violet odd:self-start even:self-end sm:mt-0">
@@ -153,13 +179,13 @@ const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
           )}
         </div>
         <div className="absolute left-[50%] top-0 w-[121px] -translate-x-2/4 pt-5 text-center font-bold md:pt-9 ml:pt-5 lg:pt-9">
-          <div className="mb-2 text-5xl leading-[1.2]">
-            <span>{number}</span>
-            {/* {number ? (
-              <CountUp start={0} end={inView ? number : 0} duration={2} />
+          <div className="mb-2 text-5xl leading-[1.2]" ref={containerRef}>
+            {/* <span>{number}</span> */}
+            {isVisible ? (
+              <CountUp start={0} end={isVisible ? number : 0} duration={2} />
             ) : (
               <CountUp start={0} end={100} duration={2} />
-            )} */}
+            )}
           </div>
           <div className="text-base leading-[1] text-textViolet">{text}</div>
         </div>
