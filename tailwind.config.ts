@@ -38,6 +38,7 @@ const config: Config = {
         darkGrey: 'var(--darkGrey)',
         red: 'var(--red)',
         yellow: 'var(--yellow)',
+        yellowTransparent: 'var(--yellowTransparent)',
         customOverlay: 'rgba(202, 196, 226, 0.5)',
       },
       screens: {
