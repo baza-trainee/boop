@@ -39,45 +39,45 @@
 
 .circle:nth-child(1) {
   transform: rotate(calc(1 / 9 * 720deg)) translateX(3.3em);
-  animation-delay: calc(1 / 9 * 3s);
+  animation-delay: calc(0 / 9 * 3s);
 }
 
 .circle:nth-child(2) {
   transform: rotate(calc(2 / 9 * 720deg)) translateX(3.3em);
-  animation-delay: calc(2 / 9 * 3s);
+  animation-delay: calc(1 / 9 * 3s);
 }
 
 .circle:nth-child(3) {
   transform: rotate(calc(3 / 9 * 720deg)) translateX(3.3em);
-  animation-delay: calc(3 / 9 * 3s);
+  animation-delay: calc(2 / 9 * 3s);
 }
 
 .circle:nth-child(4) {
   transform: rotate(calc(4 / 9 * 720deg)) translateX(3.3em);
-  animation-delay: calc(4 / 9 * 3s);
+  animation-delay: calc(3 / 9 * 3s);
 }
 
 .circle:nth-child(5) {
   transform: rotate(calc(5 / 9 * 720deg)) translateX(3.3em);
-  animation-delay: calc(5 / 9 * 3s);
+  animation-delay: calc(4 / 9 * 3s);
 }
 
 .circle:nth-child(6) {
   transform: rotate(calc(6 / 9 * 720deg)) translateX(3.3em);
-  animation-delay: calc(6 / 9 * 3s);
+  animation-delay: calc(5 / 9 * 3s);
 }
 
 .circle:nth-child(7) {
   transform: rotate(calc(7 / 9 * 720deg)) translateX(3.3em);
-  animation-delay: calc(7 / 9 * 3s);
+  animation-delay: calc(6 / 9 * 3s);
 }
 
 .circle:nth-child(8) {
   transform: rotate(calc(8 / 9 * 720deg)) translateX(3.3em);
-  animation-delay: calc(8 / 9 * 3s);
+  animation-delay: calc(7 / 9 * 3s);
 }
 
 .circle:nth-child(9) {
   transform: rotate(calc(9 / 9 * 720deg)) translateX(3.3em);
-  animation-delay: calc(9 / 9 * 3s);
+  animation-delay: calc(8 / 9 * 3s);
 }
