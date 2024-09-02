@@ -8,13 +8,12 @@ import { useMediaQuery } from 'react-responsive';
 interface GalleryCardProps {
   images: IPhoto[];
   decorativeIndex: number;
-  limit: number;
+  limit?: number;
 }
 
 const GalleryList: React.FC<GalleryCardProps> = ({
   images,
   decorativeIndex,
-  limit,
 }) => {
   const isMobile = useMediaQuery({
     query: '(max-width: 767px) ',

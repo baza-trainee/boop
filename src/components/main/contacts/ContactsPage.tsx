@@ -6,7 +6,6 @@ import ContactInfo from '../shared/ContactInfo';
 import { useTranslations, useLocale } from 'next-intl';
 import { contactsApi } from '@/store/api/contactsApi';
 import { IContact } from '@/types/contacts';
-import AnimatedClown from './components/AnimatedClown';
 import { CONTACT_INFO } from '@/constants';
 import AnimatedContactsMan from './components/AnimatedContactsMan';
 

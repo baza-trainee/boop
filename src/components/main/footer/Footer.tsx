@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import { usePathname } from 'next/navigation';
-import HeroLogo from '../main-page/hero/components/heroLogo/HeroLogo';
-import SocialLinks from './SocialLinks/SocialLinks';
-import HelpLinks from './HelpLinks/HelpLinks';
-import ContactInfo from '../shared/ContactInfo';
-import AssociationLinks from './AssociationLinks/AssociationLinks';
-import { useLocale, useTranslations } from 'next-intl';
-import { contactsApi } from '@/store/api/contactsApi';
+import { usePathname } from "next/navigation";
+import HeroLogo from "../main-page/hero/components/heroLogo/HeroLogo";
+import SocialLinks from "./SocialLinks/SocialLinks";
+import HelpLinks from "./HelpLinks/HelpLinks";
+import ContactInfo from "../shared/ContactInfo";
+import AssociationLinks from "./AssociationLinks/AssociationLinks";
+import { useLocale, useTranslations } from "next-intl";
+import { contactsApi } from "@/store/api/contactsApi";
 
-import AnimatedFooterMan from './AnimatedFooterMan/AnimatedFooterMan';
-import FooterNavigationLinks from './footer-navigation-links/FooterNavigationLinks';
-import DecoratedSvg from './DecoratedSvg/DecoratedSvg';
+import AnimatedFooterMan from "./AnimatedFooterMan/AnimatedFooterMan";
+import FooterNavigationLinks from "./footer-navigation-links/FooterNavigationLinks";
+import DecoratedSvg from "./DecoratedSvg/DecoratedSvg";
 
 const Footer = () => {
-  const t = useTranslations('Footer');
+  const t = useTranslations("Footer");
   const locale = useLocale();
   const {
     data: contacts,
@@ -23,16 +23,16 @@ const Footer = () => {
   } = contactsApi.useGetAllContactsQuery();
 
   const scrollToTop = () => {
-    if (typeof window !== 'undefined') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
   const pathname = usePathname();
   const isAdminPage =
-    pathname.split('/').includes('admin') ||
-    pathname.split('/').includes('login');
-  const isDocumentsPage = pathname.split('/').includes('documents');
+    pathname.split("/").includes("admin") ||
+    pathname.split("/").includes("login");
+  const isDocumentsPage = pathname.split("/").includes("documents");
 
   if (isAdminPage || isDocumentsPage) return null;
 
@@ -44,10 +44,10 @@ const Footer = () => {
 
   let address;
   switch (locale) {
-    case 'en':
+    case "en":
       address = contactData.addressEn;
       break;
-    case 'it':
+    case "it":
       address = contactData.addressIt;
       break;
     default:
@@ -62,7 +62,7 @@ const Footer = () => {
       <DecoratedSvg />
       <AnimatedFooterMan
         className={
-          'top-41 absolute right-6 z-[2] hidden h-[112px] w-[115px] xs:right-16 sm:block md:right-[40px] md:top-[23px] md:h-[168px] md:w-[164px] ml:-top-[12px] ml:right-[64px] lg:right-[165px] lg:top-[2px] 3xl:right-[285px] 4xl:right-[460px]'
+          "top-41 absolute right-6 z-[2] hidden h-[112px] w-[115px] xs:right-16 sm:block md:right-[40px] md:top-[23px] md:h-[168px] md:w-[164px] ml:-top-[12px] ml:right-[64px] lg:right-[165px] lg:top-[2px] 3xl:right-[285px] 4xl:right-[460px]"
         }
       />
       <div className="relative z-[1] mx-auto max-w-[1920px] px-[10px] md:px-[64px] lg:px-[64px] xl:px-[80px] 2xl:px-[120px]">
@@ -75,7 +75,7 @@ const Footer = () => {
             />
           </div>
           <h4 className="font-bold leading-[132%] text-textViolet">
-            {t('title')}
+            {t("title")}
           </h4>
         </div>
         <div className="grid grid-cols-1 gap-x-4 gap-y-8 text-textViolet custom:grid-cols-2 ml:flex ml:justify-between">
@@ -94,12 +94,12 @@ const Footer = () => {
           </div>
           <AssociationLinks />
           <div>
-            <FooterNavigationLinks className="mb-8 items-end" />
+            <FooterNavigationLinks className="mb-8 items-end ml:items-start" />
             <SocialLinks className="justify-end" />
           </div>
           <HelpLinks className="flex ml:hidden" />
         </div>
-        <div className="py-6 text-center text-textViolet">{t('rights')}</div>
+        <div className="py-6 text-center text-textViolet">{t("rights")}</div>
       </div>
     </footer>
   );

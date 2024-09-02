@@ -178,9 +178,11 @@ const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
             </>
           )}
         </div>
-        <div className="absolute left-[50%] top-0 w-[121px] -translate-x-2/4 pt-5 text-center font-bold md:pt-9 ml:pt-5 lg:pt-9">
-          <div className="mb-2 text-5xl leading-[1.2]" ref={containerRef}>
-            {/* <span>{number}</span> */}
+        <div className="absolute left-[50%] top-0 flex w-[121px] -translate-x-2/4 flex-col items-center justify-center pt-5 text-center font-bold md:pt-9 ml:pt-5 lg:pt-9">
+          <div
+            className="mb-0 mt-4 h-[3rem] p-0 text-5xl leading-none md:mb-2 md:mt-0"
+            ref={containerRef}
+          >
             {isVisible ? (
               <CountUp start={0} end={isVisible ? number : 0} duration={2} />
             ) : (

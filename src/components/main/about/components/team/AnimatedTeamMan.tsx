@@ -4,15 +4,13 @@ export interface AnimatedManProps {
   index?: number;
 }
 
-const AnimatedTeamMan: React.FC<AnimatedManProps> = ({ width, className }) => (
+const AnimatedTeamMan: React.FC<AnimatedManProps> = ({ className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
     preserveAspectRatio="xMidYMid meet"
     width="250"
     height="227"
-    // width={width}
-    // height={String(Number(width) / 1.101)}
     viewBox="0 0 250 227"
     className={`h-[227px] w-[250px] ${className}`}
     id="TeamMan"

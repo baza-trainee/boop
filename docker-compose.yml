@@ -26,7 +26,7 @@ services:
       DATABASE_URL: postgresql://${DB_USER}:${DB_PASSWORD}@postgres:${DB_PORT}/${DB_NAME}?schema=public
     build:
       context: ./
-      target: dev
+      target: production
       dockerfile: Dockerfile
     restart: always
     volumes:

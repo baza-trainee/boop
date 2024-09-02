@@ -26,7 +26,9 @@ const ContactInfo: React.FC<ContactInfoProps> = ({
 
   useEffect(() => {
     function isMobileDevice() {
-      return /Mobi|Android|iPhone|iPad|Tablet|PlayBook|Silk/i.test(navigator.userAgent);
+      return /Mobi|Android|iPhone|iPad|Tablet|PlayBook|Silk/i.test(
+        navigator.userAgent
+      );
     }
     setIsMobile(isMobileDevice());
   }, []);
@@ -40,7 +42,7 @@ const ContactInfo: React.FC<ContactInfoProps> = ({
   return (
     <>
       {address && (
-        <div className="flex items-center mb-2 pt-2">
+        <div className="mb-2 flex items-center pt-2">
           {showIcons && (
             <span className="material-icons">
               <Image
@@ -51,28 +53,12 @@ const ContactInfo: React.FC<ContactInfoProps> = ({
               />
             </span>
           )}
-          <p className={showIcons ? "ml-6" : ""}>{address}</p>
-        </div>
-      )}
-
-      {phone && (
-        <div className="flex items-center mb-2 font-redhat">
-          {showIcons && (
-            <span className="material-icons">
-              <Image
-                src="/icons/contacts/phone.svg"
-                alt="Phone"
-                width={26}
-                height={26}
-              />
-            </span>
-          )}
-          <p className={showIcons ? "ml-6" : ""}><a href={`tel:${phone}`} title="Our phone number" className="max-ml:hover:underline js-phone-link ml:cursor-auto" onClick={handlePhoneClick}>{phone}</a></p>
+          <p className={showIcons ? 'ml-6' : ''}>{address}</p>
         </div>
       )}
 
       {email && (
-        <div className="flex items-center mb-2">
+        <div className="mb-2 flex items-center">
           {showIcons && (
             <span className="material-icons">
               <Image
@@ -83,7 +69,36 @@ const ContactInfo: React.FC<ContactInfoProps> = ({
               />
             </span>
           )}
-          <p className={showIcons ? "ml-6" : ""}><a href={`mailto:${email}`} className="hover:underline">{email}</a></p>
+          <p className={showIcons ? 'ml-6' : ''}>
+            <a href={`mailto:${email}`} className="hover:underline">
+              {email}
+            </a>
+          </p>
+        </div>
+      )}
+
+      {phone && (
+        <div className="mb-2 flex items-center font-redhat">
+          {showIcons && (
+            <span className="material-icons">
+              <Image
+                src="/icons/contacts/phone.svg"
+                alt="Phone"
+                width={26}
+                height={26}
+              />
+            </span>
+          )}
+          <p className={showIcons ? 'ml-6' : ''}>
+            <a
+              href={`tel:${phone}`}
+              title="Our phone number"
+              className="js-phone-link max-ml:hover:underline ml:cursor-auto"
+              onClick={handlePhoneClick}
+            >
+              {phone}
+            </a>
+          </p>
         </div>
       )}
 
@@ -99,7 +114,11 @@ const ContactInfo: React.FC<ContactInfoProps> = ({
               />
             </span>
           )}
-          <p className={showIcons ? "ml-6" : ""}><a href={instagramUrl} target="_blank" className="hover:underline">{instagramText || 'Instagram'}</a></p>
+          <p className={showIcons ? 'ml-6' : ''}>
+            <a href={instagramUrl} target="_blank" className="hover:underline">
+              {instagramText || 'Instagram'}
+            </a>
+          </p>
         </div>
       )}
 
@@ -115,7 +134,11 @@ const ContactInfo: React.FC<ContactInfoProps> = ({
               />
             </span>
           )}
-          <p className={showIcons ? "ml-6" : ""}><a href={facebookUrl} target="_blank" className="hover:underline">{facebookText || 'Facebook'}</a></p>
+          <p className={showIcons ? 'ml-6' : ''}>
+            <a href={facebookUrl} target="_blank" className="hover:underline">
+              {facebookText || 'Facebook'}
+            </a>
+          </p>
         </div>
       )}
     </>

@@ -3,15 +3,11 @@ import React from 'react';
 
 type TeamCardProps = {
   card: { title: string; text: string; image: string };
-  index: number;
-  locale: string;
+  index?: number;
+  locale?: string;
 };
 
-const TeamCard = ({
-  card: { title, text, image },
-  index,
-  locale,
-}: TeamCardProps) => {
+const TeamCard = ({ card: { title, text, image } }: TeamCardProps) => {
   return (
     <div className="flex items-center justify-between gap-3 md:gap-6 3xl:gap-[38px] 4xl:gap-12">
       <div className="relative h-[147px] w-[145px] rounded-full bg-bgYellow after:absolute after:inset-0 after:bottom-[2px] after:left-[2px] after:rounded-full after:border-2 after:border-yellow after:content-[''] ml:h-[169px] ml:w-[169px] xl:w-[180px] 3xl:h-[180px]">
