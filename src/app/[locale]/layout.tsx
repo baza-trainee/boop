@@ -4,6 +4,7 @@ import { Raleway, Red_Hat_Display } from 'next/font/google';
 import { getMessages } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 import { PageProps } from '@/types';
+
 import StoreProvider from '@/components/providers/StoreProvider';
 import Header from '@/components/main/header/Header';
 import Footer from '@/components/main/footer/Footer';
@@ -25,12 +26,12 @@ const redhat = Red_Hat_Display({
 const groppled = localFont({
   src: [
     {
-      path: '../../../public/fonts/groppled.woff2',
+      path: '../../fonts/groppled.woff2',
       weight: '700',
       style: 'normal',
     },
     {
-      path: '../../../public/fonts/groppled.woff',
+      path: '../../fonts/groppled.woff',
       weight: '700',
       style: 'normal',
     },

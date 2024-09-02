@@ -9,7 +9,6 @@ import { useGetAllTestimonialsQuery } from '@/store/api/testimonialsApi';
 import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { ITestimonial } from '@/types/testimonials';
-import YellowBuddy from './yellow-buddy/YellowBuddy';
 import AnimatedFeedbackMan from './yellow-buddy/AnimatedFeedbackMan';
 import { useMediaQuery } from 'react-responsive';
 import clsx from 'clsx';

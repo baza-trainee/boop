@@ -36,7 +36,11 @@ const AddPressForm = () => {
       textIT: '',
     },
   });
+
+  console.log(imagePreview);
+
   const imageFile = watch('image');
+
   useEffect(() => {
     if (imageFile.length === 0) return;
     const imageUrl = URL.createObjectURL(imageFile[0]);

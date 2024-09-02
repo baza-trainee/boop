@@ -8,10 +8,9 @@ type PartnersCardProps = {
   name: string;
   width: number;
   height: number;
-  id: number;
+  id?: number;
 };
 const PartnersCard = ({
-  id,
   imgSrc,
   name,
   url,

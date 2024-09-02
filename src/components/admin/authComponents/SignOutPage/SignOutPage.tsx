@@ -1,7 +1,6 @@
 'use client';
 
 import { signOut } from 'next-auth/react';
-import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -10,9 +9,9 @@ function SignOutPage() {
     signOut({ callbackUrl: '/admin' });
   };
   return (
-    <section className="no-scrollbar relative max-h-[150vh] overflow-y-auto  px-[278px] py-[275px]">
-      <div className=" box-border flex flex-col items-center justify-center gap-5 bg-[#fdfdff] p-14 [box-shadow:0px_8px_16px_-8px_rgba(0,0,0,0.3)]">
-        <h2 className=" mb-0 mt-0 max-w-[346px] text-left font-['Raleway',_sans-serif] text-[20px] font-medium normal-case not-italic leading-[30px] tracking-[0px] text-[#0a0a0a]">
+    <section className="no-scrollbar relative max-h-[150vh] overflow-y-auto px-[278px] py-[275px]">
+      <div className="box-border flex flex-col items-center justify-center gap-5 bg-[#fdfdff] p-14 [box-shadow:0px_8px_16px_-8px_rgba(0,0,0,0.3)]">
+        <h2 className="mb-0 mt-0 max-w-[346px] text-left font-['Raleway',_sans-serif] text-[20px] font-medium normal-case not-italic leading-[30px] tracking-[0px] text-[#0a0a0a]">
           Ви впевнені, що хочете вийти із акаунту адміністратора?
         </h2>
         <div className="flex gap-5">

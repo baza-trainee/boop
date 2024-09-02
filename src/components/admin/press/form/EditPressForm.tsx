@@ -45,6 +45,8 @@ const EditPressForm = ({ id }: { id: string }) => {
     },
   });
 
+  console.log(imagePreview);
+
   useEffect(() => {
     if (pressPost) {
       setValue('titleUA', pressPost.titleUA);

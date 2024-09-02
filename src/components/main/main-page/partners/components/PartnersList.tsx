@@ -3,6 +3,7 @@ import React from 'react';
 import CarouselButton from '../../../shared/carousel/carousel-button/CarouselButton';
 import { Carousel } from '../../../shared/carousel/Carousel';
 import SectionTitle from '../../../shared/SectionTitle';
+import Image from 'next/image';
 
 type PartnerItem = {
   id: string;
@@ -62,14 +63,12 @@ const PartnersList: React.FC<PartnersListProps> = ({
                       rel="noopener noreferrer"
                       className="flex h-[57px] w-[120px] cursor-pointer items-center justify-center xs:h-[63px] xs:w-[152px] md:h-[68px] md:w-[130px] ml:h-[87px] ml:w-[160px] 3xl:w-[196px] 4xl:h-[106px] 4xl:w-[240px]"
                     >
-                      <img
+                      <Image
                         src={item.logoUrl}
                         alt={`Partner image`}
-                        style={{
-                          maxWidth: '100%',
-                          maxHeight: '100%',
-                          objectFit: 'contain',
-                        }}
+                        width={150}
+                        height={150}
+                        className="max-h-[100%] max-w-[100%] object-contain"
                       />
                     </a>
                   ))}

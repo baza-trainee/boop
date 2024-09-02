@@ -1,4 +1,3 @@
-import { useLocale } from 'next-intl';
 import React from 'react';
 
 type MissionCardProps = {
@@ -17,7 +16,6 @@ const MissionCard = ({
   index,
 }: MissionCardProps) => {
   const subMissionsList = hoverText.split('. ');
-  const locale = useLocale();
 
   return (
     <div

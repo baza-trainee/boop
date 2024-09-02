@@ -19,7 +19,6 @@ import './blog.css';
 
 const BlogPage = () => {
   const dispatch = useAppDispatch();
-  const [currentPage, setCurrentPage] = useState(1);
   const [currentId, setCurrentId] = useState(0);
 
   const [deleteBlog] = blogApi.useDeleteBlogMutation();
@@ -30,7 +29,7 @@ const BlogPage = () => {
     isFetching,
     isError,
   } = blogApi.useGetAllPostsQuery({
-    page: currentPage,
+    page: 1,
     limit: 5,
   });
 
