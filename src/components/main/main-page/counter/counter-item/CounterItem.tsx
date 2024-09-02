@@ -184,9 +184,19 @@ const CounterItem = ({ number, text, variant = "1" }: CounterItemProps) => {
             ref={containerRef}
           >
             {isVisible ? (
-              <CountUp start={0} end={isVisible ? number : 0} duration={2} />
+              <CountUp
+                start={0}
+                end={isVisible ? number : 0}
+                duration={2}
+                className="border border-red"
+              />
             ) : (
-              <CountUp start={0} end={100} duration={2} />
+              <CountUp
+                start={0}
+                end={100}
+                duration={2}
+                className="border border-red"
+              />
             )}
           </div>
           <div className="text-base leading-[1] text-textViolet">{text}</div>
