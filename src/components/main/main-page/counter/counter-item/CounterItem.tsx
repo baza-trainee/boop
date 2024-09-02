@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import Image from 'next/image';
-import { useEffect, useRef, useState } from 'react';
-import CountUp from 'react-countup';
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import CountUp from "react-countup";
 
 interface CounterItemProps {
   number: number;
@@ -9,7 +9,7 @@ interface CounterItemProps {
   variant?: string;
 }
 
-const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
+const CounterItem = ({ number, text, variant = "1" }: CounterItemProps) => {
   const containerRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -20,7 +20,7 @@ const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
 
   const options = {
     root: null,
-    rootMarfin: '0px',
+    rootMarfin: "0px",
     treshold: 0.1,
   };
 
@@ -37,7 +37,7 @@ const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
     <>
       <li className="relative -mt-[20px] h-[183px] font-groppled first:text-violet last:text-violet odd:self-start even:self-end sm:mt-0">
         <div className="relative">
-          {variant === '1' && (
+          {variant === "1" && (
             <>
               <div className="relative h-[157px] w-[162px] md:h-[180px] md:w-[187px] ml:h-[157px] ml:w-[162px] lg:h-[180px] lg:w-[187px]">
                 <Image
@@ -65,7 +65,7 @@ const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
               </div>
             </>
           )}
-          {variant === '2' && (
+          {variant === "2" && (
             <>
               <div className="relative h-[161px] w-[162px] md:h-[179px] md:w-[180px] ml:h-[161px] ml:w-[162px] lg:h-[179px] lg:w-[180px]">
                 <Image
@@ -93,7 +93,7 @@ const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
               </div>
             </>
           )}
-          {variant === '3' && (
+          {variant === "3" && (
             <>
               <div className="relative h-[156px] w-[162px] md:h-[173px] md:w-[180px] ml:h-[156px] ml:w-[162px] lg:h-[173px] lg:w-[180px]">
                 <Image
@@ -121,7 +121,7 @@ const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
               </div>
             </>
           )}
-          {variant === '4' && (
+          {variant === "4" && (
             <>
               <div className="relative h-[161px] w-[162px] md:h-[179px] md:w-[180px] ml:h-[161px] ml:w-[162px] lg:h-[179px] lg:w-[180px]">
                 <Image
@@ -149,7 +149,7 @@ const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
               </div>
             </>
           )}
-          {variant === '5' && (
+          {variant === "5" && (
             <>
               <div className="relative h-[157px] w-[162px] md:h-[180px] md:w-[187px] ml:h-[157px] ml:w-[162px] lg:h-[180px] lg:w-[187px]">
                 <Image
@@ -180,13 +180,23 @@ const CounterItem = ({ number, text, variant = '1' }: CounterItemProps) => {
         </div>
         <div className="absolute left-[50%] top-0 flex w-[121px] -translate-x-2/4 flex-col items-center justify-center pt-5 text-center font-bold md:pt-9 ml:pt-5 lg:pt-9">
           <div
-            className="mb-0 mt-4 h-[3rem] p-0 text-5xl leading-none md:mb-2"
+            className="mb-0 mt-4 h-[3rem] border border-violet p-0 text-5xl leading-none md:mb-2"
             ref={containerRef}
           >
             {isVisible ? (
-              <CountUp start={0} end={isVisible ? number : 0} duration={2} />
+              <CountUp
+                start={0}
+                end={isVisible ? number : 0}
+                duration={2}
+                className="border border-red"
+              />
             ) : (
-              <CountUp start={0} end={100} duration={2} />
+              <CountUp
+                start={0}
+                end={100}
+                duration={2}
+                className="border border-red"
+              />
             )}
           </div>
           <div className="text-base leading-[1] text-textViolet">{text}</div>
