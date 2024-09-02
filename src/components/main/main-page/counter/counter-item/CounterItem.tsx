@@ -188,14 +188,14 @@ const CounterItem = ({ number, text, variant = "1" }: CounterItemProps) => {
                 start={0}
                 end={isVisible ? number : 0}
                 duration={2}
-                className="border border-red"
+                className="border border-red h-[3rem]"
               />
             ) : (
               <CountUp
                 start={0}
                 end={100}
                 duration={2}
-                className="border border-red"
+                className="border border-red h-[3rem]"
               />
             )}
           </div>
