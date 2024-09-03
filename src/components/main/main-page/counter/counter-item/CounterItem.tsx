@@ -188,14 +188,14 @@ const CounterItem = ({ number, text, variant = "1" }: CounterItemProps) => {
                 start={0}
                 end={number}
                 duration={2}
-                className=" flex justify-center items-center pt-[1rem] md:pt-0"
+                className="flex justify-center items-center pt-[1rem] md:pt-0"
               />
             ) : (
               <CountUp
                 start={0}
                 end={100}
                 duration={2}
-                className="border border-red min-h-[3rem]"
+                className="border border-red min-h-[3rem] pt-[1rem] md:pt-0"
               />
             )}
           </div>
