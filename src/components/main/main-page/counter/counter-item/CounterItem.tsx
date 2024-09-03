@@ -180,22 +180,22 @@ const CounterItem = ({ number, text, variant = "1" }: CounterItemProps) => {
         </div>
         <div className="absolute left-[50%] top-0 flex w-[121px] -translate-x-2/4 flex-col items-center justify-center pt-5 text-center font-bold md:pt-9 ml:pt-5 lg:pt-9">
           <div
-            className="mb-0 mt-4 h-[3rem] border border-violet p-0 text-5xl leading-none md:mb-2"
+            className="mb-2 mt-4 h-[3rem] p-0 text-5xl leading-none md:mb-0"
             ref={containerRef}
           >
-            {isVisible ? (
+            {isVisible && number ? (
               <CountUp
                 start={0}
-                end={isVisible ? number : 0}
+                end={number}
                 duration={2}
-                className="border border-red min-h-[3rem]"
+                className="flex justify-center items-center pt-[1rem] md:pt-0"
               />
             ) : (
               <CountUp
                 start={0}
                 end={100}
                 duration={2}
-                className="border border-red min-h-[3rem]"
+                className="border border-red min-h-[3rem] pt-[1rem] md:pt-0"
               />
             )}
           </div>
