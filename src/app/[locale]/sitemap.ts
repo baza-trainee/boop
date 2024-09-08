@@ -1,4 +1,4 @@
-import { MetadataRoute } from 'next';
+import { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
@@ -31,7 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         languages: {
           uk: `${process.env.NEXT_PUBLIC_BASE_URL}/ua/school`,
           en: `${process.env.NEXT_PUBLIC_BASE_URL}/en/school`,
-          pl: `${process.env.NEXT_PUBLIC_BASE_URL}/itschool`,
+          pl: `${process.env.NEXT_PUBLIC_BASE_URL}/it/school`,
         },
       },
     },
