@@ -10,7 +10,6 @@ const nextIntlMiddleware = createMiddleware({
   locales,
   pathnames,
   localeDetection: false,
-  localePrefix: 'as-needed' satisfies LocalePrefix,
 });
 
 export default function (req: NextRequest): NextResponse {
