@@ -8,6 +8,7 @@ const nextIntlMiddleware = createMiddleware({
   defaultLocale: "ua",
   locales,
   pathnames,
+  localeDetection: false,
 });
 
 export default function (req: NextRequest): NextResponse {
