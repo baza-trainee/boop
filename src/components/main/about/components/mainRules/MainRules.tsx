@@ -5,6 +5,7 @@ import SecondRuleCard from './components/SecondRuleCard';
 import ThirdRuleCard from './components/ThirdRuleCard';
 import AboutLogo from './components/AboutLogo';
 import AnimatedOrangeMan from './components/AnimatedOrangeMan';
+import clsx from 'clsx';
 
 const MainRules = () => {
   const t = useTranslations('About.main_rules');
@@ -22,9 +23,10 @@ const MainRules = () => {
           <ThirdRuleCard text={t('rules.paragraph_3')} />
         </div>
         <AnimatedOrangeMan
-          className={
-            'absolute bottom-0 left-[75px] hidden cursor-pointer ml:block'
-          }
+          className={clsx(
+            'absolute bottom-0 left-[75px] cursor-pointer ml:block',
+            { 'hidden': !isIt }
+          )}
         />
       </div>
     </section>

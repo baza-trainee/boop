@@ -14,15 +14,21 @@ const FooterNavigationLinks: React.FC<FooterNavigationLinksProps> = ({
   const t = useTranslations("Footer.navigation");
 
   return (
-    <ul className={clsx("flex flex-col gap-6", className)}>
-      {navigationLinks.map(({ url, name }) => (
-        <li className="hover:underline" key={url}>
-          <Link href={url} scroll={true}>
-            {t(name)}
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <nav aria-labelledby="footer-navigation-links-title" className={clsx("flex flex-col gap-6", className)}>
+      <ul role="list">
+        {navigationLinks.map(({ url, name }) => (
+          <li key={url}>
+            <Link
+              href={url}
+              scroll={true}
+              className="hover:underline"
+            >
+              {t(name)}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 };
 

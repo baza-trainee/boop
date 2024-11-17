@@ -24,12 +24,16 @@ const PartnersList: React.FC<PartnersListProps> = ({
   title,
   sectionName,
 }) => {
-  const renderItems: PartnerItem[][] = [];
   const isNavigated = partnerItems?.length > 6;
+  const renderItems: PartnerItem[][] = partnerItems.reduce((result, item, index) => {
+    const chunkIndex = Math.floor(index / 6);
+    if (!result[chunkIndex]) {
+      result[chunkIndex] = []; // Initialize a new chunk
+    }
+    result[chunkIndex].push(item);
+    return result;
+  }, [] as PartnerItem[][]);
 
-  for (let i = 0; i < partnerItems.length; i += 6) {
-    renderItems.push(partnerItems.slice(i, i + 6));
-  }
   const partners = sectionName === 'partners';
 
   return (

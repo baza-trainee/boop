@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import clsx from 'clsx';
 import { RuleCardProps } from './FirstRuleCard';
 
 const SecondRuleCard: React.FC<RuleCardProps> = ({ text }) => {
@@ -8,10 +9,11 @@ const SecondRuleCard: React.FC<RuleCardProps> = ({ text }) => {
       <div className="flex-1">
         <Image
           src="/images/mainRules/image_2.webp"
-          alt="soothing hugs"
+          alt={`Image representing: ${text}`}
           width={402}
           height={450}
           className="min-h-[212px] bg-mainViolet"
+          loading="lazy"
         />
       </div>
       <p className="flex-1 ml:w-[206px] lg:w-[270px] 3xl:w-[306px] 4xl:box-border 4xl:w-[330px]">

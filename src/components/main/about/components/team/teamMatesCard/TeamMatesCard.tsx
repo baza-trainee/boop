@@ -18,10 +18,12 @@ const TeamMatesCard = ({
 }: TeamMatesCardProps) => {
   const locale = useLocale();
 
+  const name = locale === 'ua' ? nameUa : locale === 'en' ? nameEn : nameIt;
+
   return (
     <div className="flex flex-row">
       <span className="relative -bottom-40 block h-6 w-4 -rotate-90 transform whitespace-nowrap font-raleway leading-[132%] text-textViolet">
-        {locale === 'ua' ? nameUa : locale === 'en' ? nameEn : nameIt}
+        {name}
       </span>
       <div className="relative h-[415px] w-[318px] md:h-[282px] md:w-[204px] ml:h-[447px] ml:w-[306px]">
         <Image
@@ -29,7 +31,7 @@ const TeamMatesCard = ({
           src={imageUrl}
           fill
           sizes="100%"
-          alt={locale === 'ua' ? nameUa : locale === 'en' ? nameEn : nameIt}
+          alt={name}
         />
       </div>
     </div>

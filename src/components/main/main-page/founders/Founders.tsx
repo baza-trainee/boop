@@ -30,11 +30,13 @@ const Founders = () => {
         </span>
       </div>
 
-      <div className="flex flex-col gap-4 pl-5 md:pl-0 ml:w-[359px] lg:w-fit">
+      <div className="flex flex-col gap-4 pl-5 md:pl-0 w-full ml:w-[359px] lg:w-fit">
         <h3 className="font-raleway text-xl font-[500] leading-[132%] text-mainViolet">
           {t('subtitle')}
         </h3>
-        <h2 className="title-gradient font-groppled text-[28px] font-bold leading-[160%] md:text-[32px] lg:text-5xl xl:w-[500px] xl:leading-[110%]">
+        <h2 className="title-gradient font-groppled  text-[28px] font-bold 
+        leading-[160%] md:text-[32px] lg:text-5xl xl:w-[500px] 
+        xl:leading-[110%] pt-4">
           {t('title')}
         </h2>
         <p className="w-[308px] font-raleway text-xl font-bold leading-[132%] text-textViolet xl:w-[350px]">

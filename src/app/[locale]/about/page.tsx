@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { PageProps } from '@/types';
 import AboutPage from '@/components/main/about/AboutPage';
 
+
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {

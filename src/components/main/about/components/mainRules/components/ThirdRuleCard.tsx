@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import React from 'react';
 import { RuleCardProps } from './FirstRuleCard';
 
 const ThirdRuleCard: React.FC<RuleCardProps> = ({ text }) => {
@@ -8,10 +7,11 @@ const ThirdRuleCard: React.FC<RuleCardProps> = ({ text }) => {
       <div className="md:w-[421px] ml:w-[436px] lg:w-full">
         <Image
           src="/images/mainRules/image_3.webp"
-          alt="cloun and girl"
+          alt={`Image of a cloud and a girl: ${text}`}
           width={2048}
           height={1346}
-          className="relative z-10 bg-red"
+          className="relative z-10"
+          loading="lazy"
         />
       </div>
       <p className="md:w-[243px] ml:w-[359px] lg:w-[380px] 4xl:w-[447px]">

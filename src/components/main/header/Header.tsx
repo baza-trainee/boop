@@ -24,10 +24,10 @@ const Header = () => {
   const windowSize = useWindowSize();
 
   useEffect(() => {
-    if (windowSize.width > 1023 && menuOpen) {
+    if (windowSize.width > 1023) {
       setMenuOpen(false);
     }
-  }, [windowSize.width, menuOpen]);
+  }, [windowSize.width]);
 
   useBodyScrollLock(menuOpen && windowSize.width <= 1023);
 
@@ -39,16 +39,23 @@ const Header = () => {
 
   const handleScrollToDonate = () => {
     if (pathname === '/') {
-      setTimeout(() => {
-        const donatElement = document.getElementById('donat');
-        if (donatElement) {
-          donatElement.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 300);
+      const donatElement = document.getElementById('donat');
+      if (donatElement) {
+        donatElement.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // Optional: Handle cases where the element might not yet exist.
+        setTimeout(() => {
+          const delayedDonatElement = document.getElementById('donat');
+          if (delayedDonatElement) {
+            delayedDonatElement.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 300);
+      }
     } else {
       router.push(`/${locale}/#donat`);
     }
   };
+
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 flex h-[100px] w-full items-center justify-between bg-golden bg-opacity-80 py-[26px] text-violet backdrop-blur-sm backdrop-filter ml:flex-shrink ml:flex-grow">
@@ -75,26 +82,26 @@ const Header = () => {
           </div>
           <nav className="relative z-10 ml-[8px] hidden w-[1024px] justify-between whitespace-nowrap px-[4px] py-0 font-groppled font-bold text-mainViolet ml:ml-0 ml:flex ml:w-[359px] ml:gap-[24px] ml:text-[18px] ml:leading-[27.36px] lg:w-[462px] 3xl:text-[20px] 3xl:leading-[31.6px]">
             <ul className="flex items-center">
-              <li className="hover:underline md:pr-[25px] lg:pr-[48px]">
-                <Link href="/" scroll={true} title={t('home')}>
+              <Link href="/" scroll={true} title={t('home')}>
+                <li className="hover:underline md:pr-[25px] lg:pr-[48px]">
                   {t('home')}
-                </Link>
-              </li>
-              <li className="hover:underline md:pr-[25px] lg:pr-[48px]">
-                <Link href="/about" scroll={true} title={t('about')}>
+                </li>
+              </Link>
+              <Link href="/about" scroll={true} title={t('about')}>
+                <li className="hover:underline md:pr-[25px] lg:pr-[48px]">
                   {t('about')}
-                </Link>
-              </li>
-              <li className="hover:underline md:pr-[25px] lg:pr-[48px]">
-                <Link href="/school" scroll={true} title={t('school')}>
+                </li>
+              </Link>
+              <Link href="/school" scroll={true} title={t('school')}>
+                <li className="hover:underline md:pr-[25px] lg:pr-[48px]">
                   {t('school')}
-                </Link>
-              </li>
-              <li className="hover:underline">
-                <Link href="/contacts" scroll={true} title={t('contacts')}>
+                </li>
+              </Link>
+              <Link href="/contacts" scroll={true} title={t('contacts')}>
+                <li className="hover:underline">
                   {t('contacts')}
-                </Link>
-              </li>
+                </li>
+              </Link>
             </ul>
           </nav>
           <div className="relative z-10 hidden items-center font-raleway ml:flex">

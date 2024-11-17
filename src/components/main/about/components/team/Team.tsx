@@ -11,13 +11,12 @@ import AnimatedTeamMan from './AnimatedTeamMan';
 
 const Team = () => {
   const t = useTranslations('About.team');
-
   const { data: teamMates } = teamApi.useGetAllTeamQuery();
 
   return (
     <section className="container mb-[120px] flex flex-col gap-[48px]">
       <SectionTitle title={t('title')} />
-      <div className="] flex flex-col gap-5 ml:flex-row">
+      <div className="flex flex-col gap-5 md:flex-row">
         <div className="flex flex-col">
           <div className="flex flex-col gap-5 px-0 md:flex-row">
             <Image
@@ -37,16 +36,22 @@ const Team = () => {
             </p>
 
             <div className="hidden w-[250px] cursor-pointer lg:block">
-              <AnimatedTeamMan className="" />
+              <AnimatedTeamMan />
             </div>
           </div>
         </div>
         <div className="flex h-[40vh] flex-row md:h-full md:flex-col ml:flex-row">
-          <div className="items-center gap-0 gap-2 md:flex ml:block">
-            <CarouselButton className="team-prev-el -rotate-90 md:-rotate-180 ml:-rotate-90" />
-            <CarouselButton className="team-next-el rotate-90 md:rotate-0 ml:rotate-90" />
+          <div className="items-center gap-2 md:flex ml:block">
+            <CarouselButton
+              className="team-prev-el -rotate-90 md:-rotate-180 ml:-rotate-90"
+              aria-label="Previous team member"
+            />
+            <CarouselButton
+              className="team-next-el rotate-90 md:rotate-0 ml:rotate-90"
+              aria-label="Next team member"
+            />
           </div>
-          {teamMates?.data.length && (
+          {teamMates?.data?.length && (
             <div className="h-[40vh] overflow-hidden md:h-full">
               <Carousel
                 items={teamMates.data}
@@ -55,7 +60,7 @@ const Team = () => {
                 nextEl=".team-next-el"
                 spaceBetween={20}
                 speed={900}
-                effect={'fade'}
+                effect="fade"
                 isDraggable={false}
                 slideClassName="teamSlide"
                 breakpoints={{

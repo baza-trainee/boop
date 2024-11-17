@@ -34,7 +34,7 @@ export const ModalProvider: React.FC<{ children: ReactNode }> = ({
       {children}
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-customOverlay">
-          <div className="relative mx-5 w-[100%] w-full max-w-[800px] rounded-lg bg-purple-100 p-6 text-xl">
+          <div className="relative mx-5 w-full max-w-[800px] rounded-lg bg-purple-100 p-6 text-xl">
             <button
               className="absolute right-6 top-6 text-2xl font-bold text-black"
               onClick={closeModal}

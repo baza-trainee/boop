@@ -26,14 +26,13 @@ const PressAboutUsSlide = ({
     day: 'numeric',
   });
 
-  const sentences = text
-    .split('.')
-    .filter((sentence) => sentence.trim().length > 0);
+  const sentences = text.split('.').map((sentence) => sentence.trim()).filter(Boolean);
 
-  const half = Math.floor(sentences.length / 2);
-
-  const firstParagraph = sentences.slice(0, half).join('. ') + '.';
-  const secondParagraph = sentences.slice(half).join('. ') + '.';
+  const half = Math.ceil(sentences.length / 2);
+  const [firstParagraph, secondParagraph] = [
+    sentences.slice(0, half).join('. ') + (half > 0 ? '.' : ''),
+    sentences.slice(half).join('. ') + (half < sentences.length ? '.' : ''),
+  ];
 
   return (
     <div className="xl:pl-[110px]">

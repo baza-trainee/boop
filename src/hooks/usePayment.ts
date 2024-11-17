@@ -20,7 +20,6 @@ const usePaymentHandler = (urlBase = url) => {
     type,
     lang,
   }: handlePaymentProps) => {
-    console.log(type);
     const paymentData = {
       transactionType: 'CREATE_INVOICE',
       merchantDomainName: window.location.hostname,

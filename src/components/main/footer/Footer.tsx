@@ -58,12 +58,14 @@ const Footer = () => {
     <footer
       className="footer-bg relative bg-bgWhite pt-[39px] md:pt-[55px] ml:pt-[105px] lg:pt-[150px]"
       style={{ backgroundImage: "url('/images/wave.svg')" }}
+      aria-labelledby="footer-title"
     >
       <DecoratedSvg />
       <AnimatedFooterMan
         className={
           "top-41 absolute right-6 z-[2] hidden h-[112px] w-[115px] xs:right-16 sm:block md:right-[40px] md:top-[23px] md:h-[168px] md:w-[164px] ml:-top-[12px] ml:right-[64px] lg:right-[165px] lg:top-[2px] 3xl:right-[285px] 4xl:right-[460px]"
         }
+        aria-hidden="true"
       />
       <div className="relative z-[1] mx-auto max-w-[1920px] px-[10px] md:px-[64px] lg:px-[64px] xl:px-[80px] 2xl:px-[120px]">
         <div className="mb-6">
@@ -72,34 +74,41 @@ const Footer = () => {
               locale={locale}
               onClick={scrollToTop}
               className="cursor-pointer"
+              aria-label={'scrollToTop'}
             />
           </div>
-          <h4 className="font-bold leading-[132%] text-textViolet">
+          <h4 id="footer-title" className="font-bold leading-[132%] text-textViolet">
             {t("title")}
           </h4>
         </div>
         <div className="grid grid-cols-1 gap-x-4 gap-y-8 text-textViolet custom:grid-cols-2 ml:flex ml:justify-between">
-          <div className="flex flex-col gap-8 max-ml:col-span-2">
+          <section className="flex flex-col gap-8 max-ml:col-span-2" aria-labelledby="contact-info">
             {contactData && (
-              <div>
-                <ContactInfo
-                  showIcons={false}
-                  address={address}
-                  phone={contactData.phone}
-                  email={contactData.email}
-                />
-              </div>
+              <ContactInfo
+                showIcons={false}
+                address={address}
+                phone={contactData.phone}
+                email={contactData.email}
+              />
             )}
             <HelpLinks className="hidden ml:flex" />
-          </div>
-          <AssociationLinks />
-          <div>
-            <FooterNavigationLinks className="mb-8 items-end ml:items-start" />
-            <SocialLinks className="justify-end" />
-          </div>
+          </section>
+
+          <section aria-labelledby="associations-links">
+            <AssociationLinks />
+          </section>
+
+          <nav aria-labelledby="footer-navigation" className="mb-8">
+            <FooterNavigationLinks className="items-end ml:items-start" />
+          </nav>
+
+          <nav aria-labelledby="social-links" className="justify-end">
+            <SocialLinks />
+          </nav>
+
           <HelpLinks className="flex ml:hidden" />
         </div>
-        <div className="py-6 text-center text-textViolet">{t("rights")}</div>
+        <div className="py-6 text-center text-textViolet" aria-live="polite">{t("rights")}</div>
       </div>
     </footer>
   );

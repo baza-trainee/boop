@@ -12,28 +12,19 @@ import AnimatedContactsMan from './components/AnimatedContactsMan';
 const ContactsPage: React.FC = () => {
   const t = useTranslations('Contacts');
   const locale = useLocale();
-  const {
-    data: contacts,
-    isLoading,
-    isError,
-  } = contactsApi.useGetAllContactsQuery();
+  const { data: contacts, isLoading, isError } = contactsApi.useGetAllContactsQuery();
 
   if (isError) return <p>Error loading contacts</p>;
   if (isLoading || !contacts || contacts.length === 0) return <p>Loading...</p>;
 
   const contactData: IContact = contacts[0];
 
-  let address;
-  switch (locale) {
-    case 'en':
-      address = contactData.addressEn;
-      break;
-    case 'it':
-      address = contactData.addressIt;
-      break;
-    default:
-      address = contactData.addressUa;
-  }
+  const addressMap: { [key: string]: string } = {
+    en: contactData.addressEn,
+    it: contactData.addressIt,
+    default: contactData.addressUa,
+  };
+  const address = addressMap[locale] || addressMap['default'];
 
   const encodedAddress = encodeURIComponent(address);
   const mapUrl = `https://www.google.com/maps?q=${encodedAddress}&output=embed&z=17`;
@@ -57,7 +48,6 @@ const ContactsPage: React.FC = () => {
             <AnimatedContactsMan className="absolute right-10 h-[204px] w-[277px] cursor-pointer max-ml:hidden ml:-bottom-[200px] lg:-bottom-[150px] 4xl:-bottom-10" />
           </div>
           <div className="mt-4 md:mt-0 md:w-[55%] ml:w-[65%]">
-            {/* Карта */}
             <div className="relative h-0 pb-[56.25%]">
               <iframe
                 src={mapUrl}
