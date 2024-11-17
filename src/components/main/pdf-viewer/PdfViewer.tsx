@@ -24,7 +24,7 @@ const PdfViewer = ({ document }: { document: string | null }) => {
     }
   }, [data, document]);
 
-  function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
+  const onDocumentLoadSuccess = ({ numPages }: { numPages: number }): void => {
     setNumPages(numPages);
   }
 
@@ -36,22 +36,19 @@ const PdfViewer = ({ document }: { document: string | null }) => {
     const getWidth = () =>
       pdfWrapperRef?.current?.getBoundingClientRect()?.width || 0;
 
-    setWidth(getWidth());
-
     const handleResize = () => {
       setWidth(getWidth());
     };
 
-    if (pdfWrapperRef?.current) {
-      setWidth(getWidth());
-    }
+    setWidth(getWidth());
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, [pdfWrapperRef]);
+
 
   const reset = () => router.replace('/');
 

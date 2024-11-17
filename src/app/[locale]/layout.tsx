@@ -26,12 +26,17 @@ const redhat = Red_Hat_Display({
 const groppled = localFont({
   src: [
     {
-      path: '../../fonts/groppled.woff2',
+      path: '../fonts/groppled.woff2',
       weight: '700',
       style: 'normal',
     },
     {
-      path: '../../fonts/groppled.woff',
+      path: '../fonts/groppled.woff',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/groppled.otf',
       weight: '700',
       style: 'normal',
     },
@@ -45,22 +50,20 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   return {
     title: {
-      default: `${
-        params.locale === 'ua'
-          ? 'БУП - бюро усмішок і підтримки'
-          : params.locale === 'en'
-            ? 'BOOP - bureau of smiles and support'
-            : 'BOOP - ufficio dei sorrisi e del supporto'
-      }`,
+      default: `${params.locale === 'ua'
+        ? 'БУП - бюро усмішок і підтримки'
+        : params.locale === 'en'
+          ? 'BOOP - bureau of smiles and support'
+          : 'BOOP - ufficio dei sorrisi e del supporto'
+        }`,
       template: '%s',
     },
-    description: `${
-      params.locale === 'ua'
-        ? 'Програма емоційної підтримки дітей у лікарнях by @tabletochki'
-        : params.locale === 'en'
-          ? 'Program of emotional support for children in hospitals by @tabletochki'
-          : 'Programma di sostegno emotivo per i bambini negli ospedali di @tabletochki'
-    }`,
+    description: `${params.locale === 'ua'
+      ? 'Програма емоційної підтримки дітей у лікарнях by @tabletochki'
+      : params.locale === 'en'
+        ? 'Program of emotional support for children in hospitals by @tabletochki'
+        : 'Programma di sostegno emotivo per i bambini negli ospedali di @tabletochki'
+      }`,
   };
 }
 

@@ -16,16 +16,19 @@ const BlogItemText = ({ text }: BlogItemTextProps) => {
     text.length > TEXT_LENGTH + 50 ? text.slice(0, TEXT_LENGTH) + '...' : null;
 
   return (
-    <div className="">
+    <div>
       {shortText ? (
         <p className="text-xl leading-[1.6] text-textViolet transition-all duration-200 ease-linear max-ml:text-[18px] max-sm:text-base">
           {isShortText ? shortText : text}
-          <span
+          {' '}
+          <button
             onClick={() => setIsShortText((state) => !state)}
             className="inline-block cursor-pointer font-medium text-textViolet underline"
+            aria-expanded={!isShortText}
+            aria-label={isShortText ? t('read') : t('close')}
           >
             {isShortText ? t('read') : t('close')}
-          </span>
+          </button>
         </p>
       ) : (
         <p className="text-xl leading-[1.5] text-textViolet max-ml:text-[18px] max-sm:text-base">

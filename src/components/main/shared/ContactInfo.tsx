@@ -24,12 +24,11 @@ const ContactInfo: React.FC<ContactInfoProps> = ({
 }) => {
   const [isMobile, setIsMobile] = useState(false);
 
+  const isMobileDevice = () =>
+    typeof navigator !== "undefined" &&
+    /Mobi|Android|iPhone|iPad|Tablet|PlayBook|Silk/i.test(navigator.userAgent);
+
   useEffect(() => {
-    function isMobileDevice() {
-      return /Mobi|Android|iPhone|iPad|Tablet|PlayBook|Silk/i.test(
-        navigator.userAgent
-      );
-    }
     setIsMobile(isMobileDevice());
   }, []);
 
