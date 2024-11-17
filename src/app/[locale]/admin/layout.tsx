@@ -22,14 +22,14 @@ export default function AdminLayout({
     checkLoginStatus();
   }, []);
 
-  // if (!userIsLogined) {
-  //   return (
-  //     <>
-  //       <LoginPage />
-  //       <AlertWindow />
-  //     </>
-  //   );
-  // }
+  if (!userIsLogined) {
+    return (
+      <>
+        <LoginPage />
+        <AlertWindow />
+      </>
+    );
+  }
 
   return (
     <div className="flex min-h-[100vh] w-full">
