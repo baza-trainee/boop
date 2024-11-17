@@ -1,6 +1,10 @@
 import { Metadata } from 'next';
 import { PageProps } from '@/types';
-import AboutPage from '@/components/main/about/AboutPage';
+import dynamic from 'next/dynamic';
+
+const DynamicAboutPage = dynamic(() => import("@/components/main/about/AboutPage"), {
+  ssr: false,
+});
 
 
 export async function generateMetadata({
@@ -13,7 +17,7 @@ export async function generateMetadata({
 }
 
 const About = () => {
-  return <AboutPage />;
+  return <DynamicAboutPage />;
 };
 
 export default About;
