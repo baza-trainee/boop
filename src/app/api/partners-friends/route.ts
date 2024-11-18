@@ -5,19 +5,12 @@ import {
   SECTION_PARTNERS_FRIENDS,
 } from '@/types/partners-friends';
 
+
 export async function GET() {
   try {
     const response = await prisma.partnersFriends.findMany({
       orderBy: { createdAt: 'asc' },
     });
-
-    if (!response || response.length === 0) {
-      return NextResponse.json(
-        { message: 'Partners and friends are not found' },
-        { status: 400 }
-      );
-    }
-
     return NextResponse.json(response, { status: 200 });
   } catch (error) {
     console.log('[GET PartnersFriends]', error);

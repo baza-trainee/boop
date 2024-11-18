@@ -48,10 +48,9 @@ const Gallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    if (items && items.length > 0) {
-      setPhotos(items.slice(0, limit));
-      setCurrentIndex(limit);
-    }
+    if (!items?.length) return
+    setPhotos(items.slice(0, limit));
+    setCurrentIndex(limit);
   }, [items?.length]);
 
   const loadMorePhotos = () => {

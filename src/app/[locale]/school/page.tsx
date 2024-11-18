@@ -1,6 +1,10 @@
 import { Metadata } from 'next';
 import { PageProps } from '@/types';
-import SchoolPage from '@/components/main/school/SchoolPage';
+import dynamic from 'next/dynamic';
+
+const DynamicSchoolPage = dynamic(() => import("@/components/main/school/SchoolPage"), {
+  ssr: false,
+});
 
 export async function generateMetadata({
   params,
@@ -12,7 +16,7 @@ export async function generateMetadata({
 }
 
 const School = () => {
-  return <SchoolPage />;
+  return <DynamicSchoolPage />;
 };
 
 export default School;
