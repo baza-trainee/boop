@@ -8,6 +8,7 @@ const DynamicCounterItem = dynamic(() => import("./counter-item/CounterItem"), {
   ssr: false,
 });
 
+
 const Counter = () => {
   const t = useTranslations("Counter_section");
   const { data: counterItems, isFetching, isError } = useGetAllNumbersQuery();

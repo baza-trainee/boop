@@ -6,7 +6,6 @@ const DynamicAboutPage = dynamic(() => import("@/components/main/about/AboutPage
   ssr: false,
 });
 
-
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
