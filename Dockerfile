@@ -37,4 +37,5 @@ ENV NODE_ENV=development
 COPY . .
 ENV NEXT_TELEMETRY_DISABLED 1
 RUN npm install 
+
 CMD  npm run dev
