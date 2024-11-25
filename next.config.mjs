@@ -5,7 +5,7 @@ const withNextIntl = createNextIntlPlugin();
 
 const nextConfig = {
   reactStrictMode: false,
-  output: "standalone",
+  // output: "standalone",
   images: {
     remotePatterns: [
       {
@@ -19,6 +19,7 @@ const nextConfig = {
     ],
   },
   webpack: (config) => {
+    config.resolve.alias.canvas = false;
     config.module.rules.push({
       test: /\.node/,
       use: "raw-loader",
