@@ -15,7 +15,6 @@ COPY . .
 
 RUN npm run build
 
-
 FROM base as production
 WORKDIR /app
 
