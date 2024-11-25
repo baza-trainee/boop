@@ -27,7 +27,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      target: production
+      target: dev
     restart: always
     volumes:
       - .:/app
