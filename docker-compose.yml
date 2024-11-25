@@ -1,4 +1,4 @@
-version: '3.8'
+# version: '3.8'
 
 services:
   postgres:
@@ -25,12 +25,14 @@ services:
     environment:
       DATABASE_URL: postgresql://${DB_USER}:${DB_PASSWORD}@postgres:${DB_PORT}/${DB_NAME}?schema=public
     build:
-      context: ./
-      target: dev
+      context: .
       dockerfile: Dockerfile
+      target: production
     restart: always
     volumes:
       - .:/app
+      - /app/node_modules
+      - /app/.next
     depends_on:
       postgres:
         condition: service_healthy

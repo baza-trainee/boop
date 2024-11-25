@@ -12,32 +12,18 @@ const Blog = () => {
   const { locale } = useParams();
   const { data: blogItems, isFetching, isError } = useGetAllPostsQuery();
 
-  if (!blogItems) return null;
-
+  if (!blogItems) return;
   return (
-    <section className="mb-[120px]" aria-labelledby="blog-section-title">
+    <section className="mb-[120px]">
       <div className="container mx-auto">
         <div className="mb-8 flex items-center justify-between gap-5">
-          <h2
-            id="blog-section-title"
-            className="title-gradient pt-2 font-groppled text-3xl font-bold max-sm:text-[28px]"
-          >
+          <h2 className="title-gradient pt-2 font-groppled text-3xl font-bold max-sm:text-[28px]">
             {t('title')}
           </h2>
           {blogItems.data.length > 1 && (
             <div className="flex items-center gap-2">
-              <button
-                className="blog-prev-el rotate-180"
-                aria-label={t('previous')}
-              >
-                <CarouselButton />
-              </button>
-              <button
-                className="blog-next-el"
-                aria-label={t('next')}
-              >
-                <CarouselButton />
-              </button>
+              <CarouselButton className="blog-prev-el rotate-180" />
+              <CarouselButton className="blog-next-el" />
             </div>
           )}
         </div>
@@ -65,7 +51,7 @@ const Blog = () => {
                       ? item.textEN
                       : item.textIT
                 }
-                date={item.createdAt}  // Ensure proper alt text
+                date={item.createdAt}
               />
             )}
           />

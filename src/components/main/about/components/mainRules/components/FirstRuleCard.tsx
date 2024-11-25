@@ -24,7 +24,7 @@ const FirstRuleCard: React.FC<RuleCardProps> = ({ text, isIt }) => {
           width={960}
           height={640}
           className="relative bg-yellow"
-          loading="lazy"
+          priority
         />
       </div>
     </div>
