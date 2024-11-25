@@ -37,4 +37,4 @@ ENV NODE_ENV=development
 COPY . .
 ENV NEXT_TELEMETRY_DISABLED 1
 RUN npm install 
-CMD npx prisma db push && npm run dev
+CMD npm run dev
