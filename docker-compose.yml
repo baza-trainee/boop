@@ -24,13 +24,14 @@ services:
     env_file: .env
     environment:
       DATABASE_URL: postgresql://${DB_USER}:${DB_PASSWORD}@postgres:${DB_PORT}/${DB_NAME}?schema=public
-    build:
-      context: ./
-      dockerfile: Dockerfile
-      target: dev
+    # build:
+    #   context: ./
+    #   dockerfile: Dockerfile
+    #   target: production
+    build: .
     restart: always
-    volumes:
-      - .:/app
+    # volumes:
+    #   - .:/app
     depends_on:
       postgres:
         condition: service_healthy
